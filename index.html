@@ -6,174 +6,205 @@
 <title>The_frizzy1 — Low-VRAM ComfyUI Workflows</title>
 <style>
   :root{
-    --bg:#0a0b0f; --bg2:#12141c; --card:#161923; --card2:#1c2030;
-    --line:#262b3a; --txt:#e7e9f0; --mut:#9aa1b4; --dim:#6b7182;
-    --acc:#7c5cff; --acc2:#22d3ee; --grn:#34d399; --amb:#fbbf24; --red:#fb7185;
-    --shadow:0 10px 40px -12px rgba(0,0,0,.7);
+    --bg:#08090d; --panel:#10131c; --card:#141824; --card-hi:#1a1f2e;
+    --line:#232838; --line-hi:#333a4f;
+    --txt:#eef0f6; --mut:#a2a9bd; --dim:#6a7186; --faint:#464c60;
+    --acc:#8b6cff; --acc-ink:#c3b4ff; --cy:#33d6ef; --grn:#3ee0a6; --amb:#ffc857; --red:#ff6b81;
+    --r:16px;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
-  body{
-    background:radial-gradient(1200px 600px at 80% -10%,rgba(124,92,255,.18),transparent 60%),
-               radial-gradient(1000px 500px at 0% 0%,rgba(34,211,238,.10),transparent 55%),
-               var(--bg);
-    color:var(--txt);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font:16px/1.55 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    background-image:
+      radial-gradient(900px 480px at 88% -8%,rgba(139,108,255,.20),transparent 62%),
+      radial-gradient(760px 420px at -6% 4%,rgba(51,214,239,.10),transparent 58%);
+    background-attachment:fixed;}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  :focus-visible{outline:2px solid var(--acc-ink);outline-offset:3px;border-radius:6px}
 
-  /* header */
-  header{padding:64px 0 26px}
-  .kicker{color:var(--acc2);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
-  h1{font-size:clamp(30px,5vw,52px);line-height:1.05;margin:12px 0 10px;letter-spacing:-.02em}
-  h1 .g{background:linear-gradient(92deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .sub{color:var(--mut);max-width:640px;font-size:17px}
-  .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-  .btn{border:1px solid var(--line);background:var(--card);padding:9px 15px;border-radius:11px;font-size:14px;font-weight:600;display:inline-flex;gap:8px;align-items:center;transition:.15s}
-  .btn:hover{border-color:var(--acc);transform:translateY(-1px)}
-  .btn.p{background:linear-gradient(92deg,var(--acc),#6a4cf0);border-color:transparent}
+  /* ---- header ---- */
+  header{padding:76px 0 30px}
+  h1{font-size:clamp(34px,5.6vw,62px);line-height:1.02;margin:0 0 18px;
+     letter-spacing:-.035em;font-weight:800;max-width:15ch}
+  h1 em{font-style:normal;color:var(--acc-ink)}
+  .lede{color:var(--mut);max-width:60ch;font-size:clamp(16px,1.4vw,18.5px);margin:0}
+  .lede b{color:var(--txt);font-weight:600}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin:26px 0 0;padding:0;list-style:none;
+        color:var(--dim);font-size:13.5px;font-weight:500}
+  .meta li{display:flex;align-items:center;gap:8px}
+  .meta b{color:var(--txt);font-weight:700;font-variant-numeric:tabular-nums}
+  .meta li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--acc);opacity:.85}
+  .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+  .btn{border:1px solid var(--line);background:var(--card);padding:10px 16px;border-radius:11px;
+       font-size:14px;font-weight:600;color:var(--mut);transition:.16s ease}
+  .btn:hover{color:var(--txt);border-color:#3b4363;transform:translateY(-1px)}
+  .btn.p{background:var(--acc);border-color:transparent;color:#0c0a1e;font-weight:700}
+  .btn.p:hover{background:#9c81ff;box-shadow:0 12px 28px -14px rgba(0,0,0,.85)}
 
-  /* stat row */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:34px 0 8px}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-  .stat b{display:block;font-size:26px;letter-spacing:-.02em}
-  .stat span{color:var(--dim);font-size:12.5px;text-transform:uppercase;letter-spacing:.08em}
+  /* ---- filter bar ---- */
+  .bar{position:sticky;top:0;z-index:10;margin-top:30px;
+       background:linear-gradient(var(--bg) 60%,rgba(8,9,13,.7));backdrop-filter:blur(10px);
+       border-bottom:1px solid var(--line);padding:15px 0}
+  .bar .wrap{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+  .chip{border:1px solid var(--line);background:var(--card);color:var(--mut);padding:8px 15px;
+        border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;transition:.16s ease}
+  .chip:hover{color:var(--txt);border-color:#3b4363}
+  .chip[aria-pressed=true]{background:var(--acc);border-color:transparent;color:#0c0a1e}
+  .search{margin-left:auto;background:var(--card);border:1px solid var(--line);border-radius:11px;
+          padding:9px 14px;color:var(--txt);min-width:210px;font-size:14px}
+  .search::placeholder{color:var(--faint)}
+  .count{color:var(--dim);font-size:12.5px;font-weight:600;white-space:nowrap}
 
-  /* filters */
-  .bar{position:sticky;top:0;z-index:5;background:linear-gradient(var(--bg),rgba(10,11,15,.86));backdrop-filter:blur(8px);padding:18px 0 12px;margin-top:26px;border-bottom:1px solid var(--line)}
-  .bar .wrap{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-  .chip{border:1px solid var(--line);background:var(--card);color:var(--mut);padding:7px 13px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;transition:.15s}
-  .chip:hover{color:var(--txt)}
-  .chip.on{background:var(--acc);border-color:transparent;color:#fff}
-  .search{margin-left:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px;color:var(--txt);min-width:190px;font-size:14px}
-  .search::placeholder{color:var(--dim)}
-
-  /* grid */
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;padding:28px 0 60px}
-  .card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.18s}
-  .card:hover{transform:translateY(-3px);border-color:#39405a}
-  .thumb{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden;display:block}
-  .thumb img{width:100%;height:100%;object-fit:cover;opacity:.9;transition:.25s}
-  .card:hover .thumb img{opacity:1;transform:scale(1.04)}
-  .thumb.noimg{background:linear-gradient(135deg,#1b2030,#111420);display:flex;align-items:center;justify-content:center}
-  .thumb.noimg span{font-size:34px;font-weight:800;color:#2f3550;letter-spacing:-.03em}
-  .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-  .play i{width:52px;height:52px;border-radius:50%;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center}
-  .play i::after{content:"";border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
-  .vbadge{position:absolute;top:10px;right:10px;background:var(--red);color:#fff;font-size:11px;font-weight:800;padding:3px 8px;border-radius:6px;letter-spacing:.03em}
-  .body{padding:16px 17px 18px;display:flex;flex-direction:column;gap:11px;flex:1}
-  .fam{color:var(--acc2);font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
-  .name{font-size:18px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
-  .ver{color:var(--dim);font-weight:600;font-size:13px}
+  /* ---- grid ---- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(346px,1fr));gap:22px;padding:30px 0 22px}
+  .card{position:relative;background:linear-gradient(180deg,var(--card),#11141f);
+        border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;
+        box-shadow:0 1px 0 rgba(255,255,255,.03) inset, 0 18px 40px -24px rgba(0,0,0,.9);
+        transition:transform .2s cubic-bezier(.2,.7,.2,1),border-color .2s,box-shadow .2s}
+  .card:hover{transform:translateY(-4px);border-color:#404a6b;box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 26px 54px -26px rgba(0,0,0,.95)}
+  .thumb{position:relative;aspect-ratio:16/9;background:#05060a;display:block;overflow:hidden}
+  .thumb img{width:100%;height:100%;object-fit:cover;opacity:.86;transition:opacity .3s,transform .5s cubic-bezier(.2,.7,.2,1)}
+  .card:hover .thumb img{opacity:1;transform:scale(1.045)}
+  .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(8,9,13,.55))}
+  .thumb.noimg{display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(120% 120% at 30% 20%,#1c2233,#0c0f18)}
+  .thumb.noimg b{font-size:26px;font-weight:800;letter-spacing:-.03em;color:#39415f}
+  .play{position:absolute;left:14px;bottom:12px;z-index:2;display:flex;align-items:center;gap:8px;
+        color:#fff;font-size:12px;font-weight:700;letter-spacing:.02em;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+  .play i{width:34px;height:34px;border-radius:50%;background:rgba(10,12,20,.55);
+    border:1px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(3px);transition:.16s}
+  .play i::after{content:"";border-left:12px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
+  .card:hover .play i{background:var(--acc);border-color:transparent}
+  .body{padding:17px 18px 18px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .fam{color:var(--acc-ink);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.13em}
+  .name{font-size:18.5px;font-weight:700;letter-spacing:-.015em;line-height:1.22;margin:3px 0 0}
+  .name .ver{color:var(--dim);font-weight:600;font-size:13px;letter-spacing:0}
   .tags{display:flex;gap:6px;flex-wrap:wrap}
-  .t{font-size:11.5px;font-weight:600;padding:3px 8px;border-radius:6px;background:var(--card2);border:1px solid var(--line);color:var(--mut)}
-  .t.vram{color:var(--grn);border-color:rgba(52,211,153,.3)}
-  .t.unv{color:var(--amb);border-color:rgba(251,191,36,.3)}
-  .models{font-size:12.5px;color:var(--dim);border-top:1px solid var(--line);padding-top:10px;margin-top:auto}
-  .models code{color:var(--mut);background:var(--bg2);padding:1px 5px;border-radius:5px;font-size:11.5px}
-  .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
-  .row a{font-size:12.5px;font-weight:600;color:var(--mut);border:1px solid var(--line);padding:5px 10px;border-radius:8px;transition:.15s}
-  .row a:hover{color:#fff;border-color:var(--acc)}
-  .row a.docs{color:var(--acc2);border-color:rgba(34,211,238,.3)}
-  footer{border-top:1px solid var(--line);padding:30px 0 60px;color:var(--dim);font-size:13.5px}
-  footer a{color:var(--mut);text-decoration:underline}
-  @media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}.search{margin-left:0;width:100%}}
+  .t{font-size:11.5px;font-weight:600;padding:4px 9px;border-radius:7px;background:#0e1119;
+     border:1px solid var(--line);color:var(--mut)}
+  .t.vram{color:var(--grn);border-color:rgba(62,224,166,.28);background:rgba(62,224,166,.06)}
+  .models{font-size:12.5px;color:var(--dim);border-top:1px solid var(--line);padding-top:11px;margin-top:auto;line-height:1.45}
+  .models b{color:var(--mut);font-weight:600}
+  .row{display:flex;gap:8px;flex-wrap:wrap}
+  .row a{font-size:12.5px;font-weight:600;color:var(--mut);border:1px solid var(--line);
+         padding:6px 11px;border-radius:9px;transition:.16s}
+  .row a:hover{color:var(--txt);border-color:#404a6b;background:var(--card-hi)}
+  .row a.docs{color:#0c0a1e;background:var(--acc-ink);border-color:transparent;font-weight:700}
+  .row a.docs:hover{background:#d6cbff}
+  .empty{grid-column:1/-1;text-align:center;color:var(--dim);padding:60px 0;font-size:15px;display:none}
+
+  footer{border-top:1px solid var(--line);margin-top:34px;padding:30px 0 64px;color:var(--dim);font-size:13.5px;line-height:1.7}
+  footer a{color:var(--mut);border-bottom:1px solid var(--line)}
+  footer a:hover{color:var(--txt);border-color:var(--mut)}
+  footer .amb{color:var(--amb);font-weight:600}
+
+  /* one authored entrance */
+  @media (prefers-reduced-motion:no-preference){
+    .card{opacity:0;transform:translateY(14px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0ms)}
+    @keyframes rise{to{opacity:1;transform:none}}
+  }
+  @media(max-width:720px){header{padding:52px 0 22px}.search{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
 <header><div class="wrap">
-  <div class="kicker">ComfyUI · GGUF · Low-VRAM</div>
-  <h1>The_frizzy1 <span class="g">Workflow Hub</span></h1>
-  <p class="sub">Every workflow, verified against its actual <code>.json</code> — image, video and audio generation that runs on as little as <b>4&nbsp;GB VRAM</b>. Pick a card to open its full docs, models and downloads.</p>
+  <h1>Every <em>The_frizzy1</em> workflow, verified and in one place.</h1>
+  <p class="lede">GGUF-quantised ComfyUI workflows for image, video and audio — engineered to run on as little as <b>4&nbsp;GB of VRAM</b>. Every model name here was read straight out of the workflow file, not guessed.</p>
+  <ul class="meta">
+    <li><b>12</b> workflows</li>
+    <li>from <b>4&nbsp;GB</b> VRAM</li>
+    <li><b>12/12</b> model-verified</li>
+    <li><b>10</b> video guides</li>
+  </ul>
   <div class="links">
-    <a class="btn p" href="https://civitai.com/user/The_frizzy1" target="_blank">CivitAI Profile</a>
-    <a class="btn" href="https://huggingface.co/The-frizzy1" target="_blank">Hugging Face</a>
-    <a class="btn" href="https://www.youtube.com/@the_frizzy1" target="_blank">YouTube</a>
+    <a class="btn p" href="https://civitai.com/user/The_frizzy1" target="_blank" rel="noopener">CivitAI profile</a>
+    <a class="btn" href="https://huggingface.co/The-frizzy1" target="_blank" rel="noopener">Hugging Face</a>
+    <a class="btn" href="https://www.youtube.com/@the_frizzy1" target="_blank" rel="noopener">YouTube</a>
     <a class="btn" href="docs/WAN-LINEAGE.md">Wan 2.1 vs 2.2 vs Animate</a>
-    <a class="btn" href="docs/DOWNLOADS.md">All Downloads</a>
-  </div>
-  <div class="stats">
-    <div class="stat"><b>12</b><span>Workflows</span></div>
-    <div class="stat"><b>4&nbsp;GB</b><span>Min VRAM</span></div>
-    <div class="stat"><b>12/12</b><span>Model-verified</span></div>
-    <div class="stat"><b>10</b><span>Video guides</span></div>
+    <a class="btn" href="docs/DOWNLOADS.md">All downloads</a>
   </div>
 </div></header>
 
-<div class="bar"><div class="wrap" id="filters">
-  <span class="chip on" data-f="all">All</span>
-  <span class="chip" data-f="video">Video</span>
-  <span class="chip" data-f="image">Image</span>
-  <span class="chip" data-f="audio">Audio</span>
-  <span class="chip" data-f="4gb">Runs on 4GB</span>
-  <input class="search" id="q" placeholder="Search workflows…">
-</div></div>
+<nav class="bar" aria-label="Filter workflows"><div class="wrap" id="filters">
+  <button class="chip" aria-pressed="true" data-f="all">All</button>
+  <button class="chip" aria-pressed="false" data-f="video">Video</button>
+  <button class="chip" aria-pressed="false" data-f="image">Image</button>
+  <button class="chip" aria-pressed="false" data-f="audio">Audio</button>
+  <button class="chip" aria-pressed="false" data-f="4gb">Runs on 4GB</button>
+  <input class="search" id="q" type="search" placeholder="Search workflows…" aria-label="Search workflows">
+  <span class="count" id="count" aria-live="polite"></span>
+</div></nav>
 
-<div class="wrap"><div class="grid" id="grid"></div></div>
+<main class="wrap"><div class="grid" id="grid"></div>
+  <p class="empty" id="empty">No workflows match that filter.</p>
+</main>
 
 <footer><div class="wrap">
-  Built from primary sources: workflow <code>.json</code> files + the creator's Hugging Face READMEs.
-  Filenames marked <b style="color:var(--amb)">unverified</b> await their workflow file. See
-  <a href="docs/AUDIT.md">docs/AUDIT.md</a>. Models retain their own licenses.
+  Built from primary sources — the workflow <b>.json</b> files plus the creator's Hugging Face READMEs.
+  A few filenames marked <span class="amb">best-effort</span> still want a source-repo confirm; see
+  <a href="docs/AUDIT.md">the audit</a>. Each model keeps its own license.
 </div></footer>
 
 <script>
 const W=[
- {slug:"wan-2.2-animate",fam:"Wan 2.2 Animate",name:"Wan 2.2 Animate",ver:"v1.2.0",cats:["video","4gb"],vram:"4 GB",tasks:["V2V","Looping"],yt:"rtyfdmL-wF4",civ:"https://civitai.com/models/2046477",hf:"https://huggingface.co/The-frizzy1/Wan22ANIMATE",models:"Wan2.2-Animate-14B · relight + lightx2v LoRA",verified:true},
- {slug:"wan-2.2-gguf-lowvram",fam:"Wan 2.2",name:"Wan 2.2 GGUF Low-VRAM",ver:"v1.0.0",cats:["video","4gb"],vram:"4 GB",tasks:["T2V","I2V","5B"],yt:"C7ZttV320qk",civ:"https://civitai.com/models/1817858",hf:"https://huggingface.co/The-frizzy1/Wan22-T2V-I2V-LORA-4GB",models:"A14B high+low noise · TI2V-5B",verified:true},
- {slug:"wan-2.1-gguf-lowvram",fam:"Wan 2.1",name:"Wan 2.1 GGUF Low-VRAM",ver:"v2.0.0",cats:["video","4gb"],vram:"4 GB",tasks:["T2V","I2V","VACE","FLF"],yt:"Xqjabf_eQ_U",civ:"https://civitai.com/models/1309674",hf:"https://huggingface.co/The-frizzy1/Wan21-GGUF-4GB-Workflow",models:"Wan2.1 1.3B/14B GGUF · 6 variants",verified:true},
- {slug:"wan-2.1-flf2v",fam:"Wan 2.1",name:"Wan 2.1 FLF2V",ver:"v2.0.0",cats:["video","4gb"],vram:"4 GB",tasks:["First→Last"],yt:"",civ:"https://civitai.com/models/1624167",hf:"",models:"Wan2.1 FLF2V 14B GGUF",verified:true},
- {slug:"wan-2.2-aio-rapid",fam:"Wan 2.2",name:"Wan 2.2 AIO Rapid",ver:"v1.0.0",cats:["video","4gb"],vram:"4–12 GB",tasks:["T2V","I2V","AIO"],yt:"RdsyWkvG1nE",civ:"https://civitai.com/models/2522688",hf:"",models:"wan2.2-rapid-mega-aio-v12 (single file)",verified:true},
- {slug:"flux-kontext-gguf",fam:"Flux Kontext",name:"Flux Kontext GGUF",ver:"v2.2.0",cats:["image","4gb"],vram:"4 GB",tasks:["T2I","Edit"],yt:"4C0RJ01yRok",civ:"https://civitai.com/models/1311703",hf:"https://huggingface.co/The-frizzy1/Flux-Kontext-GGUF-4GB",models:"flux1-kontext-dev · Dev/Schnell",verified:true},
- {slug:"flux2-dev-gguf",fam:"Flux.2 Dev",name:"Flux.2 Dev GGUF",ver:"v1.0.0",cats:["image"],vram:"6 GB",tasks:["T2I"],yt:"dcekWAbgDXg",civ:"https://civitai.com/models/2508110",hf:"",models:"flux2-dev-Q5_K_M · mistral text enc",verified:true},
- {slug:"qwen-image-edit-2509",fam:"Qwen Image",name:"Qwen Image & Edit 2509",ver:"v1.0.0",cats:["image","4gb"],vram:"4 GB",tasks:["T2I","Edit"],yt:"NPni2ulov34",civ:"https://civitai.com/models/2229874",hf:"https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF",models:"Qwen_Image-Q8 · Lightning LoRA",verified:true},
- {slug:"z-image-turbo-gguf",fam:"Z-Image Turbo",name:"Z-Image Turbo GGUF",ver:"v1.0.0",cats:["image","4gb"],vram:"4 GB",tasks:["T2I","Fast"],yt:"",civ:"https://civitai.com/models/2561639",hf:"",models:"z-image-turbo-q8_0 · qwen_3_4b enc",verified:true},
- {slug:"hunyuan-video-lowvram",fam:"Hunyuan Video",name:"Hunyuan Video Low-VRAM",ver:"v1.1.0",cats:["video","4gb"],vram:"4 GB",tasks:["T2V","I2V"],yt:"",civ:"https://civitai.com/models/1312419",hf:"https://huggingface.co/The-frizzy1/Hunyuan-Video-Low-VRAM-4GB",models:"Fast Hunyuan GGUF (⚠ see audit)",verified:true},
- {slug:"ltx2-gguf",fam:"LTXV-2",name:"LTX-2 GGUF",ver:"v1.5.0",cats:["video","4gb"],vram:"4 GB",tasks:["T2V","I2V","Audio"],yt:"nnHUBMgdJac",civ:"https://civitai.com/models/2339823",hf:"https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow",models:"ltx-2-19b-distilled · gemma_3_12B",verified:true},
- {slug:"ltx2.3-ultimate",fam:"LTXV-2.3",name:"LTX-2.3 Ultimate",ver:"v3.0.0",cats:["video"],vram:"12 GB",tasks:["T2V","I2V","FFLF","ID"],yt:"im4wolfHvMk",civ:"https://civitai.com/models/2339823",hf:"https://huggingface.co/The-frizzy1/LTX23-Ultimate",models:"ltx-2.3-22b-dev · id + distill LoRA",verified:true},
- {slug:"ai-audio-maker",fam:"Audio",name:"AI Audio Maker",ver:"v1.0.0",cats:["audio"],vram:"—",tasks:["Audio","MMAudio"],yt:"",civ:"https://civitai.com/models/2539489",hf:"",models:"mmaudio_large_44k_v2 · synchformer",verified:true},
+ {slug:"wan-2.2-animate",fam:"Wan 2.2 Animate",name:"Wan 2.2 Animate",ver:"v1.2.0",cats:["video","4gb"],vram:"4 GB",tasks:["V2V","Looping"],yt:"rtyfdmL-wF4",civ:"https://civitai.com/models/2046477",hf:"https://huggingface.co/The-frizzy1/Wan22ANIMATE",models:"Wan2.2-Animate-14B · relight + lightx2v LoRA"},
+ {slug:"wan-2.2-gguf-lowvram",fam:"Wan 2.2",name:"Wan 2.2 GGUF Low-VRAM",ver:"v1.0.0",cats:["video","4gb"],vram:"4 GB",tasks:["T2V","I2V","5B"],yt:"C7ZttV320qk",civ:"https://civitai.com/models/1817858",hf:"https://huggingface.co/The-frizzy1/Wan22-T2V-I2V-LORA-4GB",models:"A14B high+low noise · TI2V-5B"},
+ {slug:"wan-2.1-gguf-lowvram",fam:"Wan 2.1",name:"Wan 2.1 GGUF Low-VRAM",ver:"v2.0.0",cats:["video","4gb"],vram:"4 GB",tasks:["T2V","I2V","VACE","FLF"],yt:"Xqjabf_eQ_U",civ:"https://civitai.com/models/1309674",hf:"https://huggingface.co/The-frizzy1/Wan21-GGUF-4GB-Workflow",models:"Wan2.1 1.3B/14B GGUF · 6 variants"},
+ {slug:"wan-2.1-flf2v",fam:"Wan 2.1",name:"Wan 2.1 FLF2V",ver:"v2.0.0",cats:["video","4gb"],vram:"4 GB",tasks:["First→Last"],yt:"",civ:"https://civitai.com/models/1624167",hf:"",models:"Wan2.1 FLF2V 14B GGUF"},
+ {slug:"wan-2.2-aio-rapid",fam:"Wan 2.2",name:"Wan 2.2 AIO Rapid",ver:"v1.0.0",cats:["video","4gb"],vram:"4–12 GB",tasks:["T2V","I2V","AIO"],yt:"RdsyWkvG1nE",civ:"https://civitai.com/models/2522688",hf:"",models:"wan2.2-rapid-mega-aio-v12 (single file)"},
+ {slug:"flux-kontext-gguf",fam:"Flux Kontext",name:"Flux Kontext GGUF",ver:"v2.2.0",cats:["image","4gb"],vram:"4 GB",tasks:["T2I","Edit"],yt:"4C0RJ01yRok",civ:"https://civitai.com/models/1311703",hf:"https://huggingface.co/The-frizzy1/Flux-Kontext-GGUF-4GB",models:"flux1-kontext-dev · Dev/Schnell"},
+ {slug:"flux2-dev-gguf",fam:"Flux.2 Dev",name:"Flux.2 Dev GGUF",ver:"v1.0.0",cats:["image"],vram:"6 GB",tasks:["T2I"],yt:"dcekWAbgDXg",civ:"https://civitai.com/models/2508110",hf:"",models:"flux2-dev-Q5_K_M · mistral text enc"},
+ {slug:"qwen-image-edit-2509",fam:"Qwen Image",name:"Qwen Image & Edit 2509",ver:"v1.0.0",cats:["image","4gb"],vram:"4 GB",tasks:["T2I","Edit"],yt:"NPni2ulov34",civ:"https://civitai.com/models/2229874",hf:"https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF",models:"Qwen_Image-Q8 · Lightning LoRA"},
+ {slug:"z-image-turbo-gguf",fam:"Z-Image Turbo",name:"Z-Image Turbo GGUF",ver:"v1.0.0",cats:["image","4gb"],vram:"4 GB",tasks:["T2I","Fast"],yt:"",civ:"https://civitai.com/models/2561639",hf:"",models:"z-image-turbo-q8_0 · qwen_3_4b enc"},
+ {slug:"hunyuan-video-lowvram",fam:"Hunyuan Video",name:"Hunyuan Video Low-VRAM",ver:"v1.1.1",cats:["video","4gb"],vram:"4 GB",tasks:["T2V","I2V"],yt:"",civ:"https://civitai.com/models/1312419",hf:"https://huggingface.co/The-frizzy1/Hunyuan-Video-Low-VRAM-4GB",models:"Fast Hunyuan GGUF (fixed in v1.1.1)"},
+ {slug:"ltx2-gguf",fam:"LTXV-2",name:"LTX-2 GGUF",ver:"v1.5.0",cats:["video","4gb"],vram:"4 GB",tasks:["T2V","I2V","Audio"],yt:"nnHUBMgdJac",civ:"https://civitai.com/models/2339823",hf:"https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow",models:"ltx-2-19b-distilled · gemma_3_12B"},
+ {slug:"ltx2.3-ultimate",fam:"LTXV-2.3",name:"LTX-2.3 Ultimate",ver:"v3.0.0",cats:["video"],vram:"12 GB",tasks:["T2V","I2V","FFLF","ID"],yt:"im4wolfHvMk",civ:"https://civitai.com/models/2339823",hf:"https://huggingface.co/The-frizzy1/LTX23-Ultimate",models:"ltx-2.3-22b-dev · id + distill LoRA"},
+ {slug:"ai-audio-maker",fam:"Audio · MMAudio",name:"AI Audio Maker",ver:"v1.0.0",cats:["audio"],vram:"low",tasks:["Audio","Sync"],yt:"",civ:"https://civitai.com/models/2539489",hf:"",models:"mmaudio_large_44k_v2 · synchformer"},
 ];
-const grid=document.getElementById('grid');
-function card(w){
+const grid=document.getElementById('grid'), empty=document.getElementById('empty'), countEl=document.getElementById('count');
+function card(w,i){
   const thumb = w.yt
-    ? `<a class="thumb" href="https://www.youtube.com/watch?v=${w.yt}" target="_blank">
-         <img loading="lazy" src="https://img.youtube.com/vi/${w.yt}/hqdefault.jpg" alt="${w.name} video">
-         <span class="play"><i></i></span><span class="vbadge">▶ VIDEO</span></a>`
-    : `<div class="thumb noimg"><span>${w.fam}</span></div>`;
-  const tags = [`<span class="t vram">${w.vram} VRAM</span>`]
-    .concat(w.tasks.map(t=>`<span class="t">${t}</span>`))
-    .concat(w.verified?[]:[`<span class="t unv">unverified</span>`]).join('');
-  const links = [
-    `<a class="docs" href="workflows/${w.slug}/README.md">Docs →</a>`,
-    w.civ?`<a href="${w.civ}" target="_blank">CivitAI</a>`:'',
-    w.hf?`<a href="${w.hf}" target="_blank">HF</a>`:'',
-    w.yt?`<a href="https://www.youtube.com/watch?v=${w.yt}" target="_blank">Video</a>`:''
+    ? `<a class="thumb" href="https://www.youtube.com/watch?v=${w.yt}" target="_blank" rel="noopener" aria-label="Watch ${w.name} video guide">
+         <img loading="lazy" width="480" height="270" src="https://img.youtube.com/vi/${w.yt}/hqdefault.jpg" alt="Video guide for ${w.name}">
+         <span class="play"><i></i>Watch guide</span></a>`
+    : `<div class="thumb noimg" aria-hidden="true"><b>${w.fam}</b></div>`;
+  const tags=[`<span class="t vram">${w.vram} VRAM</span>`].concat(w.tasks.map(t=>`<span class="t">${t}</span>`)).join('');
+  const links=[
+    `<a class="docs" href="workflows/${w.slug}/README.md">Docs &amp; downloads →</a>`,
+    w.civ?`<a href="${w.civ}" target="_blank" rel="noopener">CivitAI</a>`:'',
+    w.hf?`<a href="${w.hf}" target="_blank" rel="noopener">HF</a>`:''
   ].join('');
-  return `<article class="card" data-cats="${w.cats.join(' ')}" data-name="${w.name.toLowerCase()} ${w.fam.toLowerCase()}">
+  return `<article class="card" style="--d:${Math.min(i,11)*45}ms" data-cats="${w.cats.join(' ')}" data-name="${(w.name+' '+w.fam+' '+w.models).toLowerCase()}">
     ${thumb}
     <div class="body">
-      <div><div class="fam">${w.fam}</div><div class="name">${w.name} <span class="ver">${w.ver}</span></div></div>
+      <div><div class="fam">${w.fam}</div><h2 class="name">${w.name} <span class="ver">${w.ver}</span></h2></div>
       <div class="tags">${tags}</div>
-      <div class="models">Models: ${w.models}</div>
+      <div class="models"><b>Models:</b> ${w.models}</div>
       <div class="row">${links}</div>
     </div></article>`;
 }
 grid.innerHTML=W.map(card).join('');
 let filter='all',q='';
 function apply(){
+  let n=0;
   document.querySelectorAll('.card').forEach(c=>{
-    const okF = filter==='all' || c.dataset.cats.split(' ').includes(filter);
-    const okQ = !q || c.dataset.name.includes(q);
-    c.style.display = (okF&&okQ)?'':'none';
+    const okF=filter==='all'||c.dataset.cats.split(' ').includes(filter);
+    const okQ=!q||c.dataset.name.includes(q);
+    const show=okF&&okQ; c.style.display=show?'':'none'; if(show)n++;
   });
+  empty.style.display=n?'none':'block';
+  countEl.textContent=n===W.length?`${W.length} workflows`:`${n} of ${W.length}`;
 }
 document.getElementById('filters').addEventListener('click',e=>{
-  if(!e.target.dataset.f) return;
-  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
-  e.target.classList.add('on'); filter=e.target.dataset.f; apply();
+  const b=e.target.closest('.chip'); if(!b)return;
+  document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));
+  filter=b.dataset.f; apply();
 });
 document.getElementById('q').addEventListener('input',e=>{q=e.target.value.toLowerCase().trim();apply();});
+apply();
 </script>
 </body>
 </html>
