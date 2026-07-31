@@ -43,4 +43,4 @@ ComfyUI/models/
 See [changelog.md](changelog.md).
 
 ## Related workflows
-- [Flux Kontext GGUF](../flux-kontext-gguf) · [Z-Image Turbo](../z-image-turbo-gguf)
+- [Flux Kontext GGUF](../../flux/kontext) · [Z-Image Turbo](../../z-image/turbo)

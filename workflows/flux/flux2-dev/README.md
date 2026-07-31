@@ -28,4 +28,4 @@ Full table + links: **[downloads.md](downloads.md)**.
 See [changelog.md](changelog.md).
 
 ## Related workflows
-- [Flux Kontext GGUF](../flux-kontext-gguf)
+- [Flux Kontext GGUF](../kontext)

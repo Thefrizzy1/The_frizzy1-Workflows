@@ -19,8 +19,8 @@ Wan 2.2 Animate takes a **reference image** (the character) plus an **input/driv
 animates the character to match. This build wraps the 14B model in GGUF form and adds a **looping mechanism**
 so you can chain segments into arbitrarily long videos on low-VRAM hardware. It is **not** a text-to-video
 model — if you want to generate video from a prompt, use
-[Wan 2.2 GGUF Low-VRAM](../wan-2.2-gguf-lowvram) or [Wan 2.1](../wan-2.1-gguf-lowvram) instead
-(see [the Wan lineage note](../../docs/WAN-LINEAGE.md)).
+[Wan 2.2 GGUF Low-VRAM](../gguf-lowvram) or [Wan 2.1](../../wan2.1/gguf-lowvram) instead
+(see [the Wan lineage note](../../../docs/WAN-LINEAGE.md)).
 
 ## Capabilities
 - Reference-driven character animation (video → video).
@@ -93,6 +93,6 @@ See [changelog.md](changelog.md).
 - `source/` — the original unmodified files (`Wan2.2-Animate-GGUF.json`, `Wan2.2 Animate.json`).
 
 ## Related workflows
-- [Wan 2.2 GGUF Low-VRAM](../wan-2.2-gguf-lowvram) — text/image → video.
-- [Wan 2.1 GGUF Low-VRAM](../wan-2.1-gguf-lowvram) — lighter, older path.
-- [Wan lineage & compatibility](../../docs/WAN-LINEAGE.md).
+- [Wan 2.2 GGUF Low-VRAM](../gguf-lowvram) — text/image → video.
+- [Wan 2.1 GGUF Low-VRAM](../../wan2.1/gguf-lowvram) — lighter, older path.
+- [Wan lineage & compatibility](../../../docs/WAN-LINEAGE.md).

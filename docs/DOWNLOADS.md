@@ -14,7 +14,7 @@ Every model, LoRA, VAE, text encoder and helper referenced by any workflow in th
 
 ---
 
-## Wan 2.1 — [wan-2.1-gguf-lowvram](../workflows/wan-2.1-gguf-lowvram)
+## Wan 2.1 — [wan2.1/gguf-lowvram](../workflows/wan2.1/gguf-lowvram)
 
 | Role | In-workflow filename | Source | Verified? |
 |---|---|---|---|
@@ -31,7 +31,7 @@ Every model, LoRA, VAE, text encoder and helper referenced by any workflow in th
 | Upscale | `RealESRGAN_x4.pth` | RealESRGAN | JSON |
 | Depth (Fun) | `depth_anything_vitl14.pth` | Depth-Anything | JSON |
 
-## Wan 2.2 — [wan-2.2-gguf-lowvram](../workflows/wan-2.2-gguf-lowvram)
+## Wan 2.2 — [wan2.2/gguf-lowvram](../workflows/wan2.2/gguf-lowvram)
 
 | Role | In-workflow filename | Source | Verified? |
 |---|---|---|---|
@@ -45,7 +45,7 @@ Every model, LoRA, VAE, text encoder and helper referenced by any workflow in th
 | VAE (14B) | `wan_2.1_vae.safetensors` | Comfy-Org repackaged | JSON |
 | Text encoder | `t5xxl_um_fp8_e4m3fn_scaled.safetensors` | Comfy-Org repackaged | JSON |
 
-## Wan 2.2 Animate — [wan-2.2-animate](../workflows/wan-2.2-animate)
+## Wan 2.2 Animate — [wan2.2/animate](../workflows/wan2.2/animate)
 
 | Role | In-workflow filename | Source | Verified? |
 |---|---|---|---|
@@ -57,7 +57,7 @@ Every model, LoRA, VAE, text encoder and helper referenced by any workflow in th
 | VAE | `wan_2.1_vae.safetensors` / `Wan2.1_VAE.pth` | Comfy-Org repackaged | JSON |
 | Frame interp | `rife49.pth` | RIFE | JSON |
 
-## Flux Kontext — [flux-kontext-gguf](../workflows/flux-kontext-gguf)
+## Flux Kontext — [flux/kontext](../workflows/flux/kontext)
 
 | Role | In-workflow filename | Source | Verified? |
 |---|---|---|---|
@@ -68,7 +68,7 @@ Every model, LoRA, VAE, text encoder and helper referenced by any workflow in th
 | Style LoRAs | `FC Flux Perfect Busts` · `FLUX_Polyhedron_all_Kohya_ss-000001` · `FluxDFaeTasticDetails` | CivitAI (style LoRAs, optional) | JSON |
 | Upscale | `RealESRGAN_x4.pth` | RealESRGAN | JSON |
 
-## Hunyuan Video — [hunyuan-video-lowvram](../workflows/hunyuan-video-lowvram)
+## Hunyuan Video — [hunyuan/video](../workflows/hunyuan/video)
 
 | Role | In-workflow filename | Source | Verified? |
 |---|---|---|---|
@@ -78,7 +78,7 @@ Every model, LoRA, VAE, text encoder and helper referenced by any workflow in th
 | CLIP | `clip_l.safetensors` | comfyanonymous/flux_text_encoders | JSON |
 | Upscale | `4x-AnimeSharp.pth` | 4x-AnimeSharp | JSON |
 
-## Qwen Image & Edit 2509 — [qwen-image-edit-2509](../workflows/qwen-image-edit-2509)
+## Qwen Image & Edit 2509 — [qwen/image-edit-2509](../workflows/qwen/image-edit-2509)
 
 | Role | In-workflow filename | Source | Verified? |
 |---|---|---|---|
@@ -87,7 +87,7 @@ Every model, LoRA, VAE, text encoder and helper referenced by any workflow in th
 | Text encoder | `qwen_2.5_vl_7b_fp8_scaled.safetensors` | [Comfy-Org/Qwen-Image_ComfyUI](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI) | JSON |
 | VAE | `qwen_image_vae.safetensors` | Comfy-Org/Qwen-Image_ComfyUI | JSON |
 
-## LTX-2 — [ltx2-gguf](../workflows/ltx2-gguf)
+## LTX-2 — [ltx/ltx2](../workflows/ltx/ltx2)
 
 | Role | In-workflow filename | Source | Verified? |
 |---|---|---|---|
@@ -99,7 +99,7 @@ Every model, LoRA, VAE, text encoder and helper referenced by any workflow in th
 | Upscaler | `ltx-2-spatial-upscaler-x2-1.0.safetensors` | [Lightricks/LTX-2](https://huggingface.co/Lightricks/LTX-2) | JSON |
 | Distill LoRA | `ltx-2-19b-distilled-lora-384.safetensors` | Lightricks/LTX-2 | JSON |
 
-## LTX-2.3 Ultimate — [ltx2.3-ultimate](../workflows/ltx2.3-ultimate)
+## LTX-2.3 Ultimate — [ltx/ltx2.3-ultimate](../workflows/ltx/ltx2.3-ultimate)
 
 | Role | In-workflow filename | Source | Verified? |
 |---|---|---|---|
@@ -113,7 +113,7 @@ Every model, LoRA, VAE, text encoder and helper referenced by any workflow in th
 
 ---
 
-## Flux.2 Dev — [flux2-dev-gguf](../workflows/flux2-dev-gguf)
+## Flux.2 Dev — [flux/flux2-dev](../workflows/flux/flux2-dev)
 
 | Role | In-workflow filename | Verified? |
 |---|---|---|
@@ -121,7 +121,7 @@ Every model, LoRA, VAE, text encoder and helper referenced by any workflow in th
 | Text encoder | `mistral_3_small_flux2_fp4_mixed.safetensors` | JSON |
 | VAE | `flux2-vae.safetensors` | JSON |
 
-## Z-Image Turbo — [z-image-turbo-gguf](../workflows/z-image-turbo-gguf)
+## Z-Image Turbo — [z-image/turbo](../workflows/z-image/turbo)
 
 | Role | In-workflow filename | Verified? |
 |---|---|---|
@@ -129,7 +129,7 @@ Every model, LoRA, VAE, text encoder and helper referenced by any workflow in th
 | Text encoder | `qwen_3_4b.safetensors` | JSON |
 | VAE | `ae.safetensors` | JSON |
 
-## Wan 2.2 AIO Rapid — [wan-2.2-aio-rapid](../workflows/wan-2.2-aio-rapid)
+## Wan 2.2 AIO Rapid — [wan2.2/aio-rapid](../workflows/wan2.2/aio-rapid)
 
 | Role | In-workflow filename | Verified? |
 |---|---|---|
@@ -137,7 +137,7 @@ Every model, LoRA, VAE, text encoder and helper referenced by any workflow in th
 | Text encoder | `umt5_xxl_fp8_e4m3fn_scaled.safetensors` | JSON |
 | VAE | `wan_2.1_vae.safetensors` | JSON |
 
-## AI Audio Maker — [ai-audio-maker](../workflows/ai-audio-maker)
+## AI Audio Maker — [audio/ai-audio-maker](../workflows/audio/ai-audio-maker)
 
 | Role | In-workflow filename | Verified? |
 |---|---|---|

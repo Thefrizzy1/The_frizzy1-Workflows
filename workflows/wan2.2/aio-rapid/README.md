@@ -12,7 +12,7 @@
 | **License** | Apache-2.0 |
 
 ## Overview
-Unlike the standard [Wan 2.2 pack](../wan-2.2-gguf-lowvram) — which loads separate high-noise and low-noise
+Unlike the standard [Wan 2.2 pack](../gguf-lowvram) — which loads separate high-noise and low-noise
 experts — this uses a **single merged "rapid mega AIO" GGUF** for both T2V and I2V. Fewer downloads, faster
 setup, at some quality/flexibility cost. Models verified from the workflow JSON.
 
@@ -23,4 +23,4 @@ Full verified table + links: **[downloads.md](downloads.md)**.
 See [changelog.md](changelog.md).
 
 ## Related workflows
-- [Wan 2.2 GGUF Low-VRAM](../wan-2.2-gguf-lowvram) (dual-expert) · [Wan lineage note](../../docs/WAN-LINEAGE.md)
+- [Wan 2.2 GGUF Low-VRAM](../gguf-lowvram) (dual-expert) · [Wan lineage note](../../../docs/WAN-LINEAGE.md)

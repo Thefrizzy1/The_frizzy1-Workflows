@@ -27,4 +27,4 @@ Full table + links: **[downloads.md](downloads.md)**.
 See [changelog.md](changelog.md).
 
 ## Related workflows
-- [Qwen Image & Edit 2509](../qwen-image-edit-2509) · [Flux Kontext GGUF](../flux-kontext-gguf)
+- [Qwen Image & Edit 2509](../../qwen/image-edit-2509) · [Flux Kontext GGUF](../../flux/kontext)

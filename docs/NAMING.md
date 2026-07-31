@@ -30,9 +30,9 @@ Rules:
 Lower-case kebab-case, no version number in the folder name (the folder always holds the latest; history lives in `changelog.md`):
 
 ```
-workflows/wan-2.2-animate/
-workflows/wan-2.1-gguf-lowvram/
-workflows/flux-kontext-gguf/
+workflows/wan2.2/animate/
+workflows/wan2.1/gguf-lowvram/
+workflows/flux/kontext/
 ```
 
 ## 3. Workflow file name inside a folder

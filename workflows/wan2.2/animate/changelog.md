@@ -1,6 +1,6 @@
 # Changelog — Wan 2.2 Animate
 
-Versions follow the repository [naming standard](../../docs/NAMING.md). CivitAI labels in parentheses.
+Versions follow the repository [naming standard](../../../docs/NAMING.md). CivitAI labels in parentheses.
 
 ## v1.2.0 (CivitAI v1.2)
 - Added looping mechanism for unlimited video length.

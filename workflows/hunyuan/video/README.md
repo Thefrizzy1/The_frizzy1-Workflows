@@ -22,14 +22,14 @@
 ## ⚠️ v1.1.1 fix
 The originally shipped workflow had its diffusion loader pointing at `flux1-dev-Q5_K_S.gguf` (a leftover from
 another graph). **v1.1.1 corrects it** to `fast-hunyuan-video-t2v-720p-Q5_K_M.gguf`. The untouched original is
-kept in [`source/hunyuan.json`](source/). See [docs/AUDIT.md](../../docs/AUDIT.md).
+kept in [`source/hunyuan.json`](source/). See [docs/AUDIT.md](../../../docs/AUDIT.md).
 
 ## Notes
 - I2V encodes the image into latent space for *style* — it does not animate the image directly.
 - T2V works well on low VRAM — check quantisation versions.
 - Low on VRAM? Replace the sampler with **Tiled KSampler**.
 - GGUF errors are usually fixed by updating nodes.
-- **Tip from the creator:** Wan 2.1 performs better on low VRAM → [wan-2.1-gguf-lowvram](../wan-2.1-gguf-lowvram).
+- **Tip from the creator:** Wan 2.1 performs better on low VRAM → [wan2.1/gguf-lowvram](../../wan2.1/gguf-lowvram).
 
 ## Required models
 Full verified table + links: **[downloads.md](downloads.md)**.
@@ -43,4 +43,4 @@ Full verified table + links: **[downloads.md](downloads.md)**.
 See [changelog.md](changelog.md).
 
 ## Related workflows
-- [Wan 2.1 GGUF Low-VRAM](../wan-2.1-gguf-lowvram) · [LTX-2 GGUF](../ltx2-gguf)
+- [Wan 2.1 GGUF Low-VRAM](../../wan2.1/gguf-lowvram) · [LTX-2 GGUF](../../ltx/ltx2)

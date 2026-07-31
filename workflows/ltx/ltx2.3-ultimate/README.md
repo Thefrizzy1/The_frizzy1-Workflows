@@ -36,4 +36,4 @@ Full verified table + links: **[downloads.md](downloads.md)**.
 See [changelog.md](changelog.md).
 
 ## Related workflows
-- [LTX-2 GGUF](../ltx2-gguf) — lighter 19B generation.
+- [LTX-2 GGUF](../ltx2) — lighter 19B generation.

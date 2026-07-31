@@ -16,7 +16,7 @@ interchangeable between them. This page explains what belongs to what, verified 
 | VAE | `wan_2.1_vae` | `Wan2.2_VAE` (5B) **or** `wan_2.1_vae` (14B) | `wan_2.1_vae` / `Wan2.1_VAE.pth` |
 | Text encoder | `t5xxl_um_fp8_e4m3fn_scaled` (UMT5) | same UMT5 | `umt5_xxl_fp8_e4m3fn_scaled` |
 | Status | **Older** — lighter, still great on 4 GB | Current mainline video model | Current, specialised (animation only) |
-| Workflow | [wan-2.1-gguf-lowvram](../workflows/wan-2.1-gguf-lowvram) | [wan-2.2-gguf-lowvram](../workflows/wan-2.2-gguf-lowvram) | [wan-2.2-animate](../workflows/wan-2.2-animate) |
+| Workflow | [wan2.1/gguf-lowvram](../workflows/wan2.1/gguf-lowvram) | [wan2.2/gguf-lowvram](../workflows/wan2.2/gguf-lowvram) | [wan2.2/animate](../workflows/wan2.2/animate) |
 
 ---
 

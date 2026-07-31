@@ -16,7 +16,7 @@
 ## Overview
 The lightest video path in the collection. Uses GGUF-quantised Wan 2.1 models plus Kijai's WanVideoWrapper.
 On the smallest GPUs the 1.3B models are faster and lighter than any Wan 2.2 path — see
-[the Wan lineage note](../../docs/WAN-LINEAGE.md) before mixing files between 2.1 and 2.2.
+[the Wan lineage note](../../../docs/WAN-LINEAGE.md) before mixing files between 2.1 and 2.2.
 
 ## Included workflows
 | File | Task |
@@ -62,4 +62,4 @@ Triton/Sage guide: https://www.patreon.com/posts/easy-guide-sage-124253103
 See [changelog.md](changelog.md).
 
 ## Related workflows
-- [Wan 2.2 GGUF Low-VRAM](../wan-2.2-gguf-lowvram) · [Wan 2.2 Animate](../wan-2.2-animate) · [Wan 2.1 FLF2V](../wan-2.1-flf2v)
+- [Wan 2.2 GGUF Low-VRAM](../../wan2.2/gguf-lowvram) · [Wan 2.2 Animate](../../wan2.2/animate) · [Wan 2.1 FLF2V](../flf2v)

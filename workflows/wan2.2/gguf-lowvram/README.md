@@ -16,7 +16,7 @@
 ## Overview
 Wan 2.2 uses a **Mixture-of-Experts** design — a *high-noise* and a *low-noise* expert — for better motion and
 cinematics than 2.1. **The 14B paths load two GGUFs** (high + low). The 5B TI2V path is a single file and runs
-on ~8 GB with offloading. Read [the Wan lineage note](../../docs/WAN-LINEAGE.md) — this is the #1 source of load errors.
+on ~8 GB with offloading. Read [the Wan lineage note](../../../docs/WAN-LINEAGE.md) — this is the #1 source of load errors.
 
 ## Included workflows
 | File | Task |
@@ -47,4 +47,4 @@ Full verified table + links: **[downloads.md](downloads.md)**.
 See [changelog.md](changelog.md).
 
 ## Related workflows
-- [Wan 2.1 GGUF Low-VRAM](../wan-2.1-gguf-lowvram) · [Wan 2.2 Animate](../wan-2.2-animate) · [Wan 2.2 AIO Rapid](../wan-2.2-aio-rapid)
+- [Wan 2.1 GGUF Low-VRAM](../../wan2.1/gguf-lowvram) · [Wan 2.2 Animate](../animate) · [Wan 2.2 AIO Rapid](../aio-rapid)

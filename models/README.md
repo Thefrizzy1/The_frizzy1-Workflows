@@ -7,17 +7,17 @@ its recommended VRAM/quant, and where to download it. Filenames and downloads ar
 
 | Family | What it is | Tasks | Workflow(s) | Min VRAM |
 |---|---|---|---|---|
-| **Wan 2.1** | First-gen Wan video (1.3B/14B) | T2V·I2V·VACE·FLF·Fun | [wan-2.1-gguf-lowvram](../workflows/wan-2.1-gguf-lowvram) · [wan-2.1-flf2v](../workflows/wan-2.1-flf2v) | 4 GB |
-| **Wan 2.2** | MoE dual-expert video (A14B) + TI2V-5B | T2V·I2V | [wan-2.2-gguf-lowvram](../workflows/wan-2.2-gguf-lowvram) · [wan-2.2-aio-rapid](../workflows/wan-2.2-aio-rapid) | 4 GB |
-| **Wan 2.2 Animate** | Reference-driven character animation | V2V | [wan-2.2-animate](../workflows/wan-2.2-animate) | 4 GB |
-| **Flux (Dev/Schnell/Kontext)** | High-quality image gen + editing | T2I·edit | [flux-kontext-gguf](../workflows/flux-kontext-gguf) | 4 GB |
-| **Flux.2 Dev** | Newest Flux image model (Mistral encoder) | T2I | [flux2-dev-gguf](../workflows/flux2-dev-gguf) | 6 GB |
-| **Qwen Image** | Image gen + editing (2509) | T2I·edit | [qwen-image-edit-2509](../workflows/qwen-image-edit-2509) | 4 GB |
-| **Z-Image Turbo** | Fast few-step image gen (Qwen-3 encoder) | T2I | [z-image-turbo-gguf](../workflows/z-image-turbo-gguf) | 4 GB |
-| **Hunyuan Video** | Tencent video model | T2V·I2V | [hunyuan-video-lowvram](../workflows/hunyuan-video-lowvram) | 4 GB |
-| **LTXV-2 (19B)** | Fast audio-aware video | T2V·I2V·audio | [ltx2-gguf](../workflows/ltx2-gguf) | 4 GB |
-| **LTXV-2.3 (22B)** | Newest LTX, FFLF + ID LoRA | T2V·I2V·FFLF·audio | [ltx2.3-ultimate](../workflows/ltx2.3-ultimate) | 12 GB |
-| **MMAudio** | Audio generation / video-sync | audio | [ai-audio-maker](../workflows/ai-audio-maker) | low |
+| **Wan 2.1** | First-gen Wan video (1.3B/14B) | T2V·I2V·VACE·FLF·Fun | [wan2.1/gguf-lowvram](../workflows/wan2.1/gguf-lowvram) · [wan2.1/flf2v](../workflows/wan2.1/flf2v) | 4 GB |
+| **Wan 2.2** | MoE dual-expert video (A14B) + TI2V-5B | T2V·I2V | [wan2.2/gguf-lowvram](../workflows/wan2.2/gguf-lowvram) · [wan2.2/aio-rapid](../workflows/wan2.2/aio-rapid) | 4 GB |
+| **Wan 2.2 Animate** | Reference-driven character animation | V2V | [wan2.2/animate](../workflows/wan2.2/animate) | 4 GB |
+| **Flux (Dev/Schnell/Kontext)** | High-quality image gen + editing | T2I·edit | [flux/kontext](../workflows/flux/kontext) | 4 GB |
+| **Flux.2 Dev** | Newest Flux image model (Mistral encoder) | T2I | [flux/flux2-dev](../workflows/flux/flux2-dev) | 6 GB |
+| **Qwen Image** | Image gen + editing (2509) | T2I·edit | [qwen/image-edit-2509](../workflows/qwen/image-edit-2509) | 4 GB |
+| **Z-Image Turbo** | Fast few-step image gen (Qwen-3 encoder) | T2I | [z-image/turbo](../workflows/z-image/turbo) | 4 GB |
+| **Hunyuan Video** | Tencent video model | T2V·I2V | [hunyuan/video](../workflows/hunyuan/video) | 4 GB |
+| **LTXV-2 (19B)** | Fast audio-aware video | T2V·I2V·audio | [ltx/ltx2](../workflows/ltx/ltx2) | 4 GB |
+| **LTXV-2.3 (22B)** | Newest LTX, FFLF + ID LoRA | T2V·I2V·FFLF·audio | [ltx/ltx2.3-ultimate](../workflows/ltx/ltx2.3-ultimate) | 12 GB |
+| **MMAudio** | Audio generation / video-sync | audio | [audio/ai-audio-maker](../workflows/audio/ai-audio-maker) | low |
 
 ## Shared support models
 

@@ -44,4 +44,4 @@ Full verified table + links: **[downloads.md](downloads.md)**.
 See [changelog.md](changelog.md).
 
 ## Related workflows
-- [Flux.2 Dev GGUF](../flux2-dev-gguf) · [Qwen Image & Edit 2509](../qwen-image-edit-2509)
+- [Flux.2 Dev GGUF](../flux2-dev) · [Qwen Image & Edit 2509](../../qwen/image-edit-2509)
