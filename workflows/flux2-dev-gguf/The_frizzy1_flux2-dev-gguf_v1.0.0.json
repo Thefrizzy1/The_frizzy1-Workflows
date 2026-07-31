@@ -1,0 +1,949 @@
+{
+  "id": "4044c5bf-f1d8-4b4a-a805-cd03f0914ea7",
+  "revision": 0,
+  "last_node_id": 128,
+  "last_link_id": 214,
+  "nodes": [
+    {
+      "id": 20,
+      "type": "Note",
+      "pos": [
+        -2803.0057134265385,
+        -717.6267547372414
+      ],
+      "size": [
+        885.1822916666667,
+        509.94791666666674
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Models and .whl files",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Required models for Flux.2 D GGUF Workflow:\n\nFlux.2 Dev GGUF Model: https://huggingface.co/city96/FLUX.2-dev-gguf/tree/main\nText Encoder: https://huggingface.co/Comfy-Org/flux2-dev/tree/main/split_files/text_encoders\nVAE: https://huggingface.co/Comfy-Org/flux2-dev/tree/main/split_files/vae\n\nIf you need FP8 FLUX.2 D Version - https://huggingface.co/Comfy-Org/flux2-dev/tree/main/split_files/diffusion_models\nIf you need Text Encoder in GGUF - https://huggingface.co/unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF/tree/main\nFile save location\n\nComfyUI/\n├───📂 models/\n│   ├───📂 diffusion_models/\n│   │   ├─── flux2-dev-Q8_0.gguf\n│   ├───📂 loras/\n│   │   ├─── Any loras if you want (only for Flux.2 D, not Flux.1 D)\n│   ├───📂 text_encoders/\n│   │   └─── mistral_3_small_flux2_bf16.safetensors (or fp8 if you have low vram)\n│   └───📂 vae/\n│       └── flux2-vae.safetensors\n\n\nSageAttention.whl - https://github.com/woct0rdho/SageAttention/releases/tag/v2.2.0-windows. To install sageattention, u can .whl change to .zip and:\n1. If u don't have sageattention, just put folders from .zip to ComfyUI\\python_embeded\\Lib\\site-packages\n2. If u have older version sageattention, delete folders with sageattention in ComfyUI\\python_embeded\\Lib\\site-packages and put new folders from .zip\n\nTo install Triton (if u don't have Triton) go to ComfyUI\\python_embeded and install by command [pip install triton] via cmd\n\nif you got error BaseLoaderKJ._patch_modules.<locals>.attention_sage() got an unexpected keyword argument 'transformer_options', use run_nvidia_gpu - sageattention.bat instead run_nvidia_gpu.bat in ComfyUI from .zip archive\n\n\n\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 21,
+      "type": "Note",
+      "pos": [
+        -2741.2434365071535,
+        -143.7428651057584
+      ],
+      "size": [
+        790.78125,
+        533.125
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Recomendation",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Adjust MultiGPU virtual vram from 8 to 32 gb, i recomend having 32 gb RAM at least\n\nRecomend Resolutions:\n\n2.0 MP\n\n1:1 exact 1448 x 1448, rounded 1408 x 1408\n\n3:2 exact 1773 x 1182, rounded 1728 x 1152\n\n4:3 exact 1672 x 1254, rounded 1664 x 1216\n\n16:9 exact 1936 x 1089, rounded 1920 x 1088\n\n21:9 exact 2212 x 948, rounded 2176 x 960\n\n----------------------------\n\n1.0 MP \n\nI ended up with familiar numbers I've used with SDXL, which gives me confidence in the calculations.\n\n1:1 exact 1024 x 1024\n\n3:2 exact 1254 x 836, rounded 1216 x 832\n\n4:3 exact 1182 x 887, rounded 1152 x 896\n\n16:9 exact 1365 x 768, rounded 1344 x 768\n\n21:9 exact 1564 x 670, rounded 1536 x 640\n\n----------------------\n\n4.0 MP\n\n1:1 exact 2000 x 2000, rounded 2048 x 2048\n\n3:2 exact 2449 x 1663, rounded 2432 x 1620\n\n4:3 exact 2309 x 1732, rounded 2304 x 1728\n\n16:9 exact 2670 x 1502, rounded 2688 x 1512\n\n21:9 exact 3501 x 1308, rounded 3040 x 1304\n\nset from 20 to 30+ steps to generate image (30+ steps gives a better image result)\n\nAlso u can generate image UP TO 4K resolution (3840x2160)\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 3,
+      "type": "VAELoader",
+      "pos": [
+        -900.5377435600823,
+        -79.64325932378827
+      ],
+      "size": [
+        270,
+        82.99479166666667
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "vae_name": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "flux2-vae.safetensors"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 7,
+      "type": "KSamplerAdvanced",
+      "pos": [
+        103.4167607492582,
+        -137.52210856400066
+      ],
+      "size": [
+        325.15625,
+        635.8333333333334
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 54
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 214
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 213
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            20
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerAdvanced",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "add_noise": true,
+            "noise_seed": true,
+            "steps": true,
+            "cfg": true,
+            "sampler_name": true,
+            "scheduler": true,
+            "start_at_step": true,
+            "end_at_step": true,
+            "return_with_leftover_noise": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "enable",
+        296397111775094,
+        "randomize",
+        30,
+        1,
+        "uni_pc",
+        "normal",
+        0,
+        10000,
+        "disable"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 12,
+      "type": "SaveImage",
+      "pos": [
+        832.1923925919264,
+        -560.4726988026417
+      ],
+      "size": [
+        707.8201384872617,
+        1315.0033895333372
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 19
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "Node name for S&R": "SaveImage",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "filename_prefix": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "EmptyFlux2LatentImage",
+      "pos": [
+        -256.6551319962523,
+        417.95205919902844
+      ],
+      "size": [
+        270,
+        130.98958333333334
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyFlux2LatentImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "width": true,
+            "height": true,
+            "batch_size": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        1088,
+        1920,
+        1
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 10,
+      "type": "VAEDecode",
+      "pos": [
+        456.82550220474286,
+        -136.3976398331576
+      ],
+      "size": [
+        180.50794975316376,
+        50.887618912051806
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 20
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 44,
+      "type": "bf8b3da1-f833-46b5-bacd-0e4e85110e24",
+      "pos": [
+        105.97543503529799,
+        -278.52973303462926
+      ],
+      "size": [
+        213.193359375,
+        66
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 50
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 51
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            214
+          ]
+        },
+        {
+          "name": "CONDITIONING_1",
+          "type": "CONDITIONING",
+          "links": [
+            213
+          ]
+        },
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            54
+          ]
+        }
+      ],
+      "properties": {
+        "proxyWidgets": []
+      },
+      "widgets_values": [],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 42,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -457.66079501081936,
+        -273.0072656478321
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 48
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            50
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "Full body studio portrait, deep crimson red gel light flooding entire frame, female model in black structured bodysuit, floor work pose, weight surrendered to ground, limbs extended, red light wraps skin, no white areas in image, atmosphere visceral and dangerous, dark fashion editorial, Prime Photo studio Hamburg aesthetic, sensual withholding"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 41,
+      "type": "GGUFLoaderKJ",
+      "pos": [
+        -908.4330034753359,
+        -327.2189548939242
+      ],
+      "size": [
+        312.095703125,
+        202
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            51
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GGUFLoaderKJ"
+      },
+      "widgets_values": [
+        "flux2-dev-Q5_K_M.gguf",
+        "none",
+        "default",
+        "default",
+        false,
+        false,
+        "none"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 43,
+      "type": "CLIPLoader",
+      "pos": [
+        -898.5372959526667,
+        53.43723585389382
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            48
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "mistral_3_small_flux2_fp4_mixed.safetensors",
+        "flux2",
+        "default"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    }
+  ],
+  "links": [
+    [
+      13,
+      3,
+      0,
+      10,
+      1,
+      "VAE"
+    ],
+    [
+      19,
+      10,
+      0,
+      12,
+      0,
+      "IMAGE"
+    ],
+    [
+      20,
+      7,
+      0,
+      10,
+      0,
+      "LATENT"
+    ],
+    [
+      21,
+      13,
+      0,
+      7,
+      3,
+      "LATENT"
+    ],
+    [
+      48,
+      43,
+      0,
+      42,
+      0,
+      "CLIP"
+    ],
+    [
+      50,
+      42,
+      0,
+      44,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      51,
+      41,
+      0,
+      44,
+      1,
+      "MODEL"
+    ],
+    [
+      54,
+      44,
+      2,
+      7,
+      0,
+      "MODEL"
+    ],
+    [
+      213,
+      44,
+      1,
+      7,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      214,
+      44,
+      0,
+      7,
+      1,
+      "CONDITIONING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Step1 - Load models",
+      "bounding": [
+        -943.7768920346942,
+        -404.8538396398642,
+        394.5133819382121,
+        698.5616018957888
+      ],
+      "color": "#88A",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Step2 - Image Size",
+      "bounding": [
+        -286.6933472898585,
+        310.5847595778466,
+        333.88120590786536,
+        271.182003337664
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "Step 3 - Prompt",
+      "bounding": [
+        -536.4126838851898,
+        -404.85381543470487,
+        586.4375727049924,
+        700.4732333458763
+      ],
+      "color": "#8A8",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "Sampling Stage",
+      "bounding": [
+        60.25920846753869,
+        -404.1726698512875,
+        685.6904334344845,
+        982.1773250747342
+      ],
+      "color": "#b58b2a",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "bf8b3da1-f833-46b5-bacd-0e4e85110e24",
+        "version": 1,
+        "state": {
+          "lastGroupId": 5,
+          "lastNodeId": 128,
+          "lastLinkId": 214,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Conditioning",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            -238.32408375406695,
+            -180.65897550075425,
+            120,
+            80
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            496.75339416073734,
+            -190.65897550075425,
+            138.326171875,
+            100
+          ]
+        },
+        "inputs": [
+          {
+            "id": "145db9db-8c67-479d-a740-5fbfb99c9de6",
+            "name": "conditioning",
+            "type": "CONDITIONING",
+            "linkIds": [
+              49
+            ],
+            "localized_name": "conditioning",
+            "pos": [
+              -138.32408375406695,
+              -160.65897550075425
+            ]
+          },
+          {
+            "id": "186c2ebd-d013-4c1e-a846-8128cae6e352",
+            "name": "model",
+            "type": "MODEL",
+            "linkIds": [
+              47
+            ],
+            "localized_name": "model",
+            "pos": [
+              -138.32408375406695,
+              -140.65897550075425
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "d8979bed-a321-47b6-9233-b5b2d895802f",
+            "name": "CONDITIONING",
+            "type": "CONDITIONING",
+            "linkIds": [
+              4
+            ],
+            "localized_name": "CONDITIONING",
+            "pos": [
+              516.7533941607373,
+              -170.65897550075425
+            ]
+          },
+          {
+            "id": "4e472ff7-4bf7-4f73-aa97-3b2a887be73f",
+            "name": "CONDITIONING_1",
+            "type": "CONDITIONING",
+            "linkIds": [
+              32
+            ],
+            "localized_name": "CONDITIONING_1",
+            "pos": [
+              516.7533941607373,
+              -150.65897550075425
+            ]
+          },
+          {
+            "id": "e7089635-d6cf-42e6-9d2f-d1b5954ca5c1",
+            "name": "MODEL",
+            "type": "MODEL",
+            "linkIds": [
+              12
+            ],
+            "localized_name": "MODEL",
+            "pos": [
+              516.7533941607373,
+              -130.65897550075425
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 5,
+            "type": "FluxGuidance",
+            "pos": [
+              -58.32408375406695,
+              20.84309743589402
+            ],
+            "size": [
+              270,
+              82.99479166666667
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "conditioning",
+                "name": "conditioning",
+                "type": "CONDITIONING",
+                "link": 49
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CONDITIONING",
+                "name": "CONDITIONING",
+                "type": "CONDITIONING",
+                "links": [
+                  4,
+                  43
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "FluxGuidance",
+              "cnr_id": "comfy-core",
+              "ver": "0.3.75",
+              "ue_properties": {
+                "widget_ue_connectable": {
+                  "guidance": true
+                },
+                "version": "7.5.2",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": [
+              4
+            ]
+          },
+          {
+            "id": 31,
+            "type": "ConditioningZeroOut",
+            "pos": [
+              232.6186285357373,
+              -171.3118970477591
+            ],
+            "size": [
+              204.134765625,
+              26
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "conditioning",
+                "name": "conditioning",
+                "type": "CONDITIONING",
+                "link": 43
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CONDITIONING",
+                "name": "CONDITIONING",
+                "type": "CONDITIONING",
+                "links": [
+                  32
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ConditioningZeroOut",
+              "cnr_id": "comfy-core",
+              "ver": "0.6.0",
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "input_ue_unconnectable": {},
+                "version": "7.5.2"
+              }
+            },
+            "widgets_values": []
+          },
+          {
+            "id": 9,
+            "type": "PathchSageAttentionKJ",
+            "pos": [
+              75.93201981099119,
+              -355.15584010406917
+            ],
+            "size": [
+              270,
+              106.97916666666669
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 47
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  12
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "PathchSageAttentionKJ",
+              "cnr_id": "comfyui-kjnodes",
+              "ver": "4dfb85dcc52e4315c33170d97bb987baa46d128b",
+              "ue_properties": {
+                "widget_ue_connectable": {
+                  "sage_attention": true,
+                  "allow_compile": true
+                },
+                "version": "7.5.2",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": [
+              "disabled",
+              false
+            ]
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 43,
+            "origin_id": 5,
+            "origin_slot": 0,
+            "target_id": 31,
+            "target_slot": 0,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 49,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 5,
+            "target_slot": 0,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 47,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 9,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 4,
+            "origin_id": 5,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 32,
+            "origin_id": 31,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 1,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 12,
+            "origin_id": 9,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 2,
+            "type": "MODEL"
+          }
+        ],
+        "extra": {}
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "workflowRendererVersion": "LG",
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "ds": {
+      "scale": 0.5209868481924542,
+      "offset": [
+        933.9221465635576,
+        770.7621249566997
+      ]
+    },
+    "frontendVersion": "1.41.21",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

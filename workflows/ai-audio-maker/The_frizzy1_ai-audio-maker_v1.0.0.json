@@ -1,0 +1,541 @@
+{
+  "id": "d8ce3e4a-8b0e-48f8-849a-4bb63237923f",
+  "revision": 0,
+  "last_node_id": 504,
+  "last_link_id": 1078,
+  "nodes": [
+    {
+      "id": 502,
+      "type": "GetVideoComponents",
+      "pos": [
+        343.238622652859,
+        45.89585500348741
+      ],
+      "size": [
+        193.530859375,
+        66
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 1073
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            1074,
+            1075
+          ]
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "links": [
+            1076
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GetVideoComponents"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 503,
+      "type": "CreateVideo",
+      "pos": [
+        1307.8348150734957,
+        -142.57931805195176
+      ],
+      "size": [
+        270,
+        78
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1075
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 1077
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "widget": {
+            "name": "fps"
+          },
+          "link": 1076
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            1078
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateVideo"
+      },
+      "widgets_values": [
+        30
+      ]
+    },
+    {
+      "id": 504,
+      "type": "SaveVideo",
+      "pos": [
+        1674.5492121641328,
+        -166.9110789963542
+      ],
+      "size": [
+        270,
+        251
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 1078
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "video/ComfyUI",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "id": 501,
+      "type": "LoadVideo",
+      "pos": [
+        -5.402580103149309,
+        52.424716478319056
+      ],
+      "size": [
+        282.798828125,
+        234.25266927083334
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            1073
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadVideo"
+      },
+      "widgets_values": [
+        "Wan2.2_I2V_00010_.mp4",
+        "image"
+      ]
+    },
+    {
+      "id": 500,
+      "type": "9c211236-0538-4e8d-a969-ea42af6f0327",
+      "pos": [
+        667.8834912515958,
+        -92.87322838967663
+      ],
+      "size": [
+        473.4242930755099,
+        456.9763632220595
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1074
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            1077
+          ]
+        }
+      ],
+      "properties": {
+        "proxyWidgets": [
+          [
+            "448",
+            "prompt"
+          ],
+          [
+            "448",
+            "negative_prompt"
+          ],
+          [
+            "448",
+            "duration"
+          ],
+          [
+            "451",
+            "mmaudio_model"
+          ],
+          [
+            "450",
+            "vae_model"
+          ],
+          [
+            "450",
+            "clip_model"
+          ]
+        ]
+      },
+      "widgets_values": []
+    }
+  ],
+  "links": [
+    [
+      1073,
+      501,
+      0,
+      502,
+      0,
+      "VIDEO"
+    ],
+    [
+      1074,
+      502,
+      0,
+      500,
+      0,
+      "IMAGE"
+    ],
+    [
+      1075,
+      502,
+      0,
+      503,
+      0,
+      "IMAGE"
+    ],
+    [
+      1076,
+      502,
+      2,
+      503,
+      2,
+      "FLOAT"
+    ],
+    [
+      1077,
+      500,
+      0,
+      503,
+      1,
+      "AUDIO"
+    ],
+    [
+      1078,
+      503,
+      0,
+      504,
+      0,
+      "VIDEO"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "9c211236-0538-4e8d-a969-ea42af6f0327",
+        "version": 1,
+        "state": {
+          "lastGroupId": 6,
+          "lastNodeId": 504,
+          "lastLinkId": 1078,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Audio (optional)",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            467.1715358627323,
+            1531.6939776127624,
+            120,
+            60
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            2739.828555514975,
+            1531.6939776127624,
+            120,
+            60
+          ]
+        },
+        "inputs": [
+          {
+            "id": "40239410-00a8-4912-9589-0a99ebb7fb20",
+            "name": "images",
+            "type": "IMAGE",
+            "linkIds": [
+              1063
+            ],
+            "localized_name": "images",
+            "shape": 7,
+            "pos": [
+              567.1715358627323,
+              1551.6939776127624
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "394e2c5f-1b0d-41ad-bafe-e0024470c105",
+            "name": "audio",
+            "type": "AUDIO",
+            "linkIds": [
+              953
+            ],
+            "localized_name": "audio",
+            "pos": [
+              2759.828555514975,
+              1551.6939776127624
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 448,
+            "type": "MMAudioSampler",
+            "pos": [
+              1937.3985555149752,
+              825.4869498256517
+            ],
+            "size": [
+              742.4299999999994,
+              628.3000000000002
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "mmaudio_model",
+                "name": "mmaudio_model",
+                "type": "MMAUDIO_MODEL",
+                "link": 949
+              },
+              {
+                "localized_name": "feature_utils",
+                "name": "feature_utils",
+                "type": "MMAUDIO_FEATUREUTILS",
+                "link": 950
+              },
+              {
+                "localized_name": "images",
+                "name": "images",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 1063
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "audio",
+                "name": "audio",
+                "type": "AUDIO",
+                "links": [
+                  953
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "MMAudioSampler"
+            },
+            "widgets_values": [
+              8,
+              25,
+              4.5,
+              413475454084225,
+              "randomize",
+              "locked camera shot through airplane window glass, model seated motionless on aircraft wing at cruising altitude, thirty thousand feet, dense cloud layer far below drifting slowly, golden hour light shifting almost imperceptibly across model's cheekbone and coat shoulder, wing edge catching light as aircraft banks one or two degrees very slowly, condensation on window glass catches light, model completely still, expression neutral and distant, hair moves a single strand in invisible airstream, clouds below drift at speed, god rays through upper atmosphere, cold blue altitude colour temperature, fashion editorial cinematography, Helmut Newton, wax sculpture stillness on the figure, all motion is environment not subject, film grain, cinematic",
+              "",
+              false,
+              true
+            ]
+          },
+          {
+            "id": 451,
+            "type": "MMAudioModelLoader",
+            "pos": [
+              736.8736821289174,
+              1939.3942079926117
+            ],
+            "size": [
+              508.70000000000005,
+              86.40000000000009
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "mmaudio_model",
+                "name": "mmaudio_model",
+                "type": "MMAUDIO_MODEL",
+                "links": [
+                  949
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "MMAudioModelLoader"
+            },
+            "widgets_values": [
+              "mmaudio_large_44k_v2_fp16.safetensors",
+              "fp16"
+            ]
+          },
+          {
+            "id": 450,
+            "type": "MMAudioFeatureUtilsLoader",
+            "pos": [
+              647.1715358627323,
+              2082.1654682097906
+            ],
+            "size": [
+              605.6585259555786,
+              245.7355371900826
+            ],
+            "flags": {
+              "collapsed": false
+            },
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "bigvgan_vocoder_model",
+                "name": "bigvgan_vocoder_model",
+                "shape": 7,
+                "type": "VOCODER_MODEL",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "mmaudio_featureutils",
+                "name": "mmaudio_featureutils",
+                "type": "MMAUDIO_FEATUREUTILS",
+                "links": [
+                  950
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "MMAudioFeatureUtilsLoader"
+            },
+            "widgets_values": [
+              "mmaudio_vae_44k_fp16.safetensors",
+              "mmaudio_synchformer_fp16.safetensors",
+              "apple_DFN5B-CLIP-ViT-H-14-384_fp16.safetensors",
+              "44k",
+              "fp16"
+            ]
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 949,
+            "origin_id": 451,
+            "origin_slot": 0,
+            "target_id": 448,
+            "target_slot": 0,
+            "type": "MMAUDIO_MODEL"
+          },
+          {
+            "id": 950,
+            "origin_id": 450,
+            "origin_slot": 0,
+            "target_id": 448,
+            "target_slot": 1,
+            "type": "MMAUDIO_FEATUREUTILS"
+          },
+          {
+            "id": 1063,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 448,
+            "target_slot": 2,
+            "type": "IMAGE"
+          },
+          {
+            "id": 953,
+            "origin_id": 448,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "AUDIO"
+          }
+        ],
+        "extra": {}
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5753796460515007,
+      "offset": [
+        368.9190128199193,
+        796.7518399607604
+      ]
+    },
+    "frontendVersion": "1.41.21",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
