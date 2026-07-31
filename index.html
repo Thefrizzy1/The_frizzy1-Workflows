@@ -6,113 +6,106 @@
 <title>The_frizzy1 — Low-VRAM ComfyUI Workflows</title>
 <style>
   :root{
-    --bg:#08090d; --panel:#10131c; --card:#141824; --card-hi:#1a1f2e;
-    --line:#232838; --line-hi:#333a4f;
-    --txt:#eef0f6; --mut:#a2a9bd; --dim:#6a7186; --faint:#464c60;
-    --acc:#8b6cff; --acc-ink:#c3b4ff; --cy:#33d6ef; --grn:#3ee0a6; --amb:#ffc857; --red:#ff6b81;
-    --r:16px;
+    --bg:#0a0a0b; --card:#111113; --card-2:#0e0e10; --card-hi:#171719;
+    --line:#232326; --line-hi:#33333a;
+    --txt:#f5f5f6; --mut:#b7b7bd; --dim:#83838c; --faint:#4b4b52;
+    --accent:#8b6cff; --accent-ink:#b6a6ff;
+    --r:14px;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--txt);
     font:16px/1.55 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-    background-image:
-      radial-gradient(900px 480px at 88% -8%,rgba(139,108,255,.20),transparent 62%),
-      radial-gradient(760px 420px at -6% 4%,rgba(51,214,239,.10),transparent 58%);
-    background-attachment:fixed;}
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-  :focus-visible{outline:2px solid var(--acc-ink);outline-offset:3px;border-radius:6px}
+  :focus-visible{outline:2px solid var(--accent-ink);outline-offset:3px;border-radius:6px}
 
-  /* ---- header ---- */
-  header{padding:76px 0 30px}
-  h1{font-size:clamp(34px,5.6vw,62px);line-height:1.02;margin:0 0 18px;
-     letter-spacing:-.035em;font-weight:800;max-width:15ch}
-  h1 em{font-style:normal;color:var(--acc-ink)}
-  .lede{color:var(--mut);max-width:60ch;font-size:clamp(16px,1.4vw,18.5px);margin:0}
+  /* ---- hero: bold, quiet, monochrome ---- */
+  header{padding:88px 0 40px;border-bottom:1px solid var(--line)}
+  h1{font-size:clamp(38px,7vw,76px);line-height:.98;margin:0 0 22px;
+     letter-spacing:-.045em;font-weight:850;max-width:16ch}
+  .lede{color:var(--mut);max-width:58ch;font-size:clamp(16px,1.5vw,19px);margin:0;line-height:1.5}
   .lede b{color:var(--txt);font-weight:600}
-  .meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin:26px 0 0;padding:0;list-style:none;
-        color:var(--dim);font-size:13.5px;font-weight:500}
-  .meta li{display:flex;align-items:center;gap:8px}
+  .meta{margin:28px 0 0;padding:0;list-style:none;color:var(--dim);font-size:14px;font-weight:500;
+        display:flex;flex-wrap:wrap;gap:6px 14px}
+  .meta li{display:flex;gap:14px;align-items:baseline}
+  .meta li+li::before{content:"/";color:var(--faint);margin-right:14px}
   .meta b{color:var(--txt);font-weight:700;font-variant-numeric:tabular-nums}
-  .meta li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--acc);opacity:.85}
-  .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
-  .btn{border:1px solid var(--line);background:var(--card);padding:10px 16px;border-radius:11px;
+  .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+  .btn{border:1px solid var(--line);background:transparent;padding:10px 16px;border-radius:11px;
        font-size:14px;font-weight:600;color:var(--mut);transition:.16s ease}
-  .btn:hover{color:var(--txt);border-color:#3b4363;transform:translateY(-1px)}
-  .btn.p{background:var(--acc);border-color:transparent;color:#0c0a1e;font-weight:700}
-  .btn.p:hover{background:#9c81ff;box-shadow:0 12px 28px -14px rgba(0,0,0,.85)}
+  .btn:hover{color:var(--txt);border-color:var(--line-hi)}
+  .btn.p{background:var(--txt);border-color:transparent;color:#0a0a0b;font-weight:700}
+  .btn.p:hover{background:#fff}
 
   /* ---- filter bar ---- */
-  .bar{position:sticky;top:0;z-index:10;margin-top:30px;
-       background:linear-gradient(var(--bg) 60%,rgba(8,9,13,.7));backdrop-filter:blur(10px);
-       border-bottom:1px solid var(--line);padding:15px 0}
+  .bar{position:sticky;top:0;z-index:10;
+       background:rgba(10,10,11,.82);backdrop-filter:blur(12px);
+       border-bottom:1px solid var(--line);padding:14px 0}
   .bar .wrap{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
-  .chip{border:1px solid var(--line);background:var(--card);color:var(--mut);padding:8px 15px;
+  .chip{border:1px solid var(--line);background:transparent;color:var(--mut);padding:8px 15px;
         border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;transition:.16s ease}
-  .chip:hover{color:var(--txt);border-color:#3b4363}
-  .chip[aria-pressed=true]{background:var(--acc);border-color:transparent;color:#0c0a1e}
+  .chip:hover{color:var(--txt);border-color:var(--line-hi)}
+  .chip[aria-pressed=true]{background:var(--txt);border-color:transparent;color:#0a0a0b}
   .search{margin-left:auto;background:var(--card);border:1px solid var(--line);border-radius:11px;
           padding:9px 14px;color:var(--txt);min-width:210px;font-size:14px}
-  .search::placeholder{color:var(--faint)}
+  .search::placeholder{color:var(--dim)}
   .count{color:var(--dim);font-size:12.5px;font-weight:600;white-space:nowrap}
 
   /* ---- grid ---- */
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(346px,1fr));gap:22px;padding:30px 0 22px}
-  .card{position:relative;background:linear-gradient(180deg,var(--card),#11141f);
-        border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;
-        box-shadow:0 1px 0 rgba(255,255,255,.03) inset, 0 18px 40px -24px rgba(0,0,0,.9);
-        transition:transform .2s cubic-bezier(.2,.7,.2,1),border-color .2s,box-shadow .2s}
-  .card:hover{transform:translateY(-4px);border-color:#404a6b;box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 26px 54px -26px rgba(0,0,0,.95)}
-  .thumb{position:relative;aspect-ratio:16/9;background:#05060a;display:block;overflow:hidden}
-  .thumb img{width:100%;height:100%;object-fit:cover;opacity:.86;transition:opacity .3s,transform .5s cubic-bezier(.2,.7,.2,1)}
-  .card:hover .thumb img{opacity:1;transform:scale(1.045)}
-  .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(8,9,13,.55))}
-  .thumb.noimg{display:flex;align-items:center;justify-content:center;
-    background:radial-gradient(120% 120% at 30% 20%,#1c2233,#0c0f18)}
-  .thumb.noimg b{font-size:26px;font-weight:800;letter-spacing:-.03em;color:#39415f}
-  .play{position:absolute;left:14px;bottom:12px;z-index:2;display:flex;align-items:center;gap:8px;
-        color:#fff;font-size:12px;font-weight:700;letter-spacing:.02em;text-shadow:0 1px 6px rgba(0,0,0,.6)}
-  .play i{width:34px;height:34px;border-radius:50%;background:rgba(10,12,20,.55);
-    border:1px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(3px);transition:.16s}
-  .play i::after{content:"";border-left:12px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
-  .card:hover .play i{background:var(--acc);border-color:transparent}
-  .body{padding:17px 18px 18px;display:flex;flex-direction:column;gap:12px;flex:1}
-  .fam{color:var(--acc-ink);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.13em}
-  .name{font-size:18.5px;font-weight:700;letter-spacing:-.015em;line-height:1.22;margin:3px 0 0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(344px,1fr));gap:20px;padding:32px 0 24px}
+  .card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+        overflow:hidden;display:flex;flex-direction:column;
+        transition:transform .2s cubic-bezier(.2,.7,.2,1),border-color .2s,background .2s}
+  .card:hover{transform:translateY(-4px);border-color:var(--line-hi);background:var(--card-hi)}
+  .thumb{position:relative;aspect-ratio:16/9;background:#050506;display:block;overflow:hidden}
+  .thumb img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.02);opacity:.62;
+             transition:opacity .3s,filter .3s,transform .5s cubic-bezier(.2,.7,.2,1)}
+  .card:hover .thumb img{opacity:1;filter:grayscale(0);transform:scale(1.04)}
+  .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,10,11,.6))}
+  .thumb.noimg{display:flex;align-items:center;justify-content:center;background:#0d0d0f}
+  .thumb.noimg b{font-size:24px;font-weight:800;letter-spacing:-.03em;color:#2f2f36}
+  .play{position:absolute;left:13px;bottom:11px;z-index:2;display:flex;align-items:center;gap:8px;
+        color:#fff;font-size:12px;font-weight:700;letter-spacing:.02em}
+  .play i{width:32px;height:32px;border-radius:50%;background:rgba(10,10,11,.5);
+    border:1px solid rgba(255,255,255,.45);display:flex;align-items:center;justify-content:center;
+    backdrop-filter:blur(3px);transition:.16s}
+  .play i::after{content:"";border-left:11px solid #fff;border-top:6.5px solid transparent;border-bottom:6.5px solid transparent;margin-left:3px}
+  .card:hover .play i{background:var(--accent);border-color:transparent}
+  .body{padding:17px 18px 18px;display:flex;flex-direction:column;gap:11px;flex:1}
+  .fam{color:var(--dim);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.14em}
+  .name{font-size:18.5px;font-weight:700;letter-spacing:-.02em;line-height:1.2;margin:4px 0 0}
   .name .ver{color:var(--dim);font-weight:600;font-size:13px;letter-spacing:0}
   .tags{display:flex;gap:6px;flex-wrap:wrap}
-  .t{font-size:11.5px;font-weight:600;padding:4px 9px;border-radius:7px;background:#0e1119;
+  .t{font-size:11.5px;font-weight:600;padding:4px 9px;border-radius:7px;background:transparent;
      border:1px solid var(--line);color:var(--mut)}
-  .t.vram{color:var(--grn);border-color:rgba(62,224,166,.28);background:rgba(62,224,166,.06)}
+  .t.vram{color:var(--txt);border-color:var(--line-hi)}
   .models{font-size:12.5px;color:var(--dim);border-top:1px solid var(--line);padding-top:11px;margin-top:auto;line-height:1.45}
   .models b{color:var(--mut);font-weight:600}
   .row{display:flex;gap:8px;flex-wrap:wrap}
   .row a{font-size:12.5px;font-weight:600;color:var(--mut);border:1px solid var(--line);
          padding:6px 11px;border-radius:9px;transition:.16s}
-  .row a:hover{color:var(--txt);border-color:#404a6b;background:var(--card-hi)}
-  .row a.docs{color:#0c0a1e;background:var(--acc-ink);border-color:transparent;font-weight:700}
-  .row a.docs:hover{background:#d6cbff}
+  .row a:hover{color:var(--txt);border-color:var(--line-hi)}
+  .row a.docs{color:#0a0a0b;background:var(--txt);border-color:transparent;font-weight:700}
+  .row a.docs:hover{background:#fff}
   .empty{grid-column:1/-1;text-align:center;color:var(--dim);padding:60px 0;font-size:15px;display:none}
 
-  footer{border-top:1px solid var(--line);margin-top:34px;padding:30px 0 64px;color:var(--dim);font-size:13.5px;line-height:1.7}
+  footer{border-top:1px solid var(--line);margin-top:30px;padding:30px 0 64px;color:var(--dim);font-size:13.5px;line-height:1.7}
   footer a{color:var(--mut);border-bottom:1px solid var(--line)}
   footer a:hover{color:var(--txt);border-color:var(--mut)}
-  footer .amb{color:var(--amb);font-weight:600}
 
-  /* one authored entrance */
   @media (prefers-reduced-motion:no-preference){
-    .card{opacity:0;transform:translateY(14px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0ms)}
+    .card{opacity:0;transform:translateY(12px);animation:rise .55s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0ms)}
     @keyframes rise{to{opacity:1;transform:none}}
   }
-  @media(max-width:720px){header{padding:52px 0 22px}.search{margin-left:0;width:100%}}
+  @media(max-width:720px){header{padding:60px 0 30px}.search{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
 <header><div class="wrap">
-  <h1>Every <em>The_frizzy1</em> workflow, verified and in one place.</h1>
-  <p class="lede">GGUF-quantised ComfyUI workflows for image, video and audio — engineered to run on as little as <b>4&nbsp;GB of VRAM</b>. Every model name here was read straight out of the workflow file, not guessed.</p>
+  <h1>Every The_frizzy1 workflow, verified and in one place.</h1>
+  <p class="lede">GGUF-quantised ComfyUI workflows for image, video and audio — built to run on as little as <b>4&nbsp;GB of VRAM</b>. Every model name here was read straight out of the workflow file, not guessed.</p>
   <ul class="meta">
     <li><b>12</b> workflows</li>
     <li>from <b>4&nbsp;GB</b> VRAM</li>
@@ -144,8 +137,8 @@
 
 <footer><div class="wrap">
   Built from primary sources — the workflow <b>.json</b> files plus the creator's Hugging Face READMEs.
-  A few filenames marked <span class="amb">best-effort</span> still want a source-repo confirm; see
-  <a href="docs/AUDIT.md">the audit</a>. Each model keeps its own license.
+  A few filenames still want a source-repo confirm; see <a href="docs/AUDIT.md">the audit</a>.
+  Each model keeps its own license.
 </div></footer>
 
 <script>

@@ -2,29 +2,32 @@
 
 # The_frizzy1 — Low-VRAM ComfyUI Workflows
 
-**The definitive, verified home for every `The_frizzy1` ComfyUI workflow.**
+**The definitive home for every `The_frizzy1` ComfyUI workflow.**
 GGUF-quantised image, video and audio generation that runs on as little as **4 GB VRAM**.
 
-[![CivitAI](https://img.shields.io/badge/CivitAI-The__frizzy1-blue)](https://civitai.com/user/The_frizzy1)
-[![HuggingFace](https://img.shields.io/badge/HuggingFace-The--frizzy1-yellow)](https://huggingface.co/The-frizzy1)
-[![YouTube](https://img.shields.io/badge/YouTube-@the__frizzy1-red)](https://www.youtube.com/@the_frizzy1)
+[![CivitAI](https://img.shields.io/badge/CivitAI-The__frizzy1-2b7cff?style=flat-square)](https://civitai.com/user/The_frizzy1)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-The--frizzy1-ffb000?style=flat-square)](https://huggingface.co/The-frizzy1)
+[![YouTube](https://img.shields.io/badge/YouTube-@the__frizzy1-ff0033?style=flat-square)](https://www.youtube.com/@the_frizzy1)
+[![Workflows](https://img.shields.io/badge/workflows-12-6a5cff?style=flat-square)](#workflows)
+[![Min VRAM](https://img.shields.io/badge/min%20VRAM-4%20GB-3ecf8e?style=flat-square)](#workflows)
+[![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
 
 </div>
 
-> 🖥️ **Visual dashboard:** open [`index.html`](index.html) locally, or (once GitHub Pages is enabled)
-> browse it live at `https://<user>.github.io/The_frizzy1-Workflows/`. It's a filterable card view of every
-> workflow with video thumbnails, VRAM badges and one-click links.
+> **Every model name in this repository was read directly out of the workflow `.json` files — not guessed.**
+> All 12 workflows are model-verified. Where a source repo couldn't be fully confirmed it's flagged in the [audit](docs/AUDIT.md).
 
 ---
 
-## Start here
+## Contents
 
-New to this? You want two things: a GPU with **4 GB VRAM or more**, and a working **ComfyUI** install.
-Then pick a workflow from the table below, open its folder, and follow its README.
-
-> **Every download link, custom node and model name in this repository was extracted directly from the
-> actual workflow files (`.json`) and verified against the published Hugging Face repos.** Where something
-> could not be confirmed from a workflow file, it is explicitly marked **`Not verified`**.
+- [Which workflow should I use?](#which-workflow-should-i-use)
+- [Workflows](#workflows) — [Video](#-video) · [Image](#-image) · [Audio](#-audio)
+- [Wan 2.1 vs 2.2 vs Animate](#wan-21-vs-22-vs-animate-read-this) — **read before mixing files**
+- [Installation](#installation)
+- [Documentation](#documentation)
+- [Repository layout](#repository-layout)
+- [Credits & license](#credits--license)
 
 ---
 
@@ -32,67 +35,123 @@ Then pick a workflow from the table below, open its folder, and follow its READM
 
 | I want to… | Use | Runs on |
 |---|---|---|
-| Make **video from text or an image** on a tiny GPU | [Wan 2.2 GGUF Low-VRAM](workflows/wan-2.2-gguf-lowvram) | 4 GB+ |
-| **Animate a person** from a reference video (unlimited length) | [Wan 2.2 Animate](workflows/wan-2.2-animate) | 4 GB+ |
-| The **older, lighter** video path (1.3B models, most variants) | [Wan 2.1 GGUF Low-VRAM](workflows/wan-2.1-gguf-lowvram) | 4 GB+ |
-| Video with **first-frame → last-frame** control | [Wan 2.1 FLF2V](workflows/wan-2.1-flf2v) | 4 GB+ |
-| **Edit or generate images** (realistic, cinematic) | [Flux Kontext GGUF](workflows/flux-kontext-gguf) | 4 GB+ |
+| Make **video** from text or an image, best quality | [Wan 2.2 GGUF Low-VRAM](workflows/wan-2.2-gguf-lowvram) | 4 GB+ |
+| **Animate a person** from a driving video (unlimited length) | [Wan 2.2 Animate](workflows/wan-2.2-animate) | 4 GB+ |
+| The **fastest / lightest** video path | [Wan 2.1 GGUF Low-VRAM](workflows/wan-2.1-gguf-lowvram) | 4 GB+ |
+| Video from **first frame → last frame** | [Wan 2.1 FLF2V](workflows/wan-2.1-flf2v) | 4 GB+ |
+| One **single-file** Wan 2.2, simplest setup | [Wan 2.2 AIO Rapid](workflows/wan-2.2-aio-rapid) | 4–12 GB |
+| **Edit or generate images**, realistic & cinematic | [Flux Kontext GGUF](workflows/flux-kontext-gguf) | 4 GB+ |
 | The **newest Flux** image model | [Flux.2 Dev GGUF](workflows/flux2-dev-gguf) | 6 GB+ |
-| **Beginner-friendly image** generation + editing | [Qwen Image & Edit 2509](workflows/qwen-image-edit-2509) | 4 GB+ |
+| **Beginner-friendly** image generation + editing | [Qwen Image & Edit 2509](workflows/qwen-image-edit-2509) | 4 GB+ |
 | **Fast, tiny** image generation | [Z-Image Turbo GGUF](workflows/z-image-turbo-gguf) | 4 GB+ |
-| Newer **LTX video** (audio-aware) | [LTX-2 GGUF](workflows/ltx2-gguf) · [LTX-2.3 Ultimate](workflows/ltx2.3-ultimate) | 4–12 GB |
+| Newer **LTX video** (audio-aware) | [LTX-2](workflows/ltx2-gguf) · [LTX-2.3 Ultimate](workflows/ltx2.3-ultimate) | 4–12 GB |
 | The **older Hunyuan** video path | [Hunyuan Video Low-VRAM](workflows/hunyuan-video-lowvram) | 4 GB+ |
-| Generate **audio** | [AI Audio Maker](workflows/ai-audio-maker) | — |
-
-> ⚠️ **Wan 2.1 vs 2.2 vs Animate — which is which?** These are **not** the same model and are **not**
-> interchangeable. See [the Wan lineage & compatibility note](docs/WAN-LINEAGE.md) before mixing files —
-> most "it won't load" errors come from feeding a 2.2 model into a 2.1 loader, or vice-versa.
+| Generate **audio** for a clip | [AI Audio Maker](workflows/ai-audio-maker) | low |
 
 ---
 
-## All workflows
+## Workflows
 
-| Workflow | Version | Model family | Task | Min VRAM | Source |
-|---|---|---|---|---|---|
-| [Wan 2.1 GGUF Low-VRAM](workflows/wan-2.1-gguf-lowvram) | v2.0.0 | Wan 2.1 | T2V · I2V · VACE · FLF · Fun | 4 GB | [HF](https://huggingface.co/The-frizzy1/Wan21-GGUF-4GB-Workflow) |
-| [Wan 2.1 FLF2V](workflows/wan-2.1-flf2v) | v2.0.0 | Wan 2.1 | First→Last frame | 4 GB | [CivitAI](https://civitai.com/models/1624167) |
-| [Wan 2.2 GGUF Low-VRAM](workflows/wan-2.2-gguf-lowvram) | v1.0.0 | Wan 2.2 | T2V · I2V (14B) · TI2V (5B) | 4 GB | [HF](https://huggingface.co/The-frizzy1/Wan22-T2V-I2V-LORA-4GB) |
-| [Wan 2.2 Animate](workflows/wan-2.2-animate) | v1.2.0 | Wan 2.2 Animate | V2V animate + looping | 4 GB | [HF](https://huggingface.co/The-frizzy1/Wan22ANIMATE) |
-| [Flux Kontext GGUF](workflows/flux-kontext-gguf) | v2.2.0 | Flux Dev/Schnell/Kontext | T2I · image edit | 4 GB | [HF](https://huggingface.co/The-frizzy1/Flux-Kontext-GGUF-4GB) |
-| [Flux.2 Dev GGUF](workflows/flux2-dev-gguf) | v1.0.0 | Flux.2 Dev | T2I | 6 GB | [CivitAI](https://civitai.com/models/2508110) |
-| [Qwen Image & Edit 2509](workflows/qwen-image-edit-2509) | v1.0.0 | Qwen Image | T2I · image edit | 4 GB | [HF](https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF) |
-| [Z-Image Turbo GGUF](workflows/z-image-turbo-gguf) | v1.0.0 | Z-Image Turbo | T2I | 4 GB | [CivitAI](https://civitai.com/models/2561639) |
-| [Hunyuan Video Low-VRAM](workflows/hunyuan-video-lowvram) | v1.1.0 | Hunyuan Video | T2V · I2V | 4 GB | [HF](https://huggingface.co/The-frizzy1/Hunyuan-Video-Low-VRAM-4GB) |
-| [LTX-2 GGUF](workflows/ltx2-gguf) | v1.5.0 | LTXV-2 | T2V · I2V | 4 GB | [HF](https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow) |
-| [LTX-2.3 Ultimate](workflows/ltx2.3-ultimate) | v3.0.0 | LTXV-2.3 | T2V · I2V · audio · FFLF | 12 GB | [HF](https://huggingface.co/The-frizzy1/LTX23-Ultimate) |
-| [AI Audio Maker](workflows/ai-audio-maker) | v1.0.0 | Audio | Audio generation | — | [CivitAI](https://civitai.com/models/2539489) |
+Each workflow has its own folder with a full README, a verified download table, a changelog, and the
+templated `.json`. Model names are verified from the workflow file.
 
-Plus a helper node: [Custom Advanced VACE Node](https://huggingface.co/The-frizzy1/Custom-Advanced-VACE-Node) (for the Phr00t first→last-frame workflow).
+### 🎬 Video
+
+| Workflow | Ver | Min VRAM | Tasks | Links |
+|---|:---:|:---:|---|---|
+| **[Wan 2.2 Animate](workflows/wan-2.2-animate)** | v1.2.0 | 4 GB | V2V animate · looping | [CivitAI](https://civitai.com/models/2046477) · [HF](https://huggingface.co/The-frizzy1/Wan22ANIMATE) · [▶](https://www.youtube.com/watch?v=rtyfdmL-wF4) |
+| **[Wan 2.2 GGUF Low-VRAM](workflows/wan-2.2-gguf-lowvram)** | v1.0.0 | 4 GB | T2V · I2V (14B) · TI2V (5B) | [CivitAI](https://civitai.com/models/1817858) · [HF](https://huggingface.co/The-frizzy1/Wan22-T2V-I2V-LORA-4GB) · [▶](https://www.youtube.com/watch?v=C7ZttV320qk) |
+| **[Wan 2.2 AIO Rapid](workflows/wan-2.2-aio-rapid)** | v1.0.0 | 4–12 GB | T2V · I2V (single file) | [CivitAI](https://civitai.com/models/2522688) · [▶](https://www.youtube.com/watch?v=RdsyWkvG1nE) |
+| **[Wan 2.1 GGUF Low-VRAM](workflows/wan-2.1-gguf-lowvram)** | v2.0.0 | 4 GB | T2V · I2V · VACE · FLF · Fun | [CivitAI](https://civitai.com/models/1309674) · [HF](https://huggingface.co/The-frizzy1/Wan21-GGUF-4GB-Workflow) · [▶](https://www.youtube.com/watch?v=Xqjabf_eQ_U) |
+| **[Wan 2.1 FLF2V](workflows/wan-2.1-flf2v)** | v2.0.0 | 4 GB | First → Last frame | [CivitAI](https://civitai.com/models/1624167) |
+| **[Hunyuan Video Low-VRAM](workflows/hunyuan-video-lowvram)** | v1.1.1 | 4 GB | T2V · I2V | [CivitAI](https://civitai.com/models/1312419) · [HF](https://huggingface.co/The-frizzy1/Hunyuan-Video-Low-VRAM-4GB) |
+| **[LTX-2 GGUF](workflows/ltx2-gguf)** | v1.5.0 | 4 GB | T2V · I2V · audio | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow) · [▶](https://www.youtube.com/watch?v=nnHUBMgdJac) |
+| **[LTX-2.3 Ultimate](workflows/ltx2.3-ultimate)** | v3.0.0 | 12 GB | T2V · I2V · FFLF · audio · ID | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX23-Ultimate) · [▶](https://www.youtube.com/watch?v=im4wolfHvMk) |
+
+### 🖼️ Image
+
+| Workflow | Ver | Min VRAM | Tasks | Links |
+|---|:---:|:---:|---|---|
+| **[Flux Kontext GGUF](workflows/flux-kontext-gguf)** | v2.2.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/1311703) · [HF](https://huggingface.co/The-frizzy1/Flux-Kontext-GGUF-4GB) · [▶](https://www.youtube.com/watch?v=4C0RJ01yRok) |
+| **[Flux.2 Dev GGUF](workflows/flux2-dev-gguf)** | v1.0.0 | 6 GB | T2I | [CivitAI](https://civitai.com/models/2508110) · [▶](https://www.youtube.com/watch?v=dcekWAbgDXg) |
+| **[Qwen Image & Edit 2509](workflows/qwen-image-edit-2509)** | v1.0.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/2229874) · [HF](https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF) · [▶](https://www.youtube.com/watch?v=NPni2ulov34) |
+| **[Z-Image Turbo GGUF](workflows/z-image-turbo-gguf)** | v1.0.0 | 4 GB | T2I (fast turbo) | [CivitAI](https://civitai.com/models/2561639) |
+
+### 🔊 Audio
+
+| Workflow | Ver | Min VRAM | Tasks | Links |
+|---|:---:|:---:|---|---|
+| **[AI Audio Maker](workflows/ai-audio-maker)** | v1.0.0 | low | Audio · video-sync (MMAudio) | [CivitAI](https://civitai.com/models/2539489) |
+
+<sub>▶ = video walkthrough on YouTube.</sub>
 
 ---
 
-## Repository map
+## Wan 2.1 vs 2.2 vs Animate (read this)
+
+These are **three different model families** and their files are **not interchangeable** — the single most
+common cause of "it won't load" errors. The short version:
+
+- **Wan 2.1** — older, lightest. 1.3B/14B. One diffusion file. Often the best choice on 4 GB.
+- **Wan 2.2** — current mainline. 14B loads **two** files (high-noise + low-noise experts); 5B is a single file.
+- **Wan 2.2 Animate** — animates a character from a **reference image + driving video**. It does *not* generate from a prompt alone.
+
+Full comparison, VAE/encoder traps, and a decision guide: **[docs/WAN-LINEAGE.md](docs/WAN-LINEAGE.md)**.
+
+---
+
+## Installation
+
+The same four steps apply to every workflow; the specifics live in each workflow's own README.
+
+1. **Install [ComfyUI](https://github.com/comfyanonymous/ComfyUI)** and the [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager).
+2. **Install the custom nodes** listed in the workflow's README (via Manager, then restart).
+3. **Download the models** from that workflow's `downloads.md` into the exact `ComfyUI/models/…` folders shown.
+4. **Load the `.json`** in ComfyUI and run.
+
+> **Low on VRAM?** Pick a smaller GGUF quant (Q4/Q3), and enable Sage Attention / Triton where supported.
+> The [quantisation cheat-sheet](docs/COMPATIBILITY.md#quantisation-cheat-sheet-gguf) explains the trade-offs.
+
+---
+
+## Documentation
+
+| Doc | What's in it |
+|---|---|
+| **[docs/DOWNLOADS.md](docs/DOWNLOADS.md)** | Master model database — every file, the exact name the loader expects, and where to get it. |
+| **[docs/COMPATIBILITY.md](docs/COMPATIBILITY.md)** | Task, VRAM, quantisation and custom-node matrices. |
+| **[docs/WAN-LINEAGE.md](docs/WAN-LINEAGE.md)** | Wan 2.1 vs 2.2 vs Animate — differences and file traps. |
+| **[docs/NAMING.md](docs/NAMING.md)** | Naming standard + the CivitAI → semver version map. |
+| **[docs/AUDIT.md](docs/AUDIT.md)** | How everything was verified, and anything still open. |
+| **[models/README.md](models/README.md)** | One-line summary of every model family + shared support files. |
+
+---
+
+## Repository layout
 
 ```
 The_frizzy1-Workflows/
-├── README.md              ← you are here
-├── docs/
-│   ├── DOWNLOADS.md       master download database (every model, verified links)
-│   ├── COMPATIBILITY.md   workflow × model / VRAM / quant matrices
-│   ├── WAN-LINEAGE.md     the Wan 2.1 vs 2.2 vs Animate caveats
-│   ├── NAMING.md          naming standard + CivitAI→semver version map
-│   └── AUDIT.md           verification log, open issues, things to double-check
-├── models/                one page per model family
-├── workflows/             one folder per workflow (see wan-2.2-animate for the template)
-├── templates/             reusable README / release-note templates
-└── assets/                banners, shared images
+├── README.md              you are here
+├── docs/                  downloads · compatibility · wan-lineage · naming · audit
+├── models/                model-family reference
+├── workflows/             one folder per workflow ↓
+│   └── <workflow>/
+│       ├── README.md          what it is, settings, nodes
+│       ├── downloads.md       verified model table
+│       ├── changelog.md       version history
+│       ├── The_frizzy1_*.json the workflow (templated name)
+│       └── source/            original unmodified files
+├── templates/             reusable doc templates
+└── index.html             optional local dashboard (open in a browser)
 ```
 
 ---
 
 ## Credits & license
 
-All workflows by **[The_frizzy1](https://civitai.com/user/The_frizzy1)**. Individual models retain their own
-licenses (FLUX.1 non-commercial, Tencent Hunyuan Community, Apache-2.0, etc.) — see each workflow page and
-[docs/DOWNLOADS.md](docs/DOWNLOADS.md). This documentation repository may be reused and adapted; the underlying
-models may not, except under their respective licenses.
+Workflows by **[The_frizzy1](https://civitai.com/user/The_frizzy1)** · videos on
+**[YouTube](https://www.youtube.com/@the_frizzy1)** · mirrors on **[Hugging Face](https://huggingface.co/The-frizzy1)**.
+
+This repository (documentation + workflow JSONs) is **[MIT licensed](LICENSE)**. The underlying AI models keep
+their own licenses — FLUX.1 non-commercial, Tencent Hunyuan Community, Apache-2.0, and others — listed per file
+in [docs/DOWNLOADS.md](docs/DOWNLOADS.md). Check a model's license before commercial use.
