@@ -12,6 +12,10 @@
 | **YouTube** | https://www.youtube.com/watch?v=im4wolfHvMk |
 | **License** | Apache-2.0 |
 
+## Preview
+
+**Sample clips:** [▶ clip 1](images/ltx2.3-ultimate-preview-01.mp4) · [▶ clip 2](images/ltx2.3-ultimate-preview-02.mp4) · [▶ clip 3](images/ltx2.3-ultimate-preview-03.mp4)
+
 ## Important notes
 - Use **DEV GGUF** diffusion models (distilled possible).
 - The **distilled LoRA is REQUIRED**, plus the **text projection** (embedding connector).

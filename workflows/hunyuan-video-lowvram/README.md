@@ -12,6 +12,13 @@
 | **Hugging Face** | https://huggingface.co/The-frizzy1/Hunyuan-Video-Low-VRAM-4GB |
 | **License** | Tencent Hunyuan Community |
 
+## Preview
+
+<details><summary>Workflow graph</summary>
+
+<p align="center"><img src="images/workflow-image.png" width="100%" alt="hunyuan-video-lowvram ComfyUI workflow graph"></p>
+</details>
+
 ## ⚠️ v1.1.1 fix
 The originally shipped workflow had its diffusion loader pointing at `flux1-dev-Q5_K_S.gguf` (a leftover from
 another graph). **v1.1.1 corrects it** to `fast-hunyuan-video-t2v-720p-Q5_K_M.gguf`. The untouched original is

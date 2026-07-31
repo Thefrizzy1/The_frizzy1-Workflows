@@ -10,6 +10,12 @@
 | **CivitAI** | https://civitai.com/models/2561639 |
 | **License** | Check Z-Image model card |
 
+## Preview
+
+<p align="center"><img src="images/z-image-turbo-gguf-sample-01.webp" width="30%" alt="z-image-turbo-gguf sample 1"> <img src="images/z-image-turbo-gguf-sample-02.webp" width="30%" alt="z-image-turbo-gguf sample 2"> <img src="images/z-image-turbo-gguf-sample-03.webp" width="30%" alt="z-image-turbo-gguf sample 3"></p>
+
+<sub>Example output from this workflow.</sub>
+
 ## Overview
 A lightweight turbo image workflow. Uses a Qwen-3 4B text encoder and the Flux-style `ae` VAE.
 Models verified from the workflow JSON.

@@ -11,6 +11,12 @@
 | **YouTube** | https://www.youtube.com/watch?v=dcekWAbgDXg |
 | **License** | FLUX.2 [dev] (Black Forest Labs) — check model card |
 
+## Preview
+
+<p align="center"><img src="images/flux2-dev-gguf-sample-01.webp" width="70%" alt="flux2-dev-gguf sample output"></p>
+
+<sub>Example output from this workflow.</sub>
+
 ## Overview
 A minimal, beginner-friendly Flux.2 Dev workflow. Uses a Mistral-based text encoder (new in Flux.2) and the
 Flux.2 VAE. Models verified from the workflow JSON.

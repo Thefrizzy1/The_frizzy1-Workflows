@@ -12,6 +12,12 @@
 | **YouTube** | https://www.youtube.com/watch?v=NPni2ulov34 |
 | **License** | Apache-2.0 |
 
+## Preview
+
+<p align="center"><img src="images/qwen-image-edit-2509-sample-01.webp" width="46%" alt="qwen-image-edit-2509 sample 1"> <img src="images/qwen-image-edit-2509-sample-02.webp" width="46%" alt="qwen-image-edit-2509 sample 2"></p>
+
+<sub>Example output from this workflow.</sub>
+
 ## Usage
 - **Generation:** connect EmptyLatent → K-Sampler.
 - **Editing:** activate all nodes except unused image inputs, connect latent → K-Sampler.
