@@ -1,0 +1,34 @@
+{
+  "workflow": "flux/flux2-dev",
+  "files": [
+    {
+      "name": "flux2-dev-Q5_K_M.gguf",
+      "url": "https://huggingface.co/city96/FLUX.2-dev-gguf/resolve/main/flux2-dev-Q5_K_M.gguf",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Pick your quant from the repo."
+    },
+    {
+      "name": "mistral_3_small_flux2_fp4_mixed.safetensors",
+      "page": "https://huggingface.co/Comfy-Org/flux2-dev",
+      "dest": "text_encoders",
+      "required": true,
+      "manual": true,
+      "note": "Flux.2 Mistral text encoder from the Comfy-Org Flux.2 repackaged repo."
+    },
+    {
+      "name": "flux2-vae.safetensors",
+      "page": "https://huggingface.co/Comfy-Org/flux2-dev",
+      "dest": "vae",
+      "required": true,
+      "manual": true,
+      "note": "Flux.2 VAE from the same repo."
+    }
+  ],
+  "nodes": [
+    {
+      "name": "ComfyUI-GGUF",
+      "git": "https://github.com/city96/ComfyUI-GGUF"
+    }
+  ]
+}

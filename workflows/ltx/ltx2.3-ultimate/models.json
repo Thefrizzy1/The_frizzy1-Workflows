@@ -1,0 +1,54 @@
+{
+  "workflow": "ltx/ltx2.3-ultimate",
+  "files": [
+    {
+      "name": "ltx-2.3-22b-dev-Q5_K_M.gguf",
+      "url": "https://huggingface.co/unsloth/LTX-2.3-GGUF/resolve/main/ltx-2.3-22b-dev-Q5_K_M.gguf",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Use Q4_K_M for lower VRAM."
+    },
+    {
+      "name": "ltx-2.3-22b-dev video_vae and audio_vae",
+      "page": "https://huggingface.co/unsloth/LTX-2.3-GGUF",
+      "dest": "vae",
+      "required": true,
+      "manual": true,
+      "note": "Video and audio VAE from the same repo."
+    },
+    {
+      "name": "ltx-2.3 distilled LoRA and text projection",
+      "page": "https://huggingface.co/Kijai/LTX2.3_comfy",
+      "dest": "loras",
+      "required": true,
+      "manual": true,
+      "note": "REQUIRED distilled LoRA plus the text projection connector."
+    },
+    {
+      "name": "gemma_3_12B_it_fp4_mixed.safetensors",
+      "page": "https://huggingface.co/Comfy-Org/ltx-2",
+      "dest": "text_encoders",
+      "required": true,
+      "manual": true,
+      "note": "Gemma-3 text encoder."
+    }
+  ],
+  "nodes": [
+    {
+      "name": "ComfyUI-GGUF",
+      "git": "https://github.com/city96/ComfyUI-GGUF"
+    },
+    {
+      "name": "ComfyUI-KJNodes",
+      "git": "https://github.com/kijai/ComfyUI-KJNodes"
+    },
+    {
+      "name": "ComfyUI-JakeUpgrade",
+      "git": "https://github.com/jakechai/ComfyUI-JakeUpgrade"
+    },
+    {
+      "name": "ComfyUI-VideoHelperSuite",
+      "git": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
+    }
+  ]
+}

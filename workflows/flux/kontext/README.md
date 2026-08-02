@@ -12,11 +12,15 @@
 | **YouTube** | https://www.youtube.com/watch?v=4C0RJ01yRok |
 | **License** | FLUX.1 [dev] Non-Commercial (Black Forest Labs) |
 
+
 ## Preview
 
-<p align="center"><img src="images/flux-kontext-gguf-sample-01.webp" width="46%" alt="flux-kontext-gguf sample 1"> <img src="images/flux-kontext-gguf-sample-02.webp" width="46%" alt="flux-kontext-gguf sample 2"></p>
+<p align="center">
+  <img src="samples/sample-1.webp" width="46%" alt="Flux Kontext sample 1">
+  <img src="samples/sample-2.webp" width="46%" alt="Flux Kontext sample 2">
+</p>
 
-<sub>Example output from this workflow.</sub>
+<sub>Example outputs from this workflow.</sub>
 
 ## Overview
 Semi-realistic results in ~30 steps on a 4 GB laptop. Two samplers plus Torch TeaCache. **Kontext** adds
@@ -29,6 +33,16 @@ image editing on top of generation. Three optional style LoRAs ship referenced i
 | Dev | Quality generation |
 | Schnell | Speed, fewer steps |
 | PixelWave | Best realism |
+
+## Get the models (one command)
+
+From the repo root, this finds ComfyUI, downloads the missing models into the right folders, and installs the custom nodes:
+
+```bash
+python scripts/frizzy.py doctor flux/kontext --comfy "C:/path/to/ComfyUI"
+```
+
+No pip installs. Details: [scripts/README.md](../../../scripts/README.md).
 
 ## Required models
 Full verified table + links: **[downloads.md](downloads.md)**.

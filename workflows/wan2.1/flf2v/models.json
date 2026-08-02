@@ -1,0 +1,59 @@
+{
+  "workflow": "wan2.1/flf2v",
+  "files": [
+    {
+      "name": "wan2.1-flf2v-720p-14b-q2_k.gguf",
+      "url": "https://huggingface.co/calcuis/wan-gguf/resolve/main/wan2.1-flf2v-720p-14b-q2_k.gguf",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Pick your quant from the repo."
+    },
+    {
+      "name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "wan_2.1_vae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "clip_vision_h.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors",
+      "dest": "clip_vision",
+      "required": true,
+      "note": ""
+    }
+  ],
+  "nodes": [
+    {
+      "name": "gguf",
+      "git": "https://github.com/calcuis/gguf"
+    },
+    {
+      "name": "ComfyUI-WanVideoWrapper",
+      "git": "https://github.com/kijai/ComfyUI-WanVideoWrapper"
+    },
+    {
+      "name": "tiled_ksampler",
+      "git": "https://github.com/FlyingFireCo/tiled_ksampler"
+    },
+    {
+      "name": "ComfyUI-KJNodes",
+      "git": "https://github.com/kijai/ComfyUI-KJNodes"
+    },
+    {
+      "name": "ComfyUI-VideoHelperSuite",
+      "git": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
+    },
+    {
+      "name": "rgthree-comfy",
+      "git": "https://github.com/rgthree/rgthree-comfy"
+    }
+  ]
+}

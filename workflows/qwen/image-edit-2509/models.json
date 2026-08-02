@@ -1,0 +1,43 @@
+{
+  "workflow": "qwen/image-edit-2509",
+  "files": [
+    {
+      "name": "Qwen_Image-Q8_0.gguf",
+      "url": "https://huggingface.co/QuantStack/Qwen-Image-GGUF/resolve/main/Qwen_Image-Q8_0.gguf",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Generation. For editing use QuantStack/Qwen-Image-Edit-2509-GGUF."
+    },
+    {
+      "name": "Qwen-Image-Lightning-8steps-V2.0.safetensors",
+      "url": "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-8steps-V2.0.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "Speed LoRA."
+    },
+    {
+      "name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "qwen_image_vae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": ""
+    }
+  ],
+  "nodes": [
+    {
+      "name": "ComfyUI-GGUF",
+      "git": "https://github.com/city96/ComfyUI-GGUF"
+    },
+    {
+      "name": "ComfyUI-KJNodes",
+      "git": "https://github.com/kijai/ComfyUI-KJNodes"
+    }
+  ]
+}

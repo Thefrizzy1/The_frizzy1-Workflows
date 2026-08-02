@@ -17,6 +17,16 @@
 - `LTXVEmptyLatentAudio – AttributeError` → update **KJNodes to v1.2.8+**.
 - Checkerboard noise → update all nodes + ComfyUI.
 
+## Get the models (one command)
+
+From the repo root, this finds ComfyUI, downloads the missing models into the right folders, and installs the custom nodes:
+
+```bash
+python scripts/frizzy.py doctor ltx/ltx2 --comfy "C:/path/to/ComfyUI"
+```
+
+No pip installs. Details: [scripts/README.md](../../../scripts/README.md).
+
 ## Required custom nodes
 | Node | Link |
 |---|---|

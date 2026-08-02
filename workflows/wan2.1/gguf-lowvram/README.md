@@ -28,6 +28,16 @@ On the smallest GPUs the 1.3B models are faster and lighter than any Wan 2.2 pat
 | `source/Wan2.1-FunControl (experimental).json` | Fun Control |
 | `source/Wan2.1-CameraImage (experimental).json` | Fun Camera |
 
+## Get the models (one command)
+
+From the repo root, this finds ComfyUI, downloads the missing models into the right folders, and installs the custom nodes:
+
+```bash
+python scripts/frizzy.py doctor wan2.1/gguf-lowvram --comfy "C:/path/to/ComfyUI"
+```
+
+No pip installs. Details: [scripts/README.md](../../../scripts/README.md).
+
 ## Required models
 Full verified table + links: **[downloads.md](downloads.md)**.
 

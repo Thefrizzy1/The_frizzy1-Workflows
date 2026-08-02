@@ -1,0 +1,43 @@
+{
+  "workflow": "flux/kontext",
+  "files": [
+    {
+      "name": "flux1-kontext-dev-Q5_1.gguf",
+      "url": "https://huggingface.co/QuantStack/FLUX.1-Kontext-dev-GGUF/resolve/main/flux1-kontext-dev-Q5_1.gguf",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Pick your quant from the repo."
+    },
+    {
+      "name": "ae.safetensors",
+      "url": "https://huggingface.co/ffxvs/vae-flux/resolve/main/ae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "clip_l.safetensors",
+      "url": "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "t5xxl_fp8_e4m3fn.safetensors",
+      "url": "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp8_e4m3fn.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": ""
+    }
+  ],
+  "nodes": [
+    {
+      "name": "ComfyUI-GGUF",
+      "git": "https://github.com/city96/ComfyUI-GGUF"
+    },
+    {
+      "name": "rgthree-comfy",
+      "git": "https://github.com/rgthree/rgthree-comfy"
+    }
+  ]
+}

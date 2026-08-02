@@ -12,15 +12,29 @@
 | **YouTube** | https://www.youtube.com/watch?v=NPni2ulov34 |
 | **License** | Apache-2.0 |
 
+
 ## Preview
 
-<p align="center"><img src="images/qwen-image-edit-2509-sample-01.webp" width="46%" alt="qwen-image-edit-2509 sample 1"> <img src="images/qwen-image-edit-2509-sample-02.webp" width="46%" alt="qwen-image-edit-2509 sample 2"></p>
+<p align="center">
+  <img src="samples/sample-1.webp" width="46%" alt="Qwen Image & Edit sample 1">
+  <img src="samples/sample-2.webp" width="46%" alt="Qwen Image & Edit sample 2">
+</p>
 
-<sub>Example output from this workflow.</sub>
+<sub>Example outputs from this workflow.</sub>
 
 ## Usage
 - **Generation:** connect EmptyLatent → K-Sampler.
 - **Editing:** activate all nodes except unused image inputs, connect latent → K-Sampler.
+
+## Get the models (one command)
+
+From the repo root, this finds ComfyUI, downloads the missing models into the right folders, and installs the custom nodes:
+
+```bash
+python scripts/frizzy.py doctor qwen/image-edit-2509 --comfy "C:/path/to/ComfyUI"
+```
+
+No pip installs. Details: [scripts/README.md](../../../scripts/README.md).
 
 ## Required models
 Full verified table + links: **[downloads.md](downloads.md)**.

@@ -12,11 +12,12 @@
 | **Hugging Face** | https://huggingface.co/The-frizzy1/Hunyuan-Video-Low-VRAM-4GB |
 | **License** | Tencent Hunyuan Community |
 
+
 ## Preview
 
 <details><summary>Workflow graph</summary>
 
-<p align="center"><img src="images/workflow-image.png" width="100%" alt="hunyuan-video-lowvram ComfyUI workflow graph"></p>
+<p align="center"><img src="samples/workflow.png" width="100%" alt="Hunyuan Video ComfyUI workflow graph"></p>
 </details>
 
 ## ⚠️ v1.1.1 fix
@@ -30,6 +31,16 @@ kept in [`source/hunyuan.json`](source/). See [docs/AUDIT.md](../../../docs/AUDI
 - Low on VRAM? Replace the sampler with **Tiled KSampler**.
 - GGUF errors are usually fixed by updating nodes.
 - **Tip from the creator:** Wan 2.1 performs better on low VRAM → [wan2.1/gguf-lowvram](../../wan2.1/gguf-lowvram).
+
+## Get the models (one command)
+
+From the repo root, this finds ComfyUI, downloads the missing models into the right folders, and installs the custom nodes:
+
+```bash
+python scripts/frizzy.py doctor hunyuan/video --comfy "C:/path/to/ComfyUI"
+```
+
+No pip installs. Details: [scripts/README.md](../../../scripts/README.md).
 
 ## Required models
 Full verified table + links: **[downloads.md](downloads.md)**.

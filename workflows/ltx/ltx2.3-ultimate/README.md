@@ -12,14 +12,25 @@
 | **YouTube** | https://www.youtube.com/watch?v=im4wolfHvMk |
 | **License** | Apache-2.0 |
 
+
 ## Preview
 
-**Sample clips:** [▶ clip 1](images/ltx2.3-ultimate-preview-01.mp4) · [▶ clip 2](images/ltx2.3-ultimate-preview-02.mp4) · [▶ clip 3](images/ltx2.3-ultimate-preview-03.mp4)
+**Sample clips:** [clip 1](samples/preview-1.mp4) · [clip 2](samples/preview-2.mp4) · [clip 3](samples/preview-3.mp4)
 
 ## Important notes
 - Use **DEV GGUF** diffusion models (distilled possible).
 - The **distilled LoRA is REQUIRED**, plus the **text projection** (embedding connector).
 - Most issues = outdated nodes or ComfyUI. Install KJNodes **nightly**.
+
+## Get the models (one command)
+
+From the repo root, this finds ComfyUI, downloads the missing models into the right folders, and installs the custom nodes:
+
+```bash
+python scripts/frizzy.py doctor ltx/ltx2.3-ultimate --comfy "C:/path/to/ComfyUI"
+```
+
+No pip installs. Details: [scripts/README.md](../../../scripts/README.md).
 
 ## Required custom nodes
 | Node | Link |

@@ -16,6 +16,16 @@ Unlike the standard [Wan 2.2 pack](../gguf-lowvram) — which loads separate hig
 experts — this uses a **single merged "rapid mega AIO" GGUF** for both T2V and I2V. Fewer downloads, faster
 setup, at some quality/flexibility cost. Models verified from the workflow JSON.
 
+## Get the models (one command)
+
+From the repo root, this finds ComfyUI, downloads the missing models into the right folders, and installs the custom nodes:
+
+```bash
+python scripts/frizzy.py doctor wan2.2/aio-rapid --comfy "C:/path/to/ComfyUI"
+```
+
+No pip installs. Details: [scripts/README.md](../../../scripts/README.md).
+
 ## Required models
 Full verified table + links: **[downloads.md](downloads.md)**.
 

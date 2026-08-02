@@ -1,0 +1,51 @@
+{
+  "workflow": "ltx/ltx2",
+  "files": [
+    {
+      "name": "ltx-2-19b-dev_Q4_K_M.gguf",
+      "url": "https://huggingface.co/Kijai/LTXV2_comfy/resolve/main/diffusion_models/ltx-2-19b-dev_Q4_K_M.gguf",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Use Q8_0 for higher quality."
+    },
+    {
+      "name": "LTX2_video_vae_bf16.safetensors",
+      "url": "https://huggingface.co/Kijai/LTXV2_comfy/resolve/main/VAE/LTX2_video_vae_bf16.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "LTX2_audio_vae_bf16.safetensors",
+      "url": "https://huggingface.co/Kijai/LTXV2_comfy/resolve/main/VAE/LTX2_audio_vae_bf16.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "ltx-2-19b-embeddings_connector_dev_bf16.safetensors",
+      "url": "https://huggingface.co/Kijai/LTXV2_comfy/resolve/main/text_encoders/ltx-2-19b-embeddings_connector_dev_bf16.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "gemma_3_12B_it text encoder",
+      "page": "https://huggingface.co/Comfy-Org/ltx-2",
+      "dest": "text_encoders",
+      "required": true,
+      "manual": true,
+      "note": "Gemma-3 12B text encoder from Comfy-Org/ltx-2, split_files/text_encoders."
+    }
+  ],
+  "nodes": [
+    {
+      "name": "ComfyUI-GGUF",
+      "git": "https://github.com/city96/ComfyUI-GGUF"
+    },
+    {
+      "name": "ComfyUI-KJNodes",
+      "git": "https://github.com/kijai/ComfyUI-KJNodes"
+    }
+  ]
+}

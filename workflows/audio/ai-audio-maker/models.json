@@ -1,0 +1,43 @@
+{
+  "workflow": "audio/ai-audio-maker",
+  "files": [
+    {
+      "name": "mmaudio_large_44k_v2_fp16.safetensors",
+      "url": "https://huggingface.co/Kijai/MMAudio_safetensors/resolve/main/mmaudio_large_44k_v2_fp16.safetensors",
+      "dest": "mmaudio",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "mmaudio_synchformer_fp16.safetensors",
+      "url": "https://huggingface.co/Kijai/MMAudio_safetensors/resolve/main/mmaudio_synchformer_fp16.safetensors",
+      "dest": "mmaudio",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "mmaudio_vae_44k_fp16.safetensors",
+      "url": "https://huggingface.co/Kijai/MMAudio_safetensors/resolve/main/mmaudio_vae_44k_fp16.safetensors",
+      "dest": "mmaudio",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "apple_DFN5B-CLIP-ViT-H-14-384_fp16.safetensors",
+      "url": "https://huggingface.co/Kijai/MMAudio_safetensors/resolve/main/apple_DFN5B-CLIP-ViT-H-14-384_fp16.safetensors",
+      "dest": "mmaudio",
+      "required": true,
+      "note": ""
+    }
+  ],
+  "nodes": [
+    {
+      "name": "ComfyUI-MMAudio",
+      "git": "https://github.com/kijai/ComfyUI-MMAudio"
+    },
+    {
+      "name": "ComfyUI-VideoHelperSuite",
+      "git": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
+    }
+  ]
+}

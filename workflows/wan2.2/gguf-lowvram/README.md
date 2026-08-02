@@ -30,6 +30,16 @@ on ~8 GB with offloading. Read [the Wan lineage note](../../../docs/WAN-LINEAGE.
 - Without LoRA: **CFG 6, 30–60 steps**.
 - Second-sampler denoise: **0.3–0.5** for 14B.
 
+## Get the models (one command)
+
+From the repo root, this finds ComfyUI, downloads the missing models into the right folders, and installs the custom nodes:
+
+```bash
+python scripts/frizzy.py doctor wan2.2/gguf-lowvram --comfy "C:/path/to/ComfyUI"
+```
+
+No pip installs. Details: [scripts/README.md](../../../scripts/README.md).
+
 ## Required models
 Full verified table + links: **[downloads.md](downloads.md)**.
 

@@ -1,0 +1,88 @@
+{
+  "workflow": "wan2.2/gguf-lowvram",
+  "files": [
+    {
+      "name": "Wan2.2-T2V-A14B-HighNoise-Q2_K.gguf",
+      "url": "https://huggingface.co/QuantStack/Wan2.2-T2V-A14B-GGUF/resolve/main/HighNoise/Wan2.2-T2V-A14B-HighNoise-Q2_K.gguf",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "T2V 14B HIGH-noise expert. You need both experts."
+    },
+    {
+      "name": "Wan2.2-T2V-A14B-LowNoise-Q2_K.gguf",
+      "url": "https://huggingface.co/QuantStack/Wan2.2-T2V-A14B-GGUF/resolve/main/LowNoise/Wan2.2-T2V-A14B-LowNoise-Q2_K.gguf",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "T2V 14B LOW-noise expert. You need both experts."
+    },
+    {
+      "name": "Wan2.2-TI2V-5B-Q5_1.gguf",
+      "url": "https://huggingface.co/QuantStack/Wan2.2-TI2V-5B-GGUF/resolve/main/Wan2.2-TI2V-5B-Q5_1.gguf",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "5B single-file alternative."
+    },
+    {
+      "name": "Wan2.2-I2V-A14B High and Low noise",
+      "page": "https://huggingface.co/bullerwins/Wan2.2-I2V-A14B-GGUF",
+      "dest": "diffusion_models",
+      "required": true,
+      "manual": true,
+      "note": "For I2V, grab both HighNoise and LowNoise from this repo."
+    },
+    {
+      "name": "lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank128_bf16.safetensors",
+      "url": "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank128_bf16.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "Speed LoRA for T2V."
+    },
+    {
+      "name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "wan_2.1_vae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "wan2.2_vae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan2.2_vae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": ""
+    }
+  ],
+  "nodes": [
+    {
+      "name": "gguf",
+      "git": "https://github.com/calcuis/gguf"
+    },
+    {
+      "name": "ComfyUI-WanVideoWrapper",
+      "git": "https://github.com/kijai/ComfyUI-WanVideoWrapper"
+    },
+    {
+      "name": "tiled_ksampler",
+      "git": "https://github.com/FlyingFireCo/tiled_ksampler"
+    },
+    {
+      "name": "ComfyUI-KJNodes",
+      "git": "https://github.com/kijai/ComfyUI-KJNodes"
+    },
+    {
+      "name": "ComfyUI-VideoHelperSuite",
+      "git": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
+    },
+    {
+      "name": "rgthree-comfy",
+      "git": "https://github.com/rgthree/rgthree-comfy"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "workflow": "hunyuan/video",
+  "files": [
+    {
+      "name": "fast-hunyuan-video-t2v-720p-Q5_K_M.gguf",
+      "url": "https://huggingface.co/city96/FastHunyuan-gguf/resolve/main/fast-hunyuan-video-t2v-720p-Q5_K_M.gguf",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Fast Hunyuan, recommended."
+    },
+    {
+      "name": "hunyuan_video_vae_bf16.safetensors",
+      "url": "https://huggingface.co/calcuis/hunyuan-gguf/resolve/main/hunyuan_video_vae_bf16.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "llava_llama3_fp8_scaled.safetensors",
+      "url": "https://huggingface.co/calcuis/hunyuan-gguf/resolve/main/llava_llama3_fp8_scaled.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "clip_l.safetensors",
+      "url": "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": ""
+    }
+  ],
+  "nodes": [
+    {
+      "name": "ComfyUI-GGUF",
+      "git": "https://github.com/city96/ComfyUI-GGUF"
+    },
+    {
+      "name": "ComfyUI-KJNodes",
+      "git": "https://github.com/kijai/ComfyUI-KJNodes"
+    },
+    {
+      "name": "ComfyUI-VideoHelperSuite",
+      "git": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
+    },
+    {
+      "name": "tiled_ksampler",
+      "git": "https://github.com/FlyingFireCo/tiled_ksampler"
+    }
+  ]
+}

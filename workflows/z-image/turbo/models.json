@@ -1,0 +1,34 @@
+{
+  "workflow": "z-image/turbo",
+  "files": [
+    {
+      "name": "z-image-turbo-q8_0.gguf",
+      "page": "https://huggingface.co/models?search=z-image-turbo-gguf",
+      "dest": "diffusion_models",
+      "required": true,
+      "manual": true,
+      "note": "Search HF for the Z-Image-Turbo-GGUF repo, grab Q8_0."
+    },
+    {
+      "name": "qwen_3_4b.safetensors",
+      "page": "https://huggingface.co/Comfy-Org",
+      "dest": "text_encoders",
+      "required": true,
+      "manual": true,
+      "note": "Qwen-3 4B text encoder."
+    },
+    {
+      "name": "ae.safetensors",
+      "url": "https://huggingface.co/ffxvs/vae-flux/resolve/main/ae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": ""
+    }
+  ],
+  "nodes": [
+    {
+      "name": "ComfyUI-GGUF",
+      "git": "https://github.com/city96/ComfyUI-GGUF"
+    }
+  ]
+}

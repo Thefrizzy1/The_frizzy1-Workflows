@@ -35,6 +35,16 @@ model — if you want to generate video from a prompt, use
 | 12 GB | up to Q8_0 | 25 |
 | 20 GB+ | Q6_K / Q8_0 | 25+ |
 
+## Get the models (one command)
+
+From the repo root, this finds ComfyUI, downloads the missing models into the right folders, and installs the custom nodes:
+
+```bash
+python scripts/frizzy.py doctor wan2.2/animate --comfy "C:/path/to/ComfyUI"
+```
+
+No pip installs. Details: [scripts/README.md](../../../scripts/README.md).
+
 ## Required models
 Full verified table with links: **[downloads.md](downloads.md)**. Summary (all read from the workflow JSON):
 

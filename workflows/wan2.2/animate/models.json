@@ -1,0 +1,69 @@
+{
+  "workflow": "wan2.2/animate",
+  "files": [
+    {
+      "name": "Wan2.2-Animate-14B-Q8_0.gguf",
+      "url": "https://huggingface.co/QuantStack/Wan2.2-Animate-14B-GGUF/resolve/main/Wan2.2-Animate-14B-Q8_0.gguf",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "12GB target. Use Q4_K_M for 4GB."
+    },
+    {
+      "name": "WanAnimate_relight_lora_fp16.safetensors",
+      "url": "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/LoRAs/Wan22_relight/WanAnimate_relight_lora_fp16.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors",
+      "url": "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "Speed LoRA."
+    },
+    {
+      "name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "wan_2.1_vae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": ""
+    },
+    {
+      "name": "clip_vision_h.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors",
+      "dest": "clip_vision",
+      "required": true,
+      "note": ""
+    }
+  ],
+  "nodes": [
+    {
+      "name": "comfyui_controlnet_aux",
+      "git": "https://github.com/Fannovel16/comfyui_controlnet_aux"
+    },
+    {
+      "name": "ComfyUI-KJNodes",
+      "git": "https://github.com/kijai/ComfyUI-KJNodes"
+    },
+    {
+      "name": "ComfyUI-segment-anything-2",
+      "git": "https://github.com/kijai/ComfyUI-segment-anything-2"
+    },
+    {
+      "name": "ComfyUI-VideoHelperSuite",
+      "git": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
+    },
+    {
+      "name": "execution-inversion-demo-comfyui",
+      "git": "https://github.com/BadCafeCode/execution-inversion-demo-comfyui"
+    }
+  ]
+}

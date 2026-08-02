@@ -102,7 +102,24 @@ Full comparison, VAE/encoder traps, and a decision guide: **[docs/WAN-LINEAGE.md
 
 ## Installation
 
-The same four steps apply to every workflow; the specifics live in each workflow's own README.
+### The easy way: one command
+
+Clone this repo and run the setup tool. It finds your ComfyUI, downloads the models a workflow needs into
+the right folders, installs the custom nodes, and can launch ComfyUI for you.
+
+```bash
+python scripts/frizzy.py
+```
+
+That opens a menu. Or drive it directly:
+
+```bash
+python scripts/frizzy.py doctor wan2.2/animate --comfy "C:/path/to/ComfyUI"
+```
+
+Pure Python, no pip installs. Full usage: [scripts/README.md](scripts/README.md).
+
+### By hand
 
 1. **Install [ComfyUI](https://github.com/comfyanonymous/ComfyUI)** and the [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager).
 2. **Install the custom nodes** listed in the workflow's README (via Manager, then restart).
@@ -150,7 +167,8 @@ The_frizzy1-Workflows/
 │           ├── downloads.md       verified model table
 │           ├── changelog.md       version history
 │           ├── The_frizzy1_*.json the workflow (templated name)
-│           ├── images/            samples + workflow graph
+│           ├── models.json        model list for the download tool
+│           ├── samples/           example outputs + workflow graph
 │           └── source/            original unmodified files
 ├── templates/             reusable doc templates
 └── index.html             optional local dashboard (open in a browser)
