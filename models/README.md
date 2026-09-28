@@ -13,6 +13,7 @@ its recommended VRAM/quant, and where to download it. Filenames and downloads ar
 | **Flux (Dev/Schnell/Kontext)** | High-quality image gen + editing | T2I·edit | [flux/kontext](../workflows/flux/kontext) | 4 GB |
 | **Flux.2 Dev** | Newest Flux image model (Mistral encoder) | T2I | [flux/flux2-dev](../workflows/flux/flux2-dev) | 6 GB |
 | **Qwen Image** | Image gen + editing (2509) | T2I·edit | [qwen/image-edit-2509](../workflows/qwen/image-edit-2509) | 4 GB |
+| **Qwen Image 2.1** | 7B image gen + editing, native 2K (Qwen3-VL encoder) | T2I | [qwen/image-2.1-12gb](../workflows/qwen/image-2.1-12gb) | 12 GB |
 | **Z-Image Turbo** | Fast few-step image gen (Qwen-3 encoder) | T2I | [z-image/turbo](../workflows/z-image/turbo) | 4 GB |
 | **Hunyuan Video** | Tencent video model | T2V·I2V | [hunyuan/video](../workflows/hunyuan/video) | 4 GB |
 | **LTXV-2 (19B)** | Fast audio-aware video | T2V·I2V·audio | [ltx/ltx2](../workflows/ltx/ltx2) | 4 GB |
@@ -40,6 +41,7 @@ Several workflows reuse the same encoders/VAEs — download once:
 | Flux Dev / Kontext | FLUX.1 [dev] **Non-Commercial** |
 | Flux.2 Dev | FLUX.2 [dev] — check model card |
 | Qwen Image | Apache-2.0 |
+| Qwen Image 2.1 (+ Viggle turbo LoRA) | Qwen Research License — **Non-Commercial** |
 | Hunyuan Video | Tencent Hunyuan Community |
 | LTXV-2 / 2.3 | Apache-2.0 (check LTX card) |
 | Z-Image / MMAudio | Check model card |

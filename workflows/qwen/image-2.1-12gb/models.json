@@ -1,0 +1,34 @@
+{
+  "workflow": "qwen/image-2.1-12gb",
+  "files": [
+    {
+      "name": "qwen_image_2.1_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "7.3 GB"
+    },
+    {
+      "name": "qwen3vl_8b_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "9.4 GB"
+    },
+    {
+      "name": "qwen_image_2.1_vae_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "0.68 GB"
+    },
+    {
+      "name": "Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors",
+      "url": "https://huggingface.co/Viggle/Qwen-Image-2.1-viggle-turbo/resolve/main/Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "TURBO group only. 1.4 GB."
+    }
+  ],
+  "nodes": []
+}

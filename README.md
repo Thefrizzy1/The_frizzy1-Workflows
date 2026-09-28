@@ -8,14 +8,14 @@ GGUF-quantised image, video and audio generation that runs on as little as **4 G
 [![CivitAI](https://img.shields.io/badge/CivitAI-The__frizzy1-2b7cff?style=flat-square)](https://civitai.com/user/The_frizzy1)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-The--frizzy1-ffb000?style=flat-square)](https://huggingface.co/The-frizzy1)
 [![YouTube](https://img.shields.io/badge/YouTube-@the__frizzy1-ff0033?style=flat-square)](https://www.youtube.com/@the_frizzy1)
-[![Workflows](https://img.shields.io/badge/workflows-12-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-13-6a5cff?style=flat-square)](#workflows)
 [![Min VRAM](https://img.shields.io/badge/min%20VRAM-4%20GB-3ecf8e?style=flat-square)](#workflows)
 [![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
 
 </div>
 
 > **Every model name in this repository was read directly out of the workflow `.json` files — not guessed.**
-> All 12 workflows are model-verified. Where a source repo couldn't be fully confirmed it's flagged in the [audit](docs/AUDIT.md).
+> All 13 workflows are model-verified. Where a source repo couldn't be fully confirmed it's flagged in the [audit](docs/AUDIT.md).
 
 ---
 
@@ -43,6 +43,7 @@ GGUF-quantised image, video and audio generation that runs on as little as **4 G
 | **Edit or generate images**, realistic & cinematic | [Flux Kontext GGUF](workflows/flux/kontext) | 4 GB+ |
 | The **newest Flux** image model | [Flux.2 Dev GGUF](workflows/flux/flux2-dev) | 6 GB+ |
 | **Beginner-friendly** image generation + editing | [Qwen Image & Edit 2509](workflows/qwen/image-edit-2509) | 4 GB+ |
+| **Native 2K** images on a 12 GB card (Qwen Image 2.1) | [Qwen Image 2.1 · 12 GB](workflows/qwen/image-2.1-12gb) | 12 GB |
 | **Fast, tiny** image generation | [Z-Image Turbo GGUF](workflows/z-image/turbo) | 4 GB+ |
 | Newer **LTX video** (audio-aware) | [LTX-2](workflows/ltx/ltx2) · [LTX-2.3 Ultimate](workflows/ltx/ltx2.3-ultimate) | 4–12 GB |
 | The **older Hunyuan** video path | [Hunyuan Video Low-VRAM](workflows/hunyuan/video) | 4 GB+ |
@@ -75,6 +76,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[Flux Kontext GGUF](workflows/flux/kontext)** | v2.2.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/1311703) · [HF](https://huggingface.co/The-frizzy1/Flux-Kontext-GGUF-4GB) · [▶](https://www.youtube.com/watch?v=4C0RJ01yRok) |
 | **[Flux.2 Dev GGUF](workflows/flux/flux2-dev)** | v1.0.0 | 6 GB | T2I | [CivitAI](https://civitai.com/models/2508110) · [▶](https://www.youtube.com/watch?v=dcekWAbgDXg) |
 | **[Qwen Image & Edit 2509](workflows/qwen/image-edit-2509)** | v1.0.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/2229874) · [HF](https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF) · [▶](https://www.youtube.com/watch?v=NPni2ulov34) |
+| **[Qwen Image 2.1 · 12 GB](workflows/qwen/image-2.1-12gb)** | v1.0.0 | 12 GB | T2I native 2K · turbo LoRA | — |
 | **[Z-Image Turbo GGUF](workflows/z-image/turbo)** | v1.0.0 | 4 GB | T2I (fast turbo) | [CivitAI](https://civitai.com/models/2561639) |
 
 ### 🔊 Audio
@@ -157,7 +159,7 @@ The_frizzy1-Workflows/
 │   ├── wan2.1/            gguf-lowvram · flf2v
 │   ├── wan2.2/            gguf-lowvram · animate · aio-rapid
 │   ├── flux/              kontext · flux2-dev
-│   ├── qwen/              image-edit-2509
+│   ├── qwen/              image-edit-2509 · image-2.1-12gb
 │   ├── z-image/           turbo
 │   ├── hunyuan/           video
 │   ├── ltx/               ltx2 · ltx2.3-ultimate

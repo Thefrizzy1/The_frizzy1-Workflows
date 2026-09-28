@@ -87,6 +87,15 @@ Every model, LoRA, VAE, text encoder and helper referenced by any workflow in th
 | Text encoder | `qwen_2.5_vl_7b_fp8_scaled.safetensors` | [Comfy-Org/Qwen-Image_ComfyUI](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI) | JSON |
 | VAE | `qwen_image_vae.safetensors` | Comfy-Org/Qwen-Image_ComfyUI | JSON |
 
+## Qwen Image 2.1 · 12 GB — [qwen/image-2.1-12gb](../workflows/qwen/image-2.1-12gb)
+
+| Role | In-workflow filename | Source | Verified? |
+|---|---|---|---|
+| Diffusion | `qwen_image_2.1_int8_convrot.safetensors` | [Comfy-Org/Qwen-Image-2.1](https://huggingface.co/Comfy-Org/Qwen-Image-2.1) | JSON |
+| Text encoder | `qwen3vl_8b_int8_convrot.safetensors` | Comfy-Org/Qwen-Image-2.1 | JSON |
+| VAE | `qwen_image_2.1_vae_bf16.safetensors` | Comfy-Org/Qwen-Image-2.1 | JSON |
+| Turbo LoRA (optional) | `Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors` | [Viggle/Qwen-Image-2.1-viggle-turbo](https://huggingface.co/Viggle/Qwen-Image-2.1-viggle-turbo) | JSON |
+
 ## LTX-2 — [ltx/ltx2](../workflows/ltx/ltx2)
 
 | Role | In-workflow filename | Source | Verified? |
