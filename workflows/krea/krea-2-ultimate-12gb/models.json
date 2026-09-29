@@ -1,0 +1,41 @@
+{
+  "workflow": "krea/krea-2-ultimate-12gb",
+  "files": [
+    {
+      "name": "krea2_turbo_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/diffusion_models/krea2_turbo_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "13.5 GB"
+    },
+    {
+      "name": "qwen3vl_4b_fp8_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/text_encoders/qwen3vl_4b_fp8_scaled.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "5.2 GB"
+    },
+    {
+      "name": "qwen_image_vae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/vae/qwen_image_vae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "0.3 GB"
+    },
+    {
+      "name": "krea2_style_reference.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_style_reference.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": "0.5 GB"
+    },
+    {
+      "name": "krea2_darkbrush.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_darkbrush.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": "0.5 GB"
+    }
+  ],
+  "nodes": []
+}

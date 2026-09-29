@@ -1,0 +1,83 @@
+{
+  "workflow": "wan2.2/animate-ultimate",
+  "files": [
+    {
+      "name": "wan_animate_2_distill_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan-Animate-2/resolve/main/diffusion_models/wan_animate_2_distill_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "16.7 GB"
+    },
+    {
+      "name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan-Animate-2/resolve/main/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "6.7 GB"
+    },
+    {
+      "name": "clip_vision_h.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan-Animate-2/resolve/main/clip_vision/clip_vision_h.safetensors",
+      "dest": "clip_vision",
+      "required": true,
+      "note": "1.3 GB"
+    },
+    {
+      "name": "Wan2_1_VAE_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan-Animate-2/resolve/main/vae/Wan2_1_VAE_bf16.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "0.3 GB"
+    },
+    {
+      "name": "lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan-Animate-2/resolve/main/loras/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": "0.7 GB"
+    },
+    {
+      "name": "Wan2.2-Animate-14B-Q5_K_S.gguf",
+      "url": "https://huggingface.co/QuantStack/Wan2.2-Animate-14B-GGUF/resolve/main/Wan2.2-Animate-14B-Q5_K_S.gguf",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "12.3 GB"
+    },
+    {
+      "name": "Wan2.2-Animate-14B-Q8_0.gguf",
+      "url": "https://huggingface.co/QuantStack/Wan2.2-Animate-14B-GGUF/resolve/main/Wan2.2-Animate-14B-Q8_0.gguf",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "18.7 GB"
+    },
+    {
+      "name": "WanAnimate_relight_lora_fp16.safetensors",
+      "url": "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/LoRAs/Wan22_relight/WanAnimate_relight_lora_fp16.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": "1.4 GB"
+    },
+    {
+      "name": "wan_2.1_vae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "0.2 GB"
+    },
+    {
+      "name": "sdpose_wholebody_fp16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/SDPose/resolve/main/checkpoints/sdpose_wholebody_fp16.safetensors",
+      "dest": "checkpoints",
+      "required": true,
+      "note": "1.9 GB"
+    },
+    {
+      "name": "rt_detr_v4-x-hgnet_fp16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/SDPose/resolve/main/diffusion_models/rt_detr_v4-x-hgnet_fp16.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "0.1 GB"
+    }
+  ],
+  "nodes": []
+}

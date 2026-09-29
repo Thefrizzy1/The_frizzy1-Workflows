@@ -1,0 +1,55 @@
+{
+  "workflow": "3d/image-to-3d-ultimate-12gb",
+  "files": [
+    {
+      "name": "pixal3d_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Pixal3D/resolve/main/diffusion_models/pixal3d_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "5.6 GB"
+    },
+    {
+      "name": "dino_v3_L_naf_fp32.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Pixal3D/resolve/main/clip_vision/dino_v3_L_naf_fp32.safetensors",
+      "dest": "clip_vision",
+      "required": true,
+      "note": "1.2 GB"
+    },
+    {
+      "name": "trellis_2_shape_vae_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Pixal3D/resolve/main/vae/trellis_2_shape_vae_bf16.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "1.1 GB"
+    },
+    {
+      "name": "trellis_2_texture_vae_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Pixal3D/resolve/main/vae/trellis_2_texture_vae_bf16.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "0.9 GB"
+    },
+    {
+      "name": "trellis_2_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/TRELLIS.2/resolve/main/diffusion_models/trellis_2_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "5.3 GB"
+    },
+    {
+      "name": "birefnet.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/BiRefNet/resolve/main/background_removal/birefnet.safetensors",
+      "dest": "background_removal",
+      "required": true,
+      "note": "0.4 GB"
+    },
+    {
+      "name": "moge_2_vitl_normal_fp16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MoGe/resolve/main/geometry_estimation/moge_2_vitl_normal_fp16.safetensors",
+      "dest": "geometry_estimation",
+      "required": true,
+      "note": "0.7 GB"
+    }
+  ],
+  "nodes": []
+}

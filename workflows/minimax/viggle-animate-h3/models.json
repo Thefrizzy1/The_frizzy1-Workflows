@@ -1,0 +1,34 @@
+{
+  "workflow": "minimax/viggle-animate-h3",
+  "files": [
+    {
+      "name": "minimax_h3_ref2va_viggle_pruned_int8_convrot.safetensors",
+      "url": "https://huggingface.co/drbaph/Viggle-Animate-ComfyUI/resolve/main/diffusion_models/minimax_h3_ref2va_viggle_pruned_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "21.0 GB"
+    },
+    {
+      "name": "viggle_animate_dmd_lora_r64.safetensors",
+      "url": "https://huggingface.co/drbaph/Viggle-Animate-ComfyUI/resolve/main/loras/viggle_animate_dmd_lora_r64.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": "0.9 GB"
+    },
+    {
+      "name": "fixed_embed_fwd_anyframe.safetensors",
+      "url": "https://huggingface.co/drbaph/Viggle-Animate-ComfyUI/resolve/main/text_cond/fixed_embed_fwd_anyframe.safetensors",
+      "dest": "text_cond",
+      "required": true,
+      "note": "0.0 GB"
+    },
+    {
+      "name": "minimax_h3_video_vae_fp16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "5.2 GB"
+    }
+  ],
+  "nodes": []
+}
