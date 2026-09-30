@@ -51,8 +51,8 @@
       "note": "18.7 GB"
     },
     {
-      "name": "WanAnimate_relight_lora_fp16.safetensors",
-      "url": "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/LoRAs/Wan22_relight/WanAnimate_relight_lora_fp16.safetensors",
+      "name": "wan2.2_animate_14B_relight_lora_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_animate_14B_relight_lora_bf16.safetensors",
       "dest": "loras",
       "required": true,
       "note": "1.4 GB"

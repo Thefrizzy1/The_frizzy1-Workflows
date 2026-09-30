@@ -72,29 +72,29 @@ templated `.json`. Model names are verified from the workflow file.
 | **[Wan 2.1 GGUF Low-VRAM](workflows/wan2.1/gguf-lowvram)** | v2.0.0 | 4 GB | T2V · I2V · VACE · FLF · Fun | [CivitAI](https://civitai.com/models/1309674) · [HF](https://huggingface.co/The-frizzy1/Wan21-GGUF-4GB-Workflow) · [▶](https://www.youtube.com/watch?v=Xqjabf_eQ_U) |
 | **[Wan 2.1 FLF2V](workflows/wan2.1/flf2v)** | v2.0.0 | 4 GB | First → Last frame | [CivitAI](https://civitai.com/models/1624167) |
 | **[Hunyuan Video Low-VRAM](workflows/hunyuan/video)** | v1.1.1 | 4 GB | T2V · I2V | [CivitAI](https://civitai.com/models/1312419) · [HF](https://huggingface.co/The-frizzy1/Hunyuan-Video-Low-VRAM-4GB) |
-| **[LTX-2 GGUF](workflows/ltx/ltx2)** | v1.5.0 | 4 GB | T2V · I2V · audio | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow) · [▶](https://www.youtube.com/watch?v=nnHUBMgdJac) |
+| **[LTX-2 GGUF](workflows/ltx/ltx2)** | v2.0.0 | 4 GB | T2V · I2V · audio | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow) · [▶](https://www.youtube.com/watch?v=nnHUBMgdJac) |
 | **[LTX-2.3 Ultimate](workflows/ltx/ltx2.3-ultimate)** | v3.0.0 | 12 GB | T2V · I2V · FFLF · audio · ID | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX23-Ultimate) · [▶](https://www.youtube.com/watch?v=im4wolfHvMk) |
-| **[MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb)** | v1.0.0 | 12 GB | T2V · I2V · last · FLF · R2V · multiframe · ControlNet pose · audio | — |
-| **[LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb)** | v1.0.0 | 12 GB | T2V · I2V · FLF · pose (IC-LoRA) · audio | — |
-| **[Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3)** | v1.0.0 | 12 GB | character replacement (V2V) | — |
-| **[Wan Animate Ultimate](workflows/wan2.2/animate-ultimate)** | v1.0.0 | 12 GB | Wan Animate 2 · Wan 2.2 Animate GGUF + face video | — |
+| **[MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb)** | v2.0.0 | 12 GB | T2V · I2V · last · FLF · R2V · multiframe · ControlNet pose · audio | — |
+| **[LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb)** | v2.0.0 | 12 GB | T2V · I2V · FLF · pose (IC-LoRA) · audio | — |
+| **[Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3)** | v2.0.0 | 12 GB | character replacement (V2V) | — |
+| **[Wan Animate Ultimate](workflows/wan2.2/animate-ultimate)** | v2.0.0 | 12 GB | Wan Animate 2 · Wan 2.2 Animate GGUF + face video | — |
 
 ### 🖼️ Image
 
 | Workflow | Ver | Min VRAM | Tasks | Links |
 |---|:---:|:---:|---|---|
 | **[Flux Kontext GGUF](workflows/flux/kontext)** | v2.2.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/1311703) · [HF](https://huggingface.co/The-frizzy1/Flux-Kontext-GGUF-4GB) · [▶](https://www.youtube.com/watch?v=4C0RJ01yRok) |
-| **[Flux.2 Dev GGUF](workflows/flux/flux2-dev)** | v1.0.0 | 6 GB | T2I | [CivitAI](https://civitai.com/models/2508110) · [▶](https://www.youtube.com/watch?v=dcekWAbgDXg) |
-| **[Qwen Image & Edit 2509](workflows/qwen/image-edit-2509)** | v1.0.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/2229874) · [HF](https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF) · [▶](https://www.youtube.com/watch?v=NPni2ulov34) |
-| **[Qwen Image 2.1 · 12 GB](workflows/qwen/image-2.1-12gb)** | v1.0.0 | 12 GB | T2I native 2K · turbo LoRA | — |
+| **[Flux.2 Dev GGUF](workflows/flux/flux2-dev)** | v2.0.0 | 6 GB | T2I | [CivitAI](https://civitai.com/models/2508110) · [▶](https://www.youtube.com/watch?v=dcekWAbgDXg) |
+| **[Qwen Image & Edit 2509](workflows/qwen/image-edit-2509)** | v2.0.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/2229874) · [HF](https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF) · [▶](https://www.youtube.com/watch?v=NPni2ulov34) |
+| **[Qwen Image 2.1 · 12 GB](workflows/qwen/image-2.1-12gb)** | v2.0.0 | 12 GB | T2I native 2K · turbo LoRA | — |
 | **[Z-Image Turbo GGUF](workflows/z-image/turbo)** | v1.0.0 | 4 GB | T2I (fast turbo) | [CivitAI](https://civitai.com/models/2561639) |
-| **[Krea 2 Ultimate · 12 GB](workflows/krea/krea-2-ultimate-12gb)** | v1.0.0 | 12 GB | T2I · style reference · style LoRAs | — |
+| **[Krea 2 Ultimate · 12 GB](workflows/krea/krea-2-ultimate-12gb)** | v2.0.0 | 12 GB | T2I · style reference · style LoRAs | — |
 
 ### 🧊 3D
 
 | Workflow | Ver | Min VRAM | Tasks | Links |
 |---|---|---|---|---|
-| **[Image to 3D Ultimate · 12 GB](workflows/3d/image-to-3d-ultimate-12gb)** | v1.0.0 | 12 GB | image → textured mesh (Pixal3D · TRELLIS.2) | — |
+| **[Image to 3D Ultimate · 12 GB](workflows/3d/image-to-3d-ultimate-12gb)** | v2.0.0 | 12 GB | image → textured mesh (Pixal3D · TRELLIS.2) | — |
 
 ### 🔊 Audio
 

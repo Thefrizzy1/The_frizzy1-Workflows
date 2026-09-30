@@ -1,5 +1,4 @@
-# The_frizzy1 — LTX-2 GGUF v1.5.0
-
+# The_frizzy1 — LTX-2 GGUF v2.0.0
 > Simple color-coded LTXV-2 workflow (I2V + T2V, audio-aware). Lightweight; runs from **4 GB** with Triton, comfortable at 12 GB.
 
 | | |

@@ -1,5 +1,4 @@
-# The_frizzy1 — Image to 3D Ultimate · 12 GB v1.0.0
-
+# The_frizzy1 — Image to 3D Ultimate · 12 GB v2.0.0
 > One image in, textured .glb out - Pixal3D or TRELLIS.2 from a dropdown. Core ComfyUI nodes only.
 
 | | |
@@ -47,6 +46,6 @@ python scripts/frizzy.py doctor 3d/image-to-3d-ultimate-12gb --comfy "C:/path/to
 ## Installation
 1. Update ComfyUI to **0.37.4+**.
 2. Download the files in [downloads.md](downloads.md).
-3. Load `The_frizzy1_image-to-3d-ultimate-12gb_v1.0.0.json`, pick a **MODE**, add your inputs, **Run**.
+3. Load `The_frizzy1_image-to-3d-ultimate-12gb_v2.0.0.json`, pick a **MODE**, add your inputs, **Run**.
 
 If your models live in sub-folders (e.g. `diffusion_models/LTX-2.5/`), the loaders show red until you re-pick them once.

@@ -26,7 +26,7 @@ Click a file name to download it. Put it in the folder shown (inside `ComfyUI/mo
 
 | For | Folder | File (click = download) | Size |
 |---|---|---|---|
-| GGUF mode | `loras/` | [WanAnimate_relight_lora_fp16.safetensors](https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/LoRAs/Wan22_relight/WanAnimate_relight_lora_fp16.safetensors) | 1.4 GB |
+| GGUF mode | `loras/` | [wan2.2_animate_14B_relight_lora_bf16.safetensors](https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_animate_14B_relight_lora_bf16.safetensors) | 1.4 GB |
 
 **[Comfy-Org/Wan_2.2_ComfyUI_Repackaged](https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged)**
 

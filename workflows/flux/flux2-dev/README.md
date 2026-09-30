@@ -1,5 +1,4 @@
-# The_frizzy1 — Flux.2 Dev GGUF v1.0.0
-
+# The_frizzy1 — Flux.2 Dev GGUF v2.0.0
 > The newest Flux image model (Flux.2 Dev), GGUF-quantised for low VRAM. Simple, single-pass generation.
 
 | | |

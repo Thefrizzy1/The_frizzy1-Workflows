@@ -1,5 +1,4 @@
-# The_frizzy1 — Qwen Image & Edit 2509 GGUF v1.0.0
-
+# The_frizzy1 — Qwen Image & Edit 2509 GGUF v2.0.0
 > Beginner-friendly Qwen Image generation **and editing** on low/mid hardware. GGUF + optional Lightning LoRAs.
 
 | | |

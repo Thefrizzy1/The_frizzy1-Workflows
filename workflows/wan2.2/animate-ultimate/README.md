@@ -1,5 +1,4 @@
-# The_frizzy1 — Wan Animate Ultimate v1.0.0
-
+# The_frizzy1 — Wan Animate Ultimate v2.0.0
 > Make any character move like your driving video - Wan Animate 2 (12 GB, native) or Wan 2.2 Animate GGUF (low VRAM). Original | result side-by-side included.
 
 | | |
@@ -41,6 +40,9 @@ Each mode was run once through this exact workflow (5 s clips unless noted). *Wa
 | Wan Animate 2 (12 GB, 81 frames) | 480x864 | 10 min 31 s | 9 min 31 s | 11.4 GB | 17.5 GB |
 | Wan 2.2 Animate GGUF (Q5_K_S, 81 frames, face video) | 480x864 | 7 min 05 s | 4 min 51 s | 11.7 GB | 24.6 GB |
 
+
+> Measured with v1.0.0. In v1.0.0 the relight LoRA did not load (see [changelog](changelog.md)), so the GGUF row ran without relight; v2.0.0 loads it.
+
 ## Required models
 See [downloads.md](downloads.md) — every file was read from the workflow `.json`.
 
@@ -56,6 +58,6 @@ python scripts/frizzy.py doctor wan2.2/animate-ultimate --comfy "C:/path/to/Comf
 ## Installation
 1. Update ComfyUI to **0.37.4+**.
 2. Download the files in [downloads.md](downloads.md).
-3. Load `The_frizzy1_wan-animate-ultimate_v1.0.0.json`, pick a **MODE**, add your inputs, **Run**.
+3. Load `The_frizzy1_wan-animate-ultimate_v2.0.0.json`, pick a **MODE**, add your inputs, **Run**.
 
 If your models live in sub-folders (e.g. `diffusion_models/LTX-2.5/`), the loaders show red until you re-pick them once.

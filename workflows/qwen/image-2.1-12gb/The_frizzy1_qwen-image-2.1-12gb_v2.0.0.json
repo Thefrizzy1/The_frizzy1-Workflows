@@ -1,0 +1,2009 @@
+{
+ "id": "6f2b1a7e-frizzy-qwen21-12gb-v100",
+ "revision": 0,
+ "last_node_id": 43,
+ "last_link_id": 34,
+ "nodes": [
+  {
+   "id": 11,
+   "type": "SaveImage",
+   "pos": [
+    600,
+    0
+   ],
+   "size": [
+    720,
+    540
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 25
+    },
+    {
+     "localized_name": "filename_prefix",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "Qwen2.1_12GB_quality"
+   ],
+   "widgets_values_named": {
+    "filename_prefix": "Qwen2.1_12GB_quality"
+   }
+  },
+  {
+   "id": 29,
+   "type": "SaveImage",
+   "pos": [
+    600,
+    600
+   ],
+   "size": [
+    720,
+    540
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 4,
+   "inputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 26
+    },
+    {
+     "localized_name": "filename_prefix",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "Qwen2.1_12GB_turbo"
+   ],
+   "widgets_values_named": {
+    "filename_prefix": "Qwen2.1_12GB_turbo"
+   }
+  },
+  {
+   "id": 40,
+   "type": "MarkdownNote",
+   "pos": [
+    -780,
+    0
+   ],
+   "size": [
+    720,
+    600
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "title": "Downloads",
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "widgets_values": [
+    "## Downloads — put each file in the ComfyUI folder shown\n\n**Comfy-Org/Qwen-Image-2.1** — https://huggingface.co/Comfy-Org/Qwen-Image-2.1\n\n| ComfyUI folder | File | Size |\n|---|---|---|\n| `models/diffusion_models/` | [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors) | 7.3 GB |\n| `models/text_encoders/` | [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors) | 9.4 GB |\n| `models/vae/` | [qwen_image_2.1_vae_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors) | 0.68 GB |\n\n**Viggle/Qwen-Image-2.1-viggle-turbo** — only for the TURBO group — https://huggingface.co/Viggle/Qwen-Image-2.1-viggle-turbo\n\n| ComfyUI folder | File | Size |\n|---|---|---|\n| `models/loras/` | [Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors](https://huggingface.co/Viggle/Qwen-Image-2.1-viggle-turbo/resolve/main/Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors) | 1.4 GB |\n\n**Needs ComfyUI 0.37 or newer** (native Qwen Image 2.1 + the Comfy Kitchen attention node). **No custom nodes.**\n\nOptional: `qwen_image_2.1_bf16.safetensors` (14.2 GB, same repo) is a drop-in swap for the int8 model. On my RTX 3060 at 2K it measured 6 min 10 s vs 3 min 57 s (25 steps) with 10.6 GB peak system RAM vs 3.0 GB — same-seed images looked the same.\n"
+   ],
+   "widgets_values_named": {
+    "text": "## Downloads — put each file in the ComfyUI folder shown\n\n**Comfy-Org/Qwen-Image-2.1** — https://huggingface.co/Comfy-Org/Qwen-Image-2.1\n\n| ComfyUI folder | File | Size |\n|---|---|---|\n| `models/diffusion_models/` | [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors) | 7.3 GB |\n| `models/text_encoders/` | [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors) | 9.4 GB |\n| `models/vae/` | [qwen_image_2.1_vae_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors) | 0.68 GB |\n\n**Viggle/Qwen-Image-2.1-viggle-turbo** — only for the TURBO group — https://huggingface.co/Viggle/Qwen-Image-2.1-viggle-turbo\n\n| ComfyUI folder | File | Size |\n|---|---|---|\n| `models/loras/` | [Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors](https://huggingface.co/Viggle/Qwen-Image-2.1-viggle-turbo/resolve/main/Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors) | 1.4 GB |\n\n**Needs ComfyUI 0.37 or newer** (native Qwen Image 2.1 + the Comfy Kitchen attention node). **No custom nodes.**\n\nOptional: `qwen_image_2.1_bf16.safetensors` (14.2 GB, same repo) is a drop-in swap for the int8 model. On my RTX 3060 at 2K it measured 6 min 10 s vs 3 min 57 s (25 steps) with 10.6 GB peak system RAM vs 3.0 GB — same-seed images looked the same.\n"
+   },
+   "color": "#432",
+   "bgcolor": "#653"
+  },
+  {
+   "id": 41,
+   "type": "MarkdownNote",
+   "pos": [
+    -780,
+    640
+   ],
+   "size": [
+    720,
+    760
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "title": "How to use · tested on RTX 3060",
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "widgets_values": [
+    "## How to use\n\n1. **Step 1** — models are set (int8 = best fit for 12 GB).\n2. **Step 2** — size. Default **4 MP = 2048×2048** (Qwen 2.1's native 2K). 1 MP = 1024×1024.\n3. **Step 3** — write your prompt. cfg stays **1** (negative prompt is unused at cfg 1).\n4. **Run.** QUALITY is on; TURBO is bypassed. To switch: click a group title → **Ctrl+B**.\n\n## Tested on RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 (ComfyUI 0.37.1)\n\n| This workflow, 2048×2048 (Comfy Desktop, SageAttention on) | Time per image |\n|---|---|\n| QUALITY · 40 steps · Comfy Kitchen attention | **4 min 07 s** |\n| TURBO · Viggle 6-step · SageAttention (Desktop default) | **47 s** |\n\nFirst run after starting ComfyUI adds a few seconds for loading (4 min 11 s / 48 s).\n\nFrom my benchmark (2048×2048, same seed): template 25 steps with PyTorch attention **3 min 57 s** ·\nComfy Kitchen attention **2 min 40 s** · SageAttention **3 min 00 s** · bf16 model **6 min 10 s**.\n\n**Why 40 steps:** at 2K the template's 25 steps left the subject faded on one of my test prompts; 40 steps (the official 40–50) fixed it.\n**TURBO:** much faster, but visibly softer fine detail at 2K than the base model.\n**Seeds vary:** of my two test seeds, TURBO double-exposed the player's head on one, and QUALITY printed the date line twice on one. Re-roll the seed if you see that.\n**Don't add Comfy Kitchen attention to TURBO:** with the 6-step LoRA it ghosted the subject in my test — PyTorch and SageAttention were clean.\n**Text encoder:** `qwen3vl_8b_w4a8` runs at the same speed but changes the picture with the same seed — int8 kept.\n"
+   ],
+   "widgets_values_named": {
+    "text": "## How to use\n\n1. **Step 1** — models are set (int8 = best fit for 12 GB).\n2. **Step 2** — size. Default **4 MP = 2048×2048** (Qwen 2.1's native 2K). 1 MP = 1024×1024.\n3. **Step 3** — write your prompt. cfg stays **1** (negative prompt is unused at cfg 1).\n4. **Run.** QUALITY is on; TURBO is bypassed. To switch: click a group title → **Ctrl+B**.\n\n## Tested on RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 (ComfyUI 0.37.1)\n\n| This workflow, 2048×2048 (Comfy Desktop, SageAttention on) | Time per image |\n|---|---|\n| QUALITY · 40 steps · Comfy Kitchen attention | **4 min 07 s** |\n| TURBO · Viggle 6-step · SageAttention (Desktop default) | **47 s** |\n\nFirst run after starting ComfyUI adds a few seconds for loading (4 min 11 s / 48 s).\n\nFrom my benchmark (2048×2048, same seed): template 25 steps with PyTorch attention **3 min 57 s** ·\nComfy Kitchen attention **2 min 40 s** · SageAttention **3 min 00 s** · bf16 model **6 min 10 s**.\n\n**Why 40 steps:** at 2K the template's 25 steps left the subject faded on one of my test prompts; 40 steps (the official 40–50) fixed it.\n**TURBO:** much faster, but visibly softer fine detail at 2K than the base model.\n**Seeds vary:** of my two test seeds, TURBO double-exposed the player's head on one, and QUALITY printed the date line twice on one. Re-roll the seed if you see that.\n**Don't add Comfy Kitchen attention to TURBO:** with the 6-step LoRA it ghosted the subject in my test — PyTorch and SageAttention were clean.\n**Text encoder:** `qwen3vl_8b_w4a8` runs at the same speed but changes the picture with the same seed — int8 kept.\n"
+   },
+   "color": "#432",
+   "bgcolor": "#653"
+  },
+  {
+   "id": 42,
+   "type": "MarkdownNote",
+   "pos": [
+    -780,
+    1440
+   ],
+   "size": [
+    720,
+    420
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "title": "TURBO · sigmas for other sizes",
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "widgets_values": [
+    "## TURBO sigmas depend on the image size\n\nThe Viggle 6-step schedule is shifted by resolution. The ManualSigmas node is set for **2048×2048**.\nIf you change the size in Step 2, paste the matching line into **TURBO sigmas**:\n\n| Size | Pixels | Sigmas |\n|---|---|---|\n| 1:1 · 1 MP | 1024×1024 | `1.000000, 0.967754, 0.933358, 0.857192, 0.666756, 0.400096, 0.000000` |\n| 1:1 · 2K (default) | 2048×2048 | `1.000000, 0.982380, 0.962989, 0.917701, 0.787999, 0.553369, 0.000000` |\n| 16:9 · 1 MP | 1376×768 | `1.000000, 0.967805, 0.933459, 0.857389, 0.667114, 0.400483, 0.000000` |\n| 9:16 · 1 MP | 768×1376 | `1.000000, 0.967805, 0.933459, 0.857389, 0.667114, 0.400483, 0.000000` |\n| 16:9 · 2K area | 2720×1536 | `1.000000, 0.982324, 0.962873, 0.917457, 0.787459, 0.552571, 0.000000` |\n| 9:16 · 2K area | 1536×2720 | `1.000000, 0.982324, 0.962873, 0.917457, 0.787459, 0.552571, 0.000000` |\n| 1:1 · 1536 | 1536×1536 | `1.000000, 0.974905, 0.947724, 0.885970, 0.721439, 0.463316, 0.000000` |\n\nMaths from Viggle's own node: raw nodes 1, 0.9375, 0.875, 0.75, 0.5, 0.25 shifted with mu from (W/16)·(H/16), final 0.\n"
+   ],
+   "widgets_values_named": {
+    "text": "## TURBO sigmas depend on the image size\n\nThe Viggle 6-step schedule is shifted by resolution. The ManualSigmas node is set for **2048×2048**.\nIf you change the size in Step 2, paste the matching line into **TURBO sigmas**:\n\n| Size | Pixels | Sigmas |\n|---|---|---|\n| 1:1 · 1 MP | 1024×1024 | `1.000000, 0.967754, 0.933358, 0.857192, 0.666756, 0.400096, 0.000000` |\n| 1:1 · 2K (default) | 2048×2048 | `1.000000, 0.982380, 0.962989, 0.917701, 0.787999, 0.553369, 0.000000` |\n| 16:9 · 1 MP | 1376×768 | `1.000000, 0.967805, 0.933459, 0.857389, 0.667114, 0.400483, 0.000000` |\n| 9:16 · 1 MP | 768×1376 | `1.000000, 0.967805, 0.933459, 0.857389, 0.667114, 0.400483, 0.000000` |\n| 16:9 · 2K area | 2720×1536 | `1.000000, 0.982324, 0.962873, 0.917457, 0.787459, 0.552571, 0.000000` |\n| 9:16 · 2K area | 1536×2720 | `1.000000, 0.982324, 0.962873, 0.917457, 0.787459, 0.552571, 0.000000` |\n| 1:1 · 1536 | 1536×1536 | `1.000000, 0.974905, 0.947724, 0.885970, 0.721439, 0.463316, 0.000000` |\n\nMaths from Viggle's own node: raw nodes 1, 0.9375, 0.875, 0.75, 0.5, 0.25 shifted with mu from (W/16)·(H/16), final 0.\n"
+   },
+   "color": "#432",
+   "bgcolor": "#653"
+  },
+  {
+   "id": 43,
+   "type": "bef95d42-f584-4eaf-a2eb-28eddea4ca71",
+   "pos": [
+    0,
+    0
+   ],
+   "size": [
+    520,
+    228
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "Prompt · Qwen Image 2.1",
+     "name": "prompt_6",
+     "type": "STRING",
+     "widget": {
+      "name": "prompt_6"
+     },
+     "link": null
+    },
+    {
+     "label": "Seed",
+     "name": "noise_seed_25",
+     "type": "INT",
+     "widget": {
+      "name": "noise_seed_25"
+     },
+     "link": null
+    },
+    {
+     "label": "Steps",
+     "name": "steps_9",
+     "type": "INT",
+     "widget": {
+      "name": "steps_9"
+     },
+     "link": null
+    },
+    {
+     "label": "CFG",
+     "name": "cfg_9",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg_9"
+     },
+     "link": null
+    },
+    {
+     "label": "Megapixels",
+     "name": "megapixels_4",
+     "type": "FLOAT",
+     "widget": {
+      "name": "megapixels_4"
+     },
+     "link": null
+    },
+    {
+     "label": "Model file",
+     "name": "unet_name_1",
+     "type": "COMBO",
+     "widget": {
+      "name": "unet_name_1"
+     },
+     "link": null
+    },
+    {
+     "label": "LoRA",
+     "name": "lora_name_20",
+     "type": "COMBO",
+     "widget": {
+      "name": "lora_name_20"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      25
+     ]
+    },
+    {
+     "localized_name": "IMAGE_1",
+     "name": "IMAGE_1",
+     "type": "IMAGE",
+     "links": [
+      26
+     ]
+    }
+   ],
+   "title": "Qwen Image 2.1 (12 GB)",
+   "properties": {
+    "previewExposures": [
+     {
+      "name": "$$canvas-image-preview",
+      "sourceNodeId": "9",
+      "sourcePreviewName": "$$canvas-image-preview"
+     }
+    ]
+   },
+   "widgets_values": [
+    "A bold Swiss-style concert poster on a bright yellow background. The headline 'NIGHT SIGNAL' is set in huge black condensed capital letters across the top. Below it, smaller red text reads 'HAMBURG · 24 OCT · 21:00'. A black halftone photo of a saxophone player fills the lower half. Clean grid layout, thin black rules, print texture.",
+    1002,
+    40,
+    1,
+    4,
+    "qwen_image_2.1_int8_convrot.safetensors",
+    "Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors"
+   ],
+   "widgets_values_named": {
+    "prompt_6": "A bold Swiss-style concert poster on a bright yellow background. The headline 'NIGHT SIGNAL' is set in huge black condensed capital letters across the top. Below it, smaller red text reads 'HAMBURG · 24 OCT · 21:00'. A black halftone photo of a saxophone player fills the lower half. Clean grid layout, thin black rules, print texture.",
+    "noise_seed_25": 1002,
+    "steps_9": 40,
+    "cfg_9": 1,
+    "megapixels_4": 4,
+    "unet_name_1": "qwen_image_2.1_int8_convrot.safetensors",
+    "lora_name_20": "Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors"
+   },
+   "color": "#223",
+   "bgcolor": "#335"
+  }
+ ],
+ "links": [
+  [
+   25,
+   43,
+   0,
+   11,
+   0,
+   "IMAGE"
+  ],
+  [
+   26,
+   43,
+   1,
+   29,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [],
+ "definitions": {
+  "subgraphs": [
+   {
+    "id": "bef95d42-f584-4eaf-a2eb-28eddea4ca71",
+    "version": 1,
+    "state": {
+     "lastGroupId": 6,
+     "lastNodeId": 43,
+     "lastLinkId": 34,
+     "lastRerouteId": 0
+    },
+    "revision": 0,
+    "config": {},
+    "name": "Qwen Image 2.1 (12 GB)",
+    "inputNode": {
+     "id": -10,
+     "bounding": [
+      -188,
+      756,
+      128,
+      48
+     ]
+    },
+    "outputNode": {
+     "id": -20,
+     "bounding": [
+      2300,
+      736,
+      128,
+      88
+     ]
+    },
+    "inputs": [
+     {
+      "id": "daba361d-f820-4282-958e-b5467a0240bf",
+      "name": "prompt_6",
+      "type": "STRING",
+      "linkIds": [
+       28
+      ],
+      "label": "Prompt · Qwen Image 2.1",
+      "pos": [
+       0,
+       0
+      ]
+     },
+     {
+      "id": "8227a11c-cd1c-423d-80f5-246c367603bd",
+      "name": "noise_seed_25",
+      "type": "INT",
+      "linkIds": [
+       29
+      ],
+      "label": "Seed",
+      "pos": [
+       0,
+       0
+      ]
+     },
+     {
+      "id": "675898e8-93a0-460a-997e-776d281ecd25",
+      "name": "steps_9",
+      "type": "INT",
+      "linkIds": [
+       30
+      ],
+      "label": "Steps",
+      "pos": [
+       0,
+       0
+      ]
+     },
+     {
+      "id": "4bc23bf5-9b06-4b49-8d57-bae136180061",
+      "name": "cfg_9",
+      "type": "FLOAT",
+      "linkIds": [
+       31
+      ],
+      "label": "CFG",
+      "pos": [
+       0,
+       0
+      ]
+     },
+     {
+      "id": "445f78b8-6c28-41a9-806b-ab619a14a360",
+      "name": "megapixels_4",
+      "type": "FLOAT",
+      "linkIds": [
+       32
+      ],
+      "label": "Megapixels",
+      "pos": [
+       0,
+       0
+      ]
+     },
+     {
+      "id": "db87ba1b-6d7f-4e0c-a81b-7279c6e5538f",
+      "name": "unet_name_1",
+      "type": "COMBO",
+      "linkIds": [
+       33
+      ],
+      "label": "Model file",
+      "pos": [
+       0,
+       0
+      ]
+     },
+     {
+      "id": "d91063a4-5063-4b89-9a3e-70402a5b147c",
+      "name": "lora_name_20",
+      "type": "COMBO",
+      "linkIds": [
+       34
+      ],
+      "label": "LoRA",
+      "pos": [
+       0,
+       0
+      ]
+     }
+    ],
+    "outputs": [
+     {
+      "id": "0df1724c-ecbf-4515-baf4-a90bac898f9a",
+      "name": "IMAGE",
+      "type": "IMAGE",
+      "linkIds": [
+       12
+      ],
+      "localized_name": "IMAGE",
+      "pos": [
+       24,
+       24
+      ]
+     },
+     {
+      "id": "a709f0cc-0cb7-4357-b643-d3ba401261fe",
+      "name": "IMAGE_1",
+      "type": "IMAGE",
+      "linkIds": [
+       24
+      ],
+      "localized_name": "IMAGE_1",
+      "pos": [
+       24,
+       44
+      ]
+     }
+    ],
+    "widgets": [],
+    "nodes": [
+     {
+      "id": 1,
+      "type": "UNETLoader",
+      "pos": [
+       20,
+       50
+      ],
+      "size": [
+       430,
+       82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "unet_name",
+        "name": "unet_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "unet_name"
+        },
+        "link": 33
+       },
+       {
+        "localized_name": "weight_dtype",
+        "name": "weight_dtype",
+        "type": "COMBO",
+        "widget": {
+         "name": "weight_dtype"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "MODEL",
+        "name": "MODEL",
+        "type": "MODEL",
+        "links": [
+         4,
+         13
+        ]
+       }
+      ],
+      "title": "Qwen Image 2.1 · int8 (7.3 GB)",
+      "properties": {
+       "Node name for S&R": "UNETLoader",
+       "models": [
+        {
+         "name": "qwen_image_2.1_int8_convrot.safetensors",
+         "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors",
+         "directory": "diffusion_models"
+        }
+       ]
+      },
+      "widgets_values": [
+       "qwen_image_2.1_int8_convrot.safetensors",
+       "default"
+      ],
+      "widgets_values_named": {
+       "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+       "weight_dtype": "default"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+     },
+     {
+      "id": 2,
+      "type": "CLIPLoader",
+      "pos": [
+       20,
+       160
+      ],
+      "size": [
+       430,
+       106
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "clip_name",
+        "name": "clip_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "clip_name"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "type",
+        "name": "type",
+        "type": "COMBO",
+        "widget": {
+         "name": "type"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "device",
+        "name": "device",
+        "shape": 7,
+        "type": "COMBO",
+        "widget": {
+         "name": "device"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "CLIP",
+        "name": "CLIP",
+        "type": "CLIP",
+        "links": [
+         3
+        ]
+       }
+      ],
+      "title": "Text encoder · Qwen3-VL 8B int8 (9.4 GB)",
+      "properties": {
+       "Node name for S&R": "CLIPLoader",
+       "models": [
+        {
+         "name": "qwen3vl_8b_int8_convrot.safetensors",
+         "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors",
+         "directory": "text_encoders"
+        }
+       ]
+      },
+      "widgets_values": [
+       "qwen3vl_8b_int8_convrot.safetensors",
+       "qwen_image",
+       "default"
+      ],
+      "widgets_values_named": {
+       "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+       "type": "qwen_image",
+       "device": "default"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+     },
+     {
+      "id": 3,
+      "type": "VAELoader",
+      "pos": [
+       20,
+       300
+      ],
+      "size": [
+       430,
+       58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "vae_name",
+        "name": "vae_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "vae_name"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "VAE",
+        "name": "VAE",
+        "type": "VAE",
+        "links": [
+         11,
+         23
+        ]
+       }
+      ],
+      "title": "VAE · Qwen Image 2.1",
+      "properties": {
+       "Node name for S&R": "VAELoader",
+       "models": [
+        {
+         "name": "qwen_image_2.1_vae_bf16.safetensors",
+         "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors",
+         "directory": "vae"
+        }
+       ]
+      },
+      "widgets_values": [
+       "qwen_image_2.1_vae_bf16.safetensors"
+      ],
+      "widgets_values_named": {
+       "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+     },
+     {
+      "id": 4,
+      "type": "ResolutionSelector",
+      "pos": [
+       20,
+       500
+      ],
+      "size": [
+       430,
+       150
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "aspect_ratio",
+        "name": "aspect_ratio",
+        "type": "COMBO",
+        "widget": {
+         "name": "aspect_ratio"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "megapixels",
+        "name": "megapixels",
+        "type": "FLOAT",
+        "widget": {
+         "name": "megapixels"
+        },
+        "link": 32
+       },
+       {
+        "localized_name": "multiple",
+        "name": "multiple",
+        "type": "INT",
+        "widget": {
+         "name": "multiple"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "preview",
+        "name": "preview",
+        "shape": 7,
+        "type": "RESOLUTION_PREVIEW",
+        "widget": {
+         "name": "preview"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "width",
+        "name": "width",
+        "type": "INT",
+        "links": [
+         1
+        ]
+       },
+       {
+        "localized_name": "height",
+        "name": "height",
+        "type": "INT",
+        "links": [
+         2
+        ]
+       }
+      ],
+      "title": "Size · 4 MP = 2048×2048 (native 2K)",
+      "properties": {
+       "Node name for S&R": "ResolutionSelector"
+      },
+      "widgets_values": [
+       "1:1 (Square)",
+       4,
+       32
+      ],
+      "widgets_values_named": {
+       "aspect_ratio": "1:1 (Square)",
+       "megapixels": 4,
+       "multiple": 32
+      }
+     },
+     {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [
+       20,
+       660
+      ],
+      "size": [
+       430,
+       106
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "width",
+        "name": "width",
+        "type": "INT",
+        "widget": {
+         "name": "width"
+        },
+        "link": 1
+       },
+       {
+        "localized_name": "height",
+        "name": "height",
+        "type": "INT",
+        "widget": {
+         "name": "height"
+        },
+        "link": 2
+       },
+       {
+        "localized_name": "batch_size",
+        "name": "batch_size",
+        "type": "INT",
+        "widget": {
+         "name": "batch_size"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "LATENT",
+        "name": "LATENT",
+        "type": "LATENT",
+        "links": [
+         9,
+         21
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+       2048,
+       2048,
+       1
+      ],
+      "widgets_values_named": {
+       "width": 2048,
+       "height": 2048,
+       "batch_size": 1
+      }
+     },
+     {
+      "id": 6,
+      "type": "TextEncodeQwenImage21",
+      "pos": [
+       510,
+       50
+      ],
+      "size": [
+       480,
+       690
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "clip",
+        "name": "clip",
+        "type": "CLIP",
+        "link": 3
+       },
+       {
+        "localized_name": "image_1",
+        "name": "images.image_1",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": null
+       },
+       {
+        "localized_name": "vae",
+        "name": "vae",
+        "shape": 7,
+        "type": "VAE",
+        "link": null
+       },
+       {
+        "localized_name": "prompt",
+        "name": "prompt",
+        "type": "STRING",
+        "widget": {
+         "name": "prompt"
+        },
+        "link": 28
+       },
+       {
+        "localized_name": "negative_prompt",
+        "name": "negative_prompt",
+        "type": "STRING",
+        "widget": {
+         "name": "negative_prompt"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "resolution",
+        "name": "resolution",
+        "type": "INT",
+        "widget": {
+         "name": "resolution"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "positive",
+        "name": "positive",
+        "type": "CONDITIONING",
+        "links": [
+         7,
+         16
+        ]
+       },
+       {
+        "localized_name": "negative",
+        "name": "negative",
+        "type": "CONDITIONING",
+        "links": [
+         8
+        ]
+       },
+       {
+        "localized_name": "latent",
+        "name": "latent",
+        "type": "LATENT",
+        "links": []
+       }
+      ],
+      "title": "Prompt · Qwen Image 2.1",
+      "properties": {
+       "Node name for S&R": "TextEncodeQwenImage21"
+      },
+      "widgets_values": [
+       "A bold Swiss-style concert poster on a bright yellow background. The headline 'NIGHT SIGNAL' is set in huge black condensed capital letters across the top. Below it, smaller red text reads 'HAMBURG · 24 OCT · 21:00'. A black halftone photo of a saxophone player fills the lower half. Clean grid layout, thin black rules, print texture.",
+       "",
+       1024
+      ],
+      "widgets_values_named": {
+       "prompt": "A bold Swiss-style concert poster on a bright yellow background. The headline 'NIGHT SIGNAL' is set in huge black condensed capital letters across the top. Below it, smaller red text reads 'HAMBURG · 24 OCT · 21:00'. A black halftone photo of a saxophone player fills the lower half. Clean grid layout, thin black rules, print texture.",
+       "negative_prompt": "",
+       "resolution": 1024
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+     },
+     {
+      "id": 7,
+      "type": "ModelAttentionBackend",
+      "pos": [
+       1060,
+       50
+      ],
+      "size": [
+       400,
+       58
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "model",
+        "name": "model",
+        "type": "MODEL",
+        "link": 4
+       },
+       {
+        "localized_name": "backend",
+        "name": "attention",
+        "type": "COMBO",
+        "widget": {
+         "name": "attention"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "model",
+        "name": "model",
+        "type": "MODEL",
+        "links": [
+         5
+        ]
+       }
+      ],
+      "title": "Comfy Kitchen attention (INT8) · fastest on the 3060",
+      "properties": {
+       "Node name for S&R": "ModelAttentionBackend"
+      },
+      "widgets_values": [
+       "comfy kitchen attention"
+      ],
+      "widgets_values_named": {
+       "attention": "comfy kitchen attention"
+      },
+      "color": "#332922",
+      "bgcolor": "#593930"
+     },
+     {
+      "id": 8,
+      "type": "QwenImage21Cache",
+      "pos": [
+       1060,
+       150
+      ],
+      "size": [
+       400,
+       82
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "model",
+        "name": "model",
+        "type": "MODEL",
+        "link": 5
+       },
+       {
+        "localized_name": "device",
+        "name": "device",
+        "type": "COMBO",
+        "widget": {
+         "name": "device"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "dtype",
+        "name": "dtype",
+        "type": "COMBO",
+        "widget": {
+         "name": "dtype"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "MODEL",
+        "name": "MODEL",
+        "type": "MODEL",
+        "links": [
+         6
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "QwenImage21Cache"
+      },
+      "widgets_values": [
+       "auto",
+       "default"
+      ],
+      "widgets_values_named": {
+       "device": "auto",
+       "dtype": "default"
+      },
+      "color": "#332922",
+      "bgcolor": "#593930"
+     },
+     {
+      "id": 9,
+      "type": "KSampler",
+      "pos": [
+       1060,
+       360
+      ],
+      "size": [
+       400,
+       262
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "model",
+        "name": "model",
+        "type": "MODEL",
+        "link": 6
+       },
+       {
+        "localized_name": "positive",
+        "name": "positive",
+        "type": "CONDITIONING",
+        "link": 7
+       },
+       {
+        "localized_name": "negative",
+        "name": "negative",
+        "type": "CONDITIONING",
+        "link": 8
+       },
+       {
+        "localized_name": "latent_image",
+        "name": "latent_image",
+        "type": "LATENT",
+        "link": 9
+       },
+       {
+        "localized_name": "seed",
+        "name": "seed",
+        "type": "INT",
+        "widget": {
+         "name": "seed"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "steps",
+        "name": "steps",
+        "type": "INT",
+        "widget": {
+         "name": "steps"
+        },
+        "link": 30
+       },
+       {
+        "localized_name": "cfg",
+        "name": "cfg",
+        "type": "FLOAT",
+        "widget": {
+         "name": "cfg"
+        },
+        "link": 31
+       },
+       {
+        "localized_name": "sampler_name",
+        "name": "sampler_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "sampler_name"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "scheduler",
+        "name": "scheduler",
+        "type": "COMBO",
+        "widget": {
+         "name": "scheduler"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "denoise",
+        "name": "denoise",
+        "type": "FLOAT",
+        "widget": {
+         "name": "denoise"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "LATENT",
+        "name": "LATENT",
+        "type": "LATENT",
+        "links": [
+         10
+        ]
+       }
+      ],
+      "title": "QUALITY sampler · 40 steps",
+      "properties": {
+       "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+       1002,
+       "fixed",
+       40,
+       1,
+       "euler",
+       "simple",
+       1
+      ],
+      "widgets_values_named": {
+       "seed": 1002,
+       "control_after_generate": "fixed",
+       "steps": 40,
+       "cfg": 1,
+       "sampler_name": "euler",
+       "scheduler": "simple",
+       "denoise": 1
+      }
+     },
+     {
+      "id": 10,
+      "type": "VAEDecode",
+      "pos": [
+       1060,
+       660
+      ],
+      "size": [
+       240,
+       46
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "samples",
+        "name": "samples",
+        "type": "LATENT",
+        "link": 10
+       },
+       {
+        "localized_name": "vae",
+        "name": "vae",
+        "type": "VAE",
+        "link": 11
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "IMAGE",
+        "name": "IMAGE",
+        "type": "IMAGE",
+        "links": [
+         12
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "VAEDecode"
+      }
+     },
+     {
+      "id": 20,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+       20,
+       1010
+      ],
+      "size": [
+       430,
+       82
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 4,
+      "inputs": [
+       {
+        "localized_name": "model",
+        "name": "model",
+        "type": "MODEL",
+        "link": 13
+       },
+       {
+        "localized_name": "lora_name",
+        "name": "lora_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "lora_name"
+        },
+        "link": 34
+       },
+       {
+        "localized_name": "strength_model",
+        "name": "strength_model",
+        "type": "FLOAT",
+        "widget": {
+         "name": "strength_model"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "MODEL",
+        "name": "MODEL",
+        "type": "MODEL",
+        "links": [
+         14
+        ]
+       }
+      ],
+      "title": "Viggle turbo LoRA v0.2.1 · 6-step (1.4 GB)",
+      "properties": {
+       "Node name for S&R": "LoraLoaderModelOnly",
+       "models": [
+        {
+         "name": "Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors",
+         "url": "https://huggingface.co/Viggle/Qwen-Image-2.1-viggle-turbo/resolve/main/Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors",
+         "directory": "loras"
+        }
+       ]
+      },
+      "widgets_values": [
+       "Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors",
+       1
+      ],
+      "widgets_values_named": {
+       "lora_name": "Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors",
+       "strength_model": 1
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+     },
+     {
+      "id": 22,
+      "type": "QwenImage21Cache",
+      "pos": [
+       20,
+       1120
+      ],
+      "size": [
+       430,
+       82
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 4,
+      "inputs": [
+       {
+        "localized_name": "model",
+        "name": "model",
+        "type": "MODEL",
+        "link": 14
+       },
+       {
+        "localized_name": "device",
+        "name": "device",
+        "type": "COMBO",
+        "widget": {
+         "name": "device"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "dtype",
+        "name": "dtype",
+        "type": "COMBO",
+        "widget": {
+         "name": "dtype"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "MODEL",
+        "name": "MODEL",
+        "type": "MODEL",
+        "links": [
+         15
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "QwenImage21Cache"
+      },
+      "widgets_values": [
+       "auto",
+       "default"
+      ],
+      "widgets_values_named": {
+       "device": "auto",
+       "dtype": "default"
+      },
+      "color": "#332922",
+      "bgcolor": "#593930"
+     },
+     {
+      "id": 23,
+      "type": "BasicGuider",
+      "pos": [
+       1060,
+       1010
+      ],
+      "size": [
+       400,
+       46
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 4,
+      "inputs": [
+       {
+        "localized_name": "model",
+        "name": "model",
+        "type": "MODEL",
+        "link": 15
+       },
+       {
+        "localized_name": "conditioning",
+        "name": "conditioning",
+        "type": "CONDITIONING",
+        "link": 16
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "GUIDER",
+        "name": "GUIDER",
+        "type": "GUIDER",
+        "links": [
+         18
+        ]
+       }
+      ],
+      "title": "Guider · no CFG",
+      "properties": {
+       "Node name for S&R": "BasicGuider"
+      }
+     },
+     {
+      "id": 24,
+      "type": "KSamplerSelect",
+      "pos": [
+       510,
+       1010
+      ],
+      "size": [
+       480,
+       58
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 4,
+      "inputs": [
+       {
+        "localized_name": "sampler_name",
+        "name": "sampler_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "sampler_name"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "SAMPLER",
+        "name": "SAMPLER",
+        "type": "SAMPLER",
+        "links": [
+         19
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+       "euler"
+      ],
+      "widgets_values_named": {
+       "sampler_name": "euler"
+      }
+     },
+     {
+      "id": 25,
+      "type": "RandomNoise",
+      "pos": [
+       510,
+       1100
+      ],
+      "size": [
+       480,
+       82
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 4,
+      "inputs": [
+       {
+        "localized_name": "noise_seed",
+        "name": "noise_seed",
+        "type": "INT",
+        "widget": {
+         "name": "noise_seed"
+        },
+        "link": 29
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "NOISE",
+        "name": "NOISE",
+        "type": "NOISE",
+        "links": [
+         17
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+       1002,
+       "fixed"
+      ],
+      "widgets_values_named": {
+       "noise_seed": 1002,
+       "control_after_generate": "fixed"
+      }
+     },
+     {
+      "id": 26,
+      "type": "ManualSigmas",
+      "pos": [
+       510,
+       1210
+      ],
+      "size": [
+       480,
+       58
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 4,
+      "inputs": [
+       {
+        "localized_name": "sigmas",
+        "name": "sigmas",
+        "type": "STRING",
+        "widget": {
+         "name": "sigmas"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "SIGMAS",
+        "name": "SIGMAS",
+        "type": "SIGMAS",
+        "links": [
+         20
+        ]
+       }
+      ],
+      "title": "TURBO sigmas · set for 2048×2048 (other sizes: see note)",
+      "properties": {
+       "Node name for S&R": "ManualSigmas"
+      },
+      "widgets_values": [
+       "1.000000, 0.982380, 0.962989, 0.917701, 0.787999, 0.553369, 0.000000"
+      ],
+      "widgets_values_named": {
+       "sigmas": "1.000000, 0.982380, 0.962989, 0.917701, 0.787999, 0.553369, 0.000000"
+      }
+     },
+     {
+      "id": 27,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+       1060,
+       1090
+      ],
+      "size": [
+       400,
+       110
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 4,
+      "inputs": [
+       {
+        "localized_name": "noise",
+        "name": "noise",
+        "type": "NOISE",
+        "link": 17
+       },
+       {
+        "localized_name": "guider",
+        "name": "guider",
+        "type": "GUIDER",
+        "link": 18
+       },
+       {
+        "localized_name": "sampler",
+        "name": "sampler",
+        "type": "SAMPLER",
+        "link": 19
+       },
+       {
+        "localized_name": "sigmas",
+        "name": "sigmas",
+        "type": "SIGMAS",
+        "link": 20
+       },
+       {
+        "localized_name": "latent_image",
+        "name": "latent_image",
+        "type": "LATENT",
+        "link": 21
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "output",
+        "name": "output",
+        "type": "LATENT",
+        "links": [
+         22
+        ]
+       },
+       {
+        "localized_name": "denoised_output",
+        "name": "denoised_output",
+        "type": "LATENT",
+        "links": []
+       }
+      ],
+      "title": "TURBO sampler · 6 steps",
+      "properties": {
+       "Node name for S&R": "SamplerCustomAdvanced"
+      }
+     },
+     {
+      "id": 28,
+      "type": "VAEDecode",
+      "pos": [
+       1060,
+       1240
+      ],
+      "size": [
+       240,
+       46
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 4,
+      "inputs": [
+       {
+        "localized_name": "samples",
+        "name": "samples",
+        "type": "LATENT",
+        "link": 22
+       },
+       {
+        "localized_name": "vae",
+        "name": "vae",
+        "type": "VAE",
+        "link": 23
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "IMAGE",
+        "name": "IMAGE",
+        "type": "IMAGE",
+        "links": [
+         24
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "VAEDecode"
+      }
+     }
+    ],
+    "groups": [
+     {
+      "id": 1,
+      "title": "Step1 - Load models",
+      "bounding": [
+       0,
+       0,
+       470,
+       390
+      ],
+      "color": "#88A",
+      "flags": {}
+     },
+     {
+      "id": 2,
+      "title": "Step2 - Image Size",
+      "bounding": [
+       0,
+       420,
+       470,
+       370
+      ],
+      "color": "#3f789e",
+      "flags": {}
+     },
+     {
+      "id": 3,
+      "title": "Step 3 - Prompt",
+      "bounding": [
+       490,
+       0,
+       520,
+       790
+      ],
+      "color": "#8A8",
+      "flags": {}
+     },
+     {
+      "id": 4,
+      "title": "Speed - Comfy Kitchen attention + cache",
+      "bounding": [
+       1040,
+       0,
+       440,
+       260
+      ],
+      "color": "#b58b2a",
+      "flags": {}
+     },
+     {
+      "id": 5,
+      "title": "Step 4 - QUALITY · 40 steps (on)",
+      "bounding": [
+       1040,
+       280,
+       1200,
+       610
+      ],
+      "color": "#A88",
+      "flags": {}
+     },
+     {
+      "id": 6,
+      "title": "OPTIONAL - TURBO · Viggle 6-step LoRA (Ctrl+B to switch on)",
+      "bounding": [
+       0,
+       930,
+       2240,
+       630
+      ],
+      "color": "#a1309b",
+      "flags": {}
+     }
+    ],
+    "links": [
+     {
+      "id": 1,
+      "origin_id": 4,
+      "origin_slot": 0,
+      "target_id": 5,
+      "target_slot": 0,
+      "type": "INT"
+     },
+     {
+      "id": 2,
+      "origin_id": 4,
+      "origin_slot": 1,
+      "target_id": 5,
+      "target_slot": 1,
+      "type": "INT"
+     },
+     {
+      "id": 3,
+      "origin_id": 2,
+      "origin_slot": 0,
+      "target_id": 6,
+      "target_slot": 0,
+      "type": "CLIP"
+     },
+     {
+      "id": 4,
+      "origin_id": 1,
+      "origin_slot": 0,
+      "target_id": 7,
+      "target_slot": 0,
+      "type": "MODEL"
+     },
+     {
+      "id": 5,
+      "origin_id": 7,
+      "origin_slot": 0,
+      "target_id": 8,
+      "target_slot": 0,
+      "type": "MODEL"
+     },
+     {
+      "id": 6,
+      "origin_id": 8,
+      "origin_slot": 0,
+      "target_id": 9,
+      "target_slot": 0,
+      "type": "MODEL"
+     },
+     {
+      "id": 7,
+      "origin_id": 6,
+      "origin_slot": 0,
+      "target_id": 9,
+      "target_slot": 1,
+      "type": "CONDITIONING"
+     },
+     {
+      "id": 8,
+      "origin_id": 6,
+      "origin_slot": 1,
+      "target_id": 9,
+      "target_slot": 2,
+      "type": "CONDITIONING"
+     },
+     {
+      "id": 9,
+      "origin_id": 5,
+      "origin_slot": 0,
+      "target_id": 9,
+      "target_slot": 3,
+      "type": "LATENT"
+     },
+     {
+      "id": 10,
+      "origin_id": 9,
+      "origin_slot": 0,
+      "target_id": 10,
+      "target_slot": 0,
+      "type": "LATENT"
+     },
+     {
+      "id": 11,
+      "origin_id": 3,
+      "origin_slot": 0,
+      "target_id": 10,
+      "target_slot": 1,
+      "type": "VAE"
+     },
+     {
+      "id": 13,
+      "origin_id": 1,
+      "origin_slot": 0,
+      "target_id": 20,
+      "target_slot": 0,
+      "type": "MODEL"
+     },
+     {
+      "id": 14,
+      "origin_id": 20,
+      "origin_slot": 0,
+      "target_id": 22,
+      "target_slot": 0,
+      "type": "MODEL"
+     },
+     {
+      "id": 15,
+      "origin_id": 22,
+      "origin_slot": 0,
+      "target_id": 23,
+      "target_slot": 0,
+      "type": "MODEL"
+     },
+     {
+      "id": 16,
+      "origin_id": 6,
+      "origin_slot": 0,
+      "target_id": 23,
+      "target_slot": 1,
+      "type": "CONDITIONING"
+     },
+     {
+      "id": 17,
+      "origin_id": 25,
+      "origin_slot": 0,
+      "target_id": 27,
+      "target_slot": 0,
+      "type": "NOISE"
+     },
+     {
+      "id": 18,
+      "origin_id": 23,
+      "origin_slot": 0,
+      "target_id": 27,
+      "target_slot": 1,
+      "type": "GUIDER"
+     },
+     {
+      "id": 19,
+      "origin_id": 24,
+      "origin_slot": 0,
+      "target_id": 27,
+      "target_slot": 2,
+      "type": "SAMPLER"
+     },
+     {
+      "id": 20,
+      "origin_id": 26,
+      "origin_slot": 0,
+      "target_id": 27,
+      "target_slot": 3,
+      "type": "SIGMAS"
+     },
+     {
+      "id": 21,
+      "origin_id": 5,
+      "origin_slot": 0,
+      "target_id": 27,
+      "target_slot": 4,
+      "type": "LATENT"
+     },
+     {
+      "id": 22,
+      "origin_id": 27,
+      "origin_slot": 0,
+      "target_id": 28,
+      "target_slot": 0,
+      "type": "LATENT"
+     },
+     {
+      "id": 23,
+      "origin_id": 3,
+      "origin_slot": 0,
+      "target_id": 28,
+      "target_slot": 1,
+      "type": "VAE"
+     },
+     {
+      "id": 12,
+      "origin_id": 10,
+      "origin_slot": 0,
+      "target_id": -20,
+      "target_slot": 0,
+      "type": "IMAGE"
+     },
+     {
+      "id": 24,
+      "origin_id": 28,
+      "origin_slot": 0,
+      "target_id": -20,
+      "target_slot": 1,
+      "type": "IMAGE"
+     },
+     {
+      "id": 28,
+      "origin_id": -10,
+      "origin_slot": 0,
+      "target_id": 6,
+      "target_slot": 3,
+      "type": "STRING"
+     },
+     {
+      "id": 29,
+      "origin_id": -10,
+      "origin_slot": 1,
+      "target_id": 25,
+      "target_slot": 0,
+      "type": "INT"
+     },
+     {
+      "id": 30,
+      "origin_id": -10,
+      "origin_slot": 2,
+      "target_id": 9,
+      "target_slot": 5,
+      "type": "INT"
+     },
+     {
+      "id": 31,
+      "origin_id": -10,
+      "origin_slot": 3,
+      "target_id": 9,
+      "target_slot": 6,
+      "type": "FLOAT"
+     },
+     {
+      "id": 32,
+      "origin_id": -10,
+      "origin_slot": 4,
+      "target_id": 4,
+      "target_slot": 1,
+      "type": "FLOAT"
+     },
+     {
+      "id": 33,
+      "origin_id": -10,
+      "origin_slot": 5,
+      "target_id": 1,
+      "target_slot": 0,
+      "type": "COMBO"
+     },
+     {
+      "id": 34,
+      "origin_id": -10,
+      "origin_slot": 6,
+      "target_id": 20,
+      "target_slot": 1,
+      "type": "COMBO"
+     }
+    ],
+    "extra": {}
+   }
+  ]
+ },
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.55,
+   "offset": [
+    820,
+    60
+   ]
+  },
+  "frontendVersion": "1.52.7"
+ },
+ "version": 0.4
+}

@@ -1,5 +1,4 @@
-# The_frizzy1 — Qwen Image 2.1 · 12 GB v1.0.0
-
+# The_frizzy1 — Qwen Image 2.1 · 12 GB v2.0.0
 > Native **2K** Qwen Image 2.1 on a **12 GB** card — a QUALITY path (40 steps, Comfy Kitchen attention) and a
 > one-click TURBO path (Viggle 6-step LoRA). Core ComfyUI nodes only, tested on an RTX 3060.
 
@@ -70,7 +69,7 @@ ComfyUI/models/
 ## Installation
 1. Update ComfyUI to **0.37+**.
 2. Download the files above (or run the one-command tool).
-3. Load `The_frizzy1_qwen-image-2.1-12gb_v1.0.0.json`, write your prompt, **Run**.
+3. Load `The_frizzy1_qwen-image-2.1-12gb_v2.0.0.json`, write your prompt, **Run**.
 4. For TURBO: click the QUALITY group title → **Ctrl+B** (bypass), then the TURBO group title → **Ctrl+B** (enable).
 
 ## Recommended settings

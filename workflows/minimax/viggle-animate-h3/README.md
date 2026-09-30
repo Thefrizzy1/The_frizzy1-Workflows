@@ -1,5 +1,4 @@
-# The_frizzy1 — Viggle-Animate (MiniMax H3) · 12 GB v1.0.0
-
+# The_frizzy1 — Viggle-Animate (MiniMax H3) · 12 GB v2.0.0
 > Swap the person in any video for your character from one still - motion, camera, background and audio stay. 4 steps.
 
 | | |
@@ -56,6 +55,6 @@ python scripts/frizzy.py doctor minimax/viggle-animate-h3 --comfy "C:/path/to/Co
 ## Installation
 1. Update ComfyUI to **0.37.4+**.
 2. Download the files in [downloads.md](downloads.md).
-3. Load `The_frizzy1_viggle-animate-h3_v1.0.0.json`, pick a **MODE**, add your inputs, **Run**.
+3. Load `The_frizzy1_viggle-animate-h3_v2.0.0.json`, pick a **MODE**, add your inputs, **Run**.
 
 If your models live in sub-folders (e.g. `diffusion_models/LTX-2.5/`), the loaders show red until you re-pick them once.

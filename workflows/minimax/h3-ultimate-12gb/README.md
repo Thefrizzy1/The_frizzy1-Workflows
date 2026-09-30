@@ -1,5 +1,4 @@
-# The_frizzy1 — MiniMax H3 Ultimate · 12 GB v1.0.0
-
+# The_frizzy1 — MiniMax H3 Ultimate · 12 GB v2.0.0
 > Every local MiniMax H3 mode in one workflow - pick it from a dropdown. Video with sound. Core ComfyUI nodes only, tested on an RTX 3060.
 
 | | |
@@ -66,6 +65,6 @@ python scripts/frizzy.py doctor minimax/h3-ultimate-12gb --comfy "C:/path/to/Com
 ## Installation
 1. Update ComfyUI to **0.37.4+**.
 2. Download the files in [downloads.md](downloads.md).
-3. Load `The_frizzy1_minimax-h3-ultimate-12gb_v1.0.0.json`, pick a **MODE**, add your inputs, **Run**.
+3. Load `The_frizzy1_minimax-h3-ultimate-12gb_v2.0.0.json`, pick a **MODE**, add your inputs, **Run**.
 
 If your models live in sub-folders (e.g. `diffusion_models/LTX-2.5/`), the loaders show red until you re-pick them once.
