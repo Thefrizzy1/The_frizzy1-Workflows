@@ -46,7 +46,7 @@ GGUF-quantised image, video and audio generation that runs on as little as **4 G
 | **Native 2K** images on a 12 GB card (Qwen Image 2.1) | [Qwen Image 2.1 · 12 GB](workflows/qwen/image-2.1-12gb) | 12 GB |
 | **Fast, tiny** image generation | [Z-Image Turbo GGUF](workflows/z-image/turbo) | 4 GB+ |
 | Newer **LTX video** (audio-aware) | [LTX-2](workflows/ltx/ltx2) · [LTX-2.3 Ultimate](workflows/ltx/ltx2.3-ultimate) | 4–12 GB |
-| **Every MiniMax H3 mode** (T2V · I2V · R2V · multiframe · pose) in one workflow, with sound | [MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb) | 12 GB |
+| **Every MiniMax H3 mode** (T2V · I2V · R2V · multiframe · pose · extend) in one workflow, with sound | [MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb) | 12 GB |
 | **LTX 2.5** text / image / first+last / pose-driven video in one workflow | [LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb) | 12 GB |
 | **Swap the person** in a video for your character (one still) | [Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3) | 12 GB |
 | **Animate a character** from a driving video, native nodes | [Wan Animate Ultimate](workflows/wan2.2/animate-ultimate) | 12 GB (GGUF path lower) |
@@ -74,7 +74,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[Hunyuan Video Low-VRAM](workflows/hunyuan/video)** | v1.1.1 | 4 GB | T2V · I2V | [CivitAI](https://civitai.com/models/1312419) · [HF](https://huggingface.co/The-frizzy1/Hunyuan-Video-Low-VRAM-4GB) |
 | **[LTX-2 GGUF](workflows/ltx/ltx2)** | v2.0.0 | 4 GB | T2V · I2V · audio | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow) · [▶](https://www.youtube.com/watch?v=nnHUBMgdJac) |
 | **[LTX-2.3 Ultimate](workflows/ltx/ltx2.3-ultimate)** | v3.0.0 | 12 GB | T2V · I2V · FFLF · audio · ID | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX23-Ultimate) · [▶](https://www.youtube.com/watch?v=im4wolfHvMk) |
-| **[MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb)** | v2.0.0 | 12 GB | T2V · I2V · last · FLF · R2V · multiframe · ControlNet pose · audio | — |
+| **[MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb)** | v2.1.0 | 12 GB | T2V · I2V · last · FLF · R2V · multiframe · ControlNet pose · extend · audio | — |
 | **[LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb)** | v2.0.0 | 12 GB | T2V · I2V · FLF · pose (IC-LoRA) · audio | — |
 | **[Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3)** | v2.0.0 | 12 GB | character replacement (V2V) | — |
 | **[Wan Animate Ultimate](workflows/wan2.2/animate-ultimate)** | v2.0.0 | 12 GB | Wan Animate 2 · Wan 2.2 Animate GGUF + face video | — |
