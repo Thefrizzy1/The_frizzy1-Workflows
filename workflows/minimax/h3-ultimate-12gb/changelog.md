@@ -1,4 +1,11 @@
 # Changelog — MiniMax H3 Ultimate · 12 GB
+## v2.1.1 (day-one fix)
+- Extend tested on the RTX 3060: 0.4 MP, 5 s, 4 min 31 s from a cold start, peak VRAM 11.5 GB; the clip continues the input's last 0.9 s.
+- The Extend switch moved into the FL2VA path, so the main node has 46 nodes inside again (as in the video).
+- README: Quick start, what to download for T2V/I2V only (~42 GB) and what to do with the loaders you skipped, 32 GB system RAM, stay at 0.4 / 0.9 MP (1.5 MP timed out), 0.9 MP times, troubleshooting.
+- Same tips in the How to use note inside the workflow.
+- v2.1.0 kept in `source/`.
+
 ## v2.1.0
 - New mode **Extend (continue a clip)**: the video input's last 22 frames are anchored at frame 0 of a new FL2VA clip (MiniMaxH3AddGuide), so H3 continues your clip. Core nodes only (GetVideoComponents, GetImageSize, ImageFromBatch).
 - The video input is now shared by ControlNet (pose) and Extend: `Video (ControlNet pose / Extend)`.
