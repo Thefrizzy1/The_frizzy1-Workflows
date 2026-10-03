@@ -7,7 +7,7 @@
 | **Tasks** | T2V · I2V · Last frame · First+last · R2V · Multiframe · ControlNet pose · Extend a clip (all with audio) |
 | **Needs** | 12 GB VRAM · **32 GB system RAM** (it peaks at 17–22 GB, close other big apps) · ~42 GB disk for T2V/I2V, ~69 GB for every mode |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.37.4 (Sage attention) |
-| **YouTube explainer** | [ PASTE LINK ] |
+| **YouTube explainer** | [MiniMax H3 Ultimate workflow explained](https://youtu.be/KJNksY9Ur3w) |
 | **License** | Workflow: MIT · MiniMax H3: MiniMax H3 Community License |
 
 ## Quick start
