@@ -1,4 +1,13 @@
 # Changelog — MiniMax H3 Ultimate · 12 GB
+## v2.2.0
+- **Inputs start bypassed**, so T2V runs right after loading, without any image or video. Before, ComfyUI checked the file of every input loader before a run, also in modes that never read it, so T2V failed when the example files weren't there.
+- Un-bypass (Ctrl+B) only the inputs your mode uses and keep everything you are not using bypassed (How to use note + README).
+- If the mode needs the First frame, Last frame or Video and it is still bypassed, the run stops at a "Needs ..." node (3 s, before any model loads) instead of quietly making a T2V. Core nodes only (Switch + RepeatImageBatch / GetVideoComponents).
+- **Your LoRAs:** two LoRA slots on the node (core LoRA loaders, strength 0 = off).
+- The node's input sockets are named after their inputs (First frame, Last frame, ...) instead of on_true_1, image_2.
+- Tested on the RTX 3060: T2V as shipped (all 8 inputs bypassed), 0.4 MP, 5 s: 3 min 00 s from start to finished (models loaded fresh after another job), 864×480, 124 frames, with sound. I2V with the First frame still bypassed: stopped after 3.0 s at "Needs the First frame".
+- v2.1.1 kept in `source/`.
+
 ## v2.1.1 (day-one fix)
 - Extend tested on the RTX 3060: 0.4 MP, 5 s, 4 min 31 s from a cold start, peak VRAM 11.5 GB; the clip continues the input's last 0.9 s.
 - The Extend switch moved into the FL2VA path, so the main node has 46 nodes inside again (as in the video).

@@ -1,4 +1,4 @@
-# The_frizzy1 — MiniMax H3 Ultimate · 12 GB v2.1.1
+# The_frizzy1 — MiniMax H3 Ultimate · 12 GB v2.2.0
 > Every local MiniMax H3 mode in one workflow - pick it from a dropdown. Video with sound. Core ComfyUI nodes only, tested on an RTX 3060.
 
 | | |
@@ -15,8 +15,9 @@
 2. Download the files in [downloads.md](downloads.md) into the folders it shows. Every mode = all 10 files (~69 GB).
    Only text/image to video (incl. last frame, first + last, extend)? Then you need 5 files, ~42 GB: the FL2VA model, the
    FL2V turbo LoRA, the text encoder and both VAEs.
-3. Load `The_frizzy1_minimax-h3-ultimate-12gb_v2.1.1.json`, pick a **Mode** on the node, load the inputs that mode uses
-   (table below), write your prompt, **Run**.
+3. Load `The_frizzy1_minimax-h3-ultimate-12gb_v2.2.0.json`. It opens ready for **T2V**: write your prompt, **Run**.
+4. Other modes: pick the **Mode** on the node, un-bypass (select + **Ctrl+B**) only the inputs that mode uses (table
+   below) and load your files. **Keep every input you are not using bypassed** (purple).
 
 Keep **Megapixels at 0.4 or 0.9** on 12 GB. 1.5 MP spills out of VRAM and didn't finish in 30 minutes.
 
@@ -37,7 +38,10 @@ loaded in the FL2VA modes, so it doesn't matter which.
 
 ## Modes (one dropdown)
 
-Only the inputs your mode needs are read; the others can stay as they are.
+The inputs start **bypassed** (purple). Un-bypass only the ones your mode uses (select + Ctrl+B) and **keep everything you
+are not using bypassed**: ComfyUI checks the file of every active loader before it runs, also in modes that never read it.
+If the mode needs the First frame, Last frame or Video and it is still bypassed, the run stops at a "Needs ..." node
+instead of quietly making a T2V. References and guide frames are optional: bypassed ones are left out.
 
 | Mode | Uses |
 |---|---|
@@ -59,10 +63,12 @@ and needs the [comfyui-viggle-animate-h3](https://registry.comfy.org/nodes/comfy
 
 ## Overview
 Built from the six official MiniMax H3 templates in ComfyUI 0.37.4. One node outside carries the settings; double-click it
-to see the 46 nodes inside, colour-coded (blue models, green inputs, purple prompt, orange sampling, yellow decode, grey
+to see the 50 nodes inside, colour-coded (blue models, green inputs, purple prompt, orange sampling, yellow decode, grey
 switches). The Mode dropdown picks the model (FL2VA or Ref2VA), which inputs are read, the ControlNet and the multiframe
 guides. Switch nodes are lazy, so only the model your mode needs is loaded. Turbo LoRAs on by default (8 steps FL2VA,
 4 steps Ref2VA, 20 with turbo off). Length in seconds is turned into a valid H3 frame count for you (5 s = 124 frames).
+**Your LoRAs:** two slots on the node (core LoRA loaders). Strength 0 = off, the file isn't even opened; pick your LoRA
+and set a strength, it goes on the chosen H3 model on top of the turbo LoRA.
 
 ## Measured on the RTX 3060
 
@@ -96,6 +102,8 @@ python scripts/frizzy.py doctor minimax/h3-ultimate-12gb --comfy "C:/path/to/Com
 ```
 
 ## Troubleshooting
+- **"Invalid image file" / "Invalid video file" before it starts:** an input you are not using is un-bypassed. Bypass it (Ctrl+B).
+- **Run stops at "Needs the First frame / Last frame / Video":** your mode uses that input and it is still bypassed.
 - **Loaders are red for models you didn't download:** see "Downloaded only the 42 GB set?" above.
 - **Loaders are red although you downloaded everything:** your models live in sub-folders (e.g. `diffusion_models/MiniMax-H3/`). Click each red loader and
   re-pick the file once.
