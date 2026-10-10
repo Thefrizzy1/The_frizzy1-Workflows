@@ -44,6 +44,7 @@ GGUF-quantised image, video and audio generation that runs on as little as **4 G
 | The **newest Flux** image model | [Flux.2 Dev GGUF](workflows/flux/flux2-dev) | 6 GB+ |
 | **Beginner-friendly** image generation + editing | [Qwen Image & Edit 2509](workflows/qwen/image-edit-2509) | 4 GB+ |
 | **Native 2K** images on a 12 GB card (Qwen Image 2.1) | [Qwen Image 2.1 · 12 GB](workflows/qwen/image-2.1-12gb) | 12 GB |
+| **Every Qwen Image 2.1 mode** (Turbo · edit · ControlNet pose / depth / edges) in one workflow | [Qwen Image 2.1 Ultimate · 12 GB](workflows/qwen/image-2.1-ultimate-12gb) | 12 GB |
 | **Fast, tiny** image generation | [Z-Image Turbo GGUF](workflows/z-image/turbo) | 4 GB+ |
 | Newer **LTX video** (audio-aware) | [LTX-2](workflows/ltx/ltx2) · [LTX-2.3 Ultimate](workflows/ltx/ltx2.3-ultimate) | 4–12 GB |
 | **Every MiniMax H3 mode** (T2V · I2V · R2V · multiframe · pose · extend) in one workflow, with sound | [MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb) | 12 GB |
@@ -87,6 +88,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[Flux.2 Dev GGUF](workflows/flux/flux2-dev)** | v2.0.0 | 6 GB | T2I | [CivitAI](https://civitai.com/models/2508110) · [▶](https://www.youtube.com/watch?v=dcekWAbgDXg) |
 | **[Qwen Image & Edit 2509](workflows/qwen/image-edit-2509)** | v2.0.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/2229874) · [HF](https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF) · [▶](https://www.youtube.com/watch?v=NPni2ulov34) |
 | **[Qwen Image 2.1 · 12 GB](workflows/qwen/image-2.1-12gb)** | v2.0.0 | 12 GB | T2I native 2K · turbo LoRA | — |
+| **[Qwen Image 2.1 Ultimate · 12 GB](workflows/qwen/image-2.1-ultimate-12gb)** | v2.0.0 | 12 GB | T2I · Turbo · edit · ControlNet pose / depth / edges | — |
 | **[Z-Image Turbo GGUF](workflows/z-image/turbo)** | v1.0.0 | 4 GB | T2I (fast turbo) | [CivitAI](https://civitai.com/models/2561639) |
 | **[Krea 2 Ultimate · 12 GB](workflows/krea/krea-2-ultimate-12gb)** | v2.0.0 | 12 GB | T2I · style reference · style LoRAs | — |
 
@@ -176,7 +178,7 @@ The_frizzy1-Workflows/
 │   ├── wan2.1/            gguf-lowvram · flf2v
 │   ├── wan2.2/            gguf-lowvram · animate · aio-rapid
 │   ├── flux/              kontext · flux2-dev
-│   ├── qwen/              image-edit-2509 · image-2.1-12gb
+│   ├── qwen/              image-edit-2509 · image-2.1-12gb · image-2.1-ultimate-12gb
 │   ├── z-image/           turbo
 │   ├── hunyuan/           video
 │   ├── ltx/               ltx2 · ltx2.3-ultimate

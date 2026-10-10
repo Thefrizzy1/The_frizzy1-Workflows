@@ -1,0 +1,68 @@
+{
+  "workflow": "qwen/image-2.1-ultimate-12gb",
+  "files": [
+    {
+      "name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_turbo_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Turbo on (8 steps). 7.3 GB"
+    },
+    {
+      "name": "qwen_image_2.1_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "Turbo off (base). 7.3 GB"
+    },
+    {
+      "name": "qwen3vl_8b_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "all modes. 9.4 GB"
+    },
+    {
+      "name": "qwen_image_2.1_vae_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "all modes. 0.7 GB"
+    },
+    {
+      "name": "qwen_image_2.1_fun_controlnet_union_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/model_patches/qwen_image_2.1_fun_controlnet_union_int8_convrot.safetensors",
+      "dest": "model_patches",
+      "required": false,
+      "note": "ControlNet modes. 3.8 GB"
+    },
+    {
+      "name": "sdpose_wholebody_fp16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/SDPose/resolve/main/checkpoints/sdpose_wholebody_fp16.safetensors",
+      "dest": "checkpoints",
+      "required": false,
+      "note": "ControlNet: pose. 1.9 GB"
+    },
+    {
+      "name": "rt_detr_v4-x-hgnet_fp16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/SDPose/resolve/main/diffusion_models/rt_detr_v4-x-hgnet_fp16.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "ControlNet: pose. 0.1 GB"
+    },
+    {
+      "name": "lotus-depth-d-v1-1.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/lotus/resolve/main/lotus-depth-d-v1-1.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "ControlNet: depth. 1.7 GB"
+    },
+    {
+      "name": "vae-ft-mse-840000-ema-pruned.safetensors",
+      "url": "https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors",
+      "dest": "vae",
+      "required": false,
+      "note": "ControlNet: depth. 0.3 GB"
+    }
+  ]
+}
