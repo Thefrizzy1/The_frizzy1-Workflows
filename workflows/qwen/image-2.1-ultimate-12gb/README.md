@@ -28,6 +28,8 @@
 
 <sub>Text to image (Turbo, 2048×2048) · ControlNet pose from a frame of my video (Turbo, 1 MP) · Edit (Turbo, 1 MP). RTX 3060.</sub>
 
+<p align="center"><img src="samples/workflow.png" width="96%" alt="The workflow graph"></p>
+
 ## Modes (one dropdown)
 
 | Mode | Uses | Turbo, RTX 3060 |
