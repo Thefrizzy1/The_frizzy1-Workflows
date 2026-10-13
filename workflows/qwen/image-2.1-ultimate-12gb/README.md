@@ -1,4 +1,4 @@
-# The_frizzy1 — Qwen Image 2.1 Ultimate · 12 GB v2.0.0
+# The_frizzy1 — Qwen Image 2.1 Ultimate · 12 GB v2.1.0
 > Every Qwen Image 2.1 mode in one workflow: text to image, editing with your images, ControlNet pose / depth / edges,
 > and the new Turbo model. Core ComfyUI nodes only, tested on an RTX 3060.
 
@@ -14,7 +14,7 @@
 ## Quick start
 1. Update ComfyUI to **0.38 or newer** ("Apply Fun ControlNet" is a core node since 0.38; no custom nodes).
 2. Download the files in [downloads.md](downloads.md). Text to image + edit with Turbo needs 3 files; ControlNet adds the rest.
-3. Load `The_frizzy1_qwen-image-2.1-ultimate-12gb_v2.0.0.json`. It opens on **Text to image** with Turbo on: write your prompt, **Run**.
+3. Load `The_frizzy1_qwen-image-2.1-ultimate-12gb_v2.1.0.json`. It opens on **Text to image** with Turbo on: write your prompt, **Run**.
 4. Other modes: pick the **Mode** on the node, un-bypass (select + **Ctrl+B**) only the inputs that mode uses and load
    your files. **Keep every input you are not using bypassed.**
 
@@ -36,12 +36,16 @@
 |---|---|---|
 | Text to image | prompt | 2K: 57 s · 1 MP: 13 s |
 | Edit (your images) | Image 1 (+ 2, 3 optional; write `<Picture 1>` etc. in the prompt) | 1 MP: 22 s |
+| Edit: remove background (PNG) | Image 1 only | 1 MP: 29 s (base model: 54 s) |
 | ControlNet: pose | Control image (a person; SDPose reads the pose) | 1 MP: 24 s |
 | ControlNet: depth | Control image (any scene; Lotus makes the depth map) | 1 MP: 27 s |
 | ControlNet: edges (canny) | Control image (lines, text, products) | 1 MP: 23 s |
 
 The inputs start **bypassed** (purple), so text to image runs straight away. If your mode needs Image 1 or the Control
 image and it is still bypassed, the run stops at a "Needs …" node instead of quietly making a text-to-image.
+
+## Remove background (v2.1.0)
+From the official template (ComfyUI 0.39): the edit path with the prompt "Remove the background, and output a PNG image" on Image 1. Your prompt is ignored in this mode, Images 2 and 3 are not used, and the PNG keeps the transparency. My tests (1 MP): a portrait (Turbo and base) and a product shot came out cut out cleanly; my own wide room shot came back almost fully transparent 3 out of 3 times (Turbo, base, another seed).
 
 ## Turbo on / off
 - **On** (default): the official Qwen Image 2.1 Turbo model, 8 steps: 2K in 57 s.

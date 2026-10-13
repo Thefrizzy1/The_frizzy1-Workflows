@@ -1,4 +1,4 @@
-# The_frizzy1 — MiniMax H3 Ultimate · 12 GB v2.2.0
+# The_frizzy1 — MiniMax H3 Ultimate · 12 GB v2.3.0
 > Every local MiniMax H3 mode in one workflow - pick it from a dropdown. Video with sound. Core ComfyUI nodes only, tested on an RTX 3060.
 
 | | |
@@ -6,16 +6,16 @@
 | **Model family** | MiniMax H3 |
 | **Tasks** | T2V · I2V · Last frame · First+last · R2V · Multiframe · ControlNet pose · Extend a clip (all with audio) |
 | **Needs** | 12 GB VRAM · **32 GB system RAM** (it peaks at 17–22 GB, close other big apps) · ~42 GB disk for T2V/I2V, ~69 GB for every mode |
-| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.37.4 (Sage attention) |
+| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.37.4 (Sage attention); v2.3.0 on ComfyUI 0.39.2 |
 | **YouTube explainer** | [MiniMax H3 Ultimate workflow explained](https://youtu.be/KJNksY9Ur3w) |
 | **License** | Workflow: MIT · MiniMax H3: MiniMax H3 Community License |
 
 ## Quick start
-1. Update ComfyUI to **0.37.4+** (no custom nodes needed).
+1. Update ComfyUI (v2.3.0 tested on **0.39.2**; no custom nodes needed).
 2. Download the files in [downloads.md](downloads.md) into the folders it shows. Every mode = all 10 files (~69 GB).
    Only text/image to video (incl. last frame, first + last, extend)? Then you need 5 files, ~42 GB: the FL2VA model, the
    FL2V turbo LoRA, the text encoder and both VAEs.
-3. Load `The_frizzy1_minimax-h3-ultimate-12gb_v2.2.0.json`. It opens ready for **T2V**: write your prompt, **Run**.
+3. Load `The_frizzy1_minimax-h3-ultimate-12gb_v2.3.0.json`. It opens ready for **T2V**: write your prompt, **Run**.
 4. Other modes: pick the **Mode** on the node, un-bypass (select + **Ctrl+B**) only the inputs that mode uses (table
    below) and load your files. **Keep every input you are not using bypassed** (purple).
 
@@ -52,7 +52,12 @@ instead of quietly making a T2V. References and guide frames are optional: bypas
 | R2V (references) | Reference 1 + 2 (write `<Picture 1>`, `<Picture 2>` in the prompt) |
 | Multiframe | References + 3 guide frames at the times you set |
 | ControlNet (pose) | Reference 1 + video (the pose is read from it) |
-| Extend (continue a clip) | Video: its last 22 frames (~0.9 s) start the new clip and H3 continues it. The result begins with those frames, so trim ~0.9 s when you join the clips. Load a result back in to keep extending. |
+| Extend (continue a clip) | Video: its last 22 frames (~0.9 s) **and their sound** start the new clip, so the join doesn't jump; after that H3 makes the picture and sound for your prompt. Switch **Extend: keep the clip's sound** off for a silent clip. The result begins with those frames, so trim ~0.9 s when you join the clips. **Long video:** load the result back in and run Extend again, one clip after another. |
+
+## Extend with the clip's sound (v2.3.0)
+Core `Add Guide for MiniMax H3` takes audio as well as frames. With **Extend: keep the clip's sound** on, the clip's last 0.9 s of sound go in with its last 22 frames. My test: a clip with music under its last seconds, extended with the switch on and off (same seed + prompt). The first 0.9 s of the new clip followed the music's loudness almost exactly with the switch on (envelope match 0.961), and not at all with it off (-0.016). After the join H3 makes new sound for your prompt in both cases: it did not keep the song going.
+
+**Why not a "context loop"?** The long-video loop workflows going around use custom node packs (e.g. ComfyUI-MiniMaxH3-Context-Loop). Core ComfyUI has no loop node yet, so here a long video = Extend, again and again.
 
 ## Character swap (the 9th H3 mode) → its own workflow
 
@@ -84,7 +89,7 @@ Each mode was run once through this workflow (5 s clips, turbo on). *Wall* = que
 | R2V (references) | 0.4 MP | 2 min 10 s | 1 min 33 s | 11.4 GB | 16.9 GB |
 | Multiframe | 0.4 MP | 2 min 18 s | 1 min 42 s | 11.3 GB | 16.9 GB |
 | ControlNet (pose) | 0.4 MP | 4 min 59 s | 2 min 43 s | 11.3 GB | 20.1 GB |
-| Extend (continue a clip) | 0.4 MP | 4 min 31 s (cold start) | — | 11.5 GB | — |
+| Extend (continue a clip) | 0.4 MP | with the clip's sound 3 min 51 s–3 min 53 s · without 3 min 31 s–3 min 33 s (v2.3.0, ComfyUI 0.39.2) | — | 11.4 GB | 19.1 GB |
 
 At **0.9 MP** (1280×736) every mode also ran (v2.0.0, Comfy Kitchen attention): 6 min 31 s (Multiframe) to 13 min 07 s
 (ControlNet), peak VRAM 11.6 GB, peak RAM 18.5–21.8 GB. **1.5 MP** (T2V) timed out after 32 min, so stay at 0.9 MP or below.
@@ -93,7 +98,7 @@ At **0.9 MP** (1280×736) every mode also ran (v2.0.0, Comfy Kitchen attention):
 See [downloads.md](downloads.md) — every file was read from the workflow `.json`.
 
 ## Required custom nodes
-None - core ComfyUI **0.37.4+** (native MiniMax H3, SDPose, Switch / Custom Combo / Math Expression).
+None - core ComfyUI (v2.3.0 tested on **0.39.2**: native MiniMax H3, SDPose, Switch / Custom Combo / Math Expression, Trim Audio Duration).
 
 ## Get the models (one command)
 

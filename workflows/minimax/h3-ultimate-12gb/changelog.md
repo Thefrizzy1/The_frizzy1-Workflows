@@ -1,4 +1,10 @@
 # Changelog — MiniMax H3 Ultimate · 12 GB
+## v2.3.0
+- **Extend keeps the clip's sound**: the clip's last 0.9 s of audio go into the H3 guide with its last 22 frames (core `TrimAudioDuration` + `Add Guide for MiniMax H3`), so the sound doesn't jump at the join. New switch **Extend: keep the clip's sound** (on by default, off for silent clips).
+- Tested on the RTX 3060 (ComfyUI 0.39.2, 0.4 MP, 5 s): every mode validated; Extend 3 min 51 s–3 min 53 s with the sound, 3 min 31 s–3 min 33 s without. Music test: first 0.9 s envelope match 0.961 on vs -0.016 off.
+- How-to note: long videos = run Extend again on the result.
+- v2.2.0 kept in `source/`.
+
 ## v2.2.0
 - **Inputs start bypassed**, so T2V runs right after loading, without any image or video. Before, ComfyUI checked the file of every input loader before a run, also in modes that never read it, so T2V failed when the example files weren't there.
 - Un-bypass (Ctrl+B) only the inputs your mode uses and keep everything you are not using bypassed (How to use note + README).
