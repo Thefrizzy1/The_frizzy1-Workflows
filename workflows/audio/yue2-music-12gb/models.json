@@ -1,0 +1,19 @@
+{
+  "workflow": "audio/yue2-music-12gb",
+  "files": [
+    {
+      "name": "yue2_3b_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/YuE2/resolve/main/checkpoints/yue2_3b_int8_convrot.safetensors",
+      "dest": "checkpoints",
+      "required": true,
+      "note": "all modes. 4.0 GB"
+    },
+    {
+      "name": "sheetsage2_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/YuE2/resolve/main/audio_encoders/sheetsage2_bf16.safetensors",
+      "dest": "audio_encoders",
+      "required": true,
+      "note": "Cover mode. 1.4 GB"
+    }
+  ]
+}

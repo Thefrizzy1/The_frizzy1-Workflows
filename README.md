@@ -52,9 +52,10 @@ GGUF-quantised image, video and audio generation that runs on as little as **4 G
 | **LTX 2.5** text / image / first+last / pose-driven video in one workflow | [LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb) | 12 GB |
 | **Swap the person** in a video for your character (one still) | [Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3) | 12 GB |
 | **Animate a character** from a driving video, native nodes | [Wan Animate Ultimate](workflows/wan2.2/animate-ultimate) | 12 GB (GGUF path lower) |
-| **Krea 2** images + style reference | [Krea 2 Ultimate · 12 GB](workflows/krea/krea-2-ultimate-12gb) | 12 GB |
+| **Krea 2** or **Kroma** images + style reference | [Krea 2 Ultimate · 12 GB](workflows/krea/krea-2-ultimate-12gb) | 12 GB |
 | One image → **textured 3D model** (.glb) | [Image to 3D Ultimate · 12 GB](workflows/3d/image-to-3d-ultimate-12gb) | 12 GB |
 | The **older Hunyuan** video path | [Hunyuan Video Low-VRAM](workflows/hunyuan/video) | 4 GB+ |
+| **Songs with vocals** from a style + your lyrics, or a cover of your song (YuE2) | [YuE2 Music · 12 GB](workflows/audio/yue2-music-12gb) | 12 GB |
 | Generate **audio** for a clip | [AI Audio Maker](workflows/audio/ai-audio-maker) | low |
 
 ---
@@ -92,7 +93,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[Qwen Image 2.1 Ultimate · 12 GB](workflows/qwen/image-2.1-ultimate-12gb)** | v2.0.0 | 12 GB | T2I · Turbo · edit · ControlNet pose / depth / edges | — |
 | **[Ming Image 0.1 · 12 GB](workflows/ming/image-0.1-design-12gb)** | v1.0.0 | 12 GB | T2I · edit · RGBA | — |
 | **[Z-Image Turbo GGUF](workflows/z-image/turbo)** | v1.0.0 | 4 GB | T2I (fast turbo) | [CivitAI](https://civitai.com/models/2561639) |
-| **[Krea 2 Ultimate · 12 GB](workflows/krea/krea-2-ultimate-12gb)** | v2.0.0 | 12 GB | T2I · style reference · style LoRAs | — |
+| **[Krea 2 Ultimate · 12 GB](workflows/krea/krea-2-ultimate-12gb)** | v2.1.0 | 12 GB | T2I · style reference · style LoRAs · Kroma | — |
 
 ### 🧊 3D
 
@@ -105,6 +106,7 @@ templated `.json`. Model names are verified from the workflow file.
 | Workflow | Ver | Min VRAM | Tasks | Links |
 |---|:---:|:---:|---|---|
 | **[AI Audio Maker](workflows/audio/ai-audio-maker)** | v1.0.0 | low | Audio · video-sync (MMAudio) | [CivitAI](https://civitai.com/models/2539489) |
+| **[YuE2 Music · 12 GB](workflows/audio/yue2-music-12gb)** | v1.0.0 | 12 GB | text → song · cover | — |
 
 <sub>▶ = video walkthrough on YouTube.</sub>
 
@@ -185,7 +187,7 @@ The_frizzy1-Workflows/
 │   ├── z-image/           turbo
 │   ├── hunyuan/           video
 │   ├── ltx/               ltx2 · ltx2.3-ultimate
-│   └── audio/             ai-audio-maker
+│   └── audio/             ai-audio-maker · yue2-music-12gb
 │       └── <workflow>/
 │           ├── README.md          what it is, settings, nodes
 │           ├── downloads.md       verified model table

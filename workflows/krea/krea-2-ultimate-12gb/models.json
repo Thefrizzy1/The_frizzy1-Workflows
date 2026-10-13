@@ -6,35 +6,49 @@
       "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/diffusion_models/krea2_turbo_int8_convrot.safetensors",
       "dest": "diffusion_models",
       "required": true,
-      "note": "13.5 GB"
+      "note": "12 GB (tested). 13.5 GB"
     },
     {
       "name": "qwen3vl_4b_fp8_scaled.safetensors",
       "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/text_encoders/qwen3vl_4b_fp8_scaled.safetensors",
       "dest": "text_encoders",
       "required": true,
-      "note": "5.2 GB"
+      "note": "all. 5.2 GB"
     },
     {
       "name": "qwen_image_vae.safetensors",
       "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/vae/qwen_image_vae.safetensors",
       "dest": "vae",
       "required": true,
-      "note": "0.3 GB"
+      "note": "all. 0.3 GB"
     },
     {
       "name": "krea2_style_reference.safetensors",
       "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_style_reference.safetensors",
       "dest": "loras",
       "required": true,
-      "note": "0.5 GB"
+      "note": "Style reference. 0.5 GB"
     },
     {
       "name": "krea2_darkbrush.safetensors",
       "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_darkbrush.safetensors",
       "dest": "loras",
       "required": true,
-      "note": "0.5 GB"
+      "note": "Style LoRA (example). 0.5 GB"
+    },
+    {
+      "name": "krea_kroma_v0.3.1_turbo_opd_w4a8.safetensors",
+      "url": "https://huggingface.co/jakethessmake/Krea-Kroma-v0.3.1-Turbo-OPD-ComfyUI-Quants/resolve/main/krea_kroma_v0.3.1_turbo_opd_w4a8.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "Model = Kroma. Kroma, 12 GB (tested). 8.8 GB"
+    },
+    {
+      "name": "krea_kroma_v0.3.1_turbo_opd_int8_convrot.safetensors",
+      "url": "https://huggingface.co/jakethessmake/Krea-Kroma-v0.3.1-Turbo-OPD-ComfyUI-Quants/resolve/main/krea_kroma_v0.3.1_turbo_opd_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "Model = Kroma. Kroma int8 (pick it in the Kroma model field). 14.1 GB"
     }
   ],
   "nodes": []
