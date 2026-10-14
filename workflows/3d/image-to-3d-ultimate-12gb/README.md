@@ -7,7 +7,7 @@
 | **Tasks** | Image → textured 3D mesh |
 | **Min VRAM** | 12 GB (tested) |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.37.4 (Sage attention) |
-| **YouTube explainer** | [ PASTE LINK ] |
+| **YouTube explainer** | — (no video yet) |
 | **License** | Workflow: MIT · Pixal3D / TRELLIS.2: MIT |
 
 <p align="center"><img src="samples/workflow.png" width="96%" alt="The workflow graph"></p>

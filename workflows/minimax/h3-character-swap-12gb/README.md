@@ -9,7 +9,7 @@
 | **Task** | Character swap, video → video, with the original sound |
 | **Needs** | 12 GB VRAM (peaked at 11892 MiB) · 32 GB system RAM (peaked at 23.1 GB) · ComfyUI **0.39+** |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.39.2 |
-| **YouTube explainer** | [ PASTE LINK ] |
+| **YouTube explainer** | [▶ I Replaced Higgsfield Genjutsu With My RTX 3060 (Free, Local)](https://www.youtube.com/watch?v=zkhLZUGIIfE) |
 | **License** | Workflow: MIT · MiniMax H3 + the LoRA: MiniMax H3 Community License (read it before commercial use) |
 
 ## Quick start
@@ -48,7 +48,7 @@
 | Clip | Length | Passes | Time |
 |---|---|---|---|
 | wheelbarrow → penguin | 6.7 s | 2 | 11 min 56 s (v1.0.0's own graph: 12 min 14 s) |
-| van exit → raccoon | 7.0 s | 2 | 10 min 53 s |
+| van exit → raccoon | 7.0 s | 2 | 10 min 53 s (v1.1.0's own graph: 11 min 46 s) |
 | Detstvo dance → brown dog | 9.4 s | 2 | 12 min 25 s |
 | snowball fight → cartoon guy | 8.3 s | 2 | 12 min 18 s |
 | wrestler flip → penguin | 8.3 s | 2 | 11 min 25 s |

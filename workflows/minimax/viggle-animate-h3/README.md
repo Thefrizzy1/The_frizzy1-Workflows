@@ -7,7 +7,7 @@
 | **Tasks** | Character replacement in video |
 | **Min VRAM** | 12 GB (tested) |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.37.4 (Sage attention) |
-| **YouTube explainer** | [ PASTE LINK ] |
+| **YouTube explainer** | — (no video yet) |
 | **License** | Workflow: MIT · Viggle-Animate: MiniMax H3 Community License |
 
 ## Preview

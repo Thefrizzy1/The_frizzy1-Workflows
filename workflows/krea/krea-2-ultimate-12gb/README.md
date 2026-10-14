@@ -8,7 +8,7 @@
 | **Tasks** | Text → Image · Style reference · style LoRAs |
 | **Min VRAM** | 12 GB (tested) |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.39.2 (v2.1.0) |
-| **YouTube explainer** | [ PASTE LINK ] |
+| **YouTube explainer** | — (no video yet) |
 | **License** | Workflow: MIT · Krea 2 and Kroma: Krea 2 Community License |
 
 ## Preview

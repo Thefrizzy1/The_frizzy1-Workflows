@@ -9,7 +9,7 @@
 | **Tasks** | Text → song (vocals + instruments) · Cover (your song's melody, new style + lyrics) |
 | **Needs** | VRAM peaked at 7.5 GB · system RAM peaked at 4.0 GB · ComfyUI **0.39+** |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.39.2 (Comfy Desktop) |
-| **YouTube explainer** | [ PASTE LINK ] |
+| **YouTube explainer** | — (no video yet) |
 | **License** | Workflow: MIT · YuE2 + SheetSage2: CC BY-NC 4.0 (**non-commercial**) |
 
 ## Quick start

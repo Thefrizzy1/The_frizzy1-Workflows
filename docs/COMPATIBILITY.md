@@ -1,7 +1,7 @@
 # Compatibility Matrices
 
 Quick cross-reference of what runs where. All rows below are derived from the actual workflow files unless
-marked *Not verified*. Last checked 2026-10-14 (23 workflows).
+marked *Not verified*. Last checked 2026-10-15 (24 workflows).
 
 ---
 
@@ -41,8 +41,10 @@ the videos (e.g. MiniMax H3 W4A8 on a 4 GB laptop) — that is not what the 12 G
 
 | Workflow | Minimum | Comfortable | Tested hardware (from creator) |
 |---|---|---|---|
-| MiniMax H3 Ultimate · Viggle-Animate · LTX 2.5 Ultimate | 12 GB | 12 GB + 32 GB RAM | RTX 3060 12 GB |
-| Qwen Image 2.1 (both) · Krea 2 · Ming · Image to 3D · YuE2 | 12 GB | 12 GB | RTX 3060 12 GB |
+| MiniMax H3 Ultimate · Viggle-Animate · LTX 2.5 Ultimate · H3 Character Swap | 12 GB | 12 GB + 32 GB RAM | RTX 3060 12 GB (H3 Ultimate also on a 4 GB laptop with the W4A8 model + Q2_K_M encoder: [benchmarks](BENCHMARKS.md)) |
+| Krea 2 (Krea 2 Turbo int8 + Kroma w4a8) · Ming · YuE2 | 4 GB (16 GB RAM) | 12 GB | RTX 3060 12 GB · the same files on an RTX 3050 Ti Laptop 4 GB ([benchmarks](BENCHMARKS.md)) |
+| Qwen Image 2.1 (both) | 4 GB with the w4a8 text encoder (16 GB RAM) | 12 GB | RTX 3060 12 GB · RTX 3050 Ti Laptop 4 GB ([benchmarks](BENCHMARKS.md)) |
+| Image to 3D | 12 GB | 12 GB | RTX 3060 12 GB |
 | Wan Animate Ultimate | 12 GB (Wan Animate 2) · lower in GGUF mode | 12 GB | RTX 3060 12 GB |
 | Wan 2.1 GGUF Low-VRAM | 4 GB | 8–12 GB | RTX 3050 Laptop 4 GB |
 | Wan 2.2 GGUF Low-VRAM | 4 GB (5B: 8 GB) | 12 GB | RTX 3050 Laptop 4 GB |
