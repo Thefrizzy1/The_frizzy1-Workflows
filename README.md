@@ -9,14 +9,14 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 [![CivitAI](https://img.shields.io/badge/CivitAI-The__frizzy1-2b7cff?style=flat-square)](https://civitai.com/user/The_frizzy1)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-The--frizzy1-ffb000?style=flat-square)](https://huggingface.co/The-frizzy1)
 [![YouTube](https://img.shields.io/badge/YouTube-@the__frizzy1-ff0033?style=flat-square)](https://www.youtube.com/@the_frizzy1)
-[![Workflows](https://img.shields.io/badge/workflows-23-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-24-6a5cff?style=flat-square)](#workflows)
 [![Min VRAM](https://img.shields.io/badge/min%20VRAM-4%20GB-3ecf8e?style=flat-square)](#workflows)
 [![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
 
 </div>
 
 > **Every model name in this repository was read directly out of the workflow `.json` files — not guessed.**
-> All 23 workflows checked on 2026-10-14: every model file each `.json` loads is in its `models.json` / `downloads.md`,
+> All 24 workflows checked on 2026-10-14: every model file each `.json` loads is in its `models.json` / `downloads.md`,
 > every download link resolves, and the custom node packs listed are the ones the `.json` really uses ([audit](docs/AUDIT.md)).
 
 ---
@@ -54,6 +54,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Every MiniMax H3 mode** (T2V · I2V · R2V · multiframe · pose · extend) in one workflow, with sound | [MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb) | 12 GB |
 | **LTX 2.5** text / image / first+last / pose-driven video in one workflow | [LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb) | 12 GB |
 | **Swap the person** in a video for your character (one still) | [Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3) | 12 GB |
+| **Genjutsu at home**: swap the person, whole clip, original sound | [H3 Character Swap · 12 GB](workflows/minimax/h3-character-swap-12gb) | 12 GB |
 | **Animate a character** from a driving video, native nodes | [Wan Animate Ultimate](workflows/wan2.2/animate-ultimate) | 12 GB (GGUF path lower) |
 | **Krea 2** or **Kroma** images + style reference | [Krea 2 Ultimate · 12 GB](workflows/krea/krea-2-ultimate-12gb) | 12 GB |
 | One image → **textured 3D model** (.glb) | [Image to 3D Ultimate · 12 GB](workflows/3d/image-to-3d-ultimate-12gb) | 12 GB |
@@ -83,6 +84,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb)** | v2.3.0 | 12 GB | T2V · I2V · last · FLF · R2V · multiframe · ControlNet pose · extend · audio | [▶](https://www.youtube.com/watch?v=KJNksY9Ur3w) |
 | **[LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb)** | v2.0.0 | 12 GB | T2V · I2V · FLF · pose (IC-LoRA) · audio | [▶](https://www.youtube.com/watch?v=HeHY6N5hH_M) |
 | **[Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3)** | v2.0.0 | 12 GB | character replacement (V2V) | — |
+| **[H3 Character Swap · 12 GB](workflows/minimax/h3-character-swap-12gb)** | v1.0.0 | 12 GB | character swap (V2V) · whole clip in loop passes · original sound | — |
 | **[Wan Animate Ultimate](workflows/wan2.2/animate-ultimate)** | v2.0.0 | 12 GB | Wan Animate 2 · Wan 2.2 Animate GGUF + face video | [▶](https://www.youtube.com/watch?v=aqFdglMbcIU) |
 
 ### 🖼️ Image
@@ -202,7 +204,7 @@ The_frizzy1-Workflows/
 ├── docs/                  downloads · compatibility · wan-lineage · naming · audit
 ├── models/                model-family reference
 ├── workflows/
-│   ├── minimax/           h3-ultimate-12gb · viggle-animate-h3
+│   ├── minimax/           h3-ultimate-12gb · viggle-animate-h3 · h3-character-swap-12gb
 │   ├── ltx/               ltx-2.5-ultimate-12gb · ltx2.3-ultimate · ltx2
 │   ├── wan2.2/            animate-ultimate · animate · gguf-lowvram · aio-rapid
 │   ├── wan2.1/            gguf-lowvram · flf2v
