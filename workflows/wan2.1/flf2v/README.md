@@ -6,9 +6,11 @@
 |---|---|
 | **Model family** | Wan 2.1 (FLF2V 14B) |
 | **Tasks** | First frame → Last frame video |
+| **Workflow file** | `The_frizzy1_wan-2.1-flf2v_v2.0.0.json` |
 | **Min VRAM** | 4 GB |
 | **CivitAI** | https://civitai.com/models/1624167 |
 | **License** | Apache-2.0 |
+| **Newer** | [MiniMax H3 Ultimate](../../minimax/h3-ultimate-12gb) (first + last frame) · [LTX 2.5 Ultimate](../../ltx/ltx-2.5-ultimate-12gb) (12 GB). |
 
 ## Preview
 

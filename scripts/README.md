@@ -49,14 +49,18 @@ export FRIZZY_COMFY=/opt/ComfyUI        # Linux / macOS
 | CLIP vision | `ComfyUI/models/clip_vision/` |
 | LoRAs | `ComfyUI/models/loras/` |
 | MMAudio | `ComfyUI/models/mmaudio/` |
+| upscalers / latent upscalers | `ComfyUI/models/upscale_models/` · `latent_upscale_models/` |
 
-Existing files are skipped. Interrupted downloads resume. A few files without a stable direct link are listed
-at the end with the exact page to grab them from. Helper files like `rife49.pth` and `RealESRGAN` come with
-the custom nodes, so the tool doesn't fetch them.
+Files you already have are found and skipped — also in **subfolders** (e.g. `diffusion_models/MiniMax-H3/…`, which
+ComfyUI lists as `MiniMax-H3ile`) and in the folders of your **`extra_model_paths.yaml`** (and ComfyUI Desktop's
+`extra_models_config.yaml`). Interrupted downloads resume. Where a source repo uses another file name than the
+workflow loads, the file is saved under the workflow's name. A few files (your own LoRAs, a renamed file with no
+public source) are listed at the end with the page to grab them from. Helper files like `rife49.pth` and the DWPose /
+SAM2 models are downloaded by their custom nodes on first run, so the tool doesn't fetch them.
 
 ## Gated models
 
-Some Flux models sit behind a licence. Accept it on the model's Hugging Face page, create a token, then:
+Some models sit behind a licence (LTX 2.5, Flux.2 Dev). Accept it on the model's Hugging Face page, create a token, then:
 
 ```bash
 setx HF_TOKEN "hf_xxx"      # Windows (reopen the terminal after)
@@ -68,5 +72,16 @@ export HF_TOKEN=hf_xxx       # Linux / macOS
 New model files show up in ComfyUI when you hit **Refresh** (or the `R` key). A workflow that needs new
 custom nodes wants a full restart. The tool's `doctor` command offers to launch ComfyUI for you.
 
-The per-file source of truth is each workflow's `models.json`, generated from the verified
-[download tables](../docs/DOWNLOADS.md).
+The per-file source of truth is each workflow's `models.json`; [docs/DOWNLOADS.md](../docs/DOWNLOADS.md) and the
+"Direct links" part of each `downloads.md` are generated from it.
+
+## Checking the repo — `check_repo.py`
+
+```bash
+python scripts/check_repo.py            # models / node packs / versions of all workflows
+python scripts/check_repo.py --links    # + HEAD-request every download link
+```
+
+Compares every workflow `.json` with its `models.json`, `downloads.md`, README, changelog and the root README, and the
+node packs the `.json` really uses. Exit code 1 on any problem; documented exceptions are in `check_allow.json`.
+Run it after adding or updating a workflow.

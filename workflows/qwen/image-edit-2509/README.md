@@ -5,11 +5,13 @@
 |---|---|
 | **Model family** | Qwen Image |
 | **Tasks** | Text → Image · Image editing (2509) |
+| **Workflow file** | `The_frizzy1_qwen-image-edit-2509_v2.0.0.json` |
 | **Min VRAM** | 4 GB (Q4_K_S) / 12 GB (Q8) |
 | **CivitAI** | https://civitai.com/models/2229874 |
 | **Hugging Face** | https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF |
 | **YouTube** | https://www.youtube.com/watch?v=NPni2ulov34 |
 | **License** | Apache-2.0 |
+| **Newer** | [Qwen Image 2.1 Ultimate](../../qwen/image-2.1-ultimate-12gb) (12 GB). This one stays the 4 GB pick. |
 
 
 ## Preview

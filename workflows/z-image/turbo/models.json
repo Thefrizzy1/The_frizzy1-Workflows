@@ -2,33 +2,35 @@
   "workflow": "z-image/turbo",
   "files": [
     {
-      "name": "z-image-turbo-q8_0.gguf",
-      "page": "https://huggingface.co/models?search=z-image-turbo-gguf",
-      "dest": "diffusion_models",
-      "required": true,
-      "manual": true,
-      "note": "Search HF for the Z-Image-Turbo-GGUF repo, grab Q8_0."
-    },
-    {
-      "name": "qwen_3_4b.safetensors",
-      "page": "https://huggingface.co/Comfy-Org",
-      "dest": "text_encoders",
-      "required": true,
-      "manual": true,
-      "note": "Qwen-3 4B text encoder."
-    },
-    {
       "name": "ae.safetensors",
       "url": "https://huggingface.co/ffxvs/vae-flux/resolve/main/ae.safetensors",
       "dest": "vae",
       "required": true,
       "note": ""
+    },
+    {
+      "name": "z-image-turbo-q8_0.gguf",
+      "url": "https://huggingface.co/unsloth/Z-Image-Turbo-GGUF/resolve/main/z-image-turbo-Q8_0.gguf",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Downloads unsloth/Z-Image-Turbo-GGUF z-image-turbo-Q8_0.gguf and saves it under the name the workflow loads. 7.2 GB"
+    },
+    {
+      "name": "qwen_3_4b.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/text_encoders/qwen_3_4b.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "8.0 GB"
     }
   ],
   "nodes": [
     {
       "name": "ComfyUI-GGUF",
       "git": "https://github.com/city96/ComfyUI-GGUF"
+    },
+    {
+      "name": "ComfyUI-KJNodes",
+      "git": "https://github.com/kijai/ComfyUI-KJNodes"
     }
   ]
 }

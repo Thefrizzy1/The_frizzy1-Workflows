@@ -5,10 +5,11 @@
 |---|---|
 | **Model family** | Flux.2 Dev |
 | **Tasks** | Text → Image |
+| **Workflow file** | `The_frizzy1_flux2-dev-gguf_v2.0.0.json` |
 | **Min VRAM** | 6 GB (estimate — verify on your card) |
 | **CivitAI** | https://civitai.com/models/2508110 |
 | **YouTube** | https://www.youtube.com/watch?v=dcekWAbgDXg |
-| **License** | FLUX.2 [dev] (Black Forest Labs) — check model card |
+| **License** | Workflow: MIT · FLUX [dev] Non-Commercial License (Black Forest Labs; the model is gated) — **non-commercial** |
 
 
 ## Preview

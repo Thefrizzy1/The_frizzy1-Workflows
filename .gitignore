@@ -2,3 +2,4 @@
 Thumbs.db
 *.tmp
 scripts/.comfypath
+__pycache__/

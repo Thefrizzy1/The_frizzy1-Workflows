@@ -2,13 +2,6 @@
   "workflow": "ltx/ltx2",
   "files": [
     {
-      "name": "ltx-2-19b-dev_Q4_K_M.gguf",
-      "url": "https://huggingface.co/Kijai/LTXV2_comfy/resolve/main/diffusion_models/ltx-2-19b-dev_Q4_K_M.gguf",
-      "dest": "diffusion_models",
-      "required": true,
-      "note": "Use Q8_0 for higher quality."
-    },
-    {
       "name": "LTX2_video_vae_bf16.safetensors",
       "url": "https://huggingface.co/Kijai/LTXV2_comfy/resolve/main/VAE/LTX2_video_vae_bf16.safetensors",
       "dest": "vae",
@@ -30,12 +23,32 @@
       "note": ""
     },
     {
-      "name": "gemma_3_12B_it text encoder",
-      "page": "https://huggingface.co/Comfy-Org/ltx-2",
+      "name": "ltx-2-19b-distilled_Q4_K_M.gguf",
+      "url": "https://huggingface.co/Kijai/LTXV2_comfy/resolve/main/diffusion_models/ltx-2-19b-distilled_Q4_K_M.gguf",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "The distilled model both .json files load. 12.7 GB"
+    },
+    {
+      "name": "gemma_3_12B_it_fp8_e4m3fn.safetensors",
+      "url": "https://huggingface.co/GitMylo/LTX-2-comfy_gemma_fp8_e4m3fn/resolve/main/gemma_3_12B_it_fp8_e4m3fn.safetensors",
       "dest": "text_encoders",
       "required": true,
-      "manual": true,
-      "note": "Gemma-3 12B text encoder from Comfy-Org/ltx-2, split_files/text_encoders."
+      "note": "Gemma 3 12B text encoder. 13.2 GB"
+    },
+    {
+      "name": "ltx-2-spatial-upscaler-x2-1.0.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2/resolve/main/ltx-2-spatial-upscaler-x2-1.0.safetensors",
+      "dest": "latent_upscale_models",
+      "required": true,
+      "note": "2x latent upscaler. 1.0 GB"
+    },
+    {
+      "name": "ltx-2-19b-distilled-lora-384.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2/resolve/main/ltx-2-19b-distilled-lora-384.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "Its loader ships bypassed. 7.7 GB"
     }
   ],
   "nodes": [

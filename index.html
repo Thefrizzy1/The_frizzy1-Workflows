@@ -105,12 +105,12 @@
 <body>
 <header><div class="wrap">
   <h1>Every The_frizzy1 workflow, verified and in one place.</h1>
-  <p class="lede">GGUF-quantised ComfyUI workflows for image, video and audio — built to run on as little as <b>4&nbsp;GB of VRAM</b>. Every model name here was read straight out of the workflow file, not guessed.</p>
+  <p class="lede">ComfyUI workflows for video, image, 3D and audio — the newest models as <b>12&nbsp;GB Ultimate</b> workflows (core nodes only), and GGUF workflows down to <b>4&nbsp;GB of VRAM</b>. Every model name here was read straight out of the workflow file, not guessed.</p>
   <ul class="meta">
-    <li><b>12</b> workflows</li>
+    <li><b>23</b> workflows</li>
     <li>from <b>4&nbsp;GB</b> VRAM</li>
-    <li><b>12/12</b> model-verified</li>
-    <li><b>10</b> video guides</li>
+    <li><b>23/23</b> model-checked</li>
+    <li><b>15</b> video guides</li>
   </ul>
   <div class="links">
     <a class="btn p" href="https://civitai.com/user/The_frizzy1" target="_blank" rel="noopener">CivitAI profile</a>
@@ -125,7 +125,9 @@
   <button class="chip" aria-pressed="true" data-f="all">All</button>
   <button class="chip" aria-pressed="false" data-f="video">Video</button>
   <button class="chip" aria-pressed="false" data-f="image">Image</button>
+  <button class="chip" aria-pressed="false" data-f="3d">3D</button>
   <button class="chip" aria-pressed="false" data-f="audio">Audio</button>
+  <button class="chip" aria-pressed="false" data-f="12gb">12 GB Ultimate</button>
   <button class="chip" aria-pressed="false" data-f="4gb">Runs on 4GB</button>
   <input class="search" id="q" type="search" placeholder="Search workflows…" aria-label="Search workflows">
   <span class="count" id="count" aria-live="polite"></span>
@@ -143,17 +145,27 @@
 
 <script>
 const W=[
+ {slug:"minimax/h3-ultimate-12gb",fam:"MiniMax H3",name:"MiniMax H3 Ultimate · 12 GB",ver:"v2.3.0",cats:["video","12gb"],vram:"12 GB",tasks:["T2V","I2V","R2V","FLF","Pose","Extend","Audio"],yt:"KJNksY9Ur3w",civ:"",hf:"",models:"H3 FL2VA + Ref2VA int8 · turbo LoRAs · core nodes only"},
+ {slug:"ltx/ltx-2.5-ultimate-12gb",fam:"LTX 2.5",name:"LTX 2.5 Ultimate · 12 GB",ver:"v2.0.0",cats:["video","12gb"],vram:"12 GB",tasks:["T2V","I2V","FLF","Pose","Audio"],yt:"HeHY6N5hH_M",civ:"",hf:"",models:"ltx-2.5-22b distilled nvfp4 · gemma4 int8 · core nodes only"},
+ {slug:"minimax/viggle-animate-h3",fam:"MiniMax H3",name:"Viggle-Animate (H3)",ver:"v2.0.0",cats:["video","12gb"],vram:"12 GB",tasks:["Character swap","V2V"],yt:"",civ:"",hf:"",models:"H3 Ref2VA Viggle finetune · DMD LoRA"},
+ {slug:"wan2.2/animate-ultimate",fam:"Wan Animate 2",name:"Wan Animate Ultimate",ver:"v2.0.0",cats:["video","12gb"],vram:"12 GB (GGUF lower)",tasks:["V2V","Face video"],yt:"aqFdglMbcIU",civ:"",hf:"",models:"wan_animate_2 distill int8 · Wan 2.2 Animate GGUF"},
+ {slug:"qwen/image-2.1-ultimate-12gb",fam:"Qwen Image 2.1",name:"Qwen Image 2.1 Ultimate · 12 GB",ver:"v2.1.0",cats:["image","12gb"],vram:"12 GB",tasks:["T2I","Turbo","Edit","ControlNet","Remove BG"],yt:"N7X0QBZ_r9c",civ:"",hf:"",models:"qwen_image_2.1 + turbo int8 · Fun ControlNet · core nodes only"},
+ {slug:"krea/krea-2-ultimate-12gb",fam:"Krea 2",name:"Krea 2 Ultimate · 12 GB",ver:"v2.1.0",cats:["image","12gb"],vram:"12 GB",tasks:["T2I","Style ref","Style LoRAs","Kroma"],yt:"",civ:"",hf:"",models:"krea2_turbo int8 · Kroma w4a8 · core nodes only"},
+ {slug:"ming/image-0.1-design-12gb",fam:"Ming Image",name:"Ming Image 0.1 · 12 GB",ver:"v1.0.0",cats:["image","12gb"],vram:"12 GB",tasks:["T2I","Edit","RGBA"],yt:"DTleXeD74vs",civ:"",hf:"",models:"ming_image_0.1_design int8 · ling_mini w4a8 · core nodes only"},
+ {slug:"qwen/image-2.1-12gb",fam:"Qwen Image 2.1",name:"Qwen Image 2.1 · 12 GB",ver:"v2.0.0",cats:["image","12gb"],vram:"12 GB",tasks:["T2I","2K","Turbo"],yt:"C5wZ2gU7j9E",civ:"",hf:"",models:"qwen_image_2.1 int8 · Viggle 6-step LoRA"},
+ {slug:"3d/image-to-3d-ultimate-12gb",fam:"3D",name:"Image to 3D Ultimate · 12 GB",ver:"v2.0.0",cats:["3d","12gb"],vram:"12 GB",tasks:["Image → .glb"],yt:"",civ:"",hf:"",models:"Pixal3D · TRELLIS.2 · core nodes only"},
+ {slug:"audio/yue2-music-12gb",fam:"Audio · YuE2",name:"YuE2 Music · 12 GB",ver:"v1.0.0",cats:["audio","12gb"],vram:"12 GB",tasks:["Song","Cover"],yt:"",civ:"",hf:"",models:"YuE2 3B · SheetSage2 · core nodes only"},
  {slug:"wan2.2/animate",fam:"Wan 2.2 Animate",name:"Wan 2.2 Animate",ver:"v1.2.0",cats:["video","4gb"],vram:"4 GB",tasks:["V2V","Looping"],yt:"rtyfdmL-wF4",civ:"https://civitai.com/models/2046477",hf:"https://huggingface.co/The-frizzy1/Wan22ANIMATE",models:"Wan2.2-Animate-14B · relight + lightx2v LoRA"},
  {slug:"wan2.2/gguf-lowvram",fam:"Wan 2.2",name:"Wan 2.2 GGUF Low-VRAM",ver:"v1.0.0",cats:["video","4gb"],vram:"4 GB",tasks:["T2V","I2V","5B"],yt:"C7ZttV320qk",civ:"https://civitai.com/models/1817858",hf:"https://huggingface.co/The-frizzy1/Wan22-T2V-I2V-LORA-4GB",models:"A14B high+low noise · TI2V-5B"},
  {slug:"wan2.1/gguf-lowvram",fam:"Wan 2.1",name:"Wan 2.1 GGUF Low-VRAM",ver:"v2.0.0",cats:["video","4gb"],vram:"4 GB",tasks:["T2V","I2V","VACE","FLF"],yt:"Xqjabf_eQ_U",civ:"https://civitai.com/models/1309674",hf:"https://huggingface.co/The-frizzy1/Wan21-GGUF-4GB-Workflow",models:"Wan2.1 1.3B/14B GGUF · 6 variants"},
  {slug:"wan2.1/flf2v",fam:"Wan 2.1",name:"Wan 2.1 FLF2V",ver:"v2.0.0",cats:["video","4gb"],vram:"4 GB",tasks:["First→Last"],yt:"",civ:"https://civitai.com/models/1624167",hf:"",models:"Wan2.1 FLF2V 14B GGUF"},
  {slug:"wan2.2/aio-rapid",fam:"Wan 2.2",name:"Wan 2.2 AIO Rapid",ver:"v1.0.0",cats:["video","4gb"],vram:"4–12 GB",tasks:["T2V","I2V","AIO"],yt:"RdsyWkvG1nE",civ:"https://civitai.com/models/2522688",hf:"",models:"wan2.2-rapid-mega-aio-v12 (single file)"},
  {slug:"flux/kontext",fam:"Flux Kontext",name:"Flux Kontext GGUF",ver:"v2.2.0",cats:["image","4gb"],vram:"4 GB",tasks:["T2I","Edit"],yt:"4C0RJ01yRok",civ:"https://civitai.com/models/1311703",hf:"https://huggingface.co/The-frizzy1/Flux-Kontext-GGUF-4GB",models:"flux1-kontext-dev · Dev/Schnell"},
- {slug:"flux/flux2-dev",fam:"Flux.2 Dev",name:"Flux.2 Dev GGUF",ver:"v1.0.0",cats:["image"],vram:"6 GB",tasks:["T2I"],yt:"dcekWAbgDXg",civ:"https://civitai.com/models/2508110",hf:"",models:"flux2-dev-Q5_K_M · mistral text enc"},
- {slug:"qwen/image-edit-2509",fam:"Qwen Image",name:"Qwen Image & Edit 2509",ver:"v1.0.0",cats:["image","4gb"],vram:"4 GB",tasks:["T2I","Edit"],yt:"NPni2ulov34",civ:"https://civitai.com/models/2229874",hf:"https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF",models:"Qwen_Image-Q8 · Lightning LoRA"},
+ {slug:"flux/flux2-dev",fam:"Flux.2 Dev",name:"Flux.2 Dev GGUF",ver:"v2.0.0",cats:["image"],vram:"6 GB",tasks:["T2I"],yt:"dcekWAbgDXg",civ:"https://civitai.com/models/2508110",hf:"",models:"flux2-dev-Q5_K_M · mistral text enc"},
+ {slug:"qwen/image-edit-2509",fam:"Qwen Image",name:"Qwen Image & Edit 2509",ver:"v2.0.0",cats:["image","4gb"],vram:"4 GB",tasks:["T2I","Edit"],yt:"NPni2ulov34",civ:"https://civitai.com/models/2229874",hf:"https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF",models:"Qwen_Image-Q8 · Lightning LoRA"},
  {slug:"z-image/turbo",fam:"Z-Image Turbo",name:"Z-Image Turbo GGUF",ver:"v1.0.0",cats:["image","4gb"],vram:"4 GB",tasks:["T2I","Fast"],yt:"",civ:"https://civitai.com/models/2561639",hf:"",models:"z-image-turbo-q8_0 · qwen_3_4b enc"},
  {slug:"hunyuan/video",fam:"Hunyuan Video",name:"Hunyuan Video Low-VRAM",ver:"v1.1.1",cats:["video","4gb"],vram:"4 GB",tasks:["T2V","I2V"],yt:"",civ:"https://civitai.com/models/1312419",hf:"https://huggingface.co/The-frizzy1/Hunyuan-Video-Low-VRAM-4GB",models:"Fast Hunyuan GGUF (fixed in v1.1.1)"},
- {slug:"ltx/ltx2",fam:"LTXV-2",name:"LTX-2 GGUF",ver:"v1.5.0",cats:["video","4gb"],vram:"4 GB",tasks:["T2V","I2V","Audio"],yt:"nnHUBMgdJac",civ:"https://civitai.com/models/2339823",hf:"https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow",models:"ltx-2-19b-distilled · gemma_3_12B"},
+ {slug:"ltx/ltx2",fam:"LTXV-2",name:"LTX-2 GGUF",ver:"v2.0.0",cats:["video","4gb"],vram:"4 GB",tasks:["T2V","I2V","Audio"],yt:"nnHUBMgdJac",civ:"https://civitai.com/models/2339823",hf:"https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow",models:"ltx-2-19b-distilled · gemma_3_12B"},
  {slug:"ltx/ltx2.3-ultimate",fam:"LTXV-2.3",name:"LTX-2.3 Ultimate",ver:"v3.0.0",cats:["video"],vram:"12 GB",tasks:["T2V","I2V","FFLF","ID"],yt:"im4wolfHvMk",civ:"https://civitai.com/models/2339823",hf:"https://huggingface.co/The-frizzy1/LTX23-Ultimate",models:"ltx-2.3-22b-dev · id + distill LoRA"},
  {slug:"audio/ai-audio-maker",fam:"Audio · MMAudio",name:"AI Audio Maker",ver:"v1.0.0",cats:["audio"],vram:"low",tasks:["Audio","Sync"],yt:"",civ:"https://civitai.com/models/2539489",hf:"",models:"mmaudio_large_44k_v2 · synchformer"},
 ];

@@ -28,16 +28,59 @@
       "dest": "text_encoders",
       "required": true,
       "note": ""
+    },
+    {
+      "name": "RealESRGAN_x4.pth",
+      "url": "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x4.pth",
+      "dest": "upscale_models",
+      "required": true,
+      "note": "Upscaler, 0.07 GB"
+    },
+    {
+      "name": "FC Flux Perfect Busts.safetensors",
+      "page": "https://civitai.com/models",
+      "dest": "loras",
+      "required": false,
+      "manual": true,
+      "note": "One of my own LoRAs in the LoRA stack: use any Flux LoRA, or switch the slot off."
+    },
+    {
+      "name": "FLUX_Polyhedron_all_Kohya_ss-000001.safetensors",
+      "page": "https://civitai.com/models",
+      "dest": "loras",
+      "required": false,
+      "manual": true,
+      "note": "One of my own LoRAs in the LoRA stack: use any Flux LoRA, or switch the slot off."
+    },
+    {
+      "name": "FluxDFaeTasticDetails.safetensors",
+      "page": "https://civitai.com/models",
+      "dest": "loras",
+      "required": false,
+      "manual": true,
+      "note": "One of my own LoRAs in the LoRA stack: use any Flux LoRA, or switch the slot off."
     }
   ],
   "nodes": [
     {
-      "name": "ComfyUI-GGUF",
-      "git": "https://github.com/city96/ComfyUI-GGUF"
+      "name": "gguf",
+      "git": "https://github.com/calcuis/gguf"
     },
     {
       "name": "rgthree-comfy",
       "git": "https://github.com/rgthree/rgthree-comfy"
+    },
+    {
+      "name": "ComfyUI-KJNodes",
+      "git": "https://github.com/kijai/ComfyUI-KJNodes"
+    },
+    {
+      "name": "ComfyUI_essentials",
+      "git": "https://github.com/cubiq/ComfyUI_essentials"
+    },
+    {
+      "name": "ComfyUI-TeaCache",
+      "git": "https://github.com/welltop-cn/ComfyUI-TeaCache"
     }
   ]
 }

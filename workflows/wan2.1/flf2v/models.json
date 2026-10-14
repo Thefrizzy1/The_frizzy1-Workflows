@@ -9,13 +9,6 @@
       "note": "Pick your quant from the repo."
     },
     {
-      "name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
-      "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
-      "dest": "text_encoders",
-      "required": true,
-      "note": ""
-    },
-    {
       "name": "wan_2.1_vae.safetensors",
       "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors",
       "dest": "vae",
@@ -23,21 +16,31 @@
       "note": ""
     },
     {
-      "name": "clip_vision_h.safetensors",
-      "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors",
+      "name": "t5xxl_um_fp8_e4m3fn_scaled.safetensors",
+      "url": "https://huggingface.co/calcuis/wan-gguf/resolve/main/t5xxl_um_fp8_e4m3fn_scaled.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "6.7 GB"
+    },
+    {
+      "name": "clip_vision_h_fp8_e4m3fn.safetensors",
+      "url": "https://huggingface.co/calcuis/wan-gguf/resolve/main/clip_vision_h_fp8_e4m3fn.safetensors",
       "dest": "clip_vision",
       "required": true,
-      "note": ""
+      "note": "0.6 GB"
+    },
+    {
+      "name": "RealESRGAN_x4.pth",
+      "url": "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x4.pth",
+      "dest": "upscale_models",
+      "required": true,
+      "note": "Upscaler, 0.07 GB"
     }
   ],
   "nodes": [
     {
       "name": "gguf",
       "git": "https://github.com/calcuis/gguf"
-    },
-    {
-      "name": "ComfyUI-WanVideoWrapper",
-      "git": "https://github.com/kijai/ComfyUI-WanVideoWrapper"
     },
     {
       "name": "tiled_ksampler",
@@ -54,6 +57,10 @@
     {
       "name": "rgthree-comfy",
       "git": "https://github.com/rgthree/rgthree-comfy"
+    },
+    {
+      "name": "ComfyUI-Frame-Interpolation",
+      "git": "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
     }
   ]
 }

@@ -6,11 +6,13 @@
 |---|---|
 | **Model family** | Flux (Dev · Schnell · Kontext) |
 | **Tasks** | Text → Image · Image editing |
+| **Workflow file** | `The_frizzy1_flux-kontext-gguf_v2.2.0.json` |
 | **Min VRAM** | 4 GB |
 | **CivitAI** | https://civitai.com/models/1311703 |
 | **Hugging Face** | https://huggingface.co/The-frizzy1/Flux-Kontext-GGUF-4GB |
 | **YouTube** | https://www.youtube.com/watch?v=4C0RJ01yRok |
 | **License** | FLUX.1 [dev] Non-Commercial (Black Forest Labs) |
+| **Newer** | [Qwen Image 2.1 Ultimate](../../qwen/image-2.1-ultimate-12gb) (12 GB: edit + Turbo + ControlNet). On 4 GB: Qwen Image & Edit 2509. |
 
 
 ## Preview

@@ -6,9 +6,10 @@
 |---|---|
 | **Model family** | MMAudio (44kHz) |
 | **Tasks** | Audio generation · video-synced audio |
+| **Workflow file** | `The_frizzy1_ai-audio-maker_v1.0.0.json` |
 | **Min VRAM** | Low (MMAudio is light) |
 | **CivitAI** | https://civitai.com/models/2539489 |
-| **License** | Check MMAudio model card |
+| **License** | Workflow: MIT · MMAudio: CC-BY-NC-4.0 (**non-commercial**; Kijai's safetensors repack is tagged MIT, the original weights are NC) |
 
 
 ## Preview

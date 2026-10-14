@@ -1,0 +1,11 @@
+{
+  "*": {
+    "rife49.pth": "downloaded by ComfyUI-Frame-Interpolation itself",
+    "yolox_l.onnx": "downloaded by comfyui_controlnet_aux (DWPose) itself",
+    "dw-ll_ucoco_384_bs5.torchscript.pt": "downloaded by comfyui_controlnet_aux (DWPose) itself",
+    "sam2_hiera_base_plus.safetensors": "downloaded by ComfyUI-segment-anything-2 itself"
+  },
+  "wan2.2/animate": {
+    "high_noise_model(wan2.2light2xvI2v_v2.2).safetensors": "renamed file with no public source; models.json + downloads.md give the substitute to pick in the LoRA loader"
+  }
+}

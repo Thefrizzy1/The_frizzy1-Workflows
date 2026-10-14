@@ -30,5 +30,10 @@
       "note": "5.2 GB"
     }
   ],
-  "nodes": []
+  "nodes": [
+    {
+      "name": "ComfyUI-Viggle-Animate-H3",
+      "git": "https://github.com/Saganaki22/ComfyUI-Viggle-Animate-H3"
+    }
+  ]
 }

@@ -9,13 +9,6 @@
       "note": "Fast Hunyuan, recommended."
     },
     {
-      "name": "hunyuan_video_vae_bf16.safetensors",
-      "url": "https://huggingface.co/calcuis/hunyuan-gguf/resolve/main/hunyuan_video_vae_bf16.safetensors",
-      "dest": "vae",
-      "required": true,
-      "note": ""
-    },
-    {
       "name": "llava_llama3_fp8_scaled.safetensors",
       "url": "https://huggingface.co/calcuis/hunyuan-gguf/resolve/main/llava_llama3_fp8_scaled.safetensors",
       "dest": "text_encoders",
@@ -28,12 +21,26 @@
       "dest": "text_encoders",
       "required": true,
       "note": ""
+    },
+    {
+      "name": "kijai_hunyuan_video_vae_bf16.safetensors",
+      "url": "https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_vae_bf16.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "Downloads Kijai/HunyuanVideo_comfy hunyuan_video_vae_bf16.safetensors and saves it under the name the workflow loads. 0.5 GB"
+    },
+    {
+      "name": "4x-AnimeSharp.pth",
+      "url": "https://huggingface.co/Kim2091/AnimeSharp/resolve/main/4x-AnimeSharp.pth",
+      "dest": "upscale_models",
+      "required": true,
+      "note": "Upscaler, 0.07 GB"
     }
   ],
   "nodes": [
     {
-      "name": "ComfyUI-GGUF",
-      "git": "https://github.com/city96/ComfyUI-GGUF"
+      "name": "gguf",
+      "git": "https://github.com/calcuis/gguf"
     },
     {
       "name": "ComfyUI-KJNodes",
@@ -44,8 +51,16 @@
       "git": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
     },
     {
-      "name": "tiled_ksampler",
-      "git": "https://github.com/FlyingFireCo/tiled_ksampler"
+      "name": "rgthree-comfy",
+      "git": "https://github.com/rgthree/rgthree-comfy"
+    },
+    {
+      "name": "ComfyUI-HunyuanVideoWrapper",
+      "git": "https://github.com/kijai/ComfyUI-HunyuanVideoWrapper"
+    },
+    {
+      "name": "ComfyUI-HunyuanVideoSamplerSave",
+      "git": "https://github.com/ShmuelRonen/ComfyUI-HunyuanVideoSamplerSave"
     }
   ]
 }

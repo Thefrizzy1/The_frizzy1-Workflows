@@ -20,7 +20,7 @@
       "url": "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors",
       "dest": "loras",
       "required": false,
-      "note": "Speed LoRA."
+      "note": "Speed LoRA. The .json loads a renamed file, high_noise_model(wan2.2light2xvI2v_v2.2).safetensors, that has no public source: use this one and pick it in the LoRA loader (tested in animate-ultimate)."
     },
     {
       "name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
@@ -30,18 +30,18 @@
       "note": ""
     },
     {
-      "name": "wan_2.1_vae.safetensors",
-      "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors",
-      "dest": "vae",
-      "required": true,
-      "note": ""
-    },
-    {
       "name": "clip_vision_h.safetensors",
       "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors",
       "dest": "clip_vision",
       "required": true,
       "note": ""
+    },
+    {
+      "name": "Wan2.1_VAE.pth",
+      "url": "https://huggingface.co/Wan-AI/Wan2.2-Animate-14B/resolve/main/Wan2.1_VAE.pth",
+      "dest": "vae",
+      "required": true,
+      "note": "0.5 GB"
     }
   ],
   "nodes": [
@@ -64,6 +64,18 @@
     {
       "name": "execution-inversion-demo-comfyui",
       "git": "https://github.com/BadCafeCode/execution-inversion-demo-comfyui"
+    },
+    {
+      "name": "ComfyUI_essentials",
+      "git": "https://github.com/cubiq/ComfyUI_essentials"
+    },
+    {
+      "name": "ComfyUI-Custom-Scripts",
+      "git": "https://github.com/pythongosssss/ComfyUI-Custom-Scripts"
+    },
+    {
+      "name": "ComfyUI-Frame-Interpolation",
+      "git": "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
     }
   ]
 }

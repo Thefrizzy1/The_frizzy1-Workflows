@@ -18,7 +18,8 @@ Or drive it directly:
 
 ComfyUI location: auto-detected and cached in scripts/.comfypath.
 Override any time with  --comfy "C:/path/to/ComfyUI"  or the FRIZZY_COMFY env var.
-Gated repos (some Flux models) need a token: set HF_TOKEN in your environment.
+Gated repos (LTX 2.5, Flux.2 Dev) need a token: accept the licence on the model page, set HF_TOKEN.
+Models already in subfolders or in your extra_model_paths.yaml folders are found and not downloaded again.
 """
 import argparse, glob, json, os, subprocess, sys, urllib.request, urllib.error
 
@@ -117,14 +118,74 @@ def need_comfy(cli):
 
 # ---------- identify ----------
 
+# ComfyUI's old and new names for the same model folders
+ALIASES = {"diffusion_models": ["diffusion_models", "unet"], "text_encoders": ["text_encoders", "clip"],
+           "unet": ["diffusion_models", "unet"], "clip": ["text_encoders", "clip"]}
+
+def _extra_paths(comfy):
+    """{folder: [dirs]} from extra_model_paths.yaml (and ComfyUI Desktop's extra_models_config.yaml).
+    Tiny parser for that file's shape (no PyYAML): blocks of `key: value` / `key: |` + indented lines."""
+    files = [os.path.join(comfy, "extra_model_paths.yaml")]
+    if os.environ.get("APPDATA"):
+        files.append(os.path.join(os.environ["APPDATA"], "ComfyUI", "extra_models_config.yaml"))
+    out = {}
+    for f in files:
+        if not os.path.isfile(f):
+            continue
+        blocks, cur, key = [], None, None
+        for raw in open(f, encoding="utf-8", errors="replace"):
+            line = raw.split("#", 1)[0].rstrip()
+            if not line.strip():
+                continue
+            ind = len(line) - len(line.lstrip())
+            if ind == 0:
+                cur = {}; blocks.append(cur); key = None; continue
+            if cur is None:
+                continue
+            k, sep, v = line.strip().partition(":")
+            if sep and v.strip() not in ("|", ">"):
+                key = None; cur[k.strip()] = [v.strip().strip("'\"")]
+            elif sep:
+                key = k.strip(); cur[key] = []
+            elif key:
+                cur[key].append(line.strip().strip("'\""))
+        for b in blocks:
+            base = (b.pop("base_path", [""]) or [""])[0]
+            b.pop("is_default", None)
+            for k, vals in b.items():
+                for v in vals:
+                    if v:
+                        out.setdefault(k, []).append(os.path.join(base, v) if base else v)
+    return out
+
+def model_dirs(comfy, dest):
+    names = ALIASES.get(dest, [dest])
+    dirs = [os.path.join(comfy, "models", n) for n in names]
+    extra = _extra_paths(comfy)
+    for n in names:
+        dirs += extra.get(n, [])
+    return [d for d in dict.fromkeys(dirs) if os.path.isdir(d)]
+
+def locate(comfy, dest, name):
+    """The file in any of the folder's locations, subfolders included (ComfyUI lists those as 'sub\\file')."""
+    want = name.lower()
+    for d in model_dirs(comfy, dest):
+        depth0 = d.rstrip(os.sep).count(os.sep)
+        for root, dirs, files in os.walk(d):
+            if root.count(os.sep) - depth0 >= 3:
+                dirs[:] = []
+            for f in files:
+                if f.lower() == want:
+                    return os.path.join(root, f)
+    return None
+
 def scan(data, comfy):
     """Return (present, missing, manual) lists of file specs."""
     present, missing, manual = [], [], []
     for s in data["files"]:
         if s.get("manual"):
             manual.append(s); continue
-        path = os.path.join(comfy, "models", s["dest"], s["name"])
-        (present if os.path.exists(path) else missing).append(s)
+        (present if locate(comfy, s["dest"], s["name"]) else missing).append(s)
     return present, missing, manual
 
 def scan_nodes(data, comfy):

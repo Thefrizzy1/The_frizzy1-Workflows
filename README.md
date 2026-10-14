@@ -3,19 +3,21 @@
 # The_frizzy1 — Low-VRAM ComfyUI Workflows
 
 **The definitive home for every `The_frizzy1` ComfyUI workflow.**
-GGUF-quantised image, video and audio generation that runs on as little as **4 GB VRAM**.
+Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 GB "Ultimate" workflows**
+(every mode in one file, core ComfyUI nodes only, tested on an RTX 3060), and **GGUF workflows down to 4 GB VRAM**.
 
 [![CivitAI](https://img.shields.io/badge/CivitAI-The__frizzy1-2b7cff?style=flat-square)](https://civitai.com/user/The_frizzy1)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-The--frizzy1-ffb000?style=flat-square)](https://huggingface.co/The-frizzy1)
 [![YouTube](https://img.shields.io/badge/YouTube-@the__frizzy1-ff0033?style=flat-square)](https://www.youtube.com/@the_frizzy1)
-[![Workflows](https://img.shields.io/badge/workflows-13-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-23-6a5cff?style=flat-square)](#workflows)
 [![Min VRAM](https://img.shields.io/badge/min%20VRAM-4%20GB-3ecf8e?style=flat-square)](#workflows)
 [![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
 
 </div>
 
 > **Every model name in this repository was read directly out of the workflow `.json` files — not guessed.**
-> All 13 workflows are model-verified. Where a source repo couldn't be fully confirmed it's flagged in the [audit](docs/AUDIT.md).
+> All 23 workflows checked on 2026-10-14: every model file each `.json` loads is in its `models.json` / `downloads.md`,
+> every download link resolves, and the custom node packs listed are the ones the `.json` really uses ([audit](docs/AUDIT.md)).
 
 ---
 
@@ -23,6 +25,7 @@ GGUF-quantised image, video and audio generation that runs on as little as **4 G
 
 - [Which workflow should I use?](#which-workflow-should-i-use)
 - [Workflows](#workflows) — [Video](#-video) · [Image](#-image) · [Audio](#-audio)
+- [Newest vs older](#newest-vs-older)
 - [Wan 2.1 vs 2.2 vs Animate](#wan-21-vs-22-vs-animate-read-this) — **read before mixing files**
 - [Installation](#installation)
 - [Documentation](#documentation)
@@ -77,10 +80,10 @@ templated `.json`. Model names are verified from the workflow file.
 | **[Hunyuan Video Low-VRAM](workflows/hunyuan/video)** | v1.1.1 | 4 GB | T2V · I2V | [CivitAI](https://civitai.com/models/1312419) · [HF](https://huggingface.co/The-frizzy1/Hunyuan-Video-Low-VRAM-4GB) |
 | **[LTX-2 GGUF](workflows/ltx/ltx2)** | v2.0.0 | 4 GB | T2V · I2V · audio | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow) · [▶](https://www.youtube.com/watch?v=nnHUBMgdJac) |
 | **[LTX-2.3 Ultimate](workflows/ltx/ltx2.3-ultimate)** | v3.0.0 | 12 GB | T2V · I2V · FFLF · audio · ID | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX23-Ultimate) · [▶](https://www.youtube.com/watch?v=im4wolfHvMk) |
-| **[MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb)** | v2.3.0 | 12 GB | T2V · I2V · last · FLF · R2V · multiframe · ControlNet pose · extend · audio | — |
-| **[LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb)** | v2.0.0 | 12 GB | T2V · I2V · FLF · pose (IC-LoRA) · audio | — |
+| **[MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb)** | v2.3.0 | 12 GB | T2V · I2V · last · FLF · R2V · multiframe · ControlNet pose · extend · audio | [▶](https://www.youtube.com/watch?v=KJNksY9Ur3w) |
+| **[LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb)** | v2.0.0 | 12 GB | T2V · I2V · FLF · pose (IC-LoRA) · audio | [▶](https://www.youtube.com/watch?v=HeHY6N5hH_M) |
 | **[Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3)** | v2.0.0 | 12 GB | character replacement (V2V) | — |
-| **[Wan Animate Ultimate](workflows/wan2.2/animate-ultimate)** | v2.0.0 | 12 GB | Wan Animate 2 · Wan 2.2 Animate GGUF + face video | — |
+| **[Wan Animate Ultimate](workflows/wan2.2/animate-ultimate)** | v2.0.0 | 12 GB | Wan Animate 2 · Wan 2.2 Animate GGUF + face video | [▶](https://www.youtube.com/watch?v=aqFdglMbcIU) |
 
 ### 🖼️ Image
 
@@ -89,9 +92,9 @@ templated `.json`. Model names are verified from the workflow file.
 | **[Flux Kontext GGUF](workflows/flux/kontext)** | v2.2.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/1311703) · [HF](https://huggingface.co/The-frizzy1/Flux-Kontext-GGUF-4GB) · [▶](https://www.youtube.com/watch?v=4C0RJ01yRok) |
 | **[Flux.2 Dev GGUF](workflows/flux/flux2-dev)** | v2.0.0 | 6 GB | T2I | [CivitAI](https://civitai.com/models/2508110) · [▶](https://www.youtube.com/watch?v=dcekWAbgDXg) |
 | **[Qwen Image & Edit 2509](workflows/qwen/image-edit-2509)** | v2.0.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/2229874) · [HF](https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF) · [▶](https://www.youtube.com/watch?v=NPni2ulov34) |
-| **[Qwen Image 2.1 · 12 GB](workflows/qwen/image-2.1-12gb)** | v2.0.0 | 12 GB | T2I native 2K · turbo LoRA | — |
-| **[Qwen Image 2.1 Ultimate · 12 GB](workflows/qwen/image-2.1-ultimate-12gb)** | v2.1.0 | 12 GB | T2I · Turbo · edit · remove background · ControlNet pose / depth / edges | — |
-| **[Ming Image 0.1 · 12 GB](workflows/ming/image-0.1-design-12gb)** | v1.0.0 | 12 GB | T2I · edit · RGBA | — |
+| **[Qwen Image 2.1 · 12 GB](workflows/qwen/image-2.1-12gb)** | v2.0.0 | 12 GB | T2I native 2K · turbo LoRA | [▶](https://www.youtube.com/watch?v=C5wZ2gU7j9E) |
+| **[Qwen Image 2.1 Ultimate · 12 GB](workflows/qwen/image-2.1-ultimate-12gb)** | v2.1.0 | 12 GB | T2I · Turbo · edit · remove background · ControlNet pose / depth / edges | [▶](https://www.youtube.com/watch?v=N7X0QBZ_r9c) |
+| **[Ming Image 0.1 · 12 GB](workflows/ming/image-0.1-design-12gb)** | v1.0.0 | 12 GB | T2I · edit · RGBA | [▶](https://www.youtube.com/watch?v=DTleXeD74vs) |
 | **[Z-Image Turbo GGUF](workflows/z-image/turbo)** | v1.0.0 | 4 GB | T2I (fast turbo) | [CivitAI](https://civitai.com/models/2561639) |
 | **[Krea 2 Ultimate · 12 GB](workflows/krea/krea-2-ultimate-12gb)** | v2.1.0 | 12 GB | T2I · style reference · style LoRAs · Kroma | — |
 
@@ -109,6 +112,23 @@ templated `.json`. Model names are verified from the workflow file.
 | **[YuE2 Music · 12 GB](workflows/audio/yue2-music-12gb)** | v1.0.0 | 12 GB | text → song · cover | — |
 
 <sub>▶ = video walkthrough on YouTube.</sub>
+
+---
+
+## Newest vs older
+
+The older GGUF workflows still work and stay here for 4 GB cards. If you have 12 GB, start with the newest one:
+
+| Older | Newest |
+|---|---|
+| Wan 2.1 GGUF / FLF2V, Hunyuan Video, LTX-2 GGUF, LTX-2.3 Ultimate | [MiniMax H3 Ultimate](workflows/minimax/h3-ultimate-12gb) · [LTX 2.5 Ultimate](workflows/ltx/ltx-2.5-ultimate-12gb) |
+| Wan 2.2 Animate (5 custom node packs) | [Wan Animate Ultimate](workflows/wan2.2/animate-ultimate) · [Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3) |
+| Flux Kontext, Qwen Image & Edit 2509, Qwen Image 2.1 · 12 GB | [Qwen Image 2.1 Ultimate](workflows/qwen/image-2.1-ultimate-12gb) |
+| Flux.2 Dev, Z-Image Turbo | [Krea 2 Ultimate](workflows/krea/krea-2-ultimate-12gb) · [Ming Image 0.1](workflows/ming/image-0.1-design-12gb) |
+
+On **4 GB**: Wan 2.2 GGUF, Wan 2.2 Animate (Q4), Qwen Image & Edit 2509, Z-Image Turbo and LTX-2 GGUF are the
+picks. How the 12 GB workflows are built (bypassed loaders, the mode switch, "Needs …" checks), frame counts and
+sizes: [docs/COMPATIBILITY.md](docs/COMPATIBILITY.md).
 
 ---
 
@@ -146,9 +166,12 @@ Pure Python, no pip installs. Full usage: [scripts/README.md](scripts/README.md)
 
 ### By hand
 
-1. **Install [ComfyUI](https://github.com/comfyanonymous/ComfyUI)** and the [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager).
-2. **Install the custom nodes** listed in the workflow's README (via Manager, then restart).
-3. **Download the models** from that workflow's `downloads.md` into the exact `ComfyUI/models/…` folders shown.
+1. **Install or update [ComfyUI](https://github.com/comfyanonymous/ComfyUI)** — the newest workflows need a recent version
+   (0.39+ for H3 v2.3, YuE2, Ming, Kroma; the README says which). Plus the [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager).
+2. **Custom nodes:** the 12 GB Ultimates need **none**. The older workflows list theirs in the README / `downloads.md`
+   ([all of them](docs/COMPATIBILITY.md#custom-node-packs-per-workflow)) — install via Manager, then restart.
+3. **Download the models** from that workflow's `downloads.md` into the `ComfyUI/models/…` folders shown (subfolders
+   inside them are fine). Keep the file names: the loaders look for exactly those names.
 4. **Load the `.json`** in ComfyUI and run.
 
 > **Low on VRAM?** Pick a smaller GGUF quant (Q4/Q3), and enable Sage Attention / Triton where supported.
@@ -161,11 +184,11 @@ Pure Python, no pip installs. Full usage: [scripts/README.md](scripts/README.md)
 | Doc | What's in it |
 |---|---|
 | **[docs/DOWNLOADS.md](docs/DOWNLOADS.md)** | Master model database — every file, the exact name the loader expects, and where to get it. |
-| **[docs/COMPATIBILITY.md](docs/COMPATIBILITY.md)** | Task, VRAM, quantisation and custom-node matrices. |
+| **[docs/COMPATIBILITY.md](docs/COMPATIBILITY.md)** | Tasks, VRAM, video sizes / frame counts, GGUF vs int8, custom node packs per workflow. |
 | **[docs/WAN-LINEAGE.md](docs/WAN-LINEAGE.md)** | Wan 2.1 vs 2.2 vs Animate — differences and file traps. |
 | **[docs/NAMING.md](docs/NAMING.md)** | Naming standard + the CivitAI → semver version map. |
 | **[docs/AUDIT.md](docs/AUDIT.md)** | How everything was verified, and anything still open. |
-| **[models/README.md](models/README.md)** | One-line summary of every model family + shared support files. |
+| **[models/README.md](models/README.md)** | Every model family (newest vs older), shared support files, **licenses**. |
 
 ---
 
@@ -179,23 +202,27 @@ The_frizzy1-Workflows/
 ├── docs/                  downloads · compatibility · wan-lineage · naming · audit
 ├── models/                model-family reference
 ├── workflows/
+│   ├── minimax/           h3-ultimate-12gb · viggle-animate-h3
+│   ├── ltx/               ltx-2.5-ultimate-12gb · ltx2.3-ultimate · ltx2
+│   ├── wan2.2/            animate-ultimate · animate · gguf-lowvram · aio-rapid
 │   ├── wan2.1/            gguf-lowvram · flf2v
-│   ├── wan2.2/            gguf-lowvram · animate · aio-rapid
-│   ├── flux/              kontext · flux2-dev
-│   ├── qwen/              image-edit-2509 · image-2.1-12gb · image-2.1-ultimate-12gb
-│   ├── ming/              image-0.1-design-12gb
-│   ├── z-image/           turbo
 │   ├── hunyuan/           video
-│   ├── ltx/               ltx2 · ltx2.3-ultimate
-│   └── audio/             ai-audio-maker · yue2-music-12gb
+│   ├── qwen/              image-2.1-ultimate-12gb · image-2.1-12gb · image-edit-2509
+│   ├── krea/              krea-2-ultimate-12gb
+│   ├── ming/              image-0.1-design-12gb
+│   ├── flux/              kontext · flux2-dev
+│   ├── z-image/           turbo
+│   ├── 3d/                image-to-3d-ultimate-12gb
+│   └── audio/             yue2-music-12gb · ai-audio-maker
 │       └── <workflow>/
 │           ├── README.md          what it is, settings, nodes
 │           ├── downloads.md       verified model table
 │           ├── changelog.md       version history
 │           ├── The_frizzy1_*.json the workflow (templated name)
-│           ├── models.json        model list for the download tool
+│           ├── models.json        model + node-pack list for scripts/frizzy.py
 │           ├── samples/           example outputs + workflow graph
 │           └── source/            original unmodified files
+├── scripts/               frizzy.py setup tool
 ├── templates/             reusable doc templates
 └── index.html             optional local dashboard (open in a browser)
 ```
@@ -207,6 +234,8 @@ The_frizzy1-Workflows/
 Workflows by **[The_frizzy1](https://civitai.com/user/The_frizzy1)** · videos on
 **[YouTube](https://www.youtube.com/@the_frizzy1)** · mirrors on **[Hugging Face](https://huggingface.co/The-frizzy1)**.
 
-This repository (documentation + workflow JSONs) is **[MIT licensed](LICENSE)**. The underlying AI models keep
-their own licenses — FLUX.1 non-commercial, Tencent Hunyuan Community, Apache-2.0, and others — listed per file
-in [docs/DOWNLOADS.md](docs/DOWNLOADS.md). Check a model's license before commercial use.
+This repository (documentation + workflow JSONs) is **[MIT licensed](LICENSE)** — that covers the workflow files, not the
+models. Every model keeps its own license: Wan, Qwen Image (original), Z-Image are Apache-2.0; Ming and the 3D models MIT;
+MiniMax H3, LTX, Krea 2 / Kroma and Hunyuan have their own community licenses; **Qwen Image 2.1 (research),
+Flux Kontext / Flux.2 Dev, YuE2 and MMAudio are non-commercial**. The full table, read from each Hugging Face card:
+[models/README.md](models/README.md#licenses-read-before-commercial-use). Check a model's card before commercial use.

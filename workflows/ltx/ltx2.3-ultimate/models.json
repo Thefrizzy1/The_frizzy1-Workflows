@@ -9,28 +9,53 @@
       "note": "Use Q4_K_M for lower VRAM."
     },
     {
-      "name": "ltx-2.3-22b-dev video_vae and audio_vae",
-      "page": "https://huggingface.co/unsloth/LTX-2.3-GGUF",
+      "name": "ltx-2.3-22b-dev_video_vae.safetensors",
+      "url": "https://huggingface.co/unsloth/LTX-2.3-GGUF/resolve/main/vae/ltx-2.3-22b-dev_video_vae.safetensors",
       "dest": "vae",
       "required": true,
-      "manual": true,
-      "note": "Video and audio VAE from the same repo."
+      "note": "1.5 GB"
     },
     {
-      "name": "ltx-2.3 distilled LoRA and text projection",
-      "page": "https://huggingface.co/Kijai/LTX2.3_comfy",
+      "name": "ltx-2.3-22b-dev_audio_vae.safetensors",
+      "url": "https://huggingface.co/unsloth/LTX-2.3-GGUF/resolve/main/vae/ltx-2.3-22b-dev_audio_vae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "The audio VAE from this repo (static / no sound = wrong audio VAE). 0.4 GB"
+    },
+    {
+      "name": "ltx-2.3-22b-distilled-lora-384-1.1.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-22b-distilled-lora-384-1.1.safetensors",
       "dest": "loras",
       "required": true,
-      "manual": true,
-      "note": "REQUIRED distilled LoRA plus the text projection connector."
+      "note": "Distilled LoRA. 7.6 GB"
+    },
+    {
+      "name": "ltx-2.3_text_projection_bf16.safetensors",
+      "url": "https://huggingface.co/Kijai/LTX2.3_comfy/resolve/main/text_encoders/ltx-2.3_text_projection_bf16.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "Text projection connector. 2.3 GB"
     },
     {
       "name": "gemma_3_12B_it_fp4_mixed.safetensors",
-      "page": "https://huggingface.co/Comfy-Org/ltx-2",
+      "url": "https://huggingface.co/Comfy-Org/ltx-2/resolve/main/split_files/text_encoders/gemma_3_12B_it_fp4_mixed.safetensors",
       "dest": "text_encoders",
       "required": true,
-      "manual": true,
-      "note": "Gemma-3 text encoder."
+      "note": "Gemma 3 12B text encoder. 9.5 GB"
+    },
+    {
+      "name": "ltx-2.3-spatial-upscaler-x2-1.1.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x2-1.1.safetensors",
+      "dest": "latent_upscale_models",
+      "required": true,
+      "note": "2x latent upscaler. 1.0 GB"
+    },
+    {
+      "name": "ltx-2.3-id-lora-talkvid-3k.safetensors",
+      "url": "https://huggingface.co/AviadDahan/LTX-2.3-ID-LoRA-TalkVid-3K/resolve/main/lora_weights.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": "ID LoRA. Downloads AviadDahan/LTX-2.3-ID-LoRA-TalkVid-3K lora_weights.safetensors and saves it under the name the workflow loads. 1.2 GB"
     }
   ],
   "nodes": [
@@ -49,6 +74,14 @@
     {
       "name": "ComfyUI-VideoHelperSuite",
       "git": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
+    },
+    {
+      "name": "ComfyUI-Impact-Pack",
+      "git": "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+    },
+    {
+      "name": "ComfyUI-Easy-Use",
+      "git": "https://github.com/yolain/ComfyUI-Easy-Use"
     }
   ]
 }

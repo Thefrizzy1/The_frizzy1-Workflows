@@ -2,14 +2,6 @@
   "workflow": "wan2.2/aio-rapid",
   "files": [
     {
-      "name": "wan2.2-rapid-mega-aio-v12-Q4_K.gguf",
-      "page": "https://huggingface.co/Phr00t/WAN2.2-14B-Rapid-AllInOne",
-      "dest": "diffusion_models",
-      "required": true,
-      "manual": true,
-      "note": "Single all-in-one file. Grab v12 Q4_K from the Phr00t repo."
-    },
-    {
       "name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
       "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
       "dest": "text_encoders",
@@ -22,24 +14,31 @@
       "dest": "vae",
       "required": true,
       "note": ""
+    },
+    {
+      "name": "wan2.2-rapid-mega-aio-v12-Q4_K.gguf",
+      "url": "https://huggingface.co/befox/WAN2.2-14B-Rapid-AllInOne-GGUF/resolve/main/Mega-v12/wan2.2-rapid-mega-aio-v12-Q4_K.gguf",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Single all-in-one file. 11.6 GB"
     }
   ],
   "nodes": [
     {
-      "name": "gguf",
-      "git": "https://github.com/calcuis/gguf"
+      "name": "ComfyUI-KJNodes",
+      "git": "https://github.com/kijai/ComfyUI-KJNodes"
     },
     {
       "name": "ComfyUI-WanVideoWrapper",
       "git": "https://github.com/kijai/ComfyUI-WanVideoWrapper"
     },
     {
-      "name": "ComfyUI-KJNodes",
-      "git": "https://github.com/kijai/ComfyUI-KJNodes"
-    },
-    {
       "name": "ComfyUI-VideoHelperSuite",
       "git": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
+    },
+    {
+      "name": "tiled_ksampler",
+      "git": "https://github.com/FlyingFireCo/tiled_ksampler"
     }
   ]
 }

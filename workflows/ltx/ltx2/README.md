@@ -5,12 +5,14 @@
 |---|---|
 | **Model family** | LTXV-2 (19B) |
 | **Tasks** | Text → Video · Image → Video · Audio |
+| **Workflow file** | `The_frizzy1_ltx2-i2v_v2.0.0.json` · `The_frizzy1_ltx2-t2v_v2.0.0.json` |
 | **Min VRAM** | 4 GB (+Triton) |
 | **Tested on** | RTX 3060 12GB + 48GB RAM · RTX 3050 4GB (Triton) |
 | **CivitAI** | https://civitai.com/models/2339823 |
 | **Hugging Face** | https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow |
 | **YouTube** | https://www.youtube.com/watch?v=nnHUBMgdJac |
-| **License** | Apache-2.0 |
+| **License** | Workflow: MIT · LTX-2 Community License Agreement · Gemma 3 text encoder: Gemma Terms of Use |
+| **Newer** | [LTX 2.5 Ultimate](../../ltx/ltx-2.5-ultimate-12gb) (12 GB). |
 
 ## Common issues
 - `LTXVEmptyLatentAudio – AttributeError` → update **KJNodes to v1.2.8+**.

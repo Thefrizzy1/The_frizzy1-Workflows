@@ -1,16 +1,18 @@
 # The_frizzy1 — LTX-2.3 Ultimate v3.0.0
 
-> The newest LTXV-2.3 (22B) — T2V, I2V, first/last-frame and audio, with ID LoRA. Color-coded GGUF. **12 GB** target.
+> LTXV-2.3 (22B) — T2V, I2V, first/last-frame and audio, with ID LoRA. Color-coded GGUF. **12 GB** target.
 
 | | |
 |---|---|
 | **Model family** | LTXV-2.3 (22B) |
 | **Tasks** | T2V · I2V · FFLF · Audio · ID LoRA |
+| **Workflow file** | `The_frizzy1_ltx2.3-ultimate_v3.0.0.json` |
 | **Min VRAM** | 12 GB |
 | **CivitAI** | https://civitai.com/models/2339823 |
 | **Hugging Face** | https://huggingface.co/The-frizzy1/LTX23-Ultimate |
 | **YouTube** | https://www.youtube.com/watch?v=im4wolfHvMk |
-| **License** | Apache-2.0 |
+| **License** | Workflow: MIT · LTX-2 Community License Agreement · Gemma 3 text encoder: Gemma Terms of Use |
+| **Newer** | [LTX 2.5 Ultimate](../../ltx/ltx-2.5-ultimate-12gb) (12 GB). |
 
 
 ## Preview

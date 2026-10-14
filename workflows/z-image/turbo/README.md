@@ -6,9 +6,10 @@
 |---|---|
 | **Model family** | Z-Image Turbo |
 | **Tasks** | Text → Image (few-step turbo) |
+| **Workflow file** | `The_frizzy1_z-image-turbo-gguf_v1.0.0.json` |
 | **Min VRAM** | 4 GB |
 | **CivitAI** | https://civitai.com/models/2561639 |
-| **License** | Check Z-Image model card |
+| **License** | Workflow: MIT · Apache-2.0 (Tongyi-MAI/Z-Image-Turbo) |
 
 
 ## Preview

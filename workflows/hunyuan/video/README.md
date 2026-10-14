@@ -11,6 +11,7 @@
 | **CivitAI** | https://civitai.com/models/1312419 |
 | **Hugging Face** | https://huggingface.co/The-frizzy1/Hunyuan-Video-Low-VRAM-4GB |
 | **License** | Tencent Hunyuan Community |
+| **Newer** | [MiniMax H3 Ultimate](../../minimax/h3-ultimate-12gb) · [LTX 2.5 Ultimate](../../ltx/ltx-2.5-ultimate-12gb) (12 GB). On 4 GB: Wan 2.2 GGUF. |
 
 
 ## Preview

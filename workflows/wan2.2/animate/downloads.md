@@ -26,3 +26,25 @@ All filenames were read directly from the workflow `.json` (verified). Place eac
 
 
 Custom packs this v1.2.0 JSON also uses (not listed before): ComfyUI-Custom-Scripts (`MathExpression|pysssss`), ComfyUI-Frame-Interpolation (`RIFE VFI`).
+
+<!-- direct-links:start -->
+## Direct links (what `frizzy.py get` downloads)
+
+Generated from this folder's `models.json` (checked 2026-10-14: every link resolves). File names are exactly what
+the workflow `.json` loads; subfolders inside the model folder are fine.
+
+| Need | Folder (`ComfyUI/models/`) | File the workflow loads | Download | Note |
+|---|---|---|---|---|
+| required | `diffusion_models/` | `Wan2.2-Animate-14B-Q8_0.gguf` | [download](https://huggingface.co/QuantStack/Wan2.2-Animate-14B-GGUF/resolve/main/Wan2.2-Animate-14B-Q8_0.gguf) | 12GB target. Use Q4_K_M for 4GB. |
+| required | `loras/` | `WanAnimate_relight_lora_fp16.safetensors` | [download](https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/LoRAs/Wan22_relight/WanAnimate_relight_lora_fp16.safetensors) |  |
+| optional | `loras/` | `lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors` | [download](https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors) | Speed LoRA. |
+| required | `text_encoders/` | `umt5_xxl_fp8_e4m3fn_scaled.safetensors` | [download](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors) |  |
+| required | `clip_vision/` | `clip_vision_h.safetensors` | [download](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors) |  |
+| required | `vae/` | `Wan2.1_VAE.pth` | [download](https://huggingface.co/Wan-AI/Wan2.2-Animate-14B/resolve/main/Wan2.1_VAE.pth) | 0.5 GB |
+
+**Custom node packs this workflow uses:** [comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux), [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes), [ComfyUI-segment-anything-2](https://github.com/kijai/ComfyUI-segment-anything-2), [ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite), [execution-inversion-demo-comfyui](https://github.com/BadCafeCode/execution-inversion-demo-comfyui), [ComfyUI_essentials](https://github.com/cubiq/ComfyUI_essentials), [ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts), [ComfyUI-Frame-Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation).
+
+**Downloaded by the node packs themselves on first run:** `rife49.pth` (ComfyUI-Frame-Interpolation), `yolox_l.onnx` + `dw-ll_ucoco_384_bs5.torchscript.pt` (comfyui_controlnet_aux, DWPose), `sam2_hiera_base_plus.safetensors` (ComfyUI-segment-anything-2).
+
+One command: `python scripts/frizzy.py doctor wan2.2/animate` (finds ComfyUI, downloads what's missing, installs the nodes).
+<!-- direct-links:end -->
