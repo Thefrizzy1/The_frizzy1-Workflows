@@ -48,7 +48,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Beginner-friendly** image generation + editing | [Qwen Image & Edit 2509](workflows/qwen/image-edit-2509) | 4 GB+ |
 | **Native 2K** images on a 12 GB card (Qwen Image 2.1) | [Qwen Image 2.1 · 12 GB](workflows/qwen/image-2.1-12gb) | 12 GB |
 | **Every Qwen Image 2.1 mode** (Turbo · edit · ControlNet pose / depth / edges) in one workflow | [Qwen Image 2.1 Ultimate · 12 GB](workflows/qwen/image-2.1-ultimate-12gb) | 12 GB |
-| **Design images with text + real transparency** (Ming Image 0.1 Design) | [Ming Image 0.1 · 12 GB](workflows/ming/image-0.1-design-12gb) | 12 GB |
+| **Design images with text + real transparency** (Ming Image 0.1 Design) | [Ming Image 0.1 · 12 GB](workflows/ming/image-0.1-design-12gb) | 4 GB+* |
 | **Fast, tiny** image generation | [Z-Image Turbo GGUF](workflows/z-image/turbo) | 4 GB+ |
 | Newer **LTX video** (audio-aware) | [LTX-2](workflows/ltx/ltx2) · [LTX-2.3 Ultimate](workflows/ltx/ltx2.3-ultimate) | 4–12 GB |
 | **Every MiniMax H3 mode** (T2V · I2V · R2V · multiframe · pose · extend) in one workflow, with sound | [MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb) | 12 GB |
@@ -56,10 +56,10 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Swap the person** in a video for your character (one still) | [Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3) | 12 GB |
 | **Genjutsu at home**: swap the person, whole clip, original sound | [H3 Character Swap · 12 GB](workflows/minimax/h3-character-swap-12gb) | 12 GB |
 | **Animate a character** from a driving video, native nodes | [Wan Animate Ultimate](workflows/wan2.2/animate-ultimate) | 12 GB (GGUF path lower) |
-| **Krea 2** or **Kroma** images + style reference | [Krea 2 Ultimate · 12 GB](workflows/krea/krea-2-ultimate-12gb) | 12 GB |
+| **Krea 2** or **Kroma** images + style reference | [Krea 2 Ultimate · 12 GB](workflows/krea/krea-2-ultimate-12gb) | 4 GB+* |
 | One image → **textured 3D model** (.glb) | [Image to 3D Ultimate · 12 GB](workflows/3d/image-to-3d-ultimate-12gb) | 12 GB |
 | The **older Hunyuan** video path | [Hunyuan Video Low-VRAM](workflows/hunyuan/video) | 4 GB+ |
-| **Songs with vocals** from a style + your lyrics, or a cover of your song (YuE2) | [YuE2 Music · 12 GB](workflows/audio/yue2-music-12gb) | 12 GB |
+| **Songs with vocals** from a style + your lyrics, or a cover of your song (YuE2) | [YuE2 Music · 12 GB](workflows/audio/yue2-music-12gb) | 4 GB+* |
 | Generate **audio** for a clip | [AI Audio Maker](workflows/audio/ai-audio-maker) | low |
 
 ---
