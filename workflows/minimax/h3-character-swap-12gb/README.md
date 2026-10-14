@@ -29,6 +29,10 @@
 
 <sub>Left the original, right the local swap (0.4 MP, Turbo). RTX 3060.</sub>
 
+<p align="center"><img src="samples/workflow.png" width="70%" alt="The main node: every setting and every model file"></p>
+
+<sub>The main node (v1.1.0): your inputs, the settings, and all six model files.</sub>
+
 ## Settings
 
 | Setting | What it does |
