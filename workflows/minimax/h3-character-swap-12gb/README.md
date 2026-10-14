@@ -1,4 +1,4 @@
-# The_frizzy1 — MiniMax H3 Character Swap · 12 GB v1.0.0
+# The_frizzy1 — MiniMax H3 Character Swap · 12 GB v1.1.0
 > Your video + one picture of a character → the same clip with the person swapped: same moves, same timing, the clip's
 > own sound. Higgsfield's Genjutsu idea, run on your own PC: nothing is uploaded and nothing blocks the clip.
 > The whole clip in 5 s passes with ComfyUI's built-in loop nodes. Core ComfyUI nodes only, tested on an RTX 3060.
@@ -15,8 +15,9 @@
 ## Quick start
 1. Update ComfyUI to **0.39 or newer** (MiniMax H3 + the Start Loop / End Loop nodes; no custom nodes).
 2. Download the files in [downloads.md](downloads.md).
-3. Load `The_frizzy1_h3-character-swap-12gb_v1.0.0.json`, load **your video** and a **character picture** (best: a sheet with a front view, a back view and the face).
-4. **Who to replace**: one sentence, e.g. `big man in the black and gold patterned outfit`. **Run**.
+3. Load `The_frizzy1_h3-character-swap-12gb_v1.1.0.json`, load **your video** and a **character picture** (best: a sheet with a front view, a back view and the face).
+4. **Who to replace**: one sentence, e.g. `big man in the black and gold patterned outfit`.
+5. **Model files**: all six loaders are on the main node. If your files sit in a subfolder (like `MiniMax-H3/`), pick them there once. **Run**.
 
 ## Preview
 
@@ -42,10 +43,11 @@
 
 | Clip | Length | Passes | Time |
 |---|---|---|---|
-| wheelbarrow → penguin | 6.7 s | 2 | 11 min 56 s (this workflow's own graph: 12 min 14 s) |
+| wheelbarrow → penguin | 6.7 s | 2 | 11 min 56 s (v1.0.0's own graph: 12 min 14 s) |
 | van exit → raccoon | 7.0 s | 2 | 10 min 53 s |
+| Detstvo dance → brown dog | 9.4 s | 2 | 12 min 25 s |
+| snowball fight → cartoon guy | 8.3 s | 2 | 12 min 18 s |
 | wrestler flip → penguin | 8.3 s | 2 | 11 min 25 s |
-| gym guy → dog | 8.1 s | 2 | 11 min 17 s |
 | dance → dog | 9.8 s | 3 | 17 min 27 s |
 | backbend → raccoon | 5.2 s | 1 | 5 min 37 s |
 

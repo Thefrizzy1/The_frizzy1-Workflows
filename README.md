@@ -84,7 +84,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb)** | v2.3.0 | 12 GB | T2V · I2V · last · FLF · R2V · multiframe · ControlNet pose · extend · audio | [▶](https://www.youtube.com/watch?v=KJNksY9Ur3w) |
 | **[LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb)** | v2.0.0 | 12 GB | T2V · I2V · FLF · pose (IC-LoRA) · audio | [▶](https://www.youtube.com/watch?v=HeHY6N5hH_M) |
 | **[Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3)** | v2.0.0 | 12 GB | character replacement (V2V) | — |
-| **[H3 Character Swap · 12 GB](workflows/minimax/h3-character-swap-12gb)** | v1.0.0 | 12 GB | character swap (V2V) · whole clip in loop passes · original sound | — |
+| **[H3 Character Swap · 12 GB](workflows/minimax/h3-character-swap-12gb)** | v1.1.0 | 12 GB | character swap (V2V) · whole clip in loop passes · original sound | — |
 | **[Wan Animate Ultimate](workflows/wan2.2/animate-ultimate)** | v2.0.0 | 12 GB | Wan Animate 2 · Wan 2.2 Animate GGUF + face video | [▶](https://www.youtube.com/watch?v=aqFdglMbcIU) |
 
 ### 🖼️ Image
