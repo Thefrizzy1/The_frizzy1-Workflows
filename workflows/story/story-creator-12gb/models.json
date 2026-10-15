@@ -1,0 +1,69 @@
+{
+  "workflow": "story/story-creator-12gb",
+  "files": [
+    {
+      "name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_turbo_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "stills. 7.3 GB"
+    },
+    {
+      "name": "qwen3vl_8b_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "stills. 9.4 GB"
+    },
+    {
+      "name": "qwen_image_2.1_vae_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "stills. 0.7 GB"
+    },
+    {
+      "name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "video. 21.0 GB"
+    },
+    {
+      "name": "minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/loras/minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": "video. 2.0 GB"
+    },
+    {
+      "name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "video. 15.7 GB"
+    },
+    {
+      "name": "minimax_h3_video_vae_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_int8_convrot.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "video. 2.8 GB"
+    },
+    {
+      "name": "minimax_h3_audio_vae_fp32.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "video. 0.6 GB"
+    },
+    {
+      "name": "yue2_3b_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/YuE2/resolve/main/checkpoints/yue2_3b_int8_convrot.safetensors",
+      "dest": "checkpoints",
+      "required": true,
+      "note": "music. 4.0 GB"
+    }
+  ],
+  "nodes": []
+}

@@ -1,7 +1,7 @@
 # Compatibility Matrices
 
 Quick cross-reference of what runs where. All rows below are derived from the actual workflow files unless
-marked *Not verified*. Last checked 2026-10-15 (24 workflows).
+marked *Not verified*. Last checked 2026-10-15 (25 workflows).
 
 ---
 
@@ -11,6 +11,7 @@ marked *Not verified*. Last checked 2026-10-15 (24 workflows).
 |---|:--:|:--:|:--:|:--:|:--:|:--:|:--:|---|
 | MiniMax H3 Ultimate · 12 GB | ✅ | ✅ | ✅ (pose, refs) | — | — | ✅ | ✅ | last frame · multiframe · extend |
 | Viggle-Animate (H3) | — | — | ✅ | — | — | ✅ (keeps the clip's) | — | swap a person for one still |
+| Story Creator · 12 GB | — | ✅ (scene stills) | — | ✅ (stills) | ✅ (stills) | ✅ (narrator, dialogue, music) | — | story from a scene list · one-shot loop |
 | LTX 2.5 Ultimate · 12 GB | ✅ | ✅ | ✅ (pose IC-LoRA) | — | — | ✅ | ✅ | |
 | LTX-2.3 Ultimate | ✅ | ✅ | — | — | — | ✅ | ✅ | ID LoRA |
 | LTX-2 GGUF | ✅ | ✅ | — | — | — | ✅ | — | |
@@ -41,7 +42,7 @@ the videos (e.g. MiniMax H3 W4A8 on a 4 GB laptop) — that is not what the 12 G
 
 | Workflow | Minimum | Comfortable | Tested hardware (from creator) |
 |---|---|---|---|
-| MiniMax H3 Ultimate · Viggle-Animate · LTX 2.5 Ultimate · H3 Character Swap | 12 GB | 12 GB + 32 GB RAM | RTX 3060 12 GB (H3 Ultimate also on a 4 GB laptop with the W4A8 model + Q2_K_M encoder: [benchmarks](BENCHMARKS.md)) |
+| MiniMax H3 Ultimate · Viggle-Animate · LTX 2.5 Ultimate · H3 Character Swap · Story Creator | 12 GB | 12 GB + 32 GB RAM | RTX 3060 12 GB (H3 Ultimate also on a 4 GB laptop with the W4A8 model + Q2_K_M encoder: [benchmarks](BENCHMARKS.md)) |
 | Krea 2 (Krea 2 Turbo int8 + Kroma w4a8) · Ming · YuE2 | 4 GB (16 GB RAM) | 12 GB | RTX 3060 12 GB · the same files on an RTX 3050 Ti Laptop 4 GB ([benchmarks](BENCHMARKS.md)) |
 | Qwen Image 2.1 (both) | 4 GB with the w4a8 text encoder (16 GB RAM) | 12 GB | RTX 3060 12 GB · RTX 3050 Ti Laptop 4 GB ([benchmarks](BENCHMARKS.md)) |
 | Image to 3D | 12 GB | 12 GB | RTX 3060 12 GB |
@@ -102,6 +103,7 @@ installs them. **None** = core ComfyUI only (needs a recent ComfyUI: see the wor
 | Ming Image 0.1 · 12 GB | `ming/image-0.1-design-12gb` | **none** (core nodes) |
 | MiniMax H3 Ultimate · 12 GB | `minimax/h3-ultimate-12gb` | **none** (core nodes) |
 | Viggle-Animate (H3) | `minimax/viggle-animate-h3` | ComfyUI-Viggle-Animate-H3 |
+| Story Creator · 12 GB | `story/story-creator-12gb` | **none** (core nodes) |
 | Qwen Image 2.1 · 12 GB | `qwen/image-2.1-12gb` | **none** (core nodes) |
 | Qwen Image 2.1 Ultimate · 12 GB | `qwen/image-2.1-ultimate-12gb` | **none** (core nodes) |
 | Qwen Image & Edit 2509 | `qwen/image-edit-2509` | ComfyUI-GGUF, ComfyUI-KJNodes |

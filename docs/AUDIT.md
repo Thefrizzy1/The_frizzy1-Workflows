@@ -108,3 +108,4 @@ CivitAI labels were normalised to semver — see [NAMING.md](NAMING.md). The map
 | Image to 3D Ultimate · 12 GB | ✅ | ✅ (none) | ✅ |
 | YuE2 Music · 12 GB | ✅ | ✅ (none) | ✅ |
 | AI Audio Maker | ✅ | ✅ | ✅ |
+| Story Creator · 12 GB | ✅ | ✅ (none) | ✅ |
