@@ -11,7 +11,7 @@ marked *Not verified*. Last checked 2026-10-15 (25 workflows).
 |---|:--:|:--:|:--:|:--:|:--:|:--:|:--:|---|
 | MiniMax H3 Ultimate · 12 GB | ✅ | ✅ | ✅ (pose, refs) | — | — | ✅ | ✅ | last frame · multiframe · extend |
 | Viggle-Animate (H3) | — | — | ✅ | — | — | ✅ (keeps the clip's) | — | swap a person for one still |
-| Story Creator · 12 GB | — | ✅ (scene stills) | — | ✅ (stills) | ✅ (stills) | ✅ (narrator, dialogue, music) | — | story from a scene list · one-shot loop |
+| Story Creator · 12 GB | — | ✅ (scene stills) | — | ✅ (stills) | ✅ (stills) | ✅ (narrator, dialogue, music) | — | story from a script · [continue] transitions |
 | LTX 2.5 Ultimate · 12 GB | ✅ | ✅ | ✅ (pose IC-LoRA) | — | — | ✅ | ✅ | |
 | LTX-2.3 Ultimate | ✅ | ✅ | — | — | — | ✅ | ✅ | ID LoRA |
 | LTX-2 GGUF | ✅ | ✅ | — | — | — | ✅ | — | |

@@ -1,5 +1,17 @@
 # Changelog — Story Creator · 12 GB
 
+## v1.4.0 — 2026-10-18
+- **Script-first.** The scene list is now a script with tags: a `WORLD:` first line (the look of the whole story),
+  `[camera]` at the start of a line (shot + movement, into the picture and the video prompt), `|| Name: text` for
+  dialogue on screen, `|| text` for the narrator, and `[continue]` for a transition into the next scene (the clip ends
+  on the next scene's still) instead of a cut. The *One shot* mode is gone; `[continue]` replaces it per line.
+- Stills come straight from each script line ("direct"), with the character picture only for how the hero looks.
+- The built-in writer (*Write the scenes for me*, 8B Qwen text encoder) stays in, switched off; the guide recommends a
+  big chatbot with the structure prompt in [HOW_TO_WRITE_A_SCRIPT.md](HOW_TO_WRITE_A_SCRIPT.md).
+- From v1.2/v1.3 (not released on their own): one narrator voice for the whole story, scene length from the spoken
+  line (3-9 s), narrator scenes made without voices, dialogue made louder, the hiss above 4-6 kHz in the scene sound
+  turned down, each scene's voice saved on its own, upscale to 1080p, Music off = no YuE2.
+
 ## v1.1.0 — 2026-10-15
 - **The narrator is separated from the characters' voices.** After `||`, a line that starts with a name and a colon
   (`Pip: …`) is dialogue: the character says it on screen. Anything else is the narrator: the scene is told that nobody
