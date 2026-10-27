@@ -1,4 +1,9 @@
 # The_frizzy1 — Ming Image 0.1 Design · 12 GB v1.0.0
+
+<a href="https://www.youtube.com/watch?v=DTleXeD74vs&list=PLG_da2oqTx7k"><img src="https://img.youtube.com/vi/DTleXeD74vs/mqdefault.jpg" width="640" alt="Watch the video"></a>
+
+☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
+
 > Ming Image 0.1 Design (a 6B design model from inclusionAI / Ant Group) on a 12 GB card: text to image and editing in one
 > node, and a switch for real transparent backgrounds. Core ComfyUI nodes only, tested on an RTX 3060.
 

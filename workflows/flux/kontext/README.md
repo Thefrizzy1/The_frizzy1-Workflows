@@ -1,5 +1,9 @@
 # The_frizzy1 — Flux Kontext GGUF v2.2.0
 
+<a href="https://www.youtube.com/watch?v=4C0RJ01yRok&list=PLG_da2oqTx7k"><img src="https://img.youtube.com/vi/4C0RJ01yRok/mqdefault.jpg" width="640" alt="Watch the video"></a>
+
+☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
+
 > Realistic, cinematic image generation **and editing** with Flux Dev / Schnell / Kontext on **4 GB VRAM**. Two-pass sampling + Torch TeaCache for speed.
 
 | | |

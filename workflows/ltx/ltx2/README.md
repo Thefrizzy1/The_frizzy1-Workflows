@@ -1,4 +1,9 @@
 # The_frizzy1 — LTX-2 GGUF v2.0.0
+
+<a href="https://www.youtube.com/watch?v=nnHUBMgdJac&list=PLQ3PcJNbU2Ls"><img src="https://img.youtube.com/vi/nnHUBMgdJac/mqdefault.jpg" width="640" alt="Watch the video"></a>
+
+☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
+
 > Simple color-coded LTXV-2 workflow (I2V + T2V, audio-aware). Lightweight; runs from **4 GB** with Triton, comfortable at 12 GB.
 
 | | |

@@ -1,4 +1,9 @@
 # The_frizzy1 — YuE2 Music · 12 GB v1.0.0
+
+<a href="https://www.youtube.com/watch?v=dS7e4nSQOkQ&list=PLcgjaTzmjLkE"><img src="https://img.youtube.com/vi/dS7e4nSQOkQ/mqdefault.jpg" width="640" alt="Watch the video"></a>
+
+☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
+
 > YuE2 (a 3B open music model from the Multimodal Art Projection team) makes complete songs with vocals from a music
 > style and your lyrics. Text to music and cover (new style + lyrics on your song's melody) in one node. Core ComfyUI
 > nodes only, tested on an RTX 3060.

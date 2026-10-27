@@ -15,30 +15,6 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 
 </div>
 
-## ▶ Watch the videos
-
-Most workflows here have a video where I set them up and test them on my own GPU. Start with these:
-
-<table>
-<tr>
-<td width="33%" align="center"><a href="https://www.youtube.com/watch?v=zkhLZUGIIfE&list=PLeqIIOYx8jX4"><img src="https://img.youtube.com/vi/zkhLZUGIIfE/mqdefault.jpg" width="100%" alt="I Replaced Higgsfield Genjutsu With My RTX 3060"></a><br><sub><b>I Replaced Higgsfield Genjutsu With My RTX 3060</b></sub></td>
-<td width="33%" align="center"><a href="https://www.youtube.com/watch?v=dSzM3ovKBko&list=PLeqIIOYx8jX4"><img src="https://img.youtube.com/vi/dSzM3ovKBko/mqdefault.jpg" width="100%" alt="How to Make LONG AI Videos for FREE"></a><br><sub><b>How to Make LONG AI Videos for FREE</b></sub></td>
-<td width="33%" align="center"><a href="https://www.youtube.com/watch?v=TlV72fg9skw&list=PLeqIIOYx8jX4"><img src="https://img.youtube.com/vi/TlV72fg9skw/mqdefault.jpg" width="100%" alt="LTX 2.5 Is the New Low-VRAM King"></a><br><sub><b>LTX 2.5 Is the New Low-VRAM King</b></sub></td>
-</tr>
-<tr>
-<td width="33%" align="center"><a href="https://www.youtube.com/watch?v=C7ZttV320qk&list=PLeqIIOYx8jX4"><img src="https://img.youtube.com/vi/C7ZttV320qk/mqdefault.jpg" width="100%" alt="Wan2.2 GGUF Runs on 4GB VRAM"></a><br><sub><b>Wan2.2 GGUF Runs on 4GB VRAM</b></sub></td>
-<td width="33%" align="center"><a href="https://www.youtube.com/watch?v=Xqjabf_eQ_U&list=PLeqIIOYx8jX4"><img src="https://img.youtube.com/vi/Xqjabf_eQ_U/mqdefault.jpg" width="100%" alt="AI Videos on a 4GB VRAM Laptop (WAN 2.1)"></a><br><sub><b>AI Videos on a 4GB VRAM Laptop (WAN 2.1)</b></sub></td>
-<td width="33%" align="center"><a href="https://www.youtube.com/watch?v=rtyfdmL-wF4&list=PLeqIIOYx8jX4"><img src="https://img.youtube.com/vi/rtyfdmL-wF4/mqdefault.jpg" width="100%" alt="I Ran WAN 2.2 Animate on a 4GB Laptop"></a><br><sub><b>I Ran WAN 2.2 Animate on a 4GB Laptop</b></sub></td>
-</tr>
-<tr>
-<td width="33%" align="center"><a href="https://www.youtube.com/watch?v=Z9vMgiJpvX8&list=PLeqIIOYx8jX4"><img src="https://img.youtube.com/vi/Z9vMgiJpvX8/mqdefault.jpg" width="100%" alt="MiniMax H3 on a 4GB Laptop"></a><br><sub><b>MiniMax H3 on a 4GB Laptop</b></sub></td>
-<td width="33%" align="center"><a href="https://www.youtube.com/watch?v=seBBKM4RkgA&list=PLeqIIOYx8jX4"><img src="https://img.youtube.com/vi/seBBKM4RkgA/mqdefault.jpg" width="100%" alt="MiniMax H3 on 12GB VRAM"></a><br><sub><b>MiniMax H3 on 12GB VRAM</b></sub></td>
-<td width="33%" align="center"><a href="https://www.youtube.com/watch?v=DsZZBpT67R8&list=PLDlBEvYrfP2g"><img src="https://img.youtube.com/vi/DsZZBpT67R8/mqdefault.jpg" width="100%" alt="Motion Graphics with Just PROMPTS (Claude Code)"></a><br><sub><b>Motion Graphics with Just PROMPTS (Claude Code)</b></sub></td>
-</tr>
-</table>
-
-**Playlists:** [My Best Videos](https://www.youtube.com/playlist?list=PLeqIIOYx8jX4) · [AI Video on a 4GB Laptop](https://www.youtube.com/playlist?list=PLFm5KK61sVFA) · [LTX Video](https://www.youtube.com/playlist?list=PLQ3PcJNbU2Ls) · [MiniMax H3](https://www.youtube.com/playlist?list=PLMztlpsP7Bgg) · [Wan + Character Swap](https://www.youtube.com/playlist?list=PLRe4JVWoY_AU) · [Free AI Images](https://www.youtube.com/playlist?list=PLG_da2oqTx7k) · [AI Agents](https://www.youtube.com/playlist?list=PLDlBEvYrfP2g) · [Voice + Music](https://www.youtube.com/playlist?list=PLcgjaTzmjLkE) · [Setup + Free GPUs](https://www.youtube.com/playlist?list=PLM09Rgs6bQAc) · [3-Minute Explainers](https://www.youtube.com/playlist?list=PLQxJrL5b4ixI)
-
 ☕ If a workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
 
 ---
@@ -51,7 +27,6 @@ Most workflows here have a video where I set them up and test them on my own GPU
 
 ## Contents
 
-- [Watch the videos](#-watch-the-videos)
 - [Which workflow should I use?](#which-workflow-should-i-use)
 - [Workflows](#workflows) — [Video](#-video) · [Image](#-image) · [Audio](#-audio)
 - [Newest vs older](#newest-vs-older)

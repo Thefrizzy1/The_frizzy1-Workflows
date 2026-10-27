@@ -1,4 +1,9 @@
 # The_frizzy1 — Qwen Image 2.1 · 12 GB v2.0.0
+
+<a href="https://www.youtube.com/watch?v=C5wZ2gU7j9E&list=PLG_da2oqTx7k"><img src="https://img.youtube.com/vi/C5wZ2gU7j9E/mqdefault.jpg" width="400" alt="Watch the video"></a> <a href="https://www.youtube.com/watch?v=-yJvQ3lxWsE&list=PLG_da2oqTx7k"><img src="https://img.youtube.com/vi/-yJvQ3lxWsE/mqdefault.jpg" width="400" alt="Watch the video"></a>
+
+☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
+
 > Native **2K** Qwen Image 2.1 on a **12 GB** card — a QUALITY path (40 steps, Comfy Kitchen attention) and a
 > one-click TURBO path (Viggle 6-step LoRA). Core ComfyUI nodes only, tested on an RTX 3060.
 

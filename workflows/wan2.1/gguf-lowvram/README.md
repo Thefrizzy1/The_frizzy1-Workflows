@@ -1,5 +1,9 @@
 # The_frizzy1 — Wan 2.1 GGUF Low-VRAM v2.0.0
 
+<a href="https://www.youtube.com/watch?v=Xqjabf_eQ_U&list=PLRe4JVWoY_AU"><img src="https://img.youtube.com/vi/Xqjabf_eQ_U/mqdefault.jpg" width="640" alt="Watch the video"></a>
+
+☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
+
 > A six-in-one Wan 2.1 video pack — T2V, I2V, VACE, First/Last-Frame and experimental Fun controls — running from **4 GB VRAM** with GGUF quantisation.
 
 | | |

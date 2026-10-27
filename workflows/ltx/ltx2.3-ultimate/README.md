@@ -1,5 +1,9 @@
 # The_frizzy1 — LTX-2.3 Ultimate v3.0.0
 
+<a href="https://www.youtube.com/watch?v=im4wolfHvMk&list=PLQ3PcJNbU2Ls"><img src="https://img.youtube.com/vi/im4wolfHvMk/mqdefault.jpg" width="640" alt="Watch the video"></a>
+
+☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
+
 > LTXV-2.3 (22B) — T2V, I2V, first/last-frame and audio, with ID LoRA. Color-coded GGUF. **12 GB** target.
 
 | | |

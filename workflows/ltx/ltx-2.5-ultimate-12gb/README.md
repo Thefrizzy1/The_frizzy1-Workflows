@@ -1,4 +1,9 @@
 # The_frizzy1 — LTX 2.5 Ultimate · 12 GB v2.0.0
+
+<a href="https://www.youtube.com/watch?v=HeHY6N5hH_M&list=PLQ3PcJNbU2Ls"><img src="https://img.youtube.com/vi/HeHY6N5hH_M/mqdefault.jpg" width="400" alt="Watch the video"></a> <a href="https://www.youtube.com/watch?v=TlV72fg9skw&list=PLQ3PcJNbU2Ls"><img src="https://img.youtube.com/vi/TlV72fg9skw/mqdefault.jpg" width="400" alt="Watch the video"></a>
+
+☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
+
 > LTX 2.5 text, image, first+last and pose-driven video in one workflow. Video with sound. Core ComfyUI nodes only, tested on an RTX 3060.
 
 | | |

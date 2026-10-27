@@ -1,4 +1,9 @@
 # The_frizzy1 — Krea 2 Ultimate · 12 GB v2.1.0
+
+<a href="https://www.youtube.com/watch?v=RGqji3525Us&list=PLG_da2oqTx7k"><img src="https://img.youtube.com/vi/RGqji3525Us/mqdefault.jpg" width="640" alt="Watch the video"></a>
+
+☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
+
 > Krea 2 Turbo text-to-image and image style reference in one workflow, with the official style LoRAs, and since v2.1.0 a
 > **Model** switch for **Kroma** (lodestones' Krea 2 fine-tune). Core nodes only.
 

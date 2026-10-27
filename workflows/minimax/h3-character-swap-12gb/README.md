@@ -1,4 +1,9 @@
 # The_frizzy1 — MiniMax H3 Character Swap · 12 GB v1.1.0
+
+<a href="https://www.youtube.com/watch?v=zkhLZUGIIfE&list=PLMztlpsP7Bgg"><img src="https://img.youtube.com/vi/zkhLZUGIIfE/mqdefault.jpg" width="640" alt="Watch the video"></a>
+
+☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
+
 > Your video + one picture of a character → the same clip with the person swapped: same moves, same timing, the clip's
 > own sound. Higgsfield's Genjutsu idea, run on your own PC: nothing is uploaded and nothing blocks the clip.
 > The whole clip in 5 s passes with ComfyUI's built-in loop nodes. Core ComfyUI nodes only, tested on an RTX 3060.

@@ -1,5 +1,9 @@
 # The_frizzy1 — Wan 2.2 Animate v1.2.0
 
+<a href="https://www.youtube.com/watch?v=rtyfdmL-wF4&list=PLRe4JVWoY_AU"><img src="https://img.youtube.com/vi/rtyfdmL-wF4/mqdefault.jpg" width="640" alt="Watch the video"></a>
+
+☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
+
 > Drive motion from a reference video onto a character image — with a looping mechanism for **unlimited-length** output. GGUF-quantised to run from **4 GB VRAM**.
 
 | | |

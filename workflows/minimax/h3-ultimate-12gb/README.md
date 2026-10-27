@@ -1,4 +1,9 @@
 # The_frizzy1 — MiniMax H3 Ultimate · 12 GB v2.3.0
+
+<a href="https://www.youtube.com/watch?v=KJNksY9Ur3w&list=PLMztlpsP7Bgg"><img src="https://img.youtube.com/vi/KJNksY9Ur3w/mqdefault.jpg" width="640" alt="Watch the video"></a>
+
+☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
+
 > Every local MiniMax H3 mode in one workflow - pick it from a dropdown. Video with sound. Core ComfyUI nodes only, tested on an RTX 3060.
 
 | | |

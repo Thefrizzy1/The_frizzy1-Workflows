@@ -1,5 +1,9 @@
 # The_frizzy1 — Wan 2.2 AIO Rapid v1.0.0
 
+<a href="https://www.youtube.com/watch?v=RdsyWkvG1nE&list=PLRe4JVWoY_AU"><img src="https://img.youtube.com/vi/RdsyWkvG1nE/mqdefault.jpg" width="640" alt="Watch the video"></a>
+
+☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
+
 > All-in-one Wan 2.2 T2V + I2V from a **single** "mega AIO" GGUF file. 4–12 GB VRAM. The simplest 2.2 path.
 
 | | |

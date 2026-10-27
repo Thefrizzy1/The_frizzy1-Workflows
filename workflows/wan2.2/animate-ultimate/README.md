@@ -1,4 +1,9 @@
 # The_frizzy1 — Wan Animate Ultimate v2.0.0
+
+<a href="https://www.youtube.com/watch?v=9idzB8mlYRY&list=PLRe4JVWoY_AU"><img src="https://img.youtube.com/vi/9idzB8mlYRY/mqdefault.jpg" width="400" alt="Watch the video"></a> <a href="https://www.youtube.com/watch?v=aqFdglMbcIU&list=PLRe4JVWoY_AU"><img src="https://img.youtube.com/vi/aqFdglMbcIU/mqdefault.jpg" width="400" alt="Watch the video"></a>
+
+☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
+
 > Make any character move like your driving video - Wan Animate 2 (12 GB, native) or Wan 2.2 Animate GGUF (low VRAM). Original | result side-by-side included.
 
 | | |

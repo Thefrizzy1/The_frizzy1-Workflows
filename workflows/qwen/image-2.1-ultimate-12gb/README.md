@@ -1,4 +1,9 @@
 # The_frizzy1 — Qwen Image 2.1 Ultimate · 12 GB v2.1.0
+
+<a href="https://www.youtube.com/watch?v=N7X0QBZ_r9c&list=PLG_da2oqTx7k"><img src="https://img.youtube.com/vi/N7X0QBZ_r9c/mqdefault.jpg" width="640" alt="Watch the video"></a>
+
+☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
+
 > Every Qwen Image 2.1 mode in one workflow: text to image, editing with your images, ControlNet pose / depth / edges,
 > and the new Turbo model. Core ComfyUI nodes only, tested on an RTX 3060.
 

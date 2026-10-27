@@ -1,5 +1,9 @@
 # The_frizzy1 — Wan 2.2 GGUF Low-VRAM v1.0.0
 
+<a href="https://www.youtube.com/watch?v=C7ZttV320qk&list=PLRe4JVWoY_AU"><img src="https://img.youtube.com/vi/C7ZttV320qk/mqdefault.jpg" width="640" alt="Watch the video"></a>
+
+☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
+
 > Wan 2.2 T2V, I2V (14B dual-expert) and hybrid TI2V-5B on **4 GB VRAM** with GGUF + lightx2v LoRA.
 
 | | |
