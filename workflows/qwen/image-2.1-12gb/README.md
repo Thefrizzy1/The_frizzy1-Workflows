@@ -10,7 +10,7 @@
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.37.1 (Comfy Desktop) |
 | **CivitAI** | Not published |
 | **Hugging Face** | Not published |
-| **YouTube explainer** | [▶ Qwen Image 2.1: Free Low-VRAM Workflow + Benchmark](https://www.youtube.com/watch?v=C5wZ2gU7j9E) · [▶ Qwen Image 2.1 on 12GB: Which Settings Actually Matter](https://www.youtube.com/watch?v=-yJvQ3lxWsE) |
+| **YouTube explainer** | [▶ Qwen Image 2.1: Free Low-VRAM Workflow + Benchmark](https://www.youtube.com/watch?v=C5wZ2gU7j9E&list=PLG_da2oqTx7k) · [▶ Qwen Image 2.1 on 12GB: Which Settings Actually Matter](https://www.youtube.com/watch?v=-yJvQ3lxWsE&list=PLG_da2oqTx7k) |
 | **License** | Workflow: MIT · Qwen Image 2.1 + Viggle LoRA: Qwen Research License (non-commercial) |
 
 ## Preview

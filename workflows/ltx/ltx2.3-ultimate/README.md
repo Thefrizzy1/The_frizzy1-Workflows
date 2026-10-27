@@ -10,7 +10,7 @@
 | **Min VRAM** | 12 GB |
 | **CivitAI** | https://civitai.com/models/2339823 |
 | **Hugging Face** | https://huggingface.co/The-frizzy1/LTX23-Ultimate |
-| **YouTube** | https://www.youtube.com/watch?v=im4wolfHvMk |
+| **YouTube** | https://www.youtube.com/watch?v=im4wolfHvMk&list=PLQ3PcJNbU2Ls |
 | **License** | Workflow: MIT · LTX-2 Community License Agreement · Gemma 3 text encoder: Gemma Terms of Use |
 | **Newer** | [LTX 2.5 Ultimate](../../ltx/ltx-2.5-ultimate-12gb) (12 GB). |
 

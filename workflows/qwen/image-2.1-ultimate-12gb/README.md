@@ -8,7 +8,7 @@
 | **Tasks** | Text → Image (native 2K) · Edit (1–3 images) · ControlNet pose · ControlNet depth · ControlNet edges (canny) |
 | **Needs** | 12 GB VRAM · 32 GB system RAM · ComfyUI **0.38+** (0.39.2 tested) |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.39.2 (Comfy Desktop) |
-| **YouTube explainer** | [▶ Qwen Image 2.1 Turbo + ControlNet: One Free Workflow (12GB)](https://www.youtube.com/watch?v=N7X0QBZ_r9c) |
+| **YouTube explainer** | [▶ Qwen Image 2.1 Turbo + ControlNet: One Free Workflow (12GB)](https://www.youtube.com/watch?v=N7X0QBZ_r9c&list=PLG_da2oqTx7k) |
 | **License** | Workflow: MIT · Qwen Image 2.1 + Turbo: Qwen Research License (non-commercial) |
 
 ## Quick start

@@ -8,7 +8,7 @@
 | **Tasks** | Text → Image (up to 2K) · Edit (1–3 images) · transparent background (RGBA) |
 | **Needs** | 12 GB VRAM · 32 GB system RAM (peaked at 9.8 GB) · ComfyUI **0.39+** |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.39.2 (Comfy Desktop) |
-| **YouTube explainer** | [▶ Ming Image 0.1 in ComfyUI: Posters, Text + Real Transparency (12GB)](https://www.youtube.com/watch?v=DTleXeD74vs) |
+| **YouTube explainer** | [▶ Ming Image 0.1 in ComfyUI: Posters, Text + Real Transparency (12GB)](https://www.youtube.com/watch?v=DTleXeD74vs&list=PLG_da2oqTx7k) |
 | **License** | Workflow: MIT · Ming Image 0.1 Design: MIT |
 
 ## Quick start

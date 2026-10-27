@@ -9,7 +9,7 @@
 | **Task** | Character swap, video → video, with the original sound |
 | **Needs** | 12 GB VRAM (peaked at 11892 MiB) · 32 GB system RAM (peaked at 23.1 GB) · ComfyUI **0.39+** |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.39.2 |
-| **YouTube explainer** | [▶ I Replaced Higgsfield Genjutsu With My RTX 3060 (Free, Local)](https://www.youtube.com/watch?v=zkhLZUGIIfE) |
+| **YouTube explainer** | [▶ I Replaced Higgsfield Genjutsu With My RTX 3060 (Free, Local)](https://www.youtube.com/watch?v=zkhLZUGIIfE&list=PLMztlpsP7Bgg) |
 | **License** | Workflow: MIT · MiniMax H3 + the LoRA: MiniMax H3 Community License (read it before commercial use) |
 
 ## Quick start

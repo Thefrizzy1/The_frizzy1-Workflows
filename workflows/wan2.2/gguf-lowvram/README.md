@@ -10,7 +10,7 @@
 | **Tested on** | RTX 3050 Laptop 4 GB |
 | **CivitAI** | https://civitai.com/models/1817858 |
 | **Hugging Face** | https://huggingface.co/The-frizzy1/Wan22-T2V-I2V-LORA-4GB |
-| **YouTube** | https://www.youtube.com/watch?v=C7ZttV320qk |
+| **YouTube** | https://www.youtube.com/watch?v=C7ZttV320qk&list=PLRe4JVWoY_AU |
 | **License** | Apache-2.0 |
 | **Newer** | [MiniMax H3 Ultimate](../../minimax/h3-ultimate-12gb) · [LTX 2.5 Ultimate](../../ltx/ltx-2.5-ultimate-12gb) (12 GB). This one stays the 4 GB pick. |
 

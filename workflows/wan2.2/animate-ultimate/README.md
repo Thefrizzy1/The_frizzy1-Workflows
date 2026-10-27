@@ -7,7 +7,7 @@
 | **Tasks** | Character animation from a driving video |
 | **Min VRAM** | 12 GB (tested) · GGUF path for less |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.37.4 (Sage attention) |
-| **YouTube explainer** | [▶ Free AI Character Swap That Actually Lip-Syncs (Wan 2.2 Animate 2, 12GB VRAM)](https://www.youtube.com/watch?v=9idzB8mlYRY) · [▶ Wan 2.2 Animate Lip Sync Fix in ComfyUI (12GB, Local)](https://www.youtube.com/watch?v=aqFdglMbcIU) |
+| **YouTube explainer** | [▶ Free AI Character Swap That Actually Lip-Syncs (Wan 2.2 Animate 2, 12GB VRAM)](https://www.youtube.com/watch?v=9idzB8mlYRY&list=PLRe4JVWoY_AU) · [▶ Wan 2.2 Animate Lip Sync Fix in ComfyUI (12GB, Local)](https://www.youtube.com/watch?v=aqFdglMbcIU&list=PLRe4JVWoY_AU) |
 | **License** | Workflow: MIT · Wan: Apache-2.0 |
 
 ## Preview

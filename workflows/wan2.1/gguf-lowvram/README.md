@@ -10,7 +10,7 @@
 | **Tested on** | RTX 3050 Laptop 4 GB |
 | **CivitAI** | https://civitai.com/models/1309674 |
 | **Hugging Face** | https://huggingface.co/The-frizzy1/Wan21-GGUF-4GB-Workflow |
-| **YouTube** | https://www.youtube.com/watch?v=Xqjabf_eQ_U |
+| **YouTube** | https://www.youtube.com/watch?v=Xqjabf_eQ_U&list=PLRe4JVWoY_AU |
 | **License** | Apache-2.0 |
 | **Newer** | [MiniMax H3 Ultimate](../../minimax/h3-ultimate-12gb) · [LTX 2.5 Ultimate](../../ltx/ltx-2.5-ultimate-12gb) (12 GB). On 4 GB: Wan 2.2 GGUF. |
 

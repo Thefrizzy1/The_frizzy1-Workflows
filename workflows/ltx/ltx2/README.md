@@ -10,7 +10,7 @@
 | **Tested on** | RTX 3060 12GB + 48GB RAM · RTX 3050 4GB (Triton) |
 | **CivitAI** | https://civitai.com/models/2339823 |
 | **Hugging Face** | https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow |
-| **YouTube** | https://www.youtube.com/watch?v=nnHUBMgdJac |
+| **YouTube** | https://www.youtube.com/watch?v=nnHUBMgdJac&list=PLQ3PcJNbU2Ls |
 | **License** | Workflow: MIT · LTX-2 Community License Agreement · Gemma 3 text encoder: Gemma Terms of Use |
 | **Newer** | [LTX 2.5 Ultimate](../../ltx/ltx-2.5-ultimate-12gb) (12 GB). |
 

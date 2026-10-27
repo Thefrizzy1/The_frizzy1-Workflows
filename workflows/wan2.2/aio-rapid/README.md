@@ -9,7 +9,7 @@
 | **Workflow file** | `The_frizzy1_wan-2.2-aio-rapid_v1.0.0.json` |
 | **Min VRAM** | 4–12 GB |
 | **CivitAI** | https://civitai.com/models/2522688 |
-| **YouTube** | https://www.youtube.com/watch?v=RdsyWkvG1nE |
+| **YouTube** | https://www.youtube.com/watch?v=RdsyWkvG1nE&list=PLRe4JVWoY_AU |
 | **License** | Apache-2.0 |
 | **Newer** | [MiniMax H3 Ultimate](../../minimax/h3-ultimate-12gb) · [LTX 2.5 Ultimate](../../ltx/ltx-2.5-ultimate-12gb) (12 GB). |
 

@@ -11,7 +11,7 @@
 | **Tested on** | RTX 3050 4 GB · RTX 3060 12 GB |
 | **CivitAI** | https://civitai.com/models/2046477 |
 | **Hugging Face** | https://huggingface.co/The-frizzy1/Wan22ANIMATE |
-| **YouTube explainer** | https://www.youtube.com/watch?v=rtyfdmL-wF4 |
+| **YouTube explainer** | https://www.youtube.com/watch?v=rtyfdmL-wF4&list=PLRe4JVWoY_AU |
 | **License** | Workflow: MIT · Apache-2.0 (Wan-AI/Wan2.2-Animate-14B) |
 | **Newer** | [Wan Animate Ultimate](../animate-ultimate) (Wan Animate 2, core nodes; its GGUF mode replaces this workflow). |
 
