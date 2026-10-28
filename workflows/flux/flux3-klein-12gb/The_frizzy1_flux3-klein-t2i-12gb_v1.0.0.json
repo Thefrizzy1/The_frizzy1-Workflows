@@ -1,0 +1,2840 @@
+{
+ "id": "e8f30439-267f-45de-b260-db0d114b2c85",
+ "revision": 0,
+ "last_node_id": 132,
+ "last_link_id": 145,
+ "nodes": [
+  {
+   "id": 9,
+   "type": "SaveImage",
+   "pos": [
+    1580,
+    30
+   ],
+   "size": [
+    560,
+    600
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 131
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "Flux3Klein_t2i"
+   ],
+   "widgets_values_named": {
+    "filename_prefix": "image_flux3_klein_distilled_t2i"
+   },
+   "title": "Result"
+  },
+  {
+   "id": 19,
+   "type": "ResolutionSelector",
+   "pos": [
+    1100,
+    30
+   ],
+   "size": [
+    420,
+    190
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "showAdvanced": false,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "width",
+     "type": "INT",
+     "links": [
+      129,
+      144
+     ]
+    },
+    {
+     "name": "height",
+     "type": "INT",
+     "links": [
+      130,
+      145
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ResolutionSelector"
+   },
+   "widgets_values": [
+    "1:1 (Square)",
+    1.0,
+    16
+   ],
+   "widgets_values_named": {
+    "aspect_ratio": "1:1 (Square)",
+    "megapixels": 2.0,
+    "multiple": 16
+   }
+  },
+  {
+   "id": 25,
+   "type": "CreateBoundingBoxes",
+   "pos": [
+    0,
+    420
+   ],
+   "size": [
+    420,
+    560
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "background",
+     "shape": 7,
+     "type": "IMAGE",
+     "link": null
+    },
+    {
+     "name": "bboxes",
+     "shape": 7,
+     "type": "BOUNDING_BOX,ARRAY,STRING",
+     "link": null
+    },
+    {
+     "localized_name": "width",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": 144
+    },
+    {
+     "localized_name": "height",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": 145
+    }
+   ],
+   "outputs": [
+    {
+     "name": "preview",
+     "type": "IMAGE",
+     "links": []
+    },
+    {
+     "name": "bboxes",
+     "type": "BOUNDING_BOX",
+     "links": []
+    },
+    {
+     "name": "elements",
+     "type": "ARRAY",
+     "links": [
+      112
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CreateBoundingBoxes"
+   },
+   "widgets_values": [
+    1000,
+    1000,
+    [],
+    []
+   ],
+   "widgets_values_named": {
+    "width": 1000,
+    "height": 1000,
+    "editor_state": [],
+    "last_incoming": []
+   },
+   "title": "Bounding boxes (optional)",
+   "color": "#232",
+   "bgcolor": "#353"
+  },
+  {
+   "id": 28,
+   "type": "PrimitiveStringMultiline",
+   "title": "Prompt",
+   "pos": [
+    0,
+    30
+   ],
+   "size": [
+    420,
+    300
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      111
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "close up profile of a young male athlete with closed eyes pressing his sweaty forehead against a soccer ball, right hand gripping the ball, stark white background, athletic jacket, white ball with jagged red graphic patterns, high contrast studio lighting, highly detailed skin texture, sharp focus Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only."
+   ],
+   "color": "#232",
+   "bgcolor": "#353"
+  },
+  {
+   "id": 113,
+   "type": "PreviewAny",
+   "pos": [
+    480,
+    344
+   ],
+   "size": [
+    560,
+    400
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "source",
+     "name": "source",
+     "type": "*",
+     "link": 113
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      128
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PreviewAny"
+   },
+   "widgets_values": [],
+   "widgets_values_named": {},
+   "title": "Upsampled prompt",
+   "color": "#323",
+   "bgcolor": "#535"
+  },
+  {
+   "id": 127,
+   "type": "294d97c2-5179-4d93-a7ae-87b9745df54a",
+   "title": "Prompt Upsampler",
+   "pos": [
+    480,
+    30
+   ],
+   "size": [
+    560,
+    224
+   ],
+   "flags": {},
+   "order": 50,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "prompt",
+     "name": "prompt",
+     "type": "STRING",
+     "link": 111
+    },
+    {
+     "label": "bounding_boxes",
+     "name": "bounding_boxes",
+     "type": "ARRAY",
+     "link": 112
+    },
+    {
+     "label": "enable upsampler",
+     "name": "enable",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "enable"
+     },
+     "link": null
+    },
+    {
+     "label": "upsampler model",
+     "name": "upsampler_model",
+     "type": "COMBO",
+     "widget": {
+      "name": "upsampler_model"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "prompt",
+     "name": "prompt",
+     "type": "STRING",
+     "links": [
+      113
+     ]
+    }
+   ],
+   "properties": {
+    "previewExposures": []
+   },
+   "color": "#323",
+   "bgcolor": "#535",
+   "widgets_values": [
+    "",
+    true,
+    "qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "widgets_values_named": {
+    "prompt": "",
+    "enable": true,
+    "upsampler_model": "qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   }
+  },
+  {
+   "id": 128,
+   "type": "8f01b7ad-14bc-4b2f-a42e-8f4f861639c6",
+   "title": "FLUX 3 Klein · text to image",
+   "pos": [
+    1100,
+    310
+   ],
+   "size": [
+    420,
+    442
+   ],
+   "flags": {},
+   "order": 60,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "prompt",
+     "name": "prompt",
+     "type": "STRING",
+     "link": 128
+    },
+    {
+     "label": "width",
+     "name": "width",
+     "type": "INT",
+     "link": 129
+    },
+    {
+     "label": "height",
+     "name": "height",
+     "type": "INT",
+     "link": 130
+    },
+    {
+     "label": "batch size",
+     "name": "batch_size",
+     "type": "INT",
+     "widget": {
+      "name": "batch_size"
+     },
+     "link": null
+    },
+    {
+     "label": "steps",
+     "name": "steps",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "steps"
+     }
+    },
+    {
+     "label": "alpha (timestep shift)",
+     "name": "alpha",
+     "type": "FLOAT",
+     "widget": {
+      "name": "alpha"
+     },
+     "link": null
+    },
+    {
+     "label": "seed",
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    },
+    {
+     "label": "sampler",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "label": "scheduler",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "label": "diffusion model",
+     "name": "unet_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "unet_name"
+     },
+     "link": null
+    },
+    {
+     "label": "text encoder",
+     "name": "clip_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "clip_name"
+     },
+     "link": null
+    },
+    {
+     "label": "vae",
+     "name": "vae_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "vae_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      131
+     ]
+    }
+   ],
+   "properties": {
+    "previewExposures": []
+   },
+   "widgets_values": [
+    "",
+    1024,
+    1024,
+    1,
+    16,
+    16.0,
+    758781618552631,
+    "euler",
+    "simple",
+    "flux3-image-klein-int8-convrot.safetensors",
+    "qwen3vl_4b_int8_convrot.safetensors",
+    "flux2-vae.safetensors"
+   ],
+   "widgets_values_named": {
+    "prompt": "",
+    "width": 1024,
+    "height": 1024,
+    "batch_size": 1,
+    "steps": 16,
+    "alpha": 16.0,
+    "seed": 758781618552631,
+    "sampler_name": "euler",
+    "scheduler": "simple",
+    "unet_name": "flux3-image-klein-int8-convrot.safetensors",
+    "clip_name": "qwen3vl_4b_int8_convrot.safetensors",
+    "vae_name": "flux2-vae.safetensors"
+   },
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 129,
+   "type": "MarkdownNote",
+   "pos": [
+    -560,
+    30
+   ],
+   "size": [
+    500,
+    560
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "title": "How to use",
+   "properties": {},
+   "widgets_values": [
+    "## How to use - tested on RTX 3060 12 GB\n\n1. Write what you want in **Prompt**. Short is fine: the **Prompt Upsampler** turns it into the full scene caption Klein was trained on (you see it in **Upsampled prompt**). BFL says: do not run Klein without it.\n2. Optional: draw **Bounding boxes** and describe each one, to say what goes where. Needs Nodes 2.0 (ComfyUI icon → Nodes 2.0). Leave it empty for a normal prompt.\n3. Pick the size in the size node: 1 MP is the 12 GB default, 4 MP works too, it just takes longer.\n4. Press **Run**. Distilled Klein: 16 steps, no CFG.\n\nRTX 3060, 1 MP: new prompt 25 s (upsampler + image) · same prompt, new seed 14 s (the upsampled prompt is reused). 4 MP, same prompt: 1 min 16 s. First run after starting ComfyUI: 50 s. Peak VRAM 11.4 GB, RAM about 4 GB.\n\n4 MP: the sky in my test showed some banding. My 1 MP tests looked clean.\n\nAlready wrote a long caption yourself? Turn off *enable upsampler* on the upsampler node.\n\nDouble-click a node to see every step."
+   ],
+   "color": "#432",
+   "bgcolor": "#653"
+  },
+  {
+   "id": 130,
+   "type": "MarkdownNote",
+   "pos": [
+    -560,
+    620
+   ],
+   "size": [
+    500,
+    620
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "title": "Downloads",
+   "properties": {},
+   "widgets_values": [
+    "## Downloads - put each file in the ComfyUI folder shown\n\nClick a file name to download it. Put it in the folder shown (inside `ComfyUI/models/`).\nThe repo is gated: log in on Hugging Face and accept BFL's terms on the model page first.\n\n**[black-forest-labs/flux-3-image-klein-comfy](https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy)**\n\n| For | Folder | File (click = download) | Size |\n|---|---|---|---|\n| all (tested) | `diffusion_models/` | [flux3-image-klein-int8-convrot.safetensors](https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/diffusion_models/flux3-image-klein-int8-convrot.safetensors) | 5.8 GB |\n| all (tested) | `text_encoders/` | [qwen3vl_4b_int8_convrot.safetensors](https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/text_encoders/qwen3vl_4b_int8_convrot.safetensors) | 4.9 GB |\n| prompt upsampler (tested) | `text_encoders/` | [qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors](https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors) | 6.7 GB |\n| all (tested) | `vae/` | [flux2-vae.safetensors](https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/vae/flux2-vae.safetensors) | 0.3 GB |\n\nTotal: 17.8 GB. _Tested on: RTX 3060 12 GB · Ryzen 5 5600X · 32 GB RAM · ComfyUI 0.43.1 · sage attention._\n\nNeeds ComfyUI **0.41 or newer** (FLUX 3 Image support landed in 0.41.0). Update first.\n\nBigger cards: `flux3-image-klein-bf16` (11.1 GB) and the int8 upsampler (9.8 GB) are in the same repo. RTX 50 cards: the `nvfp4` file (5.3 GB).\n\nLicense: FLUX Kommunity License (non-commercial; commercial output use if your revenue is under US$5M, see the model page). Workflow: MIT."
+   ],
+   "color": "#432",
+   "bgcolor": "#653"
+  }
+ ],
+ "links": [
+  [
+   111,
+   28,
+   0,
+   127,
+   0,
+   "STRING"
+  ],
+  [
+   112,
+   25,
+   2,
+   127,
+   1,
+   "ARRAY"
+  ],
+  [
+   113,
+   127,
+   0,
+   113,
+   0,
+   "STRING"
+  ],
+  [
+   128,
+   113,
+   0,
+   128,
+   0,
+   "STRING"
+  ],
+  [
+   129,
+   19,
+   0,
+   128,
+   1,
+   "INT"
+  ],
+  [
+   130,
+   19,
+   1,
+   128,
+   2,
+   "INT"
+  ],
+  [
+   131,
+   128,
+   0,
+   9,
+   0,
+   "IMAGE"
+  ],
+  [
+   144,
+   19,
+   0,
+   25,
+   2,
+   "INT"
+  ],
+  [
+   145,
+   19,
+   1,
+   25,
+   3,
+   "INT"
+  ]
+ ],
+ "groups": [],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.6,
+   "offset": [
+    620,
+    60
+   ]
+  },
+  "frontendVersion": "1.55.17"
+ },
+ "version": 0.4,
+ "definitions": {
+  "subgraphs": [
+   {
+    "id": "294d97c2-5179-4d93-a7ae-87b9745df54a",
+    "version": 1,
+    "state": {
+     "lastGroupId": 3,
+     "lastNodeId": 126,
+     "lastLinkId": 110,
+     "lastRerouteId": 0
+    },
+    "revision": 0,
+    "config": {},
+    "name": "Prompt Upsampler",
+    "inputNode": {
+     "id": -10,
+     "bounding": [
+      0,
+      80,
+      200,
+      160
+     ]
+    },
+    "outputNode": {
+     "id": -20,
+     "bounding": [
+      2020,
+      80,
+      140,
+      70
+     ]
+    },
+    "inputs": [
+     {
+      "id": "1b579fb6-db8a-4153-91fa-61109f19a4e1",
+      "name": "prompt",
+      "type": "STRING",
+      "linkIds": [
+       89,
+       98,
+       106
+      ],
+      "label": "prompt",
+      "pos": [
+       180,
+       110
+      ]
+     },
+     {
+      "id": "b3ac3af9-1050-40aa-ad41-4b5af015cc01",
+      "name": "bounding_boxes",
+      "type": "ARRAY",
+      "linkIds": [
+       88,
+       93
+      ],
+      "label": "bounding_boxes",
+      "pos": [
+       180,
+       140
+      ]
+     },
+     {
+      "id": "fd743e51-c181-440e-8290-565418b37e1f",
+      "name": "enable",
+      "type": "BOOLEAN",
+      "linkIds": [
+       108
+      ],
+      "label": "enable upsampler",
+      "pos": [
+       180,
+       170
+      ]
+     },
+     {
+      "id": "c056ffc9-0dae-4183-90b3-8a56055c8d97",
+      "name": "upsampler_model",
+      "type": "COMBO",
+      "linkIds": [
+       109
+      ],
+      "label": "upsampler model",
+      "pos": [
+       180,
+       200
+      ]
+     }
+    ],
+    "outputs": [
+     {
+      "id": "430744a2-9cd0-4cfd-a192-8594e23c91ae",
+      "name": "prompt",
+      "type": "STRING",
+      "linkIds": [
+       110
+      ],
+      "localized_name": "prompt",
+      "pos": [
+       2040,
+       110
+      ]
+     }
+    ],
+    "widgets": [],
+    "nodes": [
+     {
+      "id": 112,
+      "type": "CLIPLoader",
+      "pos": [
+       1480,
+       110
+      ],
+      "size": [
+       480,
+       130
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "clip_name",
+        "name": "clip_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "clip_name"
+        },
+        "link": 109
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "CLIP",
+        "name": "CLIP",
+        "type": "CLIP",
+        "links": [
+         92
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "CLIPLoader",
+       "models": [
+        {
+         "name": "qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors",
+         "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors",
+         "directory": "text_encoders"
+        }
+       ]
+      },
+      "widgets_values": [
+       "qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors",
+       "flux3",
+       "default"
+      ],
+      "widgets_values_named": {
+       "clip_name": "qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors",
+       "type": "flux3",
+       "device": "default"
+      },
+      "title": "Upsampler model"
+     },
+     {
+      "id": 116,
+      "type": "ComfySwitchNode",
+      "pos": [
+       1480,
+       1000
+      ],
+      "size": [
+       480,
+       100
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "on_false",
+        "name": "on_false",
+        "shape": 7,
+        "type": "STRING",
+        "link": 90
+       },
+       {
+        "localized_name": "on_true",
+        "name": "on_true",
+        "shape": 7,
+        "type": "STRING",
+        "link": 91
+       },
+       {
+        "localized_name": "switch",
+        "name": "switch",
+        "type": "BOOLEAN",
+        "widget": {
+         "name": "switch"
+        },
+        "link": 108
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "output",
+        "name": "output",
+        "type": "STRING",
+        "links": [
+         110
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "ComfySwitchNode"
+      },
+      "widgets_values": [
+       true
+      ],
+      "widgets_values_named": {
+       "switch": true
+      },
+      "title": "Upsampler on/off",
+      "color": "#323",
+      "bgcolor": "#535"
+     },
+     {
+      "id": 27,
+      "type": "Flux3LayoutPrompt",
+      "pos": [
+       1480,
+       860
+      ],
+      "size": [
+       480,
+       80
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "prompt",
+        "name": "prompt",
+        "type": "STRING",
+        "widget": {
+         "name": "prompt"
+        },
+        "link": 89
+       },
+       {
+        "name": "element",
+        "type": "ARRAY",
+        "link": 88
+       }
+      ],
+      "outputs": [
+       {
+        "name": "prompt",
+        "type": "STRING",
+        "links": [
+         90
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "Flux3LayoutPrompt"
+      },
+      "widgets_values": [
+       ""
+      ],
+      "widgets_values_named": {
+       "prompt": ""
+      },
+      "title": "Prompt + boxes",
+      "color": "#323",
+      "bgcolor": "#535"
+     },
+     {
+      "id": 118,
+      "type": "Flux3LayoutPrompt",
+      "title": "Box rows only",
+      "pos": [
+       300,
+       110
+      ],
+      "size": [
+       420,
+       80
+      ],
+      "flags": {},
+      "order": 118,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "prompt",
+        "name": "prompt",
+        "type": "STRING",
+        "link": null,
+        "widget": {
+         "name": "prompt"
+        }
+       },
+       {
+        "localized_name": "element",
+        "name": "element",
+        "type": "ARRAY",
+        "link": 93
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "prompt",
+        "name": "prompt",
+        "type": "STRING",
+        "links": [
+         94
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "Flux3LayoutPrompt"
+      },
+      "widgets_values": [
+       ""
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+     },
+     {
+      "id": 119,
+      "type": "StringTrim",
+      "title": "Trim box rows",
+      "pos": [
+       300,
+       250
+      ],
+      "size": [
+       420,
+       82
+      ],
+      "flags": {},
+      "order": 119,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "string",
+        "name": "string",
+        "type": "STRING",
+        "link": 94,
+        "widget": {
+         "name": "string"
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "STRING",
+        "name": "STRING",
+        "type": "STRING",
+        "links": [
+         95,
+         97
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "StringTrim"
+      },
+      "widgets_values": [
+       "",
+       "Both"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+     },
+     {
+      "id": 120,
+      "type": "StringContains",
+      "title": "Has boxes?",
+      "pos": [
+       300,
+       392
+      ],
+      "size": [
+       420,
+       110
+      ],
+      "flags": {},
+      "order": 120,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "string",
+        "name": "string",
+        "type": "STRING",
+        "link": 95,
+        "widget": {
+         "name": "string"
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "contains",
+        "name": "contains",
+        "type": "BOOLEAN",
+        "links": [
+         100,
+         103
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "StringContains"
+      },
+      "widgets_values": [
+       "",
+       "\"bbox\"",
+       true
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+     },
+     {
+      "id": 126,
+      "type": "StringTrim",
+      "title": "Trim prompt",
+      "pos": [
+       300,
+       562
+      ],
+      "size": [
+       420,
+       82
+      ],
+      "flags": {},
+      "order": 126,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "string",
+        "name": "string",
+        "type": "STRING",
+        "widget": {
+         "name": "string"
+        },
+        "link": 106
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "STRING",
+        "name": "STRING",
+        "type": "STRING",
+        "links": [
+         107
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "StringTrim"
+      },
+      "widgets_values": [
+       "",
+       "Both"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+     },
+     {
+      "id": 121,
+      "type": "StringConcatenate",
+      "title": "Locked-box input (1/2)",
+      "pos": [
+       300,
+       704
+      ],
+      "size": [
+       420,
+       150
+      ],
+      "flags": {},
+      "order": 121,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "string_b",
+        "name": "string_b",
+        "type": "STRING",
+        "link": 107,
+        "widget": {
+         "name": "string_b"
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "STRING",
+        "name": "STRING",
+        "type": "STRING",
+        "links": [
+         96
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "StringConcatenate"
+      },
+      "widgets_values": [
+       "ORIGINAL PROMPT:\n",
+       "",
+       ""
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+     },
+     {
+      "id": 122,
+      "type": "StringConcatenate",
+      "title": "Locked-box input (2/2)",
+      "pos": [
+       300,
+       914
+      ],
+      "size": [
+       420,
+       150
+      ],
+      "flags": {},
+      "order": 122,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "string_a",
+        "name": "string_a",
+        "type": "STRING",
+        "link": 96,
+        "widget": {
+         "name": "string_a"
+        }
+       },
+       {
+        "localized_name": "string_b",
+        "name": "string_b",
+        "type": "STRING",
+        "link": 97,
+        "widget": {
+         "name": "string_b"
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "STRING",
+        "name": "STRING",
+        "type": "STRING",
+        "links": [
+         99
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "StringConcatenate"
+      },
+      "widgets_values": [
+       "",
+       "",
+       "\n\nLOCKED BOUNDING-BOX ANNOTATIONS ([y_min, x_min, y_max, x_max] on a 0-1000 canvas, with (0, 0) at the top-left). This is an authoritative JSON list of dictionaries; preserve every supplied identity, provenance value, null, and coordinate exactly:\n"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+     },
+     {
+      "id": 123,
+      "type": "ComfySwitchNode",
+      "title": "Upsampler input: plain or locked-box",
+      "pos": [
+       300,
+       1124
+      ],
+      "size": [
+       420,
+       100
+      ],
+      "flags": {},
+      "order": 123,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "on_false",
+        "name": "on_false",
+        "type": "STRING",
+        "link": 98,
+        "shape": 7
+       },
+       {
+        "localized_name": "on_true",
+        "name": "on_true",
+        "type": "STRING",
+        "link": 99,
+        "shape": 7
+       },
+       {
+        "localized_name": "switch",
+        "name": "switch",
+        "type": "BOOLEAN",
+        "link": 100,
+        "widget": {
+         "name": "switch"
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "output",
+        "name": "output",
+        "type": "STRING",
+        "links": [
+         104
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "ComfySwitchNode"
+      },
+      "widgets_values": [
+       false
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+     },
+     {
+      "id": 114,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+       820,
+       110
+      ],
+      "size": [
+       560,
+       380
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+       {
+        "localized_name": "STRING",
+        "name": "STRING",
+        "type": "STRING",
+        "links": [
+         101
+        ]
+       }
+      ],
+      "title": "System prompt: plain (t2i)",
+      "properties": {
+       "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+       "You are the prompt upsampler of a text-to-image model. Expand the user's short request into ONE detailed, self-contained caption: the exact text the image model receives. Output only the caption, with no greetings, explanations, refusals, questions, Markdown, headings, JSON, coordinates, ids or angle-bracket tokens, and no quotes around it. If the input is not clearly an image request, caption a visualization of its concept. The request may begin with a \"TARGET CANVAS: W:H\" line: compose for that canvas (wide spreads content sideways, tall stacks it) and never mention the ratio or the canvas.\n\nFidelity and planning: keep every explicit subject, attribute, count, spatial constraint, style cue and piece of wording; never contradict, substitute, drop or narrow the request, and keep an abstract concept abstract. Decide everything left open as ONE concrete, consistent plan; never offer alternatives or hedge. Never re-express a stated constraint through another mechanism; add camera optics (depth of field, bokeh, blur) only when asked for or implied. Without a stated style, plan an actual photograph and open with the medium convention (\"Full-color outdoor photograph, ...\", \"Full-color indoor photograph, ...\", \"Studio photograph, ...\", \"Close-up photograph, ...\"); keep \"Photorealistic\" for renders, and turn \"photorealistic\" or \"realistic\" requests for photos into the photograph convention. Give a photograph a few ordinary, non-ideal specifics drawn from the scene's own objects instead of the stock-photo ideal. Do not invent names, brands, logos or celebrities; keep user-named ones. A long request keeps its content but not its wording: drop appraisal and sales vocabulary, turn moods into observable physical facts, and add only new concrete content with positions. Time of day is lighting, not rendered text.\n\nCaption format: one continuous prose block in the generative voice, never \"this image shows\", \"we can see\" or \"is visible\". Lead with medium and style, then scene, lighting and camera, then the subjects with concrete colors, materials and state. Every person in focus gets an observable profile: ethnicity, gender, age range, skin tone (\"fair skin\", \"brown skin\"), hair and clothing. Make the layout reconstructable from words: frame-relative positions (frame-left, frame-right, upper, lower, foreground, midground, background), sentence-initial anchors (\"On the left, ...\", \"In the background, ...\"), relations (holds, faces, behind) and a consistent order; describe up to about ten instances one by one, beyond that give the exact count and arrangement. Out-of-focus or distant planes are shapes, colors and silhouettes, never identities or readable text, and the background takes about a sixth of the caption. Be definite: no hedging adverbs, no quality or emotion judgments, no closing sentence about mood; state negations as what is present. Rendered text: transcribe every wording verbatim inside double quotes in its original language and script, keep the line breaks of multi-line text, and give its typography, color and placement; author concrete, domain-correct wording when the request needs text it does not supply, and name canonical structures (calendar, keyboard, periodic table) exactly with their full layout. All prose is English; only quoted text keeps its language. Typical length is 100 to 350 words, more for complex scenes.\n\nOutput only the caption."
+      ],
+      "widgets_values_named": {
+       "value": "You are the prompt upsampler of a text-to-image model. Expand the user's short request into ONE detailed, self-contained caption: the exact text the image model receives. Output only the caption, with no greetings, explanations, refusals, questions, Markdown, headings, JSON, coordinates, ids or angle-bracket tokens, and no quotes around it. If the input is not clearly an image request, caption a visualization of its concept. The request may begin with a \"TARGET CANVAS: W:H\" line: compose for that canvas (wide spreads content sideways, tall stacks it) and never mention the ratio or the canvas.\n\nFidelity and planning: keep every explicit subject, attribute, count, spatial constraint, style cue and piece of wording; never contradict, substitute, drop or narrow the request, and keep an abstract concept abstract. Decide everything left open as ONE concrete, consistent plan; never offer alternatives or hedge. Never re-express a stated constraint through another mechanism; add camera optics (depth of field, bokeh, blur) only when asked for or implied. Without a stated style, plan an actual photograph and open with the medium convention (\"Full-color outdoor photograph, ...\", \"Full-color indoor photograph, ...\", \"Studio photograph, ...\", \"Close-up photograph, ...\"); keep \"Photorealistic\" for renders, and turn \"photorealistic\" or \"realistic\" requests for photos into the photograph convention. Give a photograph a few ordinary, non-ideal specifics drawn from the scene's own objects instead of the stock-photo ideal. Do not invent names, brands, logos or celebrities; keep user-named ones. A long request keeps its content but not its wording: drop appraisal and sales vocabulary, turn moods into observable physical facts, and add only new concrete content with positions. Time of day is lighting, not rendered text.\n\nCaption format: one continuous prose block in the generative voice, never \"this image shows\", \"we can see\" or \"is visible\". Lead with medium and style, then scene, lighting and camera, then the subjects with concrete colors, materials and state. Every person in focus gets an observable profile: ethnicity, gender, age range, skin tone (\"fair skin\", \"brown skin\"), hair and clothing. Make the layout reconstructable from words: frame-relative positions (frame-left, frame-right, upper, lower, foreground, midground, background), sentence-initial anchors (\"On the left, ...\", \"In the background, ...\"), relations (holds, faces, behind) and a consistent order; describe up to about ten instances one by one, beyond that give the exact count and arrangement. Out-of-focus or distant planes are shapes, colors and silhouettes, never identities or readable text, and the background takes about a sixth of the caption. Be definite: no hedging adverbs, no quality or emotion judgments, no closing sentence about mood; state negations as what is present. Rendered text: transcribe every wording verbatim inside double quotes in its original language and script, keep the line breaks of multi-line text, and give its typography, color and placement; author concrete, domain-correct wording when the request needs text it does not supply, and name canonical structures (calendar, keyboard, periodic table) exactly with their full layout. All prose is English; only quoted text keeps its language. Typical length is 100 to 350 words, more for complex scenes.\n\nOutput only the caption."
+      },
+      "color": "#323",
+      "bgcolor": "#535"
+     },
+     {
+      "id": 124,
+      "type": "PrimitiveStringMultiline",
+      "title": "System prompt: bounding boxes (t2i_bbox)",
+      "pos": [
+       820,
+       550
+      ],
+      "size": [
+       560,
+       380
+      ],
+      "flags": {},
+      "order": 124,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+       {
+        "localized_name": "STRING",
+        "name": "STRING",
+        "type": "STRING",
+        "links": [
+         102
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+       "You are the prompt upsampler of a text-to-image model. Plan the full image the user's short request implies and output ONE structured caption on a single line: the global caption paragraph, one space, then ONE JSON array, the element table that places every cited element with a bounding box in the image to be generated. Output nothing else (no Markdown fences, commentary or refusals); visualize the concept of a non-image input. The request may begin with a \"TARGET CANVAS: W:H\" line: compose for that canvas and never mention it. Boxes live on a 0-1000 grid stretched onto the canvas: an element of physical width-to-height ratio a gets an x-span of about y-span x a x H/W.\n\nPlanning: keep every explicit subject, attribute, count, spatial constraint, style cue and piece of wording, and decide everything left open as ONE concrete composition that the caption and the table both describe. Without a stated style plan an actual photograph and open with the medium convention (\"Full-color outdoor photograph, ...\", \"Studio photograph, ...\"); add camera optics only when asked for; do not invent names, brands, logos or celebrities; drop appraisal and sales vocabulary.\n\nThe table: one row per distinct object, person, animal, building or salient region the caption mentions and one per coherent text block; no rows for style, lighting or atmosphere. Structured layouts (tables, grids, calendars, keyboards, charts, maps, posters, pages) decompose into their regions, each row carrying that region's complete verbatim content; more than about ten interchangeable items become one collection row giving the exact count and arrangement, while items whose positions matter keep a row each. Row keys, in order: \"id\", \"bbox\", \"desc\". id: the bare class noun plus an index numbered left to right, then top to bottom, from 1 (person_1, dog_2); a text block is its two-letter language code plus _Text_ plus an index (En_Text_1); one entity is one row and ids are unique. bbox: [y_min, x_min, y_max, x_max] as integers from 0 to 1000, top-left origin, clamped at the borders, with plausible relative sizes and a small margin around text. desc: one self-contained paragraph in the generative voice that opens with the element's identity (never \"the X\"): shape, material, colors, state and markings, but no position. People in focus get the richest desc: ethnicity, gender, age range, skin tone, build, hair, face, each garment, accessories, pose and expression. A text row carries its complete wording verbatim in double quotes, with line breaks as \\n, plus its typography.\n\nThe global caption: one flowing paragraph in the generative voice (medium first, then scene, lighting, camera and frame-relative layout; no quality judgments) that names each table element at identity level at its first mention and cites it with its id in its own angle brackets: \"a wicker table <table_1> holding a tiered stand <stand_1>\". Cite every table id and no other; appearance detail and text content live in the descs; no coordinates. Text-dense documents are laid out region by region with every visible text transcribed verbatim at a readable size (cut content rather than shrink type), and a grid quotes every visible cell. All prose is English; only quoted text keeps its language.\n\nOutput only the caption and the table."
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+     },
+     {
+      "id": 125,
+      "type": "ComfySwitchNode",
+      "title": "System prompt: t2i or t2i_bbox",
+      "pos": [
+       820,
+       990
+      ],
+      "size": [
+       560,
+       100
+      ],
+      "flags": {},
+      "order": 125,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "on_false",
+        "name": "on_false",
+        "type": "STRING",
+        "link": 101,
+        "shape": 7
+       },
+       {
+        "localized_name": "on_true",
+        "name": "on_true",
+        "type": "STRING",
+        "link": 102,
+        "shape": 7
+       },
+       {
+        "localized_name": "switch",
+        "name": "switch",
+        "type": "BOOLEAN",
+        "link": 103,
+        "widget": {
+         "name": "switch"
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "output",
+        "name": "output",
+        "type": "STRING",
+        "links": [
+         105
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "ComfySwitchNode"
+      },
+      "widgets_values": [
+       false
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+     },
+     {
+      "id": 111,
+      "type": "TextGenerate",
+      "pos": [
+       1480,
+       300
+      ],
+      "size": [
+       480,
+       500
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "clip",
+        "name": "clip",
+        "type": "CLIP",
+        "link": 92
+       },
+       {
+        "localized_name": "image",
+        "name": "image",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": null
+       },
+       {
+        "localized_name": "video",
+        "name": "video",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": null
+       },
+       {
+        "localized_name": "audio",
+        "name": "audio",
+        "shape": 7,
+        "type": "AUDIO",
+        "link": null
+       },
+       {
+        "localized_name": "system_prompt",
+        "name": "system_prompt",
+        "shape": 7,
+        "type": "STRING",
+        "link": 105
+       },
+       {
+        "localized_name": "prompt",
+        "name": "prompt",
+        "type": "STRING",
+        "widget": {
+         "name": "prompt"
+        },
+        "link": 104
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "generated_text",
+        "name": "generated_text",
+        "type": "STRING",
+        "links": [
+         91
+        ]
+       },
+       {
+        "localized_name": "thinking",
+        "name": "thinking",
+        "type": "STRING",
+        "links": []
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "TextGenerate"
+      },
+      "widgets_values": [
+       "",
+       3584,
+       "on",
+       1,
+       1,
+       0.95,
+       0,
+       1,
+       758781618552631,
+       1.5,
+       false,
+       true,
+       "off"
+      ],
+      "widgets_values_named": {
+       "prompt": "",
+       "max_length": 3584,
+       "sampling_mode": "on",
+       "sampling_mode.temperature": 1,
+       "sampling_mode.top_k": 1,
+       "sampling_mode.top_p": 0.95,
+       "sampling_mode.min_p": 0,
+       "sampling_mode.repetition_penalty": 1,
+       "sampling_mode.seed": 758781618552631,
+       "sampling_mode.presence_penalty": 1.5,
+       "thinking": false,
+       "use_default_template": true,
+       "mtp": "off"
+      },
+      "title": "Prompt upsampler",
+      "color": "#323",
+      "bgcolor": "#535"
+     }
+    ],
+    "groups": [
+     {
+      "id": 1,
+      "title": "Bounding boxes -> locked-box input",
+      "bounding": [
+       280,
+       0,
+       460,
+       1264
+      ],
+      "color": "#3f789e",
+      "flags": {}
+     },
+     {
+      "id": 2,
+      "title": "System prompts",
+      "bounding": [
+       800,
+       0,
+       600,
+       1264
+      ],
+      "color": "#3f789e",
+      "flags": {}
+     },
+     {
+      "id": 3,
+      "title": "Upsampler",
+      "bounding": [
+       1460,
+       0,
+       520,
+       1264
+      ],
+      "color": "#3f789e",
+      "flags": {}
+     }
+    ],
+    "links": [
+     {
+      "id": 88,
+      "origin_id": -10,
+      "origin_slot": 1,
+      "target_id": 27,
+      "target_slot": 1,
+      "type": "ARRAY"
+     },
+     {
+      "id": 89,
+      "origin_id": -10,
+      "origin_slot": 0,
+      "target_id": 27,
+      "target_slot": 0,
+      "type": "STRING"
+     },
+     {
+      "id": 90,
+      "origin_id": 27,
+      "origin_slot": 0,
+      "target_id": 116,
+      "target_slot": 0,
+      "type": "STRING"
+     },
+     {
+      "id": 91,
+      "origin_id": 111,
+      "origin_slot": 0,
+      "target_id": 116,
+      "target_slot": 1,
+      "type": "STRING"
+     },
+     {
+      "id": 92,
+      "origin_id": 112,
+      "origin_slot": 0,
+      "target_id": 111,
+      "target_slot": 0,
+      "type": "CLIP"
+     },
+     {
+      "id": 93,
+      "origin_id": -10,
+      "origin_slot": 1,
+      "target_id": 118,
+      "target_slot": 1,
+      "type": "ARRAY"
+     },
+     {
+      "id": 94,
+      "origin_id": 118,
+      "origin_slot": 0,
+      "target_id": 119,
+      "target_slot": 0,
+      "type": "STRING"
+     },
+     {
+      "id": 95,
+      "origin_id": 119,
+      "origin_slot": 0,
+      "target_id": 120,
+      "target_slot": 0,
+      "type": "STRING"
+     },
+     {
+      "id": 96,
+      "origin_id": 121,
+      "origin_slot": 0,
+      "target_id": 122,
+      "target_slot": 0,
+      "type": "STRING"
+     },
+     {
+      "id": 97,
+      "origin_id": 119,
+      "origin_slot": 0,
+      "target_id": 122,
+      "target_slot": 1,
+      "type": "STRING"
+     },
+     {
+      "id": 98,
+      "origin_id": -10,
+      "origin_slot": 0,
+      "target_id": 123,
+      "target_slot": 0,
+      "type": "STRING"
+     },
+     {
+      "id": 99,
+      "origin_id": 122,
+      "origin_slot": 0,
+      "target_id": 123,
+      "target_slot": 1,
+      "type": "STRING"
+     },
+     {
+      "id": 100,
+      "origin_id": 120,
+      "origin_slot": 0,
+      "target_id": 123,
+      "target_slot": 2,
+      "type": "BOOLEAN"
+     },
+     {
+      "id": 101,
+      "origin_id": 114,
+      "origin_slot": 0,
+      "target_id": 125,
+      "target_slot": 0,
+      "type": "STRING"
+     },
+     {
+      "id": 102,
+      "origin_id": 124,
+      "origin_slot": 0,
+      "target_id": 125,
+      "target_slot": 1,
+      "type": "STRING"
+     },
+     {
+      "id": 103,
+      "origin_id": 120,
+      "origin_slot": 0,
+      "target_id": 125,
+      "target_slot": 2,
+      "type": "BOOLEAN"
+     },
+     {
+      "id": 104,
+      "origin_id": 123,
+      "origin_slot": 0,
+      "target_id": 111,
+      "target_slot": 5,
+      "type": "STRING"
+     },
+     {
+      "id": 105,
+      "origin_id": 125,
+      "origin_slot": 0,
+      "target_id": 111,
+      "target_slot": 4,
+      "type": "STRING"
+     },
+     {
+      "id": 106,
+      "origin_id": -10,
+      "origin_slot": 0,
+      "target_id": 126,
+      "target_slot": 0,
+      "type": "STRING"
+     },
+     {
+      "id": 107,
+      "origin_id": 126,
+      "origin_slot": 0,
+      "target_id": 121,
+      "target_slot": 0,
+      "type": "STRING"
+     },
+     {
+      "id": 108,
+      "origin_id": -10,
+      "origin_slot": 2,
+      "target_id": 116,
+      "target_slot": 2,
+      "type": "BOOLEAN"
+     },
+     {
+      "id": 109,
+      "origin_id": -10,
+      "origin_slot": 3,
+      "target_id": 112,
+      "target_slot": 0,
+      "type": "COMBO"
+     },
+     {
+      "id": 110,
+      "origin_id": 116,
+      "origin_slot": 0,
+      "target_id": -20,
+      "target_slot": 0,
+      "type": "STRING"
+     }
+    ],
+    "extra": {}
+   },
+   {
+    "id": "8f01b7ad-14bc-4b2f-a42e-8f4f861639c6",
+    "version": 1,
+    "state": {
+     "lastGroupId": 4,
+     "lastNodeId": 132,
+     "lastLinkId": 143,
+     "lastRerouteId": 0
+    },
+    "revision": 0,
+    "config": {},
+    "name": "Diffusion (FLUX 3 Klein)",
+    "inputNode": {
+     "id": -10,
+     "bounding": [
+      0,
+      80,
+      220,
+      400
+     ]
+    },
+    "outputNode": {
+     "id": -20,
+     "bounding": [
+      2300,
+      80,
+      140,
+      70
+     ]
+    },
+    "inputs": [
+     {
+      "id": "cc8a99c9-050d-4be9-8c64-dc51e0a150bc",
+      "name": "prompt",
+      "type": "STRING",
+      "linkIds": [
+       115
+      ],
+      "label": "prompt",
+      "pos": [
+       200,
+       110
+      ]
+     },
+     {
+      "id": "58966b42-a7cf-41c7-bdf3-e09f726e880a",
+      "name": "width",
+      "type": "INT",
+      "linkIds": [
+       123
+      ],
+      "label": "width",
+      "pos": [
+       200,
+       140
+      ]
+     },
+     {
+      "id": "cb68f058-ccde-4b3d-a71d-4487a8420536",
+      "name": "height",
+      "type": "INT",
+      "linkIds": [
+       124
+      ],
+      "label": "height",
+      "pos": [
+       200,
+       170
+      ]
+     },
+     {
+      "id": "af5e4ef2-23e9-4432-9c7b-a9145d9070d1",
+      "name": "batch_size",
+      "type": "INT",
+      "linkIds": [
+       135
+      ],
+      "label": "batch size",
+      "pos": [
+       200,
+       200
+      ]
+     },
+     {
+      "id": "0d794141-d547-430e-81f3-12a4a4c0bace",
+      "name": "steps",
+      "type": "INT",
+      "linkIds": [
+       126
+      ],
+      "label": "steps",
+      "pos": [
+       200,
+       230
+      ]
+     },
+     {
+      "id": "9069653e-1025-457f-9247-c5de9cfb60b1",
+      "name": "alpha",
+      "type": "FLOAT",
+      "linkIds": [
+       141
+      ],
+      "label": "alpha (timestep shift)",
+      "pos": [
+       200,
+       260
+      ]
+     },
+     {
+      "id": "035fddbe-37a4-46c8-9f72-c3f72c5df614",
+      "name": "seed",
+      "type": "INT",
+      "linkIds": [
+       125
+      ],
+      "label": "seed",
+      "pos": [
+       200,
+       290
+      ]
+     },
+     {
+      "id": "dda04a2c-351e-4de4-9d27-46e1b79da55d",
+      "name": "sampler_name",
+      "type": "COMBO",
+      "linkIds": [
+       142
+      ],
+      "label": "sampler",
+      "pos": [
+       200,
+       320
+      ]
+     },
+     {
+      "id": "2849d03f-779e-4c2c-a7dc-b41a0facc3c9",
+      "name": "scheduler",
+      "type": "COMBO",
+      "linkIds": [
+       143
+      ],
+      "label": "scheduler",
+      "pos": [
+       200,
+       350
+      ]
+     },
+     {
+      "id": "71b8a19b-17dd-43d2-a2b9-0752525a18b9",
+      "name": "unet_name",
+      "type": "COMBO",
+      "linkIds": [
+       132
+      ],
+      "label": "diffusion model",
+      "pos": [
+       200,
+       380
+      ]
+     },
+     {
+      "id": "337c7579-d763-4a00-8316-83987a07e94f",
+      "name": "clip_name",
+      "type": "COMBO",
+      "linkIds": [
+       133
+      ],
+      "label": "text encoder",
+      "pos": [
+       200,
+       410
+      ]
+     },
+     {
+      "id": "bea2a278-cc5d-42e2-9bb4-ad3a6c874e9d",
+      "name": "vae_name",
+      "type": "COMBO",
+      "linkIds": [
+       134
+      ],
+      "label": "vae",
+      "pos": [
+       200,
+       440
+      ]
+     }
+    ],
+    "outputs": [
+     {
+      "id": "32c73293-f58f-491e-9ef8-df29ee3b0fc3",
+      "name": "IMAGE",
+      "type": "IMAGE",
+      "linkIds": [
+       127
+      ],
+      "localized_name": "IMAGE",
+      "pos": [
+       2320,
+       110
+      ]
+     }
+    ],
+    "widgets": [],
+    "nodes": [
+     {
+      "id": 101,
+      "type": "UNETLoader",
+      "pos": [
+       300,
+       110
+      ],
+      "size": [
+       420,
+       100
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "unet_name",
+        "name": "unet_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "unet_name"
+        },
+        "link": 132
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "MODEL",
+        "name": "MODEL",
+        "type": "MODEL",
+        "slot_index": 0,
+        "links": [
+         139
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "UNETLoader",
+       "models": [
+        {
+         "name": "flux3-image-klein-int8-convrot.safetensors",
+         "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/diffusion_models/flux3-image-klein-int8-convrot.safetensors",
+         "directory": "diffusion_models"
+        }
+       ]
+      },
+      "widgets_values": [
+       "flux3-image-klein-int8-convrot.safetensors",
+       "default"
+      ],
+      "widgets_values_named": {
+       "unet_name": "flux3-image-klein-int8-convrot.safetensors",
+       "weight_dtype": "default"
+      }
+     },
+     {
+      "id": 102,
+      "type": "CLIPLoader",
+      "pos": [
+       300,
+       270
+      ],
+      "size": [
+       420,
+       130
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "clip_name",
+        "name": "clip_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "clip_name"
+        },
+        "link": 133
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "CLIP",
+        "name": "CLIP",
+        "type": "CLIP",
+        "slot_index": 0,
+        "links": [
+         114,
+         119
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "CLIPLoader",
+       "models": [
+        {
+         "name": "qwen3vl_4b_int8_convrot.safetensors",
+         "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/text_encoders/qwen3vl_4b_int8_convrot.safetensors",
+         "directory": "text_encoders"
+        }
+       ]
+      },
+      "widgets_values": [
+       "qwen3vl_4b_int8_convrot.safetensors",
+       "flux3",
+       "default"
+      ],
+      "widgets_values_named": {
+       "clip_name": "qwen3vl_4b_int8_convrot.safetensors",
+       "type": "flux3",
+       "device": "default"
+      },
+      "title": "Text encoder"
+     },
+     {
+      "id": 103,
+      "type": "VAELoader",
+      "pos": [
+       300,
+       460
+      ],
+      "size": [
+       420,
+       80
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "vae_name",
+        "name": "vae_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "vae_name"
+        },
+        "link": 134
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "VAE",
+        "name": "VAE",
+        "type": "VAE",
+        "slot_index": 0,
+        "links": [
+         121
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "VAELoader",
+       "models": [
+        {
+         "name": "flux2-vae.safetensors",
+         "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/vae/flux2-vae.safetensors",
+         "directory": "vae"
+        }
+       ]
+      },
+      "widgets_values": [
+       "flux2-vae.safetensors"
+      ],
+      "widgets_values_named": {
+       "vae_name": "flux2-vae.safetensors"
+      }
+     },
+     {
+      "id": 104,
+      "type": "CLIPTextEncode",
+      "pos": [
+       820,
+       110
+      ],
+      "size": [
+       420,
+       80
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "clip",
+        "name": "clip",
+        "type": "CLIP",
+        "link": 114
+       },
+       {
+        "localized_name": "text",
+        "name": "text",
+        "type": "STRING",
+        "widget": {
+         "name": "text"
+        },
+        "link": 115
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "CONDITIONING",
+        "name": "CONDITIONING",
+        "type": "CONDITIONING",
+        "slot_index": 0,
+        "links": [
+         117
+        ]
+       }
+      ],
+      "title": "Positive Prompt",
+      "properties": {
+       "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+       "A close-up photograph of a red fox standing in fresh snow at sunrise. The fox faces the camera with alert ears and amber eyes, its thick orange fur dusted with snowflakes. Soft golden light comes from the left, the background is a blurred line of snow-covered pine trees, shallow depth of field."
+      ],
+      "widgets_values_named": {
+       "text": "A close-up photograph of a red fox standing in fresh snow at sunrise. The fox faces the camera with alert ears and amber eyes, its thick orange fur dusted with snowflakes. Soft golden light comes from the left, the background is a blurred line of snow-covered pine trees, shallow depth of field."
+      }
+     },
+     {
+      "id": 105,
+      "type": "CLIPTextEncode",
+      "pos": [
+       820,
+       250
+      ],
+      "size": [
+       420,
+       30
+      ],
+      "flags": {
+       "collapsed": true
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "clip",
+        "name": "clip",
+        "type": "CLIP",
+        "link": 119
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "CONDITIONING",
+        "name": "CONDITIONING",
+        "type": "CONDITIONING",
+        "slot_index": 0,
+        "links": [
+         118
+        ]
+       }
+      ],
+      "title": "Negative Prompt (unused at cfg 1)",
+      "properties": {
+       "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+       ""
+      ],
+      "widgets_values_named": {
+       "text": ""
+      }
+     },
+     {
+      "id": 106,
+      "type": "EmptyFlux2LatentImage",
+      "pos": [
+       820,
+       310
+      ],
+      "size": [
+       420,
+       110
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "width",
+        "name": "width",
+        "type": "INT",
+        "widget": {
+         "name": "width"
+        },
+        "link": 123
+       },
+       {
+        "localized_name": "height",
+        "name": "height",
+        "type": "INT",
+        "widget": {
+         "name": "height"
+        },
+        "link": 124
+       },
+       {
+        "localized_name": "batch_size",
+        "name": "batch_size",
+        "type": "INT",
+        "widget": {
+         "name": "batch_size"
+        },
+        "link": 135
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "LATENT",
+        "name": "LATENT",
+        "type": "LATENT",
+        "slot_index": 0,
+        "links": [
+         122
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "EmptyFlux2LatentImage"
+      },
+      "widgets_values": [
+       1024,
+       1024,
+       1
+      ],
+      "widgets_values_named": {
+       "width": 1024,
+       "height": 1024,
+       "batch_size": 1
+      }
+     },
+     {
+      "id": 107,
+      "type": "KSampler",
+      "pos": [
+       1840,
+       110
+      ],
+      "size": [
+       400,
+       330
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "model",
+        "name": "model",
+        "type": "MODEL",
+        "link": 140
+       },
+       {
+        "localized_name": "positive",
+        "name": "positive",
+        "type": "CONDITIONING",
+        "link": 117
+       },
+       {
+        "localized_name": "negative",
+        "name": "negative",
+        "type": "CONDITIONING",
+        "link": 118
+       },
+       {
+        "localized_name": "latent_image",
+        "name": "latent_image",
+        "type": "LATENT",
+        "link": 122
+       },
+       {
+        "localized_name": "seed",
+        "name": "seed",
+        "type": "INT",
+        "widget": {
+         "name": "seed"
+        },
+        "link": 125
+       },
+       {
+        "localized_name": "steps",
+        "name": "steps",
+        "type": "INT",
+        "widget": {
+         "name": "steps"
+        },
+        "link": 126
+       },
+       {
+        "localized_name": "sampler_name",
+        "name": "sampler_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "sampler_name"
+        },
+        "link": 142
+       },
+       {
+        "localized_name": "scheduler",
+        "name": "scheduler",
+        "type": "COMBO",
+        "widget": {
+         "name": "scheduler"
+        },
+        "link": 143
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "LATENT",
+        "name": "LATENT",
+        "type": "LATENT",
+        "slot_index": 0,
+        "links": [
+         120
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+       758781618552631,
+       "randomize",
+       16,
+       1.0,
+       "euler",
+       "simple",
+       1
+      ],
+      "widgets_values_named": {
+       "seed": 758781618552631,
+       "control_after_generate": "randomize",
+       "steps": 16,
+       "cfg": 1.0,
+       "sampler_name": "euler",
+       "scheduler": "simple",
+       "denoise": 1
+      },
+      "title": "KSampler (16 steps, cfg 1)"
+     },
+     {
+      "id": 108,
+      "type": "VAEDecode",
+      "pos": [
+       1840,
+       500
+      ],
+      "size": [
+       400,
+       70
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "samples",
+        "name": "samples",
+        "type": "LATENT",
+        "link": 120
+       },
+       {
+        "localized_name": "vae",
+        "name": "vae",
+        "type": "VAE",
+        "link": 121
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "IMAGE",
+        "name": "IMAGE",
+        "type": "IMAGE",
+        "slot_index": 0,
+        "links": [
+         127
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "VAEDecode"
+      }
+     },
+     {
+      "id": 130,
+      "type": "PrimitiveFloat",
+      "title": "alpha",
+      "pos": [
+       1340,
+       110
+      ],
+      "size": [
+       400,
+       82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "value",
+        "name": "value",
+        "type": "FLOAT",
+        "widget": {
+         "name": "value"
+        },
+        "link": 141
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "FLOAT",
+        "name": "FLOAT",
+        "type": "FLOAT",
+        "links": [
+         136
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "PrimitiveFloat"
+      },
+      "widgets_values": [
+       16.0
+      ]
+     },
+     {
+      "id": 131,
+      "type": "ComfyMathExpression",
+      "title": "mu = ln(alpha)",
+      "pos": [
+       1340,
+       252
+      ],
+      "size": [
+       400,
+       150
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+       {
+        "label": "a",
+        "localized_name": "values.a",
+        "name": "values.a",
+        "type": "FLOAT,INT,BOOLEAN",
+        "link": 136
+       },
+       {
+        "label": "b",
+        "localized_name": "values.b",
+        "name": "values.b",
+        "shape": 7,
+        "type": "FLOAT,INT,BOOLEAN",
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "FLOAT",
+        "name": "FLOAT",
+        "type": "FLOAT",
+        "links": [
+         137,
+         138
+        ]
+       },
+       {
+        "localized_name": "INT",
+        "name": "INT",
+        "type": "INT",
+        "links": []
+       },
+       {
+        "localized_name": "BOOL",
+        "name": "BOOL",
+        "type": "BOOLEAN",
+        "links": []
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "ComfyMathExpression"
+      },
+      "widgets_values": [
+       "log(a)"
+      ]
+     },
+     {
+      "id": 132,
+      "type": "ModelSamplingFlux",
+      "title": "Timestep shift (from alpha)",
+      "pos": [
+       1340,
+       462
+      ],
+      "size": [
+       400,
+       150
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "model",
+        "name": "model",
+        "type": "MODEL",
+        "link": 139
+       },
+       {
+        "localized_name": "max_shift",
+        "name": "max_shift",
+        "type": "FLOAT",
+        "widget": {
+         "name": "max_shift"
+        },
+        "link": 137
+       },
+       {
+        "localized_name": "base_shift",
+        "name": "base_shift",
+        "type": "FLOAT",
+        "widget": {
+         "name": "base_shift"
+        },
+        "link": 138
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "MODEL",
+        "name": "MODEL",
+        "type": "MODEL",
+        "links": [
+         140
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "ModelSamplingFlux"
+      },
+      "widgets_values": [
+       2.77259,
+       2.77259,
+       1024,
+       1024
+      ]
+     }
+    ],
+    "groups": [
+     {
+      "id": 1,
+      "title": "Models",
+      "bounding": [
+       280,
+       0,
+       460,
+       652
+      ],
+      "color": "#3f789e",
+      "flags": {}
+     },
+     {
+      "id": 2,
+      "title": "Conditioning",
+      "bounding": [
+       800,
+       0,
+       460,
+       652
+      ],
+      "color": "#3f789e",
+      "flags": {}
+     },
+     {
+      "id": 3,
+      "title": "Schedule (alpha)",
+      "bounding": [
+       1320,
+       0,
+       440,
+       652
+      ],
+      "color": "#3f789e",
+      "flags": {}
+     },
+     {
+      "id": 4,
+      "title": "Sampling",
+      "bounding": [
+       1820,
+       0,
+       440,
+       652
+      ],
+      "color": "#3f789e",
+      "flags": {}
+     }
+    ],
+    "links": [
+     {
+      "id": 114,
+      "origin_id": 102,
+      "origin_slot": 0,
+      "target_id": 104,
+      "target_slot": 0,
+      "type": "CLIP"
+     },
+     {
+      "id": 115,
+      "origin_id": -10,
+      "origin_slot": 0,
+      "target_id": 104,
+      "target_slot": 1,
+      "type": "STRING"
+     },
+     {
+      "id": 117,
+      "origin_id": 104,
+      "origin_slot": 0,
+      "target_id": 107,
+      "target_slot": 1,
+      "type": "CONDITIONING"
+     },
+     {
+      "id": 118,
+      "origin_id": 105,
+      "origin_slot": 0,
+      "target_id": 107,
+      "target_slot": 2,
+      "type": "CONDITIONING"
+     },
+     {
+      "id": 119,
+      "origin_id": 102,
+      "origin_slot": 0,
+      "target_id": 105,
+      "target_slot": 0,
+      "type": "CLIP"
+     },
+     {
+      "id": 120,
+      "origin_id": 107,
+      "origin_slot": 0,
+      "target_id": 108,
+      "target_slot": 0,
+      "type": "LATENT"
+     },
+     {
+      "id": 121,
+      "origin_id": 103,
+      "origin_slot": 0,
+      "target_id": 108,
+      "target_slot": 1,
+      "type": "VAE"
+     },
+     {
+      "id": 122,
+      "origin_id": 106,
+      "origin_slot": 0,
+      "target_id": 107,
+      "target_slot": 3,
+      "type": "LATENT"
+     },
+     {
+      "id": 123,
+      "origin_id": -10,
+      "origin_slot": 1,
+      "target_id": 106,
+      "target_slot": 0,
+      "type": "INT"
+     },
+     {
+      "id": 124,
+      "origin_id": -10,
+      "origin_slot": 2,
+      "target_id": 106,
+      "target_slot": 1,
+      "type": "INT"
+     },
+     {
+      "id": 125,
+      "origin_id": -10,
+      "origin_slot": 6,
+      "target_id": 107,
+      "target_slot": 4,
+      "type": "INT"
+     },
+     {
+      "id": 126,
+      "origin_id": -10,
+      "origin_slot": 4,
+      "target_id": 107,
+      "target_slot": 5,
+      "type": "INT"
+     },
+     {
+      "id": 127,
+      "origin_id": 108,
+      "origin_slot": 0,
+      "target_id": -20,
+      "target_slot": 0,
+      "type": "IMAGE"
+     },
+     {
+      "id": 132,
+      "origin_id": -10,
+      "origin_slot": 9,
+      "target_id": 101,
+      "target_slot": 0,
+      "type": "COMBO"
+     },
+     {
+      "id": 133,
+      "origin_id": -10,
+      "origin_slot": 10,
+      "target_id": 102,
+      "target_slot": 0,
+      "type": "COMBO"
+     },
+     {
+      "id": 134,
+      "origin_id": -10,
+      "origin_slot": 11,
+      "target_id": 103,
+      "target_slot": 0,
+      "type": "COMBO"
+     },
+     {
+      "id": 135,
+      "origin_id": -10,
+      "origin_slot": 3,
+      "target_id": 106,
+      "target_slot": 2,
+      "type": "INT"
+     },
+     {
+      "id": 136,
+      "origin_id": 130,
+      "origin_slot": 0,
+      "target_id": 131,
+      "target_slot": 0,
+      "type": "FLOAT"
+     },
+     {
+      "id": 137,
+      "origin_id": 131,
+      "origin_slot": 0,
+      "target_id": 132,
+      "target_slot": 1,
+      "type": "FLOAT"
+     },
+     {
+      "id": 138,
+      "origin_id": 131,
+      "origin_slot": 0,
+      "target_id": 132,
+      "target_slot": 2,
+      "type": "FLOAT"
+     },
+     {
+      "id": 139,
+      "origin_id": 101,
+      "origin_slot": 0,
+      "target_id": 132,
+      "target_slot": 0,
+      "type": "MODEL"
+     },
+     {
+      "id": 140,
+      "origin_id": 132,
+      "origin_slot": 0,
+      "target_id": 107,
+      "target_slot": 0,
+      "type": "MODEL"
+     },
+     {
+      "id": 141,
+      "origin_id": -10,
+      "origin_slot": 5,
+      "target_id": 130,
+      "target_slot": 0,
+      "type": "FLOAT"
+     },
+     {
+      "id": 142,
+      "origin_id": -10,
+      "origin_slot": 7,
+      "target_id": 107,
+      "target_slot": 6,
+      "type": "COMBO"
+     },
+     {
+      "id": 143,
+      "origin_id": -10,
+      "origin_slot": 8,
+      "target_id": 107,
+      "target_slot": 7,
+      "type": "COMBO"
+     }
+    ],
+    "extra": {}
+   }
+  ]
+ }
+}

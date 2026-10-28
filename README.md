@@ -9,7 +9,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 [![CivitAI](https://img.shields.io/badge/CivitAI-The__frizzy1-2b7cff?style=flat-square)](https://civitai.com/user/The_frizzy1)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-The--frizzy1-ffb000?style=flat-square)](https://huggingface.co/The-frizzy1)
 [![YouTube](https://img.shields.io/badge/YouTube-@the__frizzy1-ff0033?style=flat-square)](https://www.youtube.com/@the_frizzy1)
-[![Workflows](https://img.shields.io/badge/workflows-25-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-26-6a5cff?style=flat-square)](#workflows)
 [![Min VRAM](https://img.shields.io/badge/min%20VRAM-4%20GB-3ecf8e?style=flat-square)](#workflows)
 [![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
 
@@ -20,7 +20,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 ---
 
 > **Every model name in this repository was read directly out of the workflow `.json` files — not guessed.**
-> All 25 workflows checked on 2026-10-15: every model file each `.json` loads is in its `models.json` / `downloads.md`,
+> All 26 workflows checked on 2026-10-28: every model file each `.json` loads is in its `models.json` / `downloads.md`,
 > every download link resolves, and the custom node packs listed are the ones the `.json` really uses ([audit](docs/AUDIT.md)).
 
 ---
@@ -52,6 +52,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Beginner-friendly** image generation + editing | [Qwen Image & Edit 2509](workflows/qwen/image-edit-2509) | 4 GB+ |
 | **Native 2K** images on a 12 GB card (Qwen Image 2.1) | [Qwen Image 2.1 · 12 GB](workflows/qwen/image-2.1-12gb) | 12 GB |
 | **Every Qwen Image 2.1 mode** (Turbo · edit · ControlNet pose / depth / edges) in one workflow | [Qwen Image 2.1 Ultimate · 12 GB](workflows/qwen/image-2.1-ultimate-12gb) | 12 GB |
+| **FLUX 3**: text to image or edit with up to 4 images, with BFL's prompt upsampler | [FLUX 3 Klein · 12 GB](workflows/flux/flux3-klein-12gb) | 12 GB |
 | **Design images with text + real transparency** (Ming Image 0.1 Design) | [Ming Image 0.1 · 12 GB](workflows/ming/image-0.1-design-12gb) | 4 GB+* |
 | **Fast, tiny** image generation | [Z-Image Turbo GGUF](workflows/z-image/turbo) | 4 GB+ |
 | Newer **LTX video** (audio-aware) | [LTX-2](workflows/ltx/ltx2) · [LTX-2.3 Ultimate](workflows/ltx/ltx2.3-ultimate) | 4–12 GB |
@@ -98,6 +99,7 @@ templated `.json`. Model names are verified from the workflow file.
 | Workflow | Ver | Min VRAM | Tasks | Links |
 |---|:---:|:---:|---|---|
 | **[Flux Kontext GGUF](workflows/flux/kontext)** | v2.2.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/1311703) · [HF](https://huggingface.co/The-frizzy1/Flux-Kontext-GGUF-4GB) · [▶](https://www.youtube.com/watch?v=4C0RJ01yRok&list=PLG_da2oqTx7k) |
+| **[FLUX 3 Klein · 12 GB](workflows/flux/flux3-klein-12gb)** | v1.0.0 | 12 GB | T2I · edit (1–4 images) · prompt upsampler | — |
 | **[Flux.2 Dev GGUF](workflows/flux/flux2-dev)** | v2.0.0 | 6 GB | T2I | [CivitAI](https://civitai.com/models/2508110) · [▶](https://www.youtube.com/watch?v=dcekWAbgDXg&list=PLG_da2oqTx7k) |
 | **[Qwen Image & Edit 2509](workflows/qwen/image-edit-2509)** | v2.0.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/2229874) · [HF](https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF) · [▶](https://www.youtube.com/watch?v=NPni2ulov34&list=PLG_da2oqTx7k) |
 | **[Qwen Image 2.1 · 12 GB](workflows/qwen/image-2.1-12gb)** | v2.0.0 | 12 GB | T2I native 2K · turbo LoRA | [▶](https://www.youtube.com/watch?v=C5wZ2gU7j9E&list=PLG_da2oqTx7k) · [▶](https://www.youtube.com/watch?v=-yJvQ3lxWsE&list=PLG_da2oqTx7k) |
@@ -137,7 +139,7 @@ The older GGUF workflows still work and stay here for 4 GB cards. If you have 12
 | Wan 2.1 GGUF / FLF2V, Hunyuan Video, LTX-2 GGUF, LTX-2.3 Ultimate | [MiniMax H3 Ultimate](workflows/minimax/h3-ultimate-12gb) · [LTX 2.5 Ultimate](workflows/ltx/ltx-2.5-ultimate-12gb) |
 | Wan 2.2 Animate (5 custom node packs) | [Wan Animate Ultimate](workflows/wan2.2/animate-ultimate) · [Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3) |
 | Flux Kontext, Qwen Image & Edit 2509, Qwen Image 2.1 · 12 GB | [Qwen Image 2.1 Ultimate](workflows/qwen/image-2.1-ultimate-12gb) |
-| Flux.2 Dev, Z-Image Turbo | [Krea 2 Ultimate](workflows/krea/krea-2-ultimate-12gb) · [Ming Image 0.1](workflows/ming/image-0.1-design-12gb) |
+| Flux.2 Dev, Z-Image Turbo | [FLUX 3 Klein](workflows/flux/flux3-klein-12gb) · [Krea 2 Ultimate](workflows/krea/krea-2-ultimate-12gb) · [Ming Image 0.1](workflows/ming/image-0.1-design-12gb) |
 
 On **4 GB**: Wan 2.2 GGUF, Wan 2.2 Animate (Q4), Qwen Image & Edit 2509, Z-Image Turbo and LTX-2 GGUF are the
 picks. How the 12 GB workflows are built (bypassed loaders, the mode switch, "Needs …" checks), frame counts and
@@ -223,7 +225,7 @@ The_frizzy1-Workflows/
 │   ├── qwen/              image-2.1-ultimate-12gb · image-2.1-12gb · image-edit-2509
 │   ├── krea/              krea-2-ultimate-12gb
 │   ├── ming/              image-0.1-design-12gb
-│   ├── flux/              kontext · flux2-dev
+│   ├── flux/              kontext · flux2-dev · flux3-klein-12gb
 │   ├── z-image/           turbo
 │   ├── story/             story-creator-12gb
 │   ├── 3d/                image-to-3d-ultimate-12gb
