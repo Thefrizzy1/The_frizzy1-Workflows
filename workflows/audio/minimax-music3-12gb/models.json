@@ -1,0 +1,26 @@
+{
+  "workflow": "audio/minimax-music3-12gb",
+  "files": [
+    {
+      "name": "minimax_music3_dit_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-Music-3/resolve/main/diffusion_models/minimax_music3_dit_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "music. 2.50 GB"
+    },
+    {
+      "name": "minimax_music3_text_encoder_pruned_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-Music-3/resolve/main/text_encoders/minimax_music3_text_encoder_pruned_int8_convrot.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "music. 9.20 GB"
+    },
+    {
+      "name": "minimax_music3_dav.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-Music-3/resolve/main/vae/minimax_music3_dav.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "music. 0.22 GB"
+    }
+  ]
+}

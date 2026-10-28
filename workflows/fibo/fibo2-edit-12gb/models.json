@@ -1,0 +1,33 @@
+{
+  "workflow": "fibo/fibo2-edit-12gb",
+  "files": [
+    {
+      "name": "fibo2_edit_turbo_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Fibo-2.0/resolve/main/diffusion_models/fibo2_edit_turbo_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "edit. 8.41 GB"
+    },
+    {
+      "name": "qwen3vl_4b_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Fibo-2.0/resolve/main/text_encoders/qwen3vl_4b_int8_convrot.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "edit (same file as FLUX 3 Klein). 4.86 GB"
+    },
+    {
+      "name": "qwen3vl_8b_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen3-VL/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "prompt enhancer. 9.35 GB"
+    },
+    {
+      "name": "flux2-vae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Fibo-2.0/resolve/main/vae/flux2-vae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "edit (same file as FLUX 3 Klein). 0.34 GB"
+    }
+  ]
+}

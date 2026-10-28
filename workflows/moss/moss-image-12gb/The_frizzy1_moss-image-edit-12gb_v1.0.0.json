@@ -1,0 +1,1038 @@
+{
+ "id": "11f4aa31-53e3-453a-b4dd-4bf52de3a617",
+ "revision": 0,
+ "last_node_id": 42,
+ "last_link_id": 9069,
+ "nodes": [
+  {
+   "id": 8,
+   "type": "LoadImage",
+   "pos": [
+    820,
+    -240
+   ],
+   "size": [
+    690,
+    930
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      43,
+      9051
+     ]
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "two_women_berets_floral_jackets.png",
+    "image"
+   ],
+   "widgets_values_named": {
+    "image": "two_women_berets_floral_jackets.png",
+    "upload": "image"
+   },
+   "color": "#322",
+   "bgcolor": "#533"
+  },
+  {
+   "id": 9,
+   "type": "SaveImage",
+   "pos": [
+    3630,
+    -180
+   ],
+   "size": [
+    760,
+    870
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 9060
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      44
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "MOSS_edit"
+   ],
+   "widgets_values_named": {
+    "filename_prefix": "image_moss_image_edit"
+   },
+   "title": "Result"
+  },
+  {
+   "id": 20,
+   "type": "ImageCompare",
+   "pos": [
+    4440,
+    -180
+   ],
+   "size": [
+    860,
+    870
+   ],
+   "flags": {},
+   "order": 16,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image_a",
+     "shape": 7,
+     "type": "IMAGE",
+     "link": 43
+    },
+    {
+     "name": "image_b",
+     "shape": 7,
+     "type": "IMAGE",
+     "link": 44
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "ImageCompare"
+   },
+   "widgets_values": [],
+   "widgets_values_named": {}
+  },
+  {
+   "id": 27,
+   "type": "GetImageSize",
+   "pos": [
+    1670,
+    1030
+   ],
+   "size": [
+    380,
+    100
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 9069
+    }
+   ],
+   "outputs": [
+    {
+     "name": "width",
+     "type": "INT",
+     "slot_index": 0,
+     "links": [
+      9049
+     ]
+    },
+    {
+     "name": "height",
+     "type": "INT",
+     "slot_index": 1,
+     "links": [
+      9050
+     ]
+    },
+    {
+     "name": "batch_size",
+     "type": "INT",
+     "slot_index": 2,
+     "links": []
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetImageSize"
+   }
+  },
+  {
+   "id": 28,
+   "type": "EmptyFlux2LatentImage",
+   "pos": [
+    2340,
+    1000
+   ],
+   "size": [
+    380,
+    120
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": 9049
+    },
+    {
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": 9050
+    }
+   ],
+   "outputs": [
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      9057
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "EmptyFlux2LatentImage"
+   },
+   "widgets_values": [
+    1024,
+    1024,
+    1
+   ],
+   "widgets_values_named": {
+    "width": 1024,
+    "height": 1024,
+    "batch_size": 1
+   }
+  },
+  {
+   "id": 29,
+   "type": "ImageScaleToTotalPixels",
+   "pos": [
+    1670,
+    830
+   ],
+   "size": [
+    380,
+    150
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 9051
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      9062,
+      9067,
+      9069
+     ]
+    }
+   ],
+   "title": "Image Scale To Total Pixels (reference)",
+   "properties": {
+    "Node name for S&R": "ImageScaleToTotalPixels"
+   },
+   "widgets_values": [
+    "lanczos",
+    1,
+    16
+   ],
+   "widgets_values_named": {
+    "upscale_method": "lanczos",
+    "megapixels": 1,
+    "resolution_steps": 16
+   }
+  },
+  {
+   "id": 30,
+   "type": "UNETLoader",
+   "pos": [
+    1620,
+    -240
+   ],
+   "size": [
+    440,
+    90
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "showAdvanced": true,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "slot_index": 0,
+     "links": [
+      9052
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UNETLoader",
+    "models": [
+     {
+      "name": "moss_image_sft_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/diffusion_models/moss_image_sft_int8_convrot.safetensors",
+      "directory": "diffusion_models"
+     }
+    ]
+   },
+   "widgets_values": [
+    "moss_image_sft_int8_convrot.safetensors",
+    "default"
+   ],
+   "widgets_values_named": {
+    "unet_name": "moss_image_sft_int8_convrot.safetensors",
+    "weight_dtype": "default"
+   }
+  },
+  {
+   "id": 31,
+   "type": "LoraLoaderModelOnly",
+   "pos": [
+    1620,
+    -80
+   ],
+   "size": [
+    440,
+    120
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 9052
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "slot_index": 0,
+     "links": [
+      9053
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoraLoaderModelOnly",
+    "models": [
+     {
+      "name": "moss_image_edit_lora_rank_64_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/loras/moss_image_edit_lora_rank_64_bf16.safetensors",
+      "directory": "loras"
+     }
+    ]
+   },
+   "widgets_values": [
+    "moss_image_edit_lora_rank_64_bf16.safetensors",
+    1
+   ],
+   "widgets_values_named": {
+    "lora_name": "moss_image_edit_lora_rank_64_bf16.safetensors",
+    "strength_model": 1
+   }
+  },
+  {
+   "id": 32,
+   "type": "SkipLayerGuidanceDiTSimple",
+   "pos": [
+    1620,
+    110
+   ],
+   "size": [
+    440,
+    210
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "showAdvanced": true,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 9053
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "slot_index": 0,
+     "links": [
+      9054
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SkipLayerGuidanceDiTSimple"
+   },
+   "widgets_values": [
+    "",
+    "22",
+    0,
+    1
+   ],
+   "widgets_values_named": {
+    "double_layers": "",
+    "single_layers": "22",
+    "start_percent": 0,
+    "end_percent": 1
+   }
+  },
+  {
+   "id": 33,
+   "type": "CLIPLoader",
+   "pos": [
+    1620,
+    400
+   ],
+   "size": [
+    440,
+    130
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "CLIP",
+     "type": "CLIP",
+     "slot_index": 0,
+     "links": [
+      9061,
+      9066
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPLoader",
+    "models": [
+     {
+      "name": "qwen3.5_9b_w4a8_gptq.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/text_encoders/qwen3.5_9b_w4a8_gptq.safetensors",
+      "directory": "text_encoders"
+     }
+    ]
+   },
+   "widgets_values": [
+    "qwen3.5_9b_w4a8_gptq.safetensors",
+    "moss_image",
+    "default"
+   ],
+   "widgets_values_named": {
+    "clip_name": "qwen3.5_9b_w4a8_gptq.safetensors",
+    "type": "moss_image",
+    "device": "default"
+   }
+  },
+  {
+   "id": 34,
+   "type": "VAELoader",
+   "pos": [
+    1620,
+    600
+   ],
+   "size": [
+    440,
+    60
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "VAE",
+     "type": "VAE",
+     "slot_index": 0,
+     "links": [
+      9059,
+      9063,
+      9070
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAELoader",
+    "models": [
+     {
+      "name": "flux2-vae_small.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/vae/flux2-vae_small.safetensors",
+      "directory": "vae"
+     }
+    ]
+   },
+   "widgets_values": [
+    "flux2-vae_small.safetensors"
+   ],
+   "widgets_values_named": {
+    "vae_name": "flux2-vae_small.safetensors"
+   }
+  },
+  {
+   "id": 36,
+   "type": "TextEncodeMOSSImageEdit",
+   "pos": [
+    2260,
+    280
+   ],
+   "size": [
+    460,
+    320
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "showAdvanced": false,
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 9061
+    },
+    {
+     "name": "images.image_0",
+     "type": "IMAGE",
+     "link": 9062
+    },
+    {
+     "name": "images.image_1",
+     "shape": 7,
+     "type": "IMAGE",
+     "link": null
+    },
+    {
+     "name": "vae",
+     "shape": 7,
+     "type": "VAE",
+     "link": 9063
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      9056
+     ]
+    }
+   ],
+   "title": "Text Encode MOSS-Image Edit (negative)",
+   "properties": {
+    "Node name for S&R": "TextEncodeMOSSImageEdit"
+   },
+   "widgets_values": [
+    "nsfw, worst quality, bad anatomy, watermark, jpeg artifact",
+    "Moss-Image-Edit",
+    1
+   ],
+   "widgets_values_named": {
+    "prompt": "nsfw, worst quality, bad anatomy, watermark, jpeg artifact",
+    "edit_format": "Moss-Image-Edit",
+    "image_strength": 1
+   },
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 37,
+   "type": "KSampler",
+   "pos": [
+    2890,
+    -180
+   ],
+   "size": [
+    310,
+    690
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 9054
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 9068
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 9056
+    },
+    {
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 9057
+    }
+   ],
+   "outputs": [
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      9058
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    42,
+    "fixed",
+    30,
+    4,
+    "euler",
+    "normal",
+    1
+   ],
+   "widgets_values_named": {
+    "seed": 42,
+    "control_after_generate": "fixed",
+    "steps": 30,
+    "cfg": 4,
+    "sampler_name": "euler",
+    "scheduler": "normal",
+    "denoise": 1
+   }
+  },
+  {
+   "id": 38,
+   "type": "VAEDecode",
+   "pos": [
+    3230,
+    -180
+   ],
+   "size": [
+    300,
+    90
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "samples",
+     "type": "LATENT",
+     "link": 9058
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 9059
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      9060
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode"
+   }
+  },
+  {
+   "id": 39,
+   "type": "TextEncodeMOSSImageEdit",
+   "pos": [
+    2260,
+    -200
+   ],
+   "size": [
+    470,
+    380
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 9066
+    },
+    {
+     "name": "images.image_0",
+     "type": "IMAGE",
+     "link": 9067
+    },
+    {
+     "name": "images.image_1",
+     "shape": 7,
+     "type": "IMAGE",
+     "link": null
+    },
+    {
+     "name": "vae",
+     "shape": 7,
+     "type": "VAE",
+     "link": 9070
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      9068
+     ]
+    }
+   ],
+   "title": "Text Encode MOSS-Image Edit (positive)",
+   "properties": {
+    "Node name for S&R": "TextEncodeMOSSImageEdit"
+   },
+   "widgets_values": [
+    "Change only the pink floral blazer to a plain black wool coat. Keep both women, their faces, glasses, berets, poses, the embroidered cardigan and the concrete wall background unchanged.",
+    "Moss-Image-Edit",
+    1
+   ],
+   "widgets_values_named": {
+    "prompt": "Change only the pink floral blazer to a plain black wool coat. Keep both women, their faces, glasses, berets, poses, the embroidered cardigan and the concrete wall background unchanged.",
+    "edit_format": "Moss-Image-Edit",
+    "image_strength": 1
+   },
+   "color": "#232",
+   "bgcolor": "#353"
+  },
+  {
+   "id": 41,
+   "type": "MarkdownNote",
+   "pos": [
+    -1230,
+    -370
+   ],
+   "size": [
+    500,
+    520
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "title": "How to use",
+   "properties": {},
+   "widgets_values": [
+    "## How to use - tested on RTX 3060 12 GB\n\n1. Load your picture in **Load Image**.\n2. Say what to change in the edit prompt: \"change only the jacket to a black wool coat\".\n3. Press **Run**. The edit LoRA does the work; output size follows your image (about 1 MP).\n\nRTX 3060, 1 MP: 1 min 11 s.\n\nCompare Images shows before and after."
+   ],
+   "color": "#432",
+   "bgcolor": "#653"
+  },
+  {
+   "id": 42,
+   "type": "MarkdownNote",
+   "pos": [
+    -1230,
+    190
+   ],
+   "size": [
+    500,
+    560
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "title": "Downloads",
+   "properties": {},
+   "widgets_values": [
+    "## Downloads - put each file in the ComfyUI folder shown\n\nClick a file name to download it. Put it in the folder shown (inside `ComfyUI/models/`).\n\n| For | Folder | File (click = download) | Size |\n|---|---|---|---|\n| all | `diffusion_models/` | [moss_image_sft_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/diffusion_models/moss_image_sft_int8_convrot.safetensors) | 5.41 GB |\n| all | `text_encoders/` | [qwen3.5_9b_w4a8_gptq.safetensors](https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/text_encoders/qwen3.5_9b_w4a8_gptq.safetensors) | 7.34 GB |\n| all | `vae/` | [flux2-vae_small.safetensors](https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/vae/flux2-vae_small.safetensors) | 0.25 GB |\n| edit | `loras/` | [moss_image_edit_lora_rank_64_bf16.safetensors](https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/loras/moss_image_edit_lora_rank_64_bf16.safetensors) | 0.30 GB |\n| control | `loras/` | [moss_image_color_depth_control.safetensors](https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/loras/moss_image_color_depth_control.safetensors) | 0.31 GB |\n| control | `geometry_estimation/` | [moge_3_vitl_fp16.safetensors](https://huggingface.co/Comfy-Org/MoGe/resolve/main/geometry_estimation/moge_3_vitl_fp16.safetensors) | 0.74 GB |\n\nTotal: 14.3 GB. _Tested on: RTX 3060 12 GB · Ryzen 5 5600X · 32 GB RAM · ComfyUI 0.43.1 · sage attention._\n\nNeeds ComfyUI **0.43 or newer**, no custom nodes.\n\nLicense: MOSS-Image: Apache-2.0. Workflow: MIT."
+   ],
+   "color": "#432",
+   "bgcolor": "#653"
+  }
+ ],
+ "links": [
+  [
+   43,
+   8,
+   0,
+   20,
+   0,
+   "IMAGE"
+  ],
+  [
+   44,
+   9,
+   0,
+   20,
+   1,
+   "IMAGE"
+  ],
+  [
+   9049,
+   27,
+   0,
+   28,
+   0,
+   "INT"
+  ],
+  [
+   9050,
+   27,
+   1,
+   28,
+   1,
+   "INT"
+  ],
+  [
+   9051,
+   8,
+   0,
+   29,
+   0,
+   "IMAGE"
+  ],
+  [
+   9052,
+   30,
+   0,
+   31,
+   0,
+   "MODEL"
+  ],
+  [
+   9053,
+   31,
+   0,
+   32,
+   0,
+   "MODEL"
+  ],
+  [
+   9054,
+   32,
+   0,
+   37,
+   0,
+   "MODEL"
+  ],
+  [
+   9056,
+   36,
+   0,
+   37,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   9057,
+   28,
+   0,
+   37,
+   3,
+   "LATENT"
+  ],
+  [
+   9058,
+   37,
+   0,
+   38,
+   0,
+   "LATENT"
+  ],
+  [
+   9059,
+   34,
+   0,
+   38,
+   1,
+   "VAE"
+  ],
+  [
+   9060,
+   38,
+   0,
+   9,
+   0,
+   "IMAGE"
+  ],
+  [
+   9068,
+   39,
+   0,
+   37,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   9069,
+   29,
+   0,
+   27,
+   0,
+   "IMAGE"
+  ],
+  [
+   9061,
+   33,
+   0,
+   36,
+   0,
+   "CLIP"
+  ],
+  [
+   9062,
+   29,
+   0,
+   36,
+   1,
+   "IMAGE"
+  ],
+  [
+   9063,
+   34,
+   0,
+   36,
+   3,
+   "VAE"
+  ],
+  [
+   9066,
+   33,
+   0,
+   39,
+   0,
+   "CLIP"
+  ],
+  [
+   9067,
+   29,
+   0,
+   39,
+   1,
+   "IMAGE"
+  ],
+  [
+   9070,
+   34,
+   0,
+   39,
+   3,
+   "VAE"
+  ]
+ ],
+ "groups": [
+  {
+   "id": 1,
+   "title": "Models",
+   "bounding": [
+    1580,
+    -360,
+    600,
+    1070
+   ],
+   "color": "#3f789e",
+   "flags": {}
+  },
+  {
+   "id": 2,
+   "title": "Conditioning",
+   "bounding": [
+    2220,
+    -360,
+    570,
+    1070
+   ],
+   "color": "#3f789e",
+   "flags": {}
+  },
+  {
+   "id": 3,
+   "title": "Sampling & Decoding",
+   "bounding": [
+    2820,
+    -360,
+    760,
+    1070
+   ],
+   "color": "#3f789e",
+   "flags": {}
+  },
+  {
+   "id": 4,
+   "title": "Size",
+   "bounding": [
+    1580,
+    740,
+    1210,
+    430
+   ],
+   "color": "#444",
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.2905397748220841,
+   "offset": [
+    3998.777225220796,
+    1464.2479565093668
+   ]
+  },
+  "frontendVersion": "1.57.1",
+  "VHS_latentpreview": false,
+  "VHS_latentpreviewrate": 0,
+  "VHS_MetadataImage": true,
+  "VHS_KeepIntermediate": true
+ },
+ "version": 0.4
+}
