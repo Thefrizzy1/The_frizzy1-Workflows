@@ -12,11 +12,6 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
-NOTE: This license covers the documentation and ComfyUI workflow files in this
-repository. It does NOT relicense any third-party AI model, LoRA, VAE or text
-encoder referenced herein — each of those retains its own license (e.g. FLUX.1
-non-commercial, Tencent Hunyuan Community, Apache-2.0). See docs/DOWNLOADS.md.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE

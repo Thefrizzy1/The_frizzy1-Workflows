@@ -265,4 +265,4 @@ This repository (documentation + workflow JSONs) is **[MIT licensed](LICENSE)** 
 models. Every model keeps its own license: Wan, Qwen Image (original), Z-Image are Apache-2.0; Ming and the 3D models MIT;
 MiniMax H3, LTX, Krea 2 / Kroma and Hunyuan have their own community licenses; **Qwen Image 2.1 (research),
 Flux Kontext / Flux.2 Dev, YuE2 and MMAudio are non-commercial**. The full table, read from each Hugging Face card:
-[models/README.md](models/README.md#licenses-read-before-commercial-use). Check a model's card before commercial use.
+[models/README.md](models/README.md#licenses-read-before-commercial-use). Check a model's card before commercial use. See also [NOTICE](NOTICE).

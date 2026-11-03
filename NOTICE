@@ -1,0 +1,6 @@
+# Notice
+
+NOTE: This license covers the documentation and ComfyUI workflow files in this
+repository. It does NOT relicense any third-party AI model, LoRA, VAE or text
+encoder referenced herein — each of those retains its own license (e.g. FLUX.1
+non-commercial, Tencent Hunyuan Community, Apache-2.0). See docs/DOWNLOADS.md.
