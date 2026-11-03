@@ -9,7 +9,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 [![CivitAI](https://img.shields.io/badge/CivitAI-The__frizzy1-2b7cff?style=flat-square)](https://civitai.com/user/The_frizzy1)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-The--frizzy1-ffb000?style=flat-square)](https://huggingface.co/The-frizzy1)
 [![YouTube](https://img.shields.io/badge/YouTube-@the__frizzy1-ff0033?style=flat-square)](https://www.youtube.com/@the_frizzy1)
-[![Workflows](https://img.shields.io/badge/workflows-29-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-30-6a5cff?style=flat-square)](#workflows)
 [![Min VRAM](https://img.shields.io/badge/min%20VRAM-4%20GB-3ecf8e?style=flat-square)](#workflows)
 [![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
 
@@ -52,6 +52,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Beginner-friendly** image generation + editing | [Qwen Image & Edit 2509](workflows/qwen/image-edit-2509) | 4 GB+ |
 | **Native 2K** images on a 12 GB card (Qwen Image 2.1) | [Qwen Image 2.1 · 12 GB](workflows/qwen/image-2.1-12gb) | 12 GB |
 | **Every Qwen Image 2.1 mode** (Turbo · edit · ControlNet pose / depth / edges) in one workflow | [Qwen Image 2.1 Ultimate · 12 GB](workflows/qwen/image-2.1-ultimate-12gb) | 12 GB |
+| **Swap a person** in a video for your own character (SCAIL-2, core nodes, App mode) | [SCAIL-2 Character Swap · 12 GB](workflows/scail/scail2-character-swap-12gb) | 12 GB |
 | **FLUX 3**: text to image or edit with up to 4 images, with BFL's prompt upsampler | [FLUX 3 Klein · 12 GB](workflows/flux/flux3-klein-12gb) | 12 GB |
 | **MOSS-Image**: text to image, layout with boxes, edit, or a new picture in your photo's shape | [MOSS-Image · 12 GB](workflows/moss/moss-image-12gb) | 12 GB |
 | **Quick edits** in 4 steps: say what the picture should look like (Fibo 2.0, non-commercial) | [Fibo 2.0 Edit Turbo · 12 GB](workflows/fibo/fibo2-edit-12gb) | 12 GB |
@@ -94,6 +95,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb)** | v2.0.0 | 12 GB | T2V · I2V · FLF · pose (IC-LoRA) · audio | [▶](https://www.youtube.com/watch?v=HeHY6N5hH_M&list=PLQ3PcJNbU2Ls) · [▶](https://www.youtube.com/watch?v=TlV72fg9skw&list=PLQ3PcJNbU2Ls) |
 | **[Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3)** | v2.0.0 | 12 GB | character replacement (V2V) | — |
 | **[H3 Character Swap · 12 GB](workflows/minimax/h3-character-swap-12gb)** | v1.1.0 | 12 GB | character swap (V2V) · whole clip in loop passes · original sound | [▶](https://www.youtube.com/watch?v=zkhLZUGIIfE&list=PLMztlpsP7Bgg) |
+| **[SCAIL-2 Character Swap · 12 GB](workflows/scail/scail2-character-swap-12gb)** | v1.1.0 | 12 GB | character swap (V2V) · whole clip in 81-frame loop rounds · which person · original sound · App mode | — |
 | **[Story Creator · 12 GB](workflows/story/story-creator-12gb)** | v1.4.0 | 12 GB | story video: script (WORLD / [camera] / dialogue / narrator / [continue]) → stills → I2V · music | — |
 | **[Wan Animate Ultimate](workflows/wan2.2/animate-ultimate)** | v2.0.0 | 12 GB | Wan Animate 2 · Wan 2.2 Animate GGUF + face video | [▶](https://www.youtube.com/watch?v=9idzB8mlYRY&list=PLRe4JVWoY_AU) · [▶](https://www.youtube.com/watch?v=aqFdglMbcIU&list=PLRe4JVWoY_AU) |
 
@@ -235,6 +237,7 @@ The_frizzy1-Workflows/
 │   ├── moss/              moss-image-12gb
 │   ├── fibo/              fibo2-edit-12gb
 │   ├── z-image/           turbo
+│   ├── scail/             scail2-character-swap-12gb
 │   ├── story/             story-creator-12gb
 │   ├── 3d/                image-to-3d-ultimate-12gb
 │   └── audio/             minimax-music3-12gb · yue2-music-12gb · ai-audio-maker
