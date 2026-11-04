@@ -1,0 +1,64 @@
+{
+  "workflow": "minimax/h3-singularity-swap-12gb",
+  "files": [
+    {
+      "name": "Minimax-h3_Singularity_ref2va_v2_pruned_int8.safetensors",
+      "url": "https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity/resolve/main/Minimax-h3_Singularity_ref2va_v2_pruned_int8.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "21.0 GB"
+    },
+    {
+      "name": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/loras/minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": "2.0 GB"
+    },
+    {
+      "name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "15.7 GB"
+    },
+    {
+      "name": "qwen3vl_8b_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen3-VL/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "9.4 GB"
+    },
+    {
+      "name": "minimax_h3_video_vae_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_int8_convrot.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "2.8 GB"
+    },
+    {
+      "name": "minimax_h3_audio_vae_fp32.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "0.6 GB"
+    },
+    {
+      "name": "sam3.1_multiplex_fp16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/sam3.1/resolve/main/checkpoints/sam3.1_multiplex_fp16.safetensors",
+      "dest": "checkpoints",
+      "required": true,
+      "note": "1.7 GB"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "comfyui-h3-oneclick-swap",
+      "git": "https://github.com/D3voz/comfyui-h3-oneclick-swap"
+    },
+    {
+      "name": "ComfyUI-Fantastic-MiniMaxH3-PromptBuilder",
+      "git": "https://github.com/Adudeguyman/ComfyUI-Fantastic-MiniMaxH3-PromptBuilder"
+    }
+  ]
+}
