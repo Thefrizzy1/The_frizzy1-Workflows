@@ -11,7 +11,7 @@ its recommended VRAM, and where to download it. Filenames and downloads are in e
 |---|---|---|---|---|---|
 | **MiniMax H3** | Video + sound (T2V/I2V/references/pose/extend), Ref2VA + FL2VA models | T2V·I2V·R2V·FLF·pose·extend·audio | [minimax/h3-ultimate-12gb](../workflows/minimax/h3-ultimate-12gb) | 12 GB | current |
 | **Viggle-Animate (H3 finetune)** | Swap the person in a video for one still | V2V | [minimax/viggle-animate-h3](../workflows/minimax/viggle-animate-h3) | 12 GB | current |
-| **LTX 2.5 (22B)** | Video + sound, first/last frame, pose IC-LoRA | T2V·I2V·FLF·pose·audio | [ltx/ltx-2.5-ultimate-12gb](../workflows/ltx/ltx-2.5-ultimate-12gb) | 12 GB | current |
+| **LTX 2.5 (22B)** | Video + sound, first/last frame, pose IC-LoRA, VFX LoRAs | T2V·I2V·FLF·pose·VFX·audio | [ltx/ltx-2.5-ultimate-12gb](../workflows/ltx/ltx-2.5-ultimate-12gb) | 12 GB | current |
 | **LTXV-2.3 (22B)** | LTX before 2.5, FFLF + ID LoRA | T2V·I2V·FFLF·audio | [ltx/ltx2.3-ultimate](../workflows/ltx/ltx2.3-ultimate) | 12 GB | older |
 | **LTXV-2 (19B)** | First audio-aware LTX | T2V·I2V·audio | [ltx/ltx2](../workflows/ltx/ltx2) | 4 GB | older |
 | **Wan Animate 2** | Character animation from a driving video (distilled, int8) | V2V | [wan2.2/animate-ultimate](../workflows/wan2.2/animate-ultimate) | 12 GB (GGUF mode lower) | current |

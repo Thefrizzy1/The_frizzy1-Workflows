@@ -56,6 +56,104 @@
       "dest": "diffusion_models",
       "required": true,
       "note": "0.1 GB"
+    },
+    {
+      "name": "ltx-2.5-22b-ic-lora-clean-plate-1.0.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Clean-Plate/resolve/main/ltx-2.5-22b-ic-lora-clean-plate-1.0.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "VFX: video to video, Clean Plate. Gated: click Agree and access on huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Clean-Plate (logged in), then set HF_TOKEN. 0.33 GB"
+    },
+    {
+      "name": "ltx-2.5-22b-ic-lora-day-to-night-0.9.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Day-To-Night/resolve/main/ltx-2.5-22b-ic-lora-day-to-night-0.9.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "VFX: video to video, Day To Night. Gated: click Agree and access on huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Day-To-Night (logged in), then set HF_TOKEN. 0.33 GB"
+    },
+    {
+      "name": "ltx-2.5-22b-ic-lora-water-simulation-0.9.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Water-Simulation/resolve/main/ltx-2.5-22b-ic-lora-water-simulation-0.9.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "VFX: video to video, Water Simulation. Gated: click Agree and access on huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Water-Simulation (logged in), then set HF_TOKEN. 0.91 GB"
+    },
+    {
+      "name": "ltx-2.5-22b-ic-lora-deblur-0.9.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Deblur/resolve/main/ltx-2.5-22b-ic-lora-deblur-0.9.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "VFX: video to video, Deblur. Gated: click Agree and access on huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Deblur (logged in), then set HF_TOKEN. 0.91 GB"
+    },
+    {
+      "name": "ltx-2.5-22b-ic-lora-decompression-0.9.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Decompression/resolve/main/ltx-2.5-22b-ic-lora-decompression-0.9.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "VFX: video to video, Decompression. Gated: click Agree and access on huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Decompression (logged in), then set HF_TOKEN. 0.91 GB"
+    },
+    {
+      "name": "ltx-2.5-22b-ic-lora-colorization-0.9.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Colorization/resolve/main/ltx-2.5-22b-ic-lora-colorization-0.9.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "VFX: video to video, Colorization. Gated: click Agree and access on huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Colorization (logged in), then set HF_TOKEN. 0.91 GB"
+    },
+    {
+      "name": "ltx-2.5-22b-ic-lora-alpha-gen-0.9.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Alpha-Gen/resolve/main/ltx-2.5-22b-ic-lora-alpha-gen-0.9.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "VFX: video to video, Alpha Gen. Gated: click Agree and access on huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Alpha-Gen (logged in), then set HF_TOKEN. 1.31 GB"
+    },
+    {
+      "name": "ltx-2.5-22b-ic-lora-restore-1.0.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Restore/resolve/main/ltx-2.5-22b-ic-lora-restore-1.0.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "VFX: video to video, Restore. Gated: click Agree and access on huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Restore (logged in), then set HF_TOKEN. 1.71 GB"
+    },
+    {
+      "name": "ltx-2.5-22b-ic-lora-refine-details-1.0.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Refine-Details/resolve/main/ltx-2.5-22b-ic-lora-refine-details-1.0.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "VFX: video to video, Refine Details. Gated: click Agree and access on huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Refine-Details (logged in), then set HF_TOKEN. 1.31 GB"
+    },
+    {
+      "name": "ltx-2.5-22b-ic-lora-pixel-spatial-upscaler-x2-1.0.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Pixel-Spatial-Upscaler/resolve/main/ltx-2.5-22b-ic-lora-pixel-spatial-upscaler-x2-1.0.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "VFX: video to video, Pixel Spatial Upscaler. Gated: click Agree and access on huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Pixel-Spatial-Upscaler (logged in), then set HF_TOKEN. 0.33 GB"
+    },
+    {
+      "name": "ltx-2.5-22b-ic-lora-layout-to-render-1.0.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Layout-To-Render/resolve/main/ltx-2.5-22b-ic-lora-layout-to-render-1.0.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "Layout to Render mode. Gated: click Agree and access on huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Layout-To-Render (logged in), then set HF_TOKEN. 1.31 GB"
+    },
+    {
+      "name": "ltx-2.5-22b-ic-lora-ingredients-0.9.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Ingredients/resolve/main/ltx-2.5-22b-ic-lora-ingredients-0.9.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "Ingredients mode. Gated: click Agree and access on huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Ingredients (logged in), then set HF_TOKEN. 1.31 GB"
+    },
+    {
+      "name": "ltx-2.5-22b-lora-cinemagraph-0.9.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-LoRA-Cinemagraph/resolve/main/ltx-2.5-22b-lora-cinemagraph-0.9.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "I2V + Cinemagraph mode. Gated: click Agree and access on huggingface.co/Lightricks/LTX-2.5-22b-LoRA-Cinemagraph (logged in), then set HF_TOKEN. 0.20 GB"
+    },
+    {
+      "name": "ltx-2.5-22b-lora-slow-motion-control-1.0.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-LoRA-Slow-Motion-Control/resolve/main/ltx-2.5-22b-lora-slow-motion-control-1.0.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "I2V + Slow motion mode. Gated: click Agree and access on huggingface.co/Lightricks/LTX-2.5-22b-LoRA-Slow-Motion-Control (logged in), then set HF_TOKEN. 0.65 GB"
     }
   ],
   "nodes": []

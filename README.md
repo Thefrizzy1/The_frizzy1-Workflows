@@ -61,6 +61,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | Newer **LTX video** (audio-aware) | [LTX-2](workflows/ltx/ltx2) · [LTX-2.3 Ultimate](workflows/ltx/ltx2.3-ultimate) | 4–12 GB |
 | **Every MiniMax H3 mode** (T2V · I2V · R2V · multiframe · pose · extend) in one workflow, with sound | [MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb) | 12 GB |
 | **LTX 2.5** text / image / first+last / pose-driven video in one workflow | [LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb) | 12 GB |
+| **Free AI VFX** on your own clips: remove a person, day to night, water, alpha matte, grey blocks to render (LTX-2.5 VFX LoRAs) | [LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb) | 12 GB |
 | **Swap the person** in a video for your character (one still) | [Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3) | 12 GB |
 | **Genjutsu at home**: swap the person, whole clip, original sound | [H3 Character Swap · 12 GB](workflows/minimax/h3-character-swap-12gb) | 12 GB |
 | **Realistic person-to-person swap** from one photo, one pass, App mode (Singularity V2) | [H3 Singularity Swap · 12 GB](workflows/minimax/h3-singularity-swap-12gb) | 12 GB |
@@ -93,7 +94,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[LTX-2 GGUF](workflows/ltx/ltx2)** | v2.0.0 | 4 GB | T2V · I2V · audio | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow) · [▶](https://www.youtube.com/watch?v=nnHUBMgdJac&list=PLQ3PcJNbU2Ls) |
 | **[LTX-2.3 Ultimate](workflows/ltx/ltx2.3-ultimate)** | v3.0.0 | 12 GB | T2V · I2V · FFLF · audio · ID | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX23-Ultimate) · [▶](https://www.youtube.com/watch?v=im4wolfHvMk&list=PLQ3PcJNbU2Ls) |
 | **[MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb)** | v2.3.0 | 12 GB | T2V · I2V · last · FLF · R2V · multiframe · ControlNet pose · extend · audio | [▶](https://www.youtube.com/watch?v=KJNksY9Ur3w&list=PLMztlpsP7Bgg) · [▶](https://www.youtube.com/watch?v=H2lZud6dbf4&list=PLMztlpsP7Bgg) |
-| **[LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb)** | v2.0.0 | 12 GB | T2V · I2V · FLF · pose (IC-LoRA) · audio | [▶](https://www.youtube.com/watch?v=HeHY6N5hH_M&list=PLQ3PcJNbU2Ls) · [▶](https://www.youtube.com/watch?v=TlV72fg9skw&list=PLQ3PcJNbU2Ls) |
+| **[LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb)** | v3.1.1 | 12 GB | T2V · I2V · FLF · pose (IC-LoRA) · VFX LoRAs (remove, day to night, water, alpha, layout to render…) · cinemagraph · slow motion · audio | [▶](https://www.youtube.com/watch?v=HeHY6N5hH_M&list=PLQ3PcJNbU2Ls) · [▶](https://www.youtube.com/watch?v=TlV72fg9skw&list=PLQ3PcJNbU2Ls) |
 | **[Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3)** | v2.0.0 | 12 GB | character replacement (V2V) | — |
 | **[H3 Character Swap · 12 GB](workflows/minimax/h3-character-swap-12gb)** | v1.1.0 | 12 GB | character swap (V2V) · whole clip in loop passes · original sound | [▶](https://www.youtube.com/watch?v=zkhLZUGIIfE&list=PLMztlpsP7Bgg) |
 | **[H3 Singularity Swap · 12 GB](workflows/minimax/h3-singularity-swap-12gb)** | v1.0.0 | 12 GB | person-to-person swap (V2V) · Singularity V2 · one pass up to 15 s · original sound · App mode | — |

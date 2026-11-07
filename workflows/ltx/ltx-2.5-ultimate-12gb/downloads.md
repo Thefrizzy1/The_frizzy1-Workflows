@@ -28,6 +28,27 @@ Click a file name to download it. Put it in the folder shown (inside `ComfyUI/mo
 | Pose mode | `checkpoints/` | [sdpose_wholebody_fp16.safetensors](https://huggingface.co/Comfy-Org/SDPose/resolve/main/checkpoints/sdpose_wholebody_fp16.safetensors) | 1.9 GB |
 | Pose mode | `diffusion_models/` | [rt_detr_v4-x-hgnet_fp16.safetensors](https://huggingface.co/Comfy-Org/SDPose/resolve/main/diffusion_models/rt_detr_v4-x-hgnet_fp16.safetensors) | 0.1 GB |
 
-_Tested on: RTX 3060 12 GB · 32 GB RAM · ComfyUI 0.37.4._
+_Tested on: RTX 3060 12 GB · 32 GB RAM · ComfyUI 0.44.0._
 
 LTX 2.5 files need you to accept Lightricks' terms on the model page first (logged in to Hugging Face).
+
+## VFX LoRAs (Lightricks LTX-2.5 Creative Lab): only the ones you use
+
+| For | Folder | File (click = download) | Size |
+|---|---|---|---|
+| VFX: Clean Plate | `loras/` | [ltx-2.5-22b-ic-lora-clean-plate-1.0.safetensors](https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Clean-Plate/resolve/main/ltx-2.5-22b-ic-lora-clean-plate-1.0.safetensors) | 0.33 GB |
+| VFX: Day To Night | `loras/` | [ltx-2.5-22b-ic-lora-day-to-night-0.9.safetensors](https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Day-To-Night/resolve/main/ltx-2.5-22b-ic-lora-day-to-night-0.9.safetensors) | 0.33 GB |
+| VFX: Water Simulation | `loras/` | [ltx-2.5-22b-ic-lora-water-simulation-0.9.safetensors](https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Water-Simulation/resolve/main/ltx-2.5-22b-ic-lora-water-simulation-0.9.safetensors) | 0.91 GB |
+| VFX: Deblur | `loras/` | [ltx-2.5-22b-ic-lora-deblur-0.9.safetensors](https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Deblur/resolve/main/ltx-2.5-22b-ic-lora-deblur-0.9.safetensors) | 0.91 GB |
+| VFX: Decompression | `loras/` | [ltx-2.5-22b-ic-lora-decompression-0.9.safetensors](https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Decompression/resolve/main/ltx-2.5-22b-ic-lora-decompression-0.9.safetensors) | 0.91 GB |
+| VFX: Colorization | `loras/` | [ltx-2.5-22b-ic-lora-colorization-0.9.safetensors](https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Colorization/resolve/main/ltx-2.5-22b-ic-lora-colorization-0.9.safetensors) | 0.91 GB |
+| VFX: Alpha Gen | `loras/` | [ltx-2.5-22b-ic-lora-alpha-gen-0.9.safetensors](https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Alpha-Gen/resolve/main/ltx-2.5-22b-ic-lora-alpha-gen-0.9.safetensors) | 1.31 GB |
+| VFX: Restore | `loras/` | [ltx-2.5-22b-ic-lora-restore-1.0.safetensors](https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Restore/resolve/main/ltx-2.5-22b-ic-lora-restore-1.0.safetensors) | 1.71 GB |
+| VFX: Refine Details | `loras/` | [ltx-2.5-22b-ic-lora-refine-details-1.0.safetensors](https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Refine-Details/resolve/main/ltx-2.5-22b-ic-lora-refine-details-1.0.safetensors) | 1.31 GB |
+| VFX: Pixel Spatial Upscaler | `loras/` | [ltx-2.5-22b-ic-lora-pixel-spatial-upscaler-x2-1.0.safetensors](https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Pixel-Spatial-Upscaler/resolve/main/ltx-2.5-22b-ic-lora-pixel-spatial-upscaler-x2-1.0.safetensors) | 0.33 GB |
+| Layout to Render mode | `loras/` | [ltx-2.5-22b-ic-lora-layout-to-render-1.0.safetensors](https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Layout-To-Render/resolve/main/ltx-2.5-22b-ic-lora-layout-to-render-1.0.safetensors) | 1.31 GB |
+| Ingredients mode | `loras/` | [ltx-2.5-22b-ic-lora-ingredients-0.9.safetensors](https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Ingredients/resolve/main/ltx-2.5-22b-ic-lora-ingredients-0.9.safetensors) | 1.31 GB |
+| I2V + Cinemagraph mode | `loras/` | [ltx-2.5-22b-lora-cinemagraph-0.9.safetensors](https://huggingface.co/Lightricks/LTX-2.5-22b-LoRA-Cinemagraph/resolve/main/ltx-2.5-22b-lora-cinemagraph-0.9.safetensors) | 0.20 GB |
+| I2V + Slow motion mode | `loras/` | [ltx-2.5-22b-lora-slow-motion-control-1.0.safetensors](https://huggingface.co/Lightricks/LTX-2.5-22b-LoRA-Slow-Motion-Control/resolve/main/ltx-2.5-22b-lora-slow-motion-control-1.0.safetensors) | 0.65 GB |
+
+Each one needs **Agree and access** on its Lightricks page first (logged in to Hugging Face).
