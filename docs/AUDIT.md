@@ -25,7 +25,7 @@ changelog; the README names its `.json`; and with `--links` every download link 
 
 **Found and fixed:**
 1. **Root README, `index.html`, `docs/DOWNLOADS.md`, `docs/COMPATIBILITY.md`, `models/README.md` stopped at the first 13
-   workflows** — the 10 newer 12 GB ones (H3, LTX 2.5, Viggle-Animate, Wan Animate Ultimate, Qwen 2.1 ×2, Krea 2, Ming,
+   workflows** — the 10 newer 12 GB ones (H3, LTX 2.5, Viggle-Animate, Wan Animate Ultimate · 12 GB, Qwen 2.1 ×2, Krea 2, Ming,
    Image to 3D, YuE2) were missing. All five now cover all 23; `docs/DOWNLOADS.md` is generated from the `models.json`
    files so it can't drift again.
 2. **`models.json` didn't match the `.json` in the older workflows**, so `frizzy.py get` downloaded files the loaders
@@ -39,7 +39,7 @@ changelog; the README names its `.json`; and with `--links` every download link 
    need KJNodes, LTX-2.3 needs Impact Pack + Easy-Use, Wan 2.2 Animate needs essentials + Custom-Scripts +
    Frame-Interpolation, Kontext uses calcuis' `gguf` (not ComfyUI-GGUF) + TeaCache + essentials, Viggle-Animate needs its
    own pack. Unused ones removed (WanVideoWrapper from Wan 2.1).
-5. **Wan Animate Ultimate** marked both GGUF files and the GGUF-mode helpers as required → now optional (`--optional`),
+5. **Wan Animate Ultimate · 12 GB** marked both GGUF files and the GGUF-mode helpers as required → now optional (`--optional`),
    so the default download is the Wan Animate 2 path only.
 6. **Dead link:** `Wan2.1-T2V-1.3B-F16.gguf` (renamed on calcuis/wan-1.3b-gguf) → fixed.
 7. **Wrong licenses:** LTX-2 / 2.3 said Apache-2.0 (the cards say LTX-2 Community License); Wan 2.2 Animate said OpenRAIL
@@ -88,9 +88,9 @@ CivitAI labels were normalised to semver — see [NAMING.md](NAMING.md). The map
 | MiniMax H3 Ultimate · 12 GB | ✅ | ✅ (none) | ✅ |
 | Viggle-Animate (H3) | ✅ | ✅ | ✅ |
 | LTX 2.5 Ultimate · 12 GB | ✅ | ✅ (none) | ✅ gated |
-| LTX-2.3 Ultimate | ✅ | ✅ | ✅ |
+| LTX-2.3 Ultimate · 12 GB | ✅ | ✅ | ✅ |
 | LTX-2 GGUF | ✅ | ✅ | ✅ |
-| Wan Animate Ultimate | ✅ | ✅ | ✅ |
+| Wan Animate Ultimate · 12 GB | ✅ | ✅ | ✅ |
 | Wan 2.2 Animate | ✅ (1 renamed LoRA, substitute given) | ✅ | ✅ |
 | Wan 2.2 GGUF Low-VRAM | ✅ | ✅ | ✅ |
 | Wan 2.2 AIO Rapid | ✅ | ✅ | ✅ |

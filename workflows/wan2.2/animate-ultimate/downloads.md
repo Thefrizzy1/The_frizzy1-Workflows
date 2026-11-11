@@ -1,4 +1,4 @@
-# Downloads — Wan Animate Ultimate
+# Downloads — Wan Animate Ultimate · 12 GB
 
 Every file name below was read from the workflow `.json`.
 

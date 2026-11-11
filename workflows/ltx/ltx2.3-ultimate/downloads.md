@@ -1,4 +1,4 @@
-# Downloads — LTX-2.3 Ultimate v3.0.0
+# Downloads — LTX-2.3 Ultimate · 12 GB v3.0.0
 
 Verified from the workflow JSON.
 

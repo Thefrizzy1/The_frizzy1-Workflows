@@ -37,11 +37,11 @@ Several workflows reuse the same encoders/VAEs — download once (subfolders ins
 | File | Used by | Source |
 |---|---|---|
 | `t5xxl_um_fp8_e4m3fn_scaled.safetensors` (UMT5) | Wan 2.1, Wan 2.2 GGUF | [calcuis/wan-gguf](https://huggingface.co/calcuis/wan-gguf) |
-| `umt5_xxl_fp8_e4m3fn_scaled.safetensors` (same encoder, Comfy's name) | Wan 2.2 Animate, AIO Rapid, Wan Animate Ultimate | Comfy-Org Wan repackaged |
-| `wan_2.1_vae.safetensors` | Wan 2.1, Wan 2.2 14B, AIO, Wan Animate Ultimate (GGUF mode) | Comfy-Org repackaged |
+| `umt5_xxl_fp8_e4m3fn_scaled.safetensors` (same encoder, Comfy's name) | Wan 2.2 Animate, AIO Rapid, Wan Animate Ultimate · 12 GB | Comfy-Org Wan repackaged |
+| `wan_2.1_vae.safetensors` | Wan 2.1, Wan 2.2 14B, AIO, Wan Animate Ultimate · 12 GB (GGUF mode) | Comfy-Org repackaged |
 | `gemma_3_12B_it_*.safetensors` | LTX-2, LTX-2.3 | Comfy-Org ltx-2 / GitMylo (fp8) |
 | `qwen3vl_32b_minimax_h3_*` · `minimax_h3_*_vae_*` | H3 Ultimate, Viggle-Animate | Comfy-Org/MiniMax-H3 |
-| `sdpose_wholebody_fp16.safetensors` + `rt_detr_v4-x-hgnet_fp16.safetensors` | H3 / LTX 2.5 / Qwen 2.1 Ultimates, Wan Animate Ultimate (pose) | Comfy-Org/SDPose |
+| `sdpose_wholebody_fp16.safetensors` + `rt_detr_v4-x-hgnet_fp16.safetensors` | H3 / LTX 2.5 / Qwen 2.1 Ultimates, Wan Animate Ultimate · 12 GB (pose) | Comfy-Org/SDPose |
 | `clip_l.safetensors` | Flux Kontext, Hunyuan | comfyanonymous/flux_text_encoders |
 | `RealESRGAN_x4.pth` / `RealESRGAN_x2.pth` | Wan 2.1, Wan 2.2 GGUF, Flux Kontext | ai-forever/Real-ESRGAN |
 | `rife49.pth` | Wan 2.1, Wan 2.2 GGUF, Wan 2.2 Animate | downloaded by ComfyUI-Frame-Interpolation itself |

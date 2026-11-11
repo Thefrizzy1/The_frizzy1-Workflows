@@ -13,9 +13,9 @@ marked *Not verified*. Last checked 2026-10-15 (25 workflows).
 | Viggle-Animate (H3) | — | — | ✅ | — | — | ✅ (keeps the clip's) | — | swap a person for one still |
 | Story Creator · 12 GB | — | ✅ (scene stills) | — | ✅ (stills) | ✅ (stills) | ✅ (narrator, dialogue, music) | — | story from a script · [continue] transitions |
 | LTX 2.5 Ultimate · 12 GB | ✅ | ✅ | ✅ (pose IC-LoRA) | — | — | ✅ | ✅ | |
-| LTX-2.3 Ultimate | ✅ | ✅ | — | — | — | ✅ | ✅ | ID LoRA |
+| LTX-2.3 Ultimate · 12 GB | ✅ | ✅ | — | — | — | ✅ | ✅ | ID LoRA |
 | LTX-2 GGUF | ✅ | ✅ | — | — | — | ✅ | — | |
-| Wan Animate Ultimate | — | — | ✅ | — | — | — | — | face video (GGUF mode) |
+| Wan Animate Ultimate · 12 GB | — | — | ✅ | — | — | — | — | face video (GGUF mode) |
 | Wan 2.2 Animate | — | — | ✅ | — | — | — | — | looping |
 | Wan 2.2 GGUF Low-VRAM | ✅ | ✅ | — | — | — | — | — | |
 | Wan 2.2 AIO Rapid | ✅ | ✅ | — | — | — | — | — | single file |
@@ -46,7 +46,7 @@ the videos (e.g. MiniMax H3 W4A8 on a 4 GB laptop) — that is not what the 12 G
 | Krea 2 (Krea 2 Turbo int8 + Kroma w4a8) · Ming · YuE2 | 4 GB (16 GB RAM) | 12 GB | RTX 3060 12 GB · the same files on an RTX 3050 Ti Laptop 4 GB ([benchmarks](BENCHMARKS.md)) |
 | Qwen Image 2.1 (both) | 4 GB with the w4a8 text encoder (16 GB RAM) | 12 GB | RTX 3060 12 GB · RTX 3050 Ti Laptop 4 GB ([benchmarks](BENCHMARKS.md)) |
 | Image to 3D | 12 GB | 12 GB | RTX 3060 12 GB |
-| Wan Animate Ultimate | 12 GB (Wan Animate 2) · lower in GGUF mode | 12 GB | RTX 3060 12 GB |
+| Wan Animate Ultimate · 12 GB | 12 GB (Wan Animate 2) · lower in GGUF mode | 12 GB | RTX 3060 12 GB |
 | Wan 2.1 GGUF Low-VRAM | 4 GB | 8–12 GB | RTX 3050 Laptop 4 GB |
 | Wan 2.2 GGUF Low-VRAM | 4 GB (5B: 8 GB) | 12 GB | RTX 3050 Laptop 4 GB |
 | Wan 2.2 Animate | 4 GB (Q4) | 12 GB (Q8) | RTX 3050 4 GB / RTX 3060 12 GB |
@@ -54,7 +54,7 @@ the videos (e.g. MiniMax H3 W4A8 on a 4 GB laptop) — that is not what the 12 G
 | Qwen Image & Edit 2509 | 4 GB (Q4_K_S) | 12 GB (Q8) | 4 GB / 12 GB |
 | Hunyuan Video Low-VRAM | 4 GB | 8 GB+ | RTX 3050 Laptop (slow) |
 | LTX-2 GGUF | 4 GB (+Triton) | 12 GB | RTX 3060 12 GB + 48 GB RAM |
-| LTX-2.3 Ultimate | 12 GB | 12 GB+ | RTX 3060 12 GB |
+| LTX-2.3 Ultimate · 12 GB | 12 GB | 12 GB+ | RTX 3060 12 GB |
 | Flux.2 / Z-Image / AI Audio / AIO Rapid | *Not tested here* | *Not tested here* | — |
 
 System RAM matters as much as VRAM: the 12 GB workflows offload model parts to RAM (the H3 runs peaked at ~19 GB RAM).
@@ -98,7 +98,7 @@ installs them. **None** = core ComfyUI only (needs a recent ComfyUI: see the wor
 | Hunyuan Video Low-VRAM | `hunyuan/video` | gguf, ComfyUI-KJNodes, ComfyUI-VideoHelperSuite, rgthree-comfy, ComfyUI-HunyuanVideoWrapper, ComfyUI-HunyuanVideoSamplerSave |
 | Krea 2 Ultimate · 12 GB | `krea/krea-2-ultimate-12gb` | **none** (core nodes) |
 | LTX 2.5 Ultimate · 12 GB | `ltx/ltx-2.5-ultimate-12gb` | **none** (core nodes) |
-| LTX-2.3 Ultimate | `ltx/ltx2.3-ultimate` | ComfyUI-GGUF, ComfyUI-KJNodes, ComfyUI-JakeUpgrade, ComfyUI-VideoHelperSuite, ComfyUI-Impact-Pack, ComfyUI-Easy-Use |
+| LTX-2.3 Ultimate · 12 GB | `ltx/ltx2.3-ultimate` | ComfyUI-GGUF, ComfyUI-KJNodes, ComfyUI-JakeUpgrade, ComfyUI-VideoHelperSuite, ComfyUI-Impact-Pack, ComfyUI-Easy-Use |
 | LTX-2 GGUF | `ltx/ltx2` | ComfyUI-GGUF, ComfyUI-KJNodes |
 | Ming Image 0.1 · 12 GB | `ming/image-0.1-design-12gb` | **none** (core nodes) |
 | MiniMax H3 Ultimate · 12 GB | `minimax/h3-ultimate-12gb` | **none** (core nodes) |
@@ -110,7 +110,7 @@ installs them. **None** = core ComfyUI only (needs a recent ComfyUI: see the wor
 | Wan 2.1 FLF2V | `wan2.1/flf2v` | gguf, tiled_ksampler, ComfyUI-KJNodes, ComfyUI-VideoHelperSuite, rgthree-comfy, ComfyUI-Frame-Interpolation |
 | Wan 2.1 GGUF Low-VRAM | `wan2.1/gguf-lowvram` | gguf, tiled_ksampler, ComfyUI-KJNodes, ComfyUI-VideoHelperSuite, rgthree-comfy, ComfyUI-Frame-Interpolation |
 | Wan 2.2 AIO Rapid | `wan2.2/aio-rapid` | ComfyUI-KJNodes, ComfyUI-WanVideoWrapper, ComfyUI-VideoHelperSuite, tiled_ksampler |
-| Wan Animate Ultimate | `wan2.2/animate-ultimate` | **none** in Wan Animate 2 mode · ComfyUI-GGUF in GGUF mode |
+| Wan Animate Ultimate · 12 GB | `wan2.2/animate-ultimate` | **none** in Wan Animate 2 mode · ComfyUI-GGUF in GGUF mode |
 | Wan 2.2 Animate | `wan2.2/animate` | comfyui_controlnet_aux, ComfyUI-KJNodes, ComfyUI-segment-anything-2, ComfyUI-VideoHelperSuite, execution-inversion-demo-comfyui, ComfyUI_essentials, ComfyUI-Custom-Scripts, ComfyUI-Frame-Interpolation |
 | Wan 2.2 GGUF Low-VRAM | `wan2.2/gguf-lowvram` | gguf, tiled_ksampler, ComfyUI-KJNodes, ComfyUI-VideoHelperSuite, ComfyUI-Frame-Interpolation, ComfyUI-tbox |
 | Z-Image Turbo GGUF | `z-image/turbo` | ComfyUI-GGUF, ComfyUI-KJNodes |

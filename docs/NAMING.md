@@ -78,7 +78,7 @@ when a new CivitAI version drops, add a row.
 | Z-Image Turbo GGUF | **v1.0** | **v1.0.0** | CivitAI 2561639 |
 | Hunyuan Video Low-VRAM | v1.0, **v1.1-Text2Vid** | **v1.1.0** | v1.1 added T2V |
 | LTX-2 GGUF | v1.0, **v1.5** | **v1.5.0** | |
-| LTX-2.3 Ultimate | **v3.0** | **v3.0.0** | CivitAI 2339823 (LTXV2.3 …+IDlora) |
+| LTX-2.3 Ultimate · 12 GB | **v3.0** | **v3.0.0** | CivitAI 2339823 (LTXV2.3 …+IDlora) |
 | AI Audio Maker | **v1.0** | **v1.0.0** | CivitAI 2539489 |
 
 > When CivitAI and this repo disagree, **this table wins** and the CivitAI label is shown in parentheses so

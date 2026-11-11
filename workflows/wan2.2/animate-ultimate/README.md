@@ -1,4 +1,4 @@
-# The_frizzy1 — Wan Animate Ultimate v2.0.0
+# The_frizzy1 — Wan Animate Ultimate · 12 GB v2.0.0
 
 <a href="https://www.youtube.com/watch?v=9idzB8mlYRY&list=PLRe4JVWoY_AU"><img src="https://img.youtube.com/vi/9idzB8mlYRY/mqdefault.jpg" width="400" alt="Watch the video"></a> <a href="https://www.youtube.com/watch?v=aqFdglMbcIU&list=PLRe4JVWoY_AU"><img src="https://img.youtube.com/vi/aqFdglMbcIU/mqdefault.jpg" width="400" alt="Watch the video"></a>
 

@@ -1,6 +1,6 @@
 # Downloads — Wan 2.2 Animate v1.2.0
 
-> **Newer:** [Wan Animate Ultimate](../animate-ultimate) rebuilds this with native nodes (only ComfyUI-GGUF needed), adds Wan Animate 2 and a face video that makes the mouth move. Tested on an RTX 3060.
+> **Newer:** [Wan Animate Ultimate · 12 GB](../animate-ultimate) rebuilds this with native nodes (only ComfyUI-GGUF needed), adds Wan Animate 2 and a face video that makes the mouth move. Tested on an RTX 3060.
 
 All filenames were read directly from the workflow `.json` (verified). Place each file in the folder shown.
 

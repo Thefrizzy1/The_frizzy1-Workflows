@@ -46,4 +46,4 @@ Full verified table + links: **[downloads.md](downloads.md)**.
 See [changelog.md](changelog.md).
 
 ## Related workflows
-- [LTX-2.3 Ultimate](../ltx2.3-ultimate) — newer 22B generation.
+- [LTX-2.3 Ultimate · 12 GB](../ltx2.3-ultimate) — newer 22B generation.

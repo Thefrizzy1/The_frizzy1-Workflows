@@ -1,4 +1,4 @@
-# The_frizzy1 — LTX-2.3 Ultimate v3.0.0
+# The_frizzy1 — LTX-2.3 Ultimate · 12 GB v3.0.0
 
 <a href="https://www.youtube.com/watch?v=im4wolfHvMk&list=PLQ3PcJNbU2Ls"><img src="https://img.youtube.com/vi/im4wolfHvMk/mqdefault.jpg" width="640" alt="Watch the video"></a>
 
