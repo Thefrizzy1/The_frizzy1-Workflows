@@ -58,7 +58,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Quick edits** in 4 steps: say what the picture should look like (Fibo 2.0, non-commercial) | [Fibo 2.0 Edit Turbo · 12 GB](workflows/fibo/fibo2-edit-12gb) | 12 GB |
 | **Design images with text + real transparency** (Ming Image 0.1 Design) | [Ming Image 0.1 · 12 GB](workflows/ming/image-0.1-design-12gb) | 4 GB+* |
 | **Fast, tiny** image generation | [Z-Image Turbo GGUF](workflows/z-image/turbo) | 4 GB+ |
-| Newer **LTX video** (audio-aware) | [LTX-2](workflows/ltx/ltx2) · [LTX-2.3 Ultimate](workflows/ltx/ltx2.3-ultimate) | 4–12 GB |
+| Newer **LTX video** (audio-aware) | [LTX-2](workflows/ltx/ltx2) · [LTX-2.3 Ultimate · 12 GB](workflows/ltx/ltx2.3-ultimate) | 4–12 GB |
 | **Every MiniMax H3 mode** (T2V · I2V · R2V · multiframe · pose · extend) in one workflow, with sound | [MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb) | 12 GB |
 | **LTX 2.5** text / image / first+last / pose-driven video in one workflow | [LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb) | 12 GB |
 | **Free AI VFX** on your own clips: remove a person, day to night, water, alpha matte, grey blocks to render (LTX-2.5 VFX LoRAs) | [LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb) | 12 GB |
@@ -66,7 +66,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Genjutsu at home**: swap the person, whole clip, original sound | [H3 Character Swap · 12 GB](workflows/minimax/h3-character-swap-12gb) | 12 GB |
 | **Realistic person-to-person swap** from one photo, one pass, App mode (Singularity V2) | [H3 Singularity Swap · 12 GB](workflows/minimax/h3-singularity-swap-12gb) | 12 GB |
 | **A whole story video** from a script: same character, moving scenes, dialogue, narrator + music | [Story Creator · 12 GB](workflows/story/story-creator-12gb) | 12 GB |
-| **Animate a character** from a driving video, native nodes | [Wan Animate Ultimate](workflows/wan2.2/animate-ultimate) | 12 GB (GGUF path lower) |
+| **Animate a character** from a driving video, native nodes | [Wan Animate Ultimate · 12 GB](workflows/wan2.2/animate-ultimate) | 12 GB (GGUF path lower) |
 | **Krea 2** or **Kroma** images + style reference | [Krea 2 Ultimate · 12 GB](workflows/krea/krea-2-ultimate-12gb) | 4 GB+* |
 | One image → **textured 3D model** (.glb) | [Image to 3D Ultimate · 12 GB](workflows/3d/image-to-3d-ultimate-12gb) | 12 GB |
 | The **older Hunyuan** video path | [Hunyuan Video Low-VRAM](workflows/hunyuan/video) | 4 GB+ |
@@ -92,15 +92,15 @@ templated `.json`. Model names are verified from the workflow file.
 | **[Wan 2.1 FLF2V](workflows/wan2.1/flf2v)** | v2.0.0 | 4 GB | First → Last frame | [CivitAI](https://civitai.com/models/1624167) |
 | **[Hunyuan Video Low-VRAM](workflows/hunyuan/video)** | v1.1.1 | 4 GB | T2V · I2V | [CivitAI](https://civitai.com/models/1312419) · [HF](https://huggingface.co/The-frizzy1/Hunyuan-Video-Low-VRAM-4GB) |
 | **[LTX-2 GGUF](workflows/ltx/ltx2)** | v2.0.0 | 4 GB | T2V · I2V · audio | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow) · [▶](https://www.youtube.com/watch?v=nnHUBMgdJac&list=PLQ3PcJNbU2Ls) |
-| **[LTX-2.3 Ultimate](workflows/ltx/ltx2.3-ultimate)** | v3.0.0 | 12 GB | T2V · I2V · FFLF · audio · ID | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX23-Ultimate) · [▶](https://www.youtube.com/watch?v=im4wolfHvMk&list=PLQ3PcJNbU2Ls) |
+| **[LTX-2.3 Ultimate · 12 GB](workflows/ltx/ltx2.3-ultimate)** | v3.0.0 | 12 GB | T2V · I2V · FFLF · audio · ID | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX23-Ultimate) · [▶](https://www.youtube.com/watch?v=im4wolfHvMk&list=PLQ3PcJNbU2Ls) |
 | **[MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb)** | v2.3.0 | 12 GB | T2V · I2V · last · FLF · R2V · multiframe · ControlNet pose · extend · audio | [▶](https://www.youtube.com/watch?v=KJNksY9Ur3w&list=PLMztlpsP7Bgg) · [▶](https://www.youtube.com/watch?v=H2lZud6dbf4&list=PLMztlpsP7Bgg) |
-| **[LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb)** | v3.1.1 | 12 GB | T2V · I2V · FLF · pose (IC-LoRA) · VFX LoRAs (remove, day to night, water, alpha, layout to render…) · cinemagraph · slow motion · audio | [▶](https://www.youtube.com/watch?v=HeHY6N5hH_M&list=PLQ3PcJNbU2Ls) · [▶](https://www.youtube.com/watch?v=TlV72fg9skw&list=PLQ3PcJNbU2Ls) |
+| **[LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb)** | v3.2.0 | 12 GB | T2V · I2V · FLF · pose (IC-LoRA) · VFX LoRAs (remove, day to night, water, alpha, layout to render…) · cinemagraph · slow motion · RelayVSR x2 upscale · audio | [▶](https://www.youtube.com/watch?v=HeHY6N5hH_M&list=PLQ3PcJNbU2Ls) · [▶](https://www.youtube.com/watch?v=TlV72fg9skw&list=PLQ3PcJNbU2Ls) |
 | **[Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3)** | v2.0.0 | 12 GB | character replacement (V2V) | — |
 | **[H3 Character Swap · 12 GB](workflows/minimax/h3-character-swap-12gb)** | v1.1.0 | 12 GB | character swap (V2V) · whole clip in loop passes · original sound | [▶](https://www.youtube.com/watch?v=zkhLZUGIIfE&list=PLMztlpsP7Bgg) |
 | **[H3 Singularity Swap · 12 GB](workflows/minimax/h3-singularity-swap-12gb)** | v1.0.0 | 12 GB | person-to-person swap (V2V) · Singularity V2 · one pass up to 15 s · original sound · App mode | — |
 | **[SCAIL-2 Character Swap · 12 GB](workflows/scail/scail2-character-swap-12gb)** | v1.1.0 | 12 GB | character swap (V2V) · whole clip in 81-frame loop rounds · which person · original sound · App mode | — |
 | **[Story Creator · 12 GB](workflows/story/story-creator-12gb)** | v1.4.0 | 12 GB | story video: script (WORLD / [camera] / dialogue / narrator / [continue]) → stills → I2V · music | — |
-| **[Wan Animate Ultimate](workflows/wan2.2/animate-ultimate)** | v2.0.0 | 12 GB | Wan Animate 2 · Wan 2.2 Animate GGUF + face video | [▶](https://www.youtube.com/watch?v=9idzB8mlYRY&list=PLRe4JVWoY_AU) · [▶](https://www.youtube.com/watch?v=aqFdglMbcIU&list=PLRe4JVWoY_AU) |
+| **[Wan Animate Ultimate · 12 GB](workflows/wan2.2/animate-ultimate)** | v2.0.0 | 12 GB | Wan Animate 2 · Wan 2.2 Animate GGUF + face video | [▶](https://www.youtube.com/watch?v=9idzB8mlYRY&list=PLRe4JVWoY_AU) · [▶](https://www.youtube.com/watch?v=aqFdglMbcIU&list=PLRe4JVWoY_AU) |
 
 ### 🖼️ Image
 
@@ -147,8 +147,8 @@ The older GGUF workflows still work and stay here for 4 GB cards. If you have 12
 
 | Older | Newest |
 |---|---|
-| Wan 2.1 GGUF / FLF2V, Hunyuan Video, LTX-2 GGUF, LTX-2.3 Ultimate | [MiniMax H3 Ultimate](workflows/minimax/h3-ultimate-12gb) · [LTX 2.5 Ultimate](workflows/ltx/ltx-2.5-ultimate-12gb) |
-| Wan 2.2 Animate (5 custom node packs) | [Wan Animate Ultimate](workflows/wan2.2/animate-ultimate) · [Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3) |
+| Wan 2.1 GGUF / FLF2V, Hunyuan Video, LTX-2 GGUF, LTX-2.3 Ultimate · 12 GB | [MiniMax H3 Ultimate](workflows/minimax/h3-ultimate-12gb) · [LTX 2.5 Ultimate](workflows/ltx/ltx-2.5-ultimate-12gb) |
+| Wan 2.2 Animate (5 custom node packs) | [Wan Animate Ultimate · 12 GB](workflows/wan2.2/animate-ultimate) · [Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3) |
 | Flux Kontext, Qwen Image & Edit 2509, Qwen Image 2.1 · 12 GB | [Qwen Image 2.1 Ultimate](workflows/qwen/image-2.1-ultimate-12gb) |
 | Flux.2 Dev, Z-Image Turbo | [FLUX 3 Klein](workflows/flux/flux3-klein-12gb) · [Krea 2 Ultimate](workflows/krea/krea-2-ultimate-12gb) · [Ming Image 0.1](workflows/ming/image-0.1-design-12gb) |
 

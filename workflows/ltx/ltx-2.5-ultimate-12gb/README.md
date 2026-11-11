@@ -1,17 +1,17 @@
-# The_frizzy1 — LTX 2.5 Ultimate · 12 GB v3.1.1
+# The_frizzy1 — LTX 2.5 Ultimate · 12 GB v3.2.0
 
 <a href="https://www.youtube.com/watch?v=HeHY6N5hH_M&list=PLQ3PcJNbU2Ls"><img src="https://img.youtube.com/vi/HeHY6N5hH_M/mqdefault.jpg" width="400" alt="Watch the video"></a> <a href="https://www.youtube.com/watch?v=TlV72fg9skw&list=PLQ3PcJNbU2Ls"><img src="https://img.youtube.com/vi/TlV72fg9skw/mqdefault.jpg" width="400" alt="Watch the video"></a>
 
 ☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
 
-> LTX 2.5 text, image, first+last and pose-driven video, plus Lightricks' VFX LoRAs (remove a person, day to night, water, alpha matte, layout to render and more), in one workflow. Video with sound. Core ComfyUI nodes only, tested on an RTX 3060.
+> LTX 2.5 text, image, first+last and pose-driven video, plus Lightricks' VFX LoRAs (remove a person, day to night, water, alpha matte, layout to render and more), in one workflow, with an optional RelayVSR x2 upscale and a fast half-size switch. Video with sound. Core ComfyUI nodes only, tested on an RTX 3060.
 
 | | |
 |---|---|
 | **Model family** | LTX 2.5 (distilled) |
-| **Tasks** | T2V · I2V · First+last frame · Pose control (IC-LoRA Union) · VFX video to video (12 LoRAs) · Layout to Render · Ingredients · Cinemagraph · Slow motion |
+| **Tasks** | T2V · I2V · First+last frame · Pose control (IC-LoRA Union) · VFX video to video (12 LoRAs) · Layout to Render · Ingredients · Cinemagraph · Slow motion · RelayVSR x2 upscale |
 | **Min VRAM** | 12 GB (tested) |
-| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.44.0 · frontend 1.57.6 |
+| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.45.0 · frontend 1.58.5 |
 | **YouTube explainer** | [▶ LTX 2.5 ComfyUI on RTX 3060 vs MacBook Air M5 (Same Clip)](https://www.youtube.com/watch?v=HeHY6N5hH_M&list=PLQ3PcJNbU2Ls) · [▶ LTX 2.5 Is the New Low-VRAM King (Beats MiniMax H3)](https://www.youtube.com/watch?v=TlV72fg9skw&list=PLQ3PcJNbU2Ls) |
 | **License** | Workflow: MIT · LTX 2.5 and the LoRAs: LTX-2.x Community License |
 
@@ -47,6 +47,27 @@ Built from the official LTX 2.5 T2V / I2V / FLF2V templates, the LTX 2.3 IC-LoRA
 
 **Keep the source/pose video's audio**: VFX video to video and Pose mode put the original sound back.
 
+## Speed and size switches (new in v3.2.0)
+
+Two switches on the main node:
+
+- **LTX x2 upscale (2 stages)**, on by default. T2V and I2V normally render at half size, upscale x2 in latent space and refine in a second stage. **Off** stops after stage 1: about 2x faster, half the size. (T2V / I2V / Cinemagraph / Slow motion only.)
+- **RelayVSR x2**, off by default. **On** upscales the finished video of any mode x2 with ComfyUI's built-in RelayVSR, the same settings as the official RelayVSR template (1 step, cfg 1, VSR Decode). Needs ComfyUI 0.45.0+ and the two RelayVSR files in [downloads.md](downloads.md).
+
+Measured on the RTX 3060, T2V 4 s, Megapixels 0.5, models already loaded, a new seed per run, from the saved v3.2.0 file:
+
+| LTX x2 upscale | RelayVSR x2 | Result | Wall | Peak VRAM | Peak RAM |
+|---|---|---|---|---|---|
+| on (default) | off | 960x512 | 1:19 | 11.1 GB | 16.6 GB |
+| **off** | off | 480x256 | **0:35** | 11.3 GB | 16.4 GB |
+| **off** | **on** | 960x512 | 0:43 | 11.1 GB | 16.1 GB |
+| on | **on** | **1920x1024** | 1:41 | 11.3 GB | 17.7 GB |
+| VFX: Clean Plate | **on** | 1920x1024 | 4:06 | 11.5 GB | 18.6 GB |
+
+- Off + RelayVSR is sharper than plain off, but has less fine detail than 2 stages: RelayVSR sharpens what is there, stage 2 adds detail.
+- On + RelayVSR is the sharpest: full HD on a 12 GB card, about 23 s more than 960x512.
+- Peak VRAM barely changes with the switches: the loaded LTX model itself fills the 12 GB. The off switch buys time, not VRAM headroom.
+
 ## VFX settings from my tests
 
 Set **VFX LoRA strength** on the node (default 1.0).
@@ -67,7 +88,7 @@ Set **VFX LoRA strength** on the node (default 1.0).
 - **Ingredients did not work for me:** in 9 of 9 runs it kept the reference sheet's panel grid instead of making one shot.
 - Decompression invents text: don't use it on screen recordings.
 
-## Measured on the RTX 3060
+## Measured on the RTX 3060 (all modes, v3.1.1, same graph in v3.2.0)
 
 Every mode run once from the saved v3.1.1 file, 960×512, 4 s (Ingredients 5 s). *Wall* = queue to finished, including model loading.
 
@@ -87,7 +108,7 @@ Every mode run once from the saved v3.1.1 file, 960×512, 4 s (Ingredients 5 s).
 See [downloads.md](downloads.md) — every file was read from the workflow `.json`. The VFX LoRAs are optional: download only the ones you use.
 
 ## Required custom nodes
-None - core ComfyUI **0.44.0+** (0.44.0 changed the core CreateVideo node; older saved files are refused, this one is not).
+None - core ComfyUI **0.45.0+** (the RelayVSR nodes). On ComfyUI 0.44 use `source/The_frizzy1_ltx-2.5-ultimate-12gb_v3.1.1.json` (no switches).
 
 ## Get the models (one command)
 
@@ -96,9 +117,9 @@ python scripts/frizzy.py doctor ltx/ltx-2.5-ultimate-12gb --comfy "C:/path/to/Co
 ```
 
 ## Installation
-1. Update ComfyUI to **0.44.0+**.
+1. Update ComfyUI to **0.45.0+**.
 2. Download the files in [downloads.md](downloads.md). The LTX 2.5 files and every LoRA need **Agree and access** on their Hugging Face page first.
-3. Load `The_frizzy1_ltx-2.5-ultimate-12gb_v3.1.1.json`, pick a **MODE**, add your inputs, **Run**.
+3. Load `The_frizzy1_ltx-2.5-ultimate-12gb_v3.2.0.json`, pick a **MODE**, add your inputs, **Run**.
 
 If your models live in sub-folders (e.g. `diffusion_models/LTX-2.5/`), the loaders show red until you re-pick them once.
 

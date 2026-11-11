@@ -154,6 +154,20 @@
       "dest": "loras",
       "required": false,
       "note": "I2V + Slow motion mode. Gated: click Agree and access on huggingface.co/Lightricks/LTX-2.5-22b-LoRA-Slow-Motion-Control (logged in), then set HF_TOKEN. 0.65 GB"
+    },
+    {
+      "name": "relayvsr_x2_lightx2v_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/RelayVSR/resolve/main/diffusion_models/relayvsr_x2_lightx2v_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "RelayVSR x2 switch only (needs ComfyUI 0.45.0+). 5.16 GB"
+    },
+    {
+      "name": "relayvsr_flash_vae_x2_fp32.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/RelayVSR/resolve/main/vae/relayvsr_flash_vae_x2_fp32.safetensors",
+      "dest": "vae",
+      "required": false,
+      "note": "RelayVSR x2 switch only (needs ComfyUI 0.45.0+). 0.13 GB"
     }
   ],
   "nodes": []

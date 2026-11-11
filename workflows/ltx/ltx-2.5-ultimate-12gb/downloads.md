@@ -28,7 +28,7 @@ Click a file name to download it. Put it in the folder shown (inside `ComfyUI/mo
 | Pose mode | `checkpoints/` | [sdpose_wholebody_fp16.safetensors](https://huggingface.co/Comfy-Org/SDPose/resolve/main/checkpoints/sdpose_wholebody_fp16.safetensors) | 1.9 GB |
 | Pose mode | `diffusion_models/` | [rt_detr_v4-x-hgnet_fp16.safetensors](https://huggingface.co/Comfy-Org/SDPose/resolve/main/diffusion_models/rt_detr_v4-x-hgnet_fp16.safetensors) | 0.1 GB |
 
-_Tested on: RTX 3060 12 GB · 32 GB RAM · ComfyUI 0.44.0._
+_Tested on: RTX 3060 12 GB · 32 GB RAM · ComfyUI 0.45.0._
 
 LTX 2.5 files need you to accept Lightricks' terms on the model page first (logged in to Hugging Face).
 
@@ -52,3 +52,12 @@ LTX 2.5 files need you to accept Lightricks' terms on the model page first (logg
 | I2V + Slow motion mode | `loras/` | [ltx-2.5-22b-lora-slow-motion-control-1.0.safetensors](https://huggingface.co/Lightricks/LTX-2.5-22b-LoRA-Slow-Motion-Control/resolve/main/ltx-2.5-22b-lora-slow-motion-control-1.0.safetensors) | 0.65 GB |
 
 Each one needs **Agree and access** on its Lightricks page first (logged in to Hugging Face).
+
+## RelayVSR x2: only for the RelayVSR x2 switch (needs ComfyUI 0.45.0+)
+
+**[Comfy-Org/RelayVSR](https://huggingface.co/Comfy-Org/RelayVSR)**
+
+| For | Folder | File (click = download) | Size |
+|---|---|---|---|
+| RelayVSR x2 | `diffusion_models/` | [relayvsr_x2_lightx2v_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/RelayVSR/resolve/main/diffusion_models/relayvsr_x2_lightx2v_int8_convrot.safetensors) | 5.16 GB |
+| RelayVSR x2 | `vae/` | [relayvsr_flash_vae_x2_fp32.safetensors](https://huggingface.co/Comfy-Org/RelayVSR/resolve/main/vae/relayvsr_flash_vae_x2_fp32.safetensors) | 0.13 GB |

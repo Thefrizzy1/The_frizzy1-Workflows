@@ -107,7 +107,7 @@ Custom node packs: [gguf](https://github.com/calcuis/gguf), [ComfyUI-KJNodes](ht
 
 Custom node packs: [ComfyUI-GGUF](https://github.com/city96/ComfyUI-GGUF), [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes).
 
-## LTX-2.3 Ultimate — [ltx/ltx2.3-ultimate](../workflows/ltx/ltx2.3-ultimate)
+## LTX-2.3 Ultimate · 12 GB — [ltx/ltx2.3-ultimate](../workflows/ltx/ltx2.3-ultimate)
 
 | Need | Role | File the workflow loads | Folder | Source | Note |
 |---|---|---|---|---|---|
@@ -165,6 +165,8 @@ Custom node packs: none (core ComfyUI).
 | optional | LoRA | [`ltx-2.5-22b-ic-lora-ingredients-0.9.safetensors`](https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Ingredients/resolve/main/ltx-2.5-22b-ic-lora-ingredients-0.9.safetensors) | `loras/` | [Lightricks/LTX-2.5-22b-IC-LoRA-Ingredients](https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Ingredients) | Ingredients mode. Gated: Agree and access. 1.31 GB |
 | optional | LoRA | [`ltx-2.5-22b-lora-cinemagraph-0.9.safetensors`](https://huggingface.co/Lightricks/LTX-2.5-22b-LoRA-Cinemagraph/resolve/main/ltx-2.5-22b-lora-cinemagraph-0.9.safetensors) | `loras/` | [Lightricks/LTX-2.5-22b-LoRA-Cinemagraph](https://huggingface.co/Lightricks/LTX-2.5-22b-LoRA-Cinemagraph) | I2V + Cinemagraph mode. Gated: Agree and access. 0.20 GB |
 | optional | LoRA | [`ltx-2.5-22b-lora-slow-motion-control-1.0.safetensors`](https://huggingface.co/Lightricks/LTX-2.5-22b-LoRA-Slow-Motion-Control/resolve/main/ltx-2.5-22b-lora-slow-motion-control-1.0.safetensors) | `loras/` | [Lightricks/LTX-2.5-22b-LoRA-Slow-Motion-Control](https://huggingface.co/Lightricks/LTX-2.5-22b-LoRA-Slow-Motion-Control) | I2V + Slow motion mode. Gated: Agree and access. 0.65 GB |
+| optional | Model | [`relayvsr_x2_lightx2v_int8_convrot.safetensors`](https://huggingface.co/Comfy-Org/RelayVSR/resolve/main/diffusion_models/relayvsr_x2_lightx2v_int8_convrot.safetensors) | `diffusion_models/` | [Comfy-Org/RelayVSR](https://huggingface.co/Comfy-Org/RelayVSR) | RelayVSR x2 switch, ComfyUI 0.45.0+. 5.16 GB |
+| optional | VAE | [`relayvsr_flash_vae_x2_fp32.safetensors`](https://huggingface.co/Comfy-Org/RelayVSR/resolve/main/vae/relayvsr_flash_vae_x2_fp32.safetensors) | `vae/` | [Comfy-Org/RelayVSR](https://huggingface.co/Comfy-Org/RelayVSR) | RelayVSR x2 switch, ComfyUI 0.45.0+. 0.13 GB |
 
 Custom node packs: none (core ComfyUI).
 
@@ -208,7 +210,7 @@ Custom node packs: none (core ComfyUI).
 
 Custom node packs: none (core ComfyUI).
 
-## Wan Animate Ultimate — [wan2.2/animate-ultimate](../workflows/wan2.2/animate-ultimate)
+## Wan Animate Ultimate · 12 GB — [wan2.2/animate-ultimate](../workflows/wan2.2/animate-ultimate)
 
 | Need | Role | File the workflow loads | Folder | Source | Note |
 |---|---|---|---|---|---|
