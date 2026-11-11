@@ -1,0 +1,76 @@
+{
+  "workflow": "minimax/h3-relight-12gb",
+  "files": [
+    {
+      "name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "21.0 GB"
+    },
+    {
+      "name": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/loras/minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": "2.0 GB"
+    },
+    {
+      "name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "15.7 GB"
+    },
+    {
+      "name": "minimax_h3_video_vae_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_int8_convrot.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "2.8 GB"
+    },
+    {
+      "name": "minimax_h3_audio_vae_fp32.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "0.6 GB"
+    },
+    {
+      "name": "qwen3vl_8b_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen3-VL/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "9.4 GB, the describer"
+    },
+    {
+      "name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "21.0 GB, Full HD: gentle H3 refine only"
+    },
+    {
+      "name": "minimax_h3_latent_upscaler_3d_conv_v1_bf16.safetensors",
+      "url": "https://huggingface.co/Efficient-Large-Model/Open-H3-Regenerate-2K/resolve/main/latent_upsampler/minimax_h3_latent_upscaler_3d_conv_v1_bf16.safetensors",
+      "dest": "latent_upscale_models",
+      "required": false,
+      "note": "0.7 GB, Full HD: gentle H3 refine only"
+    },
+    {
+      "name": "minimax_h3_open_regenerate_2k_r128_comfyui_bf16_swiglu_fixed.safetensors",
+      "url": "https://huggingface.co/DrakenZA/Open-H3-Regenerate-2K-ComfyUI/resolve/main/minimax_h3_open_regenerate_2k_r128_comfyui_bf16_swiglu_fixed.safetensors",
+      "dest": "loras",
+      "required": false,
+      "note": "2.0 GB, Full HD: gentle H3 refine only"
+    },
+    {
+      "name": "RealESRGAN_x2plus.pth",
+      "url": "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.1/RealESRGAN_x2plus.pth",
+      "dest": "upscale_models",
+      "required": false,
+      "note": "0.1 GB, Full HD: RealESRGAN x2 only"
+    }
+  ],
+  "nodes": []
+}

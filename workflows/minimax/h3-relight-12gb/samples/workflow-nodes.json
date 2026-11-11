@@ -1,0 +1,71 @@
+{
+ "img": "workflow.png",
+ "width": 1920,
+ "height": 1080,
+ "note": "first load of the saved workflow at its own saved view (scale 1, offset 60,60); ComfyUI's menus and side panels hidden, canvas + node widgets only; boxes include the title bar",
+ "nodes": [
+  {
+   "id": "1",
+   "type": "LoadVideo",
+   "title": "Your video (24 fps)",
+   "x": 60,
+   "y": 30,
+   "w": 420,
+   "h": 500
+  },
+  {
+   "id": "2",
+   "type": "LoadImage",
+   "title": "Light sphere (from the preset)",
+   "x": 520,
+   "y": 30,
+   "w": 420,
+   "h": 500
+  },
+  {
+   "id": "3",
+   "type": "PrimitiveStringMultiline",
+   "title": "Light: the preset's master prompt",
+   "x": 60,
+   "y": 570,
+   "w": 880,
+   "h": 260
+  },
+  {
+   "id": "115",
+   "type": "SaveVideo",
+   "title": "Result",
+   "x": 1630,
+   "y": 30,
+   "w": 270,
+   "h": 136
+  },
+  {
+   "id": "120",
+   "type": "subgraph",
+   "title": "H3 Relight",
+   "x": 1020,
+   "y": 30,
+   "w": 520,
+   "h": 600
+  },
+  {
+   "id": "121",
+   "type": "MarkdownNote",
+   "title": "How to use",
+   "x": -620,
+   "y": 30,
+   "w": 620,
+   "h": 576
+  },
+  {
+   "id": "122",
+   "type": "MarkdownNote",
+   "title": "Downloads",
+   "x": -620,
+   "y": 616,
+   "w": 620,
+   "h": 912
+  }
+ ]
+}
