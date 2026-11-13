@@ -12,6 +12,7 @@
 | **Tasks** | Relight a video (V2V) · original sound · optional Full HD (1088p) · optional long clip (up to 60 s in 5.2 s passes) |
 | **Needs** | 12 GB VRAM · 32 GB system RAM (tested) · ComfyUI **0.44+** · no custom nodes |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.44.0 (renders) · ComfyUI 0.45.0 + frontend 1.58.5 (the saved file) |
+| **YouTube explainer** | [I Replaced Higgsfield Relight With My RTX 3060 (Free, Local)](https://www.youtube.com/watch?v=G_TqJKXJ1aw) |
 | **License** | Workflow: MIT · Light presets + spheres: MIT, Sirio Berati · Models: see Credits |
 
 ## Quick start
