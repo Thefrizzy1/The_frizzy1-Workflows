@@ -1,4 +1,4 @@
-# Downloads — Qwen Image 2.1 · 12 GB v1.0.0
+# Downloads — Qwen Image 2.1 · 12 GB v2.0.0
 
 Verified from the workflow JSON. File names and sizes checked on Hugging Face.
 

@@ -11,6 +11,7 @@
 | **Workflow file** | `The_frizzy1_story-creator-12gb_v1.4.0.json` (older versions in `source/`) |
 | **Needs** | 12 GB VRAM · 32 GB system RAM · ComfyUI **0.39+** |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.39.2 |
+| **YouTube explainer** | [How to Make LONG AI Videos for FREE (Actually Unlimited, No Credits)](https://www.youtube.com/watch?v=dSzM3ovKBko) |
 | **License** | Workflow: MIT · Qwen Image 2.1: Qwen Research License (non-commercial) · MiniMax H3: MiniMax H3 Community License · YuE2: CC-BY-NC-4.0 (non-commercial) |
 
 ## Quick start
