@@ -3,7 +3,7 @@
 ☕ If this saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
 
 > An invented character, the same face again in any scene, and video of them, on one 12 GB card.
-> Two new workflows on **MiniMax H3 Image** (core ComfyUI nodes only), plus the two video workflows I used with them.
+> Four workflows in this folder: two new ones on **MiniMax H3 Image** (core ComfyUI nodes only) and the two video workflows I used with them.
 > This page is the step-by-step guide for the video.
 
 | | |
@@ -20,8 +20,8 @@
 |---|---|---|---|
 | 1 | **AI Influencer 1 · Create the character** | text prompt → the first picture of an invented person | `The_frizzy1_ai-influencer-1-character-12gb_v1.0.0.json` (this folder) |
 | 2 | **AI Influencer 2 · Same face, new scene** | their picture + a prompt → the same person somewhere else; with a second picture it puts them into a frame of your own video | `The_frizzy1_ai-influencer-2-scenes-12gb_v1.0.0.json` (this folder) |
-| 3 | **Viggle Remake** (Viggle's own workflow) | a clip + one painted keyframe → the same clip with your character, the clip's sound kept | [Viggle/Viggle-Remake](https://huggingface.co/Viggle/Viggle-Remake), `comfyui/workflows/remake_swap_ui.json` |
-| 4 | **MiniMax H3 Ultimate · 12 GB** | a still → a 10 s clip with sound; the last frame of a clip as the first frame of the next for longer ones | [h3-ultimate-12gb](../h3-ultimate-12gb) |
+| 3 | **AI Influencer 3 · Viggle Remake swap** | a clip + one painted keyframe → the same clip with your character, the clip's sound kept. The graph I ran, built on [Viggle Remake](https://huggingface.co/Viggle/Viggle-Remake) (needs Viggle's node pack) | `The_frizzy1_ai-influencer-3-viggle-remake-swap-12gb_v1.0.0.json` (this folder) |
+| 4 | **MiniMax H3 Ultimate · 12 GB** | a still → a 10 s clip with sound; the last frame of a clip as the first frame of the next for longer ones | `The_frizzy1_ai-influencer-4-minimax-h3-ultimate-12gb_v2.3.0.json` (this folder, a copy of v2.3.0; its own page with every mode: [h3-ultimate-12gb](../h3-ultimate-12gb)) |
 
 Workflows 1 and 2 are enough for an account that posts pictures. 3 and 4 are optional: only for video.
 
@@ -67,7 +67,7 @@ Prompt: [`prompts/4-reference-sheet.txt`](prompts/4-reference-sheet.txt). A wide
 <p align="center"><img src="samples/ai-influencer-12gb-preview-02.jpg" width="96%" alt="Reference sheet: front, side, back, close-up"></p>
 
 ### 6 · Video from a still (workflow 4, optional)
-Open [MiniMax H3 Ultimate · 12 GB](../h3-ultimate-12gb), mode image to video, and load one of the scene pictures as the first frame.
+Open workflow 4 (`The_frizzy1_ai-influencer-4-minimax-h3-ultimate-12gb_v2.3.0.json`), mode image to video, and load one of the scene pictures as the first frame.
 What I ran: 576x736 (0.4 MP, 3:4), 10 s, turbo LoRA. For a longer clip, save the last frame of the clip and use it as the first
 frame of the next one. Over three clips (30 s) the face drifted in my test, so check the last frames.
 
@@ -80,7 +80,7 @@ repository) and their swap model, see [downloads.md](downloads.md).
 3. **Paint the keyframe in workflow 2**: Picture 1 = that frame, Picture 2 = the character's close-up (un-bypass it with Ctrl+B),
    size 16:9. The prompt replaces the person and keeps everything else:
    [`prompts/5-keyframe-two-pictures.txt`](prompts/5-keyframe-two-pictures.txt). Say what must go (hat, glasses, beard, hoodie).
-4. **Run Viggle Remake (swap)** with the clip as source, the keyframe as reference 1 pinned to the frame you took it from, and the
+4. **Open workflow 3** (`The_frizzy1_ai-influencer-3-viggle-remake-swap-12gb_v1.0.0.json`) and run it with the clip as source, the keyframe as reference 1 pinned to the frame you took it from, and the
    six-section prompt: [`prompts/6-viggle-remake-video-prompt.txt`](prompts/6-viggle-remake-video-prompt.txt). The duration in the
    prompt has to match the frame count. The clip's own sound is kept, so the mouth follows the voice in the clip.
    The exact API graph I ran is in [`source/viggle_remake_swap_api_12gb.json`](source/viggle_remake_swap_api_12gb.json).
@@ -121,11 +121,13 @@ The character in the samples is invented; no real person's photo was used as a r
 - **Viggle Remake nodes missing:** install Viggle's node pack from their repository. Workflows 1 and 2 do not need it.
 
 ## Files in this folder
-- `The_frizzy1_ai-influencer-1-character-12gb_v1.0.0.json`, `The_frizzy1_ai-influencer-2-scenes-12gb_v1.0.0.json`: the two workflows
+- `The_frizzy1_ai-influencer-1-character-12gb_v1.0.0.json`, `The_frizzy1_ai-influencer-2-scenes-12gb_v1.0.0.json`: the two new workflows
+- `The_frizzy1_ai-influencer-3-viggle-remake-swap-12gb_v1.0.0.json`: workflow 3, the Viggle Remake swap
+- `The_frizzy1_ai-influencer-4-minimax-h3-ultimate-12gb_v2.3.0.json`: workflow 4, MiniMax H3 Ultimate
 - [`downloads.md`](downloads.md), `models.json`: every model file with its folder and link
 - [`prompts/`](prompts): every prompt from the video
 - `samples/`: screenshots and results
-- `source/`: the script that builds both workflows, and the Viggle Remake API graph I ran
+- `source/`: the scripts that build workflows 1 to 3, and the Viggle Remake API graph I ran
 
 ## Credits
 - **MiniMax H3 Image** and **MiniMax H3** by MiniMax (MiniMax-H3-Image Community License Agreement / MiniMax H3 Community License).

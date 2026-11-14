@@ -25,3 +25,16 @@ Everything marked *video* is optional, only for steps 6 and 7 of the guide:
 - **MiniMax H3 image to video** (step 6): the full list for every mode is in [h3-ultimate-12gb/downloads.md](../h3-ultimate-12gb/downloads.md).
 
 Custom nodes: none for workflows 1 and 2 (core ComfyUI 0.45+).
+
+## Workflow 4, its other modes (not used in the video)
+
+MiniMax H3 Ultimate has more modes than image to video. These files are only for those modes; what each one is for is in
+[h3-ultimate-12gb/downloads.md](../h3-ultimate-12gb/downloads.md).
+
+| Folder | File (click = download) | Size / note |
+|---|---|---|
+| `diffusion_models/` | [minimax_h3_ref2va_pruned_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors) | 21.0 GB |
+| `loras/` | [minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/loras/minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors) | 2.0 GB |
+| `model_patches/` | [minimax_h3_fun_controlnet_union_pruned_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/model_patches/minimax_h3_fun_controlnet_union_pruned_int8_convrot.safetensors) | 2.3 GB |
+| `checkpoints/` | [sdpose_wholebody_fp16.safetensors](https://huggingface.co/Comfy-Org/SDPose/resolve/main/checkpoints/sdpose_wholebody_fp16.safetensors) | 1.9 GB |
+| `diffusion_models/` | [rt_detr_v4-x-hgnet_fp16.safetensors](https://huggingface.co/Comfy-Org/SDPose/resolve/main/diffusion_models/rt_detr_v4-x-hgnet_fp16.safetensors) | 0.1 GB |
