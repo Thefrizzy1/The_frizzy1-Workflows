@@ -9,7 +9,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 [![CivitAI](https://img.shields.io/badge/CivitAI-The__frizzy1-2b7cff?style=flat-square)](https://civitai.com/user/The_frizzy1)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-The--frizzy1-ffb000?style=flat-square)](https://huggingface.co/The-frizzy1)
 [![YouTube](https://img.shields.io/badge/YouTube-@the__frizzy1-ff0033?style=flat-square)](https://www.youtube.com/@the_frizzy1)
-[![Workflows](https://img.shields.io/badge/workflows-32-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-33-6a5cff?style=flat-square)](#workflows)
 [![Min VRAM](https://img.shields.io/badge/min%20VRAM-4%20GB-3ecf8e?style=flat-square)](#workflows)
 [![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
 
@@ -65,6 +65,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Swap the person** in a video for your character (one still) | [Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3) | 12 GB |
 | **Genjutsu at home**: swap the person, whole clip, original sound | [H3 Character Swap · 12 GB](workflows/minimax/h3-character-swap-12gb) | 12 GB |
 | **Realistic person-to-person swap** from one photo, one pass, App mode (Singularity V2) | [H3 Singularity Swap · 12 GB](workflows/minimax/h3-singularity-swap-12gb) | 12 GB |
+| **An AI influencer**: an invented character, the same face in any scene, a reference sheet, the keyframe for a video swap (step-by-step guide) | [AI Influencer · 12 GB](workflows/minimax/ai-influencer-12gb) | 12 GB |
 | **Relight a video** with a light sphere + a light preset, original sound, optional Full HD and long clips (Sirio Berati's open-source relight, local) | [H3 Relight · 12 GB](workflows/minimax/h3-relight-12gb) | 12 GB |
 | **A whole story video** from a script: same character, moving scenes, dialogue, narrator + music | [Story Creator · 12 GB](workflows/story/story-creator-12gb) | 12 GB |
 | **Animate a character** from a driving video, native nodes | [Wan Animate Ultimate · 12 GB](workflows/wan2.2/animate-ultimate) | 12 GB (GGUF path lower) |
@@ -100,6 +101,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[H3 Character Swap · 12 GB](workflows/minimax/h3-character-swap-12gb)** | v1.1.0 | 12 GB | character swap (V2V) · whole clip in loop passes · original sound | [▶](https://www.youtube.com/watch?v=zkhLZUGIIfE&list=PLMztlpsP7Bgg) |
 | **[H3 Singularity Swap · 12 GB](workflows/minimax/h3-singularity-swap-12gb)** | v1.0.0 | 12 GB | person-to-person swap (V2V) · Singularity V2 · one pass up to 15 s · original sound · App mode | — |
 | **[H3 Relight · 12 GB](workflows/minimax/h3-relight-12gb)** | v1.0.0 | 12 GB | relight (V2V) · light sphere + preset text · original sound · Full HD (gentle H3 refine / RealESRGAN x2) · long clip up to 60 s | [▶](https://www.youtube.com/watch?v=G_TqJKXJ1aw) |
+| **[AI Influencer · 12 GB](workflows/minimax/ai-influencer-12gb)** | v1.0.0 | 12 GB | create a character (T2I) · same face, new scene (reference image) · reference sheet · video keyframe · MiniMax H3 Image · App mode | — |
 | **[SCAIL-2 Character Swap · 12 GB](workflows/scail/scail2-character-swap-12gb)** | v1.1.0 | 12 GB | character swap (V2V) · whole clip in 81-frame loop rounds · which person · original sound · App mode | — |
 | **[Story Creator · 12 GB](workflows/story/story-creator-12gb)** | v1.4.0 | 12 GB | story video: script (WORLD / [camera] / dialogue / narrator / [continue]) → stills → I2V · music | — |
 | **[Wan Animate Ultimate · 12 GB](workflows/wan2.2/animate-ultimate)** | v2.0.0 | 12 GB | Wan Animate 2 · Wan 2.2 Animate GGUF + face video | [▶](https://www.youtube.com/watch?v=9idzB8mlYRY&list=PLRe4JVWoY_AU) · [▶](https://www.youtube.com/watch?v=aqFdglMbcIU&list=PLRe4JVWoY_AU) |
@@ -230,7 +232,7 @@ The_frizzy1-Workflows/
 ├── docs/                  downloads · compatibility · wan-lineage · naming · audit
 ├── models/                model-family reference
 ├── workflows/
-│   ├── minimax/           h3-ultimate-12gb · viggle-animate-h3 · h3-character-swap-12gb · h3-singularity-swap-12gb · h3-relight-12gb
+│   ├── minimax/           h3-ultimate-12gb · viggle-animate-h3 · h3-character-swap-12gb · h3-singularity-swap-12gb · h3-relight-12gb · ai-influencer-12gb
 │   ├── ltx/               ltx-2.5-ultimate-12gb · ltx2.3-ultimate · ltx2
 │   ├── wan2.2/            animate-ultimate · animate · gguf-lowvram · aio-rapid
 │   ├── wan2.1/            gguf-lowvram · flf2v

@@ -1,0 +1,23 @@
+subject_definitions:
+<Video 1> is the source video for the editing task: one continuous 3.8 s locked-off take in a bright studio loft in which a man in a cream beanie, clear glasses and a black hoodie sits in a cream armchair behind a black microphone and talks to the camera with small head movements.
+<Picture 1> is a frame of the target video, from [Shot 1].
+<Subject 1> is Cyber Jinx in <Picture 1>: a slim woman in her late twenties with soft pastel pink hair slicked into a high ponytail with two long loose strands framing her face, pink shield sunglasses pushed down her nose so her eyes show above the frame, winged black eyeliner, silver hoop earrings, a small silver nose ring, a wide black webbing choker with a silver ring, an opaque black cropped tank top with buckle straps and small fine-line tattoos on her arms. She replaces the man in the cream beanie and black hoodie in <Video 1>.
+
+summary:
+[video editing + character replacement] The target video is an edited version of <Video 1> in which the man becomes <Subject 1>, Cyber Jinx, looking exactly as she does in <Picture 1>, sitting in the same cream armchair behind the same black microphone and talking to the camera. The studio loft, the white sofa, the shelves, the desk with two monitors, the windows, the plant and the reflector are unchanged. The single continuous shot, the camera, the motion, the timing and the actions of <Video 1> are kept.
+
+retention_analysis:
+<Video 1> (source video editing): fully_preserved - the single continuous shot with no cut, the locked-off wide-angle framing, the room, the daylight, and the motion and timing of every head movement and mouth movement are copied frame for frame.
+<Picture 1> (appears in [Shot 1]): reference - a frame of the target video. Cyber Jinx's face, hair and whole outfit, the microphone in front of her and the whole room are taken from <Picture 1>.
+<Subject 1> (appears in [Shot 1]): fully_preserved - the pink ponytail with two loose strands, the pink shield sunglasses, the eyeliner, the hoop earrings, the nose ring, the choker with the silver ring, the black cropped tank top and the small arm tattoos stay identical in every frame.
+
+detailed_description:
+The target video is a realistic bright indoor scene in a studio loft with soft daylight and natural colours.
+[Shot 1] At 00:00.000 <Subject 1>, Cyber Jinx, sits in the cream armchair facing the camera behind the black microphone, shoulders and upper body in view. At 00:00.500 she looks into the lens exactly as in <Picture 1>. She talks to the camera for the whole shot, her mouth moving with the speech, with small nods and slight turns of the head, glancing down briefly and back up at the lens. The camera does not move.
+In every frame, from the first to the last, the person in the armchair is this same woman exactly as in <Picture 1>: no cream beanie, no clear glasses, no black hoodie, no beard, no printed text on clothing at any moment. Only this one figure changes, and everything else stays as in <Video 1>.
+
+overall_soundscape:
+The source soundtrack continues throughout, with the voice talking to the camera and quiet room tone.
+
+non_diegetic_music:
+N/A
