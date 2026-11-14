@@ -21,7 +21,7 @@
 | 1 | **AI Influencer 1 · Create the character** | text prompt → the first picture of an invented person | `The_frizzy1_ai-influencer-1-character-12gb_v1.0.0.json` (this folder) |
 | 2 | **AI Influencer 2 · Same face, new scene** | their picture + a prompt → the same person somewhere else; with a second picture it puts them into a frame of your own video | `The_frizzy1_ai-influencer-2-scenes-12gb_v1.0.0.json` (this folder) |
 | 3 | **AI Influencer 3 · Viggle Remake swap** | a clip + one painted keyframe → the same clip with your character, the clip's sound kept. The graph I ran, built on [Viggle Remake](https://huggingface.co/Viggle/Viggle-Remake) (needs Viggle's node pack) | `The_frizzy1_ai-influencer-3-viggle-remake-swap-12gb_v1.0.0.json` (this folder) |
-| 4 | **MiniMax H3 Ultimate · 12 GB** | a still → a 10 s clip with sound; the last frame of a clip as the first frame of the next for longer ones | `The_frizzy1_ai-influencer-4-minimax-h3-ultimate-12gb (H3 Ultimate 2.3.0).json` (this folder, a copy of v2.3.0; its own page with every mode: [h3-ultimate-12gb](../h3-ultimate-12gb)) |
+| 4 | **MiniMax H3 Ultimate · 12 GB** | a still → a 10 s clip with sound; the last frame of a clip as the first frame of the next for longer ones | `The_frizzy1_ai-influencer-4-minimax-h3-ultimate-12gb_v1.0.0.json` (this folder: a copy of MiniMax H3 Ultimate v2.3.0, filed under this pack's version; its own page with every mode: [h3-ultimate-12gb](../h3-ultimate-12gb)) |
 
 Workflows 1 and 2 are enough for an account that posts pictures. 3 and 4 are optional: only for video.
 
@@ -67,7 +67,7 @@ Prompt: [`prompts/4-reference-sheet.txt`](prompts/4-reference-sheet.txt). A wide
 <p align="center"><img src="samples/ai-influencer-12gb-preview-02.jpg" width="96%" alt="Reference sheet: front, side, back, close-up"></p>
 
 ### 6 · Video from a still (workflow 4, optional)
-Open workflow 4 (`The_frizzy1_ai-influencer-4-minimax-h3-ultimate-12gb (H3 Ultimate 2.3.0).json`), mode image to video, and load one of the scene pictures as the first frame.
+Open workflow 4 (`The_frizzy1_ai-influencer-4-minimax-h3-ultimate-12gb_v1.0.0.json`), mode image to video, and load one of the scene pictures as the first frame.
 What I ran: 576x736 (0.4 MP, 3:4), 10 s, turbo LoRA. For a longer clip, save the last frame of the clip and use it as the first
 frame of the next one. Over three clips (30 s) the face drifted in my test, so check the last frames.
 
@@ -123,7 +123,7 @@ The character in the samples is invented; no real person's photo was used as a r
 ## Files in this folder
 - `The_frizzy1_ai-influencer-1-character-12gb_v1.0.0.json`, `The_frizzy1_ai-influencer-2-scenes-12gb_v1.0.0.json`: the two new workflows
 - `The_frizzy1_ai-influencer-3-viggle-remake-swap-12gb_v1.0.0.json`: workflow 3, the Viggle Remake swap
-- `The_frizzy1_ai-influencer-4-minimax-h3-ultimate-12gb (H3 Ultimate 2.3.0).json`: workflow 4, MiniMax H3 Ultimate
+- `The_frizzy1_ai-influencer-4-minimax-h3-ultimate-12gb_v1.0.0.json`: workflow 4, MiniMax H3 Ultimate
 - [`downloads.md`](downloads.md), `models.json`: every model file with its folder and link
 - [`prompts/`](prompts): every prompt from the video
 - `samples/`: screenshots and results
