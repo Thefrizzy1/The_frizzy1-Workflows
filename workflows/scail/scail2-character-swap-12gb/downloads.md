@@ -1,4 +1,4 @@
-# Downloads — SCAIL-2 Character Swap · 12 GB
+# Downloads - SCAIL-2 Character Swap · 12 GB
 
 Every file name below was read from the workflow `.json`.
 

@@ -1,4 +1,4 @@
-# The_frizzy1 · MiniMax Music 3 · 12 GB v1.0.0
+# The_frizzy1 · MiniMax Music 3 · 12 GB v1.0.1
 
 ☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
 
@@ -11,13 +11,14 @@
 | **Tasks** | Text + lyrics → Music (vocals or instrumental) |
 | **Needs** | 12 GB VRAM · 32 GB system RAM (ComfyUI peaked at 4.3 GB) · ComfyUI **0.42+** |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB RAM · ComfyUI 0.43.1 · sage attention |
+| **ComfyUI 0.45.3** | Every node is core in 0.45.3 (checked against its node list). Not run on 0.45.3 yet. |
 | **YouTube explainer** | (no video yet) |
 | **License** | Workflow: MIT · MiniMax Music 3: Apache-2.0 |
 
 ## Quick start
 1. Update ComfyUI to **0.42 or newer** (no custom nodes).
 2. Download the 3 files in [downloads.md](downloads.md).
-3. Load `The_frizzy1_minimax-music3-12gb_v1.0.0.json`, write caption and lyrics, set the length, **Run**.
+3. Load `The_frizzy1_minimax-music3-12gb_v1.0.1.json`, write caption and lyrics, set the length, **Run**.
 
 ## Listen
 
@@ -29,7 +30,11 @@
 ## How to fill it in
 1. **caption**: genre, BPM, key, mood, instruments.
 2. **lyrics**: sections in brackets ([Verse], [Chorus]). Leave empty for instrumental.
-3. **max_duration** in seconds.
+3. **max_duration** in seconds (up to 360). The model can end the song earlier.
+4. **seed**: randomize for a new song, fix it to repeat one.
+5. **tiled_decode** (on by default): decodes the audio in tiles, less VRAM.
+
+Attention: the 3060 runs used --use-sage-attention. On the 24 GB test server sage, pytorch and kitchen attention ran at the same speed, and sage peaked about 2.5 GB lower VRAM on Z-Image (image runs, not this workflow). --use-ck-attention gives a different result from the same seed (seen on images, not checked on audio).
 
 ## Measured on the RTX 3060
 
@@ -46,7 +51,7 @@ Lighter than the official template: the int8 DiT (2.5 GB) instead of fp16 (4.9 G
 See [downloads.md](downloads.md): 3 files, every file name read from the workflow `.json`.
 
 ## Required custom nodes
-None - core ComfyUI **0.42+**.
+None - core ComfyUI **0.42+**. Nodes used: UNETLoader, CLIPLoader, VAELoader, MiniMaxMusic3TextEncode, ConditioningZeroOut, EmptyMiniMaxMusic3LatentAudio, SeedNode, KSampler, VAEDecodeAudio, VAEDecodeAudioTiled, ComfySwitchNode, SaveAudioAdvanced (all core, also in 0.45.3).
 
 ## License
 

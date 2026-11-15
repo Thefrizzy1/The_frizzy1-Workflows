@@ -1,4 +1,4 @@
-# Downloads — Qwen Image & Edit 2509 GGUF v1.0.0
+# Downloads - Qwen Image & Edit 2509 GGUF v2.0.1
 
 Verified from the workflow JSON.
 

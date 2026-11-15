@@ -1,4 +1,4 @@
-# The_frizzy1 — Flux.2 Dev GGUF v2.0.0
+# The_frizzy1: Flux.2 Dev GGUF v2.0.1
 
 <a href="https://www.youtube.com/watch?v=dcekWAbgDXg&list=PLG_da2oqTx7k"><img src="https://img.youtube.com/vi/dcekWAbgDXg/mqdefault.jpg" width="640" alt="Watch the video"></a>
 
@@ -10,11 +10,12 @@
 |---|---|
 | **Model family** | Flux.2 Dev |
 | **Tasks** | Text → Image |
-| **Workflow file** | `The_frizzy1_flux2-dev-gguf_v2.0.0.json` |
-| **Min VRAM** | 6 GB (estimate — verify on your card) |
+| **Workflow file** | `The_frizzy1_flux2-dev-gguf_v2.0.1.json` |
+| **ComfyUI** | A version with Flux.2 support (core `EmptyFlux2LatentImage`, `CLIPLoader` type `flux2`) and subgraphs. Converts and validates on ComfyUI 0.45.3 (not run there). |
+| **Min VRAM** | 6 GB (estimate, verify on your card) |
 | **CivitAI** | https://civitai.com/models/2508110 |
 | **YouTube** | https://www.youtube.com/watch?v=dcekWAbgDXg&list=PLG_da2oqTx7k |
-| **License** | Workflow: MIT · FLUX [dev] Non-Commercial License (Black Forest Labs; the model is gated) — **non-commercial** |
+| **License** | Workflow: MIT · FLUX [dev] Non-Commercial License (Black Forest Labs; the model is gated), **non-commercial** |
 
 
 ## Preview
@@ -29,6 +30,12 @@
 ## Overview
 A minimal, beginner-friendly Flux.2 Dev workflow. Uses a Mistral-based text encoder (new in Flux.2) and the
 Flux.2 VAE. Models verified from the workflow JSON.
+
+## Nodes
+- Core: `CLIPLoader` (type `flux2`), `CLIPTextEncode`, `FluxGuidance`, `ConditioningZeroOut`, `EmptyFlux2LatentImage`,
+  `KSamplerAdvanced`, `VAELoader`, `VAEDecode`, `SaveImage`.
+- ComfyUI-KJNodes: `GGUFLoaderKJ` (needs ComfyUI-GGUF installed), `PathchSageAttentionKJ` (set to disabled).
+- Faster attention: start ComfyUI with `--use-sage-attention` (less VRAM). `--use-ck-attention` changes the image for the same seed.
 
 ## Get the models (one command)
 

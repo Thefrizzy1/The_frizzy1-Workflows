@@ -1,5 +1,5 @@
-# The_frizzy1 — Viggle-Animate (MiniMax H3) · 12 GB v2.0.0
-> Swap the person in any video for your character from one still - motion, camera, background and audio stay. 4 steps.
+# The_frizzy1 - Viggle-Animate (MiniMax H3) · 12 GB v2.0.1
+> Swap the person in any video for your character from one still - motion, camera, background and audio stay. 3 steps (Fast) or 7.
 
 | | |
 |---|---|
@@ -7,7 +7,7 @@
 | **Tasks** | Character replacement in video |
 | **Min VRAM** | 12 GB (tested) |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.37.4 (Sage attention) |
-| **YouTube explainer** | — (no video yet) |
+| **YouTube explainer** | none yet |
 | **License** | Workflow: MIT · Viggle-Animate: MiniMax H3 Community License |
 
 ## Preview
@@ -41,10 +41,12 @@ Each mode was run once through this exact workflow (5 s clips unless noted). *Wa
 | Talking clip, portrait (480x832) | 480x832 | 3 min 53 s | 2 min 33 s | 11.2 GB | 14.7 GB |
 
 ## Required models
-See [downloads.md](downloads.md) — every file was read from the workflow `.json`.
+See [downloads.md](downloads.md); every file was read from the workflow `.json`.
 
 ## Required custom nodes
-[comfyui-viggle-animate-h3](https://registry.comfy.org/nodes/comfyui-viggle-animate-h3) (Comfy registry v1.3.2).
+[comfyui-viggle-animate-h3](https://registry.comfy.org/nodes/comfyui-viggle-animate-h3) (Comfy registry v1.3.2): `ViggleTextCondLoader`, `ViggleAnimateConditioning`.
+
+Core nodes used: LoadVideo, LoadImage, GetVideoComponents, UNETLoader, VAELoader, LoraLoaderModelOnly, MiniMaxH3SigmaShift, CustomCombo, PrimitiveString, StringCompare, ComfySwitchNode, ManualSigmas, RandomNoise, KSamplerSelect, BasicGuider, SamplerCustomAdvanced, VAEDecode, CreateVideo, SaveVideo.
 
 ## Get the models (one command)
 
@@ -53,8 +55,10 @@ python scripts/frizzy.py doctor minimax/viggle-animate-h3 --comfy "C:/path/to/Co
 ```
 
 ## Installation
-1. Update ComfyUI to **0.37.4+**.
+1. Update ComfyUI to **0.37.4+**. Checked on ComfyUI 0.45.3 (2026-11-14): every core node above exists in 0.45.3; the node pack and the model files are not on that server, so it was not validated or run there.
 2. Download the files in [downloads.md](downloads.md).
-3. Load `The_frizzy1_viggle-animate-h3_v2.0.0.json`, pick a **MODE**, add your inputs, **Run**.
+3. Load `The_frizzy1_viggle-animate-h3_v2.0.1.json`, pick a **MODE**, add your inputs, **Run**.
 
 If your models live in sub-folders (e.g. `diffusion_models/LTX-2.5/`), the loaders show red until you re-pick them once.
+
+Faster attention: start ComfyUI with --use-sage-attention (less VRAM). --use-ck-attention changes the image for the same seed.

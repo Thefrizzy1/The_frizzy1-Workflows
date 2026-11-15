@@ -1,4 +1,4 @@
-# The_frizzy1 — Story Creator · 12 GB v1.4.0
+# The_frizzy1 - Story Creator · 12 GB v1.4.1
 > A script → a whole story video: the same character in every scene, every scene moving, characters talking on screen,
 > a narrator, music. The "long AI story video" trend, run on your own PC. Qwen Image 2.1 Turbo makes the stills,
 > MiniMax H3 turns each one into a moving scene with sound, YuE2 makes the song. Core ComfyUI nodes only, tested on an
@@ -8,7 +8,7 @@
 |---|---|
 | **Model families** | Qwen Image 2.1 (stills) · MiniMax H3 (video + sound) · YuE2 (music) |
 | **Task** | Story video from a script: `WORLD:` line, `[camera]` tags, dialogue, narrator, cuts or `[continue]` transitions |
-| **Workflow file** | `The_frizzy1_story-creator-12gb_v1.4.0.json` (older versions in `source/`) |
+| **Workflow file** | `The_frizzy1_story-creator-12gb_v1.4.1.json` (older versions in `source/`) |
 | **Needs** | 12 GB VRAM · 32 GB system RAM · ComfyUI **0.39+** |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.39.2 |
 | **YouTube explainer** | [How to Make LONG AI Videos for FREE (Actually Unlimited, No Credits)](https://www.youtube.com/watch?v=dSzM3ovKBko) |
@@ -19,7 +19,7 @@
 2. Download the files in [downloads.md](downloads.md) (9 files: 3 for the stills, 5 for the video, 1 for the music).
 3. **Write the script with a big chatbot**: paste the prompt from [HOW_TO_WRITE_A_SCRIPT.md](HOW_TO_WRITE_A_SCRIPT.md)
    into ChatGPT, Claude or Gemini with your idea.
-4. Load `The_frizzy1_story-creator-12gb_v1.4.0.json`, paste the script into **Script**, set the **Style** and describe
+4. Load `The_frizzy1_story-creator-12gb_v1.4.1.json`, paste the script into **Script**, set the **Style** and describe
    your **Character** (or switch on *Use my own character picture* and un-bypass the loader). **Run**.
 
 ## The script format
@@ -87,7 +87,7 @@ run the script in two halves (two runs) and join them in your editor.
 - The loudness differs per scene (H3 makes each scene's sound). Level it in your editor if you need it even.
 
 ## Required models
-See [downloads.md](downloads.md) — every file was read from the workflow `.json`.
+See [downloads.md](downloads.md) - every file was read from the workflow `.json`.
 
 ## Required custom nodes
 None - core ComfyUI **0.39+**.

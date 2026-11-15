@@ -1,4 +1,4 @@
-# The_frizzy1 — SCAIL-2 Character Swap · 12 GB v1.1.0
+# The_frizzy1 · SCAIL-2 Character Swap · 12 GB v1.1.1
 
 ☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
 
@@ -10,14 +10,14 @@
 |---|---|
 | **Model family** | SCAIL-2 (Wan 2.1 14B based, int8) + SAM 3.1 |
 | **Tasks** | Character replacement (V2V) · whole clip in 81-frame loop rounds · pick which person · original sound |
-| **Needs** | 12 GB VRAM · 32 GB system RAM (tested) · ComfyUI **0.43.1** (tested) · no custom nodes |
-| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB RAM · ComfyUI 0.43.1 (frontend 1.57.4) · Windows 11 |
+| **Needs** | 12 GB VRAM · 32 GB system RAM (tested) · ComfyUI **0.43.1** or newer (tested on 0.43.1; v1.1.1 converts and validates on 0.45.3) · no custom nodes |
+| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB RAM · ComfyUI 0.43.1 (frontend 1.57.4) · Windows 11 · also run on RTX PRO 4000 Blackwell 24 GB · 64 GB RAM · ComfyUI 0.45.3 · sage attention ([numbers](../../../docs/BENCHMARKS.md)) |
 | **License** | Workflow: MIT · SCAIL-2: MIT |
 
 ## Quick start
 1. Update ComfyUI (tested on **0.43.1**; older versions may not have Start Loop / End Loop or the SCAIL-2 nodes).
 2. Download the 7 files in [downloads.md](downloads.md) (28.6 GB). ComfyUI's **Missing models** window offers them too.
-3. Load `The_frizzy1_scail2-character-swap-12gb_v1.1.0.json`. It opens in **App mode**.
+3. Load `The_frizzy1_scail2-character-swap-12gb_v1.1.1.json`. It opens in **App mode**.
 4. Fill in the inputs and press **Run**:
    - **Your video** and **Character picture** (front view, full body if you can)
    - **Describe the result**: one sentence, e.g. *A realistic golden retriever dances in a bright room.*
@@ -44,6 +44,8 @@ per round. Every next round starts 76 frames later and gets the last 5 frames of
 them again and colour-matches to the previous round (**reinhard_lab**), so a long clip stays one take. The clip is
 padded to whole segments and cut back at the end.
 
+Faster attention: start ComfyUI with --use-sage-attention (less VRAM). --use-ck-attention changes the image for the same seed.
+
 Settings (benchmarked on the 3060): int8 model · DPO LoRA 1.0 · lightx2v distill LoRA 0.8 · 6 steps · CFG 1 ·
 shift 5 · euler / simple · short side 512.
 
@@ -53,6 +55,8 @@ shift 5 · euler / simple · short side 512.
 |---|---|---|
 | 9.4 s dance clip, whole clip, sound kept | 512×896 | 24:09 |
 
+24 GB server (RTX PRO 4000 Blackwell, ComfyUI 0.45.3, sage attention, v1.1.0 graph = same graph as v1.1.1): the 9.4 s clip, whole clip, took 781.7 s, peak VRAM 21.7 GB. Not a 12 GB number.
+
 ## Left out on purpose
 Two characters in one run and a face fix pass: not reliable enough in my tests.
 
@@ -60,11 +64,12 @@ Two characters in one run and a face fix pass: not reliable enough in my tests.
 See [downloads.md](downloads.md): 7 files, 28.6 GB, every file name read from the workflow `.json`.
 
 ## Required custom nodes
-None, core ComfyUI only.
+None, core ComfyUI only. Core nodes used: Load Video, Load Image, Get Video Components, Get Image Size, Math Expression, Image From Batch, Repeat Image Batch, Batch Images, Rebatch Images, Resize Image/Mask, UNET Loader, LoRA Loader Model Only, Switch, ModelSamplingSD3, CLIP Loader, VAE Loader, CLIP Vision Loader/Encode, Checkpoint Loader (SAM 3.1), CLIP Text Encode, SAM3 Video Track, SCAIL2 Colored Mask, Wan SCAIL To Video, KSampler Select, Basic Scheduler, Sampler Custom, VAE Decode, Color Transfer, Start Loop / End Loop, Trim Audio Duration, Create Video, Save Video. Checked on ComfyUI 0.45.3: every node is core, the graph converts and validates.
 
 ## Source
 `source/build_scail_swap.py` builds the run graph (API format) and, with `--polish`, the shareable workflow
-(titles, groups, notes, version).
+(titles, groups, notes, version). It writes the v1.1.0 notes; v1.1.1 only adds to the in-graph notes by hand.
+Old versions: `source/The_frizzy1_scail2-character-swap-12gb_v1.1.0.json`.
 
 ## Credits & license
 - SCAIL-2 by [zai-org](https://huggingface.co/zai-org/SCAIL-2) (MIT), built on Wan 2.1 14B

@@ -1,4 +1,4 @@
-# The_frizzy1 — YuE2 Music · 12 GB v1.0.0
+# The_frizzy1 - YuE2 Music · 12 GB v1.0.1
 
 <a href="https://www.youtube.com/watch?v=dS7e4nSQOkQ&list=PLcgjaTzmjLkE"><img src="https://img.youtube.com/vi/dS7e4nSQOkQ/mqdefault.jpg" width="640" alt="Watch the video"></a>
 
@@ -13,14 +13,14 @@
 | **Model family** | YuE2 3B (int8) + SheetSage2 (cover mode) |
 | **Tasks** | Text → song (vocals + instruments) · Cover (your song's melody, new style + lyrics) |
 | **Needs** | VRAM peaked at 7.5 GB · system RAM peaked at 4.0 GB · ComfyUI **0.39+** |
-| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.39.2 (Comfy Desktop) |
+| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.39.2 (Comfy Desktop) · also run on RTX PRO 4000 Blackwell 24 GB · 64 GB RAM · ComfyUI 0.45.3 · sage attention ([numbers](../../../docs/BENCHMARKS.md)) |
 | **YouTube explainer** | [How to make your own cover songs in ComfyUI for free, YuE2](https://www.youtube.com/watch?v=dS7e4nSQOkQ) |
 | **License** | Workflow: MIT · YuE2 + SheetSage2: CC BY-NC 4.0 (**non-commercial**) |
 
 ## Quick start
 1. Update ComfyUI to **0.39 or newer** (YuE2 support; no custom nodes).
 2. Download the files in [downloads.md](downloads.md) (SheetSage2 only for cover mode).
-3. Load `The_frizzy1_yue2-music-12gb_v1.0.0.json`. It opens on **Text to music**: write the music style and your lyrics, **Run**.
+3. Load `The_frizzy1_yue2-music-12gb_v1.0.1.json`. It opens on **Text to music**: write the music style and your lyrics, **Run**.
 4. Cover: pick **Cover (your song)**, un-bypass (select + **Ctrl+B**) **Your song** and load an audio file.
 
 ## Listen
@@ -55,10 +55,19 @@ and the ABC planner only load when the mode uses them. Medians on the RTX 3060: 
 sampling 17 s.
 
 ## Required models
-See [downloads.md](downloads.md) — every file was read from the workflow `.json`.
+See [downloads.md](downloads.md): every file was read from the workflow `.json`.
 
 ## Required custom nodes
 None - core ComfyUI **0.39+**.
+
+Core nodes used: CheckpointLoaderSimple, AudioEncoderLoader, LoadAudio, SheetSage2AudioToABC, YuE2GenerateABC, YuE2GenerateMusic,
+EmptyYuE2LatentAudio, ConditioningZeroOut, KSampler, VAEDecodeAudio, SaveAudioAdvanced, ComfySwitchNode, CustomCombo,
+StringCompare, PrimitiveString, PrimitiveStringMultiline, PrimitiveBoolean, PrimitiveFloat, PrimitiveInt, PreviewAny.
+
+Checked on ComfyUI 0.45.3: v1.0.1 converts and validates on 0.45.3 (every node is core, nothing to replace). v1.0.1 only
+changes the in-graph notes; the same graph as v1.0.0 ran on the 24 GB server above.
+
+Faster attention: start ComfyUI with `--use-sage-attention` (less VRAM). `--use-ck-attention` changes the result for the same seed.
 
 ## Troubleshooting
 - **"Invalid audio file" before it starts:** Your song is un-bypassed but its file is not on your PC. Load your song, or bypass it (Ctrl+B) for text to music.

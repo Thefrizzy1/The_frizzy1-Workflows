@@ -1,10 +1,10 @@
-# The_frizzy1 — Wan 2.1 GGUF Low-VRAM v2.0.0
+# The_frizzy1 - Wan 2.1 GGUF Low-VRAM v2.0.1
 
 <a href="https://www.youtube.com/watch?v=Xqjabf_eQ_U&list=PLRe4JVWoY_AU"><img src="https://img.youtube.com/vi/Xqjabf_eQ_U/mqdefault.jpg" width="640" alt="Watch the video"></a>
 
 ☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
 
-> A six-in-one Wan 2.1 video pack — T2V, I2V, VACE, First/Last-Frame and experimental Fun controls — running from **4 GB VRAM** with GGUF quantisation.
+> A six-in-one Wan 2.1 video pack (T2V, I2V, VACE, First/Last-Frame and experimental Fun controls) running from **4 GB VRAM** with GGUF quantisation.
 
 | | |
 |---|---|
@@ -12,6 +12,7 @@
 | **Tasks** | T2V · I2V · VACE · FLF · Fun Control · Fun Camera |
 | **Min VRAM** | 4 GB |
 | **Tested on** | RTX 3050 Laptop 4 GB |
+| **ComfyUI** | Any version with the core Wan nodes (WanImageToVideo, EmptyHunyuanLatentVideo, ModelSamplingSD3). Checked against ComfyUI 0.45.3: the core nodes and their inputs match. Not run there: the test server lacks the tiled_ksampler and Frame-Interpolation packs and these models. |
 | **CivitAI** | https://civitai.com/models/1309674 |
 | **Hugging Face** | https://huggingface.co/The-frizzy1/Wan21-GGUF-4GB-Workflow |
 | **YouTube** | https://www.youtube.com/watch?v=Xqjabf_eQ_U&list=PLRe4JVWoY_AU |
@@ -19,17 +20,18 @@
 | **Newer** | [MiniMax H3 Ultimate](../../minimax/h3-ultimate-12gb) · [LTX 2.5 Ultimate](../../ltx/ltx-2.5-ultimate-12gb) (12 GB). On 4 GB: Wan 2.2 GGUF. |
 
 ## Overview
-The lightest video path in the collection. Uses GGUF-quantised Wan 2.1 models plus Kijai's WanVideoWrapper.
-On the smallest GPUs the 1.3B models are faster and lighter than any Wan 2.2 path — see
+The lightest video path in the collection. Uses GGUF-quantised Wan 2.1 models with core ComfyUI Wan nodes plus KJNodes extras (TeaCache, NAG, Skip Layer Guidance, Enhance-A-Video, RifleXRoPE, Torch Compile, Sage patch).
+On the smallest GPUs the 1.3B models are faster and lighter than any Wan 2.2 path. See
 [the Wan lineage note](../../../docs/WAN-LINEAGE.md) before mixing files between 2.1 and 2.2.
 
 ## Included workflows
 | File | Task |
 |---|---|
-| `The_frizzy1_wan-2.1-t2v_v2.0.0.json` | Text → Video (1.3B) |
-| `The_frizzy1_wan-2.1-i2v_v2.0.0.json` | Image → Video (14B 480p) |
+| `The_frizzy1_wan-2.1-t2v_v2.0.1.json` | Text to Video (1.3B) |
+| `The_frizzy1_wan-2.1-i2v_v2.0.1.json` | Image to Video (14B 480p) |
 | `source/Wan2.1-Vace.json` | VACE (1.3B) |
-| `source/Wan2.1-FirstFrameLastFrame.json` | First → Last frame |
+| `source/Wan2.1-FirstFrameLastFrame.json` | First to Last frame |
+| `source/The_frizzy1_wan-2.1-t2v_v2.0.0.json`, `source/The_frizzy1_wan-2.1-i2v_v2.0.0.json` | Previous versions (same graph, no in-graph How to use / Downloads notes) |
 | `source/Wan2.1-FunControl (experimental).json` | Fun Control |
 | `source/Wan2.1-CameraImage (experimental).json` | Fun Camera |
 
@@ -50,11 +52,12 @@ Full verified table + links: **[downloads.md](downloads.md)**.
 | Node | Link |
 |---|---|
 | GGUF | https://github.com/calcuis/gguf |
-| WanVideoWrapper | https://github.com/kijai/ComfyUI-WanVideoWrapper |
-| Tiled KSampler | https://github.com/FlyingFireCo/tiled_ksampler |
-| KJNodes | https://github.com/kijai/ComfyUI-KJNodes |
-| VideoHelperSuite | https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite |
-| rgthree-comfy *(LoRA stacking only)* | https://github.com/rgthree/rgthree-comfy |
+| Tiled KSampler (Asymmetric Tiled KSampler) | https://github.com/FlyingFireCo/tiled_ksampler |
+| KJNodes (TeaCache, NAG, SLG, Enhance-A-Video, RifleXRoPE, Torch Compile, Sage patch; LoadAndResizeImage in the source/ graphs) | https://github.com/kijai/ComfyUI-KJNodes |
+| VideoHelperSuite (Export; Load Video in the source/ graphs) | https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite |
+| rgthree-comfy (Lora Loader Stack) | https://github.com/rgthree/rgthree-comfy |
+| Frame-Interpolation (RIFE VFI) | https://github.com/Fannovel16/ComfyUI-Frame-Interpolation |
+| comfyui_controlnet_aux *(Fun Control only, Depth Anything)* | https://github.com/Fannovel16/comfyui_controlnet_aux |
 
 ## Quantisation guide
 | Level | VRAM | Quality |
@@ -67,6 +70,11 @@ Full verified table + links: **[downloads.md](downloads.md)**.
 ## Performance tips
 Enable **Xformers**, **Sage Attention** or **Triton** for extra speed.
 Triton/Sage guide: https://www.patreon.com/posts/easy-guide-sage-124253103
+
+Faster attention: start ComfyUI with --use-sage-attention (less VRAM). --use-ck-attention changes the image for the same seed.
+Torch Compile needs Triton and the Sage patch node needs the sageattention package: without them, bypass those two nodes (Ctrl+B).
+
+Each main workflow opens with a **How to use** note (inputs, settings, tips) and a **Downloads** note on the left.
 
 ## Known issues & helpful links
 - Common errors: https://civitai.com/articles/17240

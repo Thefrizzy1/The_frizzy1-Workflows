@@ -1,4 +1,4 @@
-# Downloads — Qwen Image 2.1 · 12 GB v2.0.0
+# Downloads - Qwen Image 2.1 · 12 GB v2.0.1
 
 Verified from the workflow JSON. File names and sizes checked on Hugging Face.
 
@@ -10,5 +10,5 @@ Verified from the workflow JSON. File names and sizes checked on Hugging Face.
 | Turbo LoRA (TURBO only) | `Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors` | `loras/` | 1.4 GB | [Viggle/Qwen-Image-2.1-viggle-turbo](https://huggingface.co/Viggle/Qwen-Image-2.1-viggle-turbo/resolve/main/Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors) | JSON |
 
 **Optional swaps (same repos, not in the JSON):**
-- `qwen_image_2.1_bf16.safetensors` (14.2 GB) — the bigger diffusion model; ~1.6× slower on 12 GB, offloads to RAM.
-- `qwen3vl_8b_w4a8.safetensors` (6.3 GB) — smaller text encoder, same speed, changes the picture with the same seed.
+- `qwen_image_2.1_bf16.safetensors` (14.2 GB) - the bigger diffusion model; ~1.6× slower on 12 GB, offloads to RAM.
+- `qwen3vl_8b_w4a8.safetensors` (6.3 GB) - smaller text encoder, same speed, changes the picture with the same seed.

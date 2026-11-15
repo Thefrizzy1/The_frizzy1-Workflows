@@ -1,4 +1,4 @@
-# The_frizzy1 — H3 Relight · 12 GB v1.0.0
+# The_frizzy1 - H3 Relight · 12 GB v1.0.1
 
 ☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
 
@@ -11,14 +11,14 @@
 | **Model family** | MiniMax H3 Ref2VA int8 + ref2v turbo LoRA · Qwen3-VL 8B (describer) |
 | **Tasks** | Relight a video (V2V) · original sound · optional Full HD (1088p) · optional long clip (up to 60 s in 5.2 s passes) |
 | **Needs** | 12 GB VRAM · 32 GB system RAM (tested) · ComfyUI **0.44+** · no custom nodes |
-| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.44.0 (renders) · ComfyUI 0.45.0 + frontend 1.58.5 (the saved file) |
+| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.44.0 (renders) · ComfyUI 0.45.0 + frontend 1.58.5 (the saved file) · also run on RTX PRO 4000 Blackwell 24 GB · 64 GB RAM · ComfyUI 0.45.3 · sage attention ([numbers](../../../docs/BENCHMARKS.md)) |
 | **YouTube explainer** | [I Replaced Higgsfield Relight With My RTX 3060 (Free, Local)](https://www.youtube.com/watch?v=G_TqJKXJ1aw) |
 | **License** | Workflow: MIT · Light presets + spheres: MIT, Sirio Berati · Models: see Credits |
 
 ## Quick start
 1. Update ComfyUI to **0.44 or newer**.
 2. Download the files in [downloads.md](downloads.md) (51.5 GB for Full HD off).
-3. Load `The_frizzy1_h3-relight-12gb_v1.0.0.json`. You see five nodes: your three inputs on the left, the **H3 Relight** node with every setting, the **Result** on the right.
+3. Load `The_frizzy1_h3-relight-12gb_v1.0.1.json`. You see five nodes: your three inputs on the left, the **H3 Relight** node with every setting, the **Result** on the right.
 4. Fill in the inputs:
    - **Your video**: 24 fps, up to 15 s in one pass
    - **Light sphere**: a preset's sphere image (`spheres/` in Sirio's repo) or your own
@@ -96,6 +96,13 @@ not been rendered yet.
 - Frontend 1.58.5 put 14 links on the wrong input when it built the subgraphs (Math Expression, MiniMax H3 Reference to Video,
   Start Loop). They were moved back before saving (`source/relight_fix.js`), and the check above runs on the saved file.
 
+## ComfyUI 0.45.3
+v1.0.1 converts to an API graph for ComfyUI 0.45.3 with no errors (the newest release, checked 2026-11-14, no GPU run of v1.0.1). The graph is the same as
+v1.0.0; only the How to use note changed. Every node is core in 0.45.3. The H3 models use core Model Attention Backend
+nodes set to comfy kitchen attention (as in every render above). Launch flags: `--use-sage-attention` uses less VRAM;
+`--use-ck-attention` gives a different image from the same seed. Measured on this workflow on a 24 GB RTX PRO 4000
+(480, ComfyUI 0.45.3): pytorch, sage and ck all about 242 s and the same peak VRAM (23.2 GB, the card is full).
+
 ## Known limits
 - Clips are read as 24 fps.
 - One pass is 15 s at most; longer clips need Long clip.
@@ -107,7 +114,7 @@ None: core ComfyUI 0.44+.
 ## Source
 `source/build_h3_relight.py` builds the tested run graph (API format). `source/ultimate2_relight.py` is the spec the
 subgraph layout is built from (house builder), `source/relight_fix.js` the link repair, `source/relight_post.js` the labels +
-layout pass, `source/relight_api_diff.py` the node-by-node check.
+layout pass, `source/relight_api_diff.py` the node-by-node check. Older versions of the workflow `.json` are in `source/`.
 
 ## Credits & license
 - Relight pipeline, describe + adapt prompts, 67 light presets and spheres: [Sirio Berati, relight-open-source](https://github.com/sirioberati/relight-open-source) (MIT, `source/LICENSE_MIT_Sirio_Berati.txt`)

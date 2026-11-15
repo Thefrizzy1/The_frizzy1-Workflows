@@ -1,10 +1,10 @@
-# The_frizzy1 — Wan 2.2 Animate v1.2.0
+# The_frizzy1: Wan 2.2 Animate v1.2.1
 
 <a href="https://www.youtube.com/watch?v=rtyfdmL-wF4&list=PLRe4JVWoY_AU"><img src="https://img.youtube.com/vi/rtyfdmL-wF4/mqdefault.jpg" width="640" alt="Watch the video"></a>
 
 ☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
 
-> Drive motion from a reference video onto a character image — with a looping mechanism for **unlimited-length** output. GGUF-quantised to run from **4 GB VRAM**.
+> Drive motion from a reference video onto a character image, with a looping mechanism for **unlimited-length** output. GGUF-quantised to run from **4 GB VRAM**.
 
 | | |
 |---|---|
@@ -13,6 +13,7 @@
 | **Min VRAM** | 4 GB (Q4, 25 frames/loop) |
 | **Comfortable** | 12 GB (up to Q8, 25 frames/loop) |
 | **Tested on** | RTX 3050 4 GB · RTX 3060 12 GB |
+| **ComfyUI** | A recent ComfyUI with subgraph support (saved with frontend 1.33.14). Checked on ComfyUI 0.45.3: the graph converts to an API prompt. Its custom packs are not installed on the 0.45.3 check server, so it was not validated there or GPU-tested on 0.45.3. |
 | **CivitAI** | https://civitai.com/models/2046477 |
 | **Hugging Face** | https://huggingface.co/The-frizzy1/Wan22ANIMATE |
 | **YouTube explainer** | https://www.youtube.com/watch?v=rtyfdmL-wF4&list=PLRe4JVWoY_AU |
@@ -23,7 +24,7 @@
 Wan 2.2 Animate takes a **reference image** (the character) plus an **input/driving video** (the motion) and
 animates the character to match. This build wraps the 14B model in GGUF form and adds a **looping mechanism**
 so you can chain segments into arbitrarily long videos on low-VRAM hardware. It is **not** a text-to-video
-model — if you want to generate video from a prompt, use
+model. If you want to generate video from a prompt, use
 [Wan 2.2 GGUF Low-VRAM](../gguf-lowvram) or [Wan 2.1](../../wan2.1/gguf-lowvram) instead
 (see [the Wan lineage note](../../../docs/WAN-LINEAGE.md)).
 
@@ -56,9 +57,9 @@ Full verified table with links: **[downloads.md](downloads.md)**. Summary (all r
 - Diffusion: `Wan2.2-Animate-14B-Q8_0.gguf` (or `Q5_K_S` / `Q4_K_M`)
 - Text encoder: `umt5_xxl_fp8_e4m3fn_scaled.safetensors`
 - CLIP vision: `clip_vision_h.safetensors`
-- VAE: `wan_2.1_vae.safetensors`
-- LoRAs: `WanAnimate_relight_lora_fp16.safetensors`, `wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors`
-- Frame interp: `rife49.pth`
+- VAE: `Wan2.1_VAE.pth` (or the same VAE as `wan_2.1_vae.safetensors`, picked in the loader)
+- LoRAs: `WanAnimate_relight_lora_fp16.safetensors`; speed LoRA: the graph loads `high_noise_model(wan2.2light2xvI2v_v2.2).safetensors`, use `lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors` and pick it in the loader
+- Frame interp: `rife49.pth` (downloaded by ComfyUI-Frame-Interpolation on first run)
 
 ## Required custom nodes
 | Node | Link |
@@ -68,6 +69,11 @@ Full verified table with links: **[downloads.md](downloads.md)**. Summary (all r
 | segment-anything-2 | https://github.com/kijai/ComfyUI-segment-anything-2 |
 | VideoHelperSuite | https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite |
 | Execution Inversion Demo | https://github.com/BadCafeCode/execution-inversion-demo-comfyui |
+| ComfyUI_essentials | https://github.com/cubiq/ComfyUI_essentials |
+| ComfyUI-Custom-Scripts | https://github.com/pythongosssss/ComfyUI-Custom-Scripts |
+| ComfyUI-Frame-Interpolation | https://github.com/Fannovel16/ComfyUI-Frame-Interpolation |
+
+Not core in ComfyUI 0.45.3, so still needed: DWPose and PixelPerfectResolution (controlnet_aux), SAM2 (segment-anything-2), GGUFLoaderKJ / ColorMatch / PointsEditor (KJNodes), Load Video (VHS), For Loop (execution-inversion), MaskPreview+ (essentials), Math Expression (Custom-Scripts), RIFE VFI (Frame-Interpolation). Core 0.45.3 has FrameInterpolate, but this graph keeps RIFE VFI (see changelog).
 
 ## Optional custom nodes
 | Node | Link | Why |
@@ -77,11 +83,11 @@ Full verified table with links: **[downloads.md](downloads.md)**. Summary (all r
 ## Installation
 1. Install the custom nodes above via ComfyUI Manager, then restart.
 2. Download every file in [downloads.md](downloads.md) into the listed `ComfyUI/models/` folders.
-3. Load `The_frizzy1_wan-2.2-animate_v1.2.0.json` in ComfyUI.
+3. Load `The_frizzy1_wan-2.2-animate_v1.2.1.json` in ComfyUI. The **How to use** note on the far left explains every input and setting.
 4. Upload your **reference image** and **input video**.
 5. In the detection subgraph, set **green points** on what to keep and **red points** on what to change.
 6. Ensure **width and height are multiples of 16**.
-7. Run — output saves automatically.
+7. Run. The output saves automatically.
 
 ## Recommended settings
 | Setting | Value | Notes |
@@ -104,10 +110,10 @@ per-segment VRAM flat regardless of final length.
 See [changelog.md](changelog.md).
 
 ## Files in this folder
-- `The_frizzy1_wan-2.2-animate_v1.2.0.json` — the workflow, templated name (this is the GGUF build).
-- `source/` — the original unmodified files (`Wan2.2-Animate-GGUF.json`, `Wan2.2 Animate.json`).
+- `The_frizzy1_wan-2.2-animate_v1.2.1.json`: the workflow, templated name (this is the GGUF build).
+- `source/`: the original files (`wan22animate-gguf.json`, `wan22animate.json`) and the previous `The_frizzy1_wan-2.2-animate_v1.2.0.json`.
 
 ## Related workflows
-- [Wan 2.2 GGUF Low-VRAM](../gguf-lowvram) — text/image → video.
-- [Wan 2.1 GGUF Low-VRAM](../../wan2.1/gguf-lowvram) — lighter, older path.
+- [Wan 2.2 GGUF Low-VRAM](../gguf-lowvram): text/image → video.
+- [Wan 2.1 GGUF Low-VRAM](../../wan2.1/gguf-lowvram): lighter, older path.
 - [Wan lineage & compatibility](../../../docs/WAN-LINEAGE.md).

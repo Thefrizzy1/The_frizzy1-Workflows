@@ -1,4 +1,4 @@
-# Downloads — Viggle-Animate (MiniMax H3) · 12 GB
+# Downloads - Viggle-Animate (MiniMax H3) · 12 GB
 
 Every file name below was read from the workflow `.json`.
 

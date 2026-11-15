@@ -1,4 +1,9 @@
-# Changelog — Krea 2 Ultimate · 12 GB
+# Changelog - Krea 2 Ultimate · 12 GB
+## v2.1.1 (2026-11-14)
+- Notes only, graph unchanged. **How to use** note rewritten: what it does, inputs, every setting on the node, tips, a Tested on line and an attention line (--use-sage-attention / --use-ck-attention). Wrong colour legend (pose, face, video, cyan) fixed. Downloads note moved down so the notes do not overlap.
+- Checked on ComfyUI 0.45.3: converts and validates (all nodes are core). Not run on 0.45.3 yet.
+- Previous version kept in `source/The_frizzy1_krea-2-ultimate-12gb_v2.1.0.json`.
+
 ## v2.1.0
 - New **Model** switch: Krea 2 Turbo or **Kroma** (lodestones' Krea 2 fine-tune, v0.3.1 Turbo OPD, w4a8 file). Only the picked model loads; text encoder, VAE, settings, modes and style LoRAs are shared.
 - Kroma download links in the Downloads note and on the loader. Tested in both models and both modes on the RTX 3060 (ComfyUI 0.39.2).

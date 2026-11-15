@@ -70,6 +70,20 @@
       "dest": "diffusion_models",
       "required": true,
       "note": "0.1 GB"
+    },
+    {
+      "name": "minimax_h3_latent_upscaler_3d_conv_v1_bf16.safetensors",
+      "url": "https://huggingface.co/Efficient-Large-Model/Open-H3-Regenerate-2K/resolve/main/latent_upsampler/minimax_h3_latent_upscaler_3d_conv_v1_bf16.safetensors",
+      "dest": "latent_upscale_models",
+      "required": true,
+      "note": "0.7 GB, Full HD: gentle H3 refine (loader checked in every mode)"
+    },
+    {
+      "name": "minimax_h3_open_regenerate_2k_r128_comfyui_bf16_swiglu_fixed.safetensors",
+      "url": "https://huggingface.co/DrakenZA/Open-H3-Regenerate-2K-ComfyUI/resolve/main/minimax_h3_open_regenerate_2k_r128_comfyui_bf16_swiglu_fixed.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": "2.0 GB, Full HD: gentle H3 refine (loader checked in every mode)"
     }
   ],
   "nodes": []

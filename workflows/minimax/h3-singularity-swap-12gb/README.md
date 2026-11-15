@@ -1,4 +1,4 @@
-# The_frizzy1 — H3 Singularity Swap · 12 GB v1.0.0
+# The_frizzy1 · H3 Singularity Swap · 12 GB v1.0.1
 
 ☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
 
@@ -10,14 +10,14 @@
 |---|---|
 | **Model family** | MiniMax H3 Singularity V2 pruned int8 + SAM 3.1 + Qwen3-VL 8B |
 | **Tasks** | Person-to-person swap (V2V) · up to 15 s in one pass · lip-sync on or off · original sound |
-| **Needs** | 12 GB VRAM · 32 GB system RAM (tested) · ComfyUI **0.43.1** (tested) · 2 custom node packs |
+| **Needs** | 12 GB VRAM · 32 GB system RAM (tested) · ComfyUI **0.43.1+** (0.43.1 tested; 0.45.3 converts and validates) · 2 custom node packs |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB RAM · ComfyUI 0.43.1 · Windows 11 |
 | **License** | Workflow: MIT · Models: see Credits |
 
 ## Quick start
 1. Update ComfyUI (tested on **0.43.1**).
 2. Install the 2 custom node packs and download the 7 files in [downloads.md](downloads.md) (53.2 GB). Already running H3? You only need the first file.
-3. Load `The_frizzy1_h3-singularity-swap-12gb_v1.0.0.json`. It opens in **App mode**.
+3. Load `The_frizzy1_h3-singularity-swap-12gb_v1.0.1.json`. It opens in **App mode**.
 4. Fill in the inputs and press **Run**:
    - **Your video**: 24 fps, no mirrors, up to 15 s
    - **Person photo**: one sharp photo with a big face, plain background
@@ -26,6 +26,7 @@
    - **Seconds**: `0` = the whole clip (try 3 s first)
    - **Short side**: 480 for speed, 736 for close-ups
    - **Lip-sync**: on for talking, off for music
+   - **Seed**: change it for another take
 5. The video lands in `ComfyUI/output/H3 simple swap/`.
 
 ## Important: full-body clips
@@ -49,7 +50,9 @@ H3 then regenerates only the masked area from your photo and the grey figure, in
 a giant head in the middle of the frame. Plain H3 didn't. Singularity follows the prompt harder, so the prompt has
 to say what the shot is.
 
-Settings: ref2v turbo LoRA 1.0 · 6 steps · euler / simple · shift 12 / 2 · motion reference 512 px · mask grown 4% of the long side.
+Settings: ref2v turbo LoRA 1.0 · 6 steps · euler / simple · shift 12 / 2 · motion reference 512 px · mask grown 4% of the long side · comfy kitchen attention (core *ModelAttentionBackend* node, as tested on the 3060; it overrides the launch flag for the H3 model).
+
+Attention, measured on a 24 GB card with other workflows (ComfyUI 0.45.3): sage, pytorch and comfy kitchen ran at the same speed; comfy kitchen gave a visibly different image from the same seed. To try sage here: bypass the Comfy Kitchen attention node and start ComfyUI with `--use-sage-attention` (not tested with this workflow).
 
 ## Measured on the RTX 3060
 Cold start, seed 42. VRAM is the whole GPU, RAM is the ComfyUI process.
@@ -68,12 +71,15 @@ Cold start, seed 42. VRAM is the whole GPU, RAM is the ComfyUI process.
 ## Required models
 See [downloads.md](downloads.md): 7 files, 53.2 GB, every file name read from the workflow `.json`.
 
+## ComfyUI 0.45.3
+Checked on ComfyUI 0.45.3 (2026-11-14): the graph converts and validates on 0.45.3; every core node and setting is in core 0.45.3. Not run on 0.45.3 yet. Core nodes used: LoadVideo, LoadImage, UNETLoader, LoraLoaderModelOnly, ModelAttentionBackend, MiniMaxH3SigmaShift, CLIPLoader, VAELoader, CheckpointLoaderSimple, SAM3_VideoTrack, TextGenerate, MiniMaxH3ReferenceToVideo, SamplerCustomAdvanced, ComfySwitchNode, ComfyMathExpression, CreateVideo, SaveVideo and helpers. The 3 custom nodes (H3PeopleMask, H3GreyMannequins, MiniMaxH3FantasticVideoEditLatent) have no core replacement.
+
 ## Required custom nodes
 [comfyui-h3-oneclick-swap](https://github.com/D3voz/comfyui-h3-oneclick-swap) (person mask, grey figure) and
 [ComfyUI-Fantastic-MiniMaxH3-PromptBuilder](https://github.com/Adudeguyman/ComfyUI-Fantastic-MiniMaxH3-PromptBuilder) (masked edit latent).
 
 ## Source
-`source/build_h3_swap.py` builds the run graph (API format) and, with `--polish`, the shareable workflow.
+`source/build_h3_swap.py` builds the run graph (API format) and, with `--polish`, the shareable workflow (v1.0.0 notes). `source/The_frizzy1_h3-singularity-swap-12gb_v1.0.0.json` is the previous version.
 
 ## Credits & license
 - Singularity V2 by [WarmBloodAban](https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity), built on [MiniMax H3](https://huggingface.co/MiniMaxAI/MiniMax-H3) by MiniMax (MiniMax H3 Community License)

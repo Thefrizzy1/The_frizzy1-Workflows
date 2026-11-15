@@ -1,4 +1,4 @@
-# The_frizzy1 — Qwen Image 2.1 Ultimate · 12 GB v2.1.0
+# The_frizzy1 - Qwen Image 2.1 Ultimate · 12 GB v2.1.1
 
 <a href="https://www.youtube.com/watch?v=N7X0QBZ_r9c&list=PLG_da2oqTx7k"><img src="https://img.youtube.com/vi/N7X0QBZ_r9c/mqdefault.jpg" width="640" alt="Watch the video"></a>
 
@@ -12,14 +12,14 @@
 | **Model family** | Qwen Image 2.1 |
 | **Tasks** | Text → Image (native 2K) · Edit (1–3 images) · ControlNet pose · ControlNet depth · ControlNet edges (canny) |
 | **Needs** | 12 GB VRAM · 32 GB system RAM · ComfyUI **0.38+** (0.39.2 tested) |
-| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.39.2 (Comfy Desktop) |
+| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.39.2 (Comfy Desktop) · also run on RTX PRO 4000 Blackwell 24 GB · 64 GB RAM · ComfyUI 0.45.3 · sage attention ([numbers](../../../docs/BENCHMARKS.md)) |
 | **YouTube explainer** | [▶ Qwen Image 2.1 Turbo + ControlNet: One Free Workflow (12GB)](https://www.youtube.com/watch?v=N7X0QBZ_r9c&list=PLG_da2oqTx7k) |
 | **License** | Workflow: MIT · Qwen Image 2.1 + Turbo: Qwen Research License (non-commercial) |
 
 ## Quick start
 1. Update ComfyUI to **0.38 or newer** ("Apply Fun ControlNet" is a core node since 0.38; no custom nodes).
 2. Download the files in [downloads.md](downloads.md). Text to image + edit with Turbo needs 3 files; ControlNet adds the rest.
-3. Load `The_frizzy1_qwen-image-2.1-ultimate-12gb_v2.1.0.json`. It opens on **Text to image** with Turbo on: write your prompt, **Run**.
+3. Load `The_frizzy1_qwen-image-2.1-ultimate-12gb_v2.1.1.json`. It opens on **Text to image** with Turbo on: write your prompt, **Run**.
 4. Other modes: pick the **Mode** on the node, un-bypass (select + **Ctrl+B**) only the inputs that mode uses and load
    your files. **Keep every input you are not using bypassed.**
 
@@ -71,10 +71,15 @@ switches, so only what your mode needs loads (in text to image the ControlNet, S
 Peak on the 3060 (Turbo, 2K): 11.6 GB VRAM, 2.6 GB system RAM.
 
 ## Required models
-See [downloads.md](downloads.md) — every file was read from the workflow `.json`.
+See [downloads.md](downloads.md): every file was read from the workflow `.json`.
 
 ## Required custom nodes
 None - core ComfyUI **0.38+**.
+
+Checked on ComfyUI 0.45.3: v2.1.1 converts and validates on 0.45.3 (only the in-graph notes changed from v2.1.0).
+
+## Attention
+`--use-sage-attention` used less VRAM at the same speed in a 24 GB test on Z-Image (not measured on this workflow or on 12 GB). `--use-ck-attention` changes the image for the same seed. Turbo off already uses Comfy Kitchen attention through a node.
 
 ## Get the models (one command)
 

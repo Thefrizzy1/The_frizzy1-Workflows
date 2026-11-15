@@ -1,4 +1,4 @@
-# Downloads — Z-Image Turbo GGUF v1.0.0
+# Downloads - Z-Image Turbo GGUF v1.0.1
 
 Verified from the workflow JSON.
 
@@ -8,7 +8,7 @@ Verified from the workflow JSON.
 | Text encoder | `qwen_3_4b.safetensors` | Qwen-3 4B (ComfyUI text encoder) | JSON |
 | VAE | `ae.safetensors` | [ffxvs/vae-flux](https://huggingface.co/ffxvs/vae-flux/blob/main/ae.safetensors) | JSON |
 
-> Source repos to be confirmed against the model card — filenames themselves are verified from the JSON.
+> Source repos to be confirmed against the model card. Filenames themselves are verified from the JSON.
 
 <!-- direct-links:start -->
 ## Direct links (what `frizzy.py get` downloads)

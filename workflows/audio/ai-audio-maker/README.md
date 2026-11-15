@@ -1,4 +1,4 @@
-# The_frizzy1 — AI Audio Maker v1.0.0
+# The_frizzy1 - AI Audio Maker v1.0.1
 
 > Generate synced audio for video (and standalone audio) using MMAudio in ComfyUI.
 
@@ -6,7 +6,7 @@
 |---|---|
 | **Model family** | MMAudio (44kHz) |
 | **Tasks** | Audio generation · video-synced audio |
-| **Workflow file** | `The_frizzy1_ai-audio-maker_v1.0.0.json` |
+| **Workflow file** | `The_frizzy1_ai-audio-maker_v1.0.1.json` |
 | **Min VRAM** | Low (MMAudio is light) |
 | **CivitAI** | https://civitai.com/models/2539489 |
 | **License** | Workflow: MIT · MMAudio: CC-BY-NC-4.0 (**non-commercial**; Kijai's safetensors repack is tagged MIT, the original weights are NC) |
@@ -32,7 +32,14 @@ From the repo root, this finds ComfyUI, downloads the missing models into the ri
 python scripts/frizzy.py doctor audio/ai-audio-maker --comfy "C:/path/to/ComfyUI"
 ```
 
-No pip installs. Details: [scripts/README.md](../../../scripts/README.md).
+The only pip package needed is `accelerate`, which ComfyUI-MMAudio requires (install it into the ComfyUI Python if the pack fails to import). Details: [scripts/README.md](../../../scripts/README.md).
+
+## Requirements
+
+- ComfyUI with the core video nodes Load Video, Get Video Components, Create Video and Save Video (recent ComfyUI; checked on 0.45.3).
+- Custom node pack [ComfyUI-MMAudio](https://github.com/kijai/ComfyUI-MMAudio): MMAudio Model Loader, MMAudio Feature Utils Loader, MMAudio Sampler. Its `requirements.txt` includes `accelerate`.
+- ComfyUI 0.45.3 check (2026-11-14): the graph converts on 0.45.3, but it does not validate there yet: on the bench server ComfyUI-MMAudio failed to import (`No module named 'accelerate'`), so the three MMAudio nodes were unknown. Not run on 0.45.3.
+- Attention: on the 24 GB bench server `--use-sage-attention` used less VRAM at the same speed and `--use-ck-attention` gave a different output for the same seed (measured on Z-Image, not on MMAudio).
 
 ## Required models
 Full verified table + links: **[downloads.md](downloads.md)**.
@@ -41,4 +48,4 @@ Full verified table + links: **[downloads.md](downloads.md)**.
 See [changelog.md](changelog.md).
 
 ## Related workflows
-- Any video workflow — generate the clip, then add audio here.
+- Any video workflow: generate the clip, then add audio here.

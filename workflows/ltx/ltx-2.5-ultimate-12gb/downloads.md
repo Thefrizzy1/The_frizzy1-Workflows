@@ -1,4 +1,4 @@
-# Downloads — LTX 2.5 Ultimate · 12 GB
+# Downloads - LTX 2.5 Ultimate · 12 GB
 
 Every file name below was read from the workflow `.json`.
 

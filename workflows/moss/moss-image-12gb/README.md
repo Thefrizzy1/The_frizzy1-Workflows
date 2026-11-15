@@ -1,4 +1,4 @@
-# The_frizzy1 · MOSS-Image · 12 GB v1.0.0
+# The_frizzy1 · MOSS-Image · 12 GB v1.0.1
 
 ☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
 
@@ -11,6 +11,7 @@
 | **Tasks** | Text → Image · Layout (bounding boxes) · Edit · Control (MoGe shape) |
 | **Needs** | 12 GB VRAM · 32 GB system RAM (ComfyUI peaked at 5.2 GB) · ComfyUI **0.43+** |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB RAM · ComfyUI 0.43.1 · sage attention |
+| **ComfyUI 0.45.3** | Checked: every node in all four files is in core 0.45.3 (not run there) |
 | **YouTube explainer** | (no video yet) |
 | **License** | Workflow: MIT · MOSS-Image: Apache-2.0 |
 
@@ -34,10 +35,10 @@ an astronaut in the fisherman's pose (control). The fisherman is my own FLUX 3 K
 
 | File | What it does |
 |---|---|
-| `The_frizzy1_moss-image-t2i-12gb_v1.0.0.json` | Text to image. Short prompt is fine, the enhancer writes the long caption |
-| `The_frizzy1_moss-image-layout-12gb_v1.0.0.json` | Text to image with boxes: say what goes where |
-| `The_frizzy1_moss-image-edit-12gb_v1.0.0.json` | Edit one picture with the edit LoRA |
-| `The_frizzy1_moss-image-control-12gb_v1.0.0.json` | New picture in the shape of your photo (MoGe reads it, no map needed) |
+| `The_frizzy1_moss-image-t2i-12gb_v1.0.1.json` | Text to image. Short prompt is fine, the enhancer writes the long caption |
+| `The_frizzy1_moss-image-layout-12gb_v1.0.1.json` | Text to image with boxes: say what goes where |
+| `The_frizzy1_moss-image-edit-12gb_v1.0.1.json` | Edit one picture with the edit LoRA |
+| `The_frizzy1_moss-image-control-12gb_v1.0.1.json` | New picture in the shape of your photo (MoGe reads it, no map needed) |
 
 Lighter than the official templates: the w4a8 text encoder (7.3 GB) instead of int8, and MoGe 3 ViT-L (0.74 GB)
 instead of ViT-G (2.5 GB) in the control file.
@@ -62,11 +63,14 @@ I got one garbled title, one garbled line, and the other 3 empty (seed 1). Edit 
 See [downloads.md](downloads.md): every file name read from the workflow `.json`.
 
 ## Required custom nodes
-None - core ComfyUI **0.43+**.
+None - core ComfyUI **0.43+**. Checked on ComfyUI 0.45.3: every node is in core (not run there).
+
+Core nodes used: UNETLoader, CLIPLoader, VAELoader, LoraLoaderModelOnly, CLIPTextEncode, TextGenerate, PrimitiveStringMultiline, PreviewAny, ComfySwitchNode, ResolutionSelector, EmptyFlux2LatentImage, EmptyLatentImage, SkipLayerGuidanceDiTSimple, KSampler, SamplerCustom, SamplerER_SDE, BasicScheduler, ModelSamplingAuraFlow, TemporalScoreRescaling, MOSSImageLayoutPrompt, CreateBoundingBoxes, TextEncodeMOSSImageEdit, MOSSImageControl, LoadMoGeModel, MoGeInference, MoGeRender, LoadImage, Painter, ImageScaleToTotalPixels, GetImageSize, VAEDecode, PreviewImage, ImageCompare, SaveImage.
 
 ## Troubleshooting
 - **No box editor in the layout file:** it needs Nodes 2.0 (ComfyUI icon → Nodes 2.0).
-- **Control follows the photo too loosely:** in the MoGe subgraph set **Render MoGe Geometry** to *depth* instead of *mask*.
+- **Control follows the photo too tightly or too loosely:** on the **Geometry Estimation (MoGe 3)** node set `output` to *mask* (outline only, looser) or *depth* (the saved setting, closer). This widget on the outer node is what runs; the setting inside the subgraph is overridden by it.
+- **Faster attention:** start ComfyUI with --use-sage-attention (less VRAM). --use-ck-attention changes the image for the same seed.
 
 ## License
 

@@ -1,4 +1,10 @@
-# Changelog — LTX 2.5 Ultimate · 12 GB
+# Changelog - LTX 2.5 Ultimate · 12 GB
+## v3.2.1 (2026-11-14)
+- In-graph notes only, the graph is the same as v3.2.0 (same nodes, links, widget values and defaults).
+- **How to use** note: added what it does, the inputs, the important settings, tips (from the README), an attention line and a Tested on line (RTX 3060 on ComfyUI 0.45.0; also run on ComfyUI 0.45.3 on a 24 GB card with the int8 transformer). Downloads note moved down so the two notes do not overlap.
+- Converts to an API prompt; every node class is in core ComfyUI 0.45.3.
+- Previous version kept in `source/The_frizzy1_ltx-2.5-ultimate-12gb_v3.2.0.json`.
+
 ## v3.2.0
 - New switch **LTX x2 upscale (2 stages)**, on by default (= v3.1.1). Off: T2V / I2V / Cinemagraph / Slow motion stop after stage 1, the latent upscaler and stage 2 never run. About 2x faster on the RTX 3060, half the size.
 - New switch **RelayVSR x2**, off by default: upscales the finished video of any mode x2 with ComfyUI's built-in RelayVSR (1 step, cfg 1, VSR Decode), like the official RelayVSR template. Full HD 1920x1024 from a 960x512 run in 1:41.

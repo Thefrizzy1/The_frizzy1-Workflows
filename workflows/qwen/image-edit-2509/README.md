@@ -1,4 +1,4 @@
-# The_frizzy1 — Qwen Image & Edit 2509 GGUF v2.0.0
+# The_frizzy1 - Qwen Image & Edit 2509 GGUF v2.0.1
 
 <a href="https://www.youtube.com/watch?v=NPni2ulov34&list=PLG_da2oqTx7k"><img src="https://img.youtube.com/vi/NPni2ulov34/mqdefault.jpg" width="640" alt="Watch the video"></a>
 
@@ -10,7 +10,7 @@
 |---|---|
 | **Model family** | Qwen Image |
 | **Tasks** | Text → Image · Image editing (2509) |
-| **Workflow file** | `The_frizzy1_qwen-image-edit-2509_v2.0.0.json` |
+| **Workflow file** | `The_frizzy1_qwen-image-edit-2509_v2.0.1.json` |
 | **Min VRAM** | 4 GB (Q4_K_S) / 12 GB (Q8) |
 | **CivitAI** | https://civitai.com/models/2229874 |
 | **Hugging Face** | https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF |
@@ -29,8 +29,11 @@
 <sub>Example outputs from this workflow.</sub>
 
 ## Usage
-- **Generation:** connect EmptyLatent → K-Sampler.
-- **Editing:** activate all nodes except unused image inputs, connect latent → K-Sampler.
+- **Generation (default):** Empty Latent goes to the KSampler. Just Run.
+- **Editing:** un-bypass the Load Image nodes you use (the middle one is image 1), open the Qwen Image Edit 2509 node,
+  un-bypass FluxKontextImageScale + VAE Encode in Step 2, connect the VAE Encode latent to the KSampler and pick a
+  Qwen-Image-Edit-2509 GGUF in Step 1.
+- The How to use note in the graph has the full steps and settings.
 
 ## Get the models (one command)
 
@@ -57,7 +60,19 @@ ComfyUI/models/
 ## Required custom nodes
 | Node | Link |
 |---|---|
-| KJNodes | https://github.com/kijai/ComfyUI-KJNodes |
+| KJNodes (`GGUFLoaderKJ`) | https://github.com/kijai/ComfyUI-KJNodes |
+| ComfyUI-GGUF (GGUF support) | https://github.com/city96/ComfyUI-GGUF |
+
+Every other node is core ComfyUI: CLIPLoader, VAELoader, LoraLoaderModelOnly, ModelSamplingAuraFlow, CFGNorm,
+TextEncodeQwenImageEditPlus, FluxKontextImageScale, VAEEncode, EmptySD3LatentImage, KSampler, VAEDecode, LoadImage,
+SaveImage. Needs a ComfyUI with TextEncodeQwenImageEditPlus and subgraph support.
+
+## ComfyUI 0.45.3
+v2.0.1 converts and validates on ComfyUI 0.45.3 (the newest release, checked 2026-11-14). Not run there. The graph is
+the same as v2.0.0; only the in-graph notes changed. The GGUF loader stays a custom node (GGUF loading is not core).
+Attention: on a 24 GB RTX PRO 4000 (ComfyUI 0.45.3, measured on other workflows, not this one) sage, pytorch and ck
+attention ran at the same speed; `--use-sage-attention` used less peak VRAM. `--use-ck-attention` changes the image for
+the same seed.
 
 ## Changelog
 See [changelog.md](changelog.md).

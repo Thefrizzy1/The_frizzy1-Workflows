@@ -1,4 +1,11 @@
-# Changelog — Wan Animate Ultimate · 12 GB
+# Changelog - Wan Animate Ultimate · 12 GB
+## v2.0.1 (2026-11-14)
+- Notes only, graph unchanged. Checked on ComfyUI 0.45.3: converts and validates (not GPU-tested there).
+- "How to use" note rewritten: inputs, every setting on the node, tips, tested-on line, attention flags (--use-sage-attention / --use-ck-attention).
+- "Downloads" note now matches downloads.md (dropped the Q3_K_M line that the graph does not load; lightx2v link now points at Comfy-Org/Wan-Animate-2).
+- README: mode names match the graph's dropdown, core node list, 0.45.3 check line.
+- Previous version kept in `source/The_frizzy1_wan-animate-ultimate_v2.0.0.json`.
+
 ## v2.0.0
 - Rebuilt with ComfyUI subgraphs: one node with the settings you change (mode / model version switches, prompt, size, length, seed, model files); every step is inside it in colour-coded groups (blue models, green inputs, purple prompt, orange sampling, yellow decode, grey switches), one nested node per model path.
 - Every loader carries its download link, so ComfyUI's missing-models panel offers a Download button per file.

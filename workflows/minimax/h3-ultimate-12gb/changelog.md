@@ -1,4 +1,13 @@
-# Changelog — MiniMax H3 Ultimate · 12 GB
+# Changelog - MiniMax H3 Ultimate · 12 GB
+## v2.4.0 (2026-11-14)
+- **Full HD (1088p)** dropdown on the node, **Off** by default, so the default output is the same as v2.3.0. **Gentle H3 refine (sigma 0.55)** = the H3 Relight recipe: H3 latent upscaler to short side 1088, then 3 Regenerate-2K steps on H3 FL2VA (sigmas 0.55, 0.4, 0.2, 0.0), CFG 1, euler, Comfy Kitchen attention on the refine model. The draft's sound is kept. Core nodes only; the refine reuses the FL2VA loader instead of loading the file twice.
+- New on the node: Full HD, Gentle refine sigmas, Latent upscaler and Regenerate-2K LoRA file pickers.
+- Two new files (2.7 GB): the H3 latent upscaler and the Regenerate-2K LoRA. ComfyUI checks their loaders in every mode, so download them or point the loaders at any file you have.
+- Relight's RealESRGAN x2 option is not ported (its model was not on the test server, so it could not be checked).
+- Needs ComfyUI 0.44+. Tested on ComfyUI 0.45.3 (RTX PRO 4000 24 GB, 64 GB RAM, sage attention), default T2V, 864x480, 5.2 s: Full HD Off 1 min 42 s, peak RAM 8.0 GB; Gentle H3 refine 5 min 55 s, peak RAM 18.2 GB, output 1952x1088. The refine keeps the shot and adds real detail (hair, earring, skin); the face and expression shift a little. Not run on the RTX 3060.
+- How to use note: settings list, Full HD, tips, attention line (--use-sage-attention / --use-ck-attention), Tested on line. Downloads note: the two new files.
+- v2.3.0 kept in `source/`.
+
 ## v2.3.0
 - **Extend keeps the clip's sound**: the clip's last 0.9 s of audio go into the H3 guide with its last 22 frames (core `TrimAudioDuration` + `Add Guide for MiniMax H3`), so the sound doesn't jump at the join. New switch **Extend: keep the clip's sound** (on by default, off for silent clips).
 - Tested on the RTX 3060 (ComfyUI 0.39.2, 0.4 MP, 5 s): every mode validated; Extend 3 min 51 s–3 min 53 s with the sound, 3 min 31 s–3 min 33 s without. Music test: first 0.9 s envelope match 0.961 on vs -0.016 off.

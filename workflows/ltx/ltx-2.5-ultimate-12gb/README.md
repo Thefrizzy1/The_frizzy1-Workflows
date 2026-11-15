@@ -1,4 +1,4 @@
-# The_frizzy1 — LTX 2.5 Ultimate · 12 GB v3.2.0
+# The_frizzy1 - LTX 2.5 Ultimate · 12 GB v3.2.1
 
 <a href="https://www.youtube.com/watch?v=HeHY6N5hH_M&list=PLQ3PcJNbU2Ls"><img src="https://img.youtube.com/vi/HeHY6N5hH_M/mqdefault.jpg" width="400" alt="Watch the video"></a> <a href="https://www.youtube.com/watch?v=TlV72fg9skw&list=PLQ3PcJNbU2Ls"><img src="https://img.youtube.com/vi/TlV72fg9skw/mqdefault.jpg" width="400" alt="Watch the video"></a>
 
@@ -11,7 +11,7 @@
 | **Model family** | LTX 2.5 (distilled) |
 | **Tasks** | T2V · I2V · First+last frame · Pose control (IC-LoRA Union) · VFX video to video (12 LoRAs) · Layout to Render · Ingredients · Cinemagraph · Slow motion · RelayVSR x2 upscale |
 | **Min VRAM** | 12 GB (tested) |
-| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.45.0 · frontend 1.58.5 |
+| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.45.0 · frontend 1.58.5 · also run on RTX PRO 4000 Blackwell 24 GB · 64 GB RAM · ComfyUI 0.45.3 · sage attention · int8 transformer in place of nvfp4 ([numbers](../../../docs/BENCHMARKS.md)) |
 | **YouTube explainer** | [▶ LTX 2.5 ComfyUI on RTX 3060 vs MacBook Air M5 (Same Clip)](https://www.youtube.com/watch?v=HeHY6N5hH_M&list=PLQ3PcJNbU2Ls) · [▶ LTX 2.5 Is the New Low-VRAM King (Beats MiniMax H3)](https://www.youtube.com/watch?v=TlV72fg9skw&list=PLQ3PcJNbU2Ls) |
 | **License** | Workflow: MIT · LTX 2.5 and the LoRAs: LTX-2.x Community License |
 
@@ -88,7 +88,7 @@ Set **VFX LoRA strength** on the node (default 1.0).
 - **Ingredients did not work for me:** in 9 of 9 runs it kept the reference sheet's panel grid instead of making one shot.
 - Decompression invents text: don't use it on screen recordings.
 
-## Measured on the RTX 3060 (all modes, v3.1.1, same graph in v3.2.0)
+## Measured on the RTX 3060 (all modes, v3.1.1; v3.2.0 and v3.2.1 default to the same path)
 
 Every mode run once from the saved v3.1.1 file, 960×512, 4 s (Ingredients 5 s). *Wall* = queue to finished, including model loading.
 
@@ -105,10 +105,14 @@ Every mode run once from the saved v3.1.1 file, 960×512, 4 s (Ingredients 5 s).
 | I2V + Slow motion | 1:49 | 11.6 GB | 19.9 GB | OK |
 
 ## Required models
-See [downloads.md](downloads.md) — every file was read from the workflow `.json`. The VFX LoRAs are optional: download only the ones you use.
+See [downloads.md](downloads.md): every file was read from the workflow `.json`. The VFX LoRAs are optional: download only the ones you use.
 
 ## Required custom nodes
 None - core ComfyUI **0.45.0+** (the RelayVSR nodes). On ComfyUI 0.44 use `source/The_frizzy1_ltx-2.5-ultimate-12gb_v3.1.1.json` (no switches).
+
+Checked on ComfyUI 0.45.3: v3.2.1 converts to an API prompt and every node class is in core 0.45.3. v3.2.1 changes only the in-graph notes, so the graph is the same as v3.2.0.
+
+Attention: on the 24 GB RTX PRO 4000 (ComfyUI 0.45.3, int8 transformer), sage, pytorch and ck attention ran this graph at the same speed and peak VRAM. `--use-ck-attention` changes the image for the same seed.
 
 ## Get the models (one command)
 
@@ -119,7 +123,7 @@ python scripts/frizzy.py doctor ltx/ltx-2.5-ultimate-12gb --comfy "C:/path/to/Co
 ## Installation
 1. Update ComfyUI to **0.45.0+**.
 2. Download the files in [downloads.md](downloads.md). The LTX 2.5 files and every LoRA need **Agree and access** on their Hugging Face page first.
-3. Load `The_frizzy1_ltx-2.5-ultimate-12gb_v3.2.0.json`, pick a **MODE**, add your inputs, **Run**.
+3. Load `The_frizzy1_ltx-2.5-ultimate-12gb_v3.2.1.json`, pick a **MODE**, add your inputs, **Run**.
 
 If your models live in sub-folders (e.g. `diffusion_models/LTX-2.5/`), the loaders show red until you re-pick them once.
 

@@ -1,4 +1,4 @@
-# Downloads — YuE2 Music · 12 GB
+# Downloads - YuE2 Music · 12 GB
 
 Every file name below was read from the workflow `.json`.
 

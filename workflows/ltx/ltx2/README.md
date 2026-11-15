@@ -1,4 +1,4 @@
-# The_frizzy1 — LTX-2 GGUF v2.0.0
+# The_frizzy1: LTX-2 GGUF v2.0.1
 
 <a href="https://www.youtube.com/watch?v=nnHUBMgdJac&list=PLQ3PcJNbU2Ls"><img src="https://img.youtube.com/vi/nnHUBMgdJac/mqdefault.jpg" width="640" alt="Watch the video"></a>
 
@@ -10,14 +10,20 @@
 |---|---|
 | **Model family** | LTXV-2 (19B) |
 | **Tasks** | Text → Video · Image → Video · Audio |
-| **Workflow file** | `The_frizzy1_ltx2-i2v_v2.0.0.json` · `The_frizzy1_ltx2-t2v_v2.0.0.json` |
+| **Workflow file** | `The_frizzy1_ltx2-i2v_v2.0.1.json` · `The_frizzy1_ltx2-t2v_v2.0.1.json` |
 | **Min VRAM** | 4 GB (+Triton) |
 | **Tested on** | RTX 3060 12GB + 48GB RAM · RTX 3050 4GB (Triton) |
+| **ComfyUI** | A recent ComfyUI with subgraph support. Checked on ComfyUI 0.45.3: both files convert and validate (not run there). |
 | **CivitAI** | https://civitai.com/models/2339823 |
 | **Hugging Face** | https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow |
 | **YouTube** | https://www.youtube.com/watch?v=nnHUBMgdJac&list=PLQ3PcJNbU2Ls |
 | **License** | Workflow: MIT · LTX-2 Community License Agreement · Gemma 3 text encoder: Gemma Terms of Use |
 | **Newer** | [LTX 2.5 Ultimate](../../ltx/ltx-2.5-ultimate-12gb) (12 GB). |
+
+## How to use
+Each file has a "How to use" note on the left of the graph. Settings you change most (prompt, negative prompt, seed, steps, cfg, width/height, model file, LoRA) are on the one main node; Length and Frame Rate are inside it.
+
+Faster attention: start ComfyUI with `--use-sage-attention` (less VRAM). `--use-ck-attention` changes the image for the same seed.
 
 ## Common issues
 - `LTXVEmptyLatentAudio – AttributeError` → update **KJNodes to v1.2.8+**.
@@ -36,8 +42,10 @@ No pip installs. Details: [scripts/README.md](../../../scripts/README.md).
 ## Required custom nodes
 | Node | Link |
 |---|---|
-| ComfyUI-GGUF | https://github.com/city96/ComfyUI-GGUF |
-| KJNodes *(keep updated!)* | https://github.com/kijai/ComfyUI-KJNodes |
+| ComfyUI-GGUF | https://github.com/city96/ComfyUI-GGUF (`UnetLoaderGGUF`) |
+| KJNodes *(keep updated!)* | https://github.com/kijai/ComfyUI-KJNodes (`VAELoaderKJ`, video and audio VAE) |
+
+Everything else is core ComfyUI (LTXV nodes, `DualCLIPLoader`, `LatentUpscaleModelLoader`, `SamplerCustomAdvanced`, `LoraLoaderModelOnly`, `SaveVideo`).
 
 ## Required models
 Full verified table + links: **[downloads.md](downloads.md)**.
@@ -46,4 +54,4 @@ Full verified table + links: **[downloads.md](downloads.md)**.
 See [changelog.md](changelog.md).
 
 ## Related workflows
-- [LTX-2.3 Ultimate · 12 GB](../ltx2.3-ultimate) — newer 22B generation.
+- [LTX-2.3 Ultimate · 12 GB](../ltx2.3-ultimate), newer 22B generation.

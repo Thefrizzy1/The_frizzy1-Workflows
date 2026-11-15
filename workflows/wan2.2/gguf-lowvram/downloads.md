@@ -1,4 +1,4 @@
-# Downloads — Wan 2.2 GGUF Low-VRAM v1.0.0
+# Downloads - Wan 2.2 GGUF Low-VRAM v1.0.1
 
 Verified from the workflow JSONs. **14B paths need BOTH the high-noise and low-noise GGUF.**
 

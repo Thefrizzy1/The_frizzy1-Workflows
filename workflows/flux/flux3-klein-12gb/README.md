@@ -1,4 +1,4 @@
-# The_frizzy1 — FLUX 3 Klein · 12 GB v1.0.0
+# The_frizzy1 - FLUX 3 Klein · 12 GB v1.0.1
 
 ☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
 
@@ -11,14 +11,15 @@
 | **Tasks** | Text → Image · Edit · Multi-reference (up to 4 here) · Bounding boxes |
 | **Needs** | 12 GB VRAM · 32 GB system RAM (ComfyUI peaked at 4.1 GB) · ComfyUI **0.41+** |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB RAM · ComfyUI 0.43.1 · sage attention |
+| **ComfyUI 0.45.3** | Converts and validates on 0.45.3 (not run on it yet). All nodes are core in 0.45.3. |
 | **YouTube explainer** | (no video yet) |
 | **License** | Workflow: MIT · FLUX 3 Image Klein: FLUX Kommunity License |
 
 ## Quick start
 1. Update ComfyUI to **0.41 or newer** (FLUX 3 Image support; no custom nodes).
 2. Accept BFL's terms on Hugging Face, then download the 4 files in [downloads.md](downloads.md).
-3. Text to image: load `The_frizzy1_flux3-klein-t2i-12gb_v1.0.0.json`, write your prompt, **Run**.
-4. Editing: load `The_frizzy1_flux3-klein-edit-12gb_v1.0.0.json`, load your photo as image 1 (and a reference as image 2), say what to change, **Run**.
+3. Text to image: load `The_frizzy1_flux3-klein-t2i-12gb_v1.0.1.json`, write your prompt, **Run**.
+4. Editing: load `The_frizzy1_flux3-klein-edit-12gb_v1.0.1.json`, load your photo as image 1 (and a reference as image 2), say what to change, **Run**.
 
 ## Preview
 
@@ -34,8 +35,8 @@
 
 | File | What it does |
 |---|---|
-| `The_frizzy1_flux3-klein-t2i-12gb_v1.0.0.json` | Text to image, optional bounding boxes |
-| `The_frizzy1_flux3-klein-edit-12gb_v1.0.0.json` | Edit image 1, add images 2 to 4 as references (3 and 4 are muted, Ctrl+M to use them) |
+| `The_frizzy1_flux3-klein-t2i-12gb_v1.0.1.json` | Text to image, optional bounding boxes |
+| `The_frizzy1_flux3-klein-edit-12gb_v1.0.1.json` | Edit image 1, add images 2 to 4 as references (3 and 4 are muted, Ctrl+M to use them) |
 
 Both are BFL's official int8 graphs with my notes, a 1 MP default for 12 GB, and the model names left bare so they
 load from any folder layout.
@@ -67,6 +68,14 @@ See [downloads.md](downloads.md): 4 files, 17.8 GB, every file name read from th
 
 ## Required custom nodes
 None - core ComfyUI **0.41+**.
+
+Core nodes used: UNETLoader, CLIPLoader, VAELoader, CLIPTextEncode, TextGenerate, Flux3LayoutPrompt, CreateBoundingBoxes,
+EmptyFlux2LatentImage, ModelSamplingFlux, KSampler, VAEDecode, SaveImage, PreviewAny, ResolutionSelector, ComfySwitchNode,
+ComfyMathExpression, PrimitiveFloat, PrimitiveStringMultiline, StringConcatenate, StringContains, StringTrim. The edit file
+also uses LoadImage, BatchImagesNode, ReferenceMultiLatent, RepeatLatentBatch, ImageScaleToTotalPixels, GetImageSize, StringFormat.
+
+## Faster attention
+Start ComfyUI with `--use-sage-attention` (less VRAM). `--use-ck-attention` changes the image for the same seed.
 
 ## Troubleshooting
 - **Images 3 and 4 do nothing:** they are muted. Select them and press **Ctrl+M** to use them.

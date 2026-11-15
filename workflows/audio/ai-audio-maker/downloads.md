@@ -1,4 +1,4 @@
-# Downloads — AI Audio Maker v1.0.0
+# Downloads - AI Audio Maker v1.0.1
 
 Verified from the workflow JSON. MMAudio files typically go in `ComfyUI/models/mmaudio/`.
 

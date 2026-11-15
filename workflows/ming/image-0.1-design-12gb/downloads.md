@@ -1,4 +1,4 @@
-# Downloads — Ming Image 0.1 Design · 12 GB
+# Downloads - Ming Image 0.1 Design · 12 GB
 
 Every file name below was read from the workflow `.json`.
 

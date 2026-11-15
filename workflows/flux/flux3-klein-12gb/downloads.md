@@ -1,4 +1,4 @@
-# Downloads — FLUX 3 Klein · 12 GB
+# Downloads - FLUX 3 Klein · 12 GB
 
 Every file name below was read from the workflow `.json`.
 

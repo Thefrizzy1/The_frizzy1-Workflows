@@ -1,4 +1,4 @@
-# Downloads — Qwen Image 2.1 Ultimate · 12 GB
+# Downloads - Qwen Image 2.1 Ultimate · 12 GB
 
 Every file name below was read from the workflow `.json`.
 

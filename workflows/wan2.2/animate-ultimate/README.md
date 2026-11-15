@@ -1,4 +1,4 @@
-# The_frizzy1 — Wan Animate Ultimate · 12 GB v2.0.0
+# The_frizzy1 - Wan Animate Ultimate · 12 GB v2.0.1
 
 <a href="https://www.youtube.com/watch?v=9idzB8mlYRY&list=PLRe4JVWoY_AU"><img src="https://img.youtube.com/vi/9idzB8mlYRY/mqdefault.jpg" width="400" alt="Watch the video"></a> <a href="https://www.youtube.com/watch?v=aqFdglMbcIU&list=PLRe4JVWoY_AU"><img src="https://img.youtube.com/vi/aqFdglMbcIU/mqdefault.jpg" width="400" alt="Watch the video"></a>
 
@@ -33,8 +33,8 @@ Replaces the 5-custom-node v1.2.0 Animate workflow. Wan Animate 2 path is all co
 
 | Mode | Uses |
 |---|---|
-| Wan Animate 2 (12 GB) | driving video + character image |
-| Wan 2.2 Animate GGUF | driving video + character image |
+| Wan 2.2 Animate GGUF (best lip-sync, low VRAM) (default) | driving video + character image, Face video switch for lip-sync |
+| Wan Animate 2 int8 (12 GB) | driving video + character image, extra motion prompt |
 
 ## Measured on the RTX 3060
 
@@ -49,10 +49,10 @@ Each mode was run once through this exact workflow (5 s clips unless noted). *Wa
 > Measured with v1.0.0. In v1.0.0 the relight LoRA did not load (see [changelog](changelog.md)), so the GGUF row ran without relight; v2.0.0 loads it.
 
 ## Required models
-See [downloads.md](downloads.md) — every file was read from the workflow `.json`.
+See [downloads.md](downloads.md). Every file was read from the workflow `.json`.
 
 ## Required custom nodes
-Wan Animate 2 mode: none. GGUF mode: [ComfyUI-GGUF](https://github.com/city96/ComfyUI-GGUF).
+Wan Animate 2 mode: none. GGUF mode: [ComfyUI-GGUF](https://github.com/city96/ComfyUI-GGUF) (`UnetLoaderGGUF`). Every other node is core ComfyUI (SDPose, RT-DETR, WanAnimateToVideo, WanAnimate2ToVideo, WanAnimate2Cache, ComfySwitchNode, CustomCombo, StringCompare).
 
 ## Get the models (one command)
 
@@ -61,8 +61,10 @@ python scripts/frizzy.py doctor wan2.2/animate-ultimate --comfy "C:/path/to/Comf
 ```
 
 ## Installation
-1. Update ComfyUI to **0.37.4+**.
+1. Update ComfyUI to **0.37.4+**. Checked on ComfyUI 0.45.3: converts and validates (not GPU-tested on 0.45.3).
 2. Download the files in [downloads.md](downloads.md).
-3. Load `The_frizzy1_wan-animate-ultimate_v2.0.0.json`, pick a **MODE**, add your inputs, **Run**.
+3. Load `The_frizzy1_wan-animate-ultimate_v2.0.1.json`, pick a **MODE**, add your inputs, **Run**.
 
 If your models live in sub-folders (e.g. `diffusion_models/LTX-2.5/`), the loaders show red until you re-pick them once.
+
+Faster attention: start ComfyUI with `--use-sage-attention` (less VRAM). `--use-ck-attention` changes the image for the same seed.

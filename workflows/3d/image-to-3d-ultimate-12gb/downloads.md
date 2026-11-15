@@ -1,4 +1,4 @@
-# Downloads — Image to 3D Ultimate · 12 GB
+# Downloads - Image to 3D Ultimate · 12 GB
 
 Every file name below was read from the workflow `.json`.
 

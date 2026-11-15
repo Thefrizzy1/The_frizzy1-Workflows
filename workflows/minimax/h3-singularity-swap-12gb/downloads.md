@@ -1,4 +1,4 @@
-# Downloads — H3 Singularity Swap · 12 GB
+# Downloads - H3 Singularity Swap · 12 GB
 
 Every file name below was read from the workflow `.json`.
 

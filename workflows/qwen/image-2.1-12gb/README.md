@@ -1,10 +1,10 @@
-# The_frizzy1 — Qwen Image 2.1 · 12 GB v2.0.0
+# The_frizzy1 - Qwen Image 2.1 · 12 GB v2.0.1
 
 <a href="https://www.youtube.com/watch?v=C5wZ2gU7j9E&list=PLG_da2oqTx7k"><img src="https://img.youtube.com/vi/C5wZ2gU7j9E/mqdefault.jpg" width="400" alt="Watch the video"></a> <a href="https://www.youtube.com/watch?v=-yJvQ3lxWsE&list=PLG_da2oqTx7k"><img src="https://img.youtube.com/vi/-yJvQ3lxWsE/mqdefault.jpg" width="400" alt="Watch the video"></a>
 
 ☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
 
-> Native **2K** Qwen Image 2.1 on a **12 GB** card — a QUALITY path (40 steps, Comfy Kitchen attention) and a
+> Native **2K** Qwen Image 2.1 on a **12 GB** card - a QUALITY path (40 steps, Comfy Kitchen attention) and a
 > one-click TURBO path (Viggle 6-step LoRA). Core ComfyUI nodes only, tested on an RTX 3060.
 
 | | |
@@ -12,7 +12,7 @@
 | **Model family** | Qwen Image 2.1 |
 | **Tasks** | Text → Image (native 2K) |
 | **Min VRAM** | 12 GB (tested) |
-| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.37.1 (Comfy Desktop) |
+| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.37.1 (Comfy Desktop) · also run on RTX PRO 4000 Blackwell 24 GB · 64 GB RAM · ComfyUI 0.45.3 · sage attention ([numbers](../../../docs/BENCHMARKS.md)) |
 | **CivitAI** | Not published |
 | **Hugging Face** | Not published |
 | **YouTube explainer** | [▶ Qwen Image 2.1: Free Low-VRAM Workflow + Benchmark](https://www.youtube.com/watch?v=C5wZ2gU7j9E&list=PLG_da2oqTx7k) · [▶ Qwen Image 2.1 on 12GB: Which Settings Actually Matter](https://www.youtube.com/watch?v=-yJvQ3lxWsE&list=PLG_da2oqTx7k) |
@@ -21,8 +21,8 @@
 ## Preview
 
 <p align="center">
-  <img src="samples/sample-1.webp" width="46%" alt="QUALITY path — 2048×2048, 40 steps">
-  <img src="samples/sample-2.webp" width="46%" alt="TURBO path — 2048×2048, Viggle 6-step">
+  <img src="samples/sample-1.webp" width="46%" alt="QUALITY path - 2048×2048, 40 steps">
+  <img src="samples/sample-2.webp" width="46%" alt="TURBO path - 2048×2048, Viggle 6-step">
 </p>
 
 <sub>Left: QUALITY (40 steps, 4 min 07 s). Right: TURBO (Viggle 6-step, 47 s). Both 2048×2048 on the RTX 3060, same prompt.</sub>
@@ -36,7 +36,7 @@ INT8 attention** on the QUALITY path. A bypassed TURBO group adds Viggle's 6-ste
 schedule. No custom nodes.
 
 ## Capabilities
-- Native 2K (4 MP) text-to-image — size is one widget (ResolutionSelector, 4 MP = 2048×2048)
+- Native 2K (4 MP) text-to-image - size is one widget (ResolutionSelector, 4 MP = 2048×2048)
 - QUALITY path: 40 steps · euler/simple · cfg 1 · Comfy Kitchen attention
 - TURBO path: Viggle turbo LoRA v0.2.1 · 6 steps · Viggle's shifted sigmas · no CFG
 - Colour-coded groups: models (blue) · size · prompt (green) · speed (amber) · sampler · optional TURBO (purple)
@@ -46,15 +46,22 @@ schedule. No custom nodes.
 |---|---|---|
 | Diffusion model file | 7.3 GB | 14.2 GB |
 | Time per 2K image, 25 steps, PyTorch attention | 3 min 57 s | 6 min 10 s |
-| Peak system RAM | 3.0 GB | 10.6 GB (offloads — doesn't fit in 12 GB) |
+| Peak system RAM | 3.0 GB | 10.6 GB (offloads - doesn't fit in 12 GB) |
 
 Same-seed int8 and bf16 images measured SSIM 0.89–0.99 over 4 prompts.
 
 ## Required models
-See [downloads.md](downloads.md) — every file below was read from the workflow `.json`.
+See [downloads.md](downloads.md) - every file below was read from the workflow `.json`.
 
 ## Required custom nodes
-None — core ComfyUI **0.37 or newer** (native Qwen Image 2.1, `ModelAttentionBackend`, `QwenImage21Cache`).
+None - core ComfyUI **0.37 or newer** (native Qwen Image 2.1, `ModelAttentionBackend`, `QwenImage21Cache`).
+
+Core nodes used: UNETLoader, CLIPLoader, VAELoader, ResolutionSelector, EmptyLatentImage, TextEncodeQwenImage21,
+ModelAttentionBackend, QwenImage21Cache, KSampler, VAEDecode, SaveImage, and for TURBO LoraLoaderModelOnly, BasicGuider,
+KSamplerSelect, RandomNoise, ManualSigmas, SamplerCustomAdvanced. All are in core ComfyUI 0.45.3.
+
+Checked on ComfyUI 0.45.3: the v2.0.0 graph (QUALITY path) ran on the 24 GB server, see Performance. v2.0.1 changes only
+the in-graph notes; it converts and validates on 0.45.3.
 
 ## Get the models (one command)
 
@@ -74,8 +81,8 @@ ComfyUI/models/
 ## Installation
 1. Update ComfyUI to **0.37+**.
 2. Download the files above (or run the one-command tool).
-3. Load `The_frizzy1_qwen-image-2.1-12gb_v2.0.0.json`, write your prompt, **Run**.
-4. For TURBO: click the QUALITY group title → **Ctrl+B** (bypass), then the TURBO group title → **Ctrl+B** (enable).
+3. Load `The_frizzy1_qwen-image-2.1-12gb_v2.0.1.json`, write your prompt, **Run**.
+4. For TURBO: open the main node, click the QUALITY group title → **Ctrl+B** (bypass), then the TURBO group title → **Ctrl+B** (enable). Outside the node, enable the bottom (TURBO) Save Image with **Ctrl+B** and bypass the top one.
 
 ## Recommended settings
 | Setting | Value | Notes |
@@ -102,13 +109,20 @@ Measured with this exact workflow on the RTX 3060 (Comfy Desktop, SageAttention 
 From the full benchmark (same machine, 2048×2048, 25 steps, same seed): PyTorch attention 3 min 57 s ·
 SageAttention 3 min 00 s · Comfy Kitchen 2 min 40 s · Viggle 6-step 62 s (PyTorch) / 50 s (Sage) · Viggle 4-step 44 s.
 
+24 GB server (RTX PRO 4000 Blackwell 24 GB, ComfyUI 0.45.3, launched with --use-sage-attention, v2.0.0 graph unchanged),
+QUALITY 40 steps at 4 MP (2048×2048 and other 4 MP aspect ratios), warm: about 143 to 146 s per image, peak VRAM 19.8 to 20.1 GB,
+peak RAM about 5.9 GB. TURBO was not run there. Not a 12 GB number.
+
+Faster attention: start ComfyUI with --use-sage-attention (less VRAM). --use-ck-attention changes the image for the same seed.
+The **Seed** on the main node drives TURBO; the QUALITY seed is on the QUALITY sampler inside the node.
+
 ## Known issues
 - **TURBO is softer** in fine detail at 2K than the base model (measured and visible in 100% crops).
 - **Seeds vary:** of two test seeds, TURBO double-exposed the subject's head on one, and QUALITY printed the date line twice on one → re-roll the seed.
-- **Don't add Comfy Kitchen attention to TURBO** — it ghosted the subject with the 6-step LoRA in my test.
-- **TURBO sigmas depend on the size** — change them with the size (table in the workflow note).
+- **Don't add Comfy Kitchen attention to TURBO** - it ghosted the subject with the 6-step LoRA in my test.
+- **TURBO sigmas depend on the size** - change them with the size (table in the workflow note).
 - The Viggle LoRA goes through ComfyUI's standard (merging) LoRA loader; Viggle's own unmerged-LoRA node was not used.
-- **License:** Qwen Image 2.1 and the Viggle LoRA are under the Qwen Research License — non-commercial use.
+- **License:** Qwen Image 2.1 and the Viggle LoRA are under the Qwen Research License - non-commercial use.
 
 ## Changelog
 See [changelog.md](changelog.md).

@@ -1,4 +1,4 @@
-# Downloads — LTX-2 GGUF v2.0.0
+# Downloads: LTX-2 GGUF v2.0.1
 
 Verified from the workflow JSONs (I2V + T2V).
 

@@ -1,4 +1,4 @@
-# The_frizzy1 · Fibo 2.0 Edit Turbo · 12 GB v1.0.0
+# The_frizzy1 · Fibo 2.0 Edit Turbo · 12 GB v1.0.1
 
 ☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
 
@@ -11,13 +11,14 @@
 | **Tasks** | Edit one image |
 | **Needs** | 12 GB VRAM · 32 GB system RAM (ComfyUI peaked at 3.4 GB) · ComfyUI **0.43+** |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB RAM · ComfyUI 0.43.1 · sage attention |
+| **Checked on** | ComfyUI 0.45.3: converts and validates (all nodes are core in 0.45.3; not run there) |
 | **YouTube explainer** | (no video yet) |
 | **License** | Workflow: MIT · Fibo 2.0: **CC BY-NC 4.0, non-commercial only** |
 
 ## Quick start
 1. Update ComfyUI to **0.43 or newer** (no custom nodes).
 2. Download the 4 files in [downloads.md](downloads.md). If you have FLUX 3 Klein, you already have two of them.
-3. Load `The_frizzy1_fibo2-edit-turbo-12gb_v1.0.0.json`, load your picture, write the edit, **Run**.
+3. Load `The_frizzy1_fibo2-edit-turbo-12gb_v1.0.1.json`, load your picture, write the edit, **Run**.
 
 ## Preview
 
@@ -56,7 +57,12 @@ Lighter than the official template: Qwen3-VL-4B int8 (the same file as FLUX 3 Kl
 See [downloads.md](downloads.md): 4 files, every file name read from the workflow `.json`.
 
 ## Required custom nodes
-None - core ComfyUI **0.43+**.
+None - core ComfyUI **0.43+**. Core nodes used: UNETLoader, CLIPLoader, VAELoader, LoadImage, BatchImagesNode,
+PrimitiveStringMultiline, TextGenerate, ComfySwitchNode, PreviewAny, TextEncodeFibo2, KSampler, VAEDecode, SaveImage,
+ImageCompare, MarkdownNote.
+
+## Attention
+Faster attention: start ComfyUI with `--use-sage-attention` (less VRAM). `--use-ck-attention` changes the image for the same seed.
 
 ## License
 

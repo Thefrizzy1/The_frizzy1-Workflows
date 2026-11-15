@@ -1,4 +1,4 @@
-# Downloads — Hunyuan Video Low-VRAM v1.1.1
+# Downloads - Hunyuan Video Low-VRAM v1.1.2
 
 Verified from the workflow JSON (with the v1.1.1 diffusion-model correction noted).
 
@@ -11,7 +11,7 @@ Verified from the workflow JSON (with the v1.1.1 diffusion-model correction note
 | CLIP | `clip_l.safetensors` | [comfyanonymous/flux_text_encoders](https://huggingface.co/comfyanonymous/flux_text_encoders) | JSON |
 | Upscale | `4x-AnimeSharp.pth` | 4x-AnimeSharp | JSON |
 
-> ⚠️ The original file referenced `flux1-dev-Q5_K_S.gguf` in the diffusion loader — that was a leftover, not a
+> ⚠️ The original file referenced `flux1-dev-Q5_K_S.gguf` in the diffusion loader - that was a leftover, not a
 > real dependency. v1.1.1 points at the Fast Hunyuan GGUF instead.
 
 <!-- direct-links:start -->

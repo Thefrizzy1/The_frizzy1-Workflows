@@ -1,4 +1,4 @@
-# Downloads — Story Creator · 12 GB
+# Downloads - Story Creator · 12 GB
 
 Every file name below was read from the workflow `.json`.
 

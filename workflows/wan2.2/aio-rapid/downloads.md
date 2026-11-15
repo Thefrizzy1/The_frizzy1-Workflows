@@ -1,4 +1,4 @@
-# Downloads — Wan 2.2 AIO Rapid v1.0.0
+# Downloads - Wan 2.2 AIO Rapid v1.0.1
 
 Verified from the workflow JSON.
 

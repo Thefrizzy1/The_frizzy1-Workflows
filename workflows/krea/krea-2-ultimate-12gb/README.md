@@ -1,4 +1,4 @@
-# The_frizzy1 — Krea 2 Ultimate · 12 GB v2.1.0
+# The_frizzy1 - Krea 2 Ultimate · 12 GB v2.1.1
 
 <a href="https://www.youtube.com/watch?v=RGqji3525Us&list=PLG_da2oqTx7k"><img src="https://img.youtube.com/vi/RGqji3525Us/mqdefault.jpg" width="640" alt="Watch the video"></a>
 
@@ -13,7 +13,7 @@
 | **Tasks** | Text → Image · Style reference · style LoRAs |
 | **Min VRAM** | 12 GB (tested) |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.39.2 (v2.1.0) |
-| **YouTube explainer** | — (no video yet) |
+| **YouTube explainer** | - (no video yet) |
 | **License** | Workflow: MIT · Krea 2 and Kroma: Krea 2 Community License |
 
 ## Preview
@@ -61,10 +61,17 @@ Same prompts and seeds for both models.
 | Kroma · style reference | 1 MP | 45 s | 40 s | 11.3 GB | 10.4 GB | 1 |
 
 ## Required models
-See [downloads.md](downloads.md) — every file was read from the workflow `.json`. Kroma: only the model file is new.
+See [downloads.md](downloads.md): every file was read from the workflow `.json`. Kroma: only the model file is new.
 
 ## Required custom nodes
 None - core ComfyUI **0.39+** (v2.0.0 ran on 0.37.4; the Kroma path was tested on 0.39.2).
+Core nodes used: UNETLoader, CLIPLoader, VAELoader, LoraLoaderModelOnly, TextGenerate, TextEncodeQwenImageEditPlus,
+CLIPTextEncode, FluxKontextMultiReferenceLatentMethod, ModelSamplingFlux, KSampler, SamplerCustomAdvanced, CFGGuider,
+ResolutionSelector, ComfySwitchNode, CustomCombo, ComfyMathExpression and other core primitives.
+
+Checked on ComfyUI 0.45.3: v2.1.1 converts and validates on 0.45.3 (all nodes are core there). Not run on 0.45.3 yet.
+Attention: on a 24 GB RTX PRO 4000 (Z-Image, ComfyUI 0.45.3) --use-sage-attention was the same speed as pytorch with about 2.5 GB
+lower peak VRAM; --use-ck-attention gives a visibly different image for the same seed. Neither was tried with Krea 2 or on the RTX 3060.
 
 ## Get the models (one command)
 
@@ -75,6 +82,6 @@ python scripts/frizzy.py doctor krea/krea-2-ultimate-12gb --comfy "C:/path/to/Co
 ## Installation
 1. Update ComfyUI.
 2. Download the files in [downloads.md](downloads.md) (the Kroma file only if you use Kroma).
-3. Load `The_frizzy1_krea-2-ultimate-12gb_v2.1.0.json`, pick a **Model** and a **Mode**, add your inputs, **Run**.
+3. Load `The_frizzy1_krea-2-ultimate-12gb_v2.1.1.json`, pick a **Model** and a **Mode**, add your inputs, **Run**.
 
 If your models live in sub-folders (e.g. `diffusion_models/Kroma/`), the loaders show red until you re-pick them once.

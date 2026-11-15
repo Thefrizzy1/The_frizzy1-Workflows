@@ -1,4 +1,4 @@
-# Downloads — Flux Kontext GGUF v2.2.0
+# Downloads - Flux Kontext GGUF v2.3.0
 
 Verified from the workflow JSON. Diffusion → `diffusion_models/` (or `unet/`), VAE → `vae/`, encoders → `text_encoders/`.
 
@@ -31,7 +31,7 @@ the workflow `.json` loads; subfolders inside the model folder are fine.
 | optional | `loras/` | `FLUX_Polyhedron_all_Kohya_ss-000001.safetensors` | [page](https://civitai.com/models) (by hand) | One of my own LoRAs in the LoRA stack: use any Flux LoRA, or switch the slot off. |
 | optional | `loras/` | `FluxDFaeTasticDetails.safetensors` | [page](https://civitai.com/models) (by hand) | One of my own LoRAs in the LoRA stack: use any Flux LoRA, or switch the slot off. |
 
-**Custom node packs this workflow uses:** [gguf](https://github.com/calcuis/gguf), [rgthree-comfy](https://github.com/rgthree/rgthree-comfy), [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes), [ComfyUI_essentials](https://github.com/cubiq/ComfyUI_essentials), [ComfyUI-TeaCache](https://github.com/welltop-cn/ComfyUI-TeaCache).
+**Custom node packs this workflow uses:** [gguf](https://github.com/calcuis/gguf), [rgthree-comfy](https://github.com/rgthree/rgthree-comfy), [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes), [ComfyUI_essentials](https://github.com/cubiq/ComfyUI_essentials).
 
 One command: `python scripts/frizzy.py doctor flux/kontext` (finds ComfyUI, downloads what's missing, installs the nodes).
 <!-- direct-links:end -->

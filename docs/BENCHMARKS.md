@@ -6,6 +6,42 @@ outputs are in the videos.
 
 - **Laptop:** ASUS Zephyrus M16 · RTX 3050 Ti Laptop **4 GB** · i7-12700H · 16 GB RAM
 - **Desktop:** RTX 3060 **12 GB** · Ryzen 5 5600X · 32 GB RAM
+- **Server (round 4 only):** RTX PRO 4000 Blackwell **24 GB** · 64 GB RAM
+
+## Round 4 (2026-11-13/14): a 24 GB server card, ComfyUI 0.45.3
+Server: NVIDIA RTX PRO 4000 Blackwell SFF **24 GB**, 64 GB RAM, Linux, ComfyUI 0.45.3 (side install), frontend 1.58.5,
+torch 2.14.1+cu130, Sage attention. An extra column for people with a bigger card, not a replacement for the 3060 numbers.
+One run each: first run = models load from disk, models loaded = same graph with a new seed.
+
+| Workflow | Job | Output | Wall | Peak VRAM | Peak RAM | Note |
+|---|---|---|---|---|---|---|
+| minimax/h3-ultimate-12gb | first run | 864x480, 5 s | 1:47 | 23719 MiB | 7.81 GB |  |
+| minimax/h3-ultimate-12gb | models loaded | 864x480, 5 s | 1:38 | 23785 MiB | 7.78 GB |  |
+| ltx/ltx-2.5-ultimate-12gb | first run | 1280x704, 5 s | 1:18 | 23839 MiB | 9.14 GB | int8 transformer instead of the nvfp4 file the workflow names |
+| ltx/ltx-2.5-ultimate-12gb | models loaded | 1280x704, 5 s | 1:04 | 23333 MiB | 9.26 GB | int8 transformer instead of the nvfp4 file the workflow names |
+| ltx/ltx-2.5-ultimate-12gb | 10 s clip | 1280x704, 10 s | 2:23 | 23815 MiB | 14.32 GB | int8 transformer instead of the nvfp4 file the workflow names |
+| qwen/image-2.1-12gb | first run | 1664x2496 | 2:23 | 20297 MiB | 5.93 GB |  |
+| qwen/image-2.1-12gb | models loaded | 1664x2496 | 2:23 | 20297 MiB | 5.91 GB |  |
+| qwen/image-2.1-ultimate-12gb | first run | 2048x2048 | 36 s | 20585 MiB | 5.51 GB |  |
+| qwen/image-2.1-ultimate-12gb | models loaded | 2048x2048 | 31 s | 20585 MiB | 5.47 GB |  |
+| qwen/image-2.1-ultimate-12gb | edit, 1 input image | 1408x768 | 14 s | 19685 MiB | 5.65 GB |  |
+| minimax/h3-relight-12gb | first run | 832x480, 5 s | 4:04 | 23727 MiB | 16.6 GB |  |
+| minimax/h3-relight-12gb | models loaded | 832x480, 5 s | 2:53 | 23721 MiB | 16.66 GB |  |
+| minimax/h3-relight-12gb | 736 short side | 1312x736, 5 s | 12:22 | 23953 MiB | 23.9 GB |  |
+| minimax/h3-relight-12gb | gentle HD refine | 1920x1088, 5 s | 9:38 | 23933 MiB | 31.28 GB |  |
+| scail/scail2-character-swap-12gb | first run | 512x896, 9 s | 13:02 | 22255 MiB | 21.42 GB |  |
+| scail/scail2-character-swap-12gb | models loaded | 512x896, 9 s | 13:01 | 22069 MiB | 21.73 GB |  |
+| minimax/h3-character-swap-12gb | first run | 832x480, 5 s | 3:11 | 23713 MiB | 19.24 GB | stand-in inputs (documented demo files not available) |
+| minimax/h3-character-swap-12gb | models loaded | 832x480, 5 s | 3:05 | 23715 MiB | 19.28 GB | stand-in inputs (documented demo files not available) |
+| audio/yue2-music-12gb | first run | 65 s | 26 s | 6861 MiB | 6.02 GB |  |
+| audio/yue2-music-12gb | models loaded | 37 s | 13 s | 5437 MiB | 5.89 GB |  |
+| z-image/turbo | first run | 1088x1920 | 27 s | 19815 MiB | 6.12 GB |  |
+| z-image/turbo | models loaded | 1088x1920 | 23 s | 19495 MiB | 6.29 GB |  |
+| z-image/turbo | largest size | 1440x2560 | 46 s | 17927 MiB | 12.65 GB |  |
+
+Attention on this card (same seed, same graph, 2 runs each): PyTorch, Sage and Comfy Kitchen (`--use-ck-attention`, new in
+0.45) are the same speed within run-to-run noise. Sage peaks about 2.5 GB lower on Z-Image. Seeds reproduce on PyTorch and
+(almost exactly) Sage; Comfy Kitchen attention gives a visibly different picture from the same seed.
 
 ## Round 3 (2026-10-14): the newest workflows, the same graph on both machines
 Laptop: ASUS Zephyrus M16, RTX 3050 Ti 4 GB, i7-12700H, 16 GB RAM, plugged in, Armoury Crate Ultimate, fans 100%.

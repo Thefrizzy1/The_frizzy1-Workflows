@@ -1,4 +1,4 @@
-# Downloads — MiniMax H3 Ultimate · 12 GB
+# Downloads - MiniMax H3 Ultimate · 12 GB
 
 Every file name below was read from the workflow `.json`.
 
@@ -24,5 +24,12 @@ Click a file name to download it. Put it in the folder shown (inside `ComfyUI/mo
 |---|---|---|---|
 | ControlNet mode | `checkpoints/` | [sdpose_wholebody_fp16.safetensors](https://huggingface.co/Comfy-Org/SDPose/resolve/main/checkpoints/sdpose_wholebody_fp16.safetensors) | 1.9 GB |
 | ControlNet mode | `diffusion_models/` | [rt_detr_v4-x-hgnet_fp16.safetensors](https://huggingface.co/Comfy-Org/SDPose/resolve/main/diffusion_models/rt_detr_v4-x-hgnet_fp16.safetensors) | 0.1 GB |
+
+**Full HD (gentle refine)**: ComfyUI checks these two loaders in every mode, so download them or point the loaders at any file you have.
+
+| For | Folder | File (click = download) | Size |
+|---|---|---|---|
+| Full HD: gentle refine | `latent_upscale_models/` | [minimax_h3_latent_upscaler_3d_conv_v1_bf16.safetensors](https://huggingface.co/Efficient-Large-Model/Open-H3-Regenerate-2K/resolve/main/latent_upsampler/minimax_h3_latent_upscaler_3d_conv_v1_bf16.safetensors) | 0.7 GB |
+| Full HD: gentle refine | `loras/` | [minimax_h3_open_regenerate_2k_r128_comfyui_bf16_swiglu_fixed.safetensors](https://huggingface.co/DrakenZA/Open-H3-Regenerate-2K-ComfyUI/resolve/main/minimax_h3_open_regenerate_2k_r128_comfyui_bf16_swiglu_fixed.safetensors) | 2.0 GB |
 
 _Tested on: RTX 3060 12 GB · 32 GB RAM · ComfyUI 0.37.4._

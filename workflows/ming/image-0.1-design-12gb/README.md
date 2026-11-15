@@ -1,4 +1,4 @@
-# The_frizzy1 — Ming Image 0.1 Design · 12 GB v1.0.0
+# The_frizzy1 - Ming Image 0.1 Design · 12 GB v1.0.1
 
 <a href="https://www.youtube.com/watch?v=DTleXeD74vs&list=PLG_da2oqTx7k"><img src="https://img.youtube.com/vi/DTleXeD74vs/mqdefault.jpg" width="640" alt="Watch the video"></a>
 
@@ -13,13 +13,14 @@
 | **Tasks** | Text → Image (up to 2K) · Edit (1–3 images) · transparent background (RGBA) |
 | **Needs** | 12 GB VRAM · 32 GB system RAM (peaked at 9.8 GB) · ComfyUI **0.39+** |
 | **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.39.2 (Comfy Desktop) |
+| **Checked on** | ComfyUI 0.45.3: converts and validates (every node is core in 0.45.3), not run there |
 | **YouTube explainer** | [▶ Ming Image 0.1 in ComfyUI: Posters, Text + Real Transparency (12GB)](https://www.youtube.com/watch?v=DTleXeD74vs&list=PLG_da2oqTx7k) |
 | **License** | Workflow: MIT · Ming Image 0.1 Design: MIT |
 
 ## Quick start
 1. Update ComfyUI to **0.39 or newer** (Ming Image support; no custom nodes).
 2. Download the 3 files in [downloads.md](downloads.md).
-3. Load `The_frizzy1_ming-image-0.1-design-12gb_v1.0.0.json`. It opens on **Text to image**: write your prompt (put every word you want rendered in quotes), **Run**.
+3. Load `The_frizzy1_ming-image-0.1-design-12gb_v1.0.1.json`. It opens on **Text to image**: write your prompt (put every word you want rendered in quotes), **Run**.
 4. Editing: pick **Edit (your images)**, un-bypass (select + **Ctrl+B**) Image 1 (and 2, 3 if you use them), load your files.
 
 ## Preview
@@ -43,7 +44,7 @@
 
 **Transparent background** puts the model card's phrase "RGBA, 4-channel, transparent background." in front of your
 prompt. Ming always outputs RGBA and Save Image keeps the alpha channel (PNG). Note: even normal images can come out
-partly transparent (my 1K poster had alpha down to 199 on 45 % of its pixels) — flatten onto a background if you need opaque.
+partly transparent (my 1K poster had alpha down to 199 on 45 % of its pixels). Flatten onto a background if you need opaque.
 
 ## Overview
 Built from the two official Ming Image 0.1 Design templates (text to image, image edit) in ComfyUI 0.39:
@@ -52,11 +53,18 @@ no negative prompt, no CFG. The template's prompt enhancer (Qwen3.8 27B, 17.3 GB
 exactly as typed. The text encoder is the w4a8 version (12.8 GB) instead of the template's int8 (19.5 GB), for 32 GB of RAM.
 Comfy Kitchen vs PyTorch attention, sampling only: 12 s vs 13 s at 1 MP, 1 min 05 s vs 1 min 06 s at 2K.
 
+Faster attention: start ComfyUI with `--use-sage-attention` (less VRAM). `--use-ck-attention` changes the image for the same seed.
+This graph already sets Comfy Kitchen attention in its "Comfy Kitchen attention" node (ModelAttentionBackend), as the official templates do.
+
 ## Required models
-See [downloads.md](downloads.md) — every file was read from the workflow `.json`.
+See [downloads.md](downloads.md). Every file was read from the workflow `.json`.
 
 ## Required custom nodes
-None - core ComfyUI **0.39+**.
+None - core ComfyUI **0.39+**. Nodes used: UNETLoader, CLIPLoader, VAELoader, ModelAttentionBackend, ModelSamplingFlux,
+CLIPTextEncode, TextEncodeMingImageEdit, LoadImage, ImageScaleToTotalPixels, GetImageSize, RepeatImageBatch, ResolutionSelector,
+EmptyLatentImage, BasicScheduler, KSamplerSelect, SamplerLCM, RandomNoise, BasicGuider, SamplerCustomAdvanced, VAEDecode, SaveImage,
+CustomCombo, StringCompare, StringConcatenate, ComfySwitchNode, Primitive (String Multiline / Boolean / Float / Int), MarkdownNote.
+All of them are core nodes in ComfyUI 0.45.3.
 
 ## Troubleshooting
 - **"Invalid image file" before it starts:** an image input you are not using is un-bypassed. Bypass it (Ctrl+B).

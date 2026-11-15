@@ -1,4 +1,4 @@
-# Downloads — Wan 2.2 Animate v1.2.0
+# Downloads: Wan 2.2 Animate v1.2.1
 
 > **Newer:** [Wan Animate Ultimate · 12 GB](../animate-ultimate) rebuilds this with native nodes (only ComfyUI-GGUF needed), adds Wan Animate 2 and a face video that makes the mouth move. Tested on an RTX 3060.
 
@@ -22,7 +22,7 @@ All filenames were read directly from the workflow `.json` (verified). Place eac
 | Q5_K_S | not measured |
 | Q6_K | not measured |
 
-> The `Q8_0` variant appears in the GGUF workflow, `Q5_K_S` in the non-GGUF variant — both are valid; pick by VRAM.
+> The `Q8_0` variant appears in the GGUF workflow, `Q5_K_S` in the non-GGUF variant; both are valid; pick by VRAM.
 
 
 Custom packs this v1.2.0 JSON also uses (not listed before): ComfyUI-Custom-Scripts (`MathExpression|pysssss`), ComfyUI-Frame-Interpolation (`RIFE VFI`).

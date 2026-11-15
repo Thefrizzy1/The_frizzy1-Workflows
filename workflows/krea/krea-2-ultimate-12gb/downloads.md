@@ -1,4 +1,4 @@
-# Downloads — Krea 2 Ultimate · 12 GB
+# Downloads - Krea 2 Ultimate · 12 GB
 
 Every file name below was read from the workflow `.json`.
 

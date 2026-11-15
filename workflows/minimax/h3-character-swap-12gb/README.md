@@ -1,4 +1,4 @@
-# The_frizzy1 — MiniMax H3 Character Swap · 12 GB v1.1.0
+# The_frizzy1 - MiniMax H3 Character Swap · 12 GB v1.1.1
 
 <a href="https://www.youtube.com/watch?v=zkhLZUGIIfE&list=PLMztlpsP7Bgg"><img src="https://img.youtube.com/vi/zkhLZUGIIfE/mqdefault.jpg" width="640" alt="Watch the video"></a>
 
@@ -13,14 +13,14 @@
 | **Model family** | MiniMax H3 (Ref2VA) + the Character Swap LoRA |
 | **Task** | Character swap, video → video, with the original sound |
 | **Needs** | 12 GB VRAM (peaked at 11892 MiB) · 32 GB system RAM (peaked at 23.1 GB) · ComfyUI **0.39+** |
-| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.39.2 |
+| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB DDR4 · ComfyUI 0.39.2 · also run on RTX PRO 4000 Blackwell 24 GB · 64 GB RAM · ComfyUI 0.45.3 · sage attention ([numbers](../../../docs/BENCHMARKS.md)) |
 | **YouTube explainer** | [▶ I Replaced Higgsfield Genjutsu With My RTX 3060 (Free, Local)](https://www.youtube.com/watch?v=zkhLZUGIIfE&list=PLMztlpsP7Bgg) |
 | **License** | Workflow: MIT · MiniMax H3 + the LoRA: MiniMax H3 Community License (read it before commercial use) |
 
 ## Quick start
 1. Update ComfyUI to **0.39 or newer** (MiniMax H3 + the Start Loop / End Loop nodes; no custom nodes).
 2. Download the files in [downloads.md](downloads.md).
-3. Load `The_frizzy1_h3-character-swap-12gb_v1.1.0.json`, load **your video** and a **character picture** (best: a sheet with a front view, a back view and the face).
+3. Load `The_frizzy1_h3-character-swap-12gb_v1.1.1.json`, load **your video** and a **character picture** (best: a sheet with a front view, a back view and the face).
 4. **Who to replace**: one sentence, e.g. `big man in the black and gold patterned outfit`.
 5. **Model files**: all six loaders are on the main node. If your files sit in a subfolder (like `MiniMax-H3/`), pick them there once. **Run**.
 
@@ -66,11 +66,20 @@
 From the LoRA's model card: shots of 4–5 s work best (that's why the loop works in 5 s passes), one person at a time,
 hard cuts in the clip confuse it. Swap in characters, not real people's faces.
 
+No Full HD option (yet): H3 Relight's Full HD works on one pass (its gentle refine upscales that pass's latent) and is
+switched off for its long-clip mode. This workflow always runs in 5.2 s passes and joins decoded frames, so that option
+does not port over as it is.
+
 ## Required models
-See [downloads.md](downloads.md) — every file was read from the workflow `.json`.
+See [downloads.md](downloads.md) - every file was read from the workflow `.json`.
 
 ## Required custom nodes
 None - core ComfyUI **0.39+**.
+
+Checked on ComfyUI 0.45.3: v1.1.1 converts and validates there (same nodes and settings as v1.1.0, only the in-graph notes changed).
+
+## Faster attention
+Start ComfyUI with `--use-sage-attention` (less VRAM). `--use-ck-attention` changes the image for the same seed.
 
 ## Troubleshooting
 - **It swaps the wrong person / nobody:** make the "who to replace" sentence describe what that person wears.

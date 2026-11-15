@@ -1,4 +1,4 @@
-# Downloads — MiniMax H3 Character Swap · 12 GB
+# Downloads - MiniMax H3 Character Swap · 12 GB
 
 Every file name below was read from the workflow `.json`.
 

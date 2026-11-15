@@ -1,4 +1,4 @@
-# The_frizzy1 — Wan 2.2 GGUF Low-VRAM v1.0.0
+# The_frizzy1 - Wan 2.2 GGUF Low-VRAM v1.0.1
 
 <a href="https://www.youtube.com/watch?v=C7ZttV320qk&list=PLRe4JVWoY_AU"><img src="https://img.youtube.com/vi/C7ZttV320qk/mqdefault.jpg" width="640" alt="Watch the video"></a>
 
@@ -19,16 +19,24 @@
 | **Newer** | [MiniMax H3 Ultimate](../../minimax/h3-ultimate-12gb) · [LTX 2.5 Ultimate](../../ltx/ltx-2.5-ultimate-12gb) (12 GB). This one stays the 4 GB pick. |
 
 ## Overview
-Wan 2.2 uses a **Mixture-of-Experts** design — a *high-noise* and a *low-noise* expert — for better motion and
+Wan 2.2 uses a **Mixture-of-Experts** design (a *high-noise* and a *low-noise* expert) for better motion and
 cinematics than 2.1. **The 14B paths load two GGUFs** (high + low). The 5B TI2V path is a single file and runs
-on ~8 GB with offloading. Read [the Wan lineage note](../../../docs/WAN-LINEAGE.md) — this is the #1 source of load errors.
+on ~8 GB with offloading. Read [the Wan lineage note](../../../docs/WAN-LINEAGE.md): this is the #1 source of load errors.
 
 ## Included workflows
 | File | Task |
 |---|---|
-| `The_frizzy1_wan-2.2-t2v-14b_v1.0.0.json` | Text → Video (14B, high+low noise) |
-| `The_frizzy1_wan-2.2-i2v-14b_v1.0.0.json` | Image → Video (14B, high+low noise) |
+| `The_frizzy1_wan-2.2-t2v-14b_v1.0.1.json` | Text → Video (14B, high+low noise) |
+| `The_frizzy1_wan-2.2-i2v-14b_v1.0.1.json` | Image → Video (14B, high+low noise) |
 | `source/Wan2.2- 5B T2V.json` / `source/Wan2.2- 5B I2V.json` | TI2V-5B (single file) |
+
+Older versions of the 14B graphs are in `source/`. Each 14B graph has a **How to use** and a **Downloads** note on the left of the canvas.
+
+## ComfyUI version
+Needs a ComfyUI with Wan 2.2 support (core nodes used: CLIPTextEncode, WanImageToVideo, EmptyHunyuanLatentVideo, ModelSamplingSD3, CLIPLoader, VAELoader, LoraLoaderModelOnly, VAEDecodeTiled, UpscaleModelLoader, ImageUpscaleWithModel, ImageScale).
+Checked on ComfyUI 0.45.3: both 14B graphs convert and their core nodes exist in 0.45.3 (not run there yet: the models and three of the custom packs are not on the test server).
+
+Faster attention: start ComfyUI with `--use-sage-attention` (less VRAM). `--use-ck-attention` changes the image for the same seed.
 
 ## Recommended settings (from creator)
 - Use **14B models**; lightx2v LoRA strongly recommended.
@@ -51,12 +59,12 @@ Full verified table + links: **[downloads.md](downloads.md)**.
 ## Required custom nodes
 | Node | Link |
 |---|---|
-| GGUF | https://github.com/calcuis/gguf |
-| WanVideoWrapper | https://github.com/kijai/ComfyUI-WanVideoWrapper |
-| Tiled KSampler | https://github.com/FlyingFireCo/tiled_ksampler |
-| KJNodes | https://github.com/kijai/ComfyUI-KJNodes |
-| VideoHelperSuite | https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite |
-| rgthree-comfy *(LoRA stacking only)* | https://github.com/rgthree/rgthree-comfy |
+| GGUF (LoaderGGUF) | https://github.com/calcuis/gguf |
+| Tiled KSampler (Asymmetric Tiled KSampler) | https://github.com/FlyingFireCo/tiled_ksampler |
+| KJNodes (Enhance-A-Video, CFG-Zero* init, NAG, Load And Resize Image) | https://github.com/kijai/ComfyUI-KJNodes |
+| VideoHelperSuite (Video Combine) | https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite |
+| Frame-Interpolation (RIFE VFI) | https://github.com/Fannovel16/ComfyUI-Frame-Interpolation |
+| tbox (Purge VRAM) | https://github.com/ai-shizuka/ComfyUI-tbox |
 
 ## Changelog
 See [changelog.md](changelog.md).
