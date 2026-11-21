@@ -17,6 +17,8 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 
 ☕ If a workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
 
+💸 **New: [AI subscriptions vs one RTX 3060](https://github.com/Thefrizzy1/ai-subscriptions-vs-rtx-3060)**: which paid AI tools these free workflows replaced, with every prompt, time, cost and link from the video.
+
 ---
 
 > **Every model name in this repository was read directly out of the workflow `.json` files — not guessed.**
