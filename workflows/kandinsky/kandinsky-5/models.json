@@ -1,0 +1,62 @@
+{
+  "workflow": "kandinsky/kandinsky-5",
+  "files": [
+    {
+      "name": "kandinsky5lite_t2i.safetensors",
+      "url": "https://huggingface.co/kandinskylab/Kandinsky-5.0-T2I-Lite/resolve/main/model/kandinsky5lite_t2i.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Text to image. 12.0 GB."
+    },
+    {
+      "name": "kandinsky5lite_t2v_distilled16steps_5s.safetensors",
+      "url": "https://huggingface.co/kandinskylab/Kandinsky-5.0-T2V-Lite-distilled16steps-5s/resolve/main/model/kandinsky5lite_t2v_distilled16steps_5s.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Text to video, 16-step model (default). 4.6 GB."
+    },
+    {
+      "name": "kandinsky5lite_i2v_5s.safetensors",
+      "url": "https://huggingface.co/kandinskylab/Kandinsky-5.0-I2V-Lite-5s/resolve/main/model/kandinsky5lite_i2v_5s.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Image to video. 4.6 GB."
+    },
+    {
+      "name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/HunyuanVideo_1.5_repackaged/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "All three workflows. 9.4 GB."
+    },
+    {
+      "name": "clip_l.safetensors",
+      "url": "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "All three workflows. 0.25 GB."
+    },
+    {
+      "name": "ae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "Text to image. 0.34 GB."
+    },
+    {
+      "name": "hunyuan_video_vae_bf16.safetensors",
+      "url": "https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_vae_bf16.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "Text to video and image to video. 0.49 GB."
+    },
+    {
+      "name": "kandinsky5lite_t2v_sft_5s.safetensors",
+      "url": "https://huggingface.co/kandinskylab/Kandinsky-5.0-T2V-Lite-sft-5s/resolve/main/model/kandinsky5lite_t2v_sft_5s.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "Optional: best-quality text to video (Steps 50, CFG 5). Not in the JSON. 4.6 GB."
+    }
+  ],
+  "nodes": []
+}
