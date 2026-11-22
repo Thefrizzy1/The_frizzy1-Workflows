@@ -9,7 +9,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 [![CivitAI](https://img.shields.io/badge/CivitAI-The__frizzy1-2b7cff?style=flat-square)](https://civitai.com/user/The_frizzy1)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-The--frizzy1-ffb000?style=flat-square)](https://huggingface.co/The-frizzy1)
 [![YouTube](https://img.shields.io/badge/YouTube-@the__frizzy1-ff0033?style=flat-square)](https://www.youtube.com/@the_frizzy1)
-[![Workflows](https://img.shields.io/badge/workflows-35-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-37-6a5cff?style=flat-square)](#workflows)
 [![Min VRAM](https://img.shields.io/badge/min%20VRAM-4%20GB-3ecf8e?style=flat-square)](#workflows)
 [![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
 
@@ -79,6 +79,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | The **older Hunyuan** video path | [Hunyuan Video Low-VRAM](workflows/hunyuan/video) | 4 GB+ |
 | **Songs with vocals** from a style + your lyrics, or a cover of your song (YuE2) | [YuE2 Music · 12 GB](workflows/audio/yue2-music-12gb) | 4 GB+* |
 | **Songs with vocals** from a caption + your lyrics, up to 2 min tested (MiniMax Music 3) | [MiniMax Music 3 · 12 GB](workflows/audio/minimax-music3-12gb) | 12 GB |
+| **Songs with vocals** or instrumentals from a style + your lyrics, up to 4 min tested (ACE-Step 1.5 XL, MIT model) | [ACE-Step 1.5 XL Music](workflows/audio/ace-step-1.5) | 12 GB target, not verified |
 | Generate **audio** for a clip | [AI Audio Maker](workflows/audio/ai-audio-maker) | low |
 
 ---
@@ -143,6 +144,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[AI Audio Maker](workflows/audio/ai-audio-maker)** | v1.0.1 | low | Audio · video-sync (MMAudio) | [CivitAI](https://civitai.com/models/2539489) |
 | **[YuE2 Music · 12 GB](workflows/audio/yue2-music-12gb)** | v1.0.1 | 4 GB* | text → song · cover | — |
 | **[MiniMax Music 3 · 12 GB](workflows/audio/minimax-music3-12gb)** | v1.0.1 | 12 GB | caption + lyrics → song | — |
+| **[ACE-Step 1.5 XL Music](workflows/audio/ace-step-1.5)** | v1.0.0 | 12 GB (not verified) | style + lyrics → song · instrumental · MIT | — |
 
 <sub>▶ = video walkthrough on YouTube. 4 GB* = the 12 GB workflow's own files also ran on a 4 GB RTX 3050 Ti laptop with 16 GB RAM, slower: times in [docs/BENCHMARKS.md](docs/BENCHMARKS.md).</sub>
 
@@ -256,7 +258,7 @@ The_frizzy1-Workflows/
 │   ├── scail/             scail2-character-swap-12gb
 │   ├── story/             story-creator-12gb
 │   ├── 3d/                image-to-3d-ultimate-12gb
-│   └── audio/             minimax-music3-12gb · yue2-music-12gb · ai-audio-maker
+│   └── audio/             minimax-music3-12gb · yue2-music-12gb · ace-step-1.5 · ai-audio-maker
 │       └── <workflow>/
 │           ├── README.md          what it is, settings, nodes
 │           ├── downloads.md       verified model table
