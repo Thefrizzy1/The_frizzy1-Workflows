@@ -6,21 +6,22 @@
       "url": "https://huggingface.co/Comfy-Org/MiniMax-Music-3/resolve/main/diffusion_models/minimax_music3_dit_int8_convrot.safetensors",
       "dest": "diffusion_models",
       "required": true,
-      "note": "music. 2.50 GB"
+      "note": "MiniMax Music 3 DiT, int8_convrot, Comfy-Org repackage. 2.50 GB."
     },
     {
       "name": "minimax_music3_text_encoder_pruned_int8_convrot.safetensors",
       "url": "https://huggingface.co/Comfy-Org/MiniMax-Music-3/resolve/main/text_encoders/minimax_music3_text_encoder_pruned_int8_convrot.safetensors",
       "dest": "text_encoders",
       "required": true,
-      "note": "music. 9.20 GB"
+      "note": "Text encoder (the language model that writes the song plan), pruned, int8_convrot. 9.20 GB."
     },
     {
       "name": "minimax_music3_dav.safetensors",
       "url": "https://huggingface.co/Comfy-Org/MiniMax-Music-3/resolve/main/vae/minimax_music3_dav.safetensors",
       "dest": "vae",
       "required": true,
-      "note": "music. 0.22 GB"
+      "note": "MiniMax Music 3 audio VAE. 0.22 GB."
     }
-  ]
+  ],
+  "nodes": []
 }
