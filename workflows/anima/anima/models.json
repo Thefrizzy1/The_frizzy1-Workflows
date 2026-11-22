@@ -1,0 +1,48 @@
+{
+  "workflow": "anima/anima",
+  "files": [
+    {
+      "name": "anima-base-v1.0.safetensors",
+      "url": "https://huggingface.co/circlestone-labs/Anima/resolve/main/split_files/diffusion_models/anima-base-v1.0.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Anima Base v1.0. 4.2 GB."
+    },
+    {
+      "name": "qwen_3_06b_base.safetensors",
+      "url": "https://huggingface.co/circlestone-labs/Anima/resolve/main/split_files/text_encoders/qwen_3_06b_base.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "Text encoder, Qwen3 0.6B. 1.2 GB."
+    },
+    {
+      "name": "qwen_image_vae.safetensors",
+      "url": "https://huggingface.co/circlestone-labs/Anima/resolve/main/split_files/vae/qwen_image_vae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "Qwen Image VAE. 0.25 GB."
+    },
+    {
+      "name": "anima-turbo-lora-v0.2.safetensors",
+      "url": "https://huggingface.co/circlestone-labs/Anima-Official-LoRAs/resolve/main/anima-turbo-lora-v0.2.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": "Turbo LoRA. Needed even with Turbo off: ComfyUI checks every file in the graph before it runs. 0.15 GB."
+    },
+    {
+      "name": "anima-aesthetic-v1.1.safetensors",
+      "url": "https://huggingface.co/circlestone-labs/Anima/resolve/main/split_files/diffusion_models/anima-aesthetic-v1.1.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "Optional model swap. Not in the JSON. 4.2 GB."
+    },
+    {
+      "name": "anima-turbo-v1.1.safetensors",
+      "url": "https://huggingface.co/circlestone-labs/Anima/resolve/main/split_files/diffusion_models/anima-turbo-v1.1.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "Optional model swap (Turbo off, Steps 8, CFG 1). Not in the JSON. 4.2 GB."
+    }
+  ],
+  "nodes": []
+}
