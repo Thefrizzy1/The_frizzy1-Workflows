@@ -1,0 +1,48 @@
+{
+  "workflow": "firered/image-edit-1.1",
+  "files": [
+    {
+      "name": "FireRed-ImageEdit-1.1_int8_convrot_WT.safetensors",
+      "url": "https://huggingface.co/TheWirableTortoise/FireRed-Image-Edit-v1.1-INT8-ConvRot/resolve/main/FireRed-ImageEdit-1.1_int8_convrot_WT.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "FireRed Image Edit 1.1, community int8 convrot conversion (default). 20.6 GB."
+    },
+    {
+      "name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "Text encoder, the same file Qwen Image uses. 9.4 GB."
+    },
+    {
+      "name": "qwen_image_vae.safetensors",
+      "url": "https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.1-ComfyUI/resolve/main/qwen_image_vae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "Qwen Image VAE. 0.25 GB."
+    },
+    {
+      "name": "FireRed-Image-Edit-1.0-Lightning-8steps-v1.0.safetensors",
+      "url": "https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.1-ComfyUI/resolve/main/FireRed-Image-Edit-1.0-Lightning-8steps-v1.0.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": "Lightning LoRA, 8 steps (the one the ComfyUI template loads). Needed even with Lightning off (ComfyUI checks the file). 0.85 GB."
+    },
+    {
+      "name": "firered_image_edit_1.1_fp8_scaled_e4m3fn.safetensors",
+      "url": "https://huggingface.co/drbaph/FireRed-Image-Edit-1.1_ComfyUI_Quants/resolve/main/firered_image_edit_1.1_fp8_scaled_e4m3fn.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "Optional swap: community fp8 conversion. Not in the JSON. 20.4 GB."
+    },
+    {
+      "name": "FireRed-Image-Edit-1.1-transformer.safetensors",
+      "url": "https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.1-ComfyUI/resolve/main/FireRed-Image-Edit-1.1-transformer.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "Optional swap: the authors' full file, the one the ComfyUI template loads. Not in the JSON. 40.9 GB."
+    }
+  ],
+  "nodes": []
+}

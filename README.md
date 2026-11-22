@@ -60,6 +60,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Quick edits** in 4 steps: say what the picture should look like (Fibo 2.0, non-commercial) | [Fibo 2.0 Edit Turbo · 12 GB](workflows/fibo/fibo2-edit-12gb) | 12 GB |
 | **Design images with text + real transparency** (Ming Image 0.1 Design) | [Ming Image 0.1 · 12 GB](workflows/ming/image-0.1-design-12gb) | 4 GB+* |
 | **Fast, tiny** image generation | [Z-Image Turbo GGUF](workflows/z-image/turbo) | 4 GB+ |
+| **Edit a picture or combine up to three** with FireRed Image Edit 1.1 (Apache-2.0, 8 steps) | [FireRed Image Edit 1.1](workflows/firered/image-edit-1.1) | 12 GB target, not verified |
 | **Kandinsky 5.0 Lite** (MIT): text to image, text to video, image to video | [Kandinsky 5.0 Lite](workflows/kandinsky/kandinsky-5) | 12 GB target, not verified |
 | **Anime and illustration** images in 4 to 23 s (Anima Base v1.0 + Turbo switch, non-commercial model) | [Anima](workflows/anima/anima) | 12 GB target, not verified |
 | Newer **LTX video** (audio-aware) | [LTX-2](workflows/ltx/ltx2) · [LTX-2.3 Ultimate · 12 GB](workflows/ltx/ltx2.3-ultimate) | 4–12 GB |
@@ -124,6 +125,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[Qwen Image 2.1 Ultimate · 12 GB](workflows/qwen/image-2.1-ultimate-12gb)** | v2.1.1 | 12 GB | T2I · Turbo · edit · remove background · ControlNet pose / depth / edges | [▶](https://www.youtube.com/watch?v=N7X0QBZ_r9c&list=PLG_da2oqTx7k) |
 | **[Ming Image 0.1 · 12 GB](workflows/ming/image-0.1-design-12gb)** | v1.0.1 | 4 GB* | T2I · edit · RGBA | [▶](https://www.youtube.com/watch?v=DTleXeD74vs&list=PLG_da2oqTx7k) |
 | **[Z-Image Turbo GGUF](workflows/z-image/turbo)** | v1.0.1 | 4 GB | T2I (fast turbo) | [CivitAI](https://civitai.com/models/2561639) |
+| **[FireRed Image Edit 1.1](workflows/firered/image-edit-1.1)** | v1.0.0 | 12 GB (not verified) | edit · up to 3 pictures · Lightning 8-step · Apache-2.0 | — |
 | **[Kandinsky 5.0 Lite](workflows/kandinsky/kandinsky-5)** | v1.0.0 | 12 GB (not verified) | T2I · T2V (16-step) · I2V · MIT | — |
 | **[Anima](workflows/anima/anima)** | v1.0.0 | 12 GB (not verified) | T2I anime / illustration · Turbo switch (8 steps) · non-commercial model | — |
 | **[Krea 2 Ultimate · 12 GB](workflows/krea/krea-2-ultimate-12gb)** | v2.1.1 | 4 GB* | T2I · style reference · style LoRAs · Kroma | — |
@@ -249,6 +251,7 @@ The_frizzy1-Workflows/
 │   ├── flux/              kontext · flux2-dev · flux3-klein-12gb
 │   ├── moss/              moss-image-12gb
 │   ├── fibo/              fibo2-edit-12gb
+│   ├── firered/           image-edit-1.1
 │   ├── z-image/           turbo
 │   ├── scail/             scail2-character-swap-12gb
 │   ├── story/             story-creator-12gb

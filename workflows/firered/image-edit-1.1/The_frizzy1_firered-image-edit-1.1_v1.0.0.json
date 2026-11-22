@@ -1,0 +1,3174 @@
+{
+ "id": "7d2f3c1e-5e0d-4b7a-9a11-f17e7ed00011",
+ "revision": 0,
+ "last_node_id": 47,
+ "last_link_id": 61,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "LoadImage",
+   "pos": [
+    -60,
+    50
+   ],
+   "size": [
+    400,
+    330
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "COMBO",
+     "widget": {
+      "name": "image"
+     },
+     "link": null,
+     "label": "Picture 1 (the picture to edit)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      2
+     ]
+    },
+    {
+     "localized_name": "MASK",
+     "name": "MASK",
+     "type": "MASK",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picture 1: the picture to edit",
+   "widgets_values": [
+    "h3_frame_ref_1.png",
+    "image"
+   ]
+  },
+  {
+   "id": 2,
+   "type": "LoadImage",
+   "pos": [
+    -60,
+    430
+   ],
+   "size": [
+    400,
+    330
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "COMBO",
+     "widget": {
+      "name": "image"
+     },
+     "link": null,
+     "label": "Picture 2 (optional)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      6
+     ]
+    },
+    {
+     "localized_name": "MASK",
+     "name": "MASK",
+     "type": "MASK",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picture 2 (optional, needs the switch below)",
+   "widgets_values": [
+    "example.png",
+    "image"
+   ]
+  },
+  {
+   "id": 3,
+   "type": "PrimitiveBoolean",
+   "pos": [
+    -60,
+    810
+   ],
+   "size": [
+    400,
+    60
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Use picture 2"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "BOOLEAN",
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "links": [
+      10,
+      12
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveBoolean",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Use picture 2 (off = ignored)",
+   "widgets_values": [
+    false
+   ]
+  },
+  {
+   "id": 4,
+   "type": "LoadImage",
+   "pos": [
+    -60,
+    920
+   ],
+   "size": [
+    400,
+    330
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "COMBO",
+     "widget": {
+      "name": "image"
+     },
+     "link": null,
+     "label": "Picture 3 (optional)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      13
+     ]
+    },
+    {
+     "localized_name": "MASK",
+     "name": "MASK",
+     "type": "MASK",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picture 3 (optional, needs the switch below)",
+   "widgets_values": [
+    "example.png",
+    "image"
+   ]
+  },
+  {
+   "id": 5,
+   "type": "PrimitiveBoolean",
+   "pos": [
+    -60,
+    1300
+   ],
+   "size": [
+    400,
+    60
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Use picture 3"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "BOOLEAN",
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "links": [
+      17,
+      19
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveBoolean",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Use picture 3 (off = ignored)",
+   "widgets_values": [
+    false
+   ]
+  },
+  {
+   "id": 6,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    380,
+    50
+   ],
+   "size": [
+    520,
+    260
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "STRING",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Edit instruction"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      24
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Edit instruction (what to change and what to keep)",
+   "widgets_values": [
+    "Replace the white swim cap with a wide-brimmed straw hat with a red ribbon. Keep her face, her pose, the green apple and the blue background exactly the same."
+   ]
+  },
+  {
+   "id": 7,
+   "type": "PrimitiveBoolean",
+   "pos": [
+    380,
+    360
+   ],
+   "size": [
+    520,
+    60
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Lightning (on = 8 steps, CFG 1)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "BOOLEAN",
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "links": [
+      43,
+      46,
+      49
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveBoolean",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Lightning (on = 8 steps, CFG 1; off = Steps and CFG below)",
+   "widgets_values": [
+    true
+   ]
+  },
+  {
+   "id": 8,
+   "type": "PrimitiveFloat",
+   "pos": [
+    380,
+    470
+   ],
+   "size": [
+    520,
+    60
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "FLOAT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Megapixels (1 = about 1024x1024)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "FLOAT",
+     "name": "FLOAT",
+     "type": "FLOAT",
+     "links": [
+      3
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveFloat",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Megapixels of picture 1 and the result (1 = about 1024x1024)",
+   "widgets_values": [
+    1.0
+   ]
+  },
+  {
+   "id": 9,
+   "type": "PrimitiveInt",
+   "pos": [
+    380,
+    580
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Steps when Lightning is off"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      44
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Steps when Lightning is off (40 = template default)",
+   "widgets_values": [
+    40,
+    "fixed"
+   ]
+  },
+  {
+   "id": 10,
+   "type": "PrimitiveFloat",
+   "pos": [
+    380,
+    720
+   ],
+   "size": [
+    520,
+    60
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "FLOAT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "CFG when Lightning is off"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "FLOAT",
+     "name": "FLOAT",
+     "type": "FLOAT",
+     "links": [
+      47
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveFloat",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "CFG when Lightning is off (4 = template default)",
+   "widgets_values": [
+    4.0
+   ]
+  },
+  {
+   "id": 11,
+   "type": "PrimitiveInt",
+   "pos": [
+    380,
+    830
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Seed"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      56
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Seed (changes every run; set to fixed to keep a picture)",
+   "widgets_values": [
+    22112026,
+    "randomize"
+   ]
+  },
+  {
+   "id": 12,
+   "type": "UNETLoader",
+   "pos": [
+    980,
+    50
+   ],
+   "size": [
+    480,
+    90
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "unet_name",
+     "name": "unet_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "unet_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "weight_dtype",
+     "name": "weight_dtype",
+     "type": "COMBO",
+     "widget": {
+      "name": "weight_dtype"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      1,
+      41
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UNETLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "FireRed-ImageEdit-1.1_int8_convrot_WT.safetensors",
+      "url": "https://huggingface.co/TheWirableTortoise/FireRed-Image-Edit-v1.1-INT8-ConvRot/resolve/main/FireRed-ImageEdit-1.1_int8_convrot_WT.safetensors",
+      "directory": "diffusion_models"
+     }
+    ]
+   },
+   "title": "FireRed Image Edit 1.1 · int8 convrot (20.6 GB)",
+   "widgets_values": [
+    "FireRed-ImageEdit-1.1_int8_convrot_WT.safetensors",
+    "default"
+   ]
+  },
+  {
+   "id": 13,
+   "type": "CLIPLoader",
+   "pos": [
+    980,
+    190
+   ],
+   "size": [
+    480,
+    120
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip_name",
+     "name": "clip_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "clip_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "type",
+     "name": "type",
+     "type": "COMBO",
+     "widget": {
+      "name": "type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "device",
+     "name": "device",
+     "type": "COMBO",
+     "widget": {
+      "name": "device"
+     },
+     "shape": 7,
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      20,
+      31
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "directory": "text_encoders"
+     }
+    ]
+   },
+   "title": "Text encoder · Qwen2.5-VL 7B fp8 (9.4 GB)",
+   "widgets_values": [
+    "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "qwen_image",
+    "default"
+   ]
+  },
+  {
+   "id": 14,
+   "type": "VAELoader",
+   "pos": [
+    980,
+    360
+   ],
+   "size": [
+    480,
+    70
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "vae_name",
+     "name": "vae_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "vae_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      5,
+      8,
+      15,
+      60
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAELoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "qwen_image_vae.safetensors",
+      "url": "https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.1-ComfyUI/resolve/main/qwen_image_vae.safetensors",
+      "directory": "vae"
+     }
+    ]
+   },
+   "title": "VAE · Qwen Image (0.25 GB)",
+   "widgets_values": [
+    "qwen_image_vae.safetensors"
+   ]
+  },
+  {
+   "id": 15,
+   "type": "LoraLoaderModelOnly",
+   "pos": [
+    980,
+    480
+   ],
+   "size": [
+    480,
+    90
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 1
+    },
+    {
+     "localized_name": "lora_name",
+     "name": "lora_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "lora_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "strength_model",
+     "name": "strength_model",
+     "type": "FLOAT",
+     "widget": {
+      "name": "strength_model"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      42
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoraLoaderModelOnly",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "FireRed-Image-Edit-1.0-Lightning-8steps-v1.0.safetensors",
+      "url": "https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.1-ComfyUI/resolve/main/FireRed-Image-Edit-1.0-Lightning-8steps-v1.0.safetensors",
+      "directory": "loras"
+     }
+    ]
+   },
+   "title": "Lightning LoRA · 8 steps (0.85 GB, from the template)",
+   "widgets_values": [
+    "FireRed-Image-Edit-1.0-Lightning-8steps-v1.0.safetensors",
+    1.0
+   ]
+  },
+  {
+   "id": 16,
+   "type": "ImageScaleToTotalPixels",
+   "pos": [
+    1560,
+    50
+   ],
+   "size": [
+    420,
+    130
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2
+    },
+    {
+     "localized_name": "upscale_method",
+     "name": "upscale_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "upscale_method"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "megapixels",
+     "name": "megapixels",
+     "type": "FLOAT",
+     "widget": {
+      "name": "megapixels"
+     },
+     "link": 3
+    },
+    {
+     "localized_name": "resolution_steps",
+     "name": "resolution_steps",
+     "type": "INT",
+     "widget": {
+      "name": "resolution_steps"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      4,
+      21,
+      32
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScaleToTotalPixels",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Resize picture 1 (sides a multiple of 16)",
+   "widgets_values": [
+    "lanczos",
+    1.0,
+    16
+   ]
+  },
+  {
+   "id": 17,
+   "type": "VAEEncode",
+   "pos": [
+    1560,
+    230
+   ],
+   "size": [
+    420,
+    50
+   ],
+   "flags": {},
+   "order": 16,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "pixels",
+     "name": "pixels",
+     "type": "IMAGE",
+     "link": 4
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 5
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      26,
+      36,
+      55
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEEncode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picture 1 → latent (size and reference)"
+  },
+  {
+   "id": 18,
+   "type": "ImageScaleToTotalPixels",
+   "pos": [
+    1560,
+    330
+   ],
+   "size": [
+    420,
+    130
+   ],
+   "flags": {},
+   "order": 17,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 6
+    },
+    {
+     "localized_name": "upscale_method",
+     "name": "upscale_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "upscale_method"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "megapixels",
+     "name": "megapixels",
+     "type": "FLOAT",
+     "widget": {
+      "name": "megapixels"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "resolution_steps",
+     "name": "resolution_steps",
+     "type": "INT",
+     "widget": {
+      "name": "resolution_steps"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      7,
+      9
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScaleToTotalPixels",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Resize picture 2 (1 megapixel, multiple of 16)",
+   "widgets_values": [
+    "lanczos",
+    1.0,
+    16
+   ]
+  },
+  {
+   "id": 19,
+   "type": "VAEEncode",
+   "pos": [
+    1560,
+    510
+   ],
+   "size": [
+    420,
+    50
+   ],
+   "flags": {},
+   "order": 18,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "pixels",
+     "name": "pixels",
+     "type": "IMAGE",
+     "link": 7
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 8
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      11
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEEncode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picture 2 → latent (reference)"
+  },
+  {
+   "id": 20,
+   "type": "ComfySwitchNode",
+   "pos": [
+    1560,
+    610
+   ],
+   "size": [
+    420,
+    90
+   ],
+   "flags": {},
+   "order": 19,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "on_false",
+     "name": "on_false",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "on_true",
+     "name": "on_true",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 9
+    },
+    {
+     "localized_name": "switch",
+     "name": "switch",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "switch"
+     },
+     "link": 10
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "IMAGE",
+     "links": [
+      22,
+      33
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ComfySwitchNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picture 2 for the text encoder (or nothing)",
+   "widgets_values": [
+    false
+   ]
+  },
+  {
+   "id": 21,
+   "type": "ComfySwitchNode",
+   "pos": [
+    1560,
+    750
+   ],
+   "size": [
+    420,
+    90
+   ],
+   "flags": {},
+   "order": 20,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "on_false",
+     "name": "on_false",
+     "type": "LATENT",
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "on_true",
+     "name": "on_true",
+     "type": "LATENT",
+     "shape": 7,
+     "link": 11
+    },
+    {
+     "localized_name": "switch",
+     "name": "switch",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "switch"
+     },
+     "link": 12
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "LATENT",
+     "links": [
+      28,
+      38
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ComfySwitchNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picture 2 reference (or nothing)",
+   "widgets_values": [
+    false
+   ]
+  },
+  {
+   "id": 22,
+   "type": "ImageScaleToTotalPixels",
+   "pos": [
+    1560,
+    890
+   ],
+   "size": [
+    420,
+    130
+   ],
+   "flags": {},
+   "order": 21,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 13
+    },
+    {
+     "localized_name": "upscale_method",
+     "name": "upscale_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "upscale_method"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "megapixels",
+     "name": "megapixels",
+     "type": "FLOAT",
+     "widget": {
+      "name": "megapixels"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "resolution_steps",
+     "name": "resolution_steps",
+     "type": "INT",
+     "widget": {
+      "name": "resolution_steps"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      14,
+      16
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScaleToTotalPixels",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Resize picture 3 (1 megapixel, multiple of 16)",
+   "widgets_values": [
+    "lanczos",
+    1.0,
+    16
+   ]
+  },
+  {
+   "id": 23,
+   "type": "VAEEncode",
+   "pos": [
+    1560,
+    1070
+   ],
+   "size": [
+    420,
+    50
+   ],
+   "flags": {},
+   "order": 22,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "pixels",
+     "name": "pixels",
+     "type": "IMAGE",
+     "link": 14
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 15
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      18
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEEncode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picture 3 → latent (reference)"
+  },
+  {
+   "id": 24,
+   "type": "ComfySwitchNode",
+   "pos": [
+    1560,
+    1170
+   ],
+   "size": [
+    420,
+    90
+   ],
+   "flags": {},
+   "order": 23,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "on_false",
+     "name": "on_false",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "on_true",
+     "name": "on_true",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 16
+    },
+    {
+     "localized_name": "switch",
+     "name": "switch",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "switch"
+     },
+     "link": 17
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "IMAGE",
+     "links": [
+      23,
+      34
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ComfySwitchNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picture 3 for the text encoder (or nothing)",
+   "widgets_values": [
+    false
+   ]
+  },
+  {
+   "id": 25,
+   "type": "ComfySwitchNode",
+   "pos": [
+    1560,
+    1310
+   ],
+   "size": [
+    420,
+    90
+   ],
+   "flags": {},
+   "order": 24,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "on_false",
+     "name": "on_false",
+     "type": "LATENT",
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "on_true",
+     "name": "on_true",
+     "type": "LATENT",
+     "shape": 7,
+     "link": 18
+    },
+    {
+     "localized_name": "switch",
+     "name": "switch",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "switch"
+     },
+     "link": 19
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "LATENT",
+     "links": [
+      30,
+      40
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ComfySwitchNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picture 3 reference (or nothing)",
+   "widgets_values": [
+    false
+   ]
+  },
+  {
+   "id": 26,
+   "type": "TextEncodeQwenImageEditPlus",
+   "pos": [
+    2080,
+    50
+   ],
+   "size": [
+    400,
+    180
+   ],
+   "flags": {},
+   "order": 25,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 20
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "image1",
+     "name": "image1",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 21
+    },
+    {
+     "localized_name": "image2",
+     "name": "image2",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 22
+    },
+    {
+     "localized_name": "image3",
+     "name": "image3",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 23
+    },
+    {
+     "localized_name": "prompt",
+     "name": "prompt",
+     "type": "STRING",
+     "widget": {
+      "name": "prompt"
+     },
+     "link": 24
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      25
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "TextEncodeQwenImageEditPlus",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Instruction + pictures → conditioning",
+   "widgets_values": [
+    ""
+   ]
+  },
+  {
+   "id": 27,
+   "type": "ReferenceLatent",
+   "pos": [
+    2080,
+    280
+   ],
+   "size": [
+    400,
+    50
+   ],
+   "flags": {},
+   "order": 26,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "conditioning",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 25
+    },
+    {
+     "localized_name": "latent",
+     "name": "latent",
+     "type": "LATENT",
+     "shape": 7,
+     "link": 26
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      27
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ReferenceLatent",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Prompt + reference 1"
+  },
+  {
+   "id": 28,
+   "type": "ReferenceLatent",
+   "pos": [
+    2080,
+    380
+   ],
+   "size": [
+    400,
+    50
+   ],
+   "flags": {},
+   "order": 27,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "conditioning",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 27
+    },
+    {
+     "localized_name": "latent",
+     "name": "latent",
+     "type": "LATENT",
+     "shape": 7,
+     "link": 28
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      29
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ReferenceLatent",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Prompt + reference 2"
+  },
+  {
+   "id": 29,
+   "type": "ReferenceLatent",
+   "pos": [
+    2080,
+    480
+   ],
+   "size": [
+    400,
+    50
+   ],
+   "flags": {},
+   "order": 28,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "conditioning",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 29
+    },
+    {
+     "localized_name": "latent",
+     "name": "latent",
+     "type": "LATENT",
+     "shape": 7,
+     "link": 30
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      53
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ReferenceLatent",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Prompt + reference 3"
+  },
+  {
+   "id": 30,
+   "type": "TextEncodeQwenImageEditPlus",
+   "pos": [
+    2080,
+    580
+   ],
+   "size": [
+    400,
+    180
+   ],
+   "flags": {},
+   "order": 29,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 31
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "image1",
+     "name": "image1",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 32
+    },
+    {
+     "localized_name": "image2",
+     "name": "image2",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 33
+    },
+    {
+     "localized_name": "image3",
+     "name": "image3",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 34
+    },
+    {
+     "localized_name": "prompt",
+     "name": "prompt",
+     "type": "STRING",
+     "widget": {
+      "name": "prompt"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      35
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "TextEncodeQwenImageEditPlus",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Empty negative + pictures (from the template)",
+   "widgets_values": [
+    ""
+   ]
+  },
+  {
+   "id": 31,
+   "type": "ReferenceLatent",
+   "pos": [
+    2080,
+    810
+   ],
+   "size": [
+    400,
+    50
+   ],
+   "flags": {},
+   "order": 30,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "conditioning",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 35
+    },
+    {
+     "localized_name": "latent",
+     "name": "latent",
+     "type": "LATENT",
+     "shape": 7,
+     "link": 36
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      37
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ReferenceLatent",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Negative + reference 1"
+  },
+  {
+   "id": 32,
+   "type": "ReferenceLatent",
+   "pos": [
+    2080,
+    910
+   ],
+   "size": [
+    400,
+    50
+   ],
+   "flags": {},
+   "order": 31,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "conditioning",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 37
+    },
+    {
+     "localized_name": "latent",
+     "name": "latent",
+     "type": "LATENT",
+     "shape": 7,
+     "link": 38
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      39
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ReferenceLatent",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Negative + reference 2"
+  },
+  {
+   "id": 33,
+   "type": "ReferenceLatent",
+   "pos": [
+    2080,
+    1010
+   ],
+   "size": [
+    400,
+    50
+   ],
+   "flags": {},
+   "order": 32,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "conditioning",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 39
+    },
+    {
+     "localized_name": "latent",
+     "name": "latent",
+     "type": "LATENT",
+     "shape": 7,
+     "link": 40
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      54
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ReferenceLatent",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Negative + reference 3"
+  },
+  {
+   "id": 34,
+   "type": "PrimitiveInt",
+   "pos": [
+    2580,
+    50
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 33,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      45
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Lightning steps (8 = made for the LoRA)",
+   "widgets_values": [
+    8,
+    "fixed"
+   ]
+  },
+  {
+   "id": 35,
+   "type": "PrimitiveFloat",
+   "pos": [
+    2580,
+    190
+   ],
+   "size": [
+    400,
+    60
+   ],
+   "flags": {},
+   "order": 34,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "FLOAT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "FLOAT",
+     "name": "FLOAT",
+     "type": "FLOAT",
+     "links": [
+      48
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveFloat",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Lightning CFG (1; keep it at 1)",
+   "widgets_values": [
+    1.0
+   ]
+  },
+  {
+   "id": 36,
+   "type": "ComfySwitchNode",
+   "pos": [
+    2580,
+    300
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 35,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "on_false",
+     "name": "on_false",
+     "type": "MODEL",
+     "shape": 7,
+     "link": 41
+    },
+    {
+     "localized_name": "on_true",
+     "name": "on_true",
+     "type": "MODEL",
+     "shape": 7,
+     "link": 42
+    },
+    {
+     "localized_name": "switch",
+     "name": "switch",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "switch"
+     },
+     "link": 43
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "MODEL",
+     "links": [
+      50
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ComfySwitchNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Model: with or without the Lightning LoRA",
+   "widgets_values": [
+    false
+   ]
+  },
+  {
+   "id": 37,
+   "type": "ComfySwitchNode",
+   "pos": [
+    2580,
+    440
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 36,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "on_false",
+     "name": "on_false",
+     "type": "INT",
+     "shape": 7,
+     "link": 44
+    },
+    {
+     "localized_name": "on_true",
+     "name": "on_true",
+     "type": "INT",
+     "shape": 7,
+     "link": 45
+    },
+    {
+     "localized_name": "switch",
+     "name": "switch",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "switch"
+     },
+     "link": 46
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "INT",
+     "links": [
+      57
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ComfySwitchNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Steps: yours or the Lightning steps",
+   "widgets_values": [
+    false
+   ]
+  },
+  {
+   "id": 38,
+   "type": "ComfySwitchNode",
+   "pos": [
+    2580,
+    580
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 37,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "on_false",
+     "name": "on_false",
+     "type": "FLOAT",
+     "shape": 7,
+     "link": 47
+    },
+    {
+     "localized_name": "on_true",
+     "name": "on_true",
+     "type": "FLOAT",
+     "shape": 7,
+     "link": 48
+    },
+    {
+     "localized_name": "switch",
+     "name": "switch",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "switch"
+     },
+     "link": 49
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "FLOAT",
+     "links": [
+      58
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ComfySwitchNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "CFG: yours or the Lightning CFG",
+   "widgets_values": [
+    false
+   ]
+  },
+  {
+   "id": 39,
+   "type": "ModelSamplingAuraFlow",
+   "pos": [
+    3080,
+    50
+   ],
+   "size": [
+    400,
+    60
+   ],
+   "flags": {},
+   "order": 38,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 50
+    },
+    {
+     "localized_name": "shift",
+     "name": "shift",
+     "type": "FLOAT",
+     "widget": {
+      "name": "shift"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "sampling",
+     "name": "sampling",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampling"
+     },
+     "shape": 7,
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      51
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ModelSamplingAuraFlow",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Shift 3.1 (from the template)",
+   "widgets_values": [
+    3.1
+   ]
+  },
+  {
+   "id": 40,
+   "type": "CFGNorm",
+   "pos": [
+    3080,
+    200
+   ],
+   "size": [
+    400,
+    60
+   ],
+   "flags": {},
+   "order": 39,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 51
+    },
+    {
+     "localized_name": "strength",
+     "name": "strength",
+     "type": "FLOAT",
+     "widget": {
+      "name": "strength"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "pre_cfg",
+     "name": "pre_cfg",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "pre_cfg"
+     },
+     "shape": 7,
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "patched_model",
+     "name": "patched_model",
+     "type": "MODEL",
+     "links": [
+      52
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CFGNorm",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "CFGNorm 1 (from the template)",
+   "widgets_values": [
+    1.0
+   ]
+  },
+  {
+   "id": 41,
+   "type": "KSampler",
+   "pos": [
+    3080,
+    350
+   ],
+   "size": [
+    400,
+    290
+   ],
+   "flags": {},
+   "order": 40,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 52
+    },
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 53
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 54
+    },
+    {
+     "localized_name": "latent_image",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 55
+    },
+    {
+     "localized_name": "seed",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": 56
+    },
+    {
+     "localized_name": "steps",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": 57
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": 58
+    },
+    {
+     "localized_name": "sampler_name",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "scheduler",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "denoise",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      59
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Sampler · euler / simple (from the template)",
+   "widgets_values": [
+    22112026,
+    "fixed",
+    40,
+    4.0,
+    "euler",
+    "simple",
+    1.0
+   ]
+  },
+  {
+   "id": 42,
+   "type": "VAEDecode",
+   "pos": [
+    3580,
+    50
+   ],
+   "size": [
+    240,
+    60
+   ],
+   "flags": {},
+   "order": 41,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "samples",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 59
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 60
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      61
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Latent → picture"
+  },
+  {
+   "id": 43,
+   "type": "SaveImage",
+   "pos": [
+    3580,
+    160
+   ],
+   "size": [
+    600,
+    640
+   ],
+   "flags": {},
+   "order": 42,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 61
+    },
+    {
+     "localized_name": "filename_prefix",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SaveImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Result (saved to output/FireRed)",
+   "widgets_values": [
+    "FireRed/firered_edit"
+   ]
+  },
+  {
+   "id": 44,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    -30
+   ],
+   "size": [
+    640,
+    600
+   ],
+   "flags": {},
+   "order": 43,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "How to use · v1.0.0",
+   "widgets_values": [
+    "## How to use · v1.0.0\n\n**What it does:** FireRed Image Edit 1.1 edits a picture from a written instruction, and can combine up to three pictures (this person, that object, that place). One switch turns the 8-step Lightning LoRA on or off. Core ComfyUI nodes only.\n\n1. **Your inputs** (green group):\n   - **Picture 1**: the picture to edit. The result keeps its shape.\n   - **Picture 2 / Picture 3**: optional. Load a picture and turn **Use picture 2** (or 3) on. While the switch is off the picture is ignored. Name the pictures in the instruction: \"the man from picture 1 holds the bottle from picture 2\".\n   - **Edit instruction**: say what to change and what must stay.\n   - **Lightning**: on by default. On = Lightning LoRA, 8 steps, CFG 1. Off = no LoRA, your **Steps** (40) and **CFG** (4).\n   - **Megapixels**: size of picture 1 and of the result. 1 = about 1024x1024. Pictures 2 and 3 are always resized to 1 megapixel.\n   - **Seed**: a new one every run. Set \"control after generate\" to fixed to keep a picture.\n   - The Picture 2 and Picture 3 loaders must point at a file that exists even when their switch is off. They are set to `example.png`, which ships with ComfyUI.\n2. **Models**: the four loaders must show the files from the Downloads note. Nothing to change.\n3. **Pictures**: nothing to change. Every picture is resized to sides that are a multiple of 16 and encoded here (see the note under the group).\n4. **Prompt**: nothing to change. The instruction and the pictures go to the text encoder, then the encoded pictures are added as references.\n5. **Lightning switch**: three switches follow the **Lightning** input and pick the model, the steps and the CFG. Lightning steps (8) and Lightning CFG (1) live here.\n6. **Sampling**: euler / simple, shift 3.1, CFGNorm 1, all from the official template.\n7. Press **Run**. The picture is saved by the **Result** node to `output/FireRed/`.\n\n**What to expect:** On the test card (24 GB, nothing capped): Lightning on, about 1 megapixel, one picture: 19 to 22 s, or 23 s with the model load. Two pictures: 36 s. Three pictures: 51 to 55 s. Lightning off (40 steps, CFG 4): 3 min 10 s. Not verified on a 12 GB card.\n\n**Tips from the test runs**\n- Say what must stay (\"keep her face, her pose and the background the same\"). In the test edits the face and the background stayed.\n- Three pictures worked: the man from picture 1 stood in the forest of picture 3 with the bottle of picture 2 (3 seeds). He held it in his left hand; the instruction said right.\n- Fine snow on distant trees came out with a faint dotted texture when enlarged (forest-to-winter test). Lightning off made it weaker, not gone. A sunset edit of the same picture did not show it.\n- Megapixels 2 gave a clean 1936x1088 picture in 52 s (one run).\n\n**Tested on:** ComfyUI 0.45.3, RTX PRO 4000 Blackwell 24 GB, 2026-11-22. No 12 GB card was used.\n"
+   ]
+  },
+  {
+   "id": 45,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    630
+   ],
+   "size": [
+    640,
+    680
+   ],
+   "flags": {},
+   "order": 44,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Downloads + requirements",
+   "widgets_values": [
+    "## Downloads + requirements\n\nClick a file name to download it. Put it in the folder shown (inside `ComfyUI/models/`).\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `diffusion_models/` | [FireRed-ImageEdit-1.1_int8_convrot_WT.safetensors](https://huggingface.co/TheWirableTortoise/FireRed-Image-Edit-v1.1-INT8-ConvRot/resolve/main/FireRed-ImageEdit-1.1_int8_convrot_WT.safetensors) | 20.6 GB |\n| `text_encoders/` | [qwen_2.5_vl_7b_fp8_scaled.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors) | 9.4 GB |\n| `vae/` | [qwen_image_vae.safetensors](https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.1-ComfyUI/resolve/main/qwen_image_vae.safetensors) | 0.25 GB |\n| `loras/` | [FireRed-Image-Edit-1.0-Lightning-8steps-v1.0.safetensors](https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.1-ComfyUI/resolve/main/FireRed-Image-Edit-1.0-Lightning-8steps-v1.0.safetensors) | 0.85 GB |\n\nTotal: about 31.0 GB. If you already have `qwen_2.5_vl_7b_fp8_scaled.safetensors` and `qwen_image_vae.safetensors` from Qwen Image, skip them: they are the same files.\n\nThe Lightning LoRA is needed even with Lightning off: ComfyUI checks that every file named in the graph exists before it runs. For the same reason the Picture 2 and Picture 3 loaders must point at a file that exists; they are set to `example.png`, which ships with ComfyUI.\n\nThe 20.6 GB model is a community int8 convrot conversion (TheWirableTortoise) of the authors' 40.9 GB file. There is no Comfy-Org repackaged FireRed file.\n\n**Optional model swaps** (pick one in the first loader of group 2):\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `diffusion_models/` | [firered_image_edit_1.1_fp8_scaled_e4m3fn.safetensors](https://huggingface.co/drbaph/FireRed-Image-Edit-1.1_ComfyUI_Quants/resolve/main/firered_image_edit_1.1_fp8_scaled_e4m3fn.safetensors) | 20.4 GB |\n| `diffusion_models/` | [FireRed-Image-Edit-1.1-transformer.safetensors](https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.1-ComfyUI/resolve/main/FireRed-Image-Edit-1.1-transformer.safetensors) | 40.9 GB |\n\nBoth swaps were run this afternoon with the newer 1.1 Lightning LoRA. On the hat picture (flat background, 2 seeds) no difference from the default was seen. On the forest pictures all three files showed the same woven pattern, so the int8 file was not its cause. The swaps were not run again with the LoRA this file loads.\n\n**VRAM:** 12 GB is the target and is **not verified**. On the 24 GB test card ComfyUI filled what it found: the whole-GPU peak was 21.8 to 23.3 GiB (about 0.45 GiB of it other programs). That shows what a 24 GB card uses, not what the workflow needs. On a 12 GB card ComfyUI keeps part of the 20.6 GB model in system RAM; RAM use was not measured.\n\n**Run on ComfyUI 0.45.3.** Older versions were not tested. **No custom nodes.**\n\nLicence: FireRed Image Edit 1.1 and the Lightning LoRA are Apache-2.0.\n"
+   ]
+  },
+  {
+   "id": 46,
+   "type": "MarkdownNote",
+   "pos": [
+    2560,
+    760
+   ],
+   "size": [
+    440,
+    300
+   ],
+   "flags": {},
+   "order": 45,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Why a switch, why this LoRA",
+   "widgets_values": [
+    "## Why a switch and not a bypassed LoRA\n\nLightning needs three changes at once: the LoRA, 8 steps instead of 40, and CFG 1 instead of 4. The switches (from the official template) change all three with the one **Lightning** input in group 1.\n\nAt CFG 1 the sampler does not use the negative prompt.\n\n## Why this LoRA\n\nThis is the LoRA the official template loads. The authors also publish a newer one, `FireRed-Image-Edit-1.1-Lightning-8steps-v1.2.safetensors`. In the three-picture test that one put a woven pattern over the foliage in 8 of 8 settings tried (more steps, lower strength, other shift, other sampler, the authors' 40.9 GB model). With the LoRA loaded here the same test was clean with 3 of 3 seeds.\n"
+   ]
+  },
+  {
+   "id": 47,
+   "type": "MarkdownNote",
+   "pos": [
+    1540,
+    1500
+   ],
+   "size": [
+    460,
+    280
+   ],
+   "flags": {},
+   "order": 46,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Why the pictures are resized here",
+   "widgets_values": [
+    "## Why the pictures are resized here\n\nThe official template lets the text encoder node encode the pictures itself. With the 16:9 test picture every result then had a skin-coloured strip, 8 px wide, on the right edge (8 of 8 runs this afternoon, three model files): the left edge of the picture wrapped around. It happens when a picture side divided by 8 is odd.\n\nHere each picture is resized to sides that are a multiple of 16, encoded once, and added with **Set Reference Latent**. Same picture: no strip in any run.\n\nPicture 1 follows **Megapixels** from group 1. Pictures 2 and 3 are always 1 megapixel.\n"
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   12,
+   0,
+   15,
+   0,
+   "MODEL"
+  ],
+  [
+   2,
+   1,
+   0,
+   16,
+   0,
+   "IMAGE"
+  ],
+  [
+   3,
+   8,
+   0,
+   16,
+   2,
+   "FLOAT"
+  ],
+  [
+   4,
+   16,
+   0,
+   17,
+   0,
+   "IMAGE"
+  ],
+  [
+   5,
+   14,
+   0,
+   17,
+   1,
+   "VAE"
+  ],
+  [
+   6,
+   2,
+   0,
+   18,
+   0,
+   "IMAGE"
+  ],
+  [
+   7,
+   18,
+   0,
+   19,
+   0,
+   "IMAGE"
+  ],
+  [
+   8,
+   14,
+   0,
+   19,
+   1,
+   "VAE"
+  ],
+  [
+   9,
+   18,
+   0,
+   20,
+   1,
+   "IMAGE"
+  ],
+  [
+   10,
+   3,
+   0,
+   20,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   11,
+   19,
+   0,
+   21,
+   1,
+   "LATENT"
+  ],
+  [
+   12,
+   3,
+   0,
+   21,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   13,
+   4,
+   0,
+   22,
+   0,
+   "IMAGE"
+  ],
+  [
+   14,
+   22,
+   0,
+   23,
+   0,
+   "IMAGE"
+  ],
+  [
+   15,
+   14,
+   0,
+   23,
+   1,
+   "VAE"
+  ],
+  [
+   16,
+   22,
+   0,
+   24,
+   1,
+   "IMAGE"
+  ],
+  [
+   17,
+   5,
+   0,
+   24,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   18,
+   23,
+   0,
+   25,
+   1,
+   "LATENT"
+  ],
+  [
+   19,
+   5,
+   0,
+   25,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   20,
+   13,
+   0,
+   26,
+   0,
+   "CLIP"
+  ],
+  [
+   21,
+   16,
+   0,
+   26,
+   2,
+   "IMAGE"
+  ],
+  [
+   22,
+   20,
+   0,
+   26,
+   3,
+   "IMAGE"
+  ],
+  [
+   23,
+   24,
+   0,
+   26,
+   4,
+   "IMAGE"
+  ],
+  [
+   24,
+   6,
+   0,
+   26,
+   5,
+   "STRING"
+  ],
+  [
+   25,
+   26,
+   0,
+   27,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   26,
+   17,
+   0,
+   27,
+   1,
+   "LATENT"
+  ],
+  [
+   27,
+   27,
+   0,
+   28,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   28,
+   21,
+   0,
+   28,
+   1,
+   "LATENT"
+  ],
+  [
+   29,
+   28,
+   0,
+   29,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   30,
+   25,
+   0,
+   29,
+   1,
+   "LATENT"
+  ],
+  [
+   31,
+   13,
+   0,
+   30,
+   0,
+   "CLIP"
+  ],
+  [
+   32,
+   16,
+   0,
+   30,
+   2,
+   "IMAGE"
+  ],
+  [
+   33,
+   20,
+   0,
+   30,
+   3,
+   "IMAGE"
+  ],
+  [
+   34,
+   24,
+   0,
+   30,
+   4,
+   "IMAGE"
+  ],
+  [
+   35,
+   30,
+   0,
+   31,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   36,
+   17,
+   0,
+   31,
+   1,
+   "LATENT"
+  ],
+  [
+   37,
+   31,
+   0,
+   32,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   38,
+   21,
+   0,
+   32,
+   1,
+   "LATENT"
+  ],
+  [
+   39,
+   32,
+   0,
+   33,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   40,
+   25,
+   0,
+   33,
+   1,
+   "LATENT"
+  ],
+  [
+   41,
+   12,
+   0,
+   36,
+   0,
+   "MODEL"
+  ],
+  [
+   42,
+   15,
+   0,
+   36,
+   1,
+   "MODEL"
+  ],
+  [
+   43,
+   7,
+   0,
+   36,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   44,
+   9,
+   0,
+   37,
+   0,
+   "INT"
+  ],
+  [
+   45,
+   34,
+   0,
+   37,
+   1,
+   "INT"
+  ],
+  [
+   46,
+   7,
+   0,
+   37,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   47,
+   10,
+   0,
+   38,
+   0,
+   "FLOAT"
+  ],
+  [
+   48,
+   35,
+   0,
+   38,
+   1,
+   "FLOAT"
+  ],
+  [
+   49,
+   7,
+   0,
+   38,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   50,
+   36,
+   0,
+   39,
+   0,
+   "MODEL"
+  ],
+  [
+   51,
+   39,
+   0,
+   40,
+   0,
+   "MODEL"
+  ],
+  [
+   52,
+   40,
+   0,
+   41,
+   0,
+   "MODEL"
+  ],
+  [
+   53,
+   29,
+   0,
+   41,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   54,
+   33,
+   0,
+   41,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   55,
+   17,
+   0,
+   41,
+   3,
+   "LATENT"
+  ],
+  [
+   56,
+   11,
+   0,
+   41,
+   4,
+   "INT"
+  ],
+  [
+   57,
+   37,
+   0,
+   41,
+   5,
+   "INT"
+  ],
+  [
+   58,
+   38,
+   0,
+   41,
+   6,
+   "FLOAT"
+  ],
+  [
+   59,
+   41,
+   0,
+   42,
+   0,
+   "LATENT"
+  ],
+  [
+   60,
+   14,
+   0,
+   42,
+   1,
+   "VAE"
+  ],
+  [
+   61,
+   42,
+   0,
+   43,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [
+  {
+   "id": 1,
+   "title": "1 · Your inputs (App mode shows these)",
+   "bounding": [
+    -80,
+    -30,
+    1000,
+    1420
+   ],
+   "color": "#8A8",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 2,
+   "title": "2 · Models (loaded once)",
+   "bounding": [
+    960,
+    -30,
+    520,
+    630
+   ],
+   "color": "#3f789e",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 3,
+   "title": "3 · Pictures (resized)",
+   "bounding": [
+    1540,
+    -30,
+    460,
+    1460
+   ],
+   "color": "#3f8f8f",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 4,
+   "title": "4 · Prompt",
+   "bounding": [
+    2060,
+    -30,
+    440,
+    1120
+   ],
+   "color": "#a1309b",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 5,
+   "title": "5 · Lightning switch",
+   "bounding": [
+    2560,
+    -30,
+    440,
+    730
+   ],
+   "color": "#88A",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 6,
+   "title": "6 · Sampling",
+   "bounding": [
+    3060,
+    -30,
+    440,
+    700
+   ],
+   "color": "#b06634",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 7,
+   "title": "7 · Save",
+   "bounding": [
+    3560,
+    -30,
+    640,
+    850
+   ],
+   "color": "#b58b2a",
+   "font_size": 24,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.55,
+   "offset": [
+    760,
+    120
+   ]
+  },
+  "linearData": {
+   "inputs": [
+    [
+     1,
+     "image"
+    ],
+    [
+     2,
+     "image"
+    ],
+    [
+     3,
+     "value"
+    ],
+    [
+     4,
+     "image"
+    ],
+    [
+     5,
+     "value"
+    ],
+    [
+     6,
+     "value"
+    ],
+    [
+     7,
+     "value"
+    ],
+    [
+     8,
+     "value"
+    ],
+    [
+     9,
+     "value"
+    ],
+    [
+     10,
+     "value"
+    ],
+    [
+     11,
+     "value"
+    ]
+   ],
+   "outputs": [
+    43
+   ]
+  }
+ },
+ "version": 0.4
+}
