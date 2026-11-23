@@ -1,0 +1,13 @@
+{
+  "workflow": "sdxl/sdxl",
+  "files": [
+    {
+      "name": "sd_xl_base_1.0.safetensors",
+      "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors",
+      "dest": "checkpoints",
+      "required": true,
+      "note": "SDXL base 1.0 checkpoint (model, both text encoders and VAE in one file). 6.94 GB."
+    }
+  ],
+  "nodes": []
+}
