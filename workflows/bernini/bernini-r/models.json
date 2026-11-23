@@ -1,0 +1,55 @@
+{
+  "workflow": "bernini/bernini-r",
+  "files": [
+    {
+      "name": "wan2.2_bernini_r_high_noise_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Bernini-R/resolve/main/diffusion_models/wan2.2_bernini_r_high_noise_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Bernini-R 14B high noise model, Comfy-Org int8 convrot (default). 14.5 GB."
+    },
+    {
+      "name": "wan2.2_bernini_r_low_noise_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Bernini-R/resolve/main/diffusion_models/wan2.2_bernini_r_low_noise_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Bernini-R 14B low noise model, Comfy-Org int8 convrot (default). 14.5 GB."
+    },
+    {
+      "name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "Text encoder, the same file Wan 2.1 and Wan 2.2 use. 6.7 GB."
+    },
+    {
+      "name": "wan_2.1_vae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "Wan 2.1 VAE. 0.25 GB."
+    },
+    {
+      "name": "lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors",
+      "url": "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": "Turbo LoRA (lightx2v), loaded on both models. Needed even with Turbo off (ComfyUI checks the file). 0.63 GB."
+    },
+    {
+      "name": "wan2.2_bernini_r_high_noise_fp8_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Bernini-R/resolve/main/diffusion_models/wan2.2_bernini_r_high_noise_fp8_scaled.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "Optional swap: fp8 scaled, the file the ComfyUI template loads. Not in the JSON. 15.6 GB."
+    },
+    {
+      "name": "wan2.2_bernini_r_low_noise_fp8_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Bernini-R/resolve/main/diffusion_models/wan2.2_bernini_r_low_noise_fp8_scaled.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "Optional swap: fp8 scaled, the file the ComfyUI template loads. Not in the JSON. 15.6 GB."
+    }
+  ],
+  "nodes": []
+}
