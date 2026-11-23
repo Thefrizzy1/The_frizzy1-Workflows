@@ -1,0 +1,41 @@
+{
+  "workflow": "audio/ace-step-1.5",
+  "files": [
+    {
+      "name": "acestep_v1.5_xl_base_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/ACE-Step-1.5/resolve/main/split_files/diffusion_models/acestep_v1.5_xl_base_bf16.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "ACE-Step 1.5 XL base (4B), bf16, Comfy-Org repackage. 9.97 GB."
+    },
+    {
+      "name": "qwen_0.6b_ace15.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/ACE-Step-1.5/resolve/main/split_files/text_encoders/qwen_0.6b_ace15.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "Text encoder for style and lyrics. 1.19 GB."
+    },
+    {
+      "name": "qwen_4b_ace15.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/ACE-Step-1.5/resolve/main/split_files/text_encoders/qwen_4b_ace15.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "Song planner (language model that writes the audio codes), 4B. 8.38 GB."
+    },
+    {
+      "name": "ace_1.5_vae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/ACE-Step-1.5/resolve/main/split_files/vae/ace_1.5_vae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "ACE-Step 1.5 audio VAE. 0.34 GB."
+    },
+    {
+      "name": "qwen_1.7b_ace15.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/ACE-Step-1.5/resolve/main/split_files/text_encoders/qwen_1.7b_ace15.safetensors",
+      "dest": "text_encoders",
+      "required": false,
+      "note": "Optional swap for the 4B song planner. Not in the JSON. 3.71 GB."
+    }
+  ],
+  "nodes": []
+}
