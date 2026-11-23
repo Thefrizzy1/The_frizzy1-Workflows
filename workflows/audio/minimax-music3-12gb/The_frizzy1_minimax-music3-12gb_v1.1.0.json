@@ -1,0 +1,1333 @@
+{
+ "id": "7d2f3c1e-5e0d-4b7a-9a11-f17e7ed00022",
+ "revision": 0,
+ "last_node_id": 19,
+ "last_link_id": 20,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    -60,
+    50
+   ],
+   "size": [
+    520,
+    330
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "STRING",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Caption: style, voice"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      2
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Caption: style, voice, arrangement",
+   "widgets_values": [
+    "Global Metadata: Lo-fi hip-hop, chillhop. 78 BPM, D flat major, major scale with jazzy extensions. Laid-back and dreamy throughout, a gentle warm drift with a subtle late-night glow that deepens in the middle and dissolves softly at the end. Studying, raining-outside, headphones-on late-night listening. Bedroom production: muddy warm texture, heavy vinyl crackle, tape hiss and wow-flutter pitch wobble, low-passed dusty mix, soft-clipped drums, everything slightly detuned and cozy.\n\nVocal Details: Soft androgynous vocal, hushed half-sung half-spoken delivery, sitting low in the mix like another instrument, lazy behind-the-beat phrasing, gentle breathy timbre. Sparse murmured double-tracked harmonies, occasional wordless \"mmm\" and \"ooh\" hums drenched in tape delay and warm spring reverb. Long stretches with no vocals at all.\n\nArrangement: Dusty boom-bap drums with a soft thumping kick, cracked snare with lazy swing, brushed hi-hats, low round sub bass. Warm Rhodes piano chords with slow chorus wobble as the harmonic bed, mellow jazzy guitar licks answering the vocal lines, constant vinyl crackle as texture. Intro: rain and vinyl noise, solo Rhodes chords fading in, drums slipping in halfway. Verses: minimal — drums, bass, Rhodes, soft guitar fills between lines. Instrumental sections: guitar and Rhodes trade relaxed jazzy phrases over the beat, occasional muted trumpet ghost notes far in the background. Bridge: drums drop away to rain, crackle, and floating detuned Rhodes, then the beat eases back in. Outro: elements fade one by one until only vinyl crackle and a last unresolved Rhodes chord remain."
+   ]
+  },
+  {
+   "id": 2,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    -60,
+    430
+   ],
+   "size": [
+    520,
+    420
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "STRING",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Lyrics with [Verse] tags"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      3
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Lyrics, one line per sung line, with [Verse] / [Chorus] tags",
+   "widgets_values": [
+    "[Intro]\nMmm...\n(rain on the window)\nOoh...\n\n[Verse]\nMidnight and the canvas glows\nDragging little wires where the current flows\nType a quiet dream, let the sampler drift\nNoise into a picture, like the fog just lifts\nTwenty slow steps, I'm in no hurry now\nLatents turning colors and I don't know how\nEvery render's like a polaroid I found\nSoft focus memories, no sound\n\n[Instrumental]\n\n[Verse]\nQueue another frame, let the motion breathe\nPictures start to move like the falling leaves\nVideo drifting by at twenty-four\nLittle animations on my bedroom floor\nSeed after seed like the rain outside\nSome of them are keepers, some I let slide\nSave the ones that feel like a Sunday slow\nNode to node to node... and off we go\n\n[Chorus]\nMmm... let it render on\n(take your time, take your time)\nOoh... by the morning it'll all be done\n(one more queue, one more try)\n\n[Instrumental]\n\n[Bridge]\nRain keeps drawing pictures on the glass...\nMy machine keeps dreaming...\nNeither of us fast...\n\n[Chorus]\nMmm... let it render on\n(take your time, take your time)\nOoh... by the morning it'll all be done\n(one more queue, one more try)\n\n[Instrumental]\n\n[Outro]\nMmm...\n(node to node)\nOoh... goodnight"
+   ]
+  },
+  {
+   "id": 3,
+   "type": "PrimitiveFloat",
+   "pos": [
+    500,
+    50
+   ],
+   "size": [
+    400,
+    60
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "FLOAT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Longest seconds (180 = default)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "FLOAT",
+     "name": "FLOAT",
+     "type": "FLOAT",
+     "links": [
+      5
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveFloat",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Longest length in seconds (180 = default)",
+   "widgets_values": [
+    180.0
+   ]
+  },
+  {
+   "id": 4,
+   "type": "PrimitiveInt",
+   "pos": [
+    500,
+    160
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Seed (fixed = same song)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      4,
+      12
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Seed (new every run; fixed = same song)",
+   "widgets_values": [
+    22112026,
+    "randomize"
+   ]
+  },
+  {
+   "id": 5,
+   "type": "PrimitiveBoolean",
+   "pos": [
+    500,
+    300
+   ],
+   "size": [
+    400,
+    60
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Decode in tiles (on = default)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "BOOLEAN",
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "links": [
+      19
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveBoolean",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Decode in tiles (on = template default)",
+   "widgets_values": [
+    true
+   ]
+  },
+  {
+   "id": 6,
+   "type": "UNETLoader",
+   "pos": [
+    980,
+    50
+   ],
+   "size": [
+    440,
+    90
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "unet_name",
+     "name": "unet_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "unet_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "weight_dtype",
+     "name": "weight_dtype",
+     "type": "COMBO",
+     "widget": {
+      "name": "weight_dtype"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      8
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UNETLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "minimax_music3_dit_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-Music-3/resolve/main/diffusion_models/minimax_music3_dit_int8_convrot.safetensors",
+      "directory": "diffusion_models"
+     }
+    ]
+   },
+   "title": "MiniMax Music 3 DiT · int8 (2.50 GB)",
+   "widgets_values": [
+    "minimax_music3_dit_int8_convrot.safetensors",
+    "default"
+   ]
+  },
+  {
+   "id": 7,
+   "type": "CLIPLoader",
+   "pos": [
+    980,
+    190
+   ],
+   "size": [
+    440,
+    120
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip_name",
+     "name": "clip_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "clip_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "type",
+     "name": "type",
+     "type": "COMBO",
+     "widget": {
+      "name": "type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "device",
+     "name": "device",
+     "type": "COMBO",
+     "widget": {
+      "name": "device"
+     },
+     "shape": 7,
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      1
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "minimax_music3_text_encoder_pruned_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-Music-3/resolve/main/text_encoders/minimax_music3_text_encoder_pruned_int8_convrot.safetensors",
+      "directory": "text_encoders"
+     }
+    ]
+   },
+   "title": "Song writer (text encoder) · int8 (9.20 GB)",
+   "widgets_values": [
+    "minimax_music3_text_encoder_pruned_int8_convrot.safetensors",
+    "minimax",
+    "default"
+   ]
+  },
+  {
+   "id": 8,
+   "type": "VAELoader",
+   "pos": [
+    980,
+    360
+   ],
+   "size": [
+    440,
+    70
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "vae_name",
+     "name": "vae_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "vae_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      14,
+      16
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAELoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "minimax_music3_dav.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-Music-3/resolve/main/vae/minimax_music3_dav.safetensors",
+      "directory": "vae"
+     }
+    ]
+   },
+   "title": "Audio VAE (0.22 GB)",
+   "widgets_values": [
+    "minimax_music3_dav.safetensors"
+   ]
+  },
+  {
+   "id": 9,
+   "type": "MiniMaxMusic3TextEncode",
+   "pos": [
+    1520,
+    50
+   ],
+   "size": [
+    440,
+    330
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1
+    },
+    {
+     "localized_name": "caption",
+     "name": "caption",
+     "type": "STRING",
+     "widget": {
+      "name": "caption"
+     },
+     "link": 2
+    },
+    {
+     "localized_name": "lyrics",
+     "name": "lyrics",
+     "type": "STRING",
+     "widget": {
+      "name": "lyrics"
+     },
+     "link": 3
+    },
+    {
+     "localized_name": "seed",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": 4
+    },
+    {
+     "localized_name": "max_duration",
+     "name": "max_duration",
+     "type": "FLOAT",
+     "widget": {
+      "name": "max_duration"
+     },
+     "link": 5
+    },
+    {
+     "localized_name": "cfg_scale",
+     "name": "cfg_scale",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg_scale"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "top_k",
+     "name": "top_k",
+     "type": "INT",
+     "widget": {
+      "name": "top_k"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      6,
+      9
+     ]
+    },
+    {
+     "localized_name": "seconds",
+     "name": "seconds",
+     "type": "FLOAT",
+     "links": [
+      7
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "MiniMaxMusic3TextEncode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Caption + lyrics → song plan (stage 1 of 2)",
+   "widgets_values": [
+    "",
+    "",
+    22112026,
+    "fixed",
+    180.0,
+    1.7,
+    50
+   ]
+  },
+  {
+   "id": 10,
+   "type": "ConditioningZeroOut",
+   "pos": [
+    1520,
+    430
+   ],
+   "size": [
+    440,
+    50
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "conditioning",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 6
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      10
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ConditioningZeroOut",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Empty negative (from the template)"
+  },
+  {
+   "id": 11,
+   "type": "EmptyMiniMaxMusic3LatentAudio",
+   "pos": [
+    2040,
+    50
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "seconds",
+     "name": "seconds",
+     "type": "FLOAT",
+     "widget": {
+      "name": "seconds"
+     },
+     "link": 7
+    },
+    {
+     "localized_name": "batch_size",
+     "name": "batch_size",
+     "type": "INT",
+     "widget": {
+      "name": "batch_size"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      11
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "EmptyMiniMaxMusic3LatentAudio",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Empty song (length from the song plan)",
+   "widgets_values": [
+    180.0,
+    1
+   ]
+  },
+  {
+   "id": 12,
+   "type": "KSampler",
+   "pos": [
+    2040,
+    190
+   ],
+   "size": [
+    400,
+    290
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 8
+    },
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 9
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 10
+    },
+    {
+     "localized_name": "latent_image",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 11
+    },
+    {
+     "localized_name": "seed",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": 12
+    },
+    {
+     "localized_name": "steps",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "sampler_name",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "scheduler",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "denoise",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      13,
+      15
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Sampler · 30 steps, CFG 1.7 (from the template)",
+   "widgets_values": [
+    22112026,
+    "fixed",
+    30,
+    1.7,
+    "euler",
+    "simple",
+    1.0
+   ]
+  },
+  {
+   "id": 13,
+   "type": "VAEDecodeAudio",
+   "pos": [
+    2520,
+    50
+   ],
+   "size": [
+    400,
+    70
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "samples",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 13
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 14
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "AUDIO",
+     "name": "AUDIO",
+     "type": "AUDIO",
+     "links": [
+      17
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecodeAudio",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Latent → audio, in one piece"
+  },
+  {
+   "id": 14,
+   "type": "VAEDecodeAudioTiled",
+   "pos": [
+    2520,
+    170
+   ],
+   "size": [
+    400,
+    110
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "samples",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 15
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 16
+    },
+    {
+     "localized_name": "tile_size",
+     "name": "tile_size",
+     "type": "INT",
+     "widget": {
+      "name": "tile_size"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "overlap",
+     "name": "overlap",
+     "type": "INT",
+     "widget": {
+      "name": "overlap"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "AUDIO",
+     "name": "AUDIO",
+     "type": "AUDIO",
+     "links": [
+      18
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecodeAudioTiled",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Latent → audio, in tiles (1536 / 64)",
+   "widgets_values": [
+    1536,
+    64
+   ]
+  },
+  {
+   "id": 15,
+   "type": "ComfySwitchNode",
+   "pos": [
+    2520,
+    330
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "on_false",
+     "name": "on_false",
+     "type": "*",
+     "shape": 7,
+     "link": 17
+    },
+    {
+     "localized_name": "on_true",
+     "name": "on_true",
+     "type": "*",
+     "shape": 7,
+     "link": 18
+    },
+    {
+     "localized_name": "switch",
+     "name": "switch",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "switch"
+     },
+     "link": 19
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "*",
+     "links": [
+      20
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ComfySwitchNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picks the decode (Decode in tiles, group 1)",
+   "widgets_values": [
+    true
+   ]
+  },
+  {
+   "id": 16,
+   "type": "SaveAudioAdvanced",
+   "pos": [
+    2520,
+    470
+   ],
+   "size": [
+    400,
+    200
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "audio",
+     "name": "audio",
+     "type": "AUDIO",
+     "link": 20
+    },
+    {
+     "localized_name": "filename_prefix",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "format",
+     "name": "format",
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "format"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "quality",
+     "name": "format.quality",
+     "type": "COMBO",
+     "widget": {
+      "name": "format.quality"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "audio",
+     "name": "audio",
+     "type": "AUDIO",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SaveAudioAdvanced",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Result (mp3 in output/audio/MiniMax-Music-3)",
+   "widgets_values": [
+    "audio/MiniMax-Music-3/song",
+    "mp3",
+    "V0"
+   ]
+  },
+  {
+   "id": 17,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    -30
+   ],
+   "size": [
+    640,
+    500
+   ],
+   "flags": {},
+   "order": 16,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "How to use · v1.1.0",
+   "widgets_values": [
+    "## How to use · v1.1.0\n\n**What it does:** MiniMax Music 3 text to music: write a caption and lyrics, get a song with vocals as mp3. Core ComfyUI nodes only.\n\n1. **Your inputs** (green group):\n   - **Caption**: the music description, in three parts: `Global Metadata:` (genre, BPM, key, mood, production), `Vocal Details:` (voice, delivery, harmonies), `Arrangement:` (instruments, what each section does).\n   - **Lyrics**: one line per sung line, with section tags in square brackets: `[Intro]`, `[Verse]`, `[Chorus]`, `[Bridge]`, `[Instrumental]`, `[Outro]`.\n   - **Longest length in seconds** (180 by default, the node allows up to 360): an upper limit. The model can end the song earlier.\n   - **Seed**: a new one every run. Set \"control after generate\" to fixed to keep a song.\n   - **Decode in tiles**: on, as in the template. See the note under group 5 (**Why the decode is tiled**) before turning it off.\n2. **Models**: the three loaders must show the files from the Downloads note. Nothing to change.\n3. **Prompt**: the **Caption + lyrics → song plan** node writes the song frame by frame (cfg_scale 1.7, top_k 50, the template's values). This is the first of two stages.\n4. **Sampling**: 30 steps, CFG 1.7, euler / simple, from the template. The length comes from the song plan.\n5. **Save**: press **Run**. The **Result** node saves the mp3 to `output/audio/MiniMax-Music-3/`.\n\n**What to expect:** On the test machine (RTX PRO 4000 Blackwell 24 GB) a run took about 1.7 s per second of music: the default caption and lyrics gave a 163 s song in 277 s. In a 120 s run (an earlier build of this graph, default limit 120) the song plan took 108 s and the sampler 83 s. On an RTX 3060 12 GB, v1.0.0 of this workflow (same three files, same settings, ComfyUI 0.43.1) took 2 min 20 s for 60 s and 4 min 28 s for 120 s of music. v1.1.0 was not run on a 3060. The mp3 is stereo, 44.1 kHz.\n\n**Tips from the test runs**\n- **The length is an upper limit.** With the default lyrics and seed 22112026 the song came out 163 s long at a limit of 180, 150 s at 240, and at 120 the file stopped at 120 s without the last line (\"goodnight\"). Give long lyrics room.\n- **Instrumental:** `Instrumental. No vocals` under `Vocal Details:` and only `[Intro]`, `[Instrumental]`, `[Outro]` as lyrics gave a 42 s piece without words at a limit of 60.\n- The same seed and settings gave the same mp3 on two ComfyUI instances.\n- Nobody listened to the test songs. They were checked by transcription, loudness and spectrogram.\n\n**Tested on:** ComfyUI 0.45.3 · RTX PRO 4000 Blackwell 24 GB · 64 GB RAM · 2026-11-22. Not verified on a 12 GB card in this version.\n"
+   ]
+  },
+  {
+   "id": 18,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    520
+   ],
+   "size": [
+    640,
+    430
+   ],
+   "flags": {},
+   "order": 17,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Downloads + requirements",
+   "widgets_values": [
+    "## Downloads + requirements\n\nClick a file name to download it. Put it in the folder shown (inside `ComfyUI/models/`).\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `diffusion_models/` | [minimax_music3_dit_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/MiniMax-Music-3/resolve/main/diffusion_models/minimax_music3_dit_int8_convrot.safetensors) | 2.50 GB |\n| `text_encoders/` | [minimax_music3_text_encoder_pruned_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/MiniMax-Music-3/resolve/main/text_encoders/minimax_music3_text_encoder_pruned_int8_convrot.safetensors) | 9.20 GB |\n| `vae/` | [minimax_music3_dav.safetensors](https://huggingface.co/Comfy-Org/MiniMax-Music-3/resolve/main/vae/minimax_music3_dav.safetensors) | 0.22 GB |\n\nTotal: about 11.9 GB. All three are the Comfy-Org repackaged files. The template loads the fp16 DiT (4.91 GB); this workflow loads the int8 one, which the template's note lists \"for low VRAM\". The fp16 file was not run here.\n\n**VRAM:** 12 GB is the target. v1.0.0 (same files and settings) peaked at 11.3 GB (60 s) and 11.5 GB (120 s) on an RTX 3060 12 GB. v1.1.0 is **not verified on a 12 GB card**: on the 24 GB test card ComfyUI took 16.5 GiB (whole GPU) without a limit, and with `--reserve-vram 13.5` the ComfyUI process peaked at 11.2 GiB for the 163 s song (whole GPU 12.0 GiB, up to 1.1 GiB of it other programs).\n\n**Run on ComfyUI 0.45.3. No custom nodes.** The MiniMax Music 3 nodes are in core since ComfyUI 0.33.0 (PR #15570, August 2026), but that is not a tested minimum: this workflow was only run on 0.45.3 (v1.0.0 on 0.43.1). Older versions are not verified.\n\nLicence: MiniMax-Music3 Community License ([text](https://huggingface.co/MiniMaxAI/MiniMax-Music3/blob/main/LICENSE)): commercial use is allowed with conditions (show \"MiniMax-Music3\" in a commercial product; ask MiniMax above 20 million US dollars of yearly revenue; an acceptable use policy). The Comfy-Org repackage is tagged Apache-2.0.\n"
+   ]
+  },
+  {
+   "id": 19,
+   "type": "MarkdownNote",
+   "pos": [
+    2500,
+    740
+   ],
+   "size": [
+    440,
+    230
+   ],
+   "flags": {},
+   "order": 18,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Why the decode is tiled",
+   "widgets_values": [
+    "## Why the decode is tiled\n\nThe template has both decodes and a switch; **Decode in tiles** in group 1 picks one.\n\nOne run each, 163 s default song, ComfyUI started with `--reserve-vram 13.5` on the 24 GB test card: the one-piece decode took 22.5 GiB (ComfyUI process); the whole run with the tiled decode (1536 / 64, the template's values) stayed at 11.2 GiB.\n\nThe two mp3 files differ by a signal-to-noise ratio of 44 dB. Not compared by ear.\n"
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   7,
+   0,
+   9,
+   0,
+   "CLIP"
+  ],
+  [
+   2,
+   1,
+   0,
+   9,
+   1,
+   "STRING"
+  ],
+  [
+   3,
+   2,
+   0,
+   9,
+   2,
+   "STRING"
+  ],
+  [
+   4,
+   4,
+   0,
+   9,
+   3,
+   "INT"
+  ],
+  [
+   5,
+   3,
+   0,
+   9,
+   4,
+   "FLOAT"
+  ],
+  [
+   6,
+   9,
+   0,
+   10,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   7,
+   9,
+   1,
+   11,
+   0,
+   "FLOAT"
+  ],
+  [
+   8,
+   6,
+   0,
+   12,
+   0,
+   "MODEL"
+  ],
+  [
+   9,
+   9,
+   0,
+   12,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   10,
+   10,
+   0,
+   12,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   11,
+   11,
+   0,
+   12,
+   3,
+   "LATENT"
+  ],
+  [
+   12,
+   4,
+   0,
+   12,
+   4,
+   "INT"
+  ],
+  [
+   13,
+   12,
+   0,
+   13,
+   0,
+   "LATENT"
+  ],
+  [
+   14,
+   8,
+   0,
+   13,
+   1,
+   "VAE"
+  ],
+  [
+   15,
+   12,
+   0,
+   14,
+   0,
+   "LATENT"
+  ],
+  [
+   16,
+   8,
+   0,
+   14,
+   1,
+   "VAE"
+  ],
+  [
+   17,
+   13,
+   0,
+   15,
+   0,
+   "AUDIO"
+  ],
+  [
+   18,
+   14,
+   0,
+   15,
+   1,
+   "AUDIO"
+  ],
+  [
+   19,
+   5,
+   0,
+   15,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   20,
+   15,
+   0,
+   16,
+   0,
+   "*"
+  ]
+ ],
+ "groups": [
+  {
+   "id": 1,
+   "title": "1 · Your inputs (App mode shows these)",
+   "bounding": [
+    -80,
+    -30,
+    1000,
+    920
+   ],
+   "color": "#8A8",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 2,
+   "title": "2 · Models (loaded once)",
+   "bounding": [
+    960,
+    -30,
+    480,
+    490
+   ],
+   "color": "#3f789e",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 3,
+   "title": "3 · Prompt",
+   "bounding": [
+    1500,
+    -30,
+    480,
+    530
+   ],
+   "color": "#a1309b",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 4,
+   "title": "4 · Sampling",
+   "bounding": [
+    2020,
+    -30,
+    440,
+    540
+   ],
+   "color": "#b06634",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 5,
+   "title": "5 · Save",
+   "bounding": [
+    2500,
+    -30,
+    440,
+    720
+   ],
+   "color": "#b58b2a",
+   "font_size": 24,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.55,
+   "offset": [
+    760,
+    120
+   ]
+  },
+  "linearData": {
+   "inputs": [
+    [
+     1,
+     "value"
+    ],
+    [
+     2,
+     "value"
+    ],
+    [
+     3,
+     "value"
+    ],
+    [
+     4,
+     "value"
+    ],
+    [
+     5,
+     "value"
+    ]
+   ],
+   "outputs": [
+    16
+   ]
+  }
+ },
+ "version": 0.4
+}
