@@ -1,0 +1,3047 @@
+{
+ "id": "5b0e7a52-2f0c-4a9e-8d1b-be4212221122",
+ "revision": 0,
+ "last_node_id": 43,
+ "last_link_id": 56,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "LoadImage",
+   "pos": [
+    -60,
+    50
+   ],
+   "size": [
+    400,
+    330
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "COMBO",
+     "widget": {
+      "name": "image"
+     },
+     "link": null,
+     "label": "Picture to edit"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      3
+     ]
+    },
+    {
+     "localized_name": "MASK",
+     "name": "MASK",
+     "type": "MASK",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picture to edit (result keeps its shape)",
+   "widgets_values": [
+    "h3_frame_ref_1.png",
+    "image"
+   ]
+  },
+  {
+   "id": 2,
+   "type": "LoadImage",
+   "pos": [
+    -60,
+    430
+   ],
+   "size": [
+    400,
+    330
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "COMBO",
+     "widget": {
+      "name": "image"
+     },
+     "link": null,
+     "label": "Reference picture (optional)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      7
+     ]
+    },
+    {
+     "localized_name": "MASK",
+     "name": "MASK",
+     "type": "MASK",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Reference picture (optional, see switch)",
+   "widgets_values": [
+    "example.png",
+    "image"
+   ]
+  },
+  {
+   "id": 3,
+   "type": "PrimitiveBoolean",
+   "pos": [
+    -60,
+    810
+   ],
+   "size": [
+    400,
+    60
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Use the reference picture"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "BOOLEAN",
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "links": [
+      8
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveBoolean",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Use the reference picture (off = ignored)",
+   "widgets_values": [
+    false
+   ]
+  },
+  {
+   "id": 4,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    380,
+    50
+   ],
+   "size": [
+    520,
+    260
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "STRING",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Edit instruction"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      9
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Edit instruction (what to change, what to keep)",
+   "widgets_values": [
+    "Replace the white swim cap with a wide-brimmed straw hat with a red ribbon. Keep her face, her pose, the green apple and the blue background exactly the same."
+   ]
+  },
+  {
+   "id": 5,
+   "type": "PrimitiveBoolean",
+   "pos": [
+    380,
+    360
+   ],
+   "size": [
+    520,
+    60
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Turbo (on = 6 steps)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "BOOLEAN",
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "links": [
+      22,
+      25,
+      28,
+      31,
+      34
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveBoolean",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Turbo (on = 6 steps, fast; off = 40 steps, slow)",
+   "widgets_values": [
+    true
+   ]
+  },
+  {
+   "id": 6,
+   "type": "PrimitiveInt",
+   "pos": [
+    380,
+    470
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Long side px (1280 = default)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      4
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Long side in pixels (1280 = template default)",
+   "widgets_values": [
+    1280,
+    "fixed"
+   ]
+  },
+  {
+   "id": 7,
+   "type": "PrimitiveInt",
+   "pos": [
+    380,
+    610
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Seed"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      45
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Seed (changes every run; fixed = keep a picture)",
+   "widgets_values": [
+    22112026,
+    "randomize"
+   ]
+  },
+  {
+   "id": 8,
+   "type": "UNETLoader",
+   "pos": [
+    980,
+    50
+   ],
+   "size": [
+    480,
+    90
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "unet_name",
+     "name": "unet_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "unet_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "weight_dtype",
+     "name": "weight_dtype",
+     "type": "COMBO",
+     "widget": {
+      "name": "weight_dtype"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      1,
+      20
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UNETLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "wan2.2_bernini_r_high_noise_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Bernini-R/resolve/main/diffusion_models/wan2.2_bernini_r_high_noise_int8_convrot.safetensors",
+      "directory": "diffusion_models"
+     }
+    ]
+   },
+   "title": "Bernini-R high noise · int8 convrot (14.5 GB)",
+   "widgets_values": [
+    "wan2.2_bernini_r_high_noise_int8_convrot.safetensors",
+    "default"
+   ]
+  },
+  {
+   "id": 9,
+   "type": "UNETLoader",
+   "pos": [
+    980,
+    190
+   ],
+   "size": [
+    480,
+    90
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "unet_name",
+     "name": "unet_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "unet_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "weight_dtype",
+     "name": "weight_dtype",
+     "type": "COMBO",
+     "widget": {
+      "name": "weight_dtype"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      2,
+      23,
+      35
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UNETLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "wan2.2_bernini_r_low_noise_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Bernini-R/resolve/main/diffusion_models/wan2.2_bernini_r_low_noise_int8_convrot.safetensors",
+      "directory": "diffusion_models"
+     }
+    ]
+   },
+   "title": "Bernini-R low noise · int8 convrot (14.5 GB)",
+   "widgets_values": [
+    "wan2.2_bernini_r_low_noise_int8_convrot.safetensors",
+    "default"
+   ]
+  },
+  {
+   "id": 10,
+   "type": "CLIPLoader",
+   "pos": [
+    980,
+    330
+   ],
+   "size": [
+    480,
+    120
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip_name",
+     "name": "clip_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "clip_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "type",
+     "name": "type",
+     "type": "COMBO",
+     "widget": {
+      "name": "type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "device",
+     "name": "device",
+     "type": "COMBO",
+     "widget": {
+      "name": "device"
+     },
+     "shape": 7,
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      10,
+      12
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "directory": "text_encoders"
+     }
+    ]
+   },
+   "title": "Text encoder · umt5 xxl fp8 (6.7 GB)",
+   "widgets_values": [
+    "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+    "wan",
+    "default"
+   ]
+  },
+  {
+   "id": 11,
+   "type": "VAELoader",
+   "pos": [
+    980,
+    500
+   ],
+   "size": [
+    480,
+    70
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "vae_name",
+     "name": "vae_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "vae_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      15,
+      55
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAELoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "wan_2.1_vae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors",
+      "directory": "vae"
+     }
+    ]
+   },
+   "title": "VAE · Wan 2.1 (0.25 GB)",
+   "widgets_values": [
+    "wan_2.1_vae.safetensors"
+   ]
+  },
+  {
+   "id": 12,
+   "type": "LoraLoaderModelOnly",
+   "pos": [
+    980,
+    620
+   ],
+   "size": [
+    480,
+    90
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 1
+    },
+    {
+     "localized_name": "lora_name",
+     "name": "lora_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "lora_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "strength_model",
+     "name": "strength_model",
+     "type": "FLOAT",
+     "widget": {
+      "name": "strength_model"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      21
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoraLoaderModelOnly",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors",
+      "url": "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors",
+      "directory": "loras"
+     }
+    ]
+   },
+   "title": "Turbo LoRA on high noise · strength 3 (0.63 GB)",
+   "widgets_values": [
+    "lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors",
+    3.0
+   ]
+  },
+  {
+   "id": 13,
+   "type": "LoraLoaderModelOnly",
+   "pos": [
+    980,
+    760
+   ],
+   "size": [
+    480,
+    90
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 2
+    },
+    {
+     "localized_name": "lora_name",
+     "name": "lora_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "lora_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "strength_model",
+     "name": "strength_model",
+     "type": "FLOAT",
+     "widget": {
+      "name": "strength_model"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      24
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoraLoaderModelOnly",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors",
+      "url": "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors",
+      "directory": "loras"
+     }
+    ]
+   },
+   "title": "Turbo LoRA on low noise · strength 1.5 (same file)",
+   "widgets_values": [
+    "lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors",
+    1.5
+   ]
+  },
+  {
+   "id": 14,
+   "type": "ResizeImageMaskNode",
+   "pos": [
+    1560,
+    50
+   ],
+   "size": [
+    420,
+    150
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "input",
+     "name": "input",
+     "type": "IMAGE,MASK",
+     "link": 3
+    },
+    {
+     "localized_name": "resize_type",
+     "name": "resize_type",
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "resize_type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "longer_size",
+     "name": "resize_type.longer_size",
+     "type": "INT",
+     "widget": {
+      "name": "resize_type.longer_size"
+     },
+     "link": 4
+    },
+    {
+     "localized_name": "scale_method",
+     "name": "scale_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "scale_method"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "resized",
+     "name": "resized",
+     "type": "IMAGE",
+     "links": [
+      5
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ResizeImageMaskNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Resize: long side from group 1",
+   "widgets_values": [
+    "scale longer dimension",
+    1280,
+    "area"
+   ]
+  },
+  {
+   "id": 15,
+   "type": "ResizeImageMaskNode",
+   "pos": [
+    1560,
+    250
+   ],
+   "size": [
+    420,
+    150
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "input",
+     "name": "input",
+     "type": "IMAGE,MASK",
+     "link": 5
+    },
+    {
+     "localized_name": "resize_type",
+     "name": "resize_type",
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "resize_type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "multiple",
+     "name": "resize_type.multiple",
+     "type": "INT",
+     "widget": {
+      "name": "resize_type.multiple"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "scale_method",
+     "name": "scale_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "scale_method"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "resized",
+     "name": "resized",
+     "type": "IMAGE",
+     "links": [
+      6,
+      16
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ResizeImageMaskNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Trim both sides to a multiple of 16",
+   "widgets_values": [
+    "scale to multiple",
+    16,
+    "area"
+   ]
+  },
+  {
+   "id": 16,
+   "type": "GetImageSize",
+   "pos": [
+    1560,
+    450
+   ],
+   "size": [
+    420,
+    120
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 6
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "width",
+     "name": "width",
+     "type": "INT",
+     "links": [
+      18
+     ]
+    },
+    {
+     "localized_name": "height",
+     "name": "height",
+     "type": "INT",
+     "links": [
+      19
+     ]
+    },
+    {
+     "localized_name": "batch_size",
+     "name": "batch_size",
+     "type": "INT",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetImageSize",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Size of the result = size of this picture"
+  },
+  {
+   "id": 17,
+   "type": "ComfySwitchNode",
+   "pos": [
+    1560,
+    620
+   ],
+   "size": [
+    420,
+    90
+   ],
+   "flags": {},
+   "order": 16,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "on_false",
+     "name": "on_false",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "on_true",
+     "name": "on_true",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 7
+    },
+    {
+     "localized_name": "switch",
+     "name": "switch",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "switch"
+     },
+     "link": 8
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "IMAGE",
+     "links": [
+      17
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ComfySwitchNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Reference picture: on or nothing",
+   "widgets_values": [
+    false
+   ]
+  },
+  {
+   "id": 18,
+   "type": "StringConcatenate",
+   "pos": [
+    2080,
+    50
+   ],
+   "size": [
+    440,
+    230
+   ],
+   "flags": {},
+   "order": 17,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "string_a",
+     "name": "string_a",
+     "type": "STRING",
+     "widget": {
+      "name": "string_a"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "string_b",
+     "name": "string_b",
+     "type": "STRING",
+     "widget": {
+      "name": "string_b"
+     },
+     "link": 9
+    },
+    {
+     "localized_name": "delimiter",
+     "name": "delimiter",
+     "type": "STRING",
+     "widget": {
+      "name": "delimiter"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      11
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "System prompt (from the authors) + instruction",
+   "widgets_values": [
+    "You are a helpful assistant specialized in image editing.",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 19,
+   "type": "CLIPTextEncode",
+   "pos": [
+    2080,
+    330
+   ],
+   "size": [
+    440,
+    90
+   ],
+   "flags": {},
+   "order": 18,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 10
+    },
+    {
+     "localized_name": "text",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": 11
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      13
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Prompt → conditioning",
+   "widgets_values": [
+    ""
+   ]
+  },
+  {
+   "id": 20,
+   "type": "CLIPTextEncode",
+   "pos": [
+    2080,
+    470
+   ],
+   "size": [
+    440,
+    200
+   ],
+   "flags": {},
+   "order": 19,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 12
+    },
+    {
+     "localized_name": "text",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      14
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Negative prompt (from the template)",
+   "widgets_values": [
+    "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走"
+   ]
+  },
+  {
+   "id": 21,
+   "type": "BerniniConditioning",
+   "pos": [
+    2080,
+    720
+   ],
+   "size": [
+    440,
+    300
+   ],
+   "flags": {},
+   "order": 20,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 13
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 14
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 15
+    },
+    {
+     "localized_name": "source_video",
+     "name": "source_video",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 16
+    },
+    {
+     "localized_name": "reference_video",
+     "name": "reference_video",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "reference_images.reference_image_0",
+     "name": "reference_images.reference_image_0",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 17,
+     "label": "reference_image_0"
+    },
+    {
+     "localized_name": "width",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": 18
+    },
+    {
+     "localized_name": "height",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": 19
+    },
+    {
+     "localized_name": "length",
+     "name": "length",
+     "type": "INT",
+     "widget": {
+      "name": "length"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "batch_size",
+     "name": "batch_size",
+     "type": "INT",
+     "widget": {
+      "name": "batch_size"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "ref_max_size",
+     "name": "ref_max_size",
+     "type": "INT",
+     "widget": {
+      "name": "ref_max_size"
+     },
+     "shape": 7,
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "links": [
+      40,
+      48
+     ]
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "links": [
+      41,
+      49
+     ]
+    },
+    {
+     "localized_name": "latent",
+     "name": "latent",
+     "type": "LATENT",
+     "links": [
+      44
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "BerniniConditioning",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Bernini: add the picture (length 1 = one picture)",
+   "widgets_values": [
+    1280,
+    704,
+    1,
+    1,
+    848
+   ]
+  },
+  {
+   "id": 22,
+   "type": "PrimitiveInt",
+   "pos": [
+    2600,
+    50
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 21,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      27
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Turbo steps (6 = template)",
+   "widgets_values": [
+    6,
+    "fixed"
+   ]
+  },
+  {
+   "id": 23,
+   "type": "PrimitiveInt",
+   "pos": [
+    2600,
+    190
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 22,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      30
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Turbo: steps on high noise (3)",
+   "widgets_values": [
+    3,
+    "fixed"
+   ]
+  },
+  {
+   "id": 24,
+   "type": "PrimitiveFloat",
+   "pos": [
+    2600,
+    330
+   ],
+   "size": [
+    400,
+    60
+   ],
+   "flags": {},
+   "order": 23,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "FLOAT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "FLOAT",
+     "name": "FLOAT",
+     "type": "FLOAT",
+     "links": [
+      33
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveFloat",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Turbo CFG (1; keep it at 1)",
+   "widgets_values": [
+    1.0
+   ]
+  },
+  {
+   "id": 25,
+   "type": "PrimitiveInt",
+   "pos": [
+    2600,
+    440
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 24,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      26
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Full steps (40 = template)",
+   "widgets_values": [
+    40,
+    "fixed"
+   ]
+  },
+  {
+   "id": 26,
+   "type": "PrimitiveInt",
+   "pos": [
+    2600,
+    580
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 25,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      29
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Full: steps on high noise (20)",
+   "widgets_values": [
+    20,
+    "fixed"
+   ]
+  },
+  {
+   "id": 27,
+   "type": "PrimitiveFloat",
+   "pos": [
+    2600,
+    720
+   ],
+   "size": [
+    400,
+    60
+   ],
+   "flags": {},
+   "order": 26,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "FLOAT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "FLOAT",
+     "name": "FLOAT",
+     "type": "FLOAT",
+     "links": [
+      32
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveFloat",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Full CFG (5 = template)",
+   "widgets_values": [
+    5.0
+   ]
+  },
+  {
+   "id": 28,
+   "type": "ComfySwitchNode",
+   "pos": [
+    2600,
+    830
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 27,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "on_false",
+     "name": "on_false",
+     "type": "MODEL",
+     "shape": 7,
+     "link": 20
+    },
+    {
+     "localized_name": "on_true",
+     "name": "on_true",
+     "type": "MODEL",
+     "shape": 7,
+     "link": 21
+    },
+    {
+     "localized_name": "switch",
+     "name": "switch",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "switch"
+     },
+     "link": 22
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "MODEL",
+     "links": [
+      39
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ComfySwitchNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "High noise model: plain or with LoRA",
+   "widgets_values": [
+    false
+   ]
+  },
+  {
+   "id": 29,
+   "type": "ComfySwitchNode",
+   "pos": [
+    2600,
+    970
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 28,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "on_false",
+     "name": "on_false",
+     "type": "MODEL",
+     "shape": 7,
+     "link": 23
+    },
+    {
+     "localized_name": "on_true",
+     "name": "on_true",
+     "type": "MODEL",
+     "shape": 7,
+     "link": 24
+    },
+    {
+     "localized_name": "switch",
+     "name": "switch",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "switch"
+     },
+     "link": 25
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "MODEL",
+     "links": [
+      47
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ComfySwitchNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Low noise model: plain or with LoRA",
+   "widgets_values": [
+    false
+   ]
+  },
+  {
+   "id": 30,
+   "type": "ComfySwitchNode",
+   "pos": [
+    2600,
+    1110
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 29,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "on_false",
+     "name": "on_false",
+     "type": "INT",
+     "shape": 7,
+     "link": 26
+    },
+    {
+     "localized_name": "on_true",
+     "name": "on_true",
+     "type": "INT",
+     "shape": 7,
+     "link": 27
+    },
+    {
+     "localized_name": "switch",
+     "name": "switch",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "switch"
+     },
+     "link": 28
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "INT",
+     "links": [
+      36
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ComfySwitchNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Steps: full or Turbo",
+   "widgets_values": [
+    false
+   ]
+  },
+  {
+   "id": 31,
+   "type": "ComfySwitchNode",
+   "pos": [
+    2600,
+    1250
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 30,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "on_false",
+     "name": "on_false",
+     "type": "INT",
+     "shape": 7,
+     "link": 29
+    },
+    {
+     "localized_name": "on_true",
+     "name": "on_true",
+     "type": "INT",
+     "shape": 7,
+     "link": 30
+    },
+    {
+     "localized_name": "switch",
+     "name": "switch",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "switch"
+     },
+     "link": 31
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "INT",
+     "links": [
+      38
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ComfySwitchNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Steps on high noise: full or Turbo",
+   "widgets_values": [
+    false
+   ]
+  },
+  {
+   "id": 32,
+   "type": "ComfySwitchNode",
+   "pos": [
+    2600,
+    1390
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 31,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "on_false",
+     "name": "on_false",
+     "type": "FLOAT",
+     "shape": 7,
+     "link": 32
+    },
+    {
+     "localized_name": "on_true",
+     "name": "on_true",
+     "type": "FLOAT",
+     "shape": 7,
+     "link": 33
+    },
+    {
+     "localized_name": "switch",
+     "name": "switch",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "switch"
+     },
+     "link": 34
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "FLOAT",
+     "links": [
+      46,
+      53
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ComfySwitchNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "CFG: full or Turbo",
+   "widgets_values": [
+    false
+   ]
+  },
+  {
+   "id": 33,
+   "type": "KSamplerSelect",
+   "pos": [
+    3100,
+    50
+   ],
+   "size": [
+    400,
+    60
+   ],
+   "flags": {},
+   "order": 32,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "sampler_name",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "SAMPLER",
+     "name": "SAMPLER",
+     "type": "SAMPLER",
+     "links": [
+      42,
+      50
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSamplerSelect",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Sampler · res_multistep (from the template)",
+   "widgets_values": [
+    "res_multistep"
+   ]
+  },
+  {
+   "id": 34,
+   "type": "BasicScheduler",
+   "pos": [
+    3100,
+    160
+   ],
+   "size": [
+    400,
+    130
+   ],
+   "flags": {},
+   "order": 33,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 35
+    },
+    {
+     "localized_name": "scheduler",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "steps",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": 36
+    },
+    {
+     "localized_name": "denoise",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "SIGMAS",
+     "name": "SIGMAS",
+     "type": "SIGMAS",
+     "links": [
+      37
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "BasicScheduler",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Schedule · simple (steps from group 5)",
+   "widgets_values": [
+    "simple",
+    6,
+    1.0
+   ]
+  },
+  {
+   "id": 35,
+   "type": "SplitSigmas",
+   "pos": [
+    3100,
+    340
+   ],
+   "size": [
+    400,
+    80
+   ],
+   "flags": {},
+   "order": 34,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "sigmas",
+     "name": "sigmas",
+     "type": "SIGMAS",
+     "link": 37
+    },
+    {
+     "localized_name": "step",
+     "name": "step",
+     "type": "INT",
+     "widget": {
+      "name": "step"
+     },
+     "link": 38
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "high_sigmas",
+     "name": "high_sigmas",
+     "type": "SIGMAS",
+     "links": [
+      43
+     ]
+    },
+    {
+     "localized_name": "low_sigmas",
+     "name": "low_sigmas",
+     "type": "SIGMAS",
+     "links": [
+      51
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SplitSigmas",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Split the steps: high noise / low noise",
+   "widgets_values": [
+    3
+   ]
+  },
+  {
+   "id": 36,
+   "type": "SamplerCustom",
+   "pos": [
+    3100,
+    470
+   ],
+   "size": [
+    400,
+    250
+   ],
+   "flags": {},
+   "order": 35,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 39
+    },
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 40
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 41
+    },
+    {
+     "localized_name": "sampler",
+     "name": "sampler",
+     "type": "SAMPLER",
+     "link": 42
+    },
+    {
+     "localized_name": "sigmas",
+     "name": "sigmas",
+     "type": "SIGMAS",
+     "link": 43
+    },
+    {
+     "localized_name": "latent_image",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 44
+    },
+    {
+     "localized_name": "add_noise",
+     "name": "add_noise",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "add_noise"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "noise_seed",
+     "name": "noise_seed",
+     "type": "INT",
+     "widget": {
+      "name": "noise_seed"
+     },
+     "link": 45
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": 46
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "LATENT",
+     "links": [
+      52
+     ]
+    },
+    {
+     "localized_name": "denoised_output",
+     "name": "denoised_output",
+     "type": "LATENT",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SamplerCustom",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Pass 1 · high noise model (adds the noise)",
+   "widgets_values": [
+    true,
+    22112026,
+    "fixed",
+    1.0
+   ]
+  },
+  {
+   "id": 37,
+   "type": "SamplerCustom",
+   "pos": [
+    3100,
+    770
+   ],
+   "size": [
+    400,
+    250
+   ],
+   "flags": {},
+   "order": 36,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 47
+    },
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 48
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 49
+    },
+    {
+     "localized_name": "sampler",
+     "name": "sampler",
+     "type": "SAMPLER",
+     "link": 50
+    },
+    {
+     "localized_name": "sigmas",
+     "name": "sigmas",
+     "type": "SIGMAS",
+     "link": 51
+    },
+    {
+     "localized_name": "latent_image",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 52
+    },
+    {
+     "localized_name": "add_noise",
+     "name": "add_noise",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "add_noise"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "noise_seed",
+     "name": "noise_seed",
+     "type": "INT",
+     "widget": {
+      "name": "noise_seed"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": 53
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "LATENT",
+     "links": [
+      54
+     ]
+    },
+    {
+     "localized_name": "denoised_output",
+     "name": "denoised_output",
+     "type": "LATENT",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SamplerCustom",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Pass 2 · low noise model (finishes)",
+   "widgets_values": [
+    false,
+    0,
+    "fixed",
+    1.0
+   ]
+  },
+  {
+   "id": 38,
+   "type": "VAEDecode",
+   "pos": [
+    3600,
+    50
+   ],
+   "size": [
+    240,
+    60
+   ],
+   "flags": {},
+   "order": 37,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "samples",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 54
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 55
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      56
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Latent → picture"
+  },
+  {
+   "id": 39,
+   "type": "SaveImage",
+   "pos": [
+    3600,
+    160
+   ],
+   "size": [
+    600,
+    640
+   ],
+   "flags": {},
+   "order": 38,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 56
+    },
+    {
+     "localized_name": "filename_prefix",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SaveImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Result (saved to output/Bernini-R)",
+   "widgets_values": [
+    "Bernini-R/bernini_r_edit"
+   ]
+  },
+  {
+   "id": 40,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    -30
+   ],
+   "size": [
+    640,
+    560
+   ],
+   "flags": {},
+   "order": 39,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "How to use · v1.0.0",
+   "widgets_values": [
+    "## How to use · v1.0.0\n\n**What it does:** Bernini-R (ByteDance, built on Wan 2.2 14B) edits a picture from a written instruction: swap a background, add or remove an object, change the season or the style. One switch chooses between the 6-step Turbo LoRA and the authors' 40-step setting. Core ComfyUI nodes only.\n\n1. **Your inputs** (green group):\n   - **Picture to edit**: the result keeps its shape.\n   - **Edit instruction**: in English. Say what to change and what must stay.\n   - **Turbo**: on by default. On = Turbo LoRA, 6 steps, CFG 1. Off = no LoRA, 40 steps, CFG 5.\n   - **Long side in pixels**: size of the result. 1280 is the template default.\n   - **Seed**: a new one every run. Set \"control after generate\" to fixed to keep a picture.\n   - **Reference picture** + **Use the reference picture**: optional, off by default. With the switch on, the model also sees this picture and you can name it: \"the hat from the reference picture\". Tested with one picture and one instruction.\n2. **Models**: the six loaders must show the files from the Downloads note. Nothing to change.\n3. **Picture**: nothing to change. The picture is resized to your long side, then both sides are trimmed to a multiple of 16 (see the note under the group).\n4. **Prompt**: nothing to change. The authors' system prompt for image editing is put in front of your instruction, and the Bernini node adds the picture. Length 1 means one picture, not a video.\n5. **Turbo switch**: five switches follow the **Turbo** input and pick the models, the steps and the CFG. The step counts and CFG values for both modes live here.\n6. **Sampling**: res_multistep / simple, two passes: the high noise model starts the picture, the low noise model finishes it. All from the official template.\n7. Press **Run**. The picture is saved by the **Result** node to `output/Bernini-R/`.\n\n**What to expect:** a 1368x768 picture comes out as 1280x704. On the test card (24 GB) Turbo took 16 to 24 s per picture at long side 1280, and 8 s at 832. Turbo off took 3 min 23 s (1280x704) and 4 min 19 s (1280x848).\n\n**Tips from the test runs**\n- Say what must stay (\"keep her face, her pose and the background exactly the same\"). The hat, the garden and the sunset tests kept the rest of the picture.\n- Fine detail with Turbo on: in the forest-to-winter test a mesh pattern showed on the snowy branches when the picture was enlarged, strongest with seed 22112026. Try another seed, or turn Turbo off: the one Turbo-off run of that picture drew clean branches.\n- Other LoRA strengths (2 and 1), 8 steps and the euler sampler did not remove that pattern, so the template values are kept.\n- The hat test added shoulder-length hair with one of three seeds. If something appears that you did not ask for, change the seed.\n\n**Tested on:** ComfyUI 0.45.3, RTX PRO 4000 Blackwell 24 GB, 64 GB RAM. Not run on a 12 GB card.\n"
+   ]
+  },
+  {
+   "id": 41,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    580
+   ],
+   "size": [
+    640,
+    580
+   ],
+   "flags": {},
+   "order": 40,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Downloads + requirements",
+   "widgets_values": [
+    "## Downloads + requirements\n\nClick a file name to download it. Put it in the folder shown (inside `ComfyUI/models/`).\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `diffusion_models/` | [wan2.2_bernini_r_high_noise_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Bernini-R/resolve/main/diffusion_models/wan2.2_bernini_r_high_noise_int8_convrot.safetensors) | 14.5 GB |\n| `diffusion_models/` | [wan2.2_bernini_r_low_noise_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Bernini-R/resolve/main/diffusion_models/wan2.2_bernini_r_low_noise_int8_convrot.safetensors) | 14.5 GB |\n| `text_encoders/` | [umt5_xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors) | 6.7 GB |\n| `vae/` | [wan_2.1_vae.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors) | 0.25 GB |\n| `loras/` | [lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors](https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors) | 0.63 GB |\n\nTotal: about 36.7 GB. If you already have `umt5_xxl_fp8_e4m3fn_scaled.safetensors` and `wan_2.1_vae.safetensors` from Wan 2.1 or Wan 2.2, skip them: they are the same files.\n\nThe Turbo LoRA is needed even with Turbo off: ComfyUI checks that every file named in the graph exists before it runs. For the same reason the Reference picture loader must point at a file that exists; it is set to `example.png`, which ships with ComfyUI.\n\n**Optional model swap** (pick them in the first two loaders of group 2):\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `diffusion_models/` | [wan2.2_bernini_r_high_noise_fp8_scaled.safetensors](https://huggingface.co/Comfy-Org/Bernini-R/resolve/main/diffusion_models/wan2.2_bernini_r_high_noise_fp8_scaled.safetensors) | 15.6 GB |\n| `diffusion_models/` | [wan2.2_bernini_r_low_noise_fp8_scaled.safetensors](https://huggingface.co/Comfy-Org/Bernini-R/resolve/main/diffusion_models/wan2.2_bernini_r_low_noise_fp8_scaled.safetensors) | 15.6 GB |\n\nThese are the files the official template loads. Five Turbo runs with them (hat picture, two seeds; winter forest, three seeds) took 20 to 26 s and looked the same to the eye as the int8 results, including the mesh pattern on the winter picture.\n\n**VRAM:** **Not verified on 12 GB.** With no VRAM limit ComfyUI filled the 24 GB card (22.7 to 23.4 GiB). With ComfyUI started with `--reserve-vram 13.5` on the same card, five runs (Turbo on and off, with and without the reference picture) peaked at 11.3 to 11.5 GiB for the whole GPU and took the same time. That is a run inside a smaller budget on a 24 GB card, not a 12 GB test. Each model is 14.5 GB, so on 12 GB part of it stays in system RAM; RAM use was not measured.\n\n**Run on ComfyUI 0.45.3.** Older versions were not tested; the Bernini Conditioning node is new. **No custom nodes.**\n\nLicence: Bernini-R is Apache-2.0 (LICENSE file of the authors' repo). The lightx2v LoRA is from the Wan 2.1 T2V distillation by lightx2v, repackaged by Kijai.\n"
+   ]
+  },
+  {
+   "id": 42,
+   "type": "MarkdownNote",
+   "pos": [
+    2580,
+    1570
+   ],
+   "size": [
+    440,
+    150
+   ],
+   "flags": {},
+   "order": 41,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Why a switch",
+   "widgets_values": [
+    "## Why a switch and not a bypassed LoRA\n\nTurbo needs five changes at once: the LoRA on both models, 6 steps instead of 40, the split after step 3 instead of 20, and CFG 1 instead of 5. The switches (from the official template) change all five with the one **Turbo** input in group 1.\n\nMeasured on the test card at 1280x704: Turbo on 16 to 20 s, Turbo off 3 min 23 s.\n"
+   ]
+  },
+  {
+   "id": 43,
+   "type": "MarkdownNote",
+   "pos": [
+    1540,
+    800
+   ],
+   "size": [
+    460,
+    200
+   ],
+   "flags": {},
+   "order": 42,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Why trimmed to 16",
+   "widgets_values": [
+    "## Why the picture is trimmed to a multiple of 16\n\nThe model works in blocks of 16 pixels. The official template resizes only the long side, so the 1368x768 test picture became 1280x719 and the result came back as 1280x712: a different size than the picture that went in.\n\nHere a second resize trims both sides down to a multiple of 16 (each side loses at most 15 pixels), so the same picture goes in and comes out as 1280x704.\n\nThis is about the size only. The template's result showed no defect in the one comparison run.\n"
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   8,
+   0,
+   12,
+   0,
+   "MODEL"
+  ],
+  [
+   2,
+   9,
+   0,
+   13,
+   0,
+   "MODEL"
+  ],
+  [
+   3,
+   1,
+   0,
+   14,
+   0,
+   "IMAGE"
+  ],
+  [
+   4,
+   6,
+   0,
+   14,
+   2,
+   "INT"
+  ],
+  [
+   5,
+   14,
+   0,
+   15,
+   0,
+   "IMAGE"
+  ],
+  [
+   6,
+   15,
+   0,
+   16,
+   0,
+   "IMAGE"
+  ],
+  [
+   7,
+   2,
+   0,
+   17,
+   1,
+   "IMAGE"
+  ],
+  [
+   8,
+   3,
+   0,
+   17,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   9,
+   4,
+   0,
+   18,
+   1,
+   "STRING"
+  ],
+  [
+   10,
+   10,
+   0,
+   19,
+   0,
+   "CLIP"
+  ],
+  [
+   11,
+   18,
+   0,
+   19,
+   1,
+   "STRING"
+  ],
+  [
+   12,
+   10,
+   0,
+   20,
+   0,
+   "CLIP"
+  ],
+  [
+   13,
+   19,
+   0,
+   21,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   14,
+   20,
+   0,
+   21,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   15,
+   11,
+   0,
+   21,
+   2,
+   "VAE"
+  ],
+  [
+   16,
+   15,
+   0,
+   21,
+   3,
+   "IMAGE"
+  ],
+  [
+   17,
+   17,
+   0,
+   21,
+   5,
+   "IMAGE"
+  ],
+  [
+   18,
+   16,
+   0,
+   21,
+   6,
+   "INT"
+  ],
+  [
+   19,
+   16,
+   1,
+   21,
+   7,
+   "INT"
+  ],
+  [
+   20,
+   8,
+   0,
+   28,
+   0,
+   "MODEL"
+  ],
+  [
+   21,
+   12,
+   0,
+   28,
+   1,
+   "MODEL"
+  ],
+  [
+   22,
+   5,
+   0,
+   28,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   23,
+   9,
+   0,
+   29,
+   0,
+   "MODEL"
+  ],
+  [
+   24,
+   13,
+   0,
+   29,
+   1,
+   "MODEL"
+  ],
+  [
+   25,
+   5,
+   0,
+   29,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   26,
+   25,
+   0,
+   30,
+   0,
+   "INT"
+  ],
+  [
+   27,
+   22,
+   0,
+   30,
+   1,
+   "INT"
+  ],
+  [
+   28,
+   5,
+   0,
+   30,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   29,
+   26,
+   0,
+   31,
+   0,
+   "INT"
+  ],
+  [
+   30,
+   23,
+   0,
+   31,
+   1,
+   "INT"
+  ],
+  [
+   31,
+   5,
+   0,
+   31,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   32,
+   27,
+   0,
+   32,
+   0,
+   "FLOAT"
+  ],
+  [
+   33,
+   24,
+   0,
+   32,
+   1,
+   "FLOAT"
+  ],
+  [
+   34,
+   5,
+   0,
+   32,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   35,
+   9,
+   0,
+   34,
+   0,
+   "MODEL"
+  ],
+  [
+   36,
+   30,
+   0,
+   34,
+   2,
+   "INT"
+  ],
+  [
+   37,
+   34,
+   0,
+   35,
+   0,
+   "SIGMAS"
+  ],
+  [
+   38,
+   31,
+   0,
+   35,
+   1,
+   "INT"
+  ],
+  [
+   39,
+   28,
+   0,
+   36,
+   0,
+   "MODEL"
+  ],
+  [
+   40,
+   21,
+   0,
+   36,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   41,
+   21,
+   1,
+   36,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   42,
+   33,
+   0,
+   36,
+   3,
+   "SAMPLER"
+  ],
+  [
+   43,
+   35,
+   0,
+   36,
+   4,
+   "SIGMAS"
+  ],
+  [
+   44,
+   21,
+   2,
+   36,
+   5,
+   "LATENT"
+  ],
+  [
+   45,
+   7,
+   0,
+   36,
+   7,
+   "INT"
+  ],
+  [
+   46,
+   32,
+   0,
+   36,
+   8,
+   "FLOAT"
+  ],
+  [
+   47,
+   29,
+   0,
+   37,
+   0,
+   "MODEL"
+  ],
+  [
+   48,
+   21,
+   0,
+   37,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   49,
+   21,
+   1,
+   37,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   50,
+   33,
+   0,
+   37,
+   3,
+   "SAMPLER"
+  ],
+  [
+   51,
+   35,
+   1,
+   37,
+   4,
+   "SIGMAS"
+  ],
+  [
+   52,
+   36,
+   0,
+   37,
+   5,
+   "LATENT"
+  ],
+  [
+   53,
+   32,
+   0,
+   37,
+   8,
+   "FLOAT"
+  ],
+  [
+   54,
+   37,
+   0,
+   38,
+   0,
+   "LATENT"
+  ],
+  [
+   55,
+   11,
+   0,
+   38,
+   1,
+   "VAE"
+  ],
+  [
+   56,
+   38,
+   0,
+   39,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [
+  {
+   "id": 1,
+   "title": "1 · Your inputs (App mode shows these)",
+   "bounding": [
+    -80,
+    -30,
+    1000,
+    930
+   ],
+   "color": "#8A8",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 2,
+   "title": "2 · Models (loaded once)",
+   "bounding": [
+    960,
+    -30,
+    520,
+    910
+   ],
+   "color": "#3f789e",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 3,
+   "title": "3 · Picture (resized)",
+   "bounding": [
+    1540,
+    -30,
+    460,
+    760
+   ],
+   "color": "#3f8f8f",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 4,
+   "title": "4 · Prompt",
+   "bounding": [
+    2060,
+    -30,
+    480,
+    1070
+   ],
+   "color": "#a1309b",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 5,
+   "title": "5 · Turbo switch",
+   "bounding": [
+    2580,
+    -30,
+    440,
+    1540
+   ],
+   "color": "#88A",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 6,
+   "title": "6 · Sampling",
+   "bounding": [
+    3080,
+    -30,
+    440,
+    1080
+   ],
+   "color": "#b06634",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 7,
+   "title": "7 · Save",
+   "bounding": [
+    3580,
+    -30,
+    640,
+    850
+   ],
+   "color": "#b58b2a",
+   "font_size": 24,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.55,
+   "offset": [
+    760,
+    120
+   ]
+  },
+  "linearData": {
+   "inputs": [
+    [
+     1,
+     "image"
+    ],
+    [
+     4,
+     "value"
+    ],
+    [
+     5,
+     "value"
+    ],
+    [
+     6,
+     "value"
+    ],
+    [
+     7,
+     "value"
+    ],
+    [
+     2,
+     "image"
+    ],
+    [
+     3,
+     "value"
+    ]
+   ],
+   "outputs": [
+    39
+   ]
+  }
+ },
+ "version": 0.4
+}
