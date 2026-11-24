@@ -1,0 +1,11 @@
+{
+  "workflow": "capybara/image-edit",
+  "files": [
+    {"name": "capybara_v0.1.safetensors", "url": "https://huggingface.co/Comfy-Org/Hunyuan-Video-1.5/resolve/main/split_files/diffusion_models/capybara_v0.1.safetensors", "dest": "diffusion_models", "required": true, "note": "Capybara v0.1 (bf16, the only file there is). 16.65 GB."},
+    {"name": "qwen_2.5_vl_7b_fp8_scaled.safetensors", "url": "https://huggingface.co/Comfy-Org/Hunyuan-Video-1.5/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors", "dest": "text_encoders", "required": true, "note": "Text encoder, fp8 copy (the template links the 16.58 GB bf16 file). 9.38 GB."},
+    {"name": "byt5_small_glyphxl_fp16.safetensors", "url": "https://huggingface.co/Comfy-Org/Hunyuan-Video-1.5/resolve/main/split_files/text_encoders/byt5_small_glyphxl_fp16.safetensors", "dest": "text_encoders", "required": true, "note": "Second text encoder (byT5 glyph). 0.44 GB."},
+    {"name": "hunyuanvideo15_vae_fp16.safetensors", "url": "https://huggingface.co/Comfy-Org/Hunyuan-Video-1.5/resolve/main/split_files/vae/hunyuanvideo15_vae_fp16.safetensors", "dest": "vae", "required": true, "note": "Hunyuan Video 1.5 VAE. 2.52 GB."},
+    {"name": "sigclip_vision_patch14_384.safetensors", "url": "https://huggingface.co/Comfy-Org/Hunyuan-Video-1.5/resolve/main/split_files/clip_vision/sigclip_vision_patch14_384.safetensors", "dest": "clip_vision", "required": true, "note": "SigLIP vision encoder. 0.86 GB."}
+  ],
+  "nodes": []
+}
