@@ -9,15 +9,21 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 [![CivitAI](https://img.shields.io/badge/CivitAI-The__frizzy1-2b7cff?style=flat-square)](https://civitai.com/user/The_frizzy1)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-The--frizzy1-ffb000?style=flat-square)](https://huggingface.co/The-frizzy1)
 [![YouTube](https://img.shields.io/badge/YouTube-@the__frizzy1-ff0033?style=flat-square)](https://www.youtube.com/@the_frizzy1)
-[![Workflows](https://img.shields.io/badge/workflows-47-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-47-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-47-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-47-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-47-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-47-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-47-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-47-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-47-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-49-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-49-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-49-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-49-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-49-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-49-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-49-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-49-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-49-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-49-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-49-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-49-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-49-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-49-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-49-6a5cff?style=flat-square)](#workflows)
 [![Min VRAM](https://img.shields.io/badge/min%20VRAM-4%20GB-3ecf8e?style=flat-square)](#workflows)
 [![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
 
@@ -65,7 +71,8 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Swap a person** in a video for your own character (SCAIL-2, core nodes, App mode) | [SCAIL-2 Character Swap · 12 GB](workflows/scail/scail2-character-swap-12gb) | 12 GB |
 | **FLUX 3**: text to image or edit with up to 4 images, with BFL's prompt upsampler; a lighter one-photo edit file ran inside a 6 GiB budget | [FLUX 3 Klein · 12 GB](workflows/flux/flux3-klein-12gb) | 12 GB |
 | **MOSS-Image**: text to image, layout with boxes, edit, or a new picture in your photo's shape | [MOSS-Image · 12 GB](workflows/moss/moss-image-12gb) | 12 GB |
-| **Quick edits** in 4 steps, or **text to image** from a short idea (Fibo 2.0, non-commercial) | [Fibo 2.0 Edit + Text to Image · 12 GB](workflows/fibo/fibo2-edit-12gb) | 12 GB (t2i: not verified) |
+| **Quick edits** in 4 steps: say what the picture should look like (Fibo 2.0, non-commercial) | [Fibo 2.0 Edit Turbo · 12 GB](workflows/fibo/fibo2-edit-12gb) | 12 GB |
+| **MiniMax H3 Image**: 16 MP-class text to image, edit with 1 or 2 pictures, or change only a box / painted area (licence excludes EU, UK, KR, US) | [MiniMax H3 Image · 12 GB](workflows/minimax/h3-image-12gb) | 12 GB target, ran in a 10 GiB budget |
 | **Design images with text + real transparency** (Ming Image 0.1 Design) | [Ming Image 0.1 · 12 GB](workflows/ming/image-0.1-design-12gb) | 4 GB+* |
 | **Fast, tiny** image generation | [Z-Image Turbo GGUF](workflows/z-image/turbo) | 4 GB+ |
 | **Edit a picture or combine up to three** with FireRed Image Edit 1.1 (Apache-2.0, 8 steps) | [FireRed Image Edit 1.1](workflows/firered/image-edit-1.1) | 12 GB target, not verified |
@@ -81,6 +88,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | A **talking video** from one picture and a speech clip, lips synced (InfiniteTalk on Wan 2.1, Apache-2.0, up to 9 s) | [InfiniteTalk Talking Video](workflows/wan2.1/infinitetalk) | 12 GB target, not verified |
 | Newer **LTX video** (audio-aware) | [LTX-2](workflows/ltx/ltx2) · [LTX-2.3 Ultimate · 12 GB](workflows/ltx/ltx2.3-ultimate) | 4–12 GB |
 | **Every MiniMax H3 mode** (T2V · I2V · R2V · multiframe · pose · extend) in one workflow, with sound | [MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb) | 12 GB |
+| **Picture to video with sound** in 6 steps (Pika H3 Flex), optional Turbo and 2x upscale | [Pika H3 Flex I2V · 12 GB](workflows/minimax/pika-h3-flex-i2v-12gb) | 12 GB (not verified) |
 | **LTX 2.5** text / image / first+last / pose-driven video in one workflow | [LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb) | 12 GB |
 | **Free AI VFX** on your own clips: remove a person, day to night, water, alpha matte, grey blocks to render (LTX-2.5 VFX LoRAs) | [LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb) | 12 GB |
 | **Swap the person** in a video for your character (one still) | [Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3) | 12 GB |
@@ -121,6 +129,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[LTX-2 GGUF](workflows/ltx/ltx2)** | v2.0.1 | 4 GB | T2V · I2V · audio | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow) · [▶](https://www.youtube.com/watch?v=nnHUBMgdJac&list=PLQ3PcJNbU2Ls) |
 | **[LTX-2.3 Ultimate · 12 GB](workflows/ltx/ltx2.3-ultimate)** | v3.0.1 | 12 GB | T2V · I2V · FFLF · audio · ID | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX23-Ultimate) · [▶](https://www.youtube.com/watch?v=im4wolfHvMk&list=PLQ3PcJNbU2Ls) |
 | **[MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb)** | v2.4.0 | 12 GB | T2V · I2V · last · FLF · R2V · multiframe · ControlNet pose · extend · audio | [▶](https://www.youtube.com/watch?v=KJNksY9Ur3w&list=PLMztlpsP7Bgg) · [▶](https://www.youtube.com/watch?v=H2lZud6dbf4&list=PLMztlpsP7Bgg) |
+| **[Pika H3 Flex I2V · 12 GB](workflows/minimax/pika-h3-flex-i2v-12gb)** | v1.0.0 | 12 GB (not verified) | I2V with audio (Pika Flex LoRA on H3, 6 steps) · optional end frame · Turbo 4 steps · RelayVSR x2 upscale | — |
 | **[LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb)** | v3.2.1 | 12 GB | T2V · I2V · FLF · pose (IC-LoRA) · VFX LoRAs (remove, day to night, water, alpha, layout to render…) · cinemagraph · slow motion · RelayVSR x2 upscale · audio | [▶](https://www.youtube.com/watch?v=HeHY6N5hH_M&list=PLQ3PcJNbU2Ls) · [▶](https://www.youtube.com/watch?v=TlV72fg9skw&list=PLQ3PcJNbU2Ls) |
 | **[Viggle-Animate (H3)](workflows/minimax/viggle-animate-h3)** | v2.0.1 | 12 GB | character replacement (V2V) | — |
 | **[H3 Character Swap · 12 GB](workflows/minimax/h3-character-swap-12gb)** | v1.1.1 | 12 GB | character swap (V2V) · whole clip in loop passes · original sound | [▶](https://www.youtube.com/watch?v=zkhLZUGIIfE&list=PLMztlpsP7Bgg) |
@@ -140,6 +149,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[FLUX 3 Klein · 12 GB](workflows/flux/flux3-klein-12gb)** | v1.1.0 | 12 GB | T2I · edit (1–4 images) · prompt upsampler · low-VRAM edit (no upsampler) | — |
 | **[MOSS-Image · 12 GB](workflows/moss/moss-image-12gb)** | v1.0.1 | 12 GB | T2I · layout (boxes) · edit · control (MoGe) | — |
 | **[Fibo 2.0 Edit Turbo · 12 GB](workflows/fibo/fibo2-edit-12gb)** | v1.0.1 | 12 GB | edit · prompt enhancer · non-commercial | — |
+| **[MiniMax H3 Image · 12 GB](workflows/minimax/h3-image-12gb)** | v1.0.0 | 12 GB | T2I · edit (1–2 pictures) · area edit (box / painted mask) · App mode | — |
 | **[Flux.2 Dev GGUF](workflows/flux/flux2-dev)** | v2.0.1 | 6 GB | T2I | [CivitAI](https://civitai.com/models/2508110) · [▶](https://www.youtube.com/watch?v=dcekWAbgDXg&list=PLG_da2oqTx7k) |
 | **[Qwen Image & Edit 2509](workflows/qwen/image-edit-2509)** | v2.0.1 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/2229874) · [HF](https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF) · [▶](https://www.youtube.com/watch?v=NPni2ulov34&list=PLG_da2oqTx7k) |
 | **[Qwen Image 2.1 · 12 GB](workflows/qwen/image-2.1-12gb)** | v2.0.1 | 12 GB | T2I native 2K · turbo LoRA | [▶](https://www.youtube.com/watch?v=C5wZ2gU7j9E&list=PLG_da2oqTx7k) · [▶](https://www.youtube.com/watch?v=-yJvQ3lxWsE&list=PLG_da2oqTx7k) |
