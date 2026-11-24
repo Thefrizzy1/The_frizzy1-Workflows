@@ -1,4 +1,10 @@
 # Changelog — MiniMax H3 Image · 12 GB
+## v2.0.0 (2026-11-24)
+- Text to image is **one node** now (a single subgraph): prompt, shape, megapixels, seed and the model files on the outside, App mode set. Same 6 steps and the same pixels as v1.0.0, which moved to source/.
+- First run on a 12 GB card: RTX 3060, ComfyUI 0.45.3, 7.5 MP: 66 s with the models unloaded first, 59 s for a new prompt, 44 s for a new seed, 11.4 to 11.5 GiB peak VRAM, 15.7 GiB ComfyUI RAM.
+- No Turbo mode: the 2-step pDMD LoRA was tested and left out (soft, grid pattern; see README).
+- Edit and area edit files unchanged (v1.0.0). `source/build.py` still builds the v1.0.0 files.
+
 ## v1.0.0 (2026-11-24)
 - Initial release: three workflows on MiniMax H3 Image, built from the ComfyUI templates *MiniMax-H3-Image: Text to Image* and *Image Edit* and restructured into numbered groups with every input in group 1 and App mode. Core nodes only.
 - Text to image (7.5 MP default), edit (Picture 1 + optional Picture 2), and a new area edit (box in percent or a painted mask, 31 px soft edge, pasted back into the untouched picture at its own size).

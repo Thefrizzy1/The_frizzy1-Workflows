@@ -97,9 +97,9 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Every Qwen Image 2.1 mode** (Turbo · edit · ControlNet pose / depth / edges) in one workflow | [Qwen Image 2.1 Ultimate · 12 GB](workflows/qwen/image-2.1-ultimate-12gb) | 12 GB |
 | **Swap a person** in a video for your own character (SCAIL-2, core nodes, App mode) | [SCAIL-2 Character Swap · 12 GB](workflows/scail/scail2-character-swap-12gb) | 12 GB |
 | **FLUX 3**: text to image or edit with up to 4 images, with BFL's prompt upsampler; a lighter one-photo edit file ran inside a 6 GiB budget | [FLUX 3 Klein · 12 GB](workflows/flux/flux3-klein-12gb) | 12 GB |
-| **MOSS-Image**: text to image, layout with boxes, edit, or a new picture in your photo's shape | [MOSS-Image · 12 GB](workflows/moss/moss-image-12gb) | 12 GB |
+| **MOSS-Image**: text to image with a Turbo mode (4 or 8 steps), layout with boxes, edit, or a new picture in your photo's shape | [MOSS-Image · 12 GB](workflows/moss/moss-image-12gb) | 12 GB |
 | **Quick edits** in 4 steps: say what the picture should look like (Fibo 2.0, non-commercial) | [Fibo 2.0 Edit Turbo · 12 GB](workflows/fibo/fibo2-edit-12gb) | 12 GB |
-| **MiniMax H3 Image**: 16 MP-class text to image, edit with 1 or 2 pictures, or change only a box / painted area (licence excludes EU, UK, KR, US) | [MiniMax H3 Image · 12 GB](workflows/minimax/h3-image-12gb) | 12 GB target, ran in a 10 GiB budget |
+| **MiniMax H3 Image**: 16 MP-class text to image, edit with 1 or 2 pictures, or change only a box / painted area (licence excludes EU, UK, KR, US) | [MiniMax H3 Image · 12 GB](workflows/minimax/h3-image-12gb) | 12 GB (text to image ran on an RTX 3060; edits in a 10 GiB budget) |
 | **Design images with text + real transparency** (Ming Image 0.1 Design) | [Ming Image 0.1 · 12 GB](workflows/ming/image-0.1-design-12gb) | 4 GB+* |
 | **Fast, tiny** image generation | [Z-Image Turbo GGUF](workflows/z-image/turbo) | 4 GB+ |
 | **Edit a picture or combine up to three** with FireRed Image Edit 1.1 (Apache-2.0, 8 steps) | [FireRed Image Edit 1.1](workflows/firered/image-edit-1.1) | 12 GB target, not verified |
@@ -175,10 +175,10 @@ templated `.json`. Model names are verified from the workflow file.
 | Workflow | Ver | Min VRAM | Tasks | Links |
 |---|:---:|:---:|---|---|
 | **[Flux Kontext GGUF](workflows/flux/kontext)** | v2.3.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/1311703) · [HF](https://huggingface.co/The-frizzy1/Flux-Kontext-GGUF-4GB) · [▶](https://www.youtube.com/watch?v=4C0RJ01yRok&list=PLG_da2oqTx7k) |
-| **[FLUX 3 Klein · 12 GB](workflows/flux/flux3-klein-12gb)** | v1.1.0 | 12 GB | T2I · edit (1–4 images) · prompt upsampler · low-VRAM edit (no upsampler) | — |
-| **[MOSS-Image · 12 GB](workflows/moss/moss-image-12gb)** | v1.0.1 | 12 GB | T2I · layout (boxes) · edit · control (MoGe) | — |
+| **[FLUX 3 Klein · 12 GB](workflows/flux/flux3-klein-12gb)** | v2.0.0 | 12 GB | T2I · edit (1–4 images) · prompt upsampler · low-VRAM edit (no upsampler) | — |
+| **[MOSS-Image · 12 GB](workflows/moss/moss-image-12gb)** | v2.0.0 | 12 GB | T2I (one node, Quality / Turbo) · layout (boxes) · edit · control (MoGe) | — |
 | **[Fibo 2.0 Edit Turbo · 12 GB](workflows/fibo/fibo2-edit-12gb)** | v1.0.1 | 12 GB | edit · prompt enhancer · non-commercial | — |
-| **[MiniMax H3 Image · 12 GB](workflows/minimax/h3-image-12gb)** | v1.0.0 | 12 GB | T2I · edit (1–2 pictures) · area edit (box / painted mask) · App mode | — |
+| **[MiniMax H3 Image · 12 GB](workflows/minimax/h3-image-12gb)** | v2.0.0 | 12 GB | T2I · edit (1–2 pictures) · area edit (box / painted mask) · App mode | — |
 | **[Flux.2 Dev GGUF](workflows/flux/flux2-dev)** | v2.0.1 | 6 GB | T2I | [CivitAI](https://civitai.com/models/2508110) · [▶](https://www.youtube.com/watch?v=dcekWAbgDXg&list=PLG_da2oqTx7k) |
 | **[Qwen Image & Edit 2509](workflows/qwen/image-edit-2509)** | v2.0.1 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/2229874) · [HF](https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF) · [▶](https://www.youtube.com/watch?v=NPni2ulov34&list=PLG_da2oqTx7k) |
 | **[Qwen Image 2.1 · 12 GB](workflows/qwen/image-2.1-12gb)** | v2.0.1 | 12 GB | T2I native 2K · turbo LoRA | [▶](https://www.youtube.com/watch?v=C5wZ2gU7j9E&list=PLG_da2oqTx7k) · [▶](https://www.youtube.com/watch?v=-yJvQ3lxWsE&list=PLG_da2oqTx7k) |

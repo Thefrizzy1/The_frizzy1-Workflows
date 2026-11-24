@@ -23,6 +23,13 @@
       "note": "all. 0.25 GB"
     },
     {
+      "name": "moss_sft_4step_rank_64_lora_comfyui.safetensors",
+      "url": "https://huggingface.co/lvladikov/MOSS-SFT-Distill-4step-LoRA/resolve/main/moss_sft_4step_rank_64_lora_comfyui.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": "text to image file only (Turbo modes; must be present in Quality too). 0.59 GB. Apache-2.0, community LoRA by lvladikov"
+    },
+    {
       "name": "moss_image_edit_lora_rank_64_bf16.safetensors",
       "url": "https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/loras/moss_image_edit_lora_rank_64_bf16.safetensors",
       "dest": "loras",

@@ -1,14 +1,14 @@
-# The_frizzy1 — MiniMax H3 Image · 12 GB v1.0.0
+# The_frizzy1 - MiniMax H3 Image · 12 GB v2.0.0
 
-> MiniMax H3 Image on the 12 GB files: text to image, edit a picture (with an optional second picture), and an area edit that changes only a box or a painted mask. Three workflows, core ComfyUI nodes only.
+> MiniMax H3 Image on the 12 GB files: text to image, edit a picture (with an optional second picture), and an area edit that changes only a box or a painted mask. Three workflows, core ComfyUI nodes only. New in v2.0.0: text to image is one node and ran on an RTX 3060 12 GB.
 
 | | |
 |---|---|
 | **Model family** | MiniMax H3 Image (33.1B, distilled to 6 steps), Comfy-Org W4A8 model + NVFP4 text encoder |
 | **Tasks** | T2I · edit (1 or 2 pictures) · area edit (box or painted mask) |
-| **Min VRAM** | 12 GB is the target. Ran inside a 10 GiB VRAM budget (whole GPU 10.8 to 11.4 GiB). **Not verified on a real 12 GB card** |
+| **Min VRAM** | 12 GB. Text to image v2.0.0 ran on an RTX 3060 12 GB (whole card 11.2 to 11.5 GiB). Edit and area edit (v1.0.0) ran inside a 10 GiB VRAM budget, **not verified on a real 12 GB card** |
 | **System RAM** | 32 GB recommended: the ComfyUI process peaked at 20.6 GiB in the 10 GiB budget. 16 GB not tested |
-| **Tested on** | RTX PRO 4000 Blackwell 24 GB · 64 GB RAM · ComfyUI 0.45.3, with and without `--reserve-vram` budgets |
+| **Tested on** | Text to image v2.0.0: RTX 3060 12 GB · 32 GB RAM · ComfyUI 0.45.3. v1.0.0 files: RTX PRO 4000 Blackwell 24 GB · 64 GB RAM · ComfyUI 0.45.3, with and without `--reserve-vram` budgets |
 | **CivitAI** | Not published |
 | **Hugging Face** | Not published |
 | **YouTube explainer** | Not published |
@@ -33,7 +33,7 @@
 <p align="center"><img src="samples/workflow-area-edit.png" width="96%" alt="Area edit workflow in ComfyUI 0.45.3"></p>
 
 ## Overview
-Three workflows on the same three files. Built from ComfyUI's templates *MiniMax-H3-Image: Text to Image* and *MiniMax-H3-Image: Image Edit* (template pack 0.11.104+, fetched from Comfy-Org/workflow_templates; the lab's pack 0.11.101 does not have them), flattened out of their subgraph into numbered groups with every input in group 1 and App mode set up. The sampler is the template's (6 steps, CFG 1, euler / simple). Changes to the templates:
+Three workflows on the same three files. Built from ComfyUI's templates *MiniMax-H3-Image: Text to Image* and *MiniMax-H3-Image: Image Edit* (template pack 0.11.104+, fetched from Comfy-Org/workflow_templates; the lab's pack 0.11.101 does not have them), Text to image (v2.0.0) is one node with the inputs on the outside; edit and area edit (v1.0.0) are numbered groups with every input in group 1. App mode is set up in all three. The sampler is the template's (6 steps, CFG 1, euler / simple). Changes to the templates:
 
 - The 12 GB files: the W4A8 model (12.5 GB) and the NVFP4 text encoder (15.7 GB) instead of the templates' int8 files (21.0 GB and 27.1 GB).
 - No Qwen3.5 9B prompt expander (the templates have it on). Write the full prompt yourself.
@@ -44,12 +44,32 @@ Three workflows on the same three files. Built from ComfyUI's templates *MiniMax
 Already using the [AI Influencer · 12 GB](../ai-influencer-12gb) pack? Its workflows 1 and 2 run the same three files for a character and its scenes; this folder is the general-purpose version.
 
 ## Capabilities
-- `The_frizzy1_h3-image-12gb-t2i_v1.0.0.json`: text to image. Shape (8 ratios) + megapixels. Writes text that is in quotes in the prompt.
+- `The_frizzy1_h3-image-12gb-t2i_v2.0.0.json`: text to image in one node. Shape (8 ratios) + megapixels. Writes text that is in quotes in the prompt.
 - `The_frizzy1_h3-image-12gb-edit_v1.0.0.json`: edit Picture 1 from an instruction; optional Picture 2 as a reference (`<Picture 1>`, `<Picture 2>` in the prompt). The result has Picture 1's shape at the chosen megapixels.
 - `The_frizzy1_h3-image-12gb-area-edit_v1.0.0.json`: change only a box (left, top, width, height in % of the picture) or a painted mask. The result keeps the input's own size; outside the area the pixels stay the original's.
-- Every input in group 1; App mode shows only those (labels checked in App mode in a headless browser).
+- Edit and area edit: every input in group 1; App mode shows only those (labels checked in App mode in a headless browser).
 
-## Hardware & VRAM
+## Text to image v2.0.0 on the RTX 3060, and why there is no Turbo mode
+RTX 3060 12 GB, 32 GB RAM, ComfyUI 0.45.3, 7.5 MP (3424x2304), 6 steps. Time = sending the job to the saved picture, one run each.
+"Models unloaded" = ComfyUI kept running, models and cache freed first (not a fresh start).
+
+| Run | 6 steps (the file) | 2-step pDMD LoRA (test, not in the file) |
+|---|---|---|
+| Models unloaded first | 66 s | 39 s |
+| New prompt, models used before | 59 s | 26 s |
+| Same prompt, new seed | 44 s | 22 s |
+| Peak VRAM, whole card | 11.4 to 11.5 GiB | 11.3 to 11.4 GiB |
+| Peak RAM, ComfyUI process (working set) | 15.7 GiB | 16.1 GiB |
+
+The whole PC was at up to 31.0 of 31.9 GiB RAM with other programs open, so 32 GB is tight. The file gives the same pixels as v1.0.0
+(checked once).
+
+The model is already distilled to 6 steps. The [2-step pDMD LoRA](https://huggingface.co/Iwannapose/minimax_h3_pdmd_2nfe_comfyui)
+(Apache-2.0, 1.96 GB, made for H3 video) was tested on the W4A8 model with shift 12 and strength 1: pictures came out soft with a visible
+grid pattern. At 4 steps (35 s for a new seed) the grid was weaker but still there and small text went wrong; at 4 MP it was the same. So there is no
+Turbo mode. The LoRA's own page suggests a second detail pass; that was not tested.
+
+## Hardware & VRAM (v1.0.0 files on the lab card)
 All runs on one machine: RTX PRO 4000 Blackwell 24 GB, 64 GB RAM, ComfyUI 0.45.3. VRAM is the peak from nvidia-smi, read once per second, in GiB (MiB / 1024); 0.5 to 0.9 GiB of the whole-GPU figure belonged to other programs. RAM is the ComfyUI process's resident memory (RSS), read once per second.
 
 | How ComfyUI was started | ComfyUI process VRAM | Whole GPU | ComfyUI RAM (RSS) | Time | Pictures |
@@ -61,7 +81,7 @@ All runs on one machine: RTX PRO 4000 Blackwell 24 GB, 64 GB RAM, ComfyUI 0.45.3
 - ComfyUI fills the VRAM it gets and keeps the rest of the model in system RAM, so less VRAM means more RAM. In the 12 GiB budget it went up to 0.5 GiB over the budget; in the 10 GiB budget the whole GPU stayed under 11.5 GiB.
 - The pictures were pixel-identical in both budgets; against the unlimited run the text-to-image picture differed by at most 2 of 255 and the three edits were identical.
 - System RAM in use on the machine rose to 26.3 GiB during the 10 GiB batch (9.4 GiB before it). **Plan on 32 GB of RAM.** 16 GB was not tested.
-- **Not verified on a 12 GB card.** A budget on a 24 GB card is the closest the lab gets; an RTX 3060 is a slower card and was not run.
+- **Not verified on a 12 GB card.** A budget on a 24 GB card is the closest the lab gets; an RTX 3060 is a slower card. Edit and area edit were not run on it; text to image was (above).
 
 ## Required models
 See [downloads.md](downloads.md) for the table with links. Every file below was read from the workflow `.json` files. SHA-256 of all three downloads matched the Hugging Face listing (2026-11-24).
@@ -88,7 +108,7 @@ None.
 | Setting | Value | Notes |
 |---|---|---|
 | Steps / CFG / sampler | 6 / 1 / euler, simple | fixed by the distilled model; MiniMax's own server refuses other values. No negative prompt |
-| Text to image | 7.5 MP (3424x2304 at 3:2) | 30 to 31 s. 16 MP (5024x3360) 65 to 66 s; MiniMax say 4 to 20 MP, best near 16 |
+| Text to image | 7.5 MP (3424x2304 at 3:2) | RTX 3060: 66 s with the models unloaded first, 44 s for a new seed. Lab card: 30 to 31 s, 16 MP (5024x3360) 65 to 66 s; MiniMax say 4 to 20 MP, best near 16 |
 | Edit / area edit | 4 MP | 42 to 44 s for one picture; the area edit's result keeps the input size anyway |
 | Edit instruction | short, name `<Picture 1>`, say what stays | a full scene description in the instruction was not tested |
 | Area | cover the whole old object, with room around it | see Known issues |
@@ -111,7 +131,7 @@ On the machine above, 17 successful API runs (one more failed validation because
 | Area edit, box (`example.png`) | 4 MP edit, 768x768 result | 37 s | 1 |
 | Area edit, painted mask | 4 MP edit, 1776x1184 result | 43 s | 1 |
 
-RTX 3060 12 GB: Not verified.
+RTX 3060 12 GB: text to image see above, edit and area edit not verified.
 
 ## Known issues
 - **Licence territory:** the MiniMax-H3-Image Community License does not cover use in the EU, the UK, South Korea or the USA (people there have to ask MiniMax for a licence). Elsewhere, above 1 million USD yearly revenue or for a hosted service you need MiniMax's written permission, a commercial product must show "MiniMax-H3-Image", and outputs may not be used to train other models. Read [the licence](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/blob/main/LICENSE).

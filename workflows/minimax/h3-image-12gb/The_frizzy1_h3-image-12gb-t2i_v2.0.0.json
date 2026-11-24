@@ -1,0 +1,1315 @@
+{
+ "id": "97ea56c6-529c-5666-ab5b-d4976e889d12",
+ "revision": 0,
+ "last_node_id": 4,
+ "last_link_id": 1,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "a67664b4-7fda-5cb6-9c3a-29a784494ff1",
+   "pos": [
+    0,
+    0
+   ],
+   "size": [
+    560,
+    700
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "Prompt (describe the whole picture, English)",
+     "localized_name": "prompt",
+     "name": "prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "prompt"
+     }
+    },
+    {
+     "label": "Shape",
+     "localized_name": "aspect",
+     "name": "aspect",
+     "type": "COMBO",
+     "link": null,
+     "widget": {
+      "name": "aspect"
+     }
+    },
+    {
+     "label": "Megapixels (7.5 = 12 GB default)",
+     "localized_name": "megapixels",
+     "name": "megapixels",
+     "type": "FLOAT",
+     "link": null,
+     "widget": {
+      "name": "megapixels"
+     }
+    },
+    {
+     "label": "Seed (new number = new picture)",
+     "localized_name": "seed",
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    },
+    {
+     "label": "Model",
+     "localized_name": "unet",
+     "name": "unet",
+     "type": "COMBO",
+     "link": null,
+     "widget": {
+      "name": "unet"
+     }
+    },
+    {
+     "label": "Text encoder",
+     "localized_name": "te",
+     "name": "te",
+     "type": "COMBO",
+     "link": null,
+     "widget": {
+      "name": "te"
+     }
+    },
+    {
+     "label": "VAE",
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "COMBO",
+     "link": null,
+     "widget": {
+      "name": "vae"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "label": "Result",
+     "localized_name": "image",
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      1
+     ]
+    }
+   ],
+   "title": "MiniMax H3 Image (text to image)",
+   "properties": {
+    "models": [
+     {
+      "name": "minimax_h3_image_pruned_w4a8.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/diffusion_models/minimax_h3_image_pruned_w4a8.safetensors",
+      "directory": "diffusion_models"
+     },
+     {
+      "name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "directory": "text_encoders"
+     },
+     {
+      "name": "minimax_h3_image_vae_fp16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/vae/minimax_h3_image_vae_fp16.safetensors",
+      "directory": "vae"
+     }
+    ],
+    "previewExposures": []
+   },
+   "widgets_values": [
+    "A photograph of a small second-hand bookshop on a rainy cobbled street at dusk. Warm yellow light spills from the big shop window onto the wet stones. Behind the glass, stacks of old hardcover books, a sleeping ginger cat on a velvet cushion and a brass reading lamp. Above the door a hand-painted wooden sign in dark green with gold letters reads \"THE LAST CHAPTER\". A woman in a mustard raincoat with a black umbrella walks past on the left, slightly blurred. Reflections of the window in the puddles, soft blue evening sky, shot on a 35 mm lens at eye level, natural colours, fine detail in the wood grain and the book spines.",
+    "3:2 (Photo)",
+    7.5,
+    24112026,
+    "minimax_h3_image_pruned_w4a8.safetensors",
+    "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+    "minimax_h3_image_vae_fp16.safetensors"
+   ],
+   "widgets_values_named": {
+    "prompt": "A photograph of a small second-hand bookshop on a rainy cobbled street at dusk. Warm yellow light spills from the big shop window onto the wet stones. Behind the glass, stacks of old hardcover books, a sleeping ginger cat on a velvet cushion and a brass reading lamp. Above the door a hand-painted wooden sign in dark green with gold letters reads \"THE LAST CHAPTER\". A woman in a mustard raincoat with a black umbrella walks past on the left, slightly blurred. Reflections of the window in the puddles, soft blue evening sky, shot on a 35 mm lens at eye level, natural colours, fine detail in the wood grain and the book spines.",
+    "aspect": "3:2 (Photo)",
+    "megapixels": 7.5,
+    "seed": 24112026,
+    "unet": "minimax_h3_image_pruned_w4a8.safetensors",
+    "te": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+    "vae": "minimax_h3_image_vae_fp16.safetensors"
+   },
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 2,
+   "type": "SaveImage",
+   "pos": [
+    640,
+    0
+   ],
+   "size": [
+    620,
+    640
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 1
+    },
+    {
+     "localized_name": "filename_prefix",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SaveImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Result",
+   "widgets_values": [
+    "MiniMax-H3-Image/t2i"
+   ]
+  },
+  {
+   "id": 3,
+   "type": "MarkdownNote",
+   "pos": [
+    -700,
+    0
+   ],
+   "size": [
+    620,
+    820
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {},
+   "title": "How to use · v2.0.0",
+   "widgets_values": [
+    "## How to use · v2.0.0\n\n**What it does:** makes a picture from a text prompt with MiniMax H3 Image, on the 12 GB files, in one node. Core ComfyUI nodes only.\n\n1. **Prompt**: describe the whole picture like a photo caption: subject, place, light, lens, colours. Long, exact prompts work best. Text in quotes is drawn as text. There is no negative prompt.\n2. **Shape / Megapixels**: 7.5 MP default, 3424x2304 at 3:2. MiniMax built the model for 4 to 20 MP.\n3. **Seed**: new number = new picture.\n4. **Run**. The picture is saved to `output/MiniMax-H3-Image/`.\n\n**6 steps, CFG 1** are fixed inside the node: MiniMax distilled this checkpoint to exactly that. More steps or a higher CFG do not make it better.\n\n**No Turbo mode here, on purpose.** I tested the 2-step pDMD LoRA (made for H3 video) on the RTX 3060: 22 s instead of 44 s, but soft with a visible grid pattern, and the grid was still there at 4 steps and at 4 MP.\n\n| RTX 3060 12 GB, 7.5 MP | Time |\n|---|---|\n| models unloaded first | 66 s |\n| new prompt, models used before | 59 s |\n| same prompt, new seed | 44 s |\n\nSame picture as v1.0.0 for the same seed (checked pixel by pixel). Double-click the node to see every step.\n\n**Tested on:** RTX 3060 12 GB · 32 GB RAM · ComfyUI 0.45.3.\n"
+   ],
+   "color": "#432",
+   "bgcolor": "#653"
+  },
+  {
+   "id": 4,
+   "type": "MarkdownNote",
+   "pos": [
+    -700,
+    870
+   ],
+   "size": [
+    620,
+    560
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {},
+   "title": "Downloads + requirements",
+   "widgets_values": [
+    "## Downloads + requirements\n\nClick the file name to download it. Put each file in the folder shown (inside `ComfyUI/models/`).\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `diffusion_models/` | [minimax_h3_image_pruned_w4a8.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/diffusion_models/minimax_h3_image_pruned_w4a8.safetensors) | 12.5 GB |\n| `text_encoders/` | [qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors) | 15.7 GB |\n| `vae/` | [minimax_h3_image_vae_fp16.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/vae/minimax_h3_image_vae_fp16.safetensors) | 1.2 GB |\n\nTotal 29.4 GB, the same three files for all three workflows in this folder. The text encoder is the same file as for MiniMax H3 video.\n\n**VRAM / RAM:** on the RTX 3060 the whole card peaked at 11.2 to 11.5 GiB, the ComfyUI process at 15.7 GiB of RAM (working set), and the whole PC at 31.0 of 31.9 GiB RAM with other programs open. 16 GB RAM was not tested.\n\n**Run on ComfyUI 0.45.3.** **No custom nodes** (core nodes only; ComfyUI 0.45+ has the MiniMax H3 Image node).\n\n**Licence:** MiniMax-H3-Image Community License. It does **not** cover use in the EU, the UK, South Korea or the USA. Elsewhere: written permission from MiniMax above 1 million USD yearly revenue or for a hosted service, and a commercial product must show \"MiniMax-H3-Image\". Read the licence before use. Workflow: MIT.\n"
+   ],
+   "color": "#432",
+   "bgcolor": "#653"
+  }
+ ],
+ "links": [
+  [
+   1,
+   1,
+   0,
+   2,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [],
+ "definitions": {
+  "subgraphs": [
+   {
+    "id": "a67664b4-7fda-5cb6-9c3a-29a784494ff1",
+    "version": 1,
+    "state": {
+     "lastGroupId": 5,
+     "lastNodeId": 110,
+     "lastLinkId": 120,
+     "lastRerouteId": 0
+    },
+    "revision": 0,
+    "config": {},
+    "name": "MiniMax H3 Image (text to image)",
+    "inputNode": {
+     "id": -10,
+     "bounding": [
+      -420,
+      0,
+      160,
+      400
+     ]
+    },
+    "outputNode": {
+     "id": -20,
+     "bounding": [
+      2640,
+      0,
+      128,
+      88
+     ]
+    },
+    "inputs": [
+     {
+      "id": "8d98dbf3-27be-56a3-96bf-357a2d6719c7",
+      "name": "prompt",
+      "type": "STRING",
+      "linkIds": [
+       13
+      ],
+      "label": "Prompt (describe the whole picture, English)",
+      "pos": [
+       0,
+       0
+      ]
+     },
+     {
+      "id": "d125cd55-b9d7-5591-879e-ebd94d676594",
+      "name": "aspect",
+      "type": "COMBO",
+      "linkIds": [
+       14
+      ],
+      "label": "Shape",
+      "pos": [
+       0,
+       0
+      ]
+     },
+     {
+      "id": "fe2f51c6-6445-5c67-801a-b54b72a86033",
+      "name": "megapixels",
+      "type": "FLOAT",
+      "linkIds": [
+       15
+      ],
+      "label": "Megapixels (7.5 = 12 GB default)",
+      "pos": [
+       0,
+       0
+      ]
+     },
+     {
+      "id": "e6710c3a-f058-51de-95f9-e84f5e050f90",
+      "name": "seed",
+      "type": "INT",
+      "linkIds": [
+       16
+      ],
+      "label": "Seed (new number = new picture)",
+      "pos": [
+       0,
+       0
+      ]
+     },
+     {
+      "id": "62539ec7-0d2f-56e6-a3d4-b99fb30ef944",
+      "name": "unet",
+      "type": "COMBO",
+      "linkIds": [
+       17
+      ],
+      "label": "Model",
+      "pos": [
+       0,
+       0
+      ]
+     },
+     {
+      "id": "17a54d1c-3135-5208-80e9-942e4c6236e2",
+      "name": "te",
+      "type": "COMBO",
+      "linkIds": [
+       18
+      ],
+      "label": "Text encoder",
+      "pos": [
+       0,
+       0
+      ]
+     },
+     {
+      "id": "990bf0ff-0ce2-51a8-9e8a-a5e70ec0a398",
+      "name": "vae",
+      "type": "COMBO",
+      "linkIds": [
+       19
+      ],
+      "label": "VAE",
+      "pos": [
+       0,
+       0
+      ]
+     }
+    ],
+    "outputs": [
+     {
+      "id": "81fba9b3-e7a6-53b8-a419-522fd8592c30",
+      "name": "image",
+      "type": "IMAGE",
+      "linkIds": [
+       20
+      ],
+      "label": "Result",
+      "localized_name": "image",
+      "pos": [
+       0,
+       0
+      ]
+     }
+    ],
+    "widgets": [],
+    "nodes": [
+     {
+      "id": 1,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+       30,
+       70
+      ],
+      "size": [
+       400,
+       220
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "value",
+        "name": "value",
+        "type": "STRING",
+        "widget": {
+         "name": "value"
+        },
+        "link": 13
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "STRING",
+        "name": "STRING",
+        "type": "STRING",
+        "links": [
+         2
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "PrimitiveStringMultiline",
+       "cnr_id": "comfy-core",
+       "ver": "0.45.3"
+      },
+      "title": "Prompt",
+      "widgets_values": [
+       "A photograph of a small second-hand bookshop on a rainy cobbled street at dusk. Warm yellow light spills from the big shop window onto the wet stones. Behind the glass, stacks of old hardcover books, a sleeping ginger cat on a velvet cushion and a brass reading lamp. Above the door a hand-painted wooden sign in dark green with gold letters reads \"THE LAST CHAPTER\". A woman in a mustard raincoat with a black umbrella walks past on the left, slightly blurred. Reflections of the window in the puddles, soft blue evening sky, shot on a 35 mm lens at eye level, natural colours, fine detail in the wood grain and the book spines."
+      ]
+     },
+     {
+      "id": 2,
+      "type": "ResolutionSelector",
+      "pos": [
+       30,
+       340
+      ],
+      "size": [
+       400,
+       160
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "aspect_ratio",
+        "name": "aspect_ratio",
+        "type": "COMBO",
+        "widget": {
+         "name": "aspect_ratio"
+        },
+        "link": 14
+       },
+       {
+        "localized_name": "megapixels",
+        "name": "megapixels",
+        "type": "FLOAT",
+        "widget": {
+         "name": "megapixels"
+        },
+        "link": 15
+       },
+       {
+        "localized_name": "multiple",
+        "name": "multiple",
+        "type": "INT",
+        "widget": {
+         "name": "multiple"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "width",
+        "name": "width",
+        "type": "INT",
+        "links": [
+         3
+        ]
+       },
+       {
+        "localized_name": "height",
+        "name": "height",
+        "type": "INT",
+        "links": [
+         4
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "ResolutionSelector",
+       "cnr_id": "comfy-core",
+       "ver": "0.45.3"
+      },
+      "title": "Size",
+      "widgets_values": [
+       "3:2 (Photo)",
+       7.5,
+       32
+      ]
+     },
+     {
+      "id": 3,
+      "type": "PrimitiveInt",
+      "pos": [
+       30,
+       550
+      ],
+      "size": [
+       400,
+       90
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "value",
+        "name": "value",
+        "type": "INT",
+        "widget": {
+         "name": "value"
+        },
+        "link": 16
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "INT",
+        "name": "INT",
+        "type": "INT",
+        "links": [
+         10
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "PrimitiveInt",
+       "cnr_id": "comfy-core",
+       "ver": "0.45.3"
+      },
+      "title": "Seed",
+      "widgets_values": [
+       24112026,
+       "fixed"
+      ]
+     },
+     {
+      "id": 4,
+      "type": "UNETLoader",
+      "pos": [
+       550,
+       70
+      ],
+      "size": [
+       460,
+       90
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "unet_name",
+        "name": "unet_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "unet_name"
+        },
+        "link": 17
+       },
+       {
+        "localized_name": "weight_dtype",
+        "name": "weight_dtype",
+        "type": "COMBO",
+        "widget": {
+         "name": "weight_dtype"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "MODEL",
+        "name": "MODEL",
+        "type": "MODEL",
+        "links": [
+         6
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "UNETLoader",
+       "cnr_id": "comfy-core",
+       "ver": "0.45.3",
+       "models": [
+        {
+         "name": "minimax_h3_image_pruned_w4a8.safetensors",
+         "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/diffusion_models/minimax_h3_image_pruned_w4a8.safetensors",
+         "directory": "diffusion_models"
+        }
+       ]
+      },
+      "title": "H3 Image model, W4A8",
+      "widgets_values": [
+       "minimax_h3_image_pruned_w4a8.safetensors",
+       "default"
+      ]
+     },
+     {
+      "id": 5,
+      "type": "CLIPLoader",
+      "pos": [
+       550,
+       210
+      ],
+      "size": [
+       460,
+       110
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "clip_name",
+        "name": "clip_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "clip_name"
+        },
+        "link": 18
+       },
+       {
+        "localized_name": "type",
+        "name": "type",
+        "type": "COMBO",
+        "widget": {
+         "name": "type"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "device",
+        "name": "device",
+        "type": "COMBO",
+        "widget": {
+         "name": "device"
+        },
+        "shape": 7,
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "CLIP",
+        "name": "CLIP",
+        "type": "CLIP",
+        "links": [
+         1
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "CLIPLoader",
+       "cnr_id": "comfy-core",
+       "ver": "0.45.3",
+       "models": [
+        {
+         "name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+         "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+         "directory": "text_encoders"
+        }
+       ]
+      },
+      "title": "Text encoder, Qwen3-VL 32B NVFP4",
+      "widgets_values": [
+       "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+       "minimax",
+       "default"
+      ]
+     },
+     {
+      "id": 6,
+      "type": "VAELoader",
+      "pos": [
+       550,
+       370
+      ],
+      "size": [
+       460,
+       60
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "vae_name",
+        "name": "vae_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "vae_name"
+        },
+        "link": 19
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "VAE",
+        "name": "VAE",
+        "type": "VAE",
+        "links": [
+         12
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "VAELoader",
+       "cnr_id": "comfy-core",
+       "ver": "0.45.3",
+       "models": [
+        {
+         "name": "minimax_h3_image_vae_fp16.safetensors",
+         "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/vae/minimax_h3_image_vae_fp16.safetensors",
+         "directory": "vae"
+        }
+       ]
+      },
+      "title": "H3 Image VAE",
+      "widgets_values": [
+       "minimax_h3_image_vae_fp16.safetensors"
+      ]
+     },
+     {
+      "id": 7,
+      "type": "MiniMaxH3ImageConditioning",
+      "pos": [
+       1130,
+       70
+      ],
+      "size": [
+       400,
+       160
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "clip",
+        "name": "clip",
+        "type": "CLIP",
+        "link": 1
+       },
+       {
+        "localized_name": "vae",
+        "name": "vae",
+        "type": "VAE",
+        "shape": 7,
+        "link": null
+       },
+       {
+        "localized_name": "image_0",
+        "name": "images.image_0",
+        "type": "IMAGE",
+        "shape": 7,
+        "link": null
+       },
+       {
+        "localized_name": "prompt",
+        "name": "prompt",
+        "type": "STRING",
+        "widget": {
+         "name": "prompt"
+        },
+        "link": 2
+       },
+       {
+        "localized_name": "width",
+        "name": "width",
+        "type": "INT",
+        "widget": {
+         "name": "width"
+        },
+        "link": 3
+       },
+       {
+        "localized_name": "height",
+        "name": "height",
+        "type": "INT",
+        "widget": {
+         "name": "height"
+        },
+        "link": 4
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "positive",
+        "name": "positive",
+        "type": "CONDITIONING",
+        "links": [
+         5,
+         7
+        ]
+       },
+       {
+        "localized_name": "LATENT",
+        "name": "LATENT",
+        "type": "LATENT",
+        "links": [
+         9
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "MiniMaxH3ImageConditioning",
+       "cnr_id": "comfy-core",
+       "ver": "0.45.3"
+      },
+      "title": "Prompt → conditioning + empty canvas",
+      "widgets_values": [
+       "",
+       0,
+       0
+      ]
+     },
+     {
+      "id": 8,
+      "type": "ConditioningZeroOut",
+      "pos": [
+       1130,
+       280
+      ],
+      "size": [
+       400,
+       60
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "conditioning",
+        "name": "conditioning",
+        "type": "CONDITIONING",
+        "link": 5
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "CONDITIONING",
+        "name": "CONDITIONING",
+        "type": "CONDITIONING",
+        "links": [
+         8
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "ConditioningZeroOut",
+       "cnr_id": "comfy-core",
+       "ver": "0.45.3"
+      },
+      "title": "Empty negative (never read at CFG 1)"
+     },
+     {
+      "id": 9,
+      "type": "KSampler",
+      "pos": [
+       1650,
+       70
+      ],
+      "size": [
+       400,
+       280
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "model",
+        "name": "model",
+        "type": "MODEL",
+        "link": 6
+       },
+       {
+        "localized_name": "positive",
+        "name": "positive",
+        "type": "CONDITIONING",
+        "link": 7
+       },
+       {
+        "localized_name": "negative",
+        "name": "negative",
+        "type": "CONDITIONING",
+        "link": 8
+       },
+       {
+        "localized_name": "latent_image",
+        "name": "latent_image",
+        "type": "LATENT",
+        "link": 9
+       },
+       {
+        "localized_name": "seed",
+        "name": "seed",
+        "type": "INT",
+        "widget": {
+         "name": "seed"
+        },
+        "link": 10
+       },
+       {
+        "localized_name": "steps",
+        "name": "steps",
+        "type": "INT",
+        "widget": {
+         "name": "steps"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "cfg",
+        "name": "cfg",
+        "type": "FLOAT",
+        "widget": {
+         "name": "cfg"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "sampler_name",
+        "name": "sampler_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "sampler_name"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "scheduler",
+        "name": "scheduler",
+        "type": "COMBO",
+        "widget": {
+         "name": "scheduler"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "denoise",
+        "name": "denoise",
+        "type": "FLOAT",
+        "widget": {
+         "name": "denoise"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "LATENT",
+        "name": "LATENT",
+        "type": "LATENT",
+        "links": [
+         11
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "KSampler",
+       "cnr_id": "comfy-core",
+       "ver": "0.45.3"
+      },
+      "title": "Sampler (6 steps, CFG 1, fixed by the model)",
+      "widgets_values": [
+       24112026,
+       "fixed",
+       6,
+       1.0,
+       "euler",
+       "simple",
+       1.0
+      ]
+     },
+     {
+      "id": 10,
+      "type": "VAEDecode",
+      "pos": [
+       2170,
+       70
+      ],
+      "size": [
+       340,
+       60
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "samples",
+        "name": "samples",
+        "type": "LATENT",
+        "link": 11
+       },
+       {
+        "localized_name": "vae",
+        "name": "vae",
+        "type": "VAE",
+        "link": 12
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "IMAGE",
+        "name": "IMAGE",
+        "type": "IMAGE",
+        "links": [
+         20
+        ]
+       }
+      ],
+      "properties": {
+       "Node name for S&R": "VAEDecode",
+       "cnr_id": "comfy-core",
+       "ver": "0.45.3"
+      },
+      "title": "Latent → picture"
+     }
+    ],
+    "groups": [
+     {
+      "id": 1,
+      "title": "Settings (shown on the node outside)",
+      "bounding": [
+       0,
+       0,
+       460,
+       680
+      ],
+      "color": "#8A8",
+      "font_size": 24,
+      "flags": {}
+     },
+     {
+      "id": 2,
+      "title": "Models",
+      "bounding": [
+       520,
+       0,
+       520,
+       470
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+     },
+     {
+      "id": 3,
+      "title": "Prompt + empty canvas",
+      "bounding": [
+       1100,
+       0,
+       460,
+       380
+      ],
+      "color": "#a1309b",
+      "font_size": 24,
+      "flags": {}
+     },
+     {
+      "id": 4,
+      "title": "Sampling · 6 steps, CFG 1, euler / simple",
+      "bounding": [
+       1620,
+       0,
+       460,
+       390
+      ],
+      "color": "#b06634",
+      "font_size": 24,
+      "flags": {}
+     },
+     {
+      "id": 5,
+      "title": "Decode",
+      "bounding": [
+       2140,
+       0,
+       400,
+       170
+      ],
+      "color": "#b58b2a",
+      "font_size": 24,
+      "flags": {}
+     }
+    ],
+    "links": [
+     {
+      "id": 1,
+      "origin_id": 5,
+      "origin_slot": 0,
+      "target_id": 7,
+      "target_slot": 0,
+      "type": "CLIP"
+     },
+     {
+      "id": 2,
+      "origin_id": 1,
+      "origin_slot": 0,
+      "target_id": 7,
+      "target_slot": 3,
+      "type": "STRING"
+     },
+     {
+      "id": 3,
+      "origin_id": 2,
+      "origin_slot": 0,
+      "target_id": 7,
+      "target_slot": 4,
+      "type": "INT"
+     },
+     {
+      "id": 4,
+      "origin_id": 2,
+      "origin_slot": 1,
+      "target_id": 7,
+      "target_slot": 5,
+      "type": "INT"
+     },
+     {
+      "id": 5,
+      "origin_id": 7,
+      "origin_slot": 0,
+      "target_id": 8,
+      "target_slot": 0,
+      "type": "CONDITIONING"
+     },
+     {
+      "id": 6,
+      "origin_id": 4,
+      "origin_slot": 0,
+      "target_id": 9,
+      "target_slot": 0,
+      "type": "MODEL"
+     },
+     {
+      "id": 7,
+      "origin_id": 7,
+      "origin_slot": 0,
+      "target_id": 9,
+      "target_slot": 1,
+      "type": "CONDITIONING"
+     },
+     {
+      "id": 8,
+      "origin_id": 8,
+      "origin_slot": 0,
+      "target_id": 9,
+      "target_slot": 2,
+      "type": "CONDITIONING"
+     },
+     {
+      "id": 9,
+      "origin_id": 7,
+      "origin_slot": 1,
+      "target_id": 9,
+      "target_slot": 3,
+      "type": "LATENT"
+     },
+     {
+      "id": 10,
+      "origin_id": 3,
+      "origin_slot": 0,
+      "target_id": 9,
+      "target_slot": 4,
+      "type": "INT"
+     },
+     {
+      "id": 11,
+      "origin_id": 9,
+      "origin_slot": 0,
+      "target_id": 10,
+      "target_slot": 0,
+      "type": "LATENT"
+     },
+     {
+      "id": 12,
+      "origin_id": 6,
+      "origin_slot": 0,
+      "target_id": 10,
+      "target_slot": 1,
+      "type": "VAE"
+     },
+     {
+      "id": 13,
+      "origin_id": -10,
+      "origin_slot": 0,
+      "target_id": 1,
+      "target_slot": 0,
+      "type": "STRING"
+     },
+     {
+      "id": 14,
+      "origin_id": -10,
+      "origin_slot": 1,
+      "target_id": 2,
+      "target_slot": 0,
+      "type": "COMBO"
+     },
+     {
+      "id": 15,
+      "origin_id": -10,
+      "origin_slot": 2,
+      "target_id": 2,
+      "target_slot": 1,
+      "type": "FLOAT"
+     },
+     {
+      "id": 16,
+      "origin_id": -10,
+      "origin_slot": 3,
+      "target_id": 3,
+      "target_slot": 0,
+      "type": "INT"
+     },
+     {
+      "id": 17,
+      "origin_id": -10,
+      "origin_slot": 4,
+      "target_id": 4,
+      "target_slot": 0,
+      "type": "COMBO"
+     },
+     {
+      "id": 18,
+      "origin_id": -10,
+      "origin_slot": 5,
+      "target_id": 5,
+      "target_slot": 0,
+      "type": "COMBO"
+     },
+     {
+      "id": 19,
+      "origin_id": -10,
+      "origin_slot": 6,
+      "target_id": 6,
+      "target_slot": 0,
+      "type": "COMBO"
+     },
+     {
+      "id": 20,
+      "origin_id": 10,
+      "origin_slot": 0,
+      "target_id": -20,
+      "target_slot": 0,
+      "type": "IMAGE"
+     }
+    ],
+    "extra": {}
+   }
+  ]
+ },
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.6,
+   "offset": [
+    860,
+    120
+   ]
+  },
+  "linearData": {
+   "inputs": [
+    [
+     1,
+     "prompt"
+    ],
+    [
+     1,
+     "aspect"
+    ],
+    [
+     1,
+     "megapixels"
+    ],
+    [
+     1,
+     "seed"
+    ]
+   ],
+   "outputs": [
+    2
+   ]
+  }
+ },
+ "version": 0.4
+}

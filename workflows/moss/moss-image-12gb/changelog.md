@@ -1,4 +1,10 @@
 # Changelog · MOSS-Image · 12 GB
+## v2.0.0 (2026-11-24)
+- Text to image is **one node** now (a single subgraph): mode, prompt, shape, megapixels, enhancer, seed, the Quality settings and the model files on the outside, App mode set, second output shows the prompt the model gets. v1.0.2 moved to source/.
+- New **Mode**: Quality (25 steps, the v1.0.2 settings), Turbo (4 steps) and Turbo (8 steps) with the community LoRA `moss_sft_4step_rank_64_lora_comfyui.safetensors` (lvladikov, Apache-2.0, 0.59 GB, SHA-256 checked).
+- RTX 3060 12 GB, ComfyUI 0.45.3: Quality 59 s / 43 s, Turbo 4 steps 20 s / 5 to 6 s, Turbo 8 steps 23 s / 8 s (models unloaded first / same prompt with a new seed), 11.2 to 11.5 GiB peak VRAM. Quality gives the same pixels as v1.0.2.
+- New sample `moss-image-turbo-01.webp`, new `workflow.png`. Layout, edit and control files unchanged (v1.0.2).
+
 ## v1.0.2 (2026-11-24)
 - All four files rebuilt flat (no subgraphs) in numbered groups: 1 · Your inputs (also App mode), 2 · Models, then prompt, sampling, save. Plain-language input titles, a "How to use · v1.0.2" and a "Downloads + requirements" note in every file. v1.0.1 files moved to source/.
 - Same settings as v1.0.1 / Comfy's templates (steps, CFG, samplers, enhancer and Skip Layer Guidance defaults, edit and control settings).
