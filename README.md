@@ -9,9 +9,9 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 [![CivitAI](https://img.shields.io/badge/CivitAI-The__frizzy1-2b7cff?style=flat-square)](https://civitai.com/user/The_frizzy1)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-The--frizzy1-ffb000?style=flat-square)](https://huggingface.co/The-frizzy1)
 [![YouTube](https://img.shields.io/badge/YouTube-@the__frizzy1-ff0033?style=flat-square)](https://www.youtube.com/@the_frizzy1)
-[![Workflows](https://img.shields.io/badge/workflows-39-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-39-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-39-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-40-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-40-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-40-6a5cff?style=flat-square)](#workflows)
 [![Min VRAM](https://img.shields.io/badge/min%20VRAM-4%20GB-3ecf8e?style=flat-square)](#workflows)
 [![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
 
@@ -80,6 +80,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Animate a character** from a driving video, native nodes | [Wan Animate Ultimate · 12 GB](workflows/wan2.2/animate-ultimate) | 12 GB (GGUF path lower) |
 | **Krea 2** or **Kroma** images + style reference | [Krea 2 Ultimate · 12 GB](workflows/krea/krea-2-ultimate-12gb) | 4 GB+* |
 | One image → **textured 3D model** (.glb) | [Image to 3D Ultimate · 12 GB](workflows/3d/image-to-3d-ultimate-12gb) | 12 GB |
+| **Picture to video** with Hunyuan Video 1.5 (480p in 12 steps, optional 720p upscale) | [Hunyuan Video 1.5 I2V · 12 GB](workflows/hunyuan/video-1.5-i2v-12gb) | 12 GB target, not verified |
 | The **older Hunyuan** video path | [Hunyuan Video Low-VRAM](workflows/hunyuan/video) | 4 GB+ |
 | **Songs with vocals** from a style + your lyrics, or a cover of your song (YuE2) | [YuE2 Music · 12 GB](workflows/audio/yue2-music-12gb) | 4 GB+* |
 | **Songs with vocals** or instrumentals from a caption + your lyrics, up to 2 min 43 s tested (MiniMax Music 3) | [MiniMax Music 3 · 12 GB](workflows/audio/minimax-music3-12gb) | 12 GB (measured with v1.0.0 on an RTX 3060; v1.1.0 same files, not re-measured) |
@@ -103,6 +104,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[Wan 2.1 GGUF Low-VRAM](workflows/wan2.1/gguf-lowvram)** | v2.0.1 | 4 GB | T2V · I2V · VACE · FLF · Fun | [CivitAI](https://civitai.com/models/1309674) · [HF](https://huggingface.co/The-frizzy1/Wan21-GGUF-4GB-Workflow) · [▶](https://www.youtube.com/watch?v=Xqjabf_eQ_U&list=PLRe4JVWoY_AU) |
 | **[Wan 2.1 FLF2V](workflows/wan2.1/flf2v)** | v2.0.1 | 4 GB | First → Last frame | [CivitAI](https://civitai.com/models/1624167) |
 | **[Hunyuan Video Low-VRAM](workflows/hunyuan/video)** | v1.1.2 | 4 GB | T2V · I2V | [CivitAI](https://civitai.com/models/1312419) · [HF](https://huggingface.co/The-frizzy1/Hunyuan-Video-Low-VRAM-4GB) |
+| **[Hunyuan Video 1.5 I2V · 12 GB](workflows/hunyuan/video-1.5-i2v-12gb)** | v1.0.0 | 12 GB | I2V (480p step-distilled, 12 steps) · optional 720p upscale | — |
 | **[LTX-2 GGUF](workflows/ltx/ltx2)** | v2.0.1 | 4 GB | T2V · I2V · audio | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX2-GGUF-workflow) · [▶](https://www.youtube.com/watch?v=nnHUBMgdJac&list=PLQ3PcJNbU2Ls) |
 | **[LTX-2.3 Ultimate · 12 GB](workflows/ltx/ltx2.3-ultimate)** | v3.0.1 | 12 GB | T2V · I2V · FFLF · audio · ID | [CivitAI](https://civitai.com/models/2339823) · [HF](https://huggingface.co/The-frizzy1/LTX23-Ultimate) · [▶](https://www.youtube.com/watch?v=im4wolfHvMk&list=PLQ3PcJNbU2Ls) |
 | **[MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb)** | v2.4.0 | 12 GB | T2V · I2V · last · FLF · R2V · multiframe · ControlNet pose · extend · audio | [▶](https://www.youtube.com/watch?v=KJNksY9Ur3w&list=PLMztlpsP7Bgg) · [▶](https://www.youtube.com/watch?v=H2lZud6dbf4&list=PLMztlpsP7Bgg) |
@@ -252,7 +254,7 @@ The_frizzy1-Workflows/
 │   ├── ltx/               ltx-2.5-ultimate-12gb · ltx2.3-ultimate · ltx2
 │   ├── wan2.2/            animate-ultimate · animate · gguf-lowvram · aio-rapid
 │   ├── wan2.1/            gguf-lowvram · flf2v
-│   ├── hunyuan/           video
+│   ├── hunyuan/           video-1.5-i2v-12gb · video
 │   ├── qwen/              image-2.1-ultimate-12gb · image-2.1-12gb · image-edit-2509
 │   ├── krea/              krea-2-ultimate-12gb
 │   ├── ming/              image-0.1-design-12gb
