@@ -1,0 +1,41 @@
+{
+  "workflow": "ernie/ernie-image",
+  "files": [
+    {
+      "name": "ernie-image-turbo.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/ERNIE-Image/resolve/main/diffusion_models/ernie-image-turbo.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "ERNIE-Image Turbo diffusion model, bf16 (Comfy-Org). 16.07 GB."
+    },
+    {
+      "name": "ministral-3-3b.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/ERNIE-Image/resolve/main/text_encoders/ministral-3-3b.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "Ministral 3B text encoder. 7.72 GB."
+    },
+    {
+      "name": "ernie-image-prompt-enhancer.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/ERNIE-Image/resolve/main/text_encoders/ernie-image-prompt-enhancer.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "Prompt enhancer LLM. Needed even with the enhancer off (ComfyUI checks every loader). 6.88 GB."
+    },
+    {
+      "name": "flux2-vae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/ERNIE-Image/resolve/main/vae/flux2-vae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "Flux.2 VAE. 0.34 GB."
+    },
+    {
+      "name": "ernie-image-turbo-fp8.safetensors",
+      "url": "https://huggingface.co/Bedovyy/ERNIE-Image-Quantized/resolve/main/ernie-image-turbo-fp8.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "Optional community fp8 model, faster; pick it in the model loader. 8.22 GB."
+    }
+  ],
+  "nodes": []
+}
