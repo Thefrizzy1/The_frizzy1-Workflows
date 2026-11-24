@@ -1,0 +1,13 @@
+{
+  "workflow": "sd3.5/large",
+  "files": [
+    {
+      "name": "sd3.5_large_fp8_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/stable-diffusion-3.5/resolve/main/sd3.5_large_fp8_scaled.safetensors",
+      "dest": "checkpoints",
+      "required": true,
+      "note": "SD3.5 Large fp8 scaled checkpoint (model, CLIP-L, CLIP-G, T5-XXL fp8 and VAE in one file). 14.93 GB."
+    }
+  ],
+  "nodes": []
+}
