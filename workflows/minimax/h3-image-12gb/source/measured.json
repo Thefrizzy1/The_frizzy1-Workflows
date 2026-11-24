@@ -1,0 +1,11 @@
+{
+ "t2i_size": "3424x2304 at 3:2",
+ "edit_size": "1776x1184 in → 2496x1664 out at 4; example.png 768x768 → 2048x2048",
+ "area_size": "1776x1184 → 2496x1664 at 4",
+ "t2i_expect": "3424x2304 (7.5 MP) in 30 to 31 s; 16 MP (5024x3360) in 65 to 66 s. Times from the lab card, first run after start with the model load; files already in the system's file cache.",
+ "edit_expect": "One picture: 2496x1664 in 42 to 44 s; with Picture 2: 66 to 68 s (lab card, models already loaded by an earlier run).",
+ "area_expect": "43 to 44 s for a 1776x1184 picture at 4 MP (lab card, models already loaded). On a PNG input every pixel outside the soft edge stayed the original (0 pixels changed).",
+ "tested": "RTX PRO 4000 Blackwell 24 GB, 64 GB RAM, ComfyUI 0.45.3, inside a 10 GiB and a 12 GiB VRAM budget (--reserve-vram). Not run on an RTX 3060.",
+ "vram": "In a 10 GiB budget the whole GPU peaked at 10.8 to 11.4 GiB (same times, same pictures as without a budget). In a 12 GiB budget ComfyUI took 11.9 to 12.5 GiB. Not verified on a real 12 GB card.",
+ "ram": "System RAM: the ComfyUI process peaked at 20.6 GiB in the 10 GiB budget (16.5 GiB in the 12 GiB one); plan on 32 GB of RAM. 16 GB was not tested."
+}
