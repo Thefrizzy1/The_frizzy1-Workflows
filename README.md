@@ -9,21 +9,21 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 [![CivitAI](https://img.shields.io/badge/CivitAI-The__frizzy1-2b7cff?style=flat-square)](https://civitai.com/user/The_frizzy1)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-The--frizzy1-ffb000?style=flat-square)](https://huggingface.co/The-frizzy1)
 [![YouTube](https://img.shields.io/badge/YouTube-@the__frizzy1-ff0033?style=flat-square)](https://www.youtube.com/@the_frizzy1)
-[![Workflows](https://img.shields.io/badge/workflows-50-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-50-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-50-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-50-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-50-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-50-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-50-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-50-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-50-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-50-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-50-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-50-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-50-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-50-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-50-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
 [![Min VRAM](https://img.shields.io/badge/min%20VRAM-4%20GB-3ecf8e?style=flat-square)](#workflows)
 [![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
 
@@ -83,6 +83,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Anime and illustration** images in 4 to 23 s (Anima Base v1.0 + Turbo switch, non-commercial model) | [Anima](workflows/anima/anima) | 12 GB target, not verified |
 | **Text to image** with SDXL base 1.0 (one 6.94 GB file, 25 steps) | [SDXL](workflows/sdxl/sdxl) | 12 GB target, not verified |
 | **2048x2048 pictures with readable text, or a written edit** with HiDream-O1-Image (8B, MIT) | [HiDream-O1-Image · 12 GB](workflows/hidream/hidream-o1-12gb) | 12 GB target, not verified |
+| **Text to image with a working negative prompt**: Chroma1-HD (Apache-2.0, fp8, 26 steps) | [Chroma1-HD](workflows/chroma/chroma) | 12 GB target, not verified |
 | **Posters and text in pictures** with ERNIE-Image Turbo (8 steps, optional prompt enhancer, Apache-2.0) | [ERNIE-Image Turbo](workflows/ernie/ernie-image) | 12 GB target, not verified |
 | **Text to image** with Stable Diffusion 3.5 Large (one 14.93 GB fp8 file, 20 steps, short text in the picture) | [Stable Diffusion 3.5 Large](workflows/sd3.5/large) | 12 GB target, not verified |
 | **Fast text to image** with Microsoft Mage-Flow (4B, MIT): about 8 s per picture, clean text on signs | [Mage-Flow](workflows/mage/mage-flow) | 12 GB target, not verified |
@@ -165,6 +166,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[Anima](workflows/anima/anima)** | v1.0.0 | 12 GB (not verified) | T2I anime / illustration · Turbo switch (8 steps) · non-commercial model | — |
 | **[SDXL](workflows/sdxl/sdxl)** | v1.0.0 | 12 GB (not verified) | T2I · SDXL base 1.0 · one checkpoint file | — |
 | **[HiDream-O1-Image · 12 GB](workflows/hidream/hidream-o1-12gb)** | v1.0.0 | 12 GB (not verified) | T2I 2048x2048 · edit · Gemma 4 prompt rewrite · MIT | — |
+| **[Chroma1-HD](workflows/chroma/chroma)** | v1.0.0 | 12 GB (not verified) | T2I · real CFG + negative prompt · fp8 · Apache-2.0 | — |
 | **[ERNIE-Image Turbo](workflows/ernie/ernie-image)** | v1.0.0 | 12 GB (not verified) | T2I · text in pictures · 8 steps · prompt enhancer · Apache-2.0 | — |
 | **[Stable Diffusion 3.5 Large](workflows/sd3.5/large)** | v1.0.0 | 12 GB (not verified) | T2I · SD3.5 Large fp8 · one checkpoint file · Stability AI Community License | — |
 | **[Mage-Flow](workflows/mage/mage-flow)** | v1.0.0 | 12 GB (not verified) | T2I · Mage-Flow 4B int8 · 20 steps · MIT | — |
@@ -296,6 +298,7 @@ The_frizzy1-Workflows/
 │   ├── firered/           image-edit-1.1
 │   ├── sdxl/              sdxl
 │   ├── hidream/           hidream-o1-12gb
+│   ├── chroma/            chroma
 │   ├── ernie/             ernie-image
 │   ├── sd3.5/             large
 │   ├── bernini/           bernini-r
