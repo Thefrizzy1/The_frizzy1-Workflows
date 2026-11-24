@@ -9,12 +9,12 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 [![CivitAI](https://img.shields.io/badge/CivitAI-The__frizzy1-2b7cff?style=flat-square)](https://civitai.com/user/The_frizzy1)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-The--frizzy1-ffb000?style=flat-square)](https://huggingface.co/The-frizzy1)
 [![YouTube](https://img.shields.io/badge/YouTube-@the__frizzy1-ff0033?style=flat-square)](https://www.youtube.com/@the_frizzy1)
-[![Workflows](https://img.shields.io/badge/workflows-45-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-45-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-45-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-45-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-45-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-45-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-46-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-46-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-46-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-46-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-46-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-46-6a5cff?style=flat-square)](#workflows)
 [![Min VRAM](https://img.shields.io/badge/min%20VRAM-4%20GB-3ecf8e?style=flat-square)](#workflows)
 [![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
 
@@ -72,6 +72,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Kandinsky 5.0 Lite** (MIT): text to image, text to video, image to video | [Kandinsky 5.0 Lite](workflows/kandinsky/kandinsky-5) | 12 GB target, not verified |
 | **Anime and illustration** images in 4 to 23 s (Anima Base v1.0 + Turbo switch, non-commercial model) | [Anima](workflows/anima/anima) | 12 GB target, not verified |
 | **Text to image** with SDXL base 1.0 (one 6.94 GB file, 25 steps) | [SDXL](workflows/sdxl/sdxl) | 12 GB target, not verified |
+| **Text to image** with Stable Diffusion 3.5 Large (one 14.93 GB fp8 file, 20 steps, short text in the picture) | [Stable Diffusion 3.5 Large](workflows/sd3.5/large) | 12 GB target, not verified |
 | **Fast text to image** with Microsoft Mage-Flow (4B, MIT): about 8 s per picture, clean text on signs | [Mage-Flow](workflows/mage/mage-flow) | 12 GB target, not verified |
 | A **talking video** from one picture and a speech clip, lips synced (InfiniteTalk on Wan 2.1, Apache-2.0, up to 9 s) | [InfiniteTalk Talking Video](workflows/wan2.1/infinitetalk) | 12 GB target, not verified |
 | Newer **LTX video** (audio-aware) | [LTX-2](workflows/ltx/ltx2) · [LTX-2.3 Ultimate · 12 GB](workflows/ltx/ltx2.3-ultimate) | 4–12 GB |
@@ -148,6 +149,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[Kandinsky 5.0 Lite](workflows/kandinsky/kandinsky-5)** | v1.0.0 | 12 GB (not verified) | T2I · T2V (16-step) · I2V · MIT | — |
 | **[Anima](workflows/anima/anima)** | v1.0.0 | 12 GB (not verified) | T2I anime / illustration · Turbo switch (8 steps) · non-commercial model | — |
 | **[SDXL](workflows/sdxl/sdxl)** | v1.0.0 | 12 GB (not verified) | T2I · SDXL base 1.0 · one checkpoint file | — |
+| **[Stable Diffusion 3.5 Large](workflows/sd3.5/large)** | v1.0.0 | 12 GB (not verified) | T2I · SD3.5 Large fp8 · one checkpoint file · Stability AI Community License | — |
 | **[Mage-Flow](workflows/mage/mage-flow)** | v1.0.0 | 12 GB (not verified) | T2I · Mage-Flow 4B int8 · 20 steps · MIT | — |
 | **[Krea 2 Ultimate · 12 GB](workflows/krea/krea-2-ultimate-12gb)** | v2.1.1 | 4 GB* | T2I · style reference · style LoRAs · Kroma | — |
 
@@ -276,6 +278,7 @@ The_frizzy1-Workflows/
 │   ├── fibo/              fibo2-edit-12gb
 │   ├── firered/           image-edit-1.1
 │   ├── sdxl/              sdxl
+│   ├── sd3.5/             large
 │   ├── bernini/           bernini-r
 │   ├── z-image/           turbo
 │   ├── scail/             scail2-character-swap-12gb

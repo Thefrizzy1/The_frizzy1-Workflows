@@ -1,0 +1,1081 @@
+{
+ "id": "5d3a5c1e-8e0d-4b7a-9a11-241120260835",
+ "revision": 0,
+ "last_node_id": 16,
+ "last_link_id": 16,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    -60,
+    50
+   ],
+   "size": [
+    520,
+    220
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "STRING",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Prompt"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      2
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Prompt (describe the picture)",
+   "widgets_values": [
+    "a bottle with a pink and red galaxy inside it on top of a wooden table on a table in the middle of a modern kitchen with a window to the outdoors mountain range bright sun clouds forest"
+   ]
+  },
+  {
+   "id": 2,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    -60,
+    320
+   ],
+   "size": [
+    520,
+    130
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "STRING",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Negative prompt"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      4
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Negative prompt (empty = template)",
+   "widgets_values": [
+    ""
+   ]
+  },
+  {
+   "id": 3,
+   "type": "ResolutionSelector",
+   "pos": [
+    -60,
+    500
+   ],
+   "size": [
+    520,
+    170
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "aspect_ratio",
+     "name": "aspect_ratio",
+     "type": "COMBO",
+     "widget": {
+      "name": "aspect_ratio"
+     },
+     "link": null,
+     "label": "Shape"
+    },
+    {
+     "localized_name": "megapixels",
+     "name": "megapixels",
+     "type": "FLOAT",
+     "widget": {
+      "name": "megapixels"
+     },
+     "link": null,
+     "label": "Megapixels (1 = 1024x1024)"
+    },
+    {
+     "localized_name": "multiple",
+     "name": "multiple",
+     "type": "INT",
+     "widget": {
+      "name": "multiple"
+     },
+     "link": null,
+     "label": "multiple (leave at 16)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "width",
+     "name": "width",
+     "type": "INT",
+     "links": [
+      5
+     ]
+    },
+    {
+     "localized_name": "height",
+     "name": "height",
+     "type": "INT",
+     "links": [
+      6
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ResolutionSelector",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Size (pick the shape; 1 megapixel = 1024x1024)",
+   "widgets_values": [
+    "1:1 (Square)",
+    1.0,
+    16
+   ]
+  },
+  {
+   "id": 4,
+   "type": "PrimitiveInt",
+   "pos": [
+    -60,
+    720
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Steps (20 = template)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      12
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Steps (20 = template default)",
+   "widgets_values": [
+    20,
+    "fixed"
+   ]
+  },
+  {
+   "id": 5,
+   "type": "PrimitiveFloat",
+   "pos": [
+    -60,
+    860
+   ],
+   "size": [
+    520,
+    60
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "FLOAT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "CFG (4.01 = template)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "FLOAT",
+     "name": "FLOAT",
+     "type": "FLOAT",
+     "links": [
+      13
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveFloat",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "CFG (4.01 = template default)",
+   "widgets_values": [
+    4.01
+   ]
+  },
+  {
+   "id": 6,
+   "type": "PrimitiveInt",
+   "pos": [
+    -60,
+    970
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Seed"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      11
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Seed (new number = new picture)",
+   "widgets_values": [
+    24112026,
+    "fixed"
+   ]
+  },
+  {
+   "id": 7,
+   "type": "CheckpointLoaderSimple",
+   "pos": [
+    540,
+    50
+   ],
+   "size": [
+    440,
+    120
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "ckpt_name",
+     "name": "ckpt_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "ckpt_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      7
+     ]
+    },
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      1,
+      3
+     ]
+    },
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      15
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CheckpointLoaderSimple",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "sd3.5_large_fp8_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/stable-diffusion-3.5/resolve/main/sd3.5_large_fp8_scaled.safetensors",
+      "directory": "checkpoints"
+     }
+    ]
+   },
+   "title": "SD3.5 Large fp8 checkpoint (14.93 GB)",
+   "widgets_values": [
+    "sd3.5_large_fp8_scaled.safetensors"
+   ]
+  },
+  {
+   "id": 8,
+   "type": "MarkdownNote",
+   "pos": [
+    540,
+    220
+   ],
+   "size": [
+    440,
+    100
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Why there is only one loader",
+   "widgets_values": [
+    "**One file:** this checkpoint holds the model, all three text encoders (CLIP-L, CLIP-G, T5-XXL fp8) and the VAE. No separate text encoder download."
+   ]
+  },
+  {
+   "id": 9,
+   "type": "CLIPTextEncode",
+   "pos": [
+    1060,
+    50
+   ],
+   "size": [
+    400,
+    120
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1
+    },
+    {
+     "localized_name": "text",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": 2
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      8
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Prompt → conditioning",
+   "widgets_values": [
+    ""
+   ]
+  },
+  {
+   "id": 10,
+   "type": "CLIPTextEncode",
+   "pos": [
+    1060,
+    220
+   ],
+   "size": [
+    400,
+    120
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 3
+    },
+    {
+     "localized_name": "text",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": 4
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      9
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Negative prompt → conditioning",
+   "widgets_values": [
+    ""
+   ]
+  },
+  {
+   "id": 11,
+   "type": "EmptySD3LatentImage",
+   "pos": [
+    1540,
+    50
+   ],
+   "size": [
+    400,
+    130
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "width",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": 5
+    },
+    {
+     "localized_name": "height",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": 6
+    },
+    {
+     "localized_name": "batch_size",
+     "name": "batch_size",
+     "type": "INT",
+     "widget": {
+      "name": "batch_size"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      10
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "EmptySD3LatentImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Empty picture (size from group 1)",
+   "widgets_values": [
+    1024,
+    1024,
+    1
+   ]
+  },
+  {
+   "id": 12,
+   "type": "KSampler",
+   "pos": [
+    1540,
+    230
+   ],
+   "size": [
+    400,
+    290
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 7
+    },
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 8
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 9
+    },
+    {
+     "localized_name": "latent_image",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 10
+    },
+    {
+     "localized_name": "seed",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": 11
+    },
+    {
+     "localized_name": "steps",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": 12
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": 13
+    },
+    {
+     "localized_name": "sampler_name",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "scheduler",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "denoise",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      14
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Sampler · euler / sgm_uniform (from the template)",
+   "widgets_values": [
+    24112026,
+    "fixed",
+    20,
+    4.01,
+    "euler",
+    "sgm_uniform",
+    1.0
+   ]
+  },
+  {
+   "id": 13,
+   "type": "VAEDecode",
+   "pos": [
+    1060,
+    530
+   ],
+   "size": [
+    240,
+    60
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "samples",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 14
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 15
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      16
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Latent → picture"
+  },
+  {
+   "id": 14,
+   "type": "SaveImage",
+   "pos": [
+    1060,
+    640
+   ],
+   "size": [
+    400,
+    440
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 16
+    },
+    {
+     "localized_name": "filename_prefix",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SaveImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Result (saved to output/SD3.5)",
+   "widgets_values": [
+    "SD3.5/sd35"
+   ]
+  },
+  {
+   "id": 15,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    -30
+   ],
+   "size": [
+    640,
+    600
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "How to use · v1.0.0",
+   "widgets_values": [
+    "## How to use · v1.0.0\n\n**What it does:** Stable Diffusion 3.5 Large text to image from one fp8 checkpoint, 20 steps, 1024x1024 by default. Core ComfyUI nodes only.\n\n1. **Your inputs** (green group):\n   - **Prompt**: describe the picture. SD3.5 can write short text: put the words in quotes.\n   - **Negative prompt**: what to avoid. Empty in the template.\n   - **Size**: pick the shape; megapixels 1 = 1024x1024 (16:9 = 1360x768). Leave \"multiple\" at 16.\n   - **Steps** (20) and **CFG** (4.01): the template's values.\n   - **Seed**: fixed at 24112026, so the first Run gives the README picture. Type a new number (or set \"control after generate\" to randomize) for a new picture; Run with nothing changed does nothing.\n2. **Model**: the loader must show `sd3.5_large_fp8_scaled.safetensors` from the Downloads note. Nothing to change.\n3. **Prompt**: nothing to change; the text comes from group 1.\n4. **Sampling**: euler / sgm_uniform, from the template. More pictures per run: `batch_size` on the **Empty picture** node here.\n5. Press **Run**. The picture is saved by the **Result** node to `output/SD3.5/`.\n\n**What to expect:** about 23 s per 1024x1024 picture at 20 steps on the lab's 24 GB card (RTX PRO 4000 Blackwell), 24 s when the model has to load first (file already in the RAM cache). 16:9 (1360x768) took 22 s. In 12 and 10 GiB VRAM budgets the same pictures took 24-25 s (fresh instance, load included) and came out byte-identical.\n\n**CFG box shows 4.0:** the box rounds to one decimal; the value inside is 4.01 (checked in the prompt ComfyUI sends).\n\n**Text in the picture:** the sign \"FRESH BREAD\" came out spelled right on 3 of 3 seeds; smaller extra lettering (on an awning) came out as scribble.\n\n**Tested on:** ComfyUI 0.45.3, RTX PRO 4000 Blackwell 24 GB, 2026-11-24. Not verified on a 12 GB card.\n"
+   ]
+  },
+  {
+   "id": 16,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    630
+   ],
+   "size": [
+    640,
+    380
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Downloads + requirements",
+   "widgets_values": [
+    "## Downloads + requirements\n\nClick the file name to download it. Put it in the folder shown (inside `ComfyUI/models/`).\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `checkpoints/` | [sd3.5_large_fp8_scaled.safetensors](https://huggingface.co/Comfy-Org/stable-diffusion-3.5/resolve/main/sd3.5_large_fp8_scaled.safetensors) | 14.93 GB |\n\nOne file: the text encoders and the VAE are inside the checkpoint.\n\n**VRAM:** ComfyUI uses what it is given: 15.4 to 17.4 GiB (whole GPU) on a free 24 GB card. A second ComfyUI limited to a 12 GiB budget (`--reserve-vram`) peaked at 12.2 GiB (13.1 GiB whole GPU); limited to 10 GiB it peaked at 10.2 GiB (11.1 GiB whole GPU), took 24-25 s and gave byte-identical pictures. Not verified on a 12 GB card.\n\n**Run on ComfyUI 0.45.3** (the Size node needs a recent ComfyUI; older versions were not tested). **No custom nodes.**\n\nLicence: Stability AI Community License. Free for research, non-commercial use, and commercial use under $1M annual revenue. Read the model page.\n"
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   7,
+   1,
+   9,
+   0,
+   "CLIP"
+  ],
+  [
+   2,
+   1,
+   0,
+   9,
+   1,
+   "STRING"
+  ],
+  [
+   3,
+   7,
+   1,
+   10,
+   0,
+   "CLIP"
+  ],
+  [
+   4,
+   2,
+   0,
+   10,
+   1,
+   "STRING"
+  ],
+  [
+   5,
+   3,
+   0,
+   11,
+   0,
+   "INT"
+  ],
+  [
+   6,
+   3,
+   1,
+   11,
+   1,
+   "INT"
+  ],
+  [
+   7,
+   7,
+   0,
+   12,
+   0,
+   "MODEL"
+  ],
+  [
+   8,
+   9,
+   0,
+   12,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   9,
+   10,
+   0,
+   12,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   10,
+   11,
+   0,
+   12,
+   3,
+   "LATENT"
+  ],
+  [
+   11,
+   6,
+   0,
+   12,
+   4,
+   "INT"
+  ],
+  [
+   12,
+   4,
+   0,
+   12,
+   5,
+   "INT"
+  ],
+  [
+   13,
+   5,
+   0,
+   12,
+   6,
+   "FLOAT"
+  ],
+  [
+   14,
+   12,
+   0,
+   13,
+   0,
+   "LATENT"
+  ],
+  [
+   15,
+   7,
+   2,
+   13,
+   1,
+   "VAE"
+  ],
+  [
+   16,
+   13,
+   0,
+   14,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [
+  {
+   "id": 1,
+   "title": "1 · Your inputs (App mode shows these)",
+   "bounding": [
+    -80,
+    -30,
+    560,
+    1120
+   ],
+   "color": "#8A8",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 2,
+   "title": "2 · Model (loaded once)",
+   "bounding": [
+    520,
+    -30,
+    480,
+    380
+   ],
+   "color": "#3f789e",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 3,
+   "title": "3 · Prompt",
+   "bounding": [
+    1040,
+    -30,
+    440,
+    400
+   ],
+   "color": "#a1309b",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 4,
+   "title": "4 · Sampling",
+   "bounding": [
+    1520,
+    -30,
+    440,
+    580
+   ],
+   "color": "#b06634",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 5,
+   "title": "5 · Save",
+   "bounding": [
+    1040,
+    450,
+    440,
+    670
+   ],
+   "color": "#b58b2a",
+   "font_size": 24,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.55,
+   "offset": [
+    760,
+    120
+   ]
+  },
+  "linearData": {
+   "inputs": [
+    [
+     1,
+     "value"
+    ],
+    [
+     2,
+     "value"
+    ],
+    [
+     3,
+     "aspect_ratio"
+    ],
+    [
+     3,
+     "megapixels"
+    ],
+    [
+     4,
+     "value"
+    ],
+    [
+     5,
+     "value"
+    ],
+    [
+     6,
+     "value"
+    ]
+   ],
+   "outputs": [
+    14
+   ]
+  }
+ },
+ "version": 0.4
+}
