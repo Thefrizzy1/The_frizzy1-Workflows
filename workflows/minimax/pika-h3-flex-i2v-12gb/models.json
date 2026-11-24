@@ -1,0 +1,62 @@
+{
+  "workflow": "minimax/pika-h3-flex-i2v-12gb",
+  "files": [
+    {
+      "name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "MiniMax H3 FL2VA (video + audio), pruned int8 convrot. 21.0 GB."
+    },
+    {
+      "name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "Qwen3-VL 32B text encoder for H3, NVFP4 AWQ. 15.7 GB."
+    },
+    {
+      "name": "minimax_h3_video_vae_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_int8_convrot.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "H3 video VAE. 2.8 GB."
+    },
+    {
+      "name": "minimax_h3_audio_vae_fp32.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "H3 audio VAE. 0.6 GB."
+    },
+    {
+      "name": "pika_h3_flex_fl2va_v1_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/loras/pika_h3_flex_fl2va_v1_bf16.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": "Pika Flex FL2VA LoRA (official, 6 steps). 2.0 GB."
+    },
+    {
+      "name": "pika_h3_flex_turbo_4step_fl2va_lite_r32.safetensors",
+      "url": "https://huggingface.co/Pika-Labs/Pika-H3-Flex-Turbo-LoRA/resolve/main/pika_h3_flex_turbo_4step_fl2va_lite_r32.safetensors",
+      "dest": "loras",
+      "required": true,
+      "note": "Community Pika Flex Turbo LoRA, 4 steps, lite. 0.31 GB. Needed even with Turbo off (loader is checked)."
+    },
+    {
+      "name": "relayvsr_x2_lightx2v_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/RelayVSR/resolve/main/diffusion_models/relayvsr_x2_lightx2v_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "Group 7 (bypassed) only: RelayVSR x2. 5.2 GB."
+    },
+    {
+      "name": "relayvsr_flash_vae_x2_fp32.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/RelayVSR/resolve/main/vae/relayvsr_flash_vae_x2_fp32.safetensors",
+      "dest": "vae",
+      "required": false,
+      "note": "Group 7 (bypassed) only: RelayVSR x2 Flash decoder. 0.13 GB."
+    }
+  ],
+  "nodes": []
+}
