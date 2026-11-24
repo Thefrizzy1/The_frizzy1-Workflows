@@ -1,0 +1,1415 @@
+{
+ "id": "5b1e8f0c-3a6d-4c2e-9f11-f1a3c0de0110",
+ "revision": 0,
+ "last_node_id": 20,
+ "last_link_id": 21,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "LoadImage",
+   "pos": [
+    -60,
+    50
+   ],
+   "size": [
+    520,
+    420
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "COMBO",
+     "widget": {
+      "name": "image"
+     },
+     "link": null,
+     "label": "Photo to edit"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      4,
+      10
+     ]
+    },
+    {
+     "localized_name": "MASK",
+     "name": "MASK",
+     "type": "MASK",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Photo to edit",
+   "widgets_values": [
+    "h3_frame_ref_1.png",
+    "image"
+   ]
+  },
+  {
+   "id": 2,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    -60,
+    520
+   ],
+   "size": [
+    520,
+    230
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "STRING",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "What to change"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      2
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "What to change (and what to keep)",
+   "widgets_values": [
+    "Change the lighting to warm golden sunset sunlight coming from the right side, with amber highlights on her face and soft shadows to the left. Keep the woman, the apple, the blue background, the framing and all details unchanged."
+   ]
+  },
+  {
+   "id": 3,
+   "type": "PrimitiveFloat",
+   "pos": [
+    -60,
+    800
+   ],
+   "size": [
+    520,
+    60
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "FLOAT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Megapixels (1 = tested)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "FLOAT",
+     "name": "FLOAT",
+     "type": "FLOAT",
+     "links": [
+      5
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveFloat",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Output megapixels (1 = tested default)",
+   "widgets_values": [
+    1.0
+   ]
+  },
+  {
+   "id": 4,
+   "type": "PrimitiveInt",
+   "pos": [
+    -60,
+    910
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Seed"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      18
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Seed (new every run; fixed = keep it)",
+   "widgets_values": [
+    42,
+    "randomize"
+   ]
+  },
+  {
+   "id": 5,
+   "type": "UNETLoader",
+   "pos": [
+    540,
+    50
+   ],
+   "size": [
+    440,
+    90
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "unet_name",
+     "name": "unet_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "unet_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "weight_dtype",
+     "name": "weight_dtype",
+     "type": "COMBO",
+     "widget": {
+      "name": "weight_dtype"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      13
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UNETLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "flux3-image-klein-int8-convrot.safetensors",
+      "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/diffusion_models/flux3-image-klein-int8-convrot.safetensors",
+      "directory": "diffusion_models"
+     }
+    ]
+   },
+   "title": "FLUX 3 Klein int8 (5.8 GB)",
+   "widgets_values": [
+    "flux3-image-klein-int8-convrot.safetensors",
+    "default"
+   ]
+  },
+  {
+   "id": 6,
+   "type": "CLIPLoader",
+   "pos": [
+    540,
+    190
+   ],
+   "size": [
+    440,
+    110
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip_name",
+     "name": "clip_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "clip_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "type",
+     "name": "type",
+     "type": "COMBO",
+     "widget": {
+      "name": "type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "device",
+     "name": "device",
+     "type": "COMBO",
+     "widget": {
+      "name": "device"
+     },
+     "shape": 7,
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      1,
+      3
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "qwen3vl_4b_int8_convrot.safetensors",
+      "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/text_encoders/qwen3vl_4b_int8_convrot.safetensors",
+      "directory": "text_encoders"
+     }
+    ]
+   },
+   "title": "Qwen3-VL 4B text encoder int8 (4.9 GB)",
+   "widgets_values": [
+    "qwen3vl_4b_int8_convrot.safetensors",
+    "flux3",
+    "default"
+   ]
+  },
+  {
+   "id": 7,
+   "type": "VAELoader",
+   "pos": [
+    540,
+    350
+   ],
+   "size": [
+    440,
+    60
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "vae_name",
+     "name": "vae_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "vae_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      9,
+      20
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAELoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "flux2-vae.safetensors",
+      "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/vae/flux2-vae.safetensors",
+      "directory": "vae"
+     }
+    ]
+   },
+   "title": "FLUX 2 VAE (0.3 GB)",
+   "widgets_values": [
+    "flux2-vae.safetensors"
+   ]
+  },
+  {
+   "id": 8,
+   "type": "CLIPTextEncode",
+   "pos": [
+    1060,
+    50
+   ],
+   "size": [
+    420,
+    110
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1
+    },
+    {
+     "localized_name": "text",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": 2
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      7
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Edit text → conditioning",
+   "widgets_values": [
+    ""
+   ]
+  },
+  {
+   "id": 9,
+   "type": "CLIPTextEncode",
+   "pos": [
+    1060,
+    210
+   ],
+   "size": [
+    420,
+    110
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 3
+    },
+    {
+     "localized_name": "text",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      8
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Empty negative (unused at CFG 1)",
+   "widgets_values": [
+    ""
+   ]
+  },
+  {
+   "id": 10,
+   "type": "ImageScaleToTotalPixels",
+   "pos": [
+    1060,
+    370
+   ],
+   "size": [
+    420,
+    130
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 4
+    },
+    {
+     "localized_name": "upscale_method",
+     "name": "upscale_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "upscale_method"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "megapixels",
+     "name": "megapixels",
+     "type": "FLOAT",
+     "widget": {
+      "name": "megapixels"
+     },
+     "link": 5
+    },
+    {
+     "localized_name": "resolution_steps",
+     "name": "resolution_steps",
+     "type": "INT",
+     "widget": {
+      "name": "resolution_steps"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      6
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScaleToTotalPixels",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Photo → output size (keeps its shape)",
+   "widgets_values": [
+    "lanczos",
+    1.0,
+    16
+   ]
+  },
+  {
+   "id": 11,
+   "type": "GetImageSize",
+   "pos": [
+    1060,
+    550
+   ],
+   "size": [
+    420,
+    90
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 6
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "width",
+     "name": "width",
+     "type": "INT",
+     "links": [
+      11
+     ]
+    },
+    {
+     "localized_name": "height",
+     "name": "height",
+     "type": "INT",
+     "links": [
+      12
+     ]
+    },
+    {
+     "localized_name": "batch_size",
+     "name": "batch_size",
+     "type": "INT",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetImageSize",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Output width + height"
+  },
+  {
+   "id": 12,
+   "type": "ReferenceMultiLatent",
+   "pos": [
+    1060,
+    690
+   ],
+   "size": [
+    420,
+    150
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 7
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "shape": 7,
+     "link": 8
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "shape": 7,
+     "link": 9
+    },
+    {
+     "localized_name": "image0",
+     "name": "images.image0",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 10
+    },
+    {
+     "localized_name": "resolution",
+     "name": "resolution",
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "resolution"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "megapixels",
+     "name": "resolution.megapixels",
+     "type": "FLOAT",
+     "widget": {
+      "name": "resolution.megapixels"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "links": [
+      15
+     ]
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "links": [
+      16
+     ]
+    },
+    {
+     "localized_name": "empty_latent",
+     "name": "empty_latent",
+     "type": "LATENT",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ReferenceMultiLatent",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Photo as reference (resized to 1 MP)",
+   "widgets_values": [
+    "resize",
+    1.0
+   ]
+  },
+  {
+   "id": 13,
+   "type": "EmptyFlux2LatentImage",
+   "pos": [
+    1560,
+    50
+   ],
+   "size": [
+    400,
+    110
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "width",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": 11
+    },
+    {
+     "localized_name": "height",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": 12
+    },
+    {
+     "localized_name": "batch_size",
+     "name": "batch_size",
+     "type": "INT",
+     "widget": {
+      "name": "batch_size"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      17
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "EmptyFlux2LatentImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Empty picture (size of the photo)",
+   "widgets_values": [
+    1024,
+    1024,
+    1
+   ]
+  },
+  {
+   "id": 14,
+   "type": "ModelSamplingFlux",
+   "pos": [
+    1560,
+    210
+   ],
+   "size": [
+    400,
+    130
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 13
+    },
+    {
+     "localized_name": "max_shift",
+     "name": "max_shift",
+     "type": "FLOAT",
+     "widget": {
+      "name": "max_shift"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "base_shift",
+     "name": "base_shift",
+     "type": "FLOAT",
+     "widget": {
+      "name": "base_shift"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "width",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "height",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      14
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ModelSamplingFlux",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Timestep shift 2.77 (= BFL alpha 16)",
+   "widgets_values": [
+    2.77259,
+    2.77259,
+    1024,
+    1024
+   ]
+  },
+  {
+   "id": 15,
+   "type": "KSampler",
+   "pos": [
+    1560,
+    390
+   ],
+   "size": [
+    400,
+    290
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 14
+    },
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 15
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 16
+    },
+    {
+     "localized_name": "latent_image",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 17
+    },
+    {
+     "localized_name": "seed",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": 18
+    },
+    {
+     "localized_name": "steps",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "sampler_name",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "scheduler",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "denoise",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      19
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Sampler · 16 steps, CFG 1 (from the template)",
+   "widgets_values": [
+    42,
+    "fixed",
+    16,
+    1.0,
+    "euler",
+    "simple",
+    1.0
+   ]
+  },
+  {
+   "id": 16,
+   "type": "MarkdownNote",
+   "pos": [
+    1560,
+    730
+   ],
+   "size": [
+    400,
+    130
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Why a fixed shift",
+   "widgets_values": [
+    "**Why 2.77:** BFL's template sets *alpha* 16 and turns it into the shift with ln(alpha). ln(16) = 2.77259, written here as a number so there is one node less. Both shift values are the same on purpose: then the shift does not depend on the picture size."
+   ]
+  },
+  {
+   "id": 17,
+   "type": "VAEDecode",
+   "pos": [
+    2080,
+    50
+   ],
+   "size": [
+    240,
+    60
+   ],
+   "flags": {},
+   "order": 16,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "samples",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 19
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 20
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      21
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Latent → picture"
+  },
+  {
+   "id": 18,
+   "type": "SaveImage",
+   "pos": [
+    2080,
+    160
+   ],
+   "size": [
+    600,
+    700
+   ],
+   "flags": {},
+   "order": 17,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 21
+    },
+    {
+     "localized_name": "filename_prefix",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SaveImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Result (saved to output/Flux3Klein)",
+   "widgets_values": [
+    "Flux3Klein/edit-lowvram"
+   ]
+  },
+  {
+   "id": 19,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    -30
+   ],
+   "size": [
+    680,
+    440
+   ],
+   "flags": {},
+   "order": 18,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "How to use · v1.1.0",
+   "widgets_values": [
+    "## How to use · v1.1.0\n\n**What it does:** edits one photo with FLUX 3 Image Klein (distilled, int8) for 6 to 12 GB cards: no prompt upsampler, three files. Core ComfyUI nodes only.\n\n1. **Your inputs** (green group):\n   - **Photo to edit**: one picture. The result keeps its shape.\n   - **What to change**: say the change, then say what must stay (\"Keep the woman, the blue background ... unchanged\"). There is no upsampler here, so write the full sentence yourself.\n   - **Output megapixels**: 1 = about 1024x1024, the size every test run used (1360x768 for a 16:9 photo).\n   - **Seed**: a new one every run. Set \"control after generate\" to fixed to keep a picture.\n2. **Models**: three files from the Downloads note. Nothing to change.\n3. **Prompt + photo**: nothing to change. The photo goes in as the reference and also sets the output size.\n4. **Sampling**: 16 steps, CFG 1, euler / simple, shift 2.77: BFL's template values.\n5. Press **Run**. The picture is saved to `output/Flux3Klein/`.\n\n**What to expect:** about 15 to 17 s per picture at 1360x768 (1 MP) on the lab card, and the same time inside a 6, 8 or 12 GiB budget. A real 6 or 8 GB card is slower: not measured.\n\n**Why no upsampler:** BFL's upsampler is a 6.7 GB extra file. Leaving it out means 11.0 GB of downloads instead of 17.7 GB. You write the long instruction yourself. The other two files in this folder still have the upsampler.\n\n**Tested on:** ComfyUI 0.45.3 on an RTX PRO 4000 Blackwell 24 GB, capped to 6, 8 and 12 GiB budgets with --reserve-vram, 64 GB RAM. Not run on a real 6, 8 or 12 GB card.\n"
+   ]
+  },
+  {
+   "id": 20,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    450
+   ],
+   "size": [
+    680,
+    360
+   ],
+   "flags": {},
+   "order": 19,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Downloads + requirements",
+   "widgets_values": [
+    "## Downloads + requirements\n\nClick the file name to download it. Put it in the folder shown (inside `ComfyUI/models/`).\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `diffusion_models/` | [flux3-image-klein-int8-convrot.safetensors](https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/diffusion_models/flux3-image-klein-int8-convrot.safetensors) | 5.8 GB |\n| `text_encoders/` | [qwen3vl_4b_int8_convrot.safetensors](https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/text_encoders/qwen3vl_4b_int8_convrot.safetensors) | 4.9 GB |\n| `vae/` | [flux2-vae.safetensors](https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/vae/flux2-vae.safetensors) | 0.3 GB |\n\nTotal 11.0 GB. The BFL repo is gated: log in on Hugging Face and accept the terms first.\n\n**VRAM:** ComfyUI stayed inside each budget it was given: 5.9 GiB peak at 6 GiB, 7.9 at 8, 10.8 at 12 (it fills what it gets). The model and the text encoder together are bigger than 6 GB, so ComfyUI keeps part of them in system RAM. RAM use was not measured.\n\n**ComfyUI 0.45.3** (FLUX 3 Image support came in 0.41). **No custom nodes.** GGUF files of Klein need the ComfyUI-GGUF custom node, so this file uses BFL's int8 file.\n\nLicence: FLUX 3 Image Klein is under the FLUX Kommunity License (non-commercial; commercial use of outputs only under US$5M revenue). Read the model page.\n"
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   6,
+   0,
+   8,
+   0,
+   "CLIP"
+  ],
+  [
+   2,
+   2,
+   0,
+   8,
+   1,
+   "STRING"
+  ],
+  [
+   3,
+   6,
+   0,
+   9,
+   0,
+   "CLIP"
+  ],
+  [
+   4,
+   1,
+   0,
+   10,
+   0,
+   "IMAGE"
+  ],
+  [
+   5,
+   3,
+   0,
+   10,
+   2,
+   "FLOAT"
+  ],
+  [
+   6,
+   10,
+   0,
+   11,
+   0,
+   "IMAGE"
+  ],
+  [
+   7,
+   8,
+   0,
+   12,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   8,
+   9,
+   0,
+   12,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   9,
+   7,
+   0,
+   12,
+   2,
+   "VAE"
+  ],
+  [
+   10,
+   1,
+   0,
+   12,
+   3,
+   "IMAGE"
+  ],
+  [
+   11,
+   11,
+   0,
+   13,
+   0,
+   "INT"
+  ],
+  [
+   12,
+   11,
+   1,
+   13,
+   1,
+   "INT"
+  ],
+  [
+   13,
+   5,
+   0,
+   14,
+   0,
+   "MODEL"
+  ],
+  [
+   14,
+   14,
+   0,
+   15,
+   0,
+   "MODEL"
+  ],
+  [
+   15,
+   12,
+   0,
+   15,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   16,
+   12,
+   1,
+   15,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   17,
+   13,
+   0,
+   15,
+   3,
+   "LATENT"
+  ],
+  [
+   18,
+   4,
+   0,
+   15,
+   4,
+   "INT"
+  ],
+  [
+   19,
+   15,
+   0,
+   17,
+   0,
+   "LATENT"
+  ],
+  [
+   20,
+   7,
+   0,
+   17,
+   1,
+   "VAE"
+  ],
+  [
+   21,
+   17,
+   0,
+   18,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [
+  {
+   "id": 1,
+   "title": "1 · Inputs (megapixels: output only; reference stays 1 MP)",
+   "bounding": [
+    -80,
+    -30,
+    560,
+    1060
+   ],
+   "color": "#8A8",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 2,
+   "title": "2 · Models (loaded once)",
+   "bounding": [
+    520,
+    -30,
+    480,
+    470
+   ],
+   "color": "#3f789e",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 3,
+   "title": "3 · Prompt + photo",
+   "bounding": [
+    1040,
+    -30,
+    460,
+    900
+   ],
+   "color": "#a1309b",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 4,
+   "title": "4 · Sampling",
+   "bounding": [
+    1540,
+    -30,
+    440,
+    920
+   ],
+   "color": "#b06634",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 5,
+   "title": "5 · Save",
+   "bounding": [
+    2060,
+    -30,
+    640,
+    910
+   ],
+   "color": "#b58b2a",
+   "font_size": 24,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.55,
+   "offset": [
+    760,
+    120
+   ]
+  },
+  "linearData": {
+   "inputs": [
+    [
+     1,
+     "image"
+    ],
+    [
+     2,
+     "value"
+    ],
+    [
+     3,
+     "value"
+    ],
+    [
+     4,
+     "value"
+    ]
+   ],
+   "outputs": [
+    18
+   ]
+  }
+ },
+ "version": 0.4
+}
