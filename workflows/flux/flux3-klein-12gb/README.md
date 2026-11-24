@@ -1,25 +1,27 @@
-# The_frizzy1 - FLUX 3 Klein · 12 GB v1.0.1
+# The_frizzy1 - FLUX 3 Klein · 12 GB v1.1.0
 
 ☕ If this workflow saved you time: **[Buy me a coffee](https://buymeacoffee.com/the_frizzy1)**
 
 > FLUX 3 Image Klein (Black Forest Labs, 5.6B) on a 12 GB card: text to image, and editing with 1 to 4 reference
-> images, with BFL's own prompt upsampler. Two workflow files, core ComfyUI nodes only.
+> images, with BFL's own prompt upsampler. New in v1.1.0: a lighter one-photo edit file without the upsampler, for 6 to 8 GB
+> cards (ran inside a 6 GiB budget, not yet on a real 6 or 8 GB card). Three workflow files, core ComfyUI nodes only.
 
 | | |
 |---|---|
 | **Model family** | FLUX 3 Image Klein (distilled, int8) |
-| **Tasks** | Text → Image · Edit · Multi-reference (up to 4 here) · Bounding boxes |
+| **Tasks** | Text → Image · Edit · Multi-reference (up to 4 here) · Bounding boxes · Low-VRAM edit (one photo) |
 | **Needs** | 12 GB VRAM · 32 GB system RAM (ComfyUI peaked at 4.1 GB) · ComfyUI **0.41+** |
-| **Tested on** | RTX 3060 12 GB · Ryzen 5 5600X · 32 GB RAM · ComfyUI 0.43.1 · sage attention |
-| **ComfyUI 0.45.3** | Converts and validates on 0.45.3 (not run on it yet). All nodes are core in 0.45.3. |
+| **Tested on** | v1.0.x files: RTX 3060 12 GB · Ryzen 5 5600X · 32 GB RAM · ComfyUI 0.43.1 · sage attention. Low-VRAM edit file (v1.1.0): RTX PRO 4000 Blackwell 24 GB capped to 6, 8 and 12 GiB budgets · 64 GB RAM · ComfyUI 0.45.3 |
+| **ComfyUI 0.45.3** | The low-VRAM edit file ran on 0.45.3. The t2i and edit files (v1.0.2: notes changed only since v1.0.1) were not run on 0.45.3. All nodes are core in 0.45.3. |
 | **YouTube explainer** | (no video yet) |
 | **License** | Workflow: MIT · FLUX 3 Image Klein: FLUX Kommunity License |
 
 ## Quick start
 1. Update ComfyUI to **0.41 or newer** (FLUX 3 Image support; no custom nodes).
 2. Accept BFL's terms on Hugging Face, then download the 4 files in [downloads.md](downloads.md).
-3. Text to image: load `The_frizzy1_flux3-klein-t2i-12gb_v1.0.1.json`, write your prompt, **Run**.
-4. Editing: load `The_frizzy1_flux3-klein-edit-12gb_v1.0.1.json`, load your photo as image 1 (and a reference as image 2), say what to change, **Run**.
+3. Text to image: load `The_frizzy1_flux3-klein-t2i-12gb_v1.0.2.json`, write your prompt, **Run**.
+4. Editing: load `The_frizzy1_flux3-klein-edit-12gb_v1.0.2.json`, load your photo as image 1 (and a reference as image 2), say what to change, **Run**.
+5. 6 or 8 GB card, or no room for the upsampler: download flux3-image-klein-int8-convrot, qwen3vl_4b_int8_convrot and flux2-vae (skip the upsampler), load `The_frizzy1_flux3-klein-edit-lowvram_v1.1.0.json`, load your photo, write the whole instruction, **Run**.
 
 ## Preview
 
@@ -29,17 +31,26 @@
 <a href="samples/sample-3.webp"><img src="samples/sample-3.webp" width="31%" alt="edit with two images, 1 MP"></a>
 </p>
 
-<sub>Made by these workflows on the RTX 3060: text to image, a neon sign with text, and two images combined.</sub>
+<sub>Made by the v1.0.x workflows on the RTX 3060: text to image, a neon sign with text, and two images combined.</sub>
 
-## The two files
+<p align="center">
+<a href="samples/edit-lowvram-01.webp"><img src="samples/edit-lowvram-01.webp" width="58%" alt="low-VRAM edit: new lighting on a portrait"></a>
+<a href="samples/edit-lowvram-02.webp"><img src="samples/edit-lowvram-02.webp" width="24%" alt="low-VRAM edit: new lighting on a product shot"></a>
+</p>
+
+<sub>Made by the low-VRAM edit file inside a 6 GiB budget: new light on a portrait and on a product shot, 1 MP, 16 steps. The same seed gave the same picture at 6, 8 and 12 GiB.</sub>
+
+## The three files
 
 | File | What it does |
 |---|---|
-| `The_frizzy1_flux3-klein-t2i-12gb_v1.0.1.json` | Text to image, optional bounding boxes |
-| `The_frizzy1_flux3-klein-edit-12gb_v1.0.1.json` | Edit image 1, add images 2 to 4 as references (3 and 4 are muted, Ctrl+M to use them) |
+| `The_frizzy1_flux3-klein-t2i-12gb_v1.0.2.json` | Text to image, optional bounding boxes |
+| `The_frizzy1_flux3-klein-edit-12gb_v1.0.2.json` | Edit image 1, add images 2 to 4 as references (3 and 4 are muted, Ctrl+M to use them) |
+| `The_frizzy1_flux3-klein-edit-lowvram_v1.1.0.json` | Edit one photo, no prompt upsampler, 3 files (11.0 GB). For 6 to 8 GB cards. Flat graph, App mode inputs set (not run from App mode) |
 
-Both are BFL's official int8 graphs with my notes, a 1 MP default for 12 GB, and the model names left bare so they
-load from any folder layout.
+The t2i and edit files are BFL's official int8 graphs with my notes, a 1 MP default for 12 GB, and the model names left bare so they
+load from any folder layout. The low-VRAM file is BFL's `flux3_klein_int8_i2i` template rebuilt flat without the upsampler:
+same model, 16 steps, CFG 1, euler / simple, shift 2.77 (alpha 16).
 
 ## Why the prompt upsampler is on
 
@@ -48,7 +59,24 @@ gives generic pictures. The upsampler (Qwen3.5 9B, w4a8) writes that caption for
 images first. You see what it wrote in **Upsampled prompt**. Turn it off with *enable upsampler* if you write the
 long caption yourself.
 
-## Measured on the RTX 3060
+## Low-VRAM edit file: measured inside 6, 8 and 12 GiB budgets
+
+There is no 6 or 8 GB card in the lab. The 24 GB lab card ran a second ComfyUI 0.45.3 with `--reserve-vram` set so that
+ComfyUI could use only 6, 8 or 12 GiB, and `--disable-all-custom-nodes`. Peak = the ComfyUI process as nvidia-smi
+reports it, once per second; other programs held 0.86 GiB on top. *Wall* = queue to finished picture. 64 GB system RAM.
+
+| Run (1 MP, 16 steps) | Output | 6 GiB budget | 8 GiB budget | 12 GiB budget |
+|---|---|---|---|---|
+| Portrait, first run after starting ComfyUI (loads the files, which were in the OS file cache) | 1360x768 | 17 s · 5.93 GiB | 17 s · 7.93 GiB | 17 s · 10.71 GiB |
+| Same portrait, new seed | 1360x768 | 15 s · 5.93 GiB | 15 s · 7.90 GiB | 15 s · 10.75 GiB |
+| Product shot, new photo + new text | 768x1360 | 16 s · 5.93 GiB | 16 s · 7.93 GiB | 16 s · 10.80 GiB |
+
+ComfyUI stays inside the budget it gets by keeping part of the model in system RAM, so the peak follows the budget;
+it is not the smallest card the file needs. The time did not change with the budget on this card. A real 6 or 8 GB card is a slower GPU
+and may lose more time moving the model from RAM: not measured. RAM use was not measured. Same seed,
+same picture at every budget (checked by hash).
+
+## Measured on the RTX 3060 (v1.0.x files)
 
 *Wall* = queue to finished image. VRAM is the whole card as nvidia-smi reports it (about 0.7 GB is Windows).
 
@@ -64,7 +92,8 @@ long caption yourself.
 4 MP works on 12 GB, the sky in my test image showed some banding. My 1 MP results looked clean.
 
 ## Required models
-See [downloads.md](downloads.md): 4 files, 17.8 GB, every file name read from the workflow `.json`.
+See [downloads.md](downloads.md): 4 files, 17.7 GB, every file name read from the workflow `.json`. The low-VRAM edit file needs only
+flux3-image-klein-int8-convrot, qwen3vl_4b_int8_convrot and flux2-vae (11.0 GB), not the upsampler.
 
 ## Required custom nodes
 None - core ComfyUI **0.41+**.
@@ -73,13 +102,23 @@ Core nodes used: UNETLoader, CLIPLoader, VAELoader, CLIPTextEncode, TextGenerate
 EmptyFlux2LatentImage, ModelSamplingFlux, KSampler, VAEDecode, SaveImage, PreviewAny, ResolutionSelector, ComfySwitchNode,
 ComfyMathExpression, PrimitiveFloat, PrimitiveStringMultiline, StringConcatenate, StringContains, StringTrim. The edit file
 also uses LoadImage, BatchImagesNode, ReferenceMultiLatent, RepeatLatentBatch, ImageScaleToTotalPixels, GetImageSize, StringFormat.
+The low-VRAM edit file: LoadImage, UNETLoader, CLIPLoader, VAELoader, CLIPTextEncode, ImageScaleToTotalPixels, GetImageSize,
+ReferenceMultiLatent, EmptyFlux2LatentImage, ModelSamplingFlux, KSampler, VAEDecode, SaveImage, PrimitiveStringMultiline,
+PrimitiveFloat, PrimitiveInt.
 
 ## Faster attention
 Start ComfyUI with `--use-sage-attention` (less VRAM). `--use-ck-attention` changes the image for the same seed.
 
 ## Troubleshooting
 - **Images 3 and 4 do nothing:** they are muted. Select them and press **Ctrl+M** to use them.
-- **Generic looking pictures:** check that *enable upsampler* is on, or write a long scene caption yourself.
+- **Generic looking pictures:** check that *enable upsampler* is on, or write a long scene caption yourself. In the low-VRAM file
+  there is no upsampler: write the change and what must stay, as in the default text.
+- **GGUF files of Klein (unsloth and others):** they need the ComfyUI-GGUF custom node; core ComfyUI 0.45.3 has no GGUF loader.
+  The low-VRAM file uses BFL's int8 file (5.8 GB), which core ComfyUI loads and streams from RAM when VRAM is short.
+- **TrueRelight LoRA (pandacooming) does nothing:** on ComfyUI 0.45.3 the log shows `lora key not loaded` for all 516 of its
+  keys. It is saved with diffusers key names, which core ComfyUI does not map for FLUX 3 yet (current ComfyUI master is the
+  same). That is why this folder has no relight LoRA. The low-VRAM file can still change the lighting from the text alone
+  (the samples above); it was not compared with the LoRA.
 
 ## License
 
