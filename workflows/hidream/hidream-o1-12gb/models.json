@@ -1,0 +1,8 @@
+{
+  "workflow": "hidream/hidream-o1-12gb",
+  "files": [
+    {"name": "hidream_o1_image_fp8_scaled.safetensors", "url": "https://huggingface.co/Comfy-Org/HiDream-O1-Image/resolve/main/checkpoints/hidream_o1_image_fp8_scaled.safetensors", "dest": "checkpoints", "required": true, "note": "8.07 GB"},
+    {"name": "gemma4_e4b_it_fp8_scaled.safetensors", "url": "https://huggingface.co/Comfy-Org/gemma-4/resolve/main/text_encoders/gemma4_e4b_it_fp8_scaled.safetensors", "dest": "text_encoders", "required": true, "note": "prompt rewrite; ComfyUI checks it even when the rewrite is off. 9.06 GB"}
+  ],
+  "nodes": []
+}
