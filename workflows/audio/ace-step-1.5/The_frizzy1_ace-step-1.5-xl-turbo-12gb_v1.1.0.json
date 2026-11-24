@@ -1,0 +1,1534 @@
+{
+  "id": "7e1c0a5e-5e7b-4c1e-9b3a-ace15turbo12",
+  "revision": 0,
+  "last_node_id": 22,
+  "last_link_id": 19,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -60,
+        50
+      ],
+      "size": [
+        520,
+        170
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null,
+          "label": "Style: genre, tempo, voice"
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "Style: genre, tempo, instruments, voice",
+      "widgets_values": [
+        "Upbeat indie pop at 112 BPM in 4/4 time. Bright jangly electric guitars, punchy live drums, a warm round bass and hand claps in the chorus. A clear female lead vocal sings the verses close and dry, with stacked harmonies in the chorus. Polished, radio-ready mix with a wide stereo image."
+      ]
+    },
+    {
+      "id": 2,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -60,
+        270
+      ],
+      "size": [
+        520,
+        470
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null,
+          "label": "Lyrics with [Verse] / [Chorus] tags"
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "Lyrics with [Verse] / [Chorus] tags",
+      "widgets_values": [
+        "[Intro - Jangly guitar riff, drums come in]\n\n[Verse 1]\nStreetlights blink on one by one\nI roll the window down and breathe\nThe radio plays a song we knew\nAnd the city hums along with me\n\n[Pre-Chorus]\nEvery corner holds a story\nEvery mile, a little more\n\n[Chorus - Stacked harmonies, hand claps]\nWe are driving into morning\nWith the night still in our hair\nNothing planned and nothing owing\nWe will know when we are there\n\n[Verse 2]\nCoffee steam and paper maps\nYour laughter in the passenger seat\nThe highway draws a silver line\nAnd the sunrise keeps the beat\n\n[Chorus - Stacked harmonies, hand claps]\nWe are driving into morning\nWith the night still in our hair\nNothing planned and nothing owing\nWe will know when we are there\n\n[Outro - Guitar riff returns, fades out]"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "PrimitiveFloat",
+      "pos": [
+        500,
+        50
+      ],
+      "size": [
+        400,
+        60
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "FLOAT",
+          "widget": {
+            "name": "value"
+          },
+          "link": null,
+          "label": "Seconds of music (120 = default)"
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "FLOAT",
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            6,
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveFloat",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "Seconds of music (120 = template default)",
+      "widgets_values": [
+        120.0
+      ]
+    },
+    {
+      "id": 4,
+      "type": "PrimitiveInt",
+      "pos": [
+        500,
+        160
+      ],
+      "size": [
+        400,
+        90
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "INT",
+          "widget": {
+            "name": "value"
+          },
+          "link": null,
+          "label": "BPM (same number as in Style)"
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "INT",
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveInt",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "BPM (tempo; same number as in Style)",
+      "widgets_values": [
+        112,
+        "fixed"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "PrimitiveInt",
+      "pos": [
+        500,
+        300
+      ],
+      "size": [
+        400,
+        90
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "INT",
+          "widget": {
+            "name": "value"
+          },
+          "link": null,
+          "label": "Seed (same seed = same song)"
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "INT",
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            4,
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveInt",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "Seed (same seed + settings = same song)",
+      "widgets_values": [
+        22112026,
+        "randomize"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "PrimitiveInt",
+      "pos": [
+        500,
+        440
+      ],
+      "size": [
+        400,
+        90
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "INT",
+          "widget": {
+            "name": "value"
+          },
+          "link": null,
+          "label": "Steps (8 = turbo)"
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "INT",
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveInt",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "Steps (8 = turbo)",
+      "widgets_values": [
+        8,
+        "fixed"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "PrimitiveFloat",
+      "pos": [
+        500,
+        580
+      ],
+      "size": [
+        400,
+        60
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "FLOAT",
+          "widget": {
+            "name": "value"
+          },
+          "link": null,
+          "label": "CFG (1 = turbo)"
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "FLOAT",
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveFloat",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "CFG (1 = turbo)",
+      "widgets_values": [
+        1.0
+      ]
+    },
+    {
+      "id": 8,
+      "type": "UNETLoader",
+      "pos": [
+        980,
+        50
+      ],
+      "size": [
+        440,
+        90
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "unet_name",
+          "name": "unet_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "weight_dtype",
+          "name": "weight_dtype",
+          "type": "COMBO",
+          "widget": {
+            "name": "weight_dtype"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3",
+        "models": [
+          {
+            "name": "acestep_v1.5_xl_base_bf16.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/ACE-Step-1.5/resolve/main/split_files/diffusion_models/acestep_v1.5_xl_base_bf16.safetensors",
+            "directory": "diffusion_models"
+          }
+        ]
+      },
+      "title": "ACE-Step 1.5 XL turbo · bf16 (9.97 GB)",
+      "widgets_values": [
+        "acestep_v1.5_xl_turbo_bf16.safetensors",
+        "default"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "DualCLIPLoader",
+      "pos": [
+        980,
+        190
+      ],
+      "size": [
+        440,
+        150
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip_name1",
+          "name": "clip_name1",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "clip_name2",
+          "name": "clip_name2",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "type",
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "device",
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3",
+        "models": [
+          {
+            "name": "qwen_0.6b_ace15.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/ACE-Step-1.5/resolve/main/split_files/text_encoders/qwen_0.6b_ace15.safetensors",
+            "directory": "text_encoders"
+          },
+          {
+            "name": "qwen_4b_ace15.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/ACE-Step-1.5/resolve/main/split_files/text_encoders/qwen_4b_ace15.safetensors",
+            "directory": "text_encoders"
+          }
+        ]
+      },
+      "title": "Text encoder 0.6B + song planner 1.7B",
+      "widgets_values": [
+        "qwen_0.6b_ace15.safetensors",
+        "qwen_1.7b_ace15.safetensors",
+        "ace",
+        "default"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "VAELoader",
+      "pos": [
+        980,
+        390
+      ],
+      "size": [
+        440,
+        70
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "vae_name",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3",
+        "models": [
+          {
+            "name": "ace_1.5_vae.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/ACE-Step-1.5/resolve/main/split_files/vae/ace_1.5_vae.safetensors",
+            "directory": "vae"
+          }
+        ]
+      },
+      "title": "VAE · ACE-Step 1.5 (0.34 GB)",
+      "widgets_values": [
+        "ace_1.5_vae.safetensors"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "TextEncodeAceStepAudio1.5",
+      "pos": [
+        1520,
+        50
+      ],
+      "size": [
+        440,
+        460
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1
+        },
+        {
+          "localized_name": "tags",
+          "name": "tags",
+          "type": "STRING",
+          "widget": {
+            "name": "tags"
+          },
+          "link": 2
+        },
+        {
+          "localized_name": "lyrics",
+          "name": "lyrics",
+          "type": "STRING",
+          "widget": {
+            "name": "lyrics"
+          },
+          "link": 3
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 4
+        },
+        {
+          "localized_name": "bpm",
+          "name": "bpm",
+          "type": "INT",
+          "widget": {
+            "name": "bpm"
+          },
+          "link": 5
+        },
+        {
+          "localized_name": "duration",
+          "name": "duration",
+          "type": "FLOAT",
+          "widget": {
+            "name": "duration"
+          },
+          "link": 6
+        },
+        {
+          "localized_name": "timesignature",
+          "name": "timesignature",
+          "type": "COMBO",
+          "widget": {
+            "name": "timesignature"
+          },
+          "link": null,
+          "label": "Beats per bar (4 = 4/4)"
+        },
+        {
+          "localized_name": "language",
+          "name": "language",
+          "type": "COMBO",
+          "widget": {
+            "name": "language"
+          },
+          "link": null,
+          "label": "Language of the lyrics"
+        },
+        {
+          "localized_name": "keyscale",
+          "name": "keyscale",
+          "type": "COMBO",
+          "widget": {
+            "name": "keyscale"
+          },
+          "link": null,
+          "label": "Key"
+        },
+        {
+          "localized_name": "generate_audio_codes",
+          "name": "generate_audio_codes",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "generate_audio_codes"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "cfg_scale",
+          "name": "cfg_scale",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg_scale"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "temperature",
+          "name": "temperature",
+          "type": "FLOAT",
+          "widget": {
+            "name": "temperature"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "top_p",
+          "name": "top_p",
+          "type": "FLOAT",
+          "widget": {
+            "name": "top_p"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "top_k",
+          "name": "top_k",
+          "type": "INT",
+          "widget": {
+            "name": "top_k"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "min_p",
+          "name": "min_p",
+          "type": "FLOAT",
+          "widget": {
+            "name": "min_p"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CONDITIONING",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            7,
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextEncodeAceStepAudio1.5",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "Song → conditioning (set beat, language, key)",
+      "widgets_values": [
+        "",
+        "",
+        22112026,
+        "fixed",
+        112,
+        120.0,
+        "4",
+        "en",
+        "A major",
+        true,
+        2.0,
+        0.85,
+        0.9,
+        0,
+        0.0
+      ]
+    },
+    {
+      "id": 12,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        1520,
+        560
+      ],
+      "size": [
+        440,
+        50
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "conditioning",
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CONDITIONING",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningZeroOut",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "Empty negative (from the template)"
+    },
+    {
+      "id": 13,
+      "type": "EmptyAceStep1.5LatentAudio",
+      "pos": [
+        2040,
+        50
+      ],
+      "size": [
+        400,
+        90
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "seconds",
+          "name": "seconds",
+          "type": "FLOAT",
+          "widget": {
+            "name": "seconds"
+          },
+          "link": 8
+        },
+        {
+          "localized_name": "batch_size",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyAceStep1.5LatentAudio",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "Empty song (seconds from group 1)",
+      "widgets_values": [
+        120.0,
+        1
+      ]
+    },
+    {
+      "id": 14,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        2040,
+        190
+      ],
+      "size": [
+        400,
+        60
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 9
+        },
+        {
+          "localized_name": "shift",
+          "name": "shift",
+          "type": "FLOAT",
+          "widget": {
+            "name": "shift"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "sampling",
+          "name": "sampling",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampling"
+          },
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingAuraFlow",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "Shift 3 (from the template)",
+      "widgets_values": [
+        3.0,
+        "flow"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "KSampler",
+      "pos": [
+        2040,
+        300
+      ],
+      "size": [
+        400,
+        290
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 10
+        },
+        {
+          "localized_name": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 11
+        },
+        {
+          "localized_name": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 12
+        },
+        {
+          "localized_name": "latent_image",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 13
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 14
+        },
+        {
+          "localized_name": "steps",
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": 15
+        },
+        {
+          "localized_name": "cfg",
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": 16
+        },
+        {
+          "localized_name": "sampler_name",
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scheduler",
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "denoise",
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "Sampler · euler / simple (from the template)",
+      "widgets_values": [
+        22112026,
+        "fixed",
+        8,
+        1.0,
+        "euler",
+        "simple",
+        1.0
+      ]
+    },
+    {
+      "id": 16,
+      "type": "VAEDecodeAudioTiled",
+      "pos": [
+        2520,
+        50
+      ],
+      "size": [
+        400,
+        110
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "samples",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 17
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 18
+        },
+        {
+          "localized_name": "tile_size",
+          "name": "tile_size",
+          "type": "INT",
+          "widget": {
+            "name": "tile_size"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "overlap",
+          "name": "overlap",
+          "type": "INT",
+          "widget": {
+            "name": "overlap"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "AUDIO",
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecodeAudioTiled",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "Latent → audio, in tiles (see the note)",
+      "widgets_values": [
+        512,
+        64
+      ]
+    },
+    {
+      "id": 17,
+      "type": "SaveAudioAdvanced",
+      "pos": [
+        2520,
+        210
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 19
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "format"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "quality",
+          "name": "format.quality",
+          "type": "COMBO",
+          "widget": {
+            "name": "format.quality"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveAudioAdvanced",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "Result (mp3 in output/audio/ACE-Step-1.5-turbo)",
+      "widgets_values": [
+        "audio/ACE-Step-1.5-turbo/song",
+        "mp3",
+        "V0"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "MarkdownNote",
+      "pos": [
+        -800,
+        -30
+      ],
+      "size": [
+        640,
+        560
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "title": "How to use · v1.1.0 (XL turbo, 12 GB)",
+      "widgets_values": [
+        "## How to use · v1.1.0 (XL turbo, 12 GB)\n\n**What it does:** ACE-Step 1.5 XL **turbo** text to music in 8 steps: describe the style, write the lyrics, get a song with vocals as mp3. Same layout and inputs as the XL base workflow (v1.0.0), with the turbo model, the 1.7B song planner, 8 steps and CFG 1. Core ComfyUI nodes only.\n\n1. **Your inputs** (green group):\n   - **Style**: genre, tempo, instruments, the voice, the mix. Full sentences.\n   - **Lyrics**: one line per sung line, with section tags in square brackets: `[Verse 1]`, `[Chorus]`, `[Outro]`.\n   - **Seconds of music**: length of the song (120 by default).\n   - **BPM**: the tempo (112 by default). Write the same number in **Style**.\n   - **Seed**: a new one every run. Set \"control after generate\" to fixed to keep a song.\n   - **Steps** (8) and **CFG** (1): the turbo values.\n2. **Models**: the three loaders must show the files from the Downloads note. Nothing to change.\n3. **Prompt**: **Beats per bar** (4), **Language of the lyrics** (`en`) and **Key** (A major) live on the **Song → conditioning** node. Change them to fit your song.\n4. **Sampling**: euler / simple, shift 3.\n5. **Save**: press **Run**. The song is decoded in tiles (512 / 64) and saved as mp3 to `output/audio/ACE-Step-1.5-turbo/`.\n\n**What to expect on an RTX 3060 12 GB** (32 GB RAM, ComfyUI 0.45.3, 2026-11-24, run from this file in the browser): the default 120 s song took 42 s on the first run (models read from disk) and 34 to 37 s after that. The whole GPU peaked at 11.4 GiB, of which 2.7 GiB was held by other programs before ComfyUI started.\n\n**Tested on:** RTX 3060 12 GB, 32 GB RAM, ComfyUI 0.45.3 (portable), 2026-11-24. The lyrics of the sample were checked by transcription, not by ear.\n"
+      ]
+    },
+    {
+      "id": 19,
+      "type": "MarkdownNote",
+      "pos": [
+        -800,
+        580
+      ],
+      "size": [
+        640,
+        640
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "title": "Downloads + requirements",
+      "widgets_values": [
+        "## Downloads + requirements\n\nClick a file name to download it. Put it in the folder shown (inside `ComfyUI/models/`).\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `diffusion_models/` | [acestep_v1.5_xl_turbo_bf16.safetensors](https://huggingface.co/Comfy-Org/ACE-Step-1.5/resolve/main/split_files/diffusion_models/acestep_v1.5_xl_turbo_bf16.safetensors) | 9.97 GB |\n| `text_encoders/` | [qwen_0.6b_ace15.safetensors](https://huggingface.co/Comfy-Org/ACE-Step-1.5/resolve/main/split_files/text_encoders/qwen_0.6b_ace15.safetensors) | 1.19 GB |\n| `text_encoders/` | [qwen_1.7b_ace15.safetensors](https://huggingface.co/Comfy-Org/ACE-Step-1.5/resolve/main/split_files/text_encoders/qwen_1.7b_ace15.safetensors) | 3.71 GB |\n| `vae/` | [ace_1.5_vae.safetensors](https://huggingface.co/Comfy-Org/ACE-Step-1.5/resolve/main/split_files/vae/ace_1.5_vae.safetensors) | 0.34 GB |\n\nTotal: about 15.2 GB, all Comfy-Org repackaged files.\n\n**VRAM:** tested on an RTX 3060 12 GB: the whole GPU peaked at 11.4 GiB for the default 120 s song (2.7 GiB of it other programs). The four files are 15.2 GB, so they are not in VRAM together; the test machine has 32 GB RAM.\n\n**Run on ComfyUI 0.45.3.** No custom nodes.\n\nLicence: ACE-Step 1.5 is MIT (the Comfy-Org repackage is marked Apache-2.0). The authors say the music can be used commercially.\n"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "MarkdownNote",
+      "pos": [
+        960,
+        580
+      ],
+      "size": [
+        480,
+        190
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "title": "Why two text encoders",
+      "widgets_values": [
+        "## Why two text encoders\n\nThe loader takes two files. `qwen_0.6b_ace15` reads your **Style** and **Lyrics**. `qwen_1.7b_ace15` is the song planner: a language model that writes audio codes for the whole song before sampling starts (`generate_audio_codes` on the **Song → conditioning** node). This turbo version uses the 1.7B planner (3.71 GB) instead of the 4B one (8.38 GB) of the base workflow, to keep the files a 12 GB card has to juggle smaller. The planner uses the same seed as the sampler.\n"
+      ]
+    },
+    {
+      "id": 21,
+      "type": "MarkdownNote",
+      "pos": [
+        2500,
+        500
+      ],
+      "size": [
+        440,
+        250
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "title": "Why the decode is tiled",
+      "widgets_values": [
+        "## Why the decode is tiled\n\nThe template decodes the whole song in one piece (`VAEDecodeAudio`). With ComfyUI held to about 10 GiB, a 240 s song then peaked at 20.8 GiB on the whole GPU during the decode. `VAEDecodeAudioTiled` (tile 512, overlap 64) kept the same song at 11.3 GiB.\n\nThe two decodes of one song differ by a signal-to-noise ratio of 38 dB at 120 s and 36 dB at 240 s (mp3 against mp3). Not compared by ear.\n"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "MarkdownNote",
+      "pos": [
+        500,
+        700
+      ],
+      "size": [
+        400,
+        120
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "title": "Three more inputs are in group 3",
+      "widgets_values": [
+        "**Three more inputs are in group 3**, on the **Song → conditioning** node: **Beats per bar**, **Language of the lyrics** and **Key**. Change them to fit your song. App mode lists them with the inputs above.\n"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      9,
+      0,
+      11,
+      0,
+      "CLIP"
+    ],
+    [
+      2,
+      1,
+      0,
+      11,
+      1,
+      "STRING"
+    ],
+    [
+      3,
+      2,
+      0,
+      11,
+      2,
+      "STRING"
+    ],
+    [
+      4,
+      5,
+      0,
+      11,
+      3,
+      "INT"
+    ],
+    [
+      5,
+      4,
+      0,
+      11,
+      4,
+      "INT"
+    ],
+    [
+      6,
+      3,
+      0,
+      11,
+      5,
+      "FLOAT"
+    ],
+    [
+      7,
+      11,
+      0,
+      12,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      8,
+      3,
+      0,
+      13,
+      0,
+      "FLOAT"
+    ],
+    [
+      9,
+      8,
+      0,
+      14,
+      0,
+      "MODEL"
+    ],
+    [
+      10,
+      14,
+      0,
+      15,
+      0,
+      "MODEL"
+    ],
+    [
+      11,
+      11,
+      0,
+      15,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      12,
+      12,
+      0,
+      15,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      13,
+      13,
+      0,
+      15,
+      3,
+      "LATENT"
+    ],
+    [
+      14,
+      5,
+      0,
+      15,
+      4,
+      "INT"
+    ],
+    [
+      15,
+      6,
+      0,
+      15,
+      5,
+      "INT"
+    ],
+    [
+      16,
+      7,
+      0,
+      15,
+      6,
+      "FLOAT"
+    ],
+    [
+      17,
+      15,
+      0,
+      16,
+      0,
+      "LATENT"
+    ],
+    [
+      18,
+      10,
+      0,
+      16,
+      1,
+      "VAE"
+    ],
+    [
+      19,
+      16,
+      0,
+      17,
+      0,
+      "AUDIO"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "1 · Your inputs (App mode shows these)",
+      "bounding": [
+        -80,
+        -30,
+        1000,
+        880
+      ],
+      "color": "#8A8",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "2 · Models (loaded once)",
+      "bounding": [
+        960,
+        -30,
+        480,
+        520
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "3 · Prompt",
+      "bounding": [
+        1500,
+        -30,
+        480,
+        660
+      ],
+      "color": "#a1309b",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "4 · Sampling",
+      "bounding": [
+        2020,
+        -30,
+        440,
+        650
+      ],
+      "color": "#b06634",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "5 · Save",
+      "bounding": [
+        2500,
+        -30,
+        440,
+        460
+      ],
+      "color": "#b58b2a",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.55,
+      "offset": [
+        760,
+        120
+      ]
+    },
+    "linearData": {
+      "inputs": [
+        [
+          1,
+          "value"
+        ],
+        [
+          2,
+          "value"
+        ],
+        [
+          3,
+          "value"
+        ],
+        [
+          4,
+          "value"
+        ],
+        [
+          11,
+          "timesignature"
+        ],
+        [
+          11,
+          "language"
+        ],
+        [
+          11,
+          "keyscale"
+        ],
+        [
+          5,
+          "value"
+        ],
+        [
+          6,
+          "value"
+        ],
+        [
+          7,
+          "value"
+        ]
+      ],
+      "outputs": [
+        17
+      ]
+    }
+  },
+  "version": 0.4
+}

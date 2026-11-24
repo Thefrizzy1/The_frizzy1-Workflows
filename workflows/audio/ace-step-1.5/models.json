@@ -6,7 +6,14 @@
       "url": "https://huggingface.co/Comfy-Org/ACE-Step-1.5/resolve/main/split_files/diffusion_models/acestep_v1.5_xl_base_bf16.safetensors",
       "dest": "diffusion_models",
       "required": true,
-      "note": "ACE-Step 1.5 XL base (4B), bf16, Comfy-Org repackage. 9.97 GB."
+      "note": "ACE-Step 1.5 XL base (4B), bf16, Comfy-Org repackage. 9.97 GB. Needed by the base workflow (v1.0.0)."
+    },
+    {
+      "name": "acestep_v1.5_xl_turbo_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/ACE-Step-1.5/resolve/main/split_files/diffusion_models/acestep_v1.5_xl_turbo_bf16.safetensors",
+      "dest": "diffusion_models",
+      "required": false,
+      "note": "ACE-Step 1.5 XL turbo, bf16, Comfy-Org repackage. 9.97 GB. Needed by the XL turbo 12 GB workflow (v1.1.0)."
     },
     {
       "name": "qwen_0.6b_ace15.safetensors",
@@ -34,7 +41,7 @@
       "url": "https://huggingface.co/Comfy-Org/ACE-Step-1.5/resolve/main/split_files/text_encoders/qwen_1.7b_ace15.safetensors",
       "dest": "text_encoders",
       "required": false,
-      "note": "Optional swap for the 4B song planner. Not in the JSON. 3.71 GB."
+      "note": "Song planner, 1.7B. 3.71 GB. Needed by the XL turbo 12 GB workflow (v1.1.0); an optional swap for the 4B planner in the base workflow."
     }
   ],
   "nodes": []

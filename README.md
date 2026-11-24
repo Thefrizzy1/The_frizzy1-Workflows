@@ -133,7 +133,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | The **older Hunyuan** video path | [Hunyuan Video Low-VRAM](workflows/hunyuan/video) | 4 GB+ |
 | **Songs with vocals** from a style + your lyrics, or a cover of your song (YuE2) | [YuE2 Music · 12 GB](workflows/audio/yue2-music-12gb) | 4 GB+* |
 | **Songs with vocals** or instrumentals from a caption + your lyrics, up to 2 min 43 s tested (MiniMax Music 3) | [MiniMax Music 3 · 12 GB](workflows/audio/minimax-music3-12gb) | 12 GB (measured with v1.0.0 on an RTX 3060; v1.1.0 same files, not re-measured) |
-| **Songs with vocals** or instrumentals from a style + your lyrics, up to 4 min tested (ACE-Step 1.5 XL, MIT model) | [ACE-Step 1.5 XL Music](workflows/audio/ace-step-1.5) | 12 GB target, not verified |
+| **Songs with vocals** or instrumentals from a style + your lyrics, up to 4 min tested (ACE-Step 1.5 XL, MIT model) | [ACE-Step 1.5 XL Music](workflows/audio/ace-step-1.5) | 12 GB (XL turbo, tested on RTX 3060) |
 | **Music or sound effects** from a short idea, up to 380 s (Stable Audio 3 Medium Base, Qwen writes the prompt) | [Stable Audio 3 Medium Base](workflows/audio/stable-audio-3) | 12 GB target, not verified (10.7 GiB in a 10 GiB budget) |
 | Generate **audio** for a clip | [AI Audio Maker](workflows/audio/ai-audio-maker) | low |
 
@@ -212,7 +212,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[AI Audio Maker](workflows/audio/ai-audio-maker)** | v1.0.1 | low | Audio · video-sync (MMAudio) | [CivitAI](https://civitai.com/models/2539489) |
 | **[YuE2 Music · 12 GB](workflows/audio/yue2-music-12gb)** | v1.0.1 | 4 GB* | text → song · cover | — |
 | **[MiniMax Music 3 · 12 GB](workflows/audio/minimax-music3-12gb)** | v1.1.0 | 12 GB† | caption + lyrics → song · instrumental · App mode | — |
-| **[ACE-Step 1.5 XL Music](workflows/audio/ace-step-1.5)** | v1.0.0 | 12 GB (not verified) | style + lyrics → song · instrumental · MIT | — |
+| **[ACE-Step 1.5 XL Music](workflows/audio/ace-step-1.5)** | v1.1.0 | 12 GB (XL turbo, tested on RTX 3060) | style + lyrics → song · instrumental · MIT | — |
 | **[Stable Audio 3 Medium Base](workflows/audio/stable-audio-3)** | v1.0.0 | 12 GB (not verified) | idea → music · sound effect · App mode | — |
 
 <sub>▶ = video walkthrough on YouTube. 4 GB* = the 12 GB workflow's own files also ran on a 4 GB RTX 3050 Ti laptop with 16 GB RAM, slower: times in [docs/BENCHMARKS.md](docs/BENCHMARKS.md). † = 12 GB measured with v1.0.0 on an RTX 3060; v1.1.0 has the same files and is not re-measured on a 12 GB card.</sub>
