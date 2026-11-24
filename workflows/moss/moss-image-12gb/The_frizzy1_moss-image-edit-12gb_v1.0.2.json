@@ -1,0 +1,1581 @@
+{
+ "id": "5a1e0f3c-7b1d-4c6e-9d2a-24112026e721",
+ "revision": 0,
+ "last_node_id": 22,
+ "last_link_id": 25,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "LoadImage",
+   "pos": [
+    -60,
+    50
+   ],
+   "size": [
+    520,
+    420
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "COMBO",
+     "widget": {
+      "name": "image"
+     },
+     "link": null,
+     "label": "Your picture"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      2
+     ]
+    },
+    {
+     "localized_name": "MASK",
+     "name": "MASK",
+     "type": "MASK",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Your picture",
+   "widgets_values": [
+    "example.png",
+    "image"
+   ]
+  },
+  {
+   "id": 2,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    -60,
+    520
+   ],
+   "size": [
+    520,
+    200
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "STRING",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "What to change / keep"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      7
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "What to change (and what to keep)",
+   "widgets_values": [
+    "Change only the pink dress to a yellow raincoat. Keep the girl, her hair, her pose, the sky, the clouds and the grass unchanged."
+   ]
+  },
+  {
+   "id": 3,
+   "type": "PrimitiveInt",
+   "pos": [
+    -60,
+    770
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Steps (30 = default)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      19
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Steps (30 = default)",
+   "widgets_values": [
+    30,
+    "fixed"
+   ]
+  },
+  {
+   "id": 4,
+   "type": "PrimitiveFloat",
+   "pos": [
+    -60,
+    910
+   ],
+   "size": [
+    520,
+    70
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "FLOAT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "CFG (4 = default)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "FLOAT",
+     "name": "FLOAT",
+     "type": "FLOAT",
+     "links": [
+      20
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveFloat",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "CFG (4 = default)",
+   "widgets_values": [
+    4.0
+   ]
+  },
+  {
+   "id": 5,
+   "type": "PrimitiveInt",
+   "pos": [
+    -60,
+    1030
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Seed"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      18
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Seed (new number = another try)",
+   "widgets_values": [
+    42,
+    "fixed"
+   ]
+  },
+  {
+   "id": 6,
+   "type": "UNETLoader",
+   "pos": [
+    540,
+    50
+   ],
+   "size": [
+    440,
+    90
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "unet_name",
+     "name": "unet_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "unet_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "weight_dtype",
+     "name": "weight_dtype",
+     "type": "COMBO",
+     "widget": {
+      "name": "weight_dtype"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      1
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UNETLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "moss_image_sft_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/diffusion_models/moss_image_sft_int8_convrot.safetensors",
+      "directory": "diffusion_models"
+     }
+    ]
+   },
+   "title": "MOSS-Image SFT, int8 (5.41 GB)",
+   "widgets_values": [
+    "moss_image_sft_int8_convrot.safetensors",
+    "default"
+   ]
+  },
+  {
+   "id": 7,
+   "type": "LoraLoaderModelOnly",
+   "pos": [
+    540,
+    190
+   ],
+   "size": [
+    440,
+    110
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 1
+    },
+    {
+     "localized_name": "lora_name",
+     "name": "lora_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "lora_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "strength_model",
+     "name": "strength_model",
+     "type": "FLOAT",
+     "widget": {
+      "name": "strength_model"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      11
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoraLoaderModelOnly",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "moss_image_edit_lora_rank_64_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/loras/moss_image_edit_lora_rank_64_bf16.safetensors",
+      "directory": "loras"
+     }
+    ]
+   },
+   "title": "Edit LoRA (0.30 GB)",
+   "widgets_values": [
+    "moss_image_edit_lora_rank_64_bf16.safetensors",
+    1.0
+   ]
+  },
+  {
+   "id": 8,
+   "type": "CLIPLoader",
+   "pos": [
+    540,
+    350
+   ],
+   "size": [
+    440,
+    110
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip_name",
+     "name": "clip_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "clip_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "type",
+     "name": "type",
+     "type": "COMBO",
+     "widget": {
+      "name": "type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "device",
+     "name": "device",
+     "type": "COMBO",
+     "widget": {
+      "name": "device"
+     },
+     "shape": 7,
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      4,
+      8
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "qwen3.5_9b_w4a8_gptq.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/text_encoders/qwen3.5_9b_w4a8_gptq.safetensors",
+      "directory": "text_encoders"
+     }
+    ]
+   },
+   "title": "Text encoder · Qwen3.5 9B w4a8 (7.34 GB)",
+   "widgets_values": [
+    "qwen3.5_9b_w4a8_gptq.safetensors",
+    "moss_image",
+    "default"
+   ]
+  },
+  {
+   "id": 9,
+   "type": "VAELoader",
+   "pos": [
+    540,
+    510
+   ],
+   "size": [
+    440,
+    60
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "vae_name",
+     "name": "vae_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "vae_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      6,
+      10,
+      22
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAELoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "flux2-vae_small.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/vae/flux2-vae_small.safetensors",
+      "directory": "vae"
+     }
+    ]
+   },
+   "title": "VAE (small FLUX.2 VAE)",
+   "widgets_values": [
+    "flux2-vae_small.safetensors"
+   ]
+  },
+  {
+   "id": 10,
+   "type": "ImageScaleToTotalPixels",
+   "pos": [
+    1060,
+    50
+   ],
+   "size": [
+    440,
+    130
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2
+    },
+    {
+     "localized_name": "upscale_method",
+     "name": "upscale_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "upscale_method"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "megapixels",
+     "name": "megapixels",
+     "type": "FLOAT",
+     "widget": {
+      "name": "megapixels"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "resolution_steps",
+     "name": "resolution_steps",
+     "type": "INT",
+     "widget": {
+      "name": "resolution_steps"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      3,
+      5,
+      9,
+      24
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScaleToTotalPixels",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picture → about 1 megapixel (sides × 16)",
+   "widgets_values": [
+    "lanczos",
+    1.0,
+    16
+   ]
+  },
+  {
+   "id": 11,
+   "type": "GetImageSize",
+   "pos": [
+    1060,
+    230
+   ],
+   "size": [
+    440,
+    100
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 3
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "width",
+     "name": "width",
+     "type": "INT",
+     "links": [
+      12
+     ]
+    },
+    {
+     "localized_name": "height",
+     "name": "height",
+     "type": "INT",
+     "links": [
+      13
+     ]
+    },
+    {
+     "localized_name": "batch_size",
+     "name": "batch_size",
+     "type": "INT",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetImageSize",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Its size → result size"
+  },
+  {
+   "id": 12,
+   "type": "TextEncodeMOSSImageEdit",
+   "pos": [
+    1060,
+    380
+   ],
+   "size": [
+    440,
+    200
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 4
+    },
+    {
+     "localized_name": "image_0",
+     "name": "images.image_0",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 5
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "shape": 7,
+     "link": 6
+    },
+    {
+     "localized_name": "prompt",
+     "name": "prompt",
+     "type": "STRING",
+     "widget": {
+      "name": "prompt"
+     },
+     "link": 7
+    },
+    {
+     "localized_name": "edit_format",
+     "name": "edit_format",
+     "type": "COMBO",
+     "widget": {
+      "name": "edit_format"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "image_strength",
+     "name": "image_strength",
+     "type": "FLOAT",
+     "widget": {
+      "name": "image_strength"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      15
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "TextEncodeMOSSImageEdit",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Instruction + picture → conditioning",
+   "widgets_values": [
+    "",
+    "Moss-Image-Edit",
+    1.0
+   ]
+  },
+  {
+   "id": 13,
+   "type": "TextEncodeMOSSImageEdit",
+   "pos": [
+    1060,
+    630
+   ],
+   "size": [
+    440,
+    200
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 8
+    },
+    {
+     "localized_name": "image_0",
+     "name": "images.image_0",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 9
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "shape": 7,
+     "link": 10
+    },
+    {
+     "localized_name": "prompt",
+     "name": "prompt",
+     "type": "STRING",
+     "widget": {
+      "name": "prompt"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "edit_format",
+     "name": "edit_format",
+     "type": "COMBO",
+     "widget": {
+      "name": "edit_format"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "image_strength",
+     "name": "image_strength",
+     "type": "FLOAT",
+     "widget": {
+      "name": "image_strength"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      16
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "TextEncodeMOSSImageEdit",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Things to avoid + picture (negative)",
+   "widgets_values": [
+    "nsfw, worst quality, bad anatomy, watermark, jpeg artifact",
+    "Moss-Image-Edit",
+    1.0
+   ]
+  },
+  {
+   "id": 14,
+   "type": "MarkdownNote",
+   "pos": [
+    1060,
+    880
+   ],
+   "size": [
+    440,
+    150
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Why the negative gets the picture",
+   "widgets_values": [
+    "**Why the picture goes into the negative too:** the edit LoRA was trained with the source picture on both sides of CFG (Comfy's template does the same). Without it the negative pulls the result away from your picture."
+   ]
+  },
+  {
+   "id": 15,
+   "type": "SkipLayerGuidanceDiTSimple",
+   "pos": [
+    1580,
+    50
+   ],
+   "size": [
+    400,
+    150
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 11
+    },
+    {
+     "localized_name": "double_layers",
+     "name": "double_layers",
+     "type": "STRING",
+     "widget": {
+      "name": "double_layers"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "single_layers",
+     "name": "single_layers",
+     "type": "STRING",
+     "widget": {
+      "name": "single_layers"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "start_percent",
+     "name": "start_percent",
+     "type": "FLOAT",
+     "widget": {
+      "name": "start_percent"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "end_percent",
+     "name": "end_percent",
+     "type": "FLOAT",
+     "widget": {
+      "name": "end_percent"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      14
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SkipLayerGuidanceDiTSimple",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Skip Layer Guidance · block 22, whole run",
+   "widgets_values": [
+    "",
+    "22",
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "id": 16,
+   "type": "EmptyFlux2LatentImage",
+   "pos": [
+    1580,
+    250
+   ],
+   "size": [
+    400,
+    110
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "width",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": 12
+    },
+    {
+     "localized_name": "height",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": 13
+    },
+    {
+     "localized_name": "batch_size",
+     "name": "batch_size",
+     "type": "INT",
+     "widget": {
+      "name": "batch_size"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      17
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "EmptyFlux2LatentImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Empty picture at that size",
+   "widgets_values": [
+    1024,
+    1024,
+    1
+   ]
+  },
+  {
+   "id": 17,
+   "type": "KSampler",
+   "pos": [
+    1580,
+    410
+   ],
+   "size": [
+    400,
+    280
+   ],
+   "flags": {},
+   "order": 16,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 14
+    },
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 15
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 16
+    },
+    {
+     "localized_name": "latent_image",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 17
+    },
+    {
+     "localized_name": "seed",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": 18
+    },
+    {
+     "localized_name": "steps",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": 19
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": 20
+    },
+    {
+     "localized_name": "sampler_name",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "scheduler",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "denoise",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      21
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Sample · euler / normal",
+   "widgets_values": [
+    42,
+    "fixed",
+    30,
+    4.0,
+    "euler",
+    "normal",
+    1.0
+   ]
+  },
+  {
+   "id": 18,
+   "type": "VAEDecode",
+   "pos": [
+    2060,
+    50
+   ],
+   "size": [
+    240,
+    60
+   ],
+   "flags": {},
+   "order": 17,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "samples",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 21
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 22
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      23,
+      25
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Latent → picture"
+  },
+  {
+   "id": 19,
+   "type": "SaveImage",
+   "pos": [
+    2060,
+    160
+   ],
+   "size": [
+    440,
+    480
+   ],
+   "flags": {},
+   "order": 18,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 23
+    },
+    {
+     "localized_name": "filename_prefix",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SaveImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Result (saved to output/MOSS-Image)",
+   "widgets_values": [
+    "MOSS-Image/moss-edit"
+   ]
+  },
+  {
+   "id": 20,
+   "type": "ImageCompare",
+   "pos": [
+    2060,
+    690
+   ],
+   "size": [
+    440,
+    480
+   ],
+   "flags": {},
+   "order": 19,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image_a",
+     "name": "image_a",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 24
+    },
+    {
+     "localized_name": "image_b",
+     "name": "image_b",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 25
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "ImageCompare",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Before / after (drag the slider)",
+   "widgets_values": []
+  },
+  {
+   "id": 21,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    -30
+   ],
+   "size": [
+    640,
+    640
+   ],
+   "flags": {},
+   "order": 20,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "How to use · v1.0.2",
+   "widgets_values": [
+    "## How to use · v1.0.2\n\n**What it does:** edits one picture with the MOSS-Image edit LoRA. You say what to change; the rest should stay. Core ComfyUI nodes only.\n\n1. **Your inputs** (green group):\n   - **Your picture**: any size; it is scaled to about 1 megapixel and the result has that size.\n   - **What to change**: one short instruction. Say what to keep as well. The saved text is written for `example.png` (the drawing that ships with ComfyUI); write your own for your picture.\n   - **Steps** 30, **CFG** 4: the template's. **Seed**: fixed; a new number gives another try.\n2. **Models**: four files, see the Downloads note.\n3. **Picture + instruction**: nothing to change.\n4. **Sampling**: euler / normal, Skip Layer Guidance on block 22 for the whole run (template).\n5. **Run**. The result is saved to `output/MOSS-Image/`; the slider node shows before and after.\n\n**What to expect:** Same size as your picture at about 1 MP (1248x832 for a 3:2 photo), 44 to 45 s on the lab's 24 GB card in a 10 GiB budget.\n**Weak spot:** in my tests the edit often changed more than asked: a hat swap also turned the woman's head (2 of 2 seeds), a forest-to-winter instruction drew a new winter scene instead of the same trees (3 of 3 runs), and the saved instruction on example.png gave a half yellow vest (seed 42) or no change (seed 43). Try several seeds.\n\n**Tested on:** ComfyUI 0.45.3 on the lab server (RTX PRO 4000 Blackwell 24 GB), --reserve-vram 13.5 --disable-dynamic-vram, no custom nodes. Not run on a 12 GB card yet.\n"
+   ]
+  },
+  {
+   "id": 22,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    650
+   ],
+   "size": [
+    640,
+    420
+   ],
+   "flags": {},
+   "order": 21,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Downloads + requirements",
+   "widgets_values": [
+    "## Downloads + requirements\n\nClick the file name to download it. Put it in the folder shown (inside `ComfyUI/models/`).\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `diffusion_models/` | [moss_image_sft_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/diffusion_models/moss_image_sft_int8_convrot.safetensors) | 5.41 GB |\n| `loras/` | [moss_image_edit_lora_rank_64_bf16.safetensors](https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/loras/moss_image_edit_lora_rank_64_bf16.safetensors) | 0.30 GB |\n| `text_encoders/` | [qwen3.5_9b_w4a8_gptq.safetensors](https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/text_encoders/qwen3.5_9b_w4a8_gptq.safetensors) | 7.34 GB |\n| `vae/` | [flux2-vae_small.safetensors](https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/vae/flux2-vae_small.safetensors) | 0.25 GB |\n\n**VRAM:** Whole card peaked at 10.4 GiB in a 10 GiB budget on the 24 GB card. Not verified on a 12 GB card. Without a budget: 17.4 GiB.\n\n**Run on ComfyUI 0.45.3. No custom nodes.**\n\nLicence: MOSS-Image is Apache-2.0. Workflow: MIT.\n"
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   6,
+   0,
+   7,
+   0,
+   "MODEL"
+  ],
+  [
+   2,
+   1,
+   0,
+   10,
+   0,
+   "IMAGE"
+  ],
+  [
+   3,
+   10,
+   0,
+   11,
+   0,
+   "IMAGE"
+  ],
+  [
+   4,
+   8,
+   0,
+   12,
+   0,
+   "CLIP"
+  ],
+  [
+   5,
+   10,
+   0,
+   12,
+   1,
+   "IMAGE"
+  ],
+  [
+   6,
+   9,
+   0,
+   12,
+   2,
+   "VAE"
+  ],
+  [
+   7,
+   2,
+   0,
+   12,
+   3,
+   "STRING"
+  ],
+  [
+   8,
+   8,
+   0,
+   13,
+   0,
+   "CLIP"
+  ],
+  [
+   9,
+   10,
+   0,
+   13,
+   1,
+   "IMAGE"
+  ],
+  [
+   10,
+   9,
+   0,
+   13,
+   2,
+   "VAE"
+  ],
+  [
+   11,
+   7,
+   0,
+   15,
+   0,
+   "MODEL"
+  ],
+  [
+   12,
+   11,
+   0,
+   16,
+   0,
+   "INT"
+  ],
+  [
+   13,
+   11,
+   1,
+   16,
+   1,
+   "INT"
+  ],
+  [
+   14,
+   15,
+   0,
+   17,
+   0,
+   "MODEL"
+  ],
+  [
+   15,
+   12,
+   0,
+   17,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   16,
+   13,
+   0,
+   17,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   17,
+   16,
+   0,
+   17,
+   3,
+   "LATENT"
+  ],
+  [
+   18,
+   5,
+   0,
+   17,
+   4,
+   "INT"
+  ],
+  [
+   19,
+   3,
+   0,
+   17,
+   5,
+   "INT"
+  ],
+  [
+   20,
+   4,
+   0,
+   17,
+   6,
+   "FLOAT"
+  ],
+  [
+   21,
+   17,
+   0,
+   18,
+   0,
+   "LATENT"
+  ],
+  [
+   22,
+   9,
+   0,
+   18,
+   1,
+   "VAE"
+  ],
+  [
+   23,
+   18,
+   0,
+   19,
+   0,
+   "IMAGE"
+  ],
+  [
+   24,
+   10,
+   0,
+   20,
+   0,
+   "IMAGE"
+  ],
+  [
+   25,
+   18,
+   0,
+   20,
+   1,
+   "IMAGE"
+  ]
+ ],
+ "groups": [
+  {
+   "id": 1,
+   "title": "1 · Your inputs (App mode shows these)",
+   "bounding": [
+    -80,
+    -30,
+    560,
+    1180
+   ],
+   "color": "#8A8",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 2,
+   "title": "2 · Models (loaded once)",
+   "bounding": [
+    520,
+    -30,
+    480,
+    630
+   ],
+   "color": "#3f789e",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 3,
+   "title": "3 · Picture + instruction",
+   "bounding": [
+    1040,
+    -30,
+    480,
+    1090
+   ],
+   "color": "#a1309b",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 4,
+   "title": "4 · Sampling",
+   "bounding": [
+    1560,
+    -30,
+    440,
+    750
+   ],
+   "color": "#b06634",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 5,
+   "title": "5 · Save",
+   "bounding": [
+    2040,
+    -30,
+    480,
+    1230
+   ],
+   "color": "#b58b2a",
+   "font_size": 24,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.55,
+   "offset": [
+    760,
+    120
+   ]
+  },
+  "linearData": {
+   "inputs": [
+    [
+     1,
+     "image"
+    ],
+    [
+     2,
+     "value"
+    ],
+    [
+     3,
+     "value"
+    ],
+    [
+     4,
+     "value"
+    ],
+    [
+     5,
+     "value"
+    ]
+   ],
+   "outputs": [
+    19
+   ]
+  }
+ },
+ "version": 0.4
+}

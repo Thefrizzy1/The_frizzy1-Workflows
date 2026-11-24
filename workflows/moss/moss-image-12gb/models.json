@@ -26,22 +26,22 @@
       "name": "moss_image_edit_lora_rank_64_bf16.safetensors",
       "url": "https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/loras/moss_image_edit_lora_rank_64_bf16.safetensors",
       "dest": "loras",
-      "required": true,
-      "note": "edit. 0.30 GB"
+      "required": false,
+      "note": "edit file only (not needed for t2i, layout, control). 0.30 GB"
     },
     {
       "name": "moss_image_color_depth_control.safetensors",
       "url": "https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/loras/moss_image_color_depth_control.safetensors",
       "dest": "loras",
-      "required": true,
-      "note": "control. 0.31 GB"
+      "required": false,
+      "note": "control file only (not needed for t2i, layout, edit). 0.31 GB"
     },
     {
       "name": "moge_3_vitl_fp16.safetensors",
       "url": "https://huggingface.co/Comfy-Org/MoGe/resolve/main/geometry_estimation/moge_3_vitl_fp16.safetensors",
       "dest": "geometry_estimation",
-      "required": true,
-      "note": "control. 0.74 GB"
+      "required": false,
+      "note": "control file only (not needed for t2i, layout, edit). 0.74 GB"
     }
   ]
 }
