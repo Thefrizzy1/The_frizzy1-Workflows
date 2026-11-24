@@ -1,0 +1,1806 @@
+{
+ "id": "f1b02a7e-3c4d-4e5f-8a9b-24112026e715",
+ "revision": 0,
+ "last_node_id": 24,
+ "last_link_id": 23,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    -60,
+    50
+   ],
+   "size": [
+    520,
+    200
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "STRING",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Prompt (short idea)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      2,
+      6
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Prompt (a short idea is enough)",
+   "widgets_values": [
+    "A red fox sitting in a snowy birch forest at sunrise, next to a small wooden trail sign that reads \"TRAIL 3\"."
+   ]
+  },
+  {
+   "id": 2,
+   "type": "PrimitiveBoolean",
+   "pos": [
+    -60,
+    300
+   ],
+   "size": [
+    520,
+    60
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Prompt enhancer (true = on)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "BOOLEAN",
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "links": [
+      8
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveBoolean",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Prompt enhancer (true = on, the default)",
+   "widgets_values": [
+    true
+   ]
+  },
+  {
+   "id": 3,
+   "type": "ResolutionSelector",
+   "pos": [
+    -60,
+    410
+   ],
+   "size": [
+    520,
+    170
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "aspect_ratio",
+     "name": "aspect_ratio",
+     "type": "COMBO",
+     "widget": {
+      "name": "aspect_ratio"
+     },
+     "link": null,
+     "label": "Shape"
+    },
+    {
+     "localized_name": "megapixels",
+     "name": "megapixels",
+     "type": "FLOAT",
+     "widget": {
+      "name": "megapixels"
+     },
+     "link": null,
+     "label": "Megapixels (keep 1)"
+    },
+    {
+     "localized_name": "multiple",
+     "name": "multiple",
+     "type": "INT",
+     "widget": {
+      "name": "multiple"
+     },
+     "link": null,
+     "label": "multiple (leave at 16)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "width",
+     "name": "width",
+     "type": "INT",
+     "links": [
+      12
+     ]
+    },
+    {
+     "localized_name": "height",
+     "name": "height",
+     "type": "INT",
+     "links": [
+      13
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ResolutionSelector",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Size (pick the shape; keep 1 megapixel)",
+   "widgets_values": [
+    "1:1 (Square)",
+    1.0,
+    16
+   ]
+  },
+  {
+   "id": 4,
+   "type": "PrimitiveInt",
+   "pos": [
+    -60,
+    630
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Steps (50; Turbo LoRA: 8)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      19
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Steps (50; Turbo LoRA on: 8)",
+   "widgets_values": [
+    50,
+    "fixed"
+   ]
+  },
+  {
+   "id": 5,
+   "type": "PrimitiveFloat",
+   "pos": [
+    -60,
+    770
+   ],
+   "size": [
+    520,
+    70
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "FLOAT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "CFG (5; Turbo LoRA: 1)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "FLOAT",
+     "name": "FLOAT",
+     "type": "FLOAT",
+     "links": [
+      20
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveFloat",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "CFG (5; Turbo LoRA on: 1)",
+   "widgets_values": [
+    5.0
+   ]
+  },
+  {
+   "id": 6,
+   "type": "PrimitiveInt",
+   "pos": [
+    -60,
+    890
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Seed"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      18
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Seed (new number = new picture)",
+   "widgets_values": [
+    20261124,
+    "fixed"
+   ]
+  },
+  {
+   "id": 7,
+   "type": "UNETLoader",
+   "pos": [
+    540,
+    50
+   ],
+   "size": [
+    440,
+    90
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "unet_name",
+     "name": "unet_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "unet_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "weight_dtype",
+     "name": "weight_dtype",
+     "type": "COMBO",
+     "widget": {
+      "name": "weight_dtype"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      1
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UNETLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "fibo2_dev_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Fibo-2.0/resolve/main/diffusion_models/fibo2_dev_int8_convrot.safetensors",
+      "directory": "diffusion_models"
+     }
+    ]
+   },
+   "title": "Fibo 2.0 Dev model, int8 (8.41 GB)",
+   "widgets_values": [
+    "fibo2_dev_int8_convrot.safetensors",
+    "default"
+   ]
+  },
+  {
+   "id": 8,
+   "type": "CLIPLoader",
+   "pos": [
+    540,
+    190
+   ],
+   "size": [
+    440,
+    110
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip_name",
+     "name": "clip_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "clip_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "type",
+     "name": "type",
+     "type": "COMBO",
+     "widget": {
+      "name": "type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "device",
+     "name": "device",
+     "type": "COMBO",
+     "widget": {
+      "name": "device"
+     },
+     "shape": 7,
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      10
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "qwen3vl_4b_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Fibo-2.0/resolve/main/text_encoders/qwen3vl_4b_int8_convrot.safetensors",
+      "directory": "text_encoders"
+     }
+    ]
+   },
+   "title": "Text encoder · Qwen3-VL 4B int8 (4.86 GB)",
+   "widgets_values": [
+    "qwen3vl_4b_int8_convrot.safetensors",
+    "fibo2",
+    "default"
+   ]
+  },
+  {
+   "id": 9,
+   "type": "CLIPLoader",
+   "pos": [
+    540,
+    350
+   ],
+   "size": [
+    440,
+    110
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip_name",
+     "name": "clip_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "clip_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "type",
+     "name": "type",
+     "type": "COMBO",
+     "widget": {
+      "name": "type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "device",
+     "name": "device",
+     "type": "COMBO",
+     "widget": {
+      "name": "device"
+     },
+     "shape": 7,
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      3
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "qwen3vl_8b_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen3-VL/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors",
+      "directory": "text_encoders"
+     }
+    ]
+   },
+   "title": "Prompt enhancer · Qwen3-VL 8B int8 (9.35 GB)",
+   "widgets_values": [
+    "qwen3vl_8b_int8_convrot.safetensors",
+    "fibo2",
+    "default"
+   ]
+  },
+  {
+   "id": 10,
+   "type": "VAELoader",
+   "pos": [
+    540,
+    510
+   ],
+   "size": [
+    440,
+    60
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "vae_name",
+     "name": "vae_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "vae_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      22
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAELoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "flux2-vae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Fibo-2.0/resolve/main/vae/flux2-vae.safetensors",
+      "directory": "vae"
+     }
+    ]
+   },
+   "title": "VAE (the FLUX.2 VAE)",
+   "widgets_values": [
+    "flux2-vae.safetensors"
+   ]
+  },
+  {
+   "id": 11,
+   "type": "LoraLoaderModelOnly",
+   "pos": [
+    540,
+    620
+   ],
+   "size": [
+    440,
+    110
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 4,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 1
+    },
+    {
+     "localized_name": "lora_name",
+     "name": "lora_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "lora_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "strength_model",
+     "name": "strength_model",
+     "type": "FLOAT",
+     "widget": {
+      "name": "strength_model"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      14
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoraLoaderModelOnly",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "fibo_2.0_turbo_lora_avg_rank_270_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Fibo-2.0/resolve/main/loras/fibo_2.0_turbo_lora_avg_rank_270_bf16.safetensors",
+      "directory": "loras"
+     }
+    ]
+   },
+   "title": "Turbo LoRA (optional, bypassed)",
+   "widgets_values": [
+    "fibo_2.0_turbo_lora_avg_rank_270_bf16.safetensors",
+    1.0
+   ]
+  },
+  {
+   "id": 12,
+   "type": "MarkdownNote",
+   "pos": [
+    540,
+    780
+   ],
+   "size": [
+    440,
+    230
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Why the Turbo LoRA",
+   "widgets_values": [
+    "**Turbo LoRA (optional).** Off (bypassed) by default. To use it: select the node, press **Ctrl+B**, and in group 1 set Steps **8** and CFG **1**. Tested on 2 prompts: 8 steps at CFG 1 took 12-16 s instead of 82 s, with similar fur detail in a 2x crop; Dev alone at 8 steps / CFG 1 came out murky. Bria publishes no setting for this LoRA; 8 / 1 is what was tested here. Download the file only if you use it."
+   ]
+  },
+  {
+   "id": 13,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1060,
+    50
+   ],
+   "size": [
+    440,
+    260
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "STRING",
+     "widget": {
+      "name": "value"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      5
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Enhancer instructions (Bria's, from bria-vgl)",
+   "widgets_values": [
+    "You are a visionary and creative Visual Art Director at a leading Generative AI company.\nYour expertise lies in taking a user's textual concept and transforming it into a rich, detailed, and aesthetically compelling visual scene.\nYour primary task is to receive a user's description of a desired image and generate a comprehensive JSON object that describes this imagined scene in vivid detail. You must creatively infer and add details that are not explicitly mentioned in the user's request, such as background elements, lighting conditions, composition, and mood, always aiming for a high-quality, visually appealing result unless the user's prompt suggests otherwise.\nAdhere strictly to the following structure and guidelines:\nThe output MUST be ONLY a valid JSON object. Do not include any text before or after the JSON object (e.g., no \"Here is the JSON:\", no explanations, no apologies).\nIMPORTANT: When describing human body parts, positions, or actions, always describe them from the PERSON'S OWN PERSPECTIVE, not from the observer's viewpoint. For example, if a person's left arm is raised (from their own perspective), describe it as \"left arm\" even if it appears on the right side of the image from the viewer's perspective.\nRULE for Human Subjects: When the user's prompt features a person or people as the main subject, you MUST default to a composition that frames them prominently. Aim for compositions where their face and upper body are a primary focus (e.g., 'medium shot', 'close-up'). Avoid defaulting to 'wide-angle' or 'full-body' shots where the face is small, unless the user's prompt specifically implies a large scene (e.g., \"a person standing on a mountain\").\nRULE for Device Screens: Describe what is on a screen only if the user explicitly asks for it (e.g., \"map visible on screen\"); describing what the person does on it (reading, scrolling, video-calling, playing, typing) does not count; only words like \"visible\", \"showing\" or \"displaying\" do. Otherwise, never mention screen content or glow anywhere in the JSON, and set the device's `orientation` to face its user, screen away from the camera. When screen content is requested, turn the screen toward the camera and pose the person to match: they hold it out to show it, and the person's description must say their eyes look at the camera or out into the scene, never at the screen.\nUnless the user's prompt explicitly requests a different style (e.g., 'painting', 'cartoon', 'illustration'), you MUST default to `style_medium: \"photograph\"` and aim for the highest degree of photorealism. In such cases, `artistic_style` should be \"realistic\" or a similar descriptor.\nThe JSON object must contain the following keys precisely:\n1.  `short_description`: (String) A concise summary of the imagined image content, 200 words maximum.\n2.  `objects`: (Array of Objects) List the prominent objects of the scene. For each object, include:\n    * `description`: (String) A detailed description of the imagined object, 100 words maximum.\n    * `location`: (String) E.g., \"center\", \"top-left\", \"bottom-right foreground\".\n    * `relative_size`: (String) E.g., \"small\", \"medium\", \"large within frame\". (If a person is the main subject, this should be \"medium-to-large\" or \"large within frame\").\n    * `shape_and_color`: (String) Describe the basic shape and dominant color.\n    * `texture`: (String) E.g., \"smooth\", \"rough\", \"metallic\", \"furry\".\n    * `appearance_details`: (String) Any other notable visual details.\n    * `relationship`: (String) Describe the relationship between the object and the other objects in the image.\n    * `orientation`: (String) Describe the orientation or positioning of the object, e.g., \"upright\", \"tilted 45 degrees\", \"horizontal\", \"vertical\", \"facing left\", \"facing right\", \"upside down\", \"lying on its side\".\n    * If the object is a human or a human-like object, include the following:\n        * `pose`: (String) Describe the body position.\n        * `expression`: (String) Describe facial expression and emotion. E.g., \"winking\", \"joyful\", \"serious\", \"surprised\", \"calm\".\n        * `clothing`: (String) Describe attire.\n        * `action`: (String) Describe the action of the human.\n        * `gender`: (String) Describe the gender of the human.\n        * `skin_tone_and_texture`: (String) Describe the skin tone and texture.\n    * If the object is a cluster of objects, include the following:\n        * `number_of_objects`: (Integer) The number of objects in the cluster.\n3.  `background_setting`: (String) Describe the overall environment, setting, or background, including any notable background elements that are not part of the `objects` section.\n4.  `lighting`: (Object)\n    * `conditions`: (String) E.g., \"bright daylight\", \"dim indoor\", \"studio lighting\", \"golden hour\".\n    * `direction`: (String) E.g., \"front-lit\", \"backlit\", \"side-lit from left\".\n    * `shadows`: (String) Describe the presence and quality of shadows, e.g., \"long, soft shadows\", \"sharp, defined shadows\", \"minimal shadows\".\n5.  `aesthetics`: (Object)\n    * `composition`: (String) E.g., \"rule of thirds\", \"symmetrical\", \"centered\", \"leading lines\". If people are the main subject, specify the shot type, e.g., \"medium shot\", \"close-up\", \"portrait composition\".\n    * `color_scheme`: (String) E.g., \"monochromatic blue\", \"warm complementary colors\", \"high contrast\".\n    * `mood_atmosphere`: (String) E.g., \"serene\", \"energetic\", \"mysterious\", \"joyful\".\n6.  `photographic_characteristics`: (Object)\n    * `depth_of_field`: (String) E.g., \"shallow\", \"deep\", \"bokeh background\".\n    * `focus`: (String) E.g., \"sharp focus on subject\", \"soft focus\", \"motion blur\".\n    * `camera_angle`: (String) E.g., \"eye-level\", \"low angle\", \"high angle\", \"dutch angle\".\n    * `lens_focal_length`: (String) E.g., \"wide-angle\", \"telephoto\", \"macro\", \"fisheye\". (If the main subject is a person, prefer \"standard lens (e.g., 35mm-50mm)\" or \"portrait lens (e.g., 50mm-85mm)\" to ensure they are framed more closely. Avoid \"wide-angle\" for people unless specified).\n7.  `style_medium`: (String) Identify the artistic style or medium based on the user's prompt or creative interpretation (e.g., \"photograph\", \"oil painting\", \"watercolor\", \"3D render\", \"digital illustration\", \"pencil sketch\").\n8.  `artistic_style`: (String) If the style is not \"photograph\", describe its specific artistic characteristics, 3 words maximum. (e.g., \"impressionistic, vibrant, textured\" for an oil painting).\n9.  `context`: (String) Provide a general description of the type of image this would be. For example: \"This is a concept for a high-fashion editorial photograph intended for a magazine spread,\" or \"This describes a piece of concept art for a fantasy video game.\"\n10. `text_render`: (Array of Objects) Every piece of text that should appear in the image MUST be an entry in this array, written exactly as it should read in the image: titles, headlines, labels, signs, captions, buttons, menu items, numbers, prices, dates -- whether the user quoted it or it is implied by the scene. Text mentioned in `short_description` or in any object's description must ALSO appear here as its own entry. Put each separate line, label or list item in its own entry. If the image has no text, the array is empty (`[]`).\n    * `text`: (String) The exact text as it should appear in the image. NEVER use generic placeholders.\n    * `location`: (String) E.g., \"center\", \"top-left\", \"bottom-right foreground\".\n    * `size`: (String) E.g., \"medium\", \"large\", \"large within frame\".\n    * `color`: (String) E.g., \"red\", \"blue\", \"green\".\n    * `font`: (String) E.g., \"realistic\", \"cartoonish\", \"minimalist\", \"serif typeface\".\n    * `appearance_details`: (String) Any other notable visual details.\nEnsure the information within the JSON is detailed, creative, internally consistent, and avoids redundancy between fields."
+   ]
+  },
+  {
+   "id": 14,
+   "type": "StringReplace",
+   "pos": [
+    1060,
+    360
+   ],
+   "size": [
+    440,
+    200
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "string",
+     "name": "string",
+     "type": "STRING",
+     "widget": {
+      "name": "string"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "find",
+     "name": "find",
+     "type": "STRING",
+     "widget": {
+      "name": "find"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "replace",
+     "name": "replace",
+     "type": "STRING",
+     "widget": {
+      "name": "replace"
+     },
+     "link": 2
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      4
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringReplace",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Your prompt goes into Bria's request",
+   "widgets_values": [
+    "Generate a detailed JSON object, adhering to the expected schema, for an imagined scene based on the following request: {user_prompt}.",
+    "{user_prompt}",
+    ""
+   ]
+  },
+  {
+   "id": 15,
+   "type": "TextGenerateV2",
+   "pos": [
+    1060,
+    610
+   ],
+   "size": [
+    440,
+    480
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 3
+    },
+    {
+     "localized_name": "image1",
+     "name": "images.image1",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "video1",
+     "name": "videos.video1",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "audio1",
+     "name": "audios.audio1",
+     "type": "AUDIO",
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "prompt",
+     "name": "prompt",
+     "type": "STRING",
+     "widget": {
+      "name": "prompt"
+     },
+     "link": 4
+    },
+    {
+     "localized_name": "max_length",
+     "name": "max_length",
+     "type": "INT",
+     "widget": {
+      "name": "max_length"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "sampling_mode",
+     "name": "sampling_mode",
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "sampling_mode"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "temperature",
+     "name": "sampling_mode.temperature",
+     "type": "FLOAT",
+     "widget": {
+      "name": "sampling_mode.temperature"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "top_k",
+     "name": "sampling_mode.top_k",
+     "type": "INT",
+     "widget": {
+      "name": "sampling_mode.top_k"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "top_p",
+     "name": "sampling_mode.top_p",
+     "type": "FLOAT",
+     "widget": {
+      "name": "sampling_mode.top_p"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "min_p",
+     "name": "sampling_mode.min_p",
+     "type": "FLOAT",
+     "widget": {
+      "name": "sampling_mode.min_p"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "repetition_penalty",
+     "name": "sampling_mode.repetition_penalty",
+     "type": "FLOAT",
+     "widget": {
+      "name": "sampling_mode.repetition_penalty"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "presence_penalty",
+     "name": "sampling_mode.presence_penalty",
+     "type": "FLOAT",
+     "widget": {
+      "name": "sampling_mode.presence_penalty"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "seed",
+     "name": "sampling_mode.seed",
+     "type": "INT",
+     "widget": {
+      "name": "sampling_mode.seed"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "thinking",
+     "name": "thinking",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "thinking"
+     },
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "use_default_template",
+     "name": "use_default_template",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "use_default_template"
+     },
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "mtp",
+     "name": "mtp",
+     "type": "COMBO",
+     "widget": {
+      "name": "mtp"
+     },
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "system_prompt",
+     "name": "system_prompt",
+     "type": "STRING",
+     "widget": {
+      "name": "system_prompt"
+     },
+     "shape": 7,
+     "link": 5
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "generated_text",
+     "name": "generated_text",
+     "type": "STRING",
+     "links": [
+      7
+     ]
+    },
+    {
+     "localized_name": "thinking",
+     "name": "thinking",
+     "type": "STRING",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "TextGenerateV2",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Enhancer writes the JSON caption",
+   "widgets_values": [
+    "",
+    3000,
+    "on",
+    0.2,
+    20,
+    0.95,
+    0.05,
+    1.05,
+    0.0,
+    1234,
+    false,
+    true,
+    "off"
+   ]
+  },
+  {
+   "id": 16,
+   "type": "ComfySwitchNode",
+   "pos": [
+    1060,
+    1140
+   ],
+   "size": [
+    440,
+    80
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "on_false",
+     "name": "on_false",
+     "type": "*",
+     "shape": 7,
+     "link": 6
+    },
+    {
+     "localized_name": "on_true",
+     "name": "on_true",
+     "type": "*",
+     "shape": 7,
+     "link": 7
+    },
+    {
+     "localized_name": "switch",
+     "name": "switch",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "switch"
+     },
+     "link": 8
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "output",
+     "name": "output",
+     "type": "*",
+     "links": [
+      9,
+      11
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ComfySwitchNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Enhanced caption or your own prompt",
+   "widgets_values": [
+    true
+   ]
+  },
+  {
+   "id": 17,
+   "type": "MarkdownNote",
+   "pos": [
+    1060,
+    1270
+   ],
+   "size": [
+    440,
+    200
+   ],
+   "flags": {},
+   "order": 16,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Why the enhancer",
+   "widgets_values": [
+    "**Why an enhancer?** Fibo 2.0 was trained on long JSON captions (lighting, camera, every object), not on short sentences. Bria's own tool (bria-vgl) has an LLM write that JSON from your idea; here Qwen3-VL 8B does it with Bria's instructions and request text, copied unchanged. Off (false) sends your prompt as written and skips the LLM, but its file must still be in the folder: ComfyUI checks every loader before it starts."
+   ]
+  },
+  {
+   "id": 18,
+   "type": "PreviewAny",
+   "pos": [
+    1580,
+    50
+   ],
+   "size": [
+    400,
+    300
+   ],
+   "flags": {},
+   "order": 17,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "source",
+     "name": "source",
+     "type": "*",
+     "link": 9
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PreviewAny",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Caption the model gets (read it here)"
+  },
+  {
+   "id": 19,
+   "type": "TextEncodeFibo2",
+   "pos": [
+    1580,
+    400
+   ],
+   "size": [
+    400,
+    300
+   ],
+   "flags": {},
+   "order": 18,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 10
+    },
+    {
+     "localized_name": "image_1",
+     "name": "images.image_1",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "prompt",
+     "name": "prompt",
+     "type": "STRING",
+     "widget": {
+      "name": "prompt"
+     },
+     "link": 11
+    },
+    {
+     "localized_name": "negative_prompt",
+     "name": "negative_prompt",
+     "type": "STRING",
+     "widget": {
+      "name": "negative_prompt"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "width",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": 12
+    },
+    {
+     "localized_name": "height",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": 13
+    },
+    {
+     "localized_name": "batch_size",
+     "name": "batch_size",
+     "type": "INT",
+     "widget": {
+      "name": "batch_size"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "links": [
+      15
+     ]
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "links": [
+      16
+     ]
+    },
+    {
+     "localized_name": "latent",
+     "name": "latent",
+     "type": "LATENT",
+     "links": [
+      17
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "TextEncodeFibo2",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Caption + Bria's negative → conditioning",
+   "widgets_values": [
+    "",
+    "{\"short_description\":\"\",\"objects\":[{\"description\":\"the main subject\",\"texture\":\"smooth, featureless, plastic-like, airbrushed, no fine surface detail\",\"appearance_details\":\"soft blurred edges, simplified shapes, no fine detail\",\"skin_tone_and_texture\":\"waxy airbrushed skin, poreless, plastic smooth\"}],\"background_setting\":\"a plain seamless studio backdrop, perfectly smooth gradient, blurred and featureless, no visible texture\",\"lighting\":{},\"aesthetics\":{\"artifacts\":[\"oversaturated colours\",\"neon colour cast\",\"overexposed highlights\",\"lens flare\",\"slight blur\",\"motion blur\",\"haze\"]},\"photographic_characteristics\":{\"depth_of_field\":\"shallow, heavy bokeh obscuring most of the frame\",\"focus\":\"soft, slightly out of focus, lacking fine texture\"},\"style_medium\":\"\",\"context\":\"\",\"artistic_style\":\"\"}",
+    1024,
+    1024,
+    1
+   ]
+  },
+  {
+   "id": 20,
+   "type": "KSampler",
+   "pos": [
+    2060,
+    50
+   ],
+   "size": [
+    400,
+    280
+   ],
+   "flags": {},
+   "order": 19,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 14
+    },
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 15
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 16
+    },
+    {
+     "localized_name": "latent_image",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 17
+    },
+    {
+     "localized_name": "seed",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": 18
+    },
+    {
+     "localized_name": "steps",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": 19
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": 20
+    },
+    {
+     "localized_name": "sampler_name",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "scheduler",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "denoise",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      21
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Sample · euler/simple",
+   "widgets_values": [
+    20261124,
+    "fixed",
+    50,
+    5.0,
+    "euler",
+    "simple",
+    1.0
+   ]
+  },
+  {
+   "id": 21,
+   "type": "VAEDecode",
+   "pos": [
+    2540,
+    50
+   ],
+   "size": [
+    240,
+    60
+   ],
+   "flags": {},
+   "order": 20,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "samples",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 21
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 22
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      23
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Latent → picture"
+  },
+  {
+   "id": 22,
+   "type": "SaveImage",
+   "pos": [
+    2540,
+    160
+   ],
+   "size": [
+    440,
+    480
+   ],
+   "flags": {},
+   "order": 21,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 23
+    },
+    {
+     "localized_name": "filename_prefix",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SaveImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Result (saved to output/Fibo2)",
+   "widgets_values": [
+    "Fibo2/fibo2-t2i"
+   ]
+  },
+  {
+   "id": 23,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    -30
+   ],
+   "size": [
+    640,
+    500
+   ],
+   "flags": {},
+   "order": 22,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "How to use · v1.1.0",
+   "widgets_values": [
+    "## How to use · v1.1.0\n\n**What it does:** Fibo 2.0 Dev text to image (Bria, 8B, non-commercial licence). Type a short idea; an LLM turns it into the long JSON caption Fibo was trained on, then Fibo draws it in 50 steps. Core ComfyUI nodes only.\n\n1. **Your inputs** (green group):\n   - **Prompt**: a short idea. Put text you want drawn in quotes.\n   - **Prompt enhancer**: keep it true. False sends your words as written and skips the LLM (on the test prompt the picture still matched, with a smaller fox; the time was about the same).\n   - **Size**: pick the shape and keep 1 megapixel (Fibo was trained at about 1 MP). Leave \"multiple\" at 16.\n   - **Steps** and **CFG**: 50 and 5, the authors' setting for Dev. With the Turbo LoRA on: 8 and 1.\n   - **Seed**: fixed, so the first Run gives the README picture. Type a new number for a new picture.\n2. **Models**: the four loaders must show the files from the Downloads note. The **Turbo LoRA** is off (bypassed); see its note.\n3. **Prompt enhancer**: nothing to change. The instructions are Bria's own.\n4. **Prompt**: the preview node shows the JSON caption the model really gets. Bria's text-to-image negative is already in the encode node.\n5. **Sampling**: euler / simple (Comfy's Fibo template). Steps, CFG and seed come from group 1.\n6. Press **Run**. The picture is saved by the **Result** node to `output/Fibo2/`.\n\n**What to expect:** on the 24 GB lab card (RTX PRO 4000 Blackwell) inside a 10.5 GiB VRAM budget: first run 142 s (loads everything), a new prompt 166 s (the enhancer writes a new caption), a new seed with the same prompt 82 s. Turbo LoRA on: 12-16 s. 1:1 gives 1024x1024, 16:9 gives 1360x768.\n\n**Tested on:** ComfyUI 0.45.3 on the lab's RTX PRO 4000 Blackwell (24 GB), second instance with --reserve-vram 13.5 and --disable-dynamic-vram. Not tested on a real 12 GB card.\n"
+   ]
+  },
+  {
+   "id": 24,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    510
+   ],
+   "size": [
+    640,
+    380
+   ],
+   "flags": {},
+   "order": 23,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Downloads + requirements",
+   "widgets_values": [
+    "## Downloads + requirements\n\nClick the file name to download it. Put it in the folder shown (inside `ComfyUI/models/`).\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `diffusion_models/` | [fibo2_dev_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Fibo-2.0/resolve/main/diffusion_models/fibo2_dev_int8_convrot.safetensors) | 8.41 GB |\n| `text_encoders/` | [qwen3vl_4b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Fibo-2.0/resolve/main/text_encoders/qwen3vl_4b_int8_convrot.safetensors) | 4.86 GB |\n| `text_encoders/` | [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen3-VL/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors) | 9.35 GB |\n| `vae/` | [flux2-vae.safetensors](https://huggingface.co/Comfy-Org/Fibo-2.0/resolve/main/vae/flux2-vae.safetensors) | 0.34 GB |\n\nOptional, only for the Turbo LoRA:\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `loras/` | [fibo_2.0_turbo_lora_avg_rank_270_bf16.safetensors](https://huggingface.co/Comfy-Org/Fibo-2.0/resolve/main/loras/fibo_2.0_turbo_lora_avg_rank_270_bf16.safetensors) | 1.99 GB |\n\nThe first four are needed, also with the enhancer off. The text encoder, enhancer and VAE are the same files as in the Fibo 2.0 Edit workflow of this folder. \n\n**VRAM:** whole card peaked at 10.2 GiB inside a 10.5 GiB budget (--reserve-vram 13.5 on a 24 GB card; ComfyUI moves models in and out). Without a budget it filled 20.2 GiB. Not verified on a real 12 GB card.\n\n**Run on ComfyUI 0.45.3. No custom nodes.**\n\nLicence: Fibo 2.0 is CC BY-NC 4.0 (non-commercial only). Qwen3-VL: Apache 2.0.\n"
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   7,
+   0,
+   11,
+   0,
+   "MODEL"
+  ],
+  [
+   2,
+   1,
+   0,
+   14,
+   2,
+   "STRING"
+  ],
+  [
+   3,
+   9,
+   0,
+   15,
+   0,
+   "CLIP"
+  ],
+  [
+   4,
+   14,
+   0,
+   15,
+   4,
+   "STRING"
+  ],
+  [
+   5,
+   13,
+   0,
+   15,
+   17,
+   "STRING"
+  ],
+  [
+   6,
+   1,
+   0,
+   16,
+   0,
+   "STRING"
+  ],
+  [
+   7,
+   15,
+   0,
+   16,
+   1,
+   "STRING"
+  ],
+  [
+   8,
+   2,
+   0,
+   16,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   9,
+   16,
+   0,
+   18,
+   0,
+   "*"
+  ],
+  [
+   10,
+   8,
+   0,
+   19,
+   0,
+   "CLIP"
+  ],
+  [
+   11,
+   16,
+   0,
+   19,
+   3,
+   "*"
+  ],
+  [
+   12,
+   3,
+   0,
+   19,
+   5,
+   "INT"
+  ],
+  [
+   13,
+   3,
+   1,
+   19,
+   6,
+   "INT"
+  ],
+  [
+   14,
+   11,
+   0,
+   20,
+   0,
+   "MODEL"
+  ],
+  [
+   15,
+   19,
+   0,
+   20,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   16,
+   19,
+   1,
+   20,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   17,
+   19,
+   2,
+   20,
+   3,
+   "LATENT"
+  ],
+  [
+   18,
+   6,
+   0,
+   20,
+   4,
+   "INT"
+  ],
+  [
+   19,
+   4,
+   0,
+   20,
+   5,
+   "INT"
+  ],
+  [
+   20,
+   5,
+   0,
+   20,
+   6,
+   "FLOAT"
+  ],
+  [
+   21,
+   20,
+   0,
+   21,
+   0,
+   "LATENT"
+  ],
+  [
+   22,
+   10,
+   0,
+   21,
+   1,
+   "VAE"
+  ],
+  [
+   23,
+   21,
+   0,
+   22,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [
+  {
+   "id": 1,
+   "title": "1 · Your inputs (App mode shows these)",
+   "bounding": [
+    -80,
+    -30,
+    560,
+    1040
+   ],
+   "color": "#8A8",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 2,
+   "title": "2 · Models (loaded once)",
+   "bounding": [
+    520,
+    -30,
+    480,
+    1030
+   ],
+   "color": "#3f789e",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 3,
+   "title": "3 · Prompt enhancer (on by default)",
+   "bounding": [
+    1040,
+    -30,
+    480,
+    1530
+   ],
+   "color": "#88A",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 4,
+   "title": "4 · Prompt",
+   "bounding": [
+    1560,
+    -30,
+    440,
+    760
+   ],
+   "color": "#a1309b",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 5,
+   "title": "5 · Sampling",
+   "bounding": [
+    2040,
+    -30,
+    440,
+    400
+   ],
+   "color": "#b06634",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 6,
+   "title": "6 · Save",
+   "bounding": [
+    2520,
+    -30,
+    480,
+    700
+   ],
+   "color": "#b58b2a",
+   "font_size": 24,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.55,
+   "offset": [
+    760,
+    120
+   ]
+  },
+  "linearData": {
+   "inputs": [
+    [
+     1,
+     "value"
+    ],
+    [
+     2,
+     "value"
+    ],
+    [
+     3,
+     "aspect_ratio"
+    ],
+    [
+     3,
+     "megapixels"
+    ],
+    [
+     4,
+     "value"
+    ],
+    [
+     5,
+     "value"
+    ],
+    [
+     6,
+     "value"
+    ]
+   ],
+   "outputs": [
+    22
+   ]
+  }
+ },
+ "version": 0.4
+}
