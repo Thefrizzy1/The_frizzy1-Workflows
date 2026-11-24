@@ -1,0 +1,1175 @@
+{
+ "id": "6a9e1f3c-2b7d-4e10-9c55-241120260909",
+ "revision": 0,
+ "last_node_id": 16,
+ "last_link_id": 15,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    -60,
+    50
+   ],
+   "size": [
+    520,
+    220
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "STRING",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Prompt"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      2
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Prompt (describe the picture, English)",
+   "widgets_values": [
+    "Analog film photograph, wide landscape shot, a lone man viewed from behind wearing a long dark brown overcoat standing in an empty snowy desert. A giant single pillar brutalist concrete gas station canopy with wide mushroom-shaped roof, minimalist retro futurism architecture. A smooth cream vintage fastback sports car parked beside old retro red-and-white fuel pump. Distant snow-capped low mountain ranges stretching across horizon, pale muted sky, gravel ground with thin scattered snow. Quiet desolate western atmosphere, soft natural daylight, muted desaturated earth tone palette, vintage color grading, subtle film grain, slight vignetting, medium format film aesthetic, sharp composition, symmetrical balance, cinematic minimalist photography, 8k\n"
+   ]
+  },
+  {
+   "id": 2,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    -60,
+    320
+   ],
+   "size": [
+    520,
+    130
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "STRING",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Negative prompt"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      3
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Negative prompt (empty = template)",
+   "widgets_values": [
+    ""
+   ]
+  },
+  {
+   "id": 3,
+   "type": "ResolutionSelector",
+   "pos": [
+    -60,
+    500
+   ],
+   "size": [
+    520,
+    170
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "aspect_ratio",
+     "name": "aspect_ratio",
+     "type": "COMBO",
+     "widget": {
+      "name": "aspect_ratio"
+     },
+     "link": null,
+     "label": "Shape"
+    },
+    {
+     "localized_name": "megapixels",
+     "name": "megapixels",
+     "type": "FLOAT",
+     "widget": {
+      "name": "megapixels"
+     },
+     "link": null,
+     "label": "Megapixels (1 = 1024x1024)"
+    },
+    {
+     "localized_name": "multiple",
+     "name": "multiple",
+     "type": "INT",
+     "widget": {
+      "name": "multiple"
+     },
+     "link": null,
+     "label": "multiple (leave at 16)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "width",
+     "name": "width",
+     "type": "INT",
+     "links": [
+      4
+     ]
+    },
+    {
+     "localized_name": "height",
+     "name": "height",
+     "type": "INT",
+     "links": [
+      5
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ResolutionSelector",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Size (pick the shape; 1 megapixel = 1024x1024)",
+   "widgets_values": [
+    "1:1 (Square)",
+    1.0,
+    16
+   ]
+  },
+  {
+   "id": 4,
+   "type": "PrimitiveInt",
+   "pos": [
+    -60,
+    720
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Steps (20 = authors')"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      11
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Steps (20 = authors' value for this file)",
+   "widgets_values": [
+    20,
+    "fixed"
+   ]
+  },
+  {
+   "id": 5,
+   "type": "PrimitiveFloat",
+   "pos": [
+    -60,
+    860
+   ],
+   "size": [
+    520,
+    60
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "FLOAT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "CFG (5 = template)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "FLOAT",
+     "name": "FLOAT",
+     "type": "FLOAT",
+     "links": [
+      12
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveFloat",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "CFG (5 = template default)",
+   "widgets_values": [
+    5.0
+   ]
+  },
+  {
+   "id": 6,
+   "type": "PrimitiveInt",
+   "pos": [
+    -60,
+    970
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Seed"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      10
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Seed (new number = new picture)",
+   "widgets_values": [
+    24112026,
+    "fixed"
+   ]
+  },
+  {
+   "id": 7,
+   "type": "UNETLoader",
+   "pos": [
+    540,
+    50
+   ],
+   "size": [
+    440,
+    90
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "unet_name",
+     "name": "unet_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "unet_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "weight_dtype",
+     "name": "weight_dtype",
+     "type": "COMBO",
+     "widget": {
+      "name": "weight_dtype"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      6
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UNETLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "mage_flow_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Mage-Flow/resolve/main/diffusion_models/mage_flow_int8_convrot.safetensors",
+      "directory": "diffusion_models"
+     }
+    ]
+   },
+   "title": "Mage-Flow int8 model (4.16 GB)",
+   "widgets_values": [
+    "mage_flow_int8_convrot.safetensors",
+    "default"
+   ]
+  },
+  {
+   "id": 8,
+   "type": "CLIPLoader",
+   "pos": [
+    540,
+    190
+   ],
+   "size": [
+    440,
+    110
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip_name",
+     "name": "clip_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "clip_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "type",
+     "name": "type",
+     "type": "COMBO",
+     "widget": {
+      "name": "type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "device",
+     "name": "device",
+     "type": "COMBO",
+     "widget": {
+      "name": "device"
+     },
+     "shape": 7,
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      1
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "qwen3vl_4b_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Mage-Flow/resolve/main/text_encoders/qwen3vl_4b_bf16.safetensors",
+      "directory": "text_encoders"
+     }
+    ]
+   },
+   "title": "Qwen3-VL 4B text encoder (type mage)",
+   "widgets_values": [
+    "qwen3vl_4b_bf16.safetensors",
+    "mage",
+    "default"
+   ]
+  },
+  {
+   "id": 9,
+   "type": "VAELoader",
+   "pos": [
+    540,
+    350
+   ],
+   "size": [
+    440,
+    60
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "vae_name",
+     "name": "vae_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "vae_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      14
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAELoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "mage_flow_vae_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Mage-Flow/resolve/main/vae/mage_flow_vae_bf16.safetensors",
+      "directory": "vae"
+     }
+    ]
+   },
+   "title": "Mage-Flow VAE",
+   "widgets_values": [
+    "mage_flow_vae_bf16.safetensors"
+   ]
+  },
+  {
+   "id": 10,
+   "type": "TextEncodeMageFlowEdit",
+   "pos": [
+    1060,
+    50
+   ],
+   "size": [
+    400,
+    280
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1
+    },
+    {
+     "localized_name": "image_1",
+     "name": "images.image_1",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "prompt",
+     "name": "prompt",
+     "type": "STRING",
+     "widget": {
+      "name": "prompt"
+     },
+     "link": 2
+    },
+    {
+     "localized_name": "negative_prompt",
+     "name": "negative_prompt",
+     "type": "STRING",
+     "widget": {
+      "name": "negative_prompt"
+     },
+     "link": 3
+    },
+    {
+     "localized_name": "width",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": 4
+    },
+    {
+     "localized_name": "height",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": 5
+    },
+    {
+     "localized_name": "batch_size",
+     "name": "batch_size",
+     "type": "INT",
+     "widget": {
+      "name": "batch_size"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "links": [
+      7
+     ]
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "links": [
+      8
+     ]
+    },
+    {
+     "localized_name": "latent",
+     "name": "latent",
+     "type": "LATENT",
+     "links": [
+      9
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "TextEncodeMageFlowEdit",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Prompt + size → conditioning and empty picture",
+   "widgets_values": [
+    "",
+    "",
+    1024,
+    1024,
+    1
+   ]
+  },
+  {
+   "id": 11,
+   "type": "MarkdownNote",
+   "pos": [
+    1060,
+    400
+   ],
+   "size": [
+    400,
+    150
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Why an Edit node for text to image",
+   "widgets_values": [
+    "**Why an \"Edit\" encoder:** core ComfyUI has one Mage-Flow text node for both models. With no picture plugged into `images` it does plain text to image, and it also makes the empty picture at the size from group 1 (the template does the same)."
+   ]
+  },
+  {
+   "id": 12,
+   "type": "KSampler",
+   "pos": [
+    1540,
+    50
+   ],
+   "size": [
+    400,
+    290
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 6
+    },
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 7
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 8
+    },
+    {
+     "localized_name": "latent_image",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 9
+    },
+    {
+     "localized_name": "seed",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": 10
+    },
+    {
+     "localized_name": "steps",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": 11
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": 12
+    },
+    {
+     "localized_name": "sampler_name",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "scheduler",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "denoise",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      13
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Sampler · euler / simple (from the template)",
+   "widgets_values": [
+    24112026,
+    "fixed",
+    20,
+    5.0,
+    "euler",
+    "simple",
+    1.0
+   ]
+  },
+  {
+   "id": 13,
+   "type": "VAEDecode",
+   "pos": [
+    2000,
+    50
+   ],
+   "size": [
+    240,
+    60
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "samples",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 13
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 14
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      15
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Latent → picture"
+  },
+  {
+   "id": 14,
+   "type": "SaveImageAdvanced",
+   "pos": [
+    2000,
+    160
+   ],
+   "size": [
+    400,
+    470
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 15
+    },
+    {
+     "localized_name": "filename_prefix",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "format",
+     "name": "format",
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "format"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "bit_depth",
+     "name": "format.bit_depth",
+     "type": "COMBO",
+     "widget": {
+      "name": "format.bit_depth"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "input_color_space",
+     "name": "format.input_color_space",
+     "type": "COMBO",
+     "widget": {
+      "name": "format.input_color_space"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SaveImageAdvanced",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Result (saved to output/Mage-Flow)",
+   "widgets_values": [
+    "Mage-Flow/mage_flow",
+    "png",
+    "8-bit",
+    "sRGB"
+   ]
+  },
+  {
+   "id": 15,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    -30
+   ],
+   "size": [
+    640,
+    640
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "How to use · v1.0.0",
+   "widgets_values": [
+    "## How to use · v1.0.0\n\n**What it does:** Microsoft Mage-Flow (4B) text to image from the Comfy-Org int8 file, 20 steps, 1024x1024 by default. Core ComfyUI nodes only.\n\n1. **Your inputs** (green group):\n   - **Prompt**: describe the picture, in English.\n   - **Negative prompt**: what to avoid. Empty in the template.\n   - **Size**: pick the shape; megapixels 1 = 1024x1024 (16:9 = 1360x768). The model card gives 512 to 2048 px per side (only 1024x1024 and 1360x768 were run here). Leave \"multiple\" at 16.\n   - **Steps** (20) and **CFG** (5): 20 is the authors' step count for this RL-aligned file (the template has 30: nearly the same picture, 1.5x the time); CFG 5 is the template's.\n   - **Seed**: fixed at 24112026, so the first Run gives the README picture. Type a new number (or set \"control after generate\" to randomize) for a new picture; Run with nothing changed does nothing.\n2. **Models**: the three loaders must show the files from the Downloads note. Nothing to change.\n3. **Prompt**: nothing to change; text and size come from group 1. More pictures per run: `batch_size` on this node.\n4. **Sampling**: euler / simple, from the template.\n5. Press **Run**. The picture is saved by the **Result** node to `output/Mage-Flow/` as PNG.\n\n**What to expect:** one 1024x1024 or 1360x768 picture in 8 to 9 s once the models are loaded, 11 s for the first run of a fresh ComfyUI (RTX PRO 4000 Blackwell 24 GB). The template's 30 steps took 12 s.\n\n**Text in the picture:** put the words in quotes. The sample sign came out right in 3 of 3 seeds.\n\n**Tested on:** RTX PRO 4000 Blackwell 24 GB, ComfyUI 0.45.3, 2026-11-24. Not verified on a 12 GB card.\n"
+   ]
+  },
+  {
+   "id": 16,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    670
+   ],
+   "size": [
+    640,
+    360
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Downloads + requirements",
+   "widgets_values": [
+    "## Downloads + requirements\n\nClick the file name to download it. Put each file in the folder shown (inside `ComfyUI/models/`).\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `diffusion_models/` | [mage_flow_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Mage-Flow/resolve/main/diffusion_models/mage_flow_int8_convrot.safetensors) | 4.16 GB |\n| `text_encoders/` | [qwen3vl_4b_bf16.safetensors](https://huggingface.co/Comfy-Org/Mage-Flow/resolve/main/text_encoders/qwen3vl_4b_bf16.safetensors) | 8.88 GB |\n| `vae/` | [mage_flow_vae_bf16.safetensors](https://huggingface.co/Comfy-Org/Mage-Flow/resolve/main/vae/mage_flow_vae_bf16.safetensors) | 0.35 GB |\n\n**VRAM:** on a 24 GB card ComfyUI held 12.4 GiB. Capped to a 10 GiB budget (`--reserve-vram`) the whole-GPU peak was 10.9 GiB, the runs took 9 to 11 s and the pictures were pixel-identical. **Not verified on a 12 GB card.**\n\n**Run on ComfyUI 0.45.3** (Mage-Flow support arrived in ComfyUI PR #15026; older versions were not tested). **No custom nodes.**\n\nLicence: MIT (Microsoft Mage-Flow, github.com/microsoft/Mage).\n"
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   8,
+   0,
+   10,
+   0,
+   "CLIP"
+  ],
+  [
+   2,
+   1,
+   0,
+   10,
+   3,
+   "STRING"
+  ],
+  [
+   3,
+   2,
+   0,
+   10,
+   4,
+   "STRING"
+  ],
+  [
+   4,
+   3,
+   0,
+   10,
+   5,
+   "INT"
+  ],
+  [
+   5,
+   3,
+   1,
+   10,
+   6,
+   "INT"
+  ],
+  [
+   6,
+   7,
+   0,
+   12,
+   0,
+   "MODEL"
+  ],
+  [
+   7,
+   10,
+   0,
+   12,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   8,
+   10,
+   1,
+   12,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   9,
+   10,
+   2,
+   12,
+   3,
+   "LATENT"
+  ],
+  [
+   10,
+   6,
+   0,
+   12,
+   4,
+   "INT"
+  ],
+  [
+   11,
+   4,
+   0,
+   12,
+   5,
+   "INT"
+  ],
+  [
+   12,
+   5,
+   0,
+   12,
+   6,
+   "FLOAT"
+  ],
+  [
+   13,
+   12,
+   0,
+   13,
+   0,
+   "LATENT"
+  ],
+  [
+   14,
+   9,
+   0,
+   13,
+   1,
+   "VAE"
+  ],
+  [
+   15,
+   13,
+   0,
+   14,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [
+  {
+   "id": 1,
+   "title": "1 · Your inputs (App mode shows these)",
+   "bounding": [
+    -80,
+    -30,
+    560,
+    1120
+   ],
+   "color": "#8A8",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 2,
+   "title": "2 · Models (loaded once)",
+   "bounding": [
+    520,
+    -30,
+    480,
+    470
+   ],
+   "color": "#3f789e",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 3,
+   "title": "3 · Prompt",
+   "bounding": [
+    1040,
+    -30,
+    440,
+    610
+   ],
+   "color": "#a1309b",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 4,
+   "title": "4 · Sampling",
+   "bounding": [
+    1520,
+    -30,
+    440,
+    400
+   ],
+   "color": "#b06634",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 5,
+   "title": "5 · Save",
+   "bounding": [
+    1980,
+    -30,
+    440,
+    700
+   ],
+   "color": "#b58b2a",
+   "font_size": 24,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.55,
+   "offset": [
+    760,
+    120
+   ]
+  },
+  "linearData": {
+   "inputs": [
+    [
+     1,
+     "value"
+    ],
+    [
+     2,
+     "value"
+    ],
+    [
+     3,
+     "aspect_ratio"
+    ],
+    [
+     3,
+     "megapixels"
+    ],
+    [
+     4,
+     "value"
+    ],
+    [
+     5,
+     "value"
+    ],
+    [
+     6,
+     "value"
+    ]
+   ],
+   "outputs": [
+    14
+   ]
+  }
+ },
+ "version": 0.4
+}
