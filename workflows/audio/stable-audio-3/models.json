@@ -1,0 +1,27 @@
+{
+  "workflow": "audio/stable-audio-3",
+  "files": [
+    {
+      "name": "stable_audio_3_medium_base.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/stable-audio-3/resolve/main/checkpoints/stable_audio_3_medium_base.safetensors",
+      "dest": "checkpoints",
+      "required": true,
+      "note": "Stable Audio 3 Medium Base checkpoint (model + audio VAE), Comfy-Org repackage. 9.22 GB."
+    },
+    {
+      "name": "t5gemma_b_b_ul2.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/stable-audio-3/resolve/main/text_encoders/t5gemma_b_b_ul2.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "T5Gemma text encoder of the audio model. 1.19 GB."
+    },
+    {
+      "name": "qwen3.5_2b_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen3.5/resolve/main/text_encoders/qwen3.5_2b_bf16.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "Qwen3.5 2B, expands the short idea into a full prompt. 4.55 GB. With the expansion off it was not loaded (run log); running with the file missing was not tested."
+    }
+  ],
+  "nodes": []
+}
