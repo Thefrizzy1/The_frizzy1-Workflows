@@ -1,0 +1,27 @@
+{
+  "workflow": "minimax/h3-image-12gb",
+  "files": [
+    {
+      "name": "minimax_h3_image_pruned_w4a8.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/diffusion_models/minimax_h3_image_pruned_w4a8.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "MiniMax H3 Image, pruned, W4A8 (Comfy-Org). 12.5 GB. All three workflows."
+    },
+    {
+      "name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "MiniMax H3 text encoder (Qwen3-VL 32B), NVFP4. 15.7 GB. All three workflows."
+    },
+    {
+      "name": "minimax_h3_image_vae_fp16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/vae/minimax_h3_image_vae_fp16.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "MiniMax H3 Image VAE, fp16. 1.2 GB. All three workflows."
+    }
+  ],
+  "nodes": []
+}
