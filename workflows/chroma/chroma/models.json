@@ -1,0 +1,27 @@
+{
+  "workflow": "chroma/chroma",
+  "files": [
+    {
+      "name": "Chroma1-HD-fp8mixed.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Chroma1-HD_repackaged/resolve/main/split_files/diffusion_models/Chroma1-HD-fp8mixed.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Chroma1-HD diffusion model, fp8mixed (Comfy-Org repackage). 9.19 GB."
+    },
+    {
+      "name": "t5xxl_fp8_e4m3fn_scaled.safetensors",
+      "url": "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp8_e4m3fn_scaled.safetensors",
+      "dest": "text_encoders",
+      "required": true,
+      "note": "T5-XXL text encoder, fp8 scaled (same file as for Flux.1). 5.16 GB."
+    },
+    {
+      "name": "ae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Lumina_Image_2.0_Repackaged/resolve/main/split_files/vae/ae.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "Flux.1 VAE. 0.34 GB."
+    }
+  ],
+  "nodes": []
+}
