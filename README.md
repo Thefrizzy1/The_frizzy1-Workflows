@@ -9,7 +9,9 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 [![CivitAI](https://img.shields.io/badge/CivitAI-The__frizzy1-2b7cff?style=flat-square)](https://civitai.com/user/The_frizzy1)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-The--frizzy1-ffb000?style=flat-square)](https://huggingface.co/The-frizzy1)
 [![YouTube](https://img.shields.io/badge/YouTube-@the__frizzy1-ff0033?style=flat-square)](https://www.youtube.com/@the_frizzy1)
-[![Workflows](https://img.shields.io/badge/workflows-40-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-42-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-42-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-42-6a5cff?style=flat-square)](#workflows)
 [![Min VRAM](https://img.shields.io/badge/min%20VRAM-4%20GB-3ecf8e?style=flat-square)](#workflows)
 [![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
 
@@ -63,9 +65,11 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Edit a picture or combine up to three** with FireRed Image Edit 1.1 (Apache-2.0, 8 steps) | [FireRed Image Edit 1.1](workflows/firered/image-edit-1.1) | 12 GB target, not verified |
 | **Edit a picture with a written instruction** using Bernini-R (ByteDance, Apache-2.0, 6-step Turbo switch) | [Bernini-R Image Edit](workflows/bernini/bernini-r) | 12 GB target, not verified |
 | **Split a picture into transparent layers** (background + objects, PNG with alpha) with Qwen-Image-Layered (Apache-2.0) | [Qwen-Image-Layered](workflows/qwen/image-layered) | 12 GB target, not verified |
+| **Edit a picture with a written instruction**, keeping its shape, with Capybara v0.1 (MIT, Hunyuan Video 1.5 based) | [Capybara Image Edit](workflows/capybara/image-edit) | 12 GB target, not verified |
 | **Kandinsky 5.0 Lite** (MIT): text to image, text to video, image to video | [Kandinsky 5.0 Lite](workflows/kandinsky/kandinsky-5) | 12 GB target, not verified |
 | **Anime and illustration** images in 4 to 23 s (Anima Base v1.0 + Turbo switch, non-commercial model) | [Anima](workflows/anima/anima) | 12 GB target, not verified |
 | **Text to image** with SDXL base 1.0 (one 6.94 GB file, 25 steps) | [SDXL](workflows/sdxl/sdxl) | 12 GB target, not verified |
+| A **talking video** from one picture and a speech clip, lips synced (InfiniteTalk on Wan 2.1, Apache-2.0, up to 9 s) | [InfiniteTalk Talking Video](workflows/wan2.1/infinitetalk) | 12 GB target, not verified |
 | Newer **LTX video** (audio-aware) | [LTX-2](workflows/ltx/ltx2) · [LTX-2.3 Ultimate · 12 GB](workflows/ltx/ltx2.3-ultimate) | 4–12 GB |
 | **Every MiniMax H3 mode** (T2V · I2V · R2V · multiframe · pose · extend) in one workflow, with sound | [MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb) | 12 GB |
 | **LTX 2.5** text / image / first+last / pose-driven video in one workflow | [LTX 2.5 Ultimate · 12 GB](workflows/ltx/ltx-2.5-ultimate-12gb) | 12 GB |
@@ -114,6 +118,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[SCAIL-2 Character Swap · 12 GB](workflows/scail/scail2-character-swap-12gb)** | v1.1.1 | 12 GB | character swap (V2V) · whole clip in 81-frame loop rounds · which person · original sound · App mode | — |
 | **[Story Creator · 12 GB](workflows/story/story-creator-12gb)** | v1.4.1 | 12 GB | story video: script (WORLD / [camera] / dialogue / narrator / [continue]) → stills → I2V · music | — |
 | **[Wan Animate Ultimate · 12 GB](workflows/wan2.2/animate-ultimate)** | v2.0.1 | 12 GB | Wan Animate 2 · Wan 2.2 Animate GGUF + face video | [▶](https://www.youtube.com/watch?v=9idzB8mlYRY&list=PLRe4JVWoY_AU) · [▶](https://www.youtube.com/watch?v=aqFdglMbcIU&list=PLRe4JVWoY_AU) |
+| **[InfiniteTalk Talking Video](workflows/wan2.1/infinitetalk)** | v1.0.0 | 12 GB (not verified) | picture + speech → talking video (lip sync) · single speaker · 3 parts, 9 s · Apache-2.0 | — |
 
 ### 🖼️ Image
 
@@ -121,7 +126,7 @@ templated `.json`. Model names are verified from the workflow file.
 |---|:---:|:---:|---|---|
 | **[Flux Kontext GGUF](workflows/flux/kontext)** | v2.3.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/1311703) · [HF](https://huggingface.co/The-frizzy1/Flux-Kontext-GGUF-4GB) · [▶](https://www.youtube.com/watch?v=4C0RJ01yRok&list=PLG_da2oqTx7k) |
 | **[FLUX 3 Klein · 12 GB](workflows/flux/flux3-klein-12gb)** | v1.0.1 | 12 GB | T2I · edit (1–4 images) · prompt upsampler | — |
-| **[MOSS-Image · 12 GB](workflows/moss/moss-image-12gb)** | v1.0.1 | 12 GB | T2I · layout (boxes) · edit · control (MoGe) | — |
+| **[MOSS-Image · 12 GB](workflows/moss/moss-image-12gb)** | v1.0.2 | 12 GB | T2I · layout (boxes) · edit · control (MoGe) | — |
 | **[Fibo 2.0 Edit Turbo · 12 GB](workflows/fibo/fibo2-edit-12gb)** | v1.0.1 | 12 GB | edit · prompt enhancer · non-commercial | — |
 | **[Flux.2 Dev GGUF](workflows/flux/flux2-dev)** | v2.0.1 | 6 GB | T2I | [CivitAI](https://civitai.com/models/2508110) · [▶](https://www.youtube.com/watch?v=dcekWAbgDXg&list=PLG_da2oqTx7k) |
 | **[Qwen Image & Edit 2509](workflows/qwen/image-edit-2509)** | v2.0.1 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/2229874) · [HF](https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF) · [▶](https://www.youtube.com/watch?v=NPni2ulov34&list=PLG_da2oqTx7k) |
@@ -132,6 +137,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[FireRed Image Edit 1.1](workflows/firered/image-edit-1.1)** | v1.0.0 | 12 GB (not verified) | edit · up to 3 pictures · Lightning 8-step · Apache-2.0 | — |
 | **[Bernini-R Image Edit](workflows/bernini/bernini-r)** | v1.0.0 | 12 GB (not verified) | edit · optional reference picture · Turbo switch (6 steps) · Apache-2.0 | — |
 | **[Qwen-Image-Layered](workflows/qwen/image-layered)** | v1.0.0 | 12 GB (not verified) | picture → RGBA layers (2 and 4 layers tested) · Apache-2.0 | — |
+| **[Capybara Image Edit](workflows/capybara/image-edit)** | v1.0.0 | 12 GB (not verified) | edit · keeps the picture's shape · MIT | — |
 | **[Kandinsky 5.0 Lite](workflows/kandinsky/kandinsky-5)** | v1.0.0 | 12 GB (not verified) | T2I · T2V (16-step) · I2V · MIT | — |
 | **[Anima](workflows/anima/anima)** | v1.0.0 | 12 GB (not verified) | T2I anime / illustration · Turbo switch (8 steps) · non-commercial model | — |
 | **[SDXL](workflows/sdxl/sdxl)** | v1.0.0 | 12 GB (not verified) | T2I · SDXL base 1.0 · one checkpoint file | — |
