@@ -9,9 +9,12 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 [![CivitAI](https://img.shields.io/badge/CivitAI-The__frizzy1-2b7cff?style=flat-square)](https://civitai.com/user/The_frizzy1)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-The--frizzy1-ffb000?style=flat-square)](https://huggingface.co/The-frizzy1)
 [![YouTube](https://img.shields.io/badge/YouTube-@the__frizzy1-ff0033?style=flat-square)](https://www.youtube.com/@the_frizzy1)
-[![Workflows](https://img.shields.io/badge/workflows-43-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-43-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-43-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-46-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-46-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-46-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-46-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-46-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-46-6a5cff?style=flat-square)](#workflows)
 [![Min VRAM](https://img.shields.io/badge/min%20VRAM-4%20GB-3ecf8e?style=flat-square)](#workflows)
 [![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
 
@@ -59,16 +62,18 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Swap a person** in a video for your own character (SCAIL-2, core nodes, App mode) | [SCAIL-2 Character Swap · 12 GB](workflows/scail/scail2-character-swap-12gb) | 12 GB |
 | **FLUX 3**: text to image or edit with up to 4 images, with BFL's prompt upsampler | [FLUX 3 Klein · 12 GB](workflows/flux/flux3-klein-12gb) | 12 GB |
 | **MOSS-Image**: text to image, layout with boxes, edit, or a new picture in your photo's shape | [MOSS-Image · 12 GB](workflows/moss/moss-image-12gb) | 12 GB |
-| **Quick edits** in 4 steps: say what the picture should look like (Fibo 2.0, non-commercial) | [Fibo 2.0 Edit Turbo · 12 GB](workflows/fibo/fibo2-edit-12gb) | 12 GB |
+| **Quick edits** in 4 steps, or **text to image** from a short idea (Fibo 2.0, non-commercial) | [Fibo 2.0 Edit + Text to Image · 12 GB](workflows/fibo/fibo2-edit-12gb) | 12 GB (t2i: not verified) |
 | **Design images with text + real transparency** (Ming Image 0.1 Design) | [Ming Image 0.1 · 12 GB](workflows/ming/image-0.1-design-12gb) | 4 GB+* |
 | **Fast, tiny** image generation | [Z-Image Turbo GGUF](workflows/z-image/turbo) | 4 GB+ |
 | **Edit a picture or combine up to three** with FireRed Image Edit 1.1 (Apache-2.0, 8 steps) | [FireRed Image Edit 1.1](workflows/firered/image-edit-1.1) | 12 GB target, not verified |
 | **Edit a picture with a written instruction** using Bernini-R (ByteDance, Apache-2.0, 6-step Turbo switch) | [Bernini-R Image Edit](workflows/bernini/bernini-r) | 12 GB target, not verified |
+| **Split a picture into transparent layers** (background + objects, PNG with alpha) with Qwen-Image-Layered (Apache-2.0) | [Qwen-Image-Layered](workflows/qwen/image-layered) | 12 GB target, not verified |
 | **Edit a picture with a written instruction**, keeping its shape, with Capybara v0.1 (MIT, Hunyuan Video 1.5 based) | [Capybara Image Edit](workflows/capybara/image-edit) | 12 GB target, not verified |
 | **Kandinsky 5.0 Lite** (MIT): text to image, text to video, image to video | [Kandinsky 5.0 Lite](workflows/kandinsky/kandinsky-5) | 12 GB target, not verified |
 | **Anime and illustration** images in 4 to 23 s (Anima Base v1.0 + Turbo switch, non-commercial model) | [Anima](workflows/anima/anima) | 12 GB target, not verified |
 | **Text to image** with SDXL base 1.0 (one 6.94 GB file, 25 steps) | [SDXL](workflows/sdxl/sdxl) | 12 GB target, not verified |
 | **2048x2048 pictures with readable text, or a written edit** with HiDream-O1-Image (8B, MIT) | [HiDream-O1-Image · 12 GB](workflows/hidream/hidream-o1-12gb) | 12 GB target, not verified |
+| **Fast text to image** with Microsoft Mage-Flow (4B, MIT): about 8 s per picture, clean text on signs | [Mage-Flow](workflows/mage/mage-flow) | 12 GB target, not verified |
 | A **talking video** from one picture and a speech clip, lips synced (InfiniteTalk on Wan 2.1, Apache-2.0, up to 9 s) | [InfiniteTalk Talking Video](workflows/wan2.1/infinitetalk) | 12 GB target, not verified |
 | Newer **LTX video** (audio-aware) | [LTX-2](workflows/ltx/ltx2) · [LTX-2.3 Ultimate · 12 GB](workflows/ltx/ltx2.3-ultimate) | 4–12 GB |
 | **Every MiniMax H3 mode** (T2V · I2V · R2V · multiframe · pose · extend) in one workflow, with sound | [MiniMax H3 Ultimate · 12 GB](workflows/minimax/h3-ultimate-12gb) | 12 GB |
@@ -88,6 +93,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Songs with vocals** from a style + your lyrics, or a cover of your song (YuE2) | [YuE2 Music · 12 GB](workflows/audio/yue2-music-12gb) | 4 GB+* |
 | **Songs with vocals** or instrumentals from a caption + your lyrics, up to 2 min 43 s tested (MiniMax Music 3) | [MiniMax Music 3 · 12 GB](workflows/audio/minimax-music3-12gb) | 12 GB (measured with v1.0.0 on an RTX 3060; v1.1.0 same files, not re-measured) |
 | **Songs with vocals** or instrumentals from a style + your lyrics, up to 4 min tested (ACE-Step 1.5 XL, MIT model) | [ACE-Step 1.5 XL Music](workflows/audio/ace-step-1.5) | 12 GB target, not verified |
+| **Music or sound effects** from a short idea, up to 380 s (Stable Audio 3 Medium Base, Qwen writes the prompt) | [Stable Audio 3 Medium Base](workflows/audio/stable-audio-3) | 12 GB target, not verified (10.7 GiB in a 10 GiB budget) |
 | Generate **audio** for a clip | [AI Audio Maker](workflows/audio/ai-audio-maker) | low |
 
 ---
@@ -128,8 +134,8 @@ templated `.json`. Model names are verified from the workflow file.
 |---|:---:|:---:|---|---|
 | **[Flux Kontext GGUF](workflows/flux/kontext)** | v2.3.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/1311703) · [HF](https://huggingface.co/The-frizzy1/Flux-Kontext-GGUF-4GB) · [▶](https://www.youtube.com/watch?v=4C0RJ01yRok&list=PLG_da2oqTx7k) |
 | **[FLUX 3 Klein · 12 GB](workflows/flux/flux3-klein-12gb)** | v1.0.1 | 12 GB | T2I · edit (1–4 images) · prompt upsampler | — |
-| **[MOSS-Image · 12 GB](workflows/moss/moss-image-12gb)** | v1.0.2 | 12 GB | T2I · layout (boxes) · edit · control (MoGe) | — |
-| **[Fibo 2.0 Edit Turbo · 12 GB](workflows/fibo/fibo2-edit-12gb)** | v1.0.1 | 12 GB | edit · prompt enhancer · non-commercial | — |
+| **[MOSS-Image · 12 GB](workflows/moss/moss-image-12gb)** | v1.0.1 | 12 GB | T2I · layout (boxes) · edit · control (MoGe) | — |
+| **[Fibo 2.0 Edit + Text to Image · 12 GB](workflows/fibo/fibo2-edit-12gb)** | v1.1.0 | 12 GB | edit · T2I · prompt enhancer · Turbo LoRA · non-commercial | — |
 | **[Flux.2 Dev GGUF](workflows/flux/flux2-dev)** | v2.0.1 | 6 GB | T2I | [CivitAI](https://civitai.com/models/2508110) · [▶](https://www.youtube.com/watch?v=dcekWAbgDXg&list=PLG_da2oqTx7k) |
 | **[Qwen Image & Edit 2509](workflows/qwen/image-edit-2509)** | v2.0.1 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/2229874) · [HF](https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF) · [▶](https://www.youtube.com/watch?v=NPni2ulov34&list=PLG_da2oqTx7k) |
 | **[Qwen Image 2.1 · 12 GB](workflows/qwen/image-2.1-12gb)** | v2.0.1 | 12 GB | T2I native 2K · turbo LoRA | [▶](https://www.youtube.com/watch?v=C5wZ2gU7j9E&list=PLG_da2oqTx7k) · [▶](https://www.youtube.com/watch?v=-yJvQ3lxWsE&list=PLG_da2oqTx7k) |
@@ -138,11 +144,13 @@ templated `.json`. Model names are verified from the workflow file.
 | **[Z-Image Turbo GGUF](workflows/z-image/turbo)** | v1.0.1 | 4 GB | T2I (fast turbo) | [CivitAI](https://civitai.com/models/2561639) |
 | **[FireRed Image Edit 1.1](workflows/firered/image-edit-1.1)** | v1.0.0 | 12 GB (not verified) | edit · up to 3 pictures · Lightning 8-step · Apache-2.0 | — |
 | **[Bernini-R Image Edit](workflows/bernini/bernini-r)** | v1.0.0 | 12 GB (not verified) | edit · optional reference picture · Turbo switch (6 steps) · Apache-2.0 | — |
+| **[Qwen-Image-Layered](workflows/qwen/image-layered)** | v1.0.0 | 12 GB (not verified) | picture → RGBA layers (2 and 4 layers tested) · Apache-2.0 | — |
 | **[Capybara Image Edit](workflows/capybara/image-edit)** | v1.0.0 | 12 GB (not verified) | edit · keeps the picture's shape · MIT | — |
 | **[Kandinsky 5.0 Lite](workflows/kandinsky/kandinsky-5)** | v1.0.0 | 12 GB (not verified) | T2I · T2V (16-step) · I2V · MIT | — |
 | **[Anima](workflows/anima/anima)** | v1.0.0 | 12 GB (not verified) | T2I anime / illustration · Turbo switch (8 steps) · non-commercial model | — |
 | **[SDXL](workflows/sdxl/sdxl)** | v1.0.0 | 12 GB (not verified) | T2I · SDXL base 1.0 · one checkpoint file | — |
 | **[HiDream-O1-Image · 12 GB](workflows/hidream/hidream-o1-12gb)** | v1.0.0 | 12 GB (not verified) | T2I 2048x2048 · edit · Gemma 4 prompt rewrite · MIT | — |
+| **[Mage-Flow](workflows/mage/mage-flow)** | v1.0.0 | 12 GB (not verified) | T2I · Mage-Flow 4B int8 · 20 steps · MIT | — |
 | **[Krea 2 Ultimate · 12 GB](workflows/krea/krea-2-ultimate-12gb)** | v2.1.1 | 4 GB* | T2I · style reference · style LoRAs · Kroma | — |
 
 ### 🧊 3D
@@ -159,6 +167,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[YuE2 Music · 12 GB](workflows/audio/yue2-music-12gb)** | v1.0.1 | 4 GB* | text → song · cover | — |
 | **[MiniMax Music 3 · 12 GB](workflows/audio/minimax-music3-12gb)** | v1.1.0 | 12 GB† | caption + lyrics → song · instrumental · App mode | — |
 | **[ACE-Step 1.5 XL Music](workflows/audio/ace-step-1.5)** | v1.0.0 | 12 GB (not verified) | style + lyrics → song · instrumental · MIT | — |
+| **[Stable Audio 3 Medium Base](workflows/audio/stable-audio-3)** | v1.0.0 | 12 GB (not verified) | idea → music · sound effect · App mode | — |
 
 <sub>▶ = video walkthrough on YouTube. 4 GB* = the 12 GB workflow's own files also ran on a 4 GB RTX 3050 Ti laptop with 16 GB RAM, slower: times in [docs/BENCHMARKS.md](docs/BENCHMARKS.md). † = 12 GB measured with v1.0.0 on an RTX 3060; v1.1.0 has the same files and is not re-measured on a 12 GB card.</sub>
 
@@ -275,7 +284,7 @@ The_frizzy1-Workflows/
 │   ├── scail/             scail2-character-swap-12gb
 │   ├── story/             story-creator-12gb
 │   ├── 3d/                image-to-3d-ultimate-12gb
-│   └── audio/             minimax-music3-12gb · yue2-music-12gb · ace-step-1.5 · ai-audio-maker
+│   └── audio/             minimax-music3-12gb · yue2-music-12gb · ace-step-1.5 · stable-audio-3 · ai-audio-maker
 │       └── <workflow>/
 │           ├── README.md          what it is, settings, nodes
 │           ├── downloads.md       verified model table
