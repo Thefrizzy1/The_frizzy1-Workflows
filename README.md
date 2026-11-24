@@ -122,7 +122,7 @@ templated `.json`. Model names are verified from the workflow file.
 |---|:---:|:---:|---|---|
 | **[Flux Kontext GGUF](workflows/flux/kontext)** | v2.3.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/1311703) · [HF](https://huggingface.co/The-frizzy1/Flux-Kontext-GGUF-4GB) · [▶](https://www.youtube.com/watch?v=4C0RJ01yRok&list=PLG_da2oqTx7k) |
 | **[FLUX 3 Klein · 12 GB](workflows/flux/flux3-klein-12gb)** | v1.0.1 | 12 GB | T2I · edit (1–4 images) · prompt upsampler | — |
-| **[MOSS-Image · 12 GB](workflows/moss/moss-image-12gb)** | v1.0.1 | 12 GB | T2I · layout (boxes) · edit · control (MoGe) | — |
+| **[MOSS-Image · 12 GB](workflows/moss/moss-image-12gb)** | v1.0.2 | 12 GB | T2I · layout (boxes) · edit · control (MoGe) | — |
 | **[Fibo 2.0 Edit Turbo · 12 GB](workflows/fibo/fibo2-edit-12gb)** | v1.0.1 | 12 GB | edit · prompt enhancer · non-commercial | — |
 | **[Flux.2 Dev GGUF](workflows/flux/flux2-dev)** | v2.0.1 | 6 GB | T2I | [CivitAI](https://civitai.com/models/2508110) · [▶](https://www.youtube.com/watch?v=dcekWAbgDXg&list=PLG_da2oqTx7k) |
 | **[Qwen Image & Edit 2509](workflows/qwen/image-edit-2509)** | v2.0.1 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/2229874) · [HF](https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF) · [▶](https://www.youtube.com/watch?v=NPni2ulov34&list=PLG_da2oqTx7k) |
