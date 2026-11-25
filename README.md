@@ -9,48 +9,48 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 [![CivitAI](https://img.shields.io/badge/CivitAI-The__frizzy1-2b7cff?style=flat-square)](https://civitai.com/user/The_frizzy1)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-The--frizzy1-ffb000?style=flat-square)](https://huggingface.co/The-frizzy1)
 [![YouTube](https://img.shields.io/badge/YouTube-@the__frizzy1-ff0033?style=flat-square)](https://www.youtube.com/@the_frizzy1)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
-[![Workflows](https://img.shields.io/badge/workflows-51-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
+[![Workflows](https://img.shields.io/badge/workflows-52-6a5cff?style=flat-square)](#workflows)
 [![Min VRAM](https://img.shields.io/badge/min%20VRAM-4%20GB-3ecf8e?style=flat-square)](#workflows)
 [![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
 
@@ -106,6 +106,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Edit a picture with a written instruction** using Bernini-R (ByteDance, Apache-2.0, 6-step Turbo switch) | [Bernini-R Image Edit](workflows/bernini/bernini-r) | 12 GB target, not verified |
 | **Split a picture into transparent layers** (background + objects, PNG with alpha) with Qwen-Image-Layered (Apache-2.0) | [Qwen-Image-Layered](workflows/qwen/image-layered) | 12 GB target, not verified |
 | **Edit a picture with a written instruction**, keeping its shape, with Capybara v0.1 (MIT, Hunyuan Video 1.5 based) | [Capybara Image Edit](workflows/capybara/image-edit) | 12 GB target, not verified |
+| **Readable text in pictures, or an edit in 8 steps**, with LongCat-Image (6B, Apache-2.0) | [LongCat-Image · 12 GB](workflows/longcat/image-12gb) | 12 GB target, not verified |
 | **Kandinsky 5.0 Lite** (MIT): text to image, text to video, image to video | [Kandinsky 5.0 Lite](workflows/kandinsky/kandinsky-5) | 12 GB target, not verified |
 | **Anime and illustration** images in 4 to 23 s (Anima Base v1.0 + Turbo switch, non-commercial model) | [Anima](workflows/anima/anima) | 12 GB target, not verified |
 | **Text to image** with SDXL base 1.0 (one 6.94 GB file, 25 steps) | [SDXL](workflows/sdxl/sdxl) | 12 GB target, not verified |
@@ -177,7 +178,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[Flux Kontext GGUF](workflows/flux/kontext)** | v2.3.0 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/1311703) · [HF](https://huggingface.co/The-frizzy1/Flux-Kontext-GGUF-4GB) · [▶](https://www.youtube.com/watch?v=4C0RJ01yRok&list=PLG_da2oqTx7k) |
 | **[FLUX 3 Klein · 12 GB](workflows/flux/flux3-klein-12gb)** | v2.0.0 | 12 GB | T2I · edit (1–4 images) · prompt upsampler · low-VRAM edit (no upsampler) | — |
 | **[MOSS-Image · 12 GB](workflows/moss/moss-image-12gb)** | v2.0.0 | 12 GB | T2I (one node, Quality / Turbo) · layout (boxes) · edit · control (MoGe) | — |
-| **[Fibo 2.0 Edit Turbo · 12 GB](workflows/fibo/fibo2-edit-12gb)** | v1.0.1 | 12 GB | edit · prompt enhancer · non-commercial | — |
+| **[Fibo 2.0 Edit Turbo · 12 GB](workflows/fibo/fibo2-edit-12gb)** | v1.1.0 | 12 GB | edit · prompt enhancer · non-commercial | — |
 | **[MiniMax H3 Image · 12 GB](workflows/minimax/h3-image-12gb)** | v2.0.0 | 12 GB | T2I · edit (1–2 pictures) · area edit (box / painted mask) · App mode | — |
 | **[Flux.2 Dev GGUF](workflows/flux/flux2-dev)** | v2.0.1 | 6 GB | T2I | [CivitAI](https://civitai.com/models/2508110) · [▶](https://www.youtube.com/watch?v=dcekWAbgDXg&list=PLG_da2oqTx7k) |
 | **[Qwen Image & Edit 2509](workflows/qwen/image-edit-2509)** | v2.0.1 | 4 GB | T2I · image edit | [CivitAI](https://civitai.com/models/2229874) · [HF](https://huggingface.co/The-frizzy1/Qwen-Image-Edit-2509-GGUF) · [▶](https://www.youtube.com/watch?v=NPni2ulov34&list=PLG_da2oqTx7k) |
@@ -188,6 +189,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[FireRed Image Edit 1.1](workflows/firered/image-edit-1.1)** | v1.0.0 | 12 GB (not verified) | edit · up to 3 pictures · Lightning 8-step · Apache-2.0 | — |
 | **[Bernini-R Image Edit](workflows/bernini/bernini-r)** | v1.0.0 | 12 GB (not verified) | edit · optional reference picture · Turbo switch (6 steps) · Apache-2.0 | — |
 | **[Qwen-Image-Layered](workflows/qwen/image-layered)** | v1.0.0 | 12 GB (not verified) | picture → RGBA layers (2 and 4 layers tested) · Apache-2.0 | — |
+| **[LongCat-Image · 12 GB](workflows/longcat/image-12gb)** | v1.0.0 | 12 GB (not verified) | T2I · edit (Turbo, 8 steps) · text in pictures · Apache-2.0 | — |
 | **[Capybara Image Edit](workflows/capybara/image-edit)** | v1.0.0 | 12 GB (not verified) | edit · keeps the picture's shape · MIT | — |
 | **[Kandinsky 5.0 Lite](workflows/kandinsky/kandinsky-5)** | v1.0.0 | 12 GB (not verified) | T2I · T2V (16-step) · I2V · MIT | — |
 | **[Anima](workflows/anima/anima)** | v1.0.0 | 12 GB (not verified) | T2I anime / illustration · Turbo switch (8 steps) · non-commercial model | — |

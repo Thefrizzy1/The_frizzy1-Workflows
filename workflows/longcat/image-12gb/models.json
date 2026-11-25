@@ -1,0 +1,10 @@
+{
+  "workflow": "longcat/image-12gb",
+  "files": [
+    {"name": "longcat_image_bf16.safetensors", "url": "https://huggingface.co/Comfy-Org/LongCat-Image/resolve/main/split_files/diffusion_models/longcat_image_bf16.safetensors", "dest": "diffusion_models", "required": true, "note": "LongCat-Image, text to image file. 12.54 GB."},
+    {"name": "longcat_image_edit_turbo_bf16.safetensors", "url": "https://huggingface.co/Comfy-Org/LongCat-Image/resolve/main/split_files/diffusion_models/longcat_image_edit_turbo_bf16.safetensors", "dest": "diffusion_models", "required": true, "note": "LongCat-Image-Edit-Turbo, edit file. 12.54 GB."},
+    {"name": "qwen_2.5_vl_7b_fp8_scaled.safetensors", "url": "https://huggingface.co/Comfy-Org/Hunyuan-Video-1.5/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors", "dest": "text_encoders", "required": true, "note": "Text encoder, both files. 9.38 GB."},
+    {"name": "ae.safetensors", "url": "https://huggingface.co/Comfy-Org/Z-Image-Turbo/resolve/main/split_files/vae/ae.safetensors", "dest": "vae", "required": true, "note": "VAE, both files. 0.34 GB."}
+  ],
+  "nodes": []
+}

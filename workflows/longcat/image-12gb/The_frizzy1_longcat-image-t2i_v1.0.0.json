@@ -1,0 +1,1269 @@
+{
+ "id": "b3c1d2e4-7a10-4c55-9e2a-251120260001",
+ "revision": 0,
+ "last_node_id": 19,
+ "last_link_id": 17,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    -60,
+    50
+   ],
+   "size": [
+    520,
+    210
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "STRING",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Prompt (text in \"quotes\")"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      2
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Prompt (put text to draw in \"quotes\")",
+   "widgets_values": [
+    "A small corner bookshop on a rainy evening, warm light in the windows, wet cobblestones reflecting the light. The wooden sign above the door reads \"LONGCAT BOOKS\". A ginger cat sits on the windowsill. Photo, 35mm, shallow depth of field."
+   ]
+  },
+  {
+   "id": 2,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    -60,
+    310
+   ],
+   "size": [
+    520,
+    120
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "STRING",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Negative prompt"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      4
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Negative prompt (things to avoid)",
+   "widgets_values": [
+    "blurry, low resolution, oversaturated, harsh lighting, messy composition, distorted face, extra fingers, bad anatomy, cheap jewelry, plastic texture, cartoon, illustration, anime, watermark"
+   ]
+  },
+  {
+   "id": 3,
+   "type": "ResolutionSelector",
+   "pos": [
+    -60,
+    480
+   ],
+   "size": [
+    520,
+    150
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "aspect_ratio",
+     "name": "aspect_ratio",
+     "type": "COMBO",
+     "widget": {
+      "name": "aspect_ratio"
+     },
+     "link": null,
+     "label": "Picture shape"
+    },
+    {
+     "localized_name": "megapixels",
+     "name": "megapixels",
+     "type": "FLOAT",
+     "widget": {
+      "name": "megapixels"
+     },
+     "link": null,
+     "label": "Megapixels (1 = default)"
+    },
+    {
+     "localized_name": "multiple",
+     "name": "multiple",
+     "type": "INT",
+     "widget": {
+      "name": "multiple"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "width",
+     "name": "width",
+     "type": "INT",
+     "links": [
+      5
+     ]
+    },
+    {
+     "localized_name": "height",
+     "name": "height",
+     "type": "INT",
+     "links": [
+      6
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ResolutionSelector",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picture shape (1 megapixel = default)",
+   "widgets_values": [
+    "3:2 (Photo)",
+    1.0,
+    16
+   ]
+  },
+  {
+   "id": 4,
+   "type": "PrimitiveInt",
+   "pos": [
+    -60,
+    680
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Steps (20 = default)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      13
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Steps (20 = template)",
+   "widgets_values": [
+    20,
+    "fixed"
+   ]
+  },
+  {
+   "id": 5,
+   "type": "PrimitiveFloat",
+   "pos": [
+    -60,
+    820
+   ],
+   "size": [
+    520,
+    60
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "FLOAT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "CFG (4 = default)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "FLOAT",
+     "name": "FLOAT",
+     "type": "FLOAT",
+     "links": [
+      14
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveFloat",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "CFG (4 = default)",
+   "widgets_values": [
+    4.0
+   ]
+  },
+  {
+   "id": 6,
+   "type": "PrimitiveInt",
+   "pos": [
+    -60,
+    930
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Seed"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      12
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Seed (new number = new picture)",
+   "widgets_values": [
+    25112026,
+    "fixed"
+   ]
+  },
+  {
+   "id": 7,
+   "type": "UNETLoader",
+   "pos": [
+    540,
+    50
+   ],
+   "size": [
+    460,
+    90
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "unet_name",
+     "name": "unet_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "unet_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "weight_dtype",
+     "name": "weight_dtype",
+     "type": "COMBO",
+     "widget": {
+      "name": "weight_dtype"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      7
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UNETLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "longcat_image_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/LongCat-Image/resolve/main/split_files/diffusion_models/longcat_image_bf16.safetensors",
+      "directory": "diffusion_models"
+     }
+    ]
+   },
+   "title": "LongCat-Image model (12.54 GB)",
+   "widgets_values": [
+    "longcat_image_bf16.safetensors",
+    "default"
+   ]
+  },
+  {
+   "id": 8,
+   "type": "CLIPLoader",
+   "pos": [
+    540,
+    190
+   ],
+   "size": [
+    460,
+    130
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip_name",
+     "name": "clip_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "clip_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "type",
+     "name": "type",
+     "type": "COMBO",
+     "widget": {
+      "name": "type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "device",
+     "name": "device",
+     "type": "COMBO",
+     "widget": {
+      "name": "device"
+     },
+     "shape": 7,
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      1,
+      3
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Hunyuan-Video-1.5/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "directory": "text_encoders"
+     }
+    ]
+   },
+   "title": "Qwen 2.5 VL 7B fp8 text encoder",
+   "widgets_values": [
+    "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "longcat_image",
+    "default"
+   ]
+  },
+  {
+   "id": 9,
+   "type": "VAELoader",
+   "pos": [
+    540,
+    370
+   ],
+   "size": [
+    460,
+    60
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "vae_name",
+     "name": "vae_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "vae_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      16
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAELoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "ae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Z-Image-Turbo/resolve/main/split_files/vae/ae.safetensors",
+      "directory": "vae"
+     }
+    ]
+   },
+   "title": "VAE (Flux ae)",
+   "widgets_values": [
+    "ae.safetensors"
+   ]
+  },
+  {
+   "id": 10,
+   "type": "CLIPTextEncode",
+   "pos": [
+    1080,
+    50
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1
+    },
+    {
+     "localized_name": "text",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": 2
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      9
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Prompt → conditioning",
+   "widgets_values": [
+    ""
+   ]
+  },
+  {
+   "id": 11,
+   "type": "CLIPTextEncode",
+   "pos": [
+    1080,
+    190
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 3
+    },
+    {
+     "localized_name": "text",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": 4
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      10
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Negative → conditioning",
+   "widgets_values": [
+    ""
+   ]
+  },
+  {
+   "id": 12,
+   "type": "EmptySD3LatentImage",
+   "pos": [
+    1080,
+    330
+   ],
+   "size": [
+    400,
+    110
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "width",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": 5
+    },
+    {
+     "localized_name": "height",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": 6
+    },
+    {
+     "localized_name": "batch_size",
+     "name": "batch_size",
+     "type": "INT",
+     "widget": {
+      "name": "batch_size"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      11
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "EmptySD3LatentImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Empty picture (size from group 1)",
+   "widgets_values": [
+    1024,
+    1024,
+    1
+   ]
+  },
+  {
+   "id": 13,
+   "type": "MarkdownNote",
+   "pos": [
+    1080,
+    490
+   ],
+   "size": [
+    400,
+    130
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Why quotes",
+   "widgets_values": [
+    "**Why the quotes:** LongCat-Image spells text inside \"quotes\" letter by letter. The authors say text without quotes comes out badly."
+   ]
+  },
+  {
+   "id": 14,
+   "type": "CFGNorm",
+   "pos": [
+    1560,
+    50
+   ],
+   "size": [
+    400,
+    90
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 7
+    },
+    {
+     "localized_name": "strength",
+     "name": "strength",
+     "type": "FLOAT",
+     "widget": {
+      "name": "strength"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "pre_cfg",
+     "name": "pre_cfg",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "pre_cfg"
+     },
+     "shape": 7,
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "patched_model",
+     "name": "patched_model",
+     "type": "MODEL",
+     "links": [
+      8
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CFGNorm",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "CFG norm (from the template)",
+   "widgets_values": [
+    1.0,
+    false
+   ]
+  },
+  {
+   "id": 15,
+   "type": "KSampler",
+   "pos": [
+    1560,
+    190
+   ],
+   "size": [
+    400,
+    270
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 8
+    },
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 9
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 10
+    },
+    {
+     "localized_name": "latent_image",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 11
+    },
+    {
+     "localized_name": "seed",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": 12
+    },
+    {
+     "localized_name": "steps",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": 13
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": 14
+    },
+    {
+     "localized_name": "sampler_name",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "scheduler",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "denoise",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      15
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Sampler (euler / simple, template)",
+   "widgets_values": [
+    25112026,
+    "fixed",
+    20,
+    4.0,
+    "euler",
+    "simple",
+    1.0
+   ]
+  },
+  {
+   "id": 16,
+   "type": "VAEDecode",
+   "pos": [
+    1560,
+    510
+   ],
+   "size": [
+    400,
+    60
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "samples",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 15
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 16
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      17
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Latent → picture"
+  },
+  {
+   "id": 17,
+   "type": "SaveImage",
+   "pos": [
+    2040,
+    50
+   ],
+   "size": [
+    440,
+    500
+   ],
+   "flags": {},
+   "order": 16,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 17
+    },
+    {
+     "localized_name": "filename_prefix",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SaveImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Result (saved to output/LongCat)",
+   "widgets_values": [
+    "LongCat/longcat_t2i"
+   ]
+  },
+  {
+   "id": 18,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    -30
+   ],
+   "size": [
+    640,
+    720
+   ],
+   "flags": {},
+   "order": 17,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "How to use · v1.0.0",
+   "widgets_values": [
+    "## How to use · v1.0.0\n\n**What it does:** makes a picture from text with LongCat-Image (6B, Apache-2.0), good at readable text. Core ComfyUI nodes only.\n\n1. **Your inputs** (green group):\n   - **Prompt**: describe the picture. Text that must appear goes in \"quotes\".\n   - **Negative prompt**: things to avoid. It is the template's list without `text` and `logo`, which work against signs.\n   - **Picture shape**: aspect ratio and megapixels. 3:2 at 1 megapixel gives 1248x832.\n   - **Steps** (20): the template value, 46 to 48 s here. The authors use 50 (110 s); 30 took 67 to 69 s. All three gave a similar picture.\n   - **CFG** (4): the template's and the authors' value.\n   - **Seed**: fixed at 25112026. Type a new number for another picture; Run with nothing changed does nothing.\n2. **Models**: the three loaders must show the files from the Downloads note.\n3. **Prompt + size**: nothing to change.\n4. **Sampling**: euler / simple with CFG norm 1. Nothing to change.\n5. **Save**: press **Run**. The picture is saved to `output/LongCat/`.\n\n**What to expect:** a 1248x832 picture in 46 to 48 s on the test card (20 steps).\nThe sign was spelled right on 5 of 6 seeds at 20 steps (seed 777 wrote LONIGCAT); small background signs are often nonsense. Wrong spelling: try another seed.\n\n**Tested on:** RTX PRO 4000 Blackwell 24 GB, 64 GB RAM, ComfyUI 0.45.3. Not verified on a 12 GB card.\n"
+   ]
+  },
+  {
+   "id": 19,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    750
+   ],
+   "size": [
+    640,
+    430
+   ],
+   "flags": {},
+   "order": 18,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Downloads + requirements",
+   "widgets_values": [
+    "## Downloads + requirements\n\nClick the file name to download it. Put each file in the folder shown (inside `ComfyUI/models/`).\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `diffusion_models/` | [longcat_image_bf16.safetensors](https://huggingface.co/Comfy-Org/LongCat-Image/resolve/main/split_files/diffusion_models/longcat_image_bf16.safetensors) | 12.54 GB |\n| `text_encoders/` | [qwen_2.5_vl_7b_fp8_scaled.safetensors](https://huggingface.co/Comfy-Org/Hunyuan-Video-1.5/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors) | 9.38 GB |\n| `vae/` | [ae.safetensors](https://huggingface.co/Comfy-Org/Z-Image-Turbo/resolve/main/split_files/vae/ae.safetensors) | 0.34 GB |\n\nAbout 22.3 GB together. The text encoder and VAE are shared by both LongCat files in this folder.\n\n**VRAM:** 12 GB is the target, not verified on a 12 GB card. Started with a 10 GiB budget (`--reserve-vram 13.89` on 24 GB) the whole card peaked at 11.1 GiB, same picture, 49 s.\n\n**Run on ComfyUI 0.45.3.** **No custom nodes.**\n\nLicence: Apache-2.0 (LongCat-Image, meituan-longcat).\n"
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   8,
+   0,
+   10,
+   0,
+   "CLIP"
+  ],
+  [
+   2,
+   1,
+   0,
+   10,
+   1,
+   "STRING"
+  ],
+  [
+   3,
+   8,
+   0,
+   11,
+   0,
+   "CLIP"
+  ],
+  [
+   4,
+   2,
+   0,
+   11,
+   1,
+   "STRING"
+  ],
+  [
+   5,
+   3,
+   0,
+   12,
+   0,
+   "INT"
+  ],
+  [
+   6,
+   3,
+   1,
+   12,
+   1,
+   "INT"
+  ],
+  [
+   7,
+   7,
+   0,
+   14,
+   0,
+   "MODEL"
+  ],
+  [
+   8,
+   14,
+   0,
+   15,
+   0,
+   "MODEL"
+  ],
+  [
+   9,
+   10,
+   0,
+   15,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   10,
+   11,
+   0,
+   15,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   11,
+   12,
+   0,
+   15,
+   3,
+   "LATENT"
+  ],
+  [
+   12,
+   6,
+   0,
+   15,
+   4,
+   "INT"
+  ],
+  [
+   13,
+   4,
+   0,
+   15,
+   5,
+   "INT"
+  ],
+  [
+   14,
+   5,
+   0,
+   15,
+   6,
+   "FLOAT"
+  ],
+  [
+   15,
+   15,
+   0,
+   16,
+   0,
+   "LATENT"
+  ],
+  [
+   16,
+   9,
+   0,
+   16,
+   1,
+   "VAE"
+  ],
+  [
+   17,
+   16,
+   0,
+   17,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [
+  {
+   "id": 1,
+   "title": "1 · Your inputs (App mode shows these)",
+   "bounding": [
+    -80,
+    -30,
+    560,
+    1080
+   ],
+   "color": "#8A8",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 2,
+   "title": "2 · Models (loaded once)",
+   "bounding": [
+    520,
+    -30,
+    500,
+    490
+   ],
+   "color": "#3f789e",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 3,
+   "title": "3 · Prompt + size",
+   "bounding": [
+    1060,
+    -30,
+    440,
+    670
+   ],
+   "color": "#a1309b",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 4,
+   "title": "4 · Sampling",
+   "bounding": [
+    1540,
+    -30,
+    440,
+    620
+   ],
+   "color": "#b06634",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 5,
+   "title": "5 · Save",
+   "bounding": [
+    2020,
+    -30,
+    480,
+    600
+   ],
+   "color": "#b58b2a",
+   "font_size": 24,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.55,
+   "offset": [
+    760,
+    120
+   ]
+  },
+  "linearData": {
+   "inputs": [
+    [
+     1,
+     "value"
+    ],
+    [
+     2,
+     "value"
+    ],
+    [
+     3,
+     "aspect_ratio"
+    ],
+    [
+     3,
+     "megapixels"
+    ],
+    [
+     4,
+     "value"
+    ],
+    [
+     5,
+     "value"
+    ],
+    [
+     6,
+     "value"
+    ]
+   ],
+   "outputs": [
+    17
+   ]
+  }
+ },
+ "version": 0.4
+}
