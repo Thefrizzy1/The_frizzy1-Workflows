@@ -100,7 +100,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **MOSS-Image**: text to image with a Turbo mode (4 or 8 steps), layout with boxes, edit, or a new picture in your photo's shape | [MOSS-Image · 12 GB](workflows/moss/moss-image-12gb) | 12 GB |
 | **Upscale and restore** a soft or small picture or video in one step (SeedVR2, core nodes, sound kept) | [SeedVR2 Upscaler](workflows/seedvr/seedvr2-upscaler) | 12 GB target, not verified |
 | **Quick edits** in 4 steps: say what the picture should look like (Fibo 2.0, non-commercial) | [Fibo 2.0 Edit Turbo · 12 GB](workflows/fibo/fibo2-edit-12gb) | 12 GB |
-| **MiniMax H3 Image**: 16 MP-class text to image, edit with 1 or 2 pictures, or change only a box / painted area (licence excludes EU, UK, KR, US) | [MiniMax H3 Image · 12 GB](workflows/minimax/h3-image-12gb) | 12 GB (text to image ran on an RTX 3060; edits in a 10 GiB budget) |
+| **MiniMax H3 Image**: 16 MP-class text to image, edit with 1 or 2 pictures, or change only a box / painted area (licence excludes EU, UK, KR, US) | [MiniMax H3 Image · 12 GB](workflows/minimax/h3-image-12gb) | 12 GB (all three ran on an RTX 3060) |
 | **Design images with text + real transparency** (Ming Image 0.1 Design) | [Ming Image 0.1 · 12 GB](workflows/ming/image-0.1-design-12gb) | 4 GB+* |
 | **Fast, tiny** image generation | [Z-Image Turbo GGUF](workflows/z-image/turbo) | 4 GB+ |
 | **Edit a picture or combine up to three** with FireRed Image Edit 1.1 (Apache-2.0, 8 steps) | [FireRed Image Edit 1.1](workflows/firered/image-edit-1.1) | 12 GB target, not verified |

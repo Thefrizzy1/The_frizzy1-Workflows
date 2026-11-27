@@ -1,14 +1,14 @@
 # The_frizzy1 - MiniMax H3 Image · 12 GB v2.0.0
 
-> MiniMax H3 Image on the 12 GB files: text to image, edit a picture (with an optional second picture), and an area edit that changes only a box or a painted mask. Three workflows, core ComfyUI nodes only. New in v2.0.0: text to image is one node and ran on an RTX 3060 12 GB.
+> MiniMax H3 Image on the 12 GB files: text to image, edit a picture (with an optional second picture), and an area edit that changes only a box or a painted mask. Three workflows, core ComfyUI nodes only, each one node now. New: edit and area edit v2.0.0 are one node too (picture in on the left, result out on the right), and all three ran on an RTX 3060 12 GB.
 
 | | |
 |---|---|
 | **Model family** | MiniMax H3 Image (33.1B, distilled to 6 steps), Comfy-Org W4A8 model + NVFP4 text encoder |
 | **Tasks** | T2I · edit (1 or 2 pictures) · area edit (box or painted mask) |
-| **Min VRAM** | 12 GB. Text to image v2.0.0 ran on an RTX 3060 12 GB (whole card 11.2 to 11.5 GiB). Edit and area edit (v1.0.0) ran inside a 10 GiB VRAM budget, **not verified on a real 12 GB card** |
-| **System RAM** | 32 GB recommended: the ComfyUI process peaked at 20.6 GiB in the 10 GiB budget. 16 GB not tested |
-| **Tested on** | Text to image v2.0.0: RTX 3060 12 GB · 32 GB RAM · ComfyUI 0.45.3. v1.0.0 files: RTX PRO 4000 Blackwell 24 GB · 64 GB RAM · ComfyUI 0.45.3, with and without `--reserve-vram` budgets |
+| **Min VRAM** | 12 GB. All three ran on an RTX 3060 12 GB: text to image 11.2 to 11.5 GiB (whole card), edit and area edit 11.3 to 11.5 GiB, even at 16 MP |
+| **System RAM** | 32 GB is the minimum: on the RTX 3060 PC (32 GB) the edits took the whole PC up to 31.9 GiB, ComfyUI alone up to 19.7 GiB. 16 GB not tested |
+| **Tested on** | All three v2.0.0 files: RTX 3060 12 GB · 32 GB RAM · ComfyUI 0.45.3. The v1.0.0 files (now in `source/`): RTX PRO 4000 Blackwell 24 GB · 64 GB RAM, with and without `--reserve-vram` budgets |
 | **CivitAI** | Not published |
 | **Hugging Face** | Not published |
 | **YouTube explainer** | Not published |
@@ -45,8 +45,9 @@ Already using the [AI Influencer · 12 GB](../ai-influencer-12gb) pack? Its work
 
 ## Capabilities
 - `The_frizzy1_h3-image-12gb-t2i_v2.0.0.json`: text to image in one node. Shape (8 ratios) + megapixels. Writes text that is in quotes in the prompt.
-- `The_frizzy1_h3-image-12gb-edit_v1.0.0.json`: edit Picture 1 from an instruction; optional Picture 2 as a reference (`<Picture 1>`, `<Picture 2>` in the prompt). The result has Picture 1's shape at the chosen megapixels.
-- `The_frizzy1_h3-image-12gb-area-edit_v1.0.0.json`: change only a box (left, top, width, height in % of the picture) or a painted mask. The result keeps the input's own size; outside the area the pixels stay the original's.
+- `The_frizzy1_h3-image-12gb-edit_v2.0.0.json`: edit Picture 1 from an instruction; optional Picture 2 as a reference (`<Picture 1>`, `<Picture 2>` in the prompt). The result has Picture 1's shape at the chosen megapixels. One node: Picture 1 and Picture 2 go in on the left, every setting is on the node, Result and Before / after on the right.
+- `The_frizzy1_h3-image-12gb-area-edit_v2.0.0.json`: change only a box (left, top, width, height in % of the picture) or a painted mask. The result keeps the input's own size; outside the area the pixels stay the original's. One node: your picture (and its painted mask) in on the left, Result, Before / after and Area that changes on the right.
+- The v1.0.0 edit files (numbered groups) are in `source/`; `source/make_v2_edits.py` builds v2.0.0 from them. The job ComfyUI sends is the same (checked node by node).
 - Edit and area edit: every input in group 1; App mode shows only those (labels checked in App mode in a headless browser).
 
 ## Text to image v2.0.0 on the RTX 3060, and why there is no Turbo mode
@@ -81,7 +82,7 @@ All runs on one machine: RTX PRO 4000 Blackwell 24 GB, 64 GB RAM, ComfyUI 0.45.3
 - ComfyUI fills the VRAM it gets and keeps the rest of the model in system RAM, so less VRAM means more RAM. In the 12 GiB budget it went up to 0.5 GiB over the budget; in the 10 GiB budget the whole GPU stayed under 11.5 GiB.
 - The pictures were pixel-identical in both budgets; against the unlimited run the text-to-image picture differed by at most 2 of 255 and the three edits were identical.
 - System RAM in use on the machine rose to 26.3 GiB during the 10 GiB batch (9.4 GiB before it). **Plan on 32 GB of RAM.** 16 GB was not tested.
-- **Not verified on a 12 GB card.** A budget on a 24 GB card is the closest the lab gets; an RTX 3060 is a slower card. Edit and area edit were not run on it; text to image was (above).
+- These budget runs were made before the RTX 3060 runs; all three files have since run on a real 3060 (see Performance).
 
 ## Required models
 See [downloads.md](downloads.md) for the table with links. Every file below was read from the workflow `.json` files. SHA-256 of all three downloads matched the Hugging Face listing (2026-11-24).
@@ -109,7 +110,7 @@ None.
 |---|---|---|
 | Steps / CFG / sampler | 6 / 1 / euler, simple | fixed by the distilled model; MiniMax's own server refuses other values. No negative prompt |
 | Text to image | 7.5 MP (3424x2304 at 3:2) | RTX 3060: 66 s with the models unloaded first, 44 s for a new seed. Lab card: 30 to 31 s, 16 MP (5024x3360) 65 to 66 s; MiniMax say 4 to 20 MP, best near 16 |
-| Edit / area edit | 4 MP | 42 to 44 s for one picture; the area edit's result keeps the input size anyway |
+| Edit / area edit | 4 MP (8.3 MP = a 4K frame's pixels, 16 MP ran too) | lab card 42 to 44 s at 4 MP; RTX 3060 134 to 198 s at 8.3 MP and 218 s at 16 MP, model load included. The area edit's result keeps the input size anyway |
 | Edit instruction | short, name `<Picture 1>`, say what stays | a full scene description in the instruction was not tested |
 | Area | cover the whole old object, with room around it | see Known issues |
 
@@ -131,10 +132,19 @@ On the machine above, 17 successful API runs (one more failed validation because
 | Area edit, box (`example.png`) | 4 MP edit, 768x768 result | 37 s | 1 |
 | Area edit, painted mask | 4 MP edit, 1776x1184 result | 43 s | 1 |
 
-RTX 3060 12 GB: text to image see above, edit and area edit not verified.
+RTX 3060 12 GB, 32 GB RAM, ComfyUI 0.45.3, edit and area edit v2.0.0 on real 3648x5472 (20 MP) photos. Models unloaded before every run, so every time includes loading them:
+
+| Run | Edit size | Result | Time | Whole card | ComfyUI RAM |
+|---|---|---|---|---|---|
+| Area edit, box | 8.3 MP | 3648x5472 (the photo's own size) | 139 to 160 s (6 runs) | 11.35 to 11.43 GiB | 14.6 to 19.7 GiB |
+| Area edit, box | 16 MP | 3648x5472 | 218 s | 11.37 GiB | 19.7 GiB |
+| Edit | 8.3 MP | 2400x3616 | 134 to 198 s (5 runs) | 11.33 to 11.49 GiB | 10.9 to 18.5 GiB |
+
+The whole PC went up to 31.9 of 32 GiB RAM.
 
 ## Known issues
 - **Licence territory:** the MiniMax-H3-Image Community License does not cover use in the EU, the UK, South Korea or the USA (people there have to ask MiniMax for a licence). Elsewhere, above 1 million USD yearly revenue or for a hosted service you need MiniMax's written permission, a commercial product must show "MiniMax-H3-Image", and outputs may not be used to train other models. Read [the licence](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/blob/main/LICENSE).
+- **Area edit, colours inside the area:** the area is pasted from the whole-picture edit, so colours inside it can shift a little against the original (seen at 1:1 on a 20 MP photo: hair a bit redder). The soft edge hides the line.
 - **Area edit, leftovers at the mask edge:** whatever is outside the mask stays. In the painted-mask test the mask missed the left brim of the straw hat and a piece of the brim stayed next to the new beret → paint (or box) over the whole old object with some room around it.
 - **Area edit, painted mask on a JPEG:** a JPEG has no transparency, so with **Use my painted mask** on and nothing painted, nothing changes. Paint in MaskEditor (it saves a PNG with the mask) before turning it on.
 - **Area edit on JPEG inputs:** outside the area the result differed from my own decode of the JPEG by up to 3 of 255 (on a PNG input: 0 pixels changed). Not visible.

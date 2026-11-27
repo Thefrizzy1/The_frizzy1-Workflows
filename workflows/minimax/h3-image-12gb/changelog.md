@@ -1,4 +1,9 @@
 # Changelog — MiniMax H3 Image · 12 GB
+## Edit v2.0.0 and area edit v2.0.0 (2026-11-26)
+- Same one-node layout as text to image v2.0.0: picture loader(s) on the left, one big node with every setting (instruction, switches, box, megapixels, seed, the three model files), Result, Before / after and (area edit) Area that changes on the right. Built by `source/make_v2_edits.py` from the v1.0.0 files; the job the frontend sends is the same as v1.0.0 (checked: same nodes, values and links).
+- First runs on a 12 GB card: RTX 3060, 32 GB RAM, ComfyUI 0.45.3, models unloaded before each run, 3648x5472 photos. Area edit at 8.3 MP: 139 to 160 s, at 16 MP: 218 s; edit at 8.3 MP (2400x3616 out): 134 to 198 s. Whole card 11.33 to 11.49 GiB, ComfyUI RAM up to 19.7 GiB, the PC up to 31.9 of 32 GB.
+- The v1.0.0 edit and area-edit files moved to `source/`. README: RTX 3060 numbers for both, 32 GB RAM as the minimum, a note on colours shifting a little inside the area.
+
 ## v2.0.0 (2026-11-24)
 - Text to image is **one node** now (a single subgraph): prompt, shape, megapixels, seed and the model files on the outside, App mode set. Same 6 steps and the same pixels as v1.0.0, which moved to source/.
 - First run on a 12 GB card: RTX 3060, ComfyUI 0.45.3, 7.5 MP: 66 s with the models unloaded first, 59 s for a new prompt, 44 s for a new seed, 11.4 to 11.5 GiB peak VRAM, 15.7 GiB ComfyUI RAM.

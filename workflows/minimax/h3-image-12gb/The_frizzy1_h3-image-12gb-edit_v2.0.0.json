@@ -1,0 +1,1892 @@
+{
+  "id": "c1c46201-e75d-5412-8cd8-9fcdecb1ac01",
+  "revision": 0,
+  "last_node_id": 100,
+  "last_link_id": 5,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [
+        -600,
+        0
+      ],
+      "size": [
+        520,
+        560
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          },
+          "link": null,
+          "label": "Picture 1 (to edit)"
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1
+          ]
+        },
+        {
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "Picture 1 (the one to edit)",
+      "widgets_values": [
+        "example.png",
+        "image"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "LoadImage",
+      "pos": [
+        -600,
+        620
+      ],
+      "size": [
+        520,
+        560
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          },
+          "link": null,
+          "label": "Picture 2 (optional)"
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            2
+          ]
+        },
+        {
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "Picture 2 (optional reference)",
+      "widgets_values": [
+        "example.png",
+        "image"
+      ]
+    },
+    {
+      "id": 100,
+      "type": "1ecfbeb7-8f27-5fc8-bc38-8aa42ced4777",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        560,
+        556
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "Picture 1",
+          "localized_name": "picture_1",
+          "name": "picture_1",
+          "type": "IMAGE",
+          "link": 1
+        },
+        {
+          "label": "Picture 2",
+          "localized_name": "picture_2",
+          "name": "picture_2",
+          "type": "IMAGE",
+          "link": 2
+        },
+        {
+          "label": "Edit instruction (say <Picture 1>, English)",
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "label": "Use Picture 2 (off = only Picture 1)",
+          "localized_name": "use_picture_2",
+          "name": "use_picture_2",
+          "type": "BOOLEAN",
+          "link": null,
+          "widget": {
+            "name": "use_picture_2"
+          }
+        },
+        {
+          "label": "Megapixels (4 = 12 GB default)",
+          "localized_name": "megapixels",
+          "name": "megapixels",
+          "type": "FLOAT",
+          "link": null,
+          "widget": {
+            "name": "megapixels"
+          }
+        },
+        {
+          "label": "Seed (new number = new picture)",
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "label": "Model",
+          "localized_name": "unet",
+          "name": "unet",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "unet"
+          }
+        },
+        {
+          "label": "Text encoder",
+          "localized_name": "te",
+          "name": "te",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "te"
+          }
+        },
+        {
+          "label": "VAE",
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "vae"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "Before (Picture 1, resized)",
+          "localized_name": "before",
+          "name": "before",
+          "type": "IMAGE",
+          "links": [
+            3
+          ]
+        },
+        {
+          "label": "Result",
+          "localized_name": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            4,
+            5
+          ]
+        }
+      ],
+      "title": "MiniMax H3 Image (edit)",
+      "properties": {
+        "models": [
+          {
+            "name": "minimax_h3_image_pruned_w4a8.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/diffusion_models/minimax_h3_image_pruned_w4a8.safetensors",
+            "directory": "diffusion_models"
+          },
+          {
+            "name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+            "directory": "text_encoders"
+          },
+          {
+            "name": "minimax_h3_image_vae_fp16.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/vae/minimax_h3_image_vae_fp16.safetensors",
+            "directory": "vae"
+          }
+        ]
+      },
+      "widgets_values": [
+        "Turn <Picture 1> into a soft watercolour painting of the same girl in the same pose, with the same pink dress, on the same green hill under the same blue sky.",
+        false,
+        4.0,
+        24112026,
+        "minimax_h3_image_pruned_w4a8.safetensors",
+        "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "minimax_h3_image_vae_fp16.safetensors"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 19,
+      "type": "ImageCompare",
+      "pos": [
+        1320,
+        0
+      ],
+      "size": [
+        620,
+        640
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "image_a",
+          "name": "image_a",
+          "type": "IMAGE",
+          "shape": 7,
+          "link": 3
+        },
+        {
+          "localized_name": "image_b",
+          "name": "image_b",
+          "type": "IMAGE",
+          "shape": 7,
+          "link": 4
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "ImageCompare",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "Before / after (drag the slider)"
+    },
+    {
+      "id": 20,
+      "type": "SaveImage",
+      "pos": [
+        640,
+        0
+      ],
+      "size": [
+        620,
+        640
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 5
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.45.3"
+      },
+      "title": "Result (saved to output/MiniMax-H3-Image)",
+      "widgets_values": [
+        "MiniMax-H3-Image/edit"
+      ]
+    },
+    {
+      "id": 21,
+      "type": "MarkdownNote",
+      "pos": [
+        -1300,
+        0
+      ],
+      "size": [
+        640,
+        820
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "title": "How to use Â· v2.0.0",
+      "widgets_values": [
+        "## How to use Â· v2.0.0\n\n**What it does:** edits a picture from a written instruction with MiniMax H3 Image, on the 12 GB files; a second picture can be a reference (a face, an object, a style). Core ComfyUI nodes only.\n\n**One node.** Everything you set is on the big **MiniMax H3 Image (edit)** node. The pictures go in on the left, the result comes out on the right. Double-click the node's title bar to see the inside (the same nodes as v1.0.0).\n\n1. **Picture 1** (left): the picture to edit. Set to `example.png` (ships with ComfyUI); the default instruction is written for it, so the first Run works.\n2. **Picture 2** (left): only used when **Use Picture 2** is on. Must point to a file that exists either way.\n3. On the node:\n   - **Edit instruction**: what to change, naming the pictures as `<Picture 1>` and `<Picture 2>`. Short and direct works; say what must stay.\n   - **Use Picture 2**: off by default.\n   - **Megapixels** (4): size of the result. Picture 1 is resized to this many pixels, shape kept, sides on a 32 px grid.\n   - **Seed**: fixed. Type a new number for another take.\n   - **Model / Text encoder / VAE**: the three files from the Downloads note.\n4. Press **Run**. **Before / after** shows both; **Result** saves to `output/MiniMax-H3-Image/`.\n"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "MarkdownNote",
+      "pos": [
+        -1300,
+        920
+      ],
+      "size": [
+        640,
+        470
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "title": "Downloads + requirements",
+      "widgets_values": [
+        "## Downloads + requirements\n\nClick the file name to download it. Put each file in the folder shown (inside `ComfyUI/models/`).\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `diffusion_models/` | [minimax_h3_image_pruned_w4a8.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/diffusion_models/minimax_h3_image_pruned_w4a8.safetensors) | 12.5 GB |\n| `text_encoders/` | [qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors) | 15.7 GB |\n| `vae/` | [minimax_h3_image_vae_fp16.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/vae/minimax_h3_image_vae_fp16.safetensors) | 1.2 GB |\n\nTotal 29.4 GB, the same three files for all three workflows in this folder. The text encoder is the same file as for MiniMax H3 video.\n\n**VRAM / RAM:** In a 10 GiB budget the whole GPU peaked at 10.8 to 11.4 GiB (same times, same pictures as without a budget). In a 12 GiB budget ComfyUI took 11.9 to 12.5 GiB. Not verified on a real 12 GB card. System RAM: the ComfyUI process peaked at 20.6 GiB in the 10 GiB budget (16.5 GiB in the 12 GiB one); plan on 32 GB of RAM. 16 GB was not tested.\n\n**Run on ComfyUI 0.45.3.** **No custom nodes** (core nodes only; ComfyUI 0.45+ has the MiniMax H3 Image node).\n\n**Licence:** MiniMax-H3-Image Community License. It does **not** cover use in the EU, the UK, South Korea or the USA. Elsewhere: written permission from MiniMax above 1 million USD yearly revenue or for a hosted service, and a commercial product must show \"MiniMax-H3-Image\". Read the licence before use. Workflow: MIT.\n"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      100,
+      0,
+      "IMAGE"
+    ],
+    [
+      2,
+      3,
+      0,
+      100,
+      1,
+      "IMAGE"
+    ],
+    [
+      3,
+      100,
+      0,
+      19,
+      0,
+      "IMAGE"
+    ],
+    [
+      4,
+      100,
+      1,
+      19,
+      1,
+      "IMAGE"
+    ],
+    [
+      5,
+      100,
+      1,
+      20,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "1ecfbeb7-8f27-5fc8-bc38-8aa42ced4777",
+        "version": 1,
+        "state": {
+          "lastGroupId": 5,
+          "lastNodeId": 18,
+          "lastLinkId": 29,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "MiniMax H3 Image (edit)",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            -420,
+            0,
+            160,
+            294
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            2060,
+            0,
+            160,
+            112
+          ]
+        },
+        "inputs": [
+          {
+            "id": "bb228ff4-fa82-5cf5-9208-3faf8b476492",
+            "name": "picture_1",
+            "type": "IMAGE",
+            "linkIds": [
+              19
+            ],
+            "label": "Picture 1",
+            "localized_name": "picture_1",
+            "pos": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "74d6de66-26e0-521f-9be5-52834bfcc2ac",
+            "name": "picture_2",
+            "type": "IMAGE",
+            "linkIds": [
+              20
+            ],
+            "label": "Picture 2",
+            "localized_name": "picture_2",
+            "pos": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "8c50437d-18ee-56a8-8486-ec6720491cdb",
+            "name": "prompt",
+            "type": "STRING",
+            "linkIds": [
+              21
+            ],
+            "label": "Edit instruction (say <Picture 1>, English)",
+            "localized_name": "prompt",
+            "pos": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "9f94dfba-ce74-5b68-91bd-c73cca7bf613",
+            "name": "use_picture_2",
+            "type": "BOOLEAN",
+            "linkIds": [
+              22
+            ],
+            "label": "Use Picture 2 (off = only Picture 1)",
+            "localized_name": "use_picture_2",
+            "pos": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "7a7ecce7-02ee-5d85-ba3d-d6a3ab851d1a",
+            "name": "megapixels",
+            "type": "FLOAT",
+            "linkIds": [
+              23
+            ],
+            "label": "Megapixels (4 = 12 GB default)",
+            "localized_name": "megapixels",
+            "pos": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "e283ac4d-088d-5a08-8654-d482e9a11a62",
+            "name": "seed",
+            "type": "INT",
+            "linkIds": [
+              24
+            ],
+            "label": "Seed (new number = new picture)",
+            "localized_name": "seed",
+            "pos": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "7206129b-2062-5c17-bda3-bfb3f783955b",
+            "name": "unet",
+            "type": "COMBO",
+            "linkIds": [
+              25
+            ],
+            "label": "Model",
+            "localized_name": "unet",
+            "pos": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "08b17a4b-31cf-5317-8423-a8ec6a0d0c55",
+            "name": "te",
+            "type": "COMBO",
+            "linkIds": [
+              26
+            ],
+            "label": "Text encoder",
+            "localized_name": "te",
+            "pos": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "b8557e83-bd0e-5855-bde9-ea16b48e0d27",
+            "name": "vae",
+            "type": "COMBO",
+            "linkIds": [
+              27
+            ],
+            "label": "VAE",
+            "localized_name": "vae",
+            "pos": [
+              0,
+              0
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "798d2d9c-6590-54d3-aa44-f9b5ceea79b1",
+            "name": "before",
+            "type": "IMAGE",
+            "linkIds": [
+              28
+            ],
+            "label": "Before (Picture 1, resized)",
+            "localized_name": "before",
+            "pos": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "392d3b96-08f8-5a37-b75c-2e8a05119019",
+            "name": "image",
+            "type": "IMAGE",
+            "linkIds": [
+              29
+            ],
+            "label": "Result",
+            "localized_name": "image",
+            "pos": [
+              0,
+              0
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 2,
+            "type": "PrimitiveBoolean",
+            "pos": [
+              -60,
+              460
+            ],
+            "size": [
+              520,
+              60
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "value",
+                "name": "value",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "value"
+                },
+                "link": 22
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "BOOLEAN",
+                "name": "BOOLEAN",
+                "type": "BOOLEAN",
+                "links": [
+                  1
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "PrimitiveBoolean",
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3"
+            },
+            "title": "Use Picture 2 (off = only Picture 1)",
+            "widgets_values": [
+              false
+            ]
+          },
+          {
+            "id": 4,
+            "type": "PrimitiveStringMultiline",
+            "pos": [
+              -60,
+              980
+            ],
+            "size": [
+              520,
+              190
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "value",
+                "name": "value",
+                "type": "STRING",
+                "widget": {
+                  "name": "value"
+                },
+                "link": 21
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": [
+                  8
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "PrimitiveStringMultiline",
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3"
+            },
+            "title": "Edit instruction (say <Picture 1>, English)",
+            "widgets_values": [
+              "Turn <Picture 1> into a soft watercolour painting of the same girl in the same pose, with the same pink dress, on the same green hill under the same blue sky."
+            ]
+          },
+          {
+            "id": 5,
+            "type": "PrimitiveFloat",
+            "pos": [
+              -60,
+              1220
+            ],
+            "size": [
+              520,
+              60
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": 23
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  2
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "PrimitiveFloat",
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3"
+            },
+            "title": "Megapixels (4 = 12 GB default)",
+            "widgets_values": [
+              4.0
+            ]
+          },
+          {
+            "id": 6,
+            "type": "PrimitiveInt",
+            "pos": [
+              -60,
+              1330
+            ],
+            "size": [
+              520,
+              90
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "value",
+                "name": "value",
+                "type": "INT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": 24
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "INT",
+                "name": "INT",
+                "type": "INT",
+                "links": [
+                  16
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "PrimitiveInt",
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3"
+            },
+            "title": "Seed (new number = new picture)",
+            "widgets_values": [
+              24112026,
+              "fixed"
+            ]
+          },
+          {
+            "id": 7,
+            "type": "UNETLoader",
+            "pos": [
+              540,
+              50
+            ],
+            "size": [
+              460,
+              90
+            ],
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "unet_name",
+                "name": "unet_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "unet_name"
+                },
+                "link": 25
+              },
+              {
+                "localized_name": "weight_dtype",
+                "name": "weight_dtype",
+                "type": "COMBO",
+                "widget": {
+                  "name": "weight_dtype"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  12
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "UNETLoader",
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3",
+              "models": [
+                {
+                  "name": "minimax_h3_image_pruned_w4a8.safetensors",
+                  "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/diffusion_models/minimax_h3_image_pruned_w4a8.safetensors",
+                  "directory": "diffusion_models"
+                }
+              ]
+            },
+            "title": "H3 Image model, W4A8 (12.5 GB)",
+            "widgets_values": [
+              "minimax_h3_image_pruned_w4a8.safetensors",
+              "default"
+            ]
+          },
+          {
+            "id": 8,
+            "type": "CLIPLoader",
+            "pos": [
+              540,
+              190
+            ],
+            "size": [
+              460,
+              110
+            ],
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip_name",
+                "name": "clip_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "clip_name"
+                },
+                "link": 26
+              },
+              {
+                "localized_name": "type",
+                "name": "type",
+                "type": "COMBO",
+                "widget": {
+                  "name": "type"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "device",
+                "name": "device",
+                "type": "COMBO",
+                "widget": {
+                  "name": "device"
+                },
+                "shape": 7,
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [
+                  4
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CLIPLoader",
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3",
+              "models": [
+                {
+                  "name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+                  "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+                  "directory": "text_encoders"
+                }
+              ]
+            },
+            "title": "H3 text encoder, Qwen3-VL 32B NVFP4",
+            "widgets_values": [
+              "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+              "minimax",
+              "default"
+            ]
+          },
+          {
+            "id": 9,
+            "type": "VAELoader",
+            "pos": [
+              540,
+              350
+            ],
+            "size": [
+              460,
+              60
+            ],
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "vae_name",
+                "name": "vae_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "vae_name"
+                },
+                "link": 27
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "VAE",
+                "name": "VAE",
+                "type": "VAE",
+                "links": [
+                  5,
+                  18
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAELoader",
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3",
+              "models": [
+                {
+                  "name": "minimax_h3_image_vae_fp16.safetensors",
+                  "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/vae/minimax_h3_image_vae_fp16.safetensors",
+                  "directory": "vae"
+                }
+              ]
+            },
+            "title": "H3 Image VAE",
+            "widgets_values": [
+              "minimax_h3_image_vae_fp16.safetensors"
+            ]
+          },
+          {
+            "id": 10,
+            "type": "ComfySwitchNode",
+            "pos": [
+              1080,
+              740
+            ],
+            "size": [
+              420,
+              100
+            ],
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "on_false",
+                "name": "on_false",
+                "type": "*",
+                "shape": 7,
+                "link": null
+              },
+              {
+                "localized_name": "on_true",
+                "name": "on_true",
+                "type": "*",
+                "shape": 7,
+                "link": 20
+              },
+              {
+                "localized_name": "switch",
+                "name": "switch",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "switch"
+                },
+                "link": 1
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "output",
+                "name": "output",
+                "type": "*",
+                "links": [
+                  7
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ComfySwitchNode",
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3"
+            },
+            "title": "Picture 2 on/off (from group 1)",
+            "widgets_values": [
+              false
+            ]
+          },
+          {
+            "id": 11,
+            "type": "ImageScaleToTotalPixels",
+            "pos": [
+              1080,
+              50
+            ],
+            "size": [
+              420,
+              110
+            ],
+            "flags": {},
+            "order": 10,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 19
+              },
+              {
+                "localized_name": "upscale_method",
+                "name": "upscale_method",
+                "type": "COMBO",
+                "widget": {
+                  "name": "upscale_method"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "megapixels",
+                "name": "megapixels",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "megapixels"
+                },
+                "link": 2
+              },
+              {
+                "localized_name": "resolution_steps",
+                "name": "resolution_steps",
+                "type": "INT",
+                "widget": {
+                  "name": "resolution_steps"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  3,
+                  6,
+                  28
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ImageScaleToTotalPixels",
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3"
+            },
+            "title": "Resize to the megapixels, keep shape (x32)",
+            "widgets_values": [
+              "lanczos",
+              4.0,
+              32
+            ]
+          },
+          {
+            "id": 12,
+            "type": "GetImageSize",
+            "pos": [
+              1080,
+              210
+            ],
+            "size": [
+              420,
+              100
+            ],
+            "flags": {},
+            "order": 11,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 3
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "width",
+                "name": "width",
+                "type": "INT",
+                "links": [
+                  9
+                ]
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "type": "INT",
+                "links": [
+                  10
+                ]
+              },
+              {
+                "localized_name": "batch_size",
+                "name": "batch_size",
+                "type": "INT",
+                "links": []
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "GetImageSize",
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3"
+            },
+            "title": "Picture size → canvas size"
+          },
+          {
+            "id": 13,
+            "type": "MiniMaxH3ImageConditioning",
+            "pos": [
+              1080,
+              360
+            ],
+            "size": [
+              420,
+              300
+            ],
+            "flags": {},
+            "order": 12,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip",
+                "name": "clip",
+                "type": "CLIP",
+                "link": 4
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "type": "VAE",
+                "shape": 7,
+                "link": 5
+              },
+              {
+                "localized_name": "image_1",
+                "name": "images.image_1",
+                "type": "IMAGE",
+                "shape": 7,
+                "link": 6
+              },
+              {
+                "localized_name": "image_2",
+                "name": "images.image_2",
+                "type": "IMAGE",
+                "shape": 7,
+                "link": 7
+              },
+              {
+                "localized_name": "prompt",
+                "name": "prompt",
+                "type": "STRING",
+                "widget": {
+                  "name": "prompt"
+                },
+                "link": 8
+              },
+              {
+                "localized_name": "width",
+                "name": "width",
+                "type": "INT",
+                "widget": {
+                  "name": "width"
+                },
+                "link": 9
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "type": "INT",
+                "widget": {
+                  "name": "height"
+                },
+                "link": 10
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "links": [
+                  11,
+                  13
+                ]
+              },
+              {
+                "localized_name": "LATENT",
+                "name": "LATENT",
+                "type": "LATENT",
+                "links": [
+                  15
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "MiniMaxH3ImageConditioning",
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3"
+            },
+            "title": "Instruction + pictures → conditioning",
+            "widgets_values": [
+              "",
+              0,
+              0
+            ]
+          },
+          {
+            "id": 14,
+            "type": "MarkdownNote",
+            "pos": [
+              1080,
+              890
+            ],
+            "size": [
+              420,
+              200
+            ],
+            "flags": {},
+            "order": 13,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [],
+            "properties": {
+              "Node name for S&R": "MarkdownNote"
+            },
+            "title": "Why Picture 2 has a switch",
+            "widgets_values": [
+              "**Why a switch:** with **Use Picture 2** off the switch passes nothing, so the model only sees Picture 1. The Picture 2 loader still needs a picture that exists (it is set to `example.png`), because ComfyUI checks every loader. Picture 2 goes in as it is; the node scales its own copies."
+            ]
+          },
+          {
+            "id": 15,
+            "type": "ConditioningZeroOut",
+            "pos": [
+              1580,
+              50
+            ],
+            "size": [
+              400,
+              60
+            ],
+            "flags": {},
+            "order": 14,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "conditioning",
+                "name": "conditioning",
+                "type": "CONDITIONING",
+                "link": 11
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CONDITIONING",
+                "name": "CONDITIONING",
+                "type": "CONDITIONING",
+                "links": [
+                  14
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ConditioningZeroOut",
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3"
+            },
+            "title": "Empty negative (never read at CFG 1)"
+          },
+          {
+            "id": 16,
+            "type": "KSampler",
+            "pos": [
+              1580,
+              160
+            ],
+            "size": [
+              400,
+              270
+            ],
+            "flags": {},
+            "order": 15,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 12
+              },
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": 13
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": 14
+              },
+              {
+                "localized_name": "latent_image",
+                "name": "latent_image",
+                "type": "LATENT",
+                "link": 15
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 16
+              },
+              {
+                "localized_name": "steps",
+                "name": "steps",
+                "type": "INT",
+                "widget": {
+                  "name": "steps"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "cfg",
+                "name": "cfg",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "cfg"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "sampler_name",
+                "name": "sampler_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "sampler_name"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "scheduler",
+                "name": "scheduler",
+                "type": "COMBO",
+                "widget": {
+                  "name": "scheduler"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "denoise",
+                "name": "denoise",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "denoise"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "LATENT",
+                "name": "LATENT",
+                "type": "LATENT",
+                "links": [
+                  17
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "KSampler",
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3"
+            },
+            "title": "Sampler (6 steps, CFG 1, fixed by the model)",
+            "widgets_values": [
+              24112026,
+              "fixed",
+              6,
+              1.0,
+              "euler",
+              "simple",
+              1.0
+            ]
+          },
+          {
+            "id": 17,
+            "type": "VAEDecode",
+            "pos": [
+              1580,
+              480
+            ],
+            "size": [
+              400,
+              60
+            ],
+            "flags": {},
+            "order": 16,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "samples",
+                "name": "samples",
+                "type": "LATENT",
+                "link": 17
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "type": "VAE",
+                "link": 18
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  29
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAEDecode",
+              "cnr_id": "comfy-core",
+              "ver": "0.45.3"
+            },
+            "title": "Latent → picture"
+          },
+          {
+            "id": 18,
+            "type": "MarkdownNote",
+            "pos": [
+              1580,
+              590
+            ],
+            "size": [
+              400,
+              190
+            ],
+            "flags": {},
+            "order": 17,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [],
+            "properties": {
+              "Node name for S&R": "MarkdownNote"
+            },
+            "title": "Why 6 steps and CFG 1",
+            "widgets_values": [
+              "**Why 6 steps and CFG 1:** MiniMax distilled this checkpoint to exactly 6 steps without guidance (their own server refuses any other value). More steps or a higher CFG do not make it better. There is no negative prompt: write what you want to avoid into the prompt."
+            ]
+          }
+        ],
+        "groups": [
+          {
+            "id": 1,
+            "title": "Settings (shown on the node outside)",
+            "bounding": [
+              -80,
+              -30,
+              560,
+              1480
+            ],
+            "color": "#8A8",
+            "font_size": 24,
+            "flags": {}
+          },
+          {
+            "id": 2,
+            "title": "2 · Models (loaded once)",
+            "bounding": [
+              520,
+              -30,
+              500,
+              470
+            ],
+            "color": "#3f789e",
+            "font_size": 24,
+            "flags": {}
+          },
+          {
+            "id": 3,
+            "title": "3 · Pictures + instruction",
+            "bounding": [
+              1060,
+              -30,
+              460,
+              1150
+            ],
+            "color": "#a1309b",
+            "font_size": 24,
+            "flags": {}
+          },
+          {
+            "id": 4,
+            "title": "4 · Sampling",
+            "bounding": [
+              1560,
+              -30,
+              440,
+              840
+            ],
+            "color": "#b06634",
+            "font_size": 24,
+            "flags": {}
+          },
+          {
+            "id": 5,
+            "title": "5 · Save",
+            "bounding": [
+              2020,
+              -30,
+              460,
+              1000
+            ],
+            "color": "#b58b2a",
+            "font_size": 24,
+            "flags": {}
+          }
+        ],
+        "links": [
+          {
+            "id": 1,
+            "origin_id": 2,
+            "origin_slot": 0,
+            "target_id": 10,
+            "target_slot": 2,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 2,
+            "origin_id": 5,
+            "origin_slot": 0,
+            "target_id": 11,
+            "target_slot": 2,
+            "type": "FLOAT"
+          },
+          {
+            "id": 3,
+            "origin_id": 11,
+            "origin_slot": 0,
+            "target_id": 12,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 4,
+            "origin_id": 8,
+            "origin_slot": 0,
+            "target_id": 13,
+            "target_slot": 0,
+            "type": "CLIP"
+          },
+          {
+            "id": 5,
+            "origin_id": 9,
+            "origin_slot": 0,
+            "target_id": 13,
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 6,
+            "origin_id": 11,
+            "origin_slot": 0,
+            "target_id": 13,
+            "target_slot": 2,
+            "type": "IMAGE"
+          },
+          {
+            "id": 7,
+            "origin_id": 10,
+            "origin_slot": 0,
+            "target_id": 13,
+            "target_slot": 3,
+            "type": "*"
+          },
+          {
+            "id": 8,
+            "origin_id": 4,
+            "origin_slot": 0,
+            "target_id": 13,
+            "target_slot": 4,
+            "type": "STRING"
+          },
+          {
+            "id": 9,
+            "origin_id": 12,
+            "origin_slot": 0,
+            "target_id": 13,
+            "target_slot": 5,
+            "type": "INT"
+          },
+          {
+            "id": 10,
+            "origin_id": 12,
+            "origin_slot": 1,
+            "target_id": 13,
+            "target_slot": 6,
+            "type": "INT"
+          },
+          {
+            "id": 11,
+            "origin_id": 13,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 0,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 12,
+            "origin_id": 7,
+            "origin_slot": 0,
+            "target_id": 16,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 13,
+            "origin_id": 13,
+            "origin_slot": 0,
+            "target_id": 16,
+            "target_slot": 1,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 14,
+            "origin_id": 15,
+            "origin_slot": 0,
+            "target_id": 16,
+            "target_slot": 2,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 15,
+            "origin_id": 13,
+            "origin_slot": 1,
+            "target_id": 16,
+            "target_slot": 3,
+            "type": "LATENT"
+          },
+          {
+            "id": 16,
+            "origin_id": 6,
+            "origin_slot": 0,
+            "target_id": 16,
+            "target_slot": 4,
+            "type": "INT"
+          },
+          {
+            "id": 17,
+            "origin_id": 16,
+            "origin_slot": 0,
+            "target_id": 17,
+            "target_slot": 0,
+            "type": "LATENT"
+          },
+          {
+            "id": 18,
+            "origin_id": 9,
+            "origin_slot": 0,
+            "target_id": 17,
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 19,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 11,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 20,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 10,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 21,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 4,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 22,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 2,
+            "target_slot": 0,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 23,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 5,
+            "target_slot": 0,
+            "type": "FLOAT"
+          },
+          {
+            "id": 24,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 6,
+            "target_slot": 0,
+            "type": "INT"
+          },
+          {
+            "id": 25,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 7,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 26,
+            "origin_id": -10,
+            "origin_slot": 7,
+            "target_id": 8,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 27,
+            "origin_id": -10,
+            "origin_slot": 8,
+            "target_id": 9,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 28,
+            "origin_id": 11,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 29,
+            "origin_id": 17,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 1,
+            "type": "IMAGE"
+          }
+        ],
+        "extra": {}
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6,
+      "offset": [
+        900,
+        120
+      ]
+    },
+    "linearData": {
+      "inputs": [
+        [
+          1,
+          "image"
+        ],
+        [
+          3,
+          "image"
+        ],
+        [
+          100,
+          "prompt"
+        ],
+        [
+          100,
+          "use_picture_2"
+        ],
+        [
+          100,
+          "megapixels"
+        ],
+        [
+          100,
+          "seed"
+        ]
+      ],
+      "outputs": [
+        20
+      ]
+    }
+  },
+  "version": 0.4
+}
