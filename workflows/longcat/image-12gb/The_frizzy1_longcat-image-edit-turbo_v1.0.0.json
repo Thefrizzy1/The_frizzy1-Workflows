@@ -1,0 +1,1308 @@
+{
+ "id": "b3c1d2e4-7a10-4c55-9e2a-251120260002",
+ "revision": 0,
+ "last_node_id": 20,
+ "last_link_id": 20,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "LoadImage",
+   "pos": [
+    -60,
+    50
+   ],
+   "size": [
+    520,
+    360
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "COMBO",
+     "widget": {
+      "name": "image"
+     },
+     "link": null,
+     "label": "Your picture (to edit)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      1
+     ]
+    },
+    {
+     "localized_name": "MASK",
+     "name": "MASK",
+     "type": "MASK",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Your picture (the one to edit)",
+   "widgets_values": [
+    "example.png",
+    "image"
+   ]
+  },
+  {
+   "id": 2,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    -60,
+    460
+   ],
+   "size": [
+    520,
+    140
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "STRING",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Edit instruction"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "STRING",
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      7
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Edit instruction (what to change, what to keep)",
+   "widgets_values": [
+    "Change the season to winter: the ground is covered with snow and snow is falling. Keep everything else unchanged."
+   ]
+  },
+  {
+   "id": 3,
+   "type": "PrimitiveFloat",
+   "pos": [
+    -60,
+    650
+   ],
+   "size": [
+    520,
+    60
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "FLOAT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Megapixels (1 = default)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "FLOAT",
+     "name": "FLOAT",
+     "type": "FLOAT",
+     "links": [
+      2
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveFloat",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Megapixels (1 = default)",
+   "widgets_values": [
+    1.0
+   ]
+  },
+  {
+   "id": 4,
+   "type": "PrimitiveInt",
+   "pos": [
+    -60,
+    760
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Steps (8 = default)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      17
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Steps (8 = made for this model)",
+   "widgets_values": [
+    8,
+    "fixed"
+   ]
+  },
+  {
+   "id": 5,
+   "type": "PrimitiveInt",
+   "pos": [
+    -60,
+    900
+   ],
+   "size": [
+    520,
+    90
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Seed"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      16
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Seed (new number = new picture)",
+   "widgets_values": [
+    25112026,
+    "fixed"
+   ]
+  },
+  {
+   "id": 6,
+   "type": "UNETLoader",
+   "pos": [
+    540,
+    50
+   ],
+   "size": [
+    460,
+    90
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "unet_name",
+     "name": "unet_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "unet_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "weight_dtype",
+     "name": "weight_dtype",
+     "type": "COMBO",
+     "widget": {
+      "name": "weight_dtype"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      12
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UNETLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "longcat_image_edit_turbo_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/LongCat-Image/resolve/main/split_files/diffusion_models/longcat_image_edit_turbo_bf16.safetensors",
+      "directory": "diffusion_models"
+     }
+    ]
+   },
+   "title": "LongCat-Image-Edit-Turbo (12.54 GB)",
+   "widgets_values": [
+    "longcat_image_edit_turbo_bf16.safetensors",
+    "default"
+   ]
+  },
+  {
+   "id": 7,
+   "type": "CLIPLoader",
+   "pos": [
+    540,
+    190
+   ],
+   "size": [
+    460,
+    130
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip_name",
+     "name": "clip_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "clip_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "type",
+     "name": "type",
+     "type": "COMBO",
+     "widget": {
+      "name": "type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "device",
+     "name": "device",
+     "type": "COMBO",
+     "widget": {
+      "name": "device"
+     },
+     "shape": 7,
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      5
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Hunyuan-Video-1.5/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "directory": "text_encoders"
+     }
+    ]
+   },
+   "title": "Qwen 2.5 VL 7B fp8 text encoder",
+   "widgets_values": [
+    "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "longcat_image",
+    "default"
+   ]
+  },
+  {
+   "id": 8,
+   "type": "VAELoader",
+   "pos": [
+    540,
+    370
+   ],
+   "size": [
+    460,
+    60
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "vae_name",
+     "name": "vae_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "vae_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      4,
+      19
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAELoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "ae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Z-Image-Turbo/resolve/main/split_files/vae/ae.safetensors",
+      "directory": "vae"
+     }
+    ]
+   },
+   "title": "VAE (Flux ae)",
+   "widgets_values": [
+    "ae.safetensors"
+   ]
+  },
+  {
+   "id": 9,
+   "type": "ImageScaleToTotalPixels",
+   "pos": [
+    1080,
+    50
+   ],
+   "size": [
+    420,
+    110
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 1
+    },
+    {
+     "localized_name": "upscale_method",
+     "name": "upscale_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "upscale_method"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "megapixels",
+     "name": "megapixels",
+     "type": "FLOAT",
+     "widget": {
+      "name": "megapixels"
+     },
+     "link": 2
+    },
+    {
+     "localized_name": "resolution_steps",
+     "name": "resolution_steps",
+     "type": "INT",
+     "widget": {
+      "name": "resolution_steps"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      3,
+      6
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScaleToTotalPixels",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Resize, keep shape (sides x 16)",
+   "widgets_values": [
+    "lanczos",
+    1.0,
+    16
+   ]
+  },
+  {
+   "id": 10,
+   "type": "VAEEncode",
+   "pos": [
+    1080,
+    210
+   ],
+   "size": [
+    420,
+    60
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "pixels",
+     "name": "pixels",
+     "type": "IMAGE",
+     "link": 3
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 4
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      9,
+      15
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEEncode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picture → latent"
+  },
+  {
+   "id": 11,
+   "type": "TextEncodeQwenImageEdit",
+   "pos": [
+    1080,
+    320
+   ],
+   "size": [
+    420,
+    120
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 5
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "shape": 7,
+     "link": null
+    },
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 6
+    },
+    {
+     "localized_name": "prompt",
+     "name": "prompt",
+     "type": "STRING",
+     "widget": {
+      "name": "prompt"
+     },
+     "link": 7
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      8
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "TextEncodeQwenImageEdit",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picture + instruction → conditioning",
+   "widgets_values": [
+    ""
+   ]
+  },
+  {
+   "id": 12,
+   "type": "ReferenceLatent",
+   "pos": [
+    1080,
+    490
+   ],
+   "size": [
+    420,
+    60
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "conditioning",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 8
+    },
+    {
+     "localized_name": "latent",
+     "name": "latent",
+     "type": "LATENT",
+     "shape": 7,
+     "link": 9
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      10
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ReferenceLatent",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Add the picture as reference"
+  },
+  {
+   "id": 13,
+   "type": "FluxKontextMultiReferenceLatentMethod",
+   "pos": [
+    1080,
+    600
+   ],
+   "size": [
+    420,
+    60
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "conditioning",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 10
+    },
+    {
+     "localized_name": "reference_latents_method",
+     "name": "reference_latents_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "reference_latents_method"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      11,
+      13
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "FluxKontextMultiReferenceLatentMethod",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Reference method (index, template)",
+   "widgets_values": [
+    "index"
+   ]
+  },
+  {
+   "id": 14,
+   "type": "ConditioningZeroOut",
+   "pos": [
+    1080,
+    710
+   ],
+   "size": [
+    420,
+    40
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "conditioning",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 11
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CONDITIONING",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      14
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ConditioningZeroOut",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Empty negative (not used at CFG 1)"
+  },
+  {
+   "id": 15,
+   "type": "MarkdownNote",
+   "pos": [
+    1080,
+    800
+   ],
+   "size": [
+    420,
+    150
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Why no VAE on the encoder",
+   "widgets_values": [
+    "**Why the encoder has no VAE connected:** with one, it makes its own reference picture that is not rounded to 16 pixels. Here the resized picture is the reference, so its sides always fit the model."
+   ]
+  },
+  {
+   "id": 16,
+   "type": "KSampler",
+   "pos": [
+    1580,
+    50
+   ],
+   "size": [
+    400,
+    270
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 12
+    },
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 13
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 14
+    },
+    {
+     "localized_name": "latent_image",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 15
+    },
+    {
+     "localized_name": "seed",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": 16
+    },
+    {
+     "localized_name": "steps",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": 17
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "sampler_name",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "scheduler",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "denoise",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      18
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Sampler (CFG 1, euler / simple)",
+   "widgets_values": [
+    25112026,
+    "fixed",
+    8,
+    1.0,
+    "euler",
+    "simple",
+    1.0
+   ]
+  },
+  {
+   "id": 17,
+   "type": "VAEDecode",
+   "pos": [
+    1580,
+    370
+   ],
+   "size": [
+    400,
+    60
+   ],
+   "flags": {},
+   "order": 16,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "samples",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 18
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 19
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      20
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Latent → picture"
+  },
+  {
+   "id": 18,
+   "type": "SaveImage",
+   "pos": [
+    2060,
+    50
+   ],
+   "size": [
+    440,
+    500
+   ],
+   "flags": {},
+   "order": 17,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 20
+    },
+    {
+     "localized_name": "filename_prefix",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SaveImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Result (saved to output/LongCat)",
+   "widgets_values": [
+    "LongCat/longcat_edit"
+   ]
+  },
+  {
+   "id": 19,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    -30
+   ],
+   "size": [
+    640,
+    720
+   ],
+   "flags": {},
+   "order": 18,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "How to use · v1.0.0",
+   "widgets_values": [
+    "## How to use · v1.0.0\n\n**What it does:** edits one picture from a written instruction with LongCat-Image-Edit-Turbo (6B, Apache-2.0, 8 steps). The picture keeps its shape. Core ComfyUI nodes only.\n\n1. **Your inputs** (green group):\n   - **Your picture**: the picture to edit. It is set to `example.png` (ships with ComfyUI) so the first Run works.\n   - **Edit instruction**: say what to change and what to keep. Text that must appear goes in \"quotes\".\n   - **Megapixels** (1): size of the result. The picture is resized to this many pixels, shape kept, sides rounded to 16 (1776x1184 in gives 1248x832). Small pictures are enlarged.\n   - **Steps** (8): what the authors made the Turbo model for.\n   - **Seed**: fixed at 25112026. Type a new number for another take; Run with nothing changed does nothing.\n2. **Models**: the three loaders must show the files from the Downloads note.\n3. **Picture + instruction**: nothing to change.\n4. **Sampling**: CFG 1, euler / simple. Nothing to change; the Turbo model has no negative prompt.\n5. **Save**: press **Run**. The result is saved to `output/LongCat/`.\n\n**What to expect:** a 1248x832 result in 27 to 28 s on the test card (8 steps); the default `example.png` gives 1024x1024 in 28 s.\nParts the instruction does not name can still change: writing a word on a blurred hedge also redrew the hedge.\n\n**Tested on:** RTX PRO 4000 Blackwell 24 GB, 64 GB RAM, ComfyUI 0.45.3. Not verified on a 12 GB card.\n"
+   ]
+  },
+  {
+   "id": 20,
+   "type": "MarkdownNote",
+   "pos": [
+    -800,
+    750
+   ],
+   "size": [
+    640,
+    430
+   ],
+   "flags": {},
+   "order": 19,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Downloads + requirements",
+   "widgets_values": [
+    "## Downloads + requirements\n\nClick the file name to download it. Put each file in the folder shown (inside `ComfyUI/models/`).\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `diffusion_models/` | [longcat_image_edit_turbo_bf16.safetensors](https://huggingface.co/Comfy-Org/LongCat-Image/resolve/main/split_files/diffusion_models/longcat_image_edit_turbo_bf16.safetensors) | 12.54 GB |\n| `text_encoders/` | [qwen_2.5_vl_7b_fp8_scaled.safetensors](https://huggingface.co/Comfy-Org/Hunyuan-Video-1.5/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors) | 9.38 GB |\n| `vae/` | [ae.safetensors](https://huggingface.co/Comfy-Org/Z-Image-Turbo/resolve/main/split_files/vae/ae.safetensors) | 0.34 GB |\n\nAbout 22.3 GB together. The text encoder and VAE are shared by both LongCat files in this folder.\n\n**VRAM:** 12 GB is the target, not verified on a 12 GB card. Started with a 10 GiB budget (`--reserve-vram 13.89` on 24 GB) the whole card peaked at 11.2 GiB, same pictures, 28 s.\n\n**Run on ComfyUI 0.45.3.** **No custom nodes.**\n\nLicence: Apache-2.0 (LongCat-Image, meituan-longcat).\n"
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   1,
+   0,
+   9,
+   0,
+   "IMAGE"
+  ],
+  [
+   2,
+   3,
+   0,
+   9,
+   2,
+   "FLOAT"
+  ],
+  [
+   3,
+   9,
+   0,
+   10,
+   0,
+   "IMAGE"
+  ],
+  [
+   4,
+   8,
+   0,
+   10,
+   1,
+   "VAE"
+  ],
+  [
+   5,
+   7,
+   0,
+   11,
+   0,
+   "CLIP"
+  ],
+  [
+   6,
+   9,
+   0,
+   11,
+   2,
+   "IMAGE"
+  ],
+  [
+   7,
+   2,
+   0,
+   11,
+   3,
+   "STRING"
+  ],
+  [
+   8,
+   11,
+   0,
+   12,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   9,
+   10,
+   0,
+   12,
+   1,
+   "LATENT"
+  ],
+  [
+   10,
+   12,
+   0,
+   13,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   11,
+   13,
+   0,
+   14,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   12,
+   6,
+   0,
+   16,
+   0,
+   "MODEL"
+  ],
+  [
+   13,
+   13,
+   0,
+   16,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   14,
+   14,
+   0,
+   16,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   15,
+   10,
+   0,
+   16,
+   3,
+   "LATENT"
+  ],
+  [
+   16,
+   5,
+   0,
+   16,
+   4,
+   "INT"
+  ],
+  [
+   17,
+   4,
+   0,
+   16,
+   5,
+   "INT"
+  ],
+  [
+   18,
+   16,
+   0,
+   17,
+   0,
+   "LATENT"
+  ],
+  [
+   19,
+   8,
+   0,
+   17,
+   1,
+   "VAE"
+  ],
+  [
+   20,
+   17,
+   0,
+   18,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [
+  {
+   "id": 1,
+   "title": "1 · Your inputs (App mode shows these)",
+   "bounding": [
+    -80,
+    -30,
+    560,
+    1050
+   ],
+   "color": "#8A8",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 2,
+   "title": "2 · Models (loaded once)",
+   "bounding": [
+    520,
+    -30,
+    500,
+    490
+   ],
+   "color": "#3f789e",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 3,
+   "title": "3 · Picture + instruction",
+   "bounding": [
+    1060,
+    -30,
+    460,
+    1000
+   ],
+   "color": "#a1309b",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 4,
+   "title": "4 · Sampling",
+   "bounding": [
+    1560,
+    -30,
+    440,
+    480
+   ],
+   "color": "#b06634",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 5,
+   "title": "5 · Save",
+   "bounding": [
+    2040,
+    -30,
+    480,
+    600
+   ],
+   "color": "#b58b2a",
+   "font_size": 24,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.55,
+   "offset": [
+    760,
+    120
+   ]
+  },
+  "linearData": {
+   "inputs": [
+    [
+     1,
+     "image"
+    ],
+    [
+     2,
+     "value"
+    ],
+    [
+     3,
+     "value"
+    ],
+    [
+     4,
+     "value"
+    ],
+    [
+     5,
+     "value"
+    ]
+   ],
+   "outputs": [
+    18
+   ]
+  }
+ },
+ "version": 0.4
+}

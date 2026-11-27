@@ -107,6 +107,7 @@ Video, image, 3D and audio workflows for normal GPUs: the newest models as **12 
 | **Edit a picture with a written instruction** using Bernini-R (ByteDance, Apache-2.0, 6-step Turbo switch) | [Bernini-R Image Edit](workflows/bernini/bernini-r) | 12 GB target, not verified |
 | **Split a picture into transparent layers** (background + objects, PNG with alpha) with Qwen-Image-Layered (Apache-2.0) | [Qwen-Image-Layered](workflows/qwen/image-layered) | 12 GB target, not verified |
 | **Edit a picture with a written instruction**, keeping its shape, with Capybara v0.1 (MIT, Hunyuan Video 1.5 based) | [Capybara Image Edit](workflows/capybara/image-edit) | 12 GB target, not verified |
+| **Readable text in pictures, or an edit in 8 steps**, with LongCat-Image (6B, Apache-2.0) | [LongCat-Image · 12 GB](workflows/longcat/image-12gb) | 12 GB target, not verified |
 | **Kandinsky 5.0 Lite** (MIT): text to image, text to video, image to video | [Kandinsky 5.0 Lite](workflows/kandinsky/kandinsky-5) | 12 GB target, not verified |
 | **Anime and illustration** images in 4 to 23 s (Anima Base v1.0 + Turbo switch, non-commercial model) | [Anima](workflows/anima/anima) | 12 GB target, not verified |
 | **Text to image** with SDXL base 1.0 (one 6.94 GB file, 25 steps) | [SDXL](workflows/sdxl/sdxl) | 12 GB target, not verified |
@@ -190,6 +191,7 @@ templated `.json`. Model names are verified from the workflow file.
 | **[FireRed Image Edit 1.1](workflows/firered/image-edit-1.1)** | v1.0.0 | 12 GB (not verified) | edit · up to 3 pictures · Lightning 8-step · Apache-2.0 | — |
 | **[Bernini-R Image Edit](workflows/bernini/bernini-r)** | v1.0.0 | 12 GB (not verified) | edit · optional reference picture · Turbo switch (6 steps) · Apache-2.0 | — |
 | **[Qwen-Image-Layered](workflows/qwen/image-layered)** | v1.0.0 | 12 GB (not verified) | picture → RGBA layers (2 and 4 layers tested) · Apache-2.0 | — |
+| **[LongCat-Image · 12 GB](workflows/longcat/image-12gb)** | v1.0.0 | 12 GB (not verified) | T2I · edit (Turbo, 8 steps) · text in pictures · Apache-2.0 | — |
 | **[Capybara Image Edit](workflows/capybara/image-edit)** | v1.0.0 | 12 GB (not verified) | edit · keeps the picture's shape · MIT | — |
 | **[Kandinsky 5.0 Lite](workflows/kandinsky/kandinsky-5)** | v1.0.0 | 12 GB (not verified) | T2I · T2V (16-step) · I2V · MIT | — |
 | **[Anima](workflows/anima/anima)** | v1.0.0 | 12 GB (not verified) | T2I anime / illustration · Turbo switch (8 steps) · non-commercial model | — |
