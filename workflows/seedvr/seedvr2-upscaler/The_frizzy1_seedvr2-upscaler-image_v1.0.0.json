@@ -1,0 +1,1245 @@
+{
+ "id": "7d2f3c1e-5e0d-4b7a-9a11-5eedb2000001",
+ "revision": 0,
+ "last_node_id": 17,
+ "last_link_id": 21,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "LoadImage",
+   "pos": [
+    20,
+    50
+   ],
+   "size": [
+    440,
+    420
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "COMBO",
+     "widget": {
+      "name": "image"
+     },
+     "link": null,
+     "label": "Picture to upscale"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      1,
+      20
+     ]
+    },
+    {
+     "localized_name": "MASK",
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      2
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Picture to upscale (load your own)",
+   "widgets_values": [
+    "example.png",
+    "image"
+   ]
+  },
+  {
+   "id": 2,
+   "type": "PrimitiveFloat",
+   "pos": [
+    20,
+    520
+   ],
+   "size": [
+    440,
+    90
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "FLOAT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null,
+     "label": "Upscale factor (2 = default)"
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "FLOAT",
+     "name": "FLOAT",
+     "type": "FLOAT",
+     "links": [
+      4
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveFloat",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Upscale factor (2 = default)",
+   "widgets_values": [
+    2.0
+   ]
+  },
+  {
+   "id": 3,
+   "type": "UNETLoader",
+   "pos": [
+    540,
+    50
+   ],
+   "size": [
+    440,
+    90
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "unet_name",
+     "name": "unet_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "unet_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "weight_dtype",
+     "name": "weight_dtype",
+     "type": "COMBO",
+     "widget": {
+      "name": "weight_dtype"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "MODEL",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      8,
+      10
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UNETLoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "seedvr2_7b_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/SeedVR2/resolve/main/diffusion_models/seedvr2_7b_int8_convrot.safetensors",
+      "directory": "diffusion_models"
+     }
+    ]
+   },
+   "title": "SeedVR2 7B int8 (8.3 GB)",
+   "widgets_values": [
+    "seedvr2_7b_int8_convrot.safetensors",
+    "default"
+   ]
+  },
+  {
+   "id": 4,
+   "type": "VAELoader",
+   "pos": [
+    540,
+    190
+   ],
+   "size": [
+    440,
+    70
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "vae_name",
+     "name": "vae_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "vae_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      7,
+      16
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAELoader",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3",
+    "models": [
+     {
+      "name": "seedvr2_ema_vae_fp16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/SeedVR2/resolve/main/vae/seedvr2_ema_vae_fp16.safetensors",
+      "directory": "vae"
+     }
+    ]
+   },
+   "title": "SeedVR2 VAE (0.5 GB)",
+   "widgets_values": [
+    "seedvr2_ema_vae_fp16.safetensors"
+   ]
+  },
+  {
+   "id": 5,
+   "type": "JoinImageWithAlpha",
+   "pos": [
+    1060,
+    50
+   ],
+   "size": [
+    440,
+    60
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 1
+    },
+    {
+     "localized_name": "alpha",
+     "name": "alpha",
+     "type": "MASK",
+     "link": 2
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      3
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "JoinImageWithAlpha",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Keep transparency (if the picture has any)"
+  },
+  {
+   "id": 6,
+   "type": "ResizeImageMaskNode",
+   "pos": [
+    1060,
+    160
+   ],
+   "size": [
+    440,
+    130
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "input",
+     "name": "input",
+     "type": "IMAGE,MASK",
+     "link": 3
+    },
+    {
+     "localized_name": "resize_type",
+     "name": "resize_type",
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "resize_type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "multiplier",
+     "name": "resize_type.multiplier",
+     "type": "FLOAT",
+     "widget": {
+      "name": "resize_type.multiplier"
+     },
+     "link": 4
+    },
+    {
+     "localized_name": "scale_method",
+     "name": "scale_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "scale_method"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "resized",
+     "name": "resized",
+     "type": "IMAGE",
+     "links": [
+      5,
+      18
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ResizeImageMaskNode",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Enlarge to the final size (lanczos)",
+   "widgets_values": [
+    "scale by multiplier",
+    2.0,
+    "lanczos"
+   ]
+  },
+  {
+   "id": 7,
+   "type": "SeedVR2Preprocess",
+   "pos": [
+    1060,
+    340
+   ],
+   "size": [
+    440,
+    50
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "resized_images",
+     "name": "resized_images",
+     "type": "IMAGE",
+     "link": 5
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      6
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SeedVR2Preprocess",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Pad to a multiple of 16"
+  },
+  {
+   "id": 8,
+   "type": "VAEEncodeTiled",
+   "pos": [
+    1060,
+    440
+   ],
+   "size": [
+    440,
+    170
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "pixels",
+     "name": "pixels",
+     "type": "IMAGE",
+     "link": 6
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 7
+    },
+    {
+     "localized_name": "tile_size",
+     "name": "tile_size",
+     "type": "INT",
+     "widget": {
+      "name": "tile_size"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "overlap",
+     "name": "overlap",
+     "type": "INT",
+     "widget": {
+      "name": "overlap"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "temporal_size",
+     "name": "temporal_size",
+     "type": "INT",
+     "widget": {
+      "name": "temporal_size"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "temporal_overlap",
+     "name": "temporal_overlap",
+     "type": "INT",
+     "widget": {
+      "name": "temporal_overlap"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      9,
+      13
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEEncodeTiled",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Encode in tiles (512, from the template)",
+   "widgets_values": [
+    512,
+    128,
+    4096,
+    8
+   ]
+  },
+  {
+   "id": 9,
+   "type": "PrimitiveInt",
+   "pos": [
+    1580,
+    50
+   ],
+   "size": [
+    440,
+    90
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "value",
+     "name": "value",
+     "type": "INT",
+     "widget": {
+      "name": "value"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "INT",
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      14
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveInt",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Seed (leave as is; changes fine detail)",
+   "widgets_values": [
+    21112026,
+    "fixed"
+   ]
+  },
+  {
+   "id": 10,
+   "type": "SeedVR2Conditioning",
+   "pos": [
+    1580,
+    190
+   ],
+   "size": [
+    440,
+    70
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 8
+    },
+    {
+     "localized_name": "vae_conditioning",
+     "name": "vae_conditioning",
+     "type": "LATENT",
+     "link": 9
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "links": [
+      11
+     ]
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "links": [
+      12
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SeedVR2Conditioning",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "The enlarged picture is the guide"
+  },
+  {
+   "id": 11,
+   "type": "KSampler",
+   "pos": [
+    1580,
+    310
+   ],
+   "size": [
+    440,
+    280
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "link": 10
+    },
+    {
+     "localized_name": "positive",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 11
+    },
+    {
+     "localized_name": "negative",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 12
+    },
+    {
+     "localized_name": "latent_image",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 13
+    },
+    {
+     "localized_name": "seed",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": 14
+    },
+    {
+     "localized_name": "steps",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "sampler_name",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "scheduler",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "denoise",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "LATENT",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      15
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Restore detail (1 step, CFG 1: leave these)",
+   "widgets_values": [
+    21112026,
+    "fixed",
+    1,
+    1,
+    "euler",
+    "simple",
+    1
+   ]
+  },
+  {
+   "id": 12,
+   "type": "VAEDecodeTiled",
+   "pos": [
+    2100,
+    50
+   ],
+   "size": [
+    440,
+    170
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "samples",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 15
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 16
+    },
+    {
+     "localized_name": "tile_size",
+     "name": "tile_size",
+     "type": "INT",
+     "widget": {
+      "name": "tile_size"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "overlap",
+     "name": "overlap",
+     "type": "INT",
+     "widget": {
+      "name": "overlap"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "temporal_size",
+     "name": "temporal_size",
+     "type": "INT",
+     "widget": {
+      "name": "temporal_size"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "temporal_overlap",
+     "name": "temporal_overlap",
+     "type": "INT",
+     "widget": {
+      "name": "temporal_overlap"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "IMAGE",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      17
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecodeTiled",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Decode in tiles (512, from the template)",
+   "widgets_values": [
+    512,
+    128,
+    4096,
+    8
+   ]
+  },
+  {
+   "id": 13,
+   "type": "SeedVR2PostProcessing",
+   "pos": [
+    2100,
+    270
+   ],
+   "size": [
+    440,
+    90
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 17
+    },
+    {
+     "localized_name": "original_resized_images",
+     "name": "original_resized_images",
+     "type": "IMAGE",
+     "link": 18
+    },
+    {
+     "localized_name": "color_correction_method",
+     "name": "color_correction_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "color_correction_method"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      19,
+      21
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SeedVR2PostProcessing",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Colour match to the original (lab)",
+   "widgets_values": [
+    "lab"
+   ]
+  },
+  {
+   "id": 14,
+   "type": "SaveImage",
+   "pos": [
+    2620,
+    50
+   ],
+   "size": [
+    520,
+    480
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 19
+    },
+    {
+     "localized_name": "filename_prefix",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SaveImage",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Save (ComfyUI/output/SeedVR2/)",
+   "widgets_values": [
+    "SeedVR2/image"
+   ]
+  },
+  {
+   "id": 15,
+   "type": "ImageCompare",
+   "pos": [
+    2620,
+    580
+   ],
+   "size": [
+    520,
+    480
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image_a",
+     "name": "image_a",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 20
+    },
+    {
+     "localized_name": "image_b",
+     "name": "image_b",
+     "type": "IMAGE",
+     "shape": 7,
+     "link": 21
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "ImageCompare",
+    "cnr_id": "comfy-core",
+    "ver": "0.45.3"
+   },
+   "title": "Before / after (slider in Nodes 2.0 view)"
+  },
+  {
+   "id": 16,
+   "type": "MarkdownNote",
+   "pos": [
+    -700,
+    -30
+   ],
+   "size": [
+    640,
+    470
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "How to use · v1.0.0",
+   "widgets_values": [
+    "## How to use · SeedVR2 Upscaler (picture) v1.0.0\n\n**What it does:** makes a picture bigger and restores detail in one step with SeedVR2 7B (int8). No prompt. Core ComfyUI nodes only.\n\n1. **Your inputs**: load your picture in **Picture to upscale** (it opens with ComfyUI's own `example.png`). **Upscale factor** 2 doubles width and height. Keep the result (your size x factor) at about 8 megapixels or less on a 12 GB card (see below).\n2. **Models**: download the two files from the note below. Nothing to change here.\n3. **Enlarge + encode**: the picture is enlarged with lanczos first; SeedVR2 then works at the final size. Transparency is kept.\n4. **Restore**: 1 step, CFG 1, euler / simple, from the template. The **Seed** sits here: another number gives other fine detail (leaves, threads), the same picture otherwise.\n5. **Decode + colour match**: `lab` pulls the colours back to the original. The template uses `none`; `none` was not run here.\n6. **Save**: PNG in `ComfyUI/output/SeedVR2/`. **Before / after** shows the original and the result with a slider when the Nodes 2.0 view is on; the classic view shows \"Node 2.0 only\" there.\n\n**What to expect** (RTX PRO 4000 Blackwell SFF Edition 24 GB, ComfyUI 0.45.3)\n- 1776x1184 photo, factor 2 = 3552x2368 (8.4 MP): 12 to 14 s. VRAM 10.0 to 11.1 GiB with no limit, 9.7 GiB in a 12 GiB budget, 9.5 GiB in a 10 GiB budget, same picture to the pixel.\n- Factor 3 on the same photo (5328x3552, 18.9 MP): 28 s, but VRAM went to 13.5 GiB in the 12 GiB budget and 11.9 GiB in the 10 GiB budget: the budget did not hold, so this size is not for a 12 GB card.\n- `example.png`, factor 2 = 1536x1536: 3 s.\n- VRAM = peak of the ComfyUI process in nvidia-smi, in GiB (MiB / 1024; a 12 GB card has 12.0). Budget runs: a second ComfyUI started with `--reserve-vram` so that it may use only 12 or 10 GiB. Not verified on a real 12 GB card.\n\n**Good to know**\n- SeedVR2 redraws fine texture (skin, leaves, text). Compare before you keep it. A sharp picture gains little.\n"
+   ]
+  },
+  {
+   "id": 17,
+   "type": "MarkdownNote",
+   "pos": [
+    -700,
+    470
+   ],
+   "size": [
+    640,
+    340
+   ],
+   "flags": {},
+   "order": 16,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "MarkdownNote"
+   },
+   "title": "Downloads + requirements",
+   "widgets_values": [
+    "## Downloads + requirements\n\nClick a file name to download it. Put it in the folder shown (inside `ComfyUI/models/`).\n\n| Folder | File (click = download) | Size |\n|---|---|---|\n| `diffusion_models/` | [seedvr2_7b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/SeedVR2/resolve/main/diffusion_models/seedvr2_7b_int8_convrot.safetensors) | 8.3 GB |\n| `vae/` | [seedvr2_ema_vae_fp16.safetensors](https://huggingface.co/Comfy-Org/SeedVR2/resolve/main/vae/seedvr2_ema_vae_fp16.safetensors) | 0.5 GB |\n\nFrom [Comfy-Org/SeedVR2](https://huggingface.co/Comfy-Org/SeedVR2). Licence: Apache-2.0 (SeedVR2 by ByteDance Seed).\n\n**Requirements**\n- Core ComfyUI nodes only. Built and run on ComfyUI 0.45.3; older versions were not run.\n- VRAM: 9.5 to 11.1 GiB for an 8.4 MP result (process peak, see How to use). System RAM: the ComfyUI process peaked at 4.2 GiB.\n- Not verified on a real 12 GB card.\n"
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   1,
+   0,
+   5,
+   0,
+   "IMAGE"
+  ],
+  [
+   2,
+   1,
+   1,
+   5,
+   1,
+   "MASK"
+  ],
+  [
+   3,
+   5,
+   0,
+   6,
+   0,
+   "IMAGE"
+  ],
+  [
+   4,
+   2,
+   0,
+   6,
+   2,
+   "FLOAT"
+  ],
+  [
+   5,
+   6,
+   0,
+   7,
+   0,
+   "IMAGE"
+  ],
+  [
+   6,
+   7,
+   0,
+   8,
+   0,
+   "IMAGE"
+  ],
+  [
+   7,
+   4,
+   0,
+   8,
+   1,
+   "VAE"
+  ],
+  [
+   8,
+   3,
+   0,
+   10,
+   0,
+   "MODEL"
+  ],
+  [
+   9,
+   8,
+   0,
+   10,
+   1,
+   "LATENT"
+  ],
+  [
+   10,
+   3,
+   0,
+   11,
+   0,
+   "MODEL"
+  ],
+  [
+   11,
+   10,
+   0,
+   11,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   12,
+   10,
+   1,
+   11,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   13,
+   8,
+   0,
+   11,
+   3,
+   "LATENT"
+  ],
+  [
+   14,
+   9,
+   0,
+   11,
+   4,
+   "INT"
+  ],
+  [
+   15,
+   11,
+   0,
+   12,
+   0,
+   "LATENT"
+  ],
+  [
+   16,
+   4,
+   0,
+   12,
+   1,
+   "VAE"
+  ],
+  [
+   17,
+   12,
+   0,
+   13,
+   0,
+   "IMAGE"
+  ],
+  [
+   18,
+   6,
+   0,
+   13,
+   1,
+   "IMAGE"
+  ],
+  [
+   19,
+   13,
+   0,
+   14,
+   0,
+   "IMAGE"
+  ],
+  [
+   20,
+   1,
+   0,
+   15,
+   0,
+   "IMAGE"
+  ],
+  [
+   21,
+   13,
+   0,
+   15,
+   1,
+   "IMAGE"
+  ]
+ ],
+ "groups": [
+  {
+   "id": 1,
+   "title": "1 · Your inputs (App mode shows these)",
+   "bounding": [
+    0,
+    -30,
+    480,
+    670
+   ],
+   "color": "#8A8",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 2,
+   "title": "2 · Models (loaded once)",
+   "bounding": [
+    520,
+    -30,
+    480,
+    320
+   ],
+   "color": "#3f789e",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 3,
+   "title": "3 · Enlarge + encode",
+   "bounding": [
+    1040,
+    -30,
+    480,
+    670
+   ],
+   "color": "#a1309b",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 4,
+   "title": "4 · Restore (one step)",
+   "bounding": [
+    1560,
+    -30,
+    480,
+    650
+   ],
+   "color": "#b06634",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 5,
+   "title": "5 · Decode + colour match",
+   "bounding": [
+    2080,
+    -30,
+    480,
+    420
+   ],
+   "color": "#88A",
+   "font_size": 24,
+   "flags": {}
+  },
+  {
+   "id": 6,
+   "title": "6 · Save",
+   "bounding": [
+    2600,
+    -30,
+    560,
+    1120
+   ],
+   "color": "#b58b2a",
+   "font_size": 24,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.55,
+   "offset": [
+    760,
+    120
+   ]
+  },
+  "linearData": {
+   "inputs": [
+    [
+     1,
+     "image"
+    ],
+    [
+     2,
+     "value"
+    ]
+   ],
+   "outputs": [
+    14
+   ]
+  }
+ },
+ "version": 0.4
+}

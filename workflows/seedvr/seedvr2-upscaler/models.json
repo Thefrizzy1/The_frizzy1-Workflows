@@ -1,0 +1,27 @@
+{
+  "workflow": "seedvr/seedvr2-upscaler",
+  "files": [
+    {
+      "name": "seedvr2_7b_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/SeedVR2/resolve/main/diffusion_models/seedvr2_7b_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Picture workflow. 8.3 GB"
+    },
+    {
+      "name": "seedvr2_3b_int8_convrot.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/SeedVR2/resolve/main/diffusion_models/seedvr2_3b_int8_convrot.safetensors",
+      "dest": "diffusion_models",
+      "required": true,
+      "note": "Video workflow. 3.5 GB"
+    },
+    {
+      "name": "seedvr2_ema_vae_fp16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/SeedVR2/resolve/main/vae/seedvr2_ema_vae_fp16.safetensors",
+      "dest": "vae",
+      "required": true,
+      "note": "Both workflows. 0.5 GB"
+    }
+  ],
+  "nodes": []
+}
